@@ -16,9 +16,9 @@ const { pathname } = Astro.request.url;
       }>About</a>
     <a href="/post"
       class={
-      `inline-block mx-4 ${pathname === '/post' ? 'font-bold' : 'text-gray-400'}`
+      `inline-block mx-4 ${pathname.startsWith('/post') ? 'font-bold' : 'text-gray-400'}`
       }>Blog</a>
-    <a href="/uses" 
+    <a href="/uses"
       class={
       `inline-block mx-4 ${pathname === '/uses' ? 'font-bold' : 'text-gray-400'}`
       }
