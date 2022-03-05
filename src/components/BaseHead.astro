@@ -1,0 +1,20 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>{ title } - armno.in.th</title>
+
+<link rel="preconnect" crossorigin href="https://fonts.gstatic.com">
+<link rel="preconnect" crossorigin href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css?family=Sarabun:300,400,700|Fira+Mono|IBM+Plex+Sans:400,700&display=swap&subset=thai" rel="stylesheet">
+
+<!--Favicon-->
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<style global>
+@import '../styles/global.css';
+</style>
