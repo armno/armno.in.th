@@ -6,13 +6,20 @@ import Header from '../components/Header.astro';
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>Armno.in.th on Astro</title>
+
+		<link rel="preconnect" crossorigin href="https://fonts.gstatic.com">
+		<link rel="preconnect" crossorigin href="https://fonts.googleapis.com">
+		<link href="https://fonts.googleapis.com/css?family=Sarabun:300,400,700|Fira+Mono|IBM+Plex+Sans:400,700&display=swap&subset=thai" rel="stylesheet">
+
+		<!--Favicon-->
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<style global>
 		@import '../styles/global.css';
 		</style>
 	</head>
-	<body>
+	<body class="antialiased">
 		<Header />
-		<main class="px-6 lg:w-2/3 lg:px-0 mt-20 mx-auto pb-10 prose lg:prose-xl">
+		<main class="px-6 lg:w-2/3 lg:px-0 mt-20 mx-auto pb-10 prose prose-slate lg:prose-xl lg:leading-[1.4]">
       <slot />
     </main>
 	</body>
