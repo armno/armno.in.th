@@ -1,0 +1,19 @@
+---
+import Header from '../components/Header.astro';
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Armno.in.th on Astro</title>
+		<style global>
+		@import '../styles/global.css';
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main class="px-6 lg:w-2/3 lg:px-0 mt-20 mx-auto pb-10 prose lg:prose-xl">
+      <slot />
+    </main>
+	</body>
+</html>
