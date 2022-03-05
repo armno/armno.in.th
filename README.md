@@ -41,3 +41,23 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
+
+-----
+
+### notes
+
+likes:
+
+- great dx
+- super fast
+- easy to integreate tailwind
+- components import just makes more sense than partials
+
+issues found:
+
+- no global / site variables. need to pass props
+- images: either have to move all images in the post to `/public`, or import them 1 by 1 and use with <img>
+- can't import videos
+- content migration must be .. painful
+  - images must be moved, or re-imported
+  - custom `url` value in frontmatter might not work
