@@ -3,7 +3,7 @@ export async function getStaticPaths({ paginate }) {
   let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./**/*.md');
   allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
 
-  return paginate(allPosts, { pageSize: 10 });
+  return paginate(allPosts, { pageSize: 1 });
 }
 
 import PageLayout from '@layouts/PageLayout.astro';
@@ -22,7 +22,11 @@ const content = {
 ---
 
 <PageLayout {content}>
-  <h1>Blog</h1>
+  <div class="flex items-baseline">
+    <h1>Blog</h1>
+    <span class="text-2xl text-gray-300 mx-4">/</span>
+    <span class="text-2xl text-gray-300">Page {page.currentPage} of {page.lastPage}</span>
+  </div>
 
   <ol>
     {page.data.map(post => (
@@ -33,5 +37,5 @@ const content = {
     )}
   </ol>
 
-  <Pagination next={page.url.next} prev={page.url.prev} currentPage={page.currenPage} totalPage={page.totalPage} />
+  <Pagination next={page.url.next} prev={page.url.prev} />
 </PageLayout>
