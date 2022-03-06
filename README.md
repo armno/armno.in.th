@@ -52,6 +52,8 @@ likes:
 - super fast
 - easy to integreate tailwind
 - components import just makes more sense than partials
+- no theme/no complicated file structures from Hugo
+- use components in Markdown content. same as Hugo partials, but with more familiar syntax
 
 issues found:
 
@@ -60,4 +62,9 @@ issues found:
 - can't import videos
 - content migration must be .. painful
   - images must be moved, or re-imported
-  - custom `url` value in frontmatter might not work
+  - custom `url` value in frontmatter does not work.
+    has to deal with dates in the url because it didn't
+    reflex the actual file structure
+- updating .md file does not trigger reload sometimes
+- dev server silent die
+- JSX 🤔

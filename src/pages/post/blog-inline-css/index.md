@@ -11,6 +11,8 @@ tags:
 categories:
 - web development
 layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '@components/Picture.astro';
 ---
 
 > โพสต์นี้ถือว่าเป็นภาคต่อของโพสต์ [_Case study: เปลี่ยนวิธีโหลด CSS เพื่อให้เว็บ render ไวขึ้น_](https://armno.in.th/2015/05/04/use-loadcss-to-improve-rendering-performance/) (2015) ก็ได้ครับ
@@ -54,7 +56,7 @@ layout: '../../../layouts/PostLayout.astro'
 
 เทคนิคทั้งหมดตอนต้น ก็เพื่อพยายามทำให้ไฟล์ CSS ที่มีขนาด 4.6KB _โหลดไวขึ้นอีก!_ ซึ่งผมก็กลับมาตั้งคำถามว่า **มันจำเป็นไหม** กับไฟล์จิ๋วแค่นี้
 
-![lazy.css](/images/blog-inline-css/lazy.css.png)
+<Picture src="/images/blog-inline-css/lazy.css.png" alt="lazy.css" />
 
 เมื่อก่อนมันเวิร์กเพราะไฟล์ CSS มันเคยใหญ่กว่านี้ แต่ตอนนี้ไม่แล้ว
 
@@ -100,11 +102,11 @@ layout: '../../../layouts/PostLayout.astro'
 
 ก่อน:
 
-![webpagetest.org result: before](/images/blog-inline-css/wpt-before.png)
+<Picture src="/images/blog-inline-css/wpt-before.png" alt="webpagetest.org result: before"/>
 
 หลัง:
 
-![webpagetest.org result: after](/images/blog-inline-css/wpt-after.png)
+<Picture src="/images/blog-inline-css/wpt-after.png" alt="webpagetest.org result: after"/>
 
 แน่นอนว่าการันตีผลอะไรไม่ได้จากการเทสต์แค่ครั้งสองครั้ง
 แต่ก็อาจจะพอเห็นภาพได้บ้าง
