@@ -1,6 +1,4 @@
 ---
-import { format } from 'date-fns';
-
 import PageLayout from '@layouts/PageLayout.astro';
 import Pagination from '@components/Pagniation.astro';
 import PublishedDate from '@components/PublishedDate.astro';
@@ -16,6 +14,7 @@ interface MarkdownFrontmatter {
   title: string;
   date: Date;
   thumbnail: string;
+  description: string;
 }
 
 const { page } = Astro.props;
@@ -33,12 +32,22 @@ const content = {
 
   <ol class="list-none p-0 lg:p-0">
     {page.data.map(post => (
-      <li class="p-0">
-        <img src={post.thumbnail} alt={post.title} />
-        <h2 class="mb-2">
-          <a href={post.url}>{post.title}</a>
-        </h2>
-        <PublishedDate date={post.date} />
+      <li>
+        <article class="p-0 lg:flex mb-24">
+          <div class="lg:w-2/5 shrink-0 grow-0 not-prose">
+            <img src={post.thumbnail} alt={post.title} />
+          </div>
+          <div class="lg:ml-6">
+            <h2 class="mb-2 mt-4 lg:mt-0 lg:mb-2 lg:text-2xl not-prose">
+              <a href={post.url}>{post.title}</a>
+            </h2>
+            <div class="text-sm">
+              <PublishedDate date={post.date} />
+            </div>
+            <p>{post.description}</p>
+            <a href={post.url} class="block text-right text-base">Read more »</a>
+          </div>
+        </article>
       </li>)
     )}
   </ol>
