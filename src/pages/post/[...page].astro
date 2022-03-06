@@ -15,7 +15,7 @@ export async function getStaticPaths({ paginate }) {
 interface MarkdownFrontmatter {
   title: string;
   date: Date;
-  url: string;
+  thumbnail: string;
 }
 
 const { page } = Astro.props;
@@ -31,9 +31,10 @@ const content = {
     <span class="text-2xl text-slate-300">Page {page.currentPage} of {page.lastPage}</span>
   </div>
 
-  <ol class="list-none p-0">
+  <ol class="list-none p-0 lg:p-0">
     {page.data.map(post => (
-      <li>
+      <li class="p-0">
+        <img src={post.thumbnail} alt={post.title} />
         <h2 class="mb-2">
           <a href={post.url}>{post.title}</a>
         </h2>
