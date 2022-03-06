@@ -66,5 +66,8 @@ issues found:
     has to deal with dates in the url because it didn't
     reflex the actual file structure
 - updating .md file does not trigger reload sometimes
-- dev server silent die
+- dev server silent die. esp when creat new file/delete a file
 - JSX 🤔
+- autoimport in vscode does not work
+- `/post/page/2` will turn to `post/2`
+- tailwind not update when add new class. need to restart dev server

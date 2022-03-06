@@ -1,0 +1,8 @@
+---
+const { next, prev, currentPage, total } = Astro.props;
+---
+
+<div class="flex justify-end mt-8 gap-x-3">
+  {prev && <a href={prev}>Newer post</a> }
+  {next && <a href={next}>Older posts</a> }
+</div>

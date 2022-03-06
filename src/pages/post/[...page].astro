@@ -1,0 +1,37 @@
+---
+export async function getStaticPaths({ paginate }) {
+  let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./**/*.md');
+  allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+
+  return paginate(allPosts, { pageSize: 10 });
+}
+
+import PageLayout from '@layouts/PageLayout.astro';
+import Pagination from '@components/Pagniation.astro';
+
+interface MarkdownFrontmatter {
+  title: string;
+  date: Date;
+  url: string;
+}
+
+const { page } = Astro.props;
+const content = {
+  title: 'Blog'
+}
+---
+
+<PageLayout {content}>
+  <h1>Blog</h1>
+
+  <ol>
+    {page.data.map(post => (
+      <li>
+        <a href={post.url}>{post.title}</a>
+        <div>{post.date}</div>
+      </li>)
+    )}
+  </ol>
+
+  <Pagination next={page.url.next} prev={page.url.prev} currentPage={page.currenPage} totalPage={page.totalPage} />
+</PageLayout>
