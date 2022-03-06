@@ -1,13 +1,16 @@
 ---
+import { format } from 'date-fns';
+
+import PageLayout from '@layouts/PageLayout.astro';
+import Pagination from '@components/Pagniation.astro';
+import PublishedDate from '@components/PublishedDate.astro';
+
 export async function getStaticPaths({ paginate }) {
   let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./**/*.md');
   allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
 
-  return paginate(allPosts, { pageSize: 1 });
+  return paginate(allPosts, { pageSize: 10 });
 }
-
-import PageLayout from '@layouts/PageLayout.astro';
-import Pagination from '@components/Pagniation.astro';
 
 interface MarkdownFrontmatter {
   title: string;
@@ -24,15 +27,17 @@ const content = {
 <PageLayout {content}>
   <div class="flex items-baseline">
     <h1>Blog</h1>
-    <span class="text-2xl text-gray-300 mx-4">/</span>
-    <span class="text-2xl text-gray-300">Page {page.currentPage} of {page.lastPage}</span>
+    <span class="text-2xl text-slate-300 mx-4">/</span>
+    <span class="text-2xl text-slate-300">Page {page.currentPage} of {page.lastPage}</span>
   </div>
 
-  <ol>
+  <ol class="list-none p-0">
     {page.data.map(post => (
       <li>
-        <a href={post.url}>{post.title}</a>
-        <div>{post.date}</div>
+        <h2 class="mb-2">
+          <a href={post.url}>{post.title}</a>
+        </h2>
+        <PublishedDate date={post.date} />
       </li>)
     )}
   </ol>

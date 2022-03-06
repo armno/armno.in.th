@@ -7,7 +7,10 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              textUnderlineOffset: '1px'
+              textUnderlineOffset: '1px',
+              '&:hover': {
+                color: '#009350'
+              }
             }
           }
         }

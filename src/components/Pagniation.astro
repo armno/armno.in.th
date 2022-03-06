@@ -2,7 +2,7 @@
 const { next, prev } = Astro.props;
 ---
 
-<div class="flex justify-center mt-8 gap-x-4">
+<div class="text-sm flex justify-center mt-8 gap-x-4">
   {prev && <a href={prev}>« Newer</a> }
   {next && <a href={next}>Older »</a> }
 </div>

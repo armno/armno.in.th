@@ -71,3 +71,4 @@ issues found:
 - autoimport in vscode does not work
 - `/post/page/2` will turn to `post/2`
 - tailwind not update when add new class. need to restart dev server
+- `getStaticPaths() called twice during the build.`

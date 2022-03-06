@@ -1,0 +1,8 @@
+---
+import { format } from 'date-fns';
+const { date } = Astro.props;
+---
+
+<time datetime={date} class="text-slate-500">
+  {format(new Date(date), 'PPP')}
+</time>
