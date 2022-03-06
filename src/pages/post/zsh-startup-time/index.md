@@ -13,8 +13,6 @@ categories:
 - web development
 language: en
 layout: '../../../layouts/PostLayout.astro'
-setup: |
-  import before from './images/before.mp4';
 ---
 
 Inspired by articles by Chai Phonbopit on
@@ -46,7 +44,7 @@ $ for i in $(seq 1 10); do /usr/bin/time $SHELL -i -c exit; done
 
 My zsh startup time before optimize was ~1.1-1.2 seconds.
 
-<video src="{before}" width="100%" autoplay muted controls loop></video>
+<video src="/images/zsh-startup-time/before.mp4" width="100%" autoplay muted controls loop></video>
 
 ## 2. Analyze my `.zshrc` file
 
@@ -104,7 +102,7 @@ I comment out the last 2 lines from my `.zshrc`
 open a new termnial tab, and re-run the profiling script.
 With this alone, zsh's startup time goes down **from ~1.2s to ~0.17s**.
 
-<video src="images/disable-nvm.mp4" width="100%" autoplay muted controls loop></video>
+<video src="/images/zsh-startup-time/disable-nvm.mp4" width="100%" autoplay muted controls loop></video>
 
 This is now a lot faster, but it also means I will not be able to use nvm.
 
@@ -143,7 +141,7 @@ Then I `source` the `.zshrc` file so my changes take effect.
 
 Running the same script from 1. again, zsh's startup time is now at ~0.2 seconds.
 
-<video src="images/after.mp4" width="100%" autoplay muted controls loop></video>
+<video src="/images/zsh-startup-time/after.mp4" width="100%" autoplay muted controls loop></video>
 
 ### Summary
 

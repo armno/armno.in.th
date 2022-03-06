@@ -11,10 +11,6 @@ tags:
 categories:
 - web development
 layout: '../../../layouts/PostLayout.astro'
-setup: |
-  import lazy from './images/lazy.css.png';
-  import before from './images/wpt-before.png';
-  import after from './images/wpt-after.png';
 ---
 
 > โพสต์นี้ถือว่าเป็นภาคต่อของโพสต์ [_Case study: เปลี่ยนวิธีโหลด CSS เพื่อให้เว็บ render ไวขึ้น_](https://armno.in.th/2015/05/04/use-loadcss-to-improve-rendering-performance/) (2015) ก็ได้ครับ
@@ -58,7 +54,7 @@ setup: |
 
 เทคนิคทั้งหมดตอนต้น ก็เพื่อพยายามทำให้ไฟล์ CSS ที่มีขนาด 4.6KB _โหลดไวขึ้นอีก!_ ซึ่งผมก็กลับมาตั้งคำถามว่า **มันจำเป็นไหม** กับไฟล์จิ๋วแค่นี้
 
-<img src={lazy} alt="lazy.css">
+![lazy.css](/images/blog-inline-css/lazy.css.png)
 
 เมื่อก่อนมันเวิร์กเพราะไฟล์ CSS มันเคยใหญ่กว่านี้ แต่ตอนนี้ไม่แล้ว
 
@@ -104,11 +100,11 @@ setup: |
 
 ก่อน:
 
-<img src={before} alt="webpagetest.org result: before">
+![webpagetest.org result: before](/images/blog-inline-css/wpt-before.png)
 
 หลัง:
 
-<img src={after} alt="webpagetest.org result: after">
+![webpagetest.org result: after](/images/blog-inline-css/wpt-after.png)
 
 แน่นอนว่าการันตีผลอะไรไม่ได้จากการเทสต์แค่ครั้งสองครั้ง
 แต่ก็อาจจะพอเห็นภาพได้บ้าง

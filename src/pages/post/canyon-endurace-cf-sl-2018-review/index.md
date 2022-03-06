@@ -29,7 +29,7 @@ layout: '../../../layouts/PostLayout.astro'
 
 
 <!-- {{< image
-  src="images/storck-visioner-comp-g1-1.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/storck-visioner-comp-g1-1.jpg"
   alt="Storck Visioner Comp G1"
   caption="Storck Visioner Comp G1 ที่เคยใช้"
   align-caption="left"
@@ -50,7 +50,7 @@ Ultimate กับ Endurace ดูลักษณะเฟรมแล้วค�
 โดยที่ฟีเจอร์อื่นๆ น่าจะไม่หนีจาก Ultimate มากนัก (เดาล้วนๆ)
 
 <!-- {{< image
-  src="images/canyon-endurace-front.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/canyon-endurace-front.jpg"
   alt="รถจักรยาน Canyon Endurace CF SL ในตอนเย็น"
   width="800"
 >}} -->
@@ -78,7 +78,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 แต่ไม่สุดเท่า Ultimate ที่เป็นจักรยานเสือหมอบแข่งขันแบบเต็มตัว
 
 <!-- {{< image
-  src="images/name-on-the-frame.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/name-on-the-frame.jpg"
   alt="เฟรมรถจักรยาน Canyon Endurace CF SL"
   width="800"
 >}} -->
@@ -93,7 +93,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 ของผมเป็นรุ่นที่ใช้ได้เฉพาะกับเกียร์แบบ mechanical
 
 <!-- {{< image
-  src="images/canyon-endurace-frameset.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/canyon-endurace-frameset.jpg"
   alt="เฟรมรถจักรยาน Canyon Endurace CF SL"
   width="800"
 >}} -->
@@ -108,8 +108,8 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 
 <div class="full-width two-col">
   <div class="full-width-container">
-    <img src="images/canyon-endurace-body.jpg" width="500" alt="รูปถ่ายตัวเฟรมจักรยาน Endurace">
-    <img src="images/tire-clearance.jpg" width="500" alt="รูปถ่ายระยะ clearance ของล้อหลัง">
+    <img src="/images/canyon-endurace-cf-sl-2018-review/canyon-endurace-body.jpg" width="500" alt="รูปถ่ายตัวเฟรมจักรยาน Endurace">
+    <img src="/images/canyon-endurace-cf-sl-2018-review/tire-clearance.jpg" width="500" alt="รูปถ่ายระยะ clearance ของล้อหลัง">
   </div>
 </div>
 
@@ -123,7 +123,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 ระยะ reach 70mm, drop 128mm น้ำหนักตามสเป็ค 285 กรัม
 
 <!-- {{< image
-  src="images/h31-integrated-cockpit-2.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/h31-integrated-cockpit-2.jpg"
   alt="ชุด integrated cockpit Canyon H31"
   width="800"
 >}} -->
@@ -132,7 +132,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 จับด้านบนแล้วเข้ามือดีมาก ระยะ reach น้อยก็ช่วยให้ไม่ต้องเอื้อมเยอะ
 
 <!-- {{< image
-  src="images/h31-integrated-cockpit.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/h31-integrated-cockpit.jpg"
   alt="ชุด integrated cockpit Canyon H31"
   width="800"
 >}} -->
@@ -149,7 +149,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 ต้องถอดหลักอานออกมาจากเฟรมก่อน แล้วปรับเลื่อน แล้วค่อยใส่กลับเข้าไปในเฟรม
 
 <!-- {{< image
-  src="images/s15-seatpost.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/s15-seatpost.jpg"
   alt="หลักอาน Canyon S15"
   width="800"
 >}} -->
@@ -161,7 +161,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 ### ชุดเกียร์ Shimano Ultegra Disc R8020
 
 <!-- {{< image
-  src="images/ultegra-shifters.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/ultegra-shifters.jpg"
   alt="ชุดมือเกียร์ Shimano Ultegra"
   width="800"
 >}} -->
@@ -172,7 +172,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 ซึ่งคิดว่าเพียงพอสำหรับการปั่นทัวไป หรือไต่ดอยที่ได้ไปบ่อยๆ
 
 <!-- {{< image
-  src="images/ultegra-rear-derailleur.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/ultegra-rear-derailleur.jpg"
   alt="ตีนผี Ultegra R8000 ขายาว"
   width="800"
 >}} -->
@@ -182,7 +182,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 ส่วนการใช้งานนั้นไม่ต่างกันเลย เบรคได้ดีเหมือนกัน
 
 <!-- {{< image
-  src="images/canyon-endurace-left-side.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/canyon-endurace-left-side.jpg"
   alt="Canyon Endurace พร้อมชุดเกียร์ Ultegra"
   width="800"
 >}} -->
@@ -204,7 +204,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 เป็นล้อที่มีหลายคนใช้สำหรับแข่งขันเหมือนกัน จุดเด่นที่ขายกันคือ ความคุ้มค่าและความทนทาน
 
 <!-- {{< image
-  src="images/token-ventous-wheels.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/token-ventous-wheels.jpg"
   alt="ล้อ Token Ventous Disc พร้อมยาง Continental GP5000"
   width="800"
 >}} -->
@@ -221,7 +221,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 ก็ยังเหลือระยะ clearance ของตัวเฟรม ที่ทำให้ใส่ยางกว้างกว่านี้ได้อยู่ (ตามสเป็คบอกว่าใส่ได้ถึง 30mm)
 
 <!-- {{< image
-  src="images/token-ventous-wheels-rear.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/token-ventous-wheels-rear.jpg"
   alt="ล้อ Token Ventous Disc พร้อมยาง Continental GP5000"
   width="800"
 >}} -->
@@ -234,7 +234,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 เบาะที่ติดรถตอนนี้เป็น SQLab 612 ราง S-tube รุ่นธรรมดา (ไม่ active) เบอร์ 14
 
 <!-- {{< image
-  src="images/sqlab-saddle.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/sqlab-saddle.jpg"
   alt="เบาะ SQLab 612 คู่กับหลักอาน Syntace P6 Carbon"
   width="800"
 >}} -->
@@ -245,7 +245,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 อีกส่วนคือได้น้ำหนักเบากว่า (ราง Austenite) ในราคาที่ถูกกว่าเมื่อเทียบกับหลายๆ ยี่ห้อในระดับเดียวกัน ผมได้ลองใช้เป็นขนาด 145mm
 
 <!-- {{< image
-  src="images/bontrager-aeolus-elite-saddle.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/bontrager-aeolus-elite-saddle.jpg"
   alt="เบาะ Bontrager Aeolus Elite บนหลักอาน Syntace P6 Carbon"
   width="800"
 >}} -->
@@ -273,7 +273,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 ผมใช้จักรยานเพื่อการเดินทางท่องเที่ยวและออกกำลังกาย ไม่ได้ใช้เพื่อแข่งขันหรือตั้งโปรแกรมซ้อมครับ
 
 <!-- {{< image
-  src="images/front-view.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/front-view.jpg"
   alt="จักรยาน Canyon Endurace CF SL มองจากด้านหน้า"
   width="800"
 >}} -->
@@ -284,10 +284,10 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 
 <div class="full-width four-col">
   <div class="full-width-container">
-    <img src="images/mae-khi-samoeng.jpg" width="300" alt="รูปถ่ายจักรยานริมอ่างเก็บน้ำ">
-    <img src="images/mon-cham.jpg" width="300" alt="รูปถ่ายจักรยานบนดอยม่อนแจ่ม">
-    <img src="images/doi-suthep-v1.jpg" width="300" alt="รูปถ่ายจักรยาน ณ จุดชมวิวดอยสุเทพในวันฝนตก">
-    <img src="images/hip-pai.jpg" width="300" alt="รูปถ่ายจักรยาน ณ ถนนเข้าอำเภอปาย">
+    <img src="/images/canyon-endurace-cf-sl-2018-review/mae-khi-samoeng.jpg" width="300" alt="รูปถ่ายจักรยานริมอ่างเก็บน้ำ">
+    <img src="/images/canyon-endurace-cf-sl-2018-review/mon-cham.jpg" width="300" alt="รูปถ่ายจักรยานบนดอยม่อนแจ่ม">
+    <img src="/images/canyon-endurace-cf-sl-2018-review/doi-suthep-v1.jpg" width="300" alt="รูปถ่ายจักรยาน ณ จุดชมวิวดอยสุเทพในวันฝนตก">
+    <img src="/images/canyon-endurace-cf-sl-2018-review/hip-pai.jpg" width="300" alt="รูปถ่ายจักรยาน ณ ถนนเข้าอำเภอปาย">
   </div>
 </div>
 
@@ -298,7 +298,7 @@ Canyon Endurace เป็นจักรยานแนว endurance ท่า�
 ซึ่งผมว่าเป็นจุดเด่นที่สุดของรถคันนี้ครับ ช่วงหลังแน่นและมั่นคง เป็นรถที่พาลุยได้ทุกที่ หลากหลายเส้นทาง
 
 <!-- {{< image
-  src="images/seat-tube.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/seat-tube.jpg"
   alt="ท่อนั่งของจักรยาน Canyon Endurace CF SL"
   width="800"
 >}} -->
@@ -311,7 +311,7 @@ Canyon Endurace เป็นจักรยานแนว endurance ท่า�
 แต่รวมๆ แล้วช่วงหน้าแข็งกว่า Visioner จะไปรู้สึกชัดๆ ตอนความเร็วสูงหรือถนนขรุขระมากๆ ครับ
 
 <!-- {{< image
-  src="images/cockpit.jpg"
+  src="/images/canyon-endurace-cf-sl-2018-review/cockpit.jpg"
   alt="ช่วงหน้ารถ Canyon Endurace CF SL"
   width="800"
 >}} -->
@@ -349,7 +349,7 @@ Happy riding ครับ
 
 <div class="full-width two-col">
   <div class="full-width-container">
-    <img src="images/left-profile.jpg" width="800" alt="จักรยาน Canyon Endurace CF SL มองจากด้านข้าง">
-    <img src="images/frame.jpg" width="800" alt="โฟกัสที่เฟรมจักรยาน Canyon Endurace CF SL">
+    <img src="/images/canyon-endurace-cf-sl-2018-review/left-profile.jpg" width="800" alt="จักรยาน Canyon Endurace CF SL มองจากด้านข้าง">
+    <img src="/images/canyon-endurace-cf-sl-2018-review/frame.jpg" width="800" alt="โฟกัสที่เฟรมจักรยาน Canyon Endurace CF SL">
   </div>
 </div>
