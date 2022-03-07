@@ -65,6 +65,7 @@ issues found:
   - custom `url` value in frontmatter does not work.
     has to deal with dates in the url because it didn't
     reflex the actual file structure
+  - custom `url` value in frontmatter might not work
 - updating .md file does not trigger reload sometimes
 - dev server silent die. esp when creat new file/delete a file
 - JSX 🤔
@@ -72,3 +73,4 @@ issues found:
 - `/post/page/2` will turn to `post/2`
 - tailwind not update when add new class. need to restart dev server
 - `getStaticPaths() called twice during the build.`
+- imporing images with the same file name, in different pages -> the build takes forever
