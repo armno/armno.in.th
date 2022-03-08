@@ -6,6 +6,7 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            color: '#000',
             a: {
               textUnderlineOffset: '1px',
               '&:hover': {
@@ -16,6 +17,7 @@ module.exports = {
         }
       },
       fontFamily: {
+        headings: ['IBM Plex Sans Thai', ...defaultTheme.fontFamily.sans],
         sans: ['Sarabun', ...defaultTheme.fontFamily.sans]
       }
     }
