@@ -99,7 +99,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 จุดยึดหลักอานอยู่ต่ำลง ช่วยเพิ่มระยะให้ตัวของหลักอาน เป็นฟีเจอร์ที่ Canyon ใช้กับรถหลายๆ รุ่นเหมือนกันครับ
 
 
-<div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+<div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] translate-x-1/4">
   <div class="flex w-full max-w-[100vw] mx-auto justify-center align-baseline flex-wrap">
     <img src="/images/canyon-endurace-cf-sl-2018-review/canyon-endurace-body.jpg" width="500" alt="รูปถ่ายตัวเฟรมจักรยาน Endurace">
     <img src="/images/canyon-endurace-cf-sl-2018-review/tire-clearance.jpg" width="500" alt="รูปถ่ายระยะ clearance ของล้อหลัง">
@@ -275,7 +275,7 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 ได้ใช้คันนี้ปั่นไปหลายๆ เส้นทางที่เคยได้ปั่นอยู่บ่อยๆ เช่น ดอยสุเทพ, บ้านแม่ขิ-สะเมิง, สะเมิงลูป
 รวมไปถึงการร่วม event ปั่นไปปายกับ HIP Magazine ในงาน [HIP ปั่นปาย ครั้งที่ 4](https://armno.wordpress.com/2019/02/19/845-hip-pan-pai-4/)
 
-<div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+<div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] translate-x-1/4">
   <div class="flex w-full max-w-[100vw] mx-auto justify-center align-baseline flex-wrap">
     <img src="/images/canyon-endurace-cf-sl-2018-review/mae-khi-samoeng.jpg" width="300" alt="รูปถ่ายจักรยานริมอ่างเก็บน้ำ">
     <img src="/images/canyon-endurace-cf-sl-2018-review/mon-cham.jpg" width="300" alt="รูปถ่ายจักรยานบนดอยม่อนแจ่ม">

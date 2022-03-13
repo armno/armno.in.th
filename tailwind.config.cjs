@@ -13,12 +13,15 @@ module.exports = {
                 color: '#009350'
               }
             }
-          }
-        }
+          },
+        },
       },
       fontFamily: {
         headings: ['IBM Plex Sans Thai', ...defaultTheme.fontFamily.sans],
         sans: ['Sarabun', ...defaultTheme.fontFamily.sans]
+      },
+      fontSize: {
+        base: ['1.1875rem', '1.5']
       }
     }
   },
