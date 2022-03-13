@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 import Header from '@components/Header.astro';
 import BaseHead from '@components/BaseHead.astro';
 import PublishedDate from '@components/PublishedDate.astro';
+import '../styles/global.css';
 
 const { content } = Astro.props;
 const { title, date } = content;
@@ -13,7 +14,7 @@ const { title, date } = content;
 	</head>
 	<body class="antialiased">
 		<Header />
-		<article class="px-6 lg:px-0 mt-20 mx-auto pb-10 prose prose-slate lg:prose-xl text-base">
+		<article class="px-6 lg:px-0 mt-20 mx-auto pb-24 prose prose-slate prose-xl text-base">
       <h1>{title}</h1>
 			<PublishedDate {date} />
       <slot />

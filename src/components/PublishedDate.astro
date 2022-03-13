@@ -3,6 +3,9 @@ import { format } from 'date-fns';
 const { date } = Astro.props;
 ---
 
-<time datetime={date} class="text-slate-500">
-  {format(new Date(date), 'PPP')}
-</time>
+<div class="text-center mb-16 text-sm text-slate-500">
+  <time datetime={date}>
+    {format(new Date(date), 'PPP')}
+  </time>
+  by Armno P.
+</div>

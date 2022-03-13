@@ -35,7 +35,9 @@ const content = {
       <li>
         <article class="p-0 lg:flex mb-24">
           <div class="lg:w-2/5 shrink-0 grow-0 not-prose">
-            <img src={post.thumbnail} alt={post.title} />
+            <a href={post.url}>
+              <img src={post.thumbnail} alt={post.title} />
+            </a>
           </div>
           <div class="lg:ml-6">
             <h2 class="mb-2 mt-4 lg:mt-0 lg:mb-2 lg:text-2xl not-prose">

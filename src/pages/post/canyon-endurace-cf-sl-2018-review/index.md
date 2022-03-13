@@ -99,12 +99,8 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 จุดยึดหลักอานอยู่ต่ำลง ช่วยเพิ่มระยะให้ตัวของหลักอาน เป็นฟีเจอร์ที่ Canyon ใช้กับรถหลายๆ รุ่นเหมือนกันครับ
 
 
-<div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] translate-x-1/4">
-  <div class="flex w-full max-w-[100vw] mx-auto justify-center align-baseline flex-wrap">
-    <img src="/images/canyon-endurace-cf-sl-2018-review/canyon-endurace-body.jpg" width="500" alt="รูปถ่ายตัวเฟรมจักรยาน Endurace">
-    <img src="/images/canyon-endurace-cf-sl-2018-review/tire-clearance.jpg" width="500" alt="รูปถ่ายระยะ clearance ของล้อหลัง">
-  </div>
-</div>
+<Picture src="/images/canyon-endurace-cf-sl-2018-review/canyon-endurace-body.jpg" width="800" alt="รูปถ่ายตัวเฟรมจักรยาน Endurace" />
+<Picture src="/images/canyon-endurace-cf-sl-2018-review/tire-clearance.jpg" width="800" alt="รูปถ่ายระยะ clearance ของล้อหลัง" />
 
 ที่ต่างจาก Ultimate คือองศาเฟรมของ Ultimate จะซิ่งกว่า reach ยาวและ stack สั้นกว่าเล็กน้อย
 ส่วน Endurace เป็นเฟรมแนว endurance องศาจึงค่อนข้าง relax คือไม่ก้มเหยืยดจนเกินไป
@@ -275,14 +271,10 @@ Endurace เป็นจักรยานเสือหมอบแนว endu
 ได้ใช้คันนี้ปั่นไปหลายๆ เส้นทางที่เคยได้ปั่นอยู่บ่อยๆ เช่น ดอยสุเทพ, บ้านแม่ขิ-สะเมิง, สะเมิงลูป
 รวมไปถึงการร่วม event ปั่นไปปายกับ HIP Magazine ในงาน [HIP ปั่นปาย ครั้งที่ 4](https://armno.wordpress.com/2019/02/19/845-hip-pan-pai-4/)
 
-<div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] translate-x-1/4">
-  <div class="flex w-full max-w-[100vw] mx-auto justify-center align-baseline flex-wrap">
-    <img src="/images/canyon-endurace-cf-sl-2018-review/mae-khi-samoeng.jpg" width="300" alt="รูปถ่ายจักรยานริมอ่างเก็บน้ำ">
-    <img src="/images/canyon-endurace-cf-sl-2018-review/mon-cham.jpg" width="300" alt="รูปถ่ายจักรยานบนดอยม่อนแจ่ม">
-    <img src="/images/canyon-endurace-cf-sl-2018-review/doi-suthep-v1.jpg" width="300" alt="รูปถ่ายจักรยาน ณ จุดชมวิวดอยสุเทพในวันฝนตก">
-    <img src="/images/canyon-endurace-cf-sl-2018-review/hip-pai.jpg" width="300" alt="รูปถ่ายจักรยาน ณ ถนนเข้าอำเภอปาย">
-  </div>
-</div>
+<Picture src="/images/canyon-endurace-cf-sl-2018-review/mae-khi-samoeng.jpg" width="300" alt="รูปถ่ายจักรยานริมอ่างเก็บน้ำ" />
+<Picture src="/images/canyon-endurace-cf-sl-2018-review/mon-cham.jpg" width="300" alt="รูปถ่ายจักรยานบนดอยม่อนแจ่ม" />
+<Picture src="/images/canyon-endurace-cf-sl-2018-review/doi-suthep-v1.jpg" width="300" alt="รูปถ่ายจักรยาน ณ จุดชมวิวดอยสุเทพในวันฝนตก" />
+<Picture src="/images/canyon-endurace-cf-sl-2018-review/hip-pai.jpg" width="300" alt="รูปถ่ายจักรยาน ณ ถนนเข้าอำเภอปาย" />
 
 Canyon Endurace เป็นจักรยานแนว endurance ท่านั่งจะก้มไม่เยอะ
 การปั่นไกลๆ หรือนานๆ จะสบายตัวกว่ารถแข่งซิ่งๆ
@@ -340,9 +332,5 @@ handling ดี ช่วงหลังแน่นหนึบ แต่ช่
 
 Happy riding ครับ
 
-<div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-  <div class="flex w-full max-w-[100vw] mx-auto justify-center align-baseline flex-wrap">
-    <img src="/images/canyon-endurace-cf-sl-2018-review/left-profile.jpg" width="800" alt="จักรยาน Canyon Endurace CF SL มองจากด้านข้าง">
-    <img src="/images/canyon-endurace-cf-sl-2018-review/frame.jpg" width="800" alt="โฟกัสที่เฟรมจักรยาน Canyon Endurace CF SL">
-  </div>
-</div>
+<Picture src="/images/canyon-endurace-cf-sl-2018-review/left-profile.jpg" width="800" alt="จักรยาน Canyon Endurace CF SL มองจากด้านข้าง" />
+<Picture src="/images/canyon-endurace-cf-sl-2018-review/frame.jpg" width="800" alt="โฟกัสที่เฟรมจักรยาน Canyon Endurace CF SL" />

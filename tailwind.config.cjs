@@ -10,9 +10,9 @@ module.exports = {
             a: {
               textUnderlineOffset: '1px',
               '&:hover': {
-                color: '#009350'
+                color: '#009350',
               }
-            }
+            },
           },
         },
       },
