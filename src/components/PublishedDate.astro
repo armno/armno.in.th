@@ -1,9 +1,11 @@
 ---
 import { format } from 'date-fns';
-const { date } = Astro.props;
+const { date, align } = Astro.props;
 ---
 
-<div class="text-center mb-16 text-sm text-slate-500">
+<div class={
+  `text-sm text-slate-500 ${align === 'center' ? 'text-center mb-16': ''}`
+}>
   <time datetime={date}>
     {format(new Date(date), 'PPP')}
   </time>
