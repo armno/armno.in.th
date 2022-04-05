@@ -1,12 +1,11 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
-import Pagination from '@components/Pagniation.astro';
+import Pagination from '@components/Pagination.astro';
 import PublishedDate from '@components/PublishedDate.astro';
 
 export async function getStaticPaths({ paginate }) {
-  let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./**/*.md');
+  let allPosts = await Astro.glob<MarkdownFrontmatter>('./**/*.md');
   allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
-
   return paginate(allPosts, { pageSize: 10 });
 }
 
@@ -36,17 +35,17 @@ const content = {
         <article class="p-0 lg:flex mb-24">
           <div class="lg:w-2/5 shrink-0 grow-0 not-prose">
             <a href={post.url}>
-              <img src={post.thumbnail} alt={post.title} />
+              <img src={post.frontmatter.thumbnail} alt={post.frontmatter.title} />
             </a>
           </div>
           <div class="lg:ml-6">
             <h2 class="mb-2 mt-4 lg:mt-0 lg:mb-2 lg:text-2xl not-prose">
-              <a href={post.url}>{post.title}</a>
+              <a href={post.url}>{post.frontmatter.title}</a>
             </h2>
             <div class="text-sm">
-              <PublishedDate date={post.date} />
+              <PublishedDate date={post.frontmatter.date} />
             </div>
-            <p>{post.description}</p>
+            <p>{post.frontmatter.description}</p>
             <a href={post.url} class="block text-right text-base">Read more »</a>
           </div>
         </article>

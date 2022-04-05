@@ -1,5 +1,5 @@
 ---
-const { pathname } = Astro.request.url;
+const { url } = Astro.request;
 ---
 <header class="container mx-auto flex justify-between items-center">
   <a href="/" class="inline-block w-20 h-20">
@@ -12,15 +12,15 @@ const { pathname } = Astro.request.url;
   <nav>
     <a href="/"
       class={
-      `inline-block mx-4 ${pathname === '/' ? 'font-bold' : 'text-gray-400'}`
+      `inline-block mx-4 ${url === '/' ? 'font-bold' : 'text-gray-400'}`
       }>About</a>
     <a href="/post"
       class={
-      `inline-block mx-4 ${pathname.startsWith('/post') ? 'font-bold' : 'text-gray-400'}`
+      `inline-block mx-4 ${url === ('/post') ? 'font-bold' : 'text-gray-400'}`
       }>Blog</a>
     <a href="/uses"
       class={
-      `inline-block mx-4 ${pathname === '/uses' ? 'font-bold' : 'text-gray-400'}`
+      `inline-block mx-4 ${url === '/uses' ? 'font-bold' : 'text-gray-400'}`
       }
     >Uses</a>
   </nav>
