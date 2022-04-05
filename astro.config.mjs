@@ -1,8 +1,9 @@
 // Full Astro Configuration API Documentation:
 // https://docs.astro.build/reference/configuration-reference
 
-// @ts-check
-export default /** @type {import('astro').AstroUserConfig} */ ({
-	// Comment out "renderers: []" to enable Astro's default component support.
+import { defineConfig } from 'astro/config';
+
+export default defineConfig({
 	integrations: [],
+  site: 'https://armno.in.th'
 });

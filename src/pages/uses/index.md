@@ -27,9 +27,9 @@ Here are my tools, updated for 2021-2022.
   - dark: `base16_material-darker`
   - light: `base16_google-light`
 
-![dark terminal screenshot](images/uses/dark.png)
+![dark terminal screenshot](/images/uses/dark.png)
 
-![light terminal screenshot](images/uses/light.png)
+![light terminal screenshot](/images/uses/light.png)
 
 - [VSCode](https://code.visualstudio.com/) - I code HTML/JS/CSS primarily. I use VSCode as my primary code editor with these extensions
   - [VSCodeVim](https://github.com/VSCodeVim/Vim)
@@ -60,23 +60,23 @@ Here are my tools, updated for 2021-2022.
 Computers: I use a [2015, 15-inch MacBook Pro](https://support.apple.com/kb/SP719?locale=en_US) (2.2GHz Core i7, 16GB RAM) at work
 and a [2013, 13-inch MacBook Pro](https://support.apple.com/kb/sp691?locale=th_TH) (2.4GHz Core i5, 8GB RAM) at home.
 
-![2015, 15-inch MacBook Pro](images/uses/laptop.jpg)
+![2015, 15-inch MacBook Pro](/images/uses/laptop.jpg)
 
 Monitor: a [Samsung 28" UR55 UHD 4K Monitor](https://www.samsung.com/th/business/monitors/ur55/lu28r550uqexxt/) mounted with an [NB-F80 Monitor arm](https://www.google.com/search?q=nb-f80+monitor+arm).
 
-![Samsung UR55 4k monitor](images/uses/desk-monitor.jpg)
+![Samsung UR55 4k monitor](/images/uses/desk-monitor.jpg)
 
-![NB-F80 monitor arm](images/uses/nb80-monitor-arm.jpg)
+![NB-F80 monitor arm](/images/uses/nb80-monitor-arm.jpg)
 
 Keyboards: [Portico](https://thekey.company/products/portico-keyboard) 65% mechanical keyboard at work and a [custom 60% mechanical keyboard](https://armno.in.th/2019/05/01/custom-mechanical-keyboard-build-2/) at home.
 
-![Build details: Portico Smoke / FR4 plate / Durock V2 stabs / Tangerine 67g + Krytox 205g0 / Susuwatari MT3 keycaps](images/uses/portico-keyboard.jpg)
+![Build details: Portico Smoke / FR4 plate / Durock V2 stabs / Tangerine 67g + Krytox 205g0 / Susuwatari MT3 keycaps](/images/uses/portico-keyboard.jpg)
 
-![Build details: Tofu alu case / DZ60 PCB / alu plate / Everglide stabs / Gateron milky brown, Maxkeys SA keycaps](images/uses/keyboard-tofu-sa-bluegray.jpg)
+![Build details: Tofu alu case / DZ60 PCB / alu plate / Everglide stabs / Gateron milky brown, Maxkeys SA keycaps](/images/uses/keyboard-tofu-sa-bluegray.jpg)
 
 Mouse: [Logitech MX331 Silent](https://www.logitech.com/th-th/products/mice/m331-silent-plus-mouse.910-004914.html) - I found a silent mouse gives me a peace of mind.
 
-![Logitech m331 silent mouse](images/uses/mouse-m331.jpg)
+![Logitech m331 silent mouse](/images/uses/mouse-m331.jpg)
 
 Headphones: I have a few of them for my various use cases
 
@@ -86,15 +86,15 @@ Headphones: I have a few of them for my various use cases
 - [Soundpeats TrueAir 2](https://www.google.com/search?q=Soundpeats+TrueAir+2) for commuting and workouts
 - plus: a [DIY headphones stand](https://armno.wordpress.com/2013/05/09/746-headphone-stand/) made of teak wood.
 
-![Sony WH-1000XM4 headphones](images/uses/sony-xm4.jpg)
+![Sony WH-1000XM4 headphones](/images/uses/sony-xm4.jpg)
 
-![Audio Technica M50x](images/uses/headphones.jpg)
+![Audio Technica M50x](/images/uses/headphones.jpg)
 
-![JBL Quantum 100 headphones](images/uses/jbl-quantum-100.jpg)
+![JBL Quantum 100 headphones](/images/uses/jbl-quantum-100.jpg)
 
 Notes: A normal notebook and a black pen
 
-![muji pens](images/uses/pens.jpg)
+![muji pens](/images/uses/pens.jpg)
 
 ### Other
 
@@ -103,4 +103,4 @@ Notes: A normal notebook and a black pen
 - A [2018 Canyon Endurace CF SL](https://armno.in.th/2019/01/28/ordering-a-canyon-bike-review/) road bike.
 I use my bike for mostly commuting to work and sometimes for recreational cycling. Bicycle is a big part of my life.
 
-![Canyon Endurace CF SL 2018](images/uses/bike.jpg)
+![Canyon Endurace CF SL 2018](/images/uses/bike.jpg)
