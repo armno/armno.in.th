@@ -10,11 +10,11 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",
-    "astro": "^0.25.4",
-    "autoprefixer": "^10.4.2",
+    "astro": "^0.26.1",
+    "autoprefixer": "^10.4.4",
     "date-fns": "^2.28.0",
     "lodash-es": "^4.17.21",
-    "postcss": "^8.4.7",
+    "postcss": "^8.4.12",
     "tailwindcss": "^3.0.23"
   }
 }
