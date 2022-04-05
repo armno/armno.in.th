@@ -1,6 +1,11 @@
 ---
 import { format } from 'date-fns';
-const { date, align } = Astro.props;
+
+export interface Props {
+  date: string;
+  align?: string;
+}
+const { date, align } = Astro.props as Props;
 ---
 
 <div class={

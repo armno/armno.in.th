@@ -1,5 +1,13 @@
 ---
-const { src, caption, alt, width, height } = Astro.props;
+export interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  width?: string;
+  height?: string;
+}
+
+const { src, caption, alt, width, height } = Astro.props as Props;
 ---
 
 <figure>

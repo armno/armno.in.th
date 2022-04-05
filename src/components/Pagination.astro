@@ -1,5 +1,9 @@
 ---
-const { next, prev } = Astro.props;
+export interface Props {
+  next?: string;
+  prev?: string;
+}
+const { next, prev } = Astro.props as Props;
 ---
 
 <div class="text-sm flex justify-center mt-8 gap-x-4">
