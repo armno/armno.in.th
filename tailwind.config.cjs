@@ -21,7 +21,7 @@ module.exports = {
         sans: ['Sarabun', ...defaultTheme.fontFamily.sans]
       },
       fontSize: {
-        base: ['1.1875rem', '1.5']
+        base: ['1.125rem', '1.5']
       }
     }
   },
