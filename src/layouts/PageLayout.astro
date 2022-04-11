@@ -1,5 +1,6 @@
 ---
 import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
 import BaseHead from '@components/BaseHead.astro';
 import '../styles/global.css';
 
@@ -15,5 +16,6 @@ const { title } = content;
 		<main class="px-6 mt-20 mx-auto pb-24 prose prose-slate prose-xl text-base">
       <slot />
     </main>
+    <Footer />
 	</body>
 </html>
