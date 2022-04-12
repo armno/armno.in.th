@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   theme: {
@@ -10,9 +11,21 @@ module.exports = {
             a: {
               textUnderlineOffset: '1px',
               '&:hover': {
-                color: '#009350',
+                color: colors.green[600],
               }
             },
+            code: {
+              backgroundColor: colors.slate[100],
+              padding: '0 4px',
+              borderRadius: '3px',
+              fontWeight: 'normal'
+            },
+            'code::before': {
+              content: ''
+            },
+            'code::after': {
+              content: ''
+            }
           },
         },
       },
