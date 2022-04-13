@@ -25,9 +25,35 @@ module.exports = {
             },
             'code::after': {
               content: ''
+            },
+            blockquote: {
+              backgroundColor: colors.slate[100],
+              padding: '0.1rem 2rem'
+            },
+            hr: {
+              width: '40%',
+              border: '0',
+              height: '6px',
+              backgroundColor: colors.slate[800]
+            },
+            li: {
+              marginTop: '0',
+              marginBottom: '0'
+            },
+            'ul ul, ul ol, ol ul, ol ol': {
+              marginTop: 0,
+              marginBottom: 0
             }
           },
         },
+        lg: {
+          css: {
+            li: {
+              marginTop: '0',
+              marginBottom: '0'
+            }
+          }
+        }
       },
       fontFamily: {
         headings: ['IBM Plex Sans Thai', ...defaultTheme.fontFamily.sans],
