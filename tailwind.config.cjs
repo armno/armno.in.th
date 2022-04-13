@@ -34,6 +34,8 @@ module.exports = {
               width: '40%',
               border: '0',
               height: '6px',
+              marginTop: '4rem',
+              marginBottom: '4rem',
               backgroundColor: colors.slate[800]
             },
             li: {
@@ -51,7 +53,12 @@ module.exports = {
             li: {
               marginTop: '0',
               marginBottom: '0'
-            }
+            },
+            hr: {
+              width: '30%',
+              marginTop: '4rem',
+              marginBottom: '4rem'
+            },
           }
         }
       },
