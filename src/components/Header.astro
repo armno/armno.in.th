@@ -12,15 +12,15 @@ const { url } = Astro.request;
   <nav>
     <a href="/"
       class={
-      `inline-block mx-4 ${url === '/' ? 'font-bold' : 'text-gray-400'}`
+      `inline-block mx-4 ${url === '' ? 'font-bold' : 'text-gray-400'}`
       }>About</a>
     <a href="/post/"
       class={
-      `inline-block mx-4 ${url === ('/post') ? 'font-bold' : 'text-gray-400'}`
+      `inline-block mx-4 ${url.includes('/post') ? 'font-bold' : 'text-gray-400'}`
       }>Blog</a>
     <a href="/uses/"
       class={
-      `inline-block mx-4 ${url === '/uses' ? 'font-bold' : 'text-gray-400'}`
+      `inline-block mx-4 ${url.includes('/uses') ? 'font-bold' : 'text-gray-400'}`
       }
     >Uses</a>
   </nav>
