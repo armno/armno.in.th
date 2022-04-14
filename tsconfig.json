@@ -8,6 +8,9 @@
       ],
       "@layouts/*": [
         "src/layouts/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
       ]
     }
   }

@@ -1,15 +1,18 @@
 ---
 import PublishedDate from '@components/PublishedDate.astro';
+import RelatedPosts from '@components/RelatedPosts.astro';
 import PageLayout from './PageLayout.astro';
 import '../styles/global.css';
 
 const { content } = Astro.props;
 const { title, date } = content;
+const canonicalURL = Astro.canonicalURL;
 ---
 <PageLayout { content }>
   <article>
     <h1>{title}</h1>
     <PublishedDate {date} />
     <slot />
+    <RelatedPosts tags={content.tags} currentPathname={canonicalURL.pathname} />
   </article>
 </PageLayout>

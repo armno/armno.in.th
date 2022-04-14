@@ -1,7 +1,6 @@
 ---
 title: "Inline CSS"
 date: 2019-12-24T17:21:04+07:00
-url: /2019/12/24/blog-inline-css
 description: บางที critical CSS กับ loadCSS ก็อาจจะไม่ได้จำเป็นสำหรับทุกคน
 thumbnail: /images/blog-inline-css/wpt-after.png
 tags:

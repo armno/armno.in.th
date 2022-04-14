@@ -2,18 +2,12 @@
 import PageLayout from '@layouts/PageLayout.astro';
 import Pagination from '@components/Pagination.astro';
 import PublishedDate from '@components/PublishedDate.astro';
+import { Frontmatter } from '@shared/frontmatter.interface';
 
 export async function getStaticPaths({ paginate }) {
-  let allPosts = await Astro.glob<MarkdownFrontmatter>('./**/*.md');
+  let allPosts = await Astro.glob<Frontmatter>('./**/*.md');
   allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
   return paginate(allPosts, { pageSize: 10 });
-}
-
-interface MarkdownFrontmatter {
-  title: string;
-  date: Date;
-  thumbnail: string;
-  description: string;
 }
 
 const { page } = Astro.props;
