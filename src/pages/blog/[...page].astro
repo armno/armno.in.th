@@ -1,13 +1,14 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
 import Pagination from '@components/Pagination.astro';
-import PublishedDate from '@components/PublishedDate.astro';
 import PostItem from '@components/PostItem.astro';
 import { Frontmatter } from '@shared/frontmatter.interface';
+import { format } from 'date-fns';
+import { sortBy } from 'lodash-es';
 
 export async function getStaticPaths({ paginate }) {
   let allPosts = await Astro.glob<Frontmatter>('./**/*.md');
-  allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+  allPosts = sortBy(allPosts, ['frontmatter.date']).reverse();
   return paginate(allPosts, { pageSize: 10 });
 }
 
@@ -24,7 +25,7 @@ const content = {
     <span class="text-2xl text-slate-300">Page {page.currentPage} of {page.lastPage}</span>
   </div>
 
-  <ol class="list-none p-0 lg:p-0 not-prose grid grid-cols-3 gap-8">
+  <ol class="list-none p-0 lg:p-0 not-prose grid grid-cols-3 gap-x-8 gap-y-12">
     {page.data.map(post => (
       <li>
         <PostItem 
@@ -32,7 +33,6 @@ const content = {
           url={post.url}
           thumbnail={post.frontmatter.thumbnail}
           date={post.frontmatter.date}
-          description={post.frontmatter.description}
         />
       </li>)
     )}

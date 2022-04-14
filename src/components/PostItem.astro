@@ -21,7 +21,4 @@ const { url, title, thumbnail, date, description } = Astro.props as Props;
       {format(new Date(date), 'PPP')}
     </time>
   </a>
-  {description &&
-  <p>{description}</p>
-  }
 </article>
