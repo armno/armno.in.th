@@ -2,6 +2,7 @@
 import PageLayout from '@layouts/PageLayout.astro';
 import Pagination from '@components/Pagination.astro';
 import PublishedDate from '@components/PublishedDate.astro';
+import PostItem from '@components/PostItem.astro';
 import { Frontmatter } from '@shared/frontmatter.interface';
 
 export async function getStaticPaths({ paginate }) {
@@ -23,26 +24,16 @@ const content = {
     <span class="text-2xl text-slate-300">Page {page.currentPage} of {page.lastPage}</span>
   </div>
 
-  <ol class="list-none p-0 lg:p-0">
+  <ol class="list-none p-0 lg:p-0 not-prose grid grid-cols-3 gap-8">
     {page.data.map(post => (
       <li>
-        <article class="p-0 lg:flex mb-24">
-          <div class="lg:w-2/5 shrink-0 grow-0 not-prose">
-            <a href={post.url}>
-              <img class="object-cover aspect-[3/2]" src={post.frontmatter.thumbnail} alt={post.frontmatter.title} />
-            </a>
-          </div>
-          <div class="lg:ml-6">
-            <h2 class="mb-2 mt-4 lg:mt-0 lg:mb-2 lg:text-2xl not-prose">
-              <a href={post.url}>{post.frontmatter.title}</a>
-            </h2>
-            <div class="text-sm">
-              <PublishedDate date={post.frontmatter.date} />
-            </div>
-            <p>{post.frontmatter.description}</p>
-            <a href={post.url} class="block text-right text-base">Read more »</a>
-          </div>
-        </article>
+        <PostItem 
+          title={post.frontmatter.title}
+          url={post.url}
+          thumbnail={post.frontmatter.thumbnail}
+          date={post.frontmatter.date}
+          description={post.frontmatter.description}
+        />
       </li>)
     )}
   </ol>

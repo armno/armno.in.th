@@ -6,16 +6,22 @@ export interface Props {
   title: string;
   date: Date;
   thumbnail?: string;
+  description?: string;
 }
-const { url, title, thumbnail, date } = Astro.props as Props;
+const { url, title, thumbnail, date, description } = Astro.props as Props;
 ---
 
-<a href={url} class="hover:text-green-600">
-  <div>
-    <img class="object-cover aspect-[3/2]" src={thumbnail} alt={title}>
-  </div>
-  <div class="font-bold leading-tight mt-2">{title}</div>
-  <time class="text-sm text-slate-600" datetime={date.toString()}>
-    {format(new Date(date), 'PPP')}
-  </time>
-</a>
+<article>
+  <a href={url} class="hover:text-green-600">
+    <div>
+      <img class="object-cover aspect-[3/2]" src={thumbnail} alt={title}>
+    </div>
+    <div class="font-bold leading-tight mt-2">{title}</div>
+    <time class="text-sm text-slate-600" datetime={date.toString()}>
+      {format(new Date(date), 'PPP')}
+    </time>
+  </a>
+  {description &&
+  <p>{description}</p>
+  }
+</article>
