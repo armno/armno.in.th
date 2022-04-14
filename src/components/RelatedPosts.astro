@@ -1,26 +1,33 @@
 ---
 import { Frontmatter } from '@shared/frontmatter.interface';
+import { intersection } from 'lodash-es';
+
 const allPosts = await Astro.glob<Frontmatter>('../pages/blog/**/*.md');
 const { tags, currentPathname } = Astro.props;
-console.log({ tags, currentPathname });
 
 const relatedPosts = allPosts.filter(({ url }) => !currentPathname.includes(url))
-  .filter(a => new Date(a.frontmatter.date) <= new Date())
+  // sort posts by most recent first
   .sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf())
-  .map(post => {
-    console.log(post.url);
-    console.log(post.frontmatter.tags);
-    return post;
+  // filter to posts with only matched tags with the current post
+  .filter(post => {
+    const matchedTags = intersection(tags, post.frontmatter.tags);
+    return matchedTags.length > 0;
   })
+  // select only 3 posts to display
   .slice(0, 3);
+
+// TODO: display random posts if there is no related posts
 ---
 
-<h4>Related posts</h4>
-<ul>
-  {relatedPosts.map(post => (
-    <li>
-      <a href={post.url}>{post.frontmatter.title}</a>
-    </li>
-  ))}
-</ul>
-
+{relatedPosts.length > 0 && 
+<section class="mt-20">
+  <h4>Related posts</h4>
+  <ul>
+    {relatedPosts.map(post => (
+      <li>
+        <a href={post.url}>{post.frontmatter.title}</a>
+      </li>
+    ))}
+  </ul>
+</section>
+}
