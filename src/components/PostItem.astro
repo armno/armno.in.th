@@ -1,0 +1,21 @@
+---
+import { format } from 'date-fns';
+
+export interface Props {
+  url: string;
+  title: string;
+  date: Date;
+  thumbnail?: string;
+}
+const { url, title, thumbnail, date } = Astro.props as Props;
+---
+
+<a href={url} class="hover:text-green-600">
+  <div>
+    <img class="object-cover aspect-[3/2]" src={thumbnail} alt={title}>
+  </div>
+  <div class="font-bold leading-tight mt-2">{title}</div>
+  <time class="text-sm text-slate-600" datetime={date.toString()}>
+    {format(new Date(date), 'PPP')}
+  </time>
+</a>

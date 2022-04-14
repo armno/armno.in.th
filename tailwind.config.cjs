@@ -8,12 +8,6 @@ module.exports = {
         DEFAULT: {
           css: {
             color: '#000',
-            a: {
-              textUnderlineOffset: '1px',
-              '&:hover': {
-                color: colors.green[600],
-              }
-            },
             code: {
               backgroundColor: colors.slate[100],
               padding: '0 4px',
@@ -60,6 +54,12 @@ module.exports = {
               marginBottom: '4rem'
             },
           }
+        }
+      },
+      a: {
+        textUnderlineOffset: '1px',
+        '&:hover': {
+          color: colors.green[600],
         }
       },
       fontFamily: {

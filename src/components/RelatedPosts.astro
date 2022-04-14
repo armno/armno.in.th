@@ -1,6 +1,7 @@
 ---
 import { Frontmatter } from '@shared/frontmatter.interface';
 import { intersection } from 'lodash-es';
+import PostItem from '@components/PostItem.astro';
 
 const allPosts = await Astro.glob<Frontmatter>('../pages/blog/**/*.md');
 const { tags, currentPathname } = Astro.props;
@@ -20,13 +21,11 @@ const relatedPosts = allPosts.filter(({ url }) => !currentPathname.includes(url)
 ---
 
 {relatedPosts.length > 0 && 
-<section class="mt-20">
-  <h4>Related posts</h4>
-  <ul>
+<section class="mt-20 not-prose">
+  <h4 class="text-2xl font-bold mb-4">Related posts</h4>
+  <ul class="grid grid-cols-3 gap-x-8">
     {relatedPosts.map(post => (
-      <li>
-        <a href={post.url}>{post.frontmatter.title}</a>
-      </li>
+      <PostItem url={post.url} date={post.frontmatter.date} title={post.frontmatter.title} thumbnail={post.frontmatter.thumbnail} />
     ))}
   </ul>
 </section>
