@@ -13,7 +13,7 @@ const { url, title, thumbnail, date, description } = Astro.props as Props;
 
 <article>
   <a href={url} class="hover:text-green-600 block">
-    <img class="object-cover aspect-[3/2]" src={thumbnail} alt={title}>
+    <img class="object-cover aspect-[3/2] w-full" src={thumbnail} alt={title} width="300" height="200">
     <div class="font-bold font-headings leading-tight mt-[1em]">{title}</div>
   </a>
   <time class="text-sm text-slate-600" datetime={date.toString()}>
