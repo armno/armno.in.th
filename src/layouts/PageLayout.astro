@@ -5,16 +5,16 @@ import BaseHead from '@components/BaseHead.astro';
 import '../styles/global.css';
 
 const { content, notProse } = Astro.props;
-const { title } = content;
+const { title, description, thumbnail, language } = content;
 
 let classes = 'px-6 mt-20 mx-auto pb-24 prose prose-slate lg:prose-lg';
 if (notProse) {
 	classes = 'px-6 mt-20 mx-auto pb-24';
 }
 ---
-<html lang="en">
+<html lang={language ? language : 'th'}>
 	<head>
-		<BaseHead {title} />
+		<BaseHead {title} {description} {thumbnail} />
 	</head>
 	<body class="antialiased">
 		<Header />

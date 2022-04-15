@@ -1,13 +1,22 @@
 ---
 export interface Props {
   title: string;
+  description?: string;
+  thumbnail?: string;
 }
 
-const { title } = Astro.props as Props;
+const { title, description, thumbnail } = Astro.props as Props;
+const canonicalURL = Astro.canonicalURL;
+const defaultDescription = `I'm Armno - a Thai frontend developer at buzzwoo. Based in Chiang Mai. I write about what I've learned.`;
+console.log(Astro.site);
 ---
+<title>{ title } - armno.in.th</title>
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
-<title>{ title } - armno.in.th</title>
+<meta name="description" content={description ? description : defaultDescription}>
+<meta name="author" content="Armno Prommarak">
+<meta name="theme-color" content="#0c120c">
 
 <link rel="preconnect" crossorigin href="https://fonts.gstatic.com">
 <link rel="preconnect" crossorigin href="https://fonts.googleapis.com">
@@ -15,3 +24,26 @@ const { title } = Astro.props as Props;
 
 <!--Favicon-->
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description ? description : defaultDescription}>
+{thumbnail &&
+<meta property="og:image" content={Astro.site.href + thumbnail}>
+}
+
+<meta property="og:url" content={canonicalURL}>
+<meta property="og:site_name" content="armno.in.th">
+<meta property="og:type" content="article">
+
+<meta property="fb:admins" content="1007588651">
+<meta property="fb:app_id" content="127330613993014">
+<meta property="article:author" content="https://www.facebook.com/armno">
+<meta property="article:publisher" content="https://www.facebook.com/armno.in.th">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@armno">
+<meta name="twitter:domain" content="https://armno.in.th">
+<meta name="twitter:creator" content="@armno">
+<meta name="twitter:url" content={canonicalURL}>
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description ? description : defaultDescription}>
