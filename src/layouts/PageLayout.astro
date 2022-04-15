@@ -4,8 +4,13 @@ import Footer from '@components/Footer.astro';
 import BaseHead from '@components/BaseHead.astro';
 import '../styles/global.css';
 
-const { content } = Astro.props;
+const { content, notProse } = Astro.props;
 const { title } = content;
+
+let classes = 'px-6 mt-20 mx-auto pb-24 prose prose-slate lg:prose-lg';
+if (notProse) {
+	classes = 'px-6 mt-20 mx-auto pb-24';
+}
 ---
 <html lang="en">
 	<head>
@@ -13,7 +18,7 @@ const { title } = content;
 	</head>
 	<body class="antialiased">
 		<Header />
-		<main class="px-6 mt-20 mx-auto pb-24 prose lg:max-w-3xl prose-slate lg:prose-lg">
+		<main class={classes}>
       <slot />
     </main>
     <Footer />

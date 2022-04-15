@@ -12,13 +12,14 @@ const { url, title, thumbnail, date, description } = Astro.props as Props;
 ---
 
 <article>
-  <a href={url} class="hover:text-green-600">
-    <div>
-      <img class="object-cover aspect-[3/2]" src={thumbnail} alt={title}>
-    </div>
-    <div class="font-bold leading-tight mt-2">{title}</div>
-    <time class="text-sm text-slate-600" datetime={date.toString()}>
-      {format(new Date(date), 'PPP')}
-    </time>
+  <a href={url} class="hover:text-green-600 block">
+    <img class="object-cover aspect-[3/2]" src={thumbnail} alt={title}>
+    <div class="font-bold font-headings leading-tight mt-[1em]">{title}</div>
   </a>
+  <time class="text-sm text-slate-600" datetime={date.toString()}>
+    {format(new Date(date), 'PPP')}
+  </time>
+  {description &&
+  <p class="text-base mt-4">{description}</p>
+  }
 </article>

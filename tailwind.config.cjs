@@ -7,7 +7,13 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            color: '#000',
+            color: colors.slate[900],
+            a: {
+              textUnderlineOffset: '1px',
+              '&:hover': {
+                color: colors.green[600],
+              }
+            },
             code: {
               backgroundColor: colors.slate[100],
               padding: '0 4px',

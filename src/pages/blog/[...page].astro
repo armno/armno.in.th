@@ -18,21 +18,22 @@ const content = {
 }
 ---
 
-<PageLayout {content}>
-  <div class="flex items-baseline">
-    <h1>Blog</h1>
+<PageLayout {content} notProse={true}>
+  <div class="flex items-baseline mb-8 container mx-auto">
+    <h1 class="text-5xl font-bold">Blog</h1>
     <span class="text-2xl text-slate-300 mx-4">/</span>
     <span class="text-2xl text-slate-300">Page {page.currentPage} of {page.lastPage}</span>
   </div>
 
-  <ol class="list-none p-0 lg:p-0 not-prose grid grid-cols-3 gap-x-8 gap-y-12">
+  <ol class="list-none p-0 lg:p-0 not-prose grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-32 container mx-auto">
     {page.data.map(post => (
-      <li>
+      <li class="text-3xl">
         <PostItem 
           title={post.frontmatter.title}
           url={post.url}
           thumbnail={post.frontmatter.thumbnail}
           date={post.frontmatter.date}
+          description={post.frontmatter.description}
         />
       </li>)
     )}
