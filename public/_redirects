@@ -3,3 +3,11 @@ https://armno.netlify.com/* https://armno.in.th/:splat 301!
 /post /blog
 /2021/07/28/canyon-endurace-cf-sl-2018-review/ /blog/canyon-endurace-cf-sl-2018-review/
 /2019/12/24/blog-inline-css/ /blog/inline-css/
+/2021/08/19/ffmpeg-video-poster-image/ /blog/ffmpeg-video-poster-image/
+/2020/11/26/css-user-select/ /blog/css-user-select/
+/2020/08/31/optimize-images-with-github-actions/ /blog/github-actions/
+/2020/08/24/lazyload-nvm-to-reduce-zsh-startup-time/ /blog/zsh-startup-time/
+/2020/05/07/vercel/ /blog/vercel/
+/2020/04/13/lubricate-mechanical-keyboard-switches/ /blog/lubricate-mechanical-keyboard-switches/
+/2020/03/20/proactively-lazy/ /blog/proactively-lazy/
+/2020/03/10/customizing-tmk-firmware-gh60-pcb/ /blog/flashing-tmk-firmware-gh60-satan/

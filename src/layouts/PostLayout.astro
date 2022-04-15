@@ -10,7 +10,7 @@ const canonicalURL = Astro.canonicalURL;
 ---
 <PageLayout { content }>
   <article>
-    <h1>{title}</h1>
+    <h1 class="text-4xl lg:text-5xl">{title}</h1>
     <PublishedDate {date} />
     <slot />
     <RelatedPosts tags={content.tags} currentPathname={canonicalURL.pathname} />

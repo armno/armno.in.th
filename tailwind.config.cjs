@@ -72,9 +72,6 @@ module.exports = {
         headings: ['IBM Plex Sans Thai', ...defaultTheme.fontFamily.sans],
         sans: ['Sarabun', ...defaultTheme.fontFamily.sans]
       },
-      fontSize: {
-        base: ['1.125rem', '1.5'],
-      },
     }
   },
   content: [

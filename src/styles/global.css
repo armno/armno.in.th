@@ -4,6 +4,10 @@
 
 @layer base {
 
+  html {
+    font-size: 112.5%;
+  }
+
   h1,
   h2,
   h3,
@@ -15,5 +19,9 @@
 @layer components {
   .message--warning {
     @apply bg-yellow-100 py-6 px-8;
+  }
+
+  .footnotes {
+    @apply text-sm;
   }
 }

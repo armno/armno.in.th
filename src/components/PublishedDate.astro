@@ -9,7 +9,7 @@ const { date, align } = Astro.props as Props;
 ---
 
 <div class={
-  `text-sm text-slate-500 ${align === 'center' ? 'text-center mb-16': ''}`
+  `text-slate-500 ${align === 'center' ? 'text-center mb-16': ''}`
 }>
   <time datetime={date}>
     {format(new Date(date), 'PPP')}
