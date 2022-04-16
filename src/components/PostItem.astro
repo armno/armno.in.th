@@ -16,9 +16,11 @@ const { url, title, thumbnail, date, description } = Astro.props as Props;
     <img class="object-cover aspect-[3/2] w-full" src={thumbnail} alt={title} width="300" height="200">
     <div class="font-bold font-headings leading-tight mt-[1em]">{title}</div>
   </a>
+  {date &&
   <time class="text-sm text-slate-600" datetime={date.toString()}>
     {format(new Date(date), 'PPP')}
   </time>
+  }
   {description &&
   <p class="text-base mt-4">{description}</p>
   }
