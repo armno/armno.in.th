@@ -15,7 +15,7 @@ module.exports = {
               }
             },
             code: {
-              backgroundColor: colors.slate[100],
+              backgroundColor: colors.slate[200],
               padding: '0 4px',
               borderRadius: '3px',
               fontWeight: 'normal'
