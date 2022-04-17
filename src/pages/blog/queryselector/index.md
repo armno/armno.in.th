@@ -13,7 +13,11 @@ tags:
   - Selectors API
   - Web Development
 title: querySelector() และ querySelectorAll() Selectors API
+thumbnail: /images/queryselector/8536143624_42b62d563a_z.jpg
 url: /2012/03/26/queryselector-queryselectorall-selectors-api/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ปกติ [DOM](https://www.w3.org/DOM/) _(Document Object Model)_ มี API method สำหรับการหา element จาก ID และจากชื่อ class อยู่แล้ว ตัวอย่างเช่น มี HTML แบบนี้
@@ -82,11 +86,13 @@ var li = document.querySelector('#adminmenu').querySelectorAll('li');
 
 ### Performance
 
-มี [test บน jsperf.com](https://jsperf.com/getelementbyid-vs-queryselector) นั้นบอกว่า `getElementById()` เร็วกว่า `querySelector()` อยู่ค่อนข้างเยอะครับ (หลายเท่าตัว) (แต่ผมว่าเอาเข้าจริงๆ การใช้งานทั่วไปคงไม่มีใครเห็นความแตกต่าง) แต่ถ้าัสังเกตกราฟของ Google Chrome รวมถึง Webkit ในเวอร์ชั่นหลังๆ มานี้ จำนวน opt/sec ของ `querySelector` นั้นก็เพิ่มขึ้นเยอะอยู่เหมือนกัน
+มี [test บน jsperf.com](https://jsperf.com/getelementbyid-vs-queryselector) นั้นบอกว่า `getElementById()` เร็วกว่า `querySelector()` อยู่ค่อนข้างเยอะครับ (หลายเท่าตัว) แต่ผมว่าเอาเข้าจริงๆ การใช้งานทั่วไปคงไม่มีใครเห็นความแตกต่าง
 
-![chrome-performance](images/8536143624_42b62d563a_z.jpg)
+ถ้าสังเกตกราฟของ Google Chrome รวมถึง Webkit ในเวอร์ชั่นหลังๆ มานี้ จำนวน opt/sec ของ `querySelector` นั้นก็เพิ่มขึ้นเยอะอยู่เหมือนกัน
 
-![firefox-performance](images/8535036869_57d8d41523_z.jpg)
+![chrome-performance](/images/queryselector/8536143624_42b62d563a_z.jpg)
+
+![firefox-performance](/images/queryselector/8535036869_57d8d41523_z.jpg)
 
 ดูหลายๆ test case ได้จากแต่ละ revision ใน jsperf เปรียบเทียบกันดูได้
 

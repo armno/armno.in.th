@@ -14,27 +14,33 @@ tags:
 - Offline Application
 title: บันทึก Google DevFest Chiang Mai 2011 ตอนที่ 2
 url: /2011/09/29/google-devfest-chiang-mai-2011-part-2/
-wordpress_id: 1856
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ![DevFest 2011 unofficial logo](https://files.armno.in.th/uploads/2011/09/devfest_custom_logo.png)
 
 ## HTML5 Offline Applications
 
-ตอนแรกคิดว่า Session นี้คงไม่ต่างอะไรกับเมื่อตอนเช้ามาก (Bleeding Edge HTML5) แต่พอฟังๆ ไป ผมกลับรู้สึกชอบมากกว่า เพราะมันทำให้มองเห็นภาพการใช้งานจริงดี ประโยชน์ของ Offline Application อย่างแรกเลยคือเรื่องสถานที่ เราไม่สามารถพาอินเตอร์เน็ตติดตัวไปด้วยตลอดเวลา (ถึงแม้จะอยากก็ตามที) แต่ Offline Application ก็ยังสามารถที่จะใช้งานได้ เช่น บนเครื่องบิน ระหว่างขับรถ (ฉันหมดแรง) หรือแม้กระทั่งกลางทะเลทราย (!) นอกจากนี้ เรื่องประสิทธิภาพในการใช้งาน แน่นอนว่า Offline Application ทำงานได้เร็วกว่า Online อยู่แล้ว
+ตอนแรกคิดว่า Session นี้คงไม่ต่างอะไรกับเมื่อตอนเช้ามาก (Bleeding Edge HTML5) แต่พอฟังๆ ไป ผมกลับรู้สึกชอบมากกว่า เพราะมันทำให้มองเห็นภาพการใช้งานจริงดี ประโยชน์ของ Offline Application อย่างแรกเลยคือเรื่องสถานที่ เราไม่สามารถพาอินเตอร์เน็ตติดตัวไปด้วยตลอดเวลา แต่ Offline Application ก็ยังสามารถที่จะใช้งานได้ เช่น บนเครื่องบิน ระหว่างขับรถ หรือแม้กระทั่งกลางทะเลทราย (!) นอกจากนี้ เรื่องประสิทธิภาพในการใช้งาน แน่นอนว่า Offline Application ทำงานได้เร็วกว่า Online อยู่แล้ว
 
 ### Local Storage
 
 เก็บข้อมูลในลักษณะ key-value ธรรมดาๆ วิธีใช้งานก็แสนง่าย โดยจับค่าที่ต้องการ ยัดลงใน object `localStorage` ได้เลย เช่น หากต้องการเก็บข้อมูลที่มี key เป็น browser ส่วน value เป็น `chrome` ก็
 
-<pre><code class="language-javascript">window.localStorage.browser= 'chrome';</code></pre>
+```js
+window.localStorage.browser= 'chrome';
+```
 
 หรือเรียกใช้ผ่าน API เหล่านี้ก็ได้นะ
 
-<pre><code class="language-javascript">localStorage.setItem(key, value);
+```js
+localStorage.setItem(key, value);
 localStorage.getItem(key);
 localStorage.removeItem(key);
-localStorage.clear();</code></pre>
+localStorage.clear();
+```
 
 ข้อควรระวังคือ เรียกใช้ `clear()` จะลบค่าใน localStorage ออกหมดเลย
 
@@ -46,11 +52,15 @@ localStorage.clear();</code></pre>
 
 ในการใช้งาน Web Storage นั้น รองรับเฉพาะการเก็บข้อมูลที่เป็น String ดังนั้น หากเราต้องการเก็บ Object ทั้งก้อนลงใน Local Storage หรือ Session Storage ก็ต้องทำการแปลงข้อมูลจาก Object ให้เป็น String เสียก่อน
 
-<pre><code class="language-javascript">var userStr = JSON.stringify(object);</code></pre>
+```js
+var userStr = JSON.stringify(object);
+```
 
 เมื่อนำออกมาใช้ ก็ต้องแปลงกลับจาก String ให้เป็น Object เช่นกัน
 
-<pre><code class="language-javascript">var user = JSON.parse(userStr);</code></pre>
+```js
+var user = JSON.parse(userStr);
+```
 
 ### IndexedDB
 
@@ -62,18 +72,24 @@ localStorage.clear();</code></pre>
 
 วิธีใช้งาน AppCache คือ เพิ่ม attribute manifest ในแท็ก html ของเรา
 
-<pre><code class="language-markup">&lt;html manifest="example.appcache"&gt;</code></pre>
+```html
+<html manifest="example.appcache">
+```
 
 โดยที่ไฟล์ manifest มีส่วนประกอบหลักๆ คือ
 
-<pre><code class="language-bash">CACHE MANIFEST
-# vesion number</code></pre>
+```sh
+CACHE MANIFEST
+# vesion number
+```
 
 บรรทัดแรก ต้องเป็นคำว่า `CACHE MANIFEST` เพื่อเป็นการบอก browser ว่า นี่เป็นไฟล์ manifest ของฉันนะ ส่วน `version number` เอาไว้เช็คอัพเดทจากเซิฟเวอร์ ตัวอย่างเช่น เมื่อเซิฟเวอร์มีการอัพเดทไฟล์ CSS หรือ JS เราก็ต้องเปลี่ยน version number ในไฟล์ manifest (ซึ่งอยู่บนเซิฟเวอร์) เพื่อให้ offline application ทราบว่ามีการเปลี่ยนแปลง และจะได้อัพเดทไฟล์ cache เป็นเวอร์ชั่นใหม่ ตรงตามเซิฟเวอร์
 
-<pre><code class="language-bash">CACHE: // cache what
+```sh
+CACHE: // cache what
 FALLBACK: // use when offline
-NETWORK: // require to be online</code></pre>
+NETWORK: // require to be online
+```
 
 เนื้อหาหลักของไฟล์ manifest คือเจ้า 3 ส่วนนี้ครับ
 
@@ -119,35 +135,45 @@ AppCache มีข้อน่าสังเกตหลายข้อด้�
 * ใช้งาน [responsive layout](http://coding.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/)
 * ทำ app ให้อยู่ในหน้าเดียว (single page application) แล้วใช้งาน **History API** เช่น
 
-<pre><code class="language-javascript">window.history.pushState(slideNo, 'Slide ' + slideNo, hash);</code></pre>
+```js
+window.history.pushState(slideNo, 'Slide ' + slideNo, hash);
+```
 
 * ทำ web app ให้มีลักษณะการใช้งานคล้ายกับ desktop app
 * เช่น การเลือกไฟล์ทั้ง directory ด้วย `<input type=file webkitdirectory />`
 * หรือ การใช้ drag & drop สำหรับการอัพโหลดไฟล์ (`drag`, `drop` event listener)
 * ใช้งาน clip board
 
-<pre><code class="language-javascript">document.body.onpaste = function(e) {
+```js
+document.body.onpaste = function(e) {
   var items = e.clipboardData.items;
-}</code></pre>
+}
+```
 
 * ใช้งาน drag ไฟล์จาก web app ลงสู่เครื่อง เพื่อดาวน์โหลดไฟล์
 
-<pre><code class="language-markup">// file drag out - download file by dragging out of the window
+```html
+// file drag out - download file by dragging out of the window
 // HTML
-&lt;input type=file data-downloadurl="MIMETYPE:FILENAME:ABSOLUTE_URI_TO_FILE" /&gt;</code></pre>
+<input type=file data-downloadurl="MIMETYPE:FILENAME:ABSOLUTE_URI_TO_FILE" />
+```
 
-<pre><code class="language-javascript">// JavaScript
+```js
+// JavaScript
 window.addEventListener('dragstart',function(e) {
     e.dataTransfer; // start transfering file to user's machine
-});</code></pre>
+});
+```
 
 * เพิ่มความสามารถให้ text input field รองรับฟีเจอร์ speech (ฟังจากเสียงพูด) `<input type=text x-wekit-speech>`
 * ใช้งาน notification แจ้ง user (อันนี้น่าเล่นมากครับ)
 
-<pre><code class="language-javascript">// keep users informed - create notifications
+```js
+// keep users informed - create notifications
 window.notifications; // notification object
 var note = notifications.createNotification(picture, title, text);
-note.show();</code></pre>
+note.show();
+```
 
 * ใส่ใจ performance ของ app ประหนึ่งว่าเป็นอีก feature ที่สำคัญ .. <i>("ประหนึ่งว่า" ???)</i>
 
@@ -164,7 +190,8 @@ note.show();</code></pre>
 แถม CSS ที่ใช้ทำ Logo รูปข้างบนครับ
 
 
-<pre><code class="language-css">h1 {
+```css
+h1 {
   font: bold 150px/100% 'RadleyRegular', serif;
   color: #A42536;
   text-align: center;
@@ -178,4 +205,5 @@ note.show();</code></pre>
     5px 5px 0 #313131,
     6px 6px 0 #343434,
     6px 6px 10px black;
-}</code></pre>
+}
+```

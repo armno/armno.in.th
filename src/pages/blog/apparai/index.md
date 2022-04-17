@@ -12,7 +12,9 @@ tags:
 - แอพ iPad
 title: แนะนำบล็อกใหม่ AppArai "รีวิวแอพ ตามใจฉัน"
 url: /2011/11/12/apparai-review-mobile-apps/
-wordpress_id: 1907
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ![AppArai.in.th Logo](https://files.armno.in.th/uploads/2011/11/apparai_logo_2_no_android.png)

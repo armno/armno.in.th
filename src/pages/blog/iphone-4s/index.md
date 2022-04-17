@@ -14,6 +14,10 @@ tags:
   - iPhone
 title: สั่งซื้อ iPhone 4S จาก Apple Online Store
 url: /2012/02/08/iphone-4s-from-apple-online-store/
+thumbnail: /images/iphone-4s/8509206646_50bda7fc73_z.jpg
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ผมเพิ่งซื้อโทรศัพท์เครื่องใหม่ครับ เป็น iPhone 4S สั่งจาก Apple Store Thailand ก็ขอเล่าประสบการณ์การซื้อของจาก Apple Online Store ครั้งแรก แบ่งปันกันนะครับ
@@ -22,7 +26,7 @@ url: /2012/02/08/iphone-4s-from-apple-online-store/
 
 ผมใช้บัตรเดบิต Be1st ในการสั่งซื้อครับ (เนื่องจากไม่มีบัตรเครดิต) ตอนแรกนั้นไม่สามารถจบการสั่งซื้อได้ ไปติดขั้นตอนสุดท้ายตรงที่การตัดเงินจากบัตร คุยกับทาง call center ของธนาคารได้ความว่า บัตรอาจกำหนดวงเงินต่อวันไว้ต่ำเกินไป ผมเช็คใน internet banking ดูแล้ว วงเงินต่อวันอยู่ที่ 50,000 บาท แต่ทาง call center ก็แจ้งมาว่าวงเงินใน internet banking นั้นเฉพาะกับการใช้จ่ายใน internet banking ไม่เกี่ยวกับช่องทางอื่น ผมจึงเปลี่ยนวงเงินบัตรผ่านระบบโทรศัพท์อัตโนมัติ และก็สามารถสั่งซื้อ iPhone 4S ได้ครับ เมื่อสั่งซื้อเสร็จแล้ว Apple ก็ส่งอีเมลมาให้ครับว่าได้รับออร์เดอร์แล้ว
 
-![order-info](images/8509202756_971741b7ee_z.jpg)
+![order-info](/images/iphone-4s/8509202756_971741b7ee_z.jpg)
 
 ### รอ ..
 
@@ -38,7 +42,7 @@ url: /2012/02/08/iphone-4s-from-apple-online-store/
 
 เจ้าหน้าที่จาก DHL โทรหาผมตั้งแต่ 9 โมงเพื่อเช็คที่อยู่ จากนั้นของก็มาถึงมือผมในเวลาประมาณ 11 โมงครับ (สงสัยไปมาหลายที่) ผมก็จัดการเปิดเครื่องเพื่อที่จะลองใช้เลย ปรากฏว่า activate ไม่ได้เพราะไม่มีซิม (ไม่รู้นะเนี่ย) ผมเลยเอา micro sim ที่ดองค้างไว้ใน iPad (แต่ไม่ได้ใช้) ลองใส่ดูและก็ใช้ activate ได้ถึงแม้ว่าซิมโดนปิดไปนานแล้ว
 
-![iphone4s-arrived](images/8509206646_50bda7fc73_z.jpg)
+![iphone4s-arrived](/images/iphone-4s/8509206646_50bda7fc73_z.jpg)
 
 ### เปลี่ยนซิมการ์ดเป็น Micro Sim
 

@@ -12,6 +12,9 @@ tags:
 - วิธีใช้ Lightroom
 title: วิธีใช้ Presets ใน Adobe Photoshop Lightroom
 url: /2011/10/26/presets-adobe-photoshop-lightroom/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ### Presets คืออะไร

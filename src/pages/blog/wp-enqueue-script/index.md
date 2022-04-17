@@ -13,6 +13,9 @@ tags:
 - wp_enqueue_script
 title: การใช้ฟังก์ชั่น wp_enqueue_script แทรก JavaScript ใน WordPress
 url: /2012/04/19/wp-enqueue-script-wordpress/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ปกติเราจะโหลดไฟล์ JavaScript เข้ามาในเพจโดยใช้แท็ก `<script>`

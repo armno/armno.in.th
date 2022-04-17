@@ -14,7 +14,10 @@ tags:
   - Web Development
 title: ทำความรู้จักกับ Normalize.css
 url: /2012/03/11/normalize-css/
-wordpress_id: 1993
+thumbnail: /images/normalize-css/8507760424_b37ae2b173_z.jpg
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 Web Developer หลายคนคงรู้จักและคุ้นเคยกับ [CSS Reset](https://www.google.co.th/#hl=th&q=css+reset) เป็นอย่างดี บนโลกนี้ก็มี CSS Reset หลายตัวให้เลือกใช้ CSS Framework เกือบทุกตัวก็ยังมี reset เป็นของตัวเองอีกต่างหาก เรียกได้ว่า reset ได้ครองโลก CSS มาอย่างยาวนาน จนกระทั่งมียอดกระทาชาย 2 หนุ่ม คือ **Nicolas Gallagher** ([@necolas](https://twitter.com/necolas)) และ **Jonathan Neal** ([@jon_neal](https://twitter.com/jon_neal)) พัฒนา [Normalize.css](https://necolas.github.com/normalize.css/) ขึ้นมาด้วยจุดประสงค์ที่แตกต่างออกไปจาก CSS Reset คือ ไม่ต้องให้ทุก browser เริ่มกำหนด style ใหม่จาก 0 แต่เน้นปรับการแสดงผล style เริ่มต้นให้ตรงกันทุกๆ browser มากกว่า
@@ -27,7 +30,7 @@ Web Developer หลายคนคงรู้จักและคุ้นเ
 - Normalize.css แก้บั๊กหลายๆ อย่างที่อยู่นอกเหนือ CSS Reset เช่น HTML5 search form หรือ การแสดงผล SVG เป็นต้น
 - Normalize.css ดูไม่รกรุงรังเมื่อดูจาก developer tools ทั้งหลาย  ที่เจอบ่อยๆ เวลา inspect element ดู เมื่อใช้ reset
 
-![cluttered-css](images/8507760424_b37ae2b173_z.jpg)
+![cluttered-css](/images/normalize-css/8507760424_b37ae2b173_z.jpg)
 
 - Normalize.css แยกเป็นส่วนๆ ชัดเจน เช่น form, typography ส่วนไหนที่เราไม่ต้องการ ก็ลบออกไปได้
 - Normalize.css มี document ที่ดีกว่า CSS Reset .. ที่เห็นได้ชัดก็คือมีอธิบายในตัวโค้ดเลย ส่วน CSS Reset มักจะมาแบบแห้งๆ ไม่มีอธิบายอะไร นอกจากนี้ Normalize.css ยังมี document บน Github ที่ละเอียดดีอีกด้วย

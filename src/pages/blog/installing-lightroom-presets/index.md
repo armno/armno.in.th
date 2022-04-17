@@ -11,7 +11,9 @@ tags:
 - Presets
 title: 'วิธีใช้ Lightroom Presets ตอน 2: ติดตั้ง Presets'
 url: /2011/10/27/installing-lightroom-presets/
-wordpress_id: 1892
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ปกติ Adobe Photoshop Lightroom มี presets มาให้เยอะพอสวมควรครับ (กะด้วยสายตาน่าจะประมาณ 30 กว่าอันได้) ซึ่งทำให้เราสามารถปรับแต่งรูปของเราได้หลายๆ แนว นอกจากนี้ เรายังสามารถเพิ่ม presets ให้กับ Lightroom ได้อีกด้วยครับ วิธีที่ง่ายที่สุดคือ ไปโหลด presets มาจากเว็บที่เขาแจกฟรี (ซึ่งก็มีเยอะพอสมควร) ที่ผมโหลดมาก็จาก 2 เว็บนี้ครับ

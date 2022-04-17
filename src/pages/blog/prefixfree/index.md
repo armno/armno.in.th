@@ -15,6 +15,10 @@ tags:
   - Web Development
 title: จัดการ CSS3 Vendor Prefixes ด้วย prefixfree.js
 url: /2012/03/18/prefixfree-js/
+thumbnail: /images/prefixfree/8506629435_7bed3a069c_o.jpg
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ปกติเวลาเราเขียน CSS3 นั้นต้องเขียน prefix สำหรับ property บางตัว ที่ browser บางเวอร์ชั่นที่ยังไม่รู้จัก W3C standards เช่น gradient background ลากยาวมหึมา (โค้ดจาก [CSS3Please.com](https://css3please.com/))
@@ -33,7 +37,7 @@ url: /2012/03/18/prefixfree-js/
 
 เห็นโค้ดแล้วเหนื่อย **[Lea Verou](https://lea.verou.me/)** เจ้าของเดียวกับ [dabblet](https://armno.in.th/2012/03/12/dabblet-com-css-playground/) เลยทำ [prefixfree.js](https://leaverou.github.com/prefixfree/) ขึ้นมาเพื่อเป็นตัวจัดการกับ prefix ต่างๆ ให้ โดยที่เราเขียนแค่เวอร์ชั่น W3C standards ตัว prefixfree.js ก็จะใส่ prefix ให้เท่าที่จำเป็น ขึ้นอยู่กับ browser ที่ใช้ครับ
 
-![prefix-free](images/8506629435_7bed3a069c_o.jpg)
+![prefix-free](/images/prefixfree/8506629435_7bed3a069c_o.jpg)
 
 วิธีใช้ก็แค่เรียกใช้ prefixfree.js ในหน้าที่เราต้องการครับ
 

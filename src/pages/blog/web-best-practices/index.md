@@ -13,6 +13,10 @@ tags:
   - Web Application
 title: สิ่งที่(เคย)มองข้าม เมื่อทำ Web Application
 url: /2012/02/01/web-application-considerations/
+thumbnail: /images/web-best-practices/8509240178_da6df868a4_z.jpg
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ช่วงนี้ได้มีโอกาสออกไปแนะนำบริษัทตามมหาวิทยาลัยต่างๆ มีโอกาสได้พูดคุยกับน้องๆ ปี 4 (ซึ่งกำลังปั่นโปรเจ็คจบกันอยู่) ก็พลอยนึกถึงตัวเอง เมื่อตอนยังเรียนอยู่ด้วยครับ ลองเปรียบเทียบตัวเองในตอนนี้ กับสมัยก่อนนู้น ก็พบว่ามีหลายอย่างที่สำคัญในการทำ web application ที่ตอนผมเรียนอยู่นั้นไม่เคยได้คิดถึงเลย แต่ก็เป็นสิ่งจำเป็นมากในการทำ web application เพื่อใช้งานจริงครับ
@@ -23,7 +27,7 @@ url: /2012/02/01/web-application-considerations/
 
 ### 1. Performance
 
-![DOM Performance](images/8509240178_da6df868a4_z.jpg)
+![DOM Performance](/images/web-best-practices/8509240178_da6df868a4_z.jpg)
 
 ในโค้ดอาจจะมี `foreach` loop ซ้อนกัน 3-4 ชั้น หรือมี database query ซ้ำๆ กันหลายรอบ มีฟังก์ชั่นที่ทำงานเหมือนๆ กันอยู่เต็มไปหมด (ซึ่งเกิดจากการ copy & paste) ส่วนตอนพรีเซ้นต์นั้นก็รันบนเครื่องของเราเอง (localhost) ขอแค่มันรันได้บนเครื่องของเราก็พอ ซึ่งแน่นอนว่ามันรันได้ไว เพราะคอมเราสเป็คมันเทพ
 
@@ -33,7 +37,7 @@ url: /2012/02/01/web-application-considerations/
 
 ### 2. Security
 
-![plain-text password](images/8509240170_340e6a9a76_z.jpg)
+![plain-text password](/images/web-best-practices/8509240170_340e6a9a76_z.jpg)
 
 ที่เจอบ่อยที่สุดคือการเก็บฟิลด์ `password` เป็น plain text (ไม่มีการเข้ารหัสก่อนเก็บลงฐานข้อมูล) มาพร้อมกับการตั้ง `username` เป็น admin พร้อม `password`  เป็น 12345 ใครใส่มั่วๆ หลุดเข้ามาถึงฐานข้อมูลได้ ก็มีเฮกันเลยทีเดียว
 
@@ -47,7 +51,7 @@ web application ที่ดี ไม่ควรจะหวั่นแม้
 
 ### 4. Design
 
-![bad form design](images/8508132509_ddb0292c90_z.jpg)
+![bad form design](/images/web-best-practices/8508132509_ddb0292c90_z.jpg)
 
 ไม่ค่อยใส่ใจกับรูปร่างหน้าตา แต่ไปให้ความสำคัญกับข้อมูลมากกว่า ซึ่งมันก็เวิร์กนะครัับ application มันทำงานได้ แต่หน้าตามันน่าเบื่อโคตรๆ เลย มักไม่มีอะไรมากไปว่า input form เรียงกันเป็นสิบๆ ใช้ฟอนต์มาตรฐานที่มากับ browser แสดงข้อมูลจากฐานข้อมูลก็เป็นตาราง (ที่มีเส้นขอบหนาๆ) รูปแบบเดิมๆ ไปซะหมด
 

@@ -1,7 +1,6 @@
 ---
 categories:
 - Web Development
-comments: true
 date: 2011-11-19T23:31:27Z
 description: สำหรับการเพิ่ม code snippet ให้กับ Sublime Text 2 นั้นก็ง่ายๆ เลย เริ่มจากไปที่เมนู
   Tools > New Snippet ก็จะเจอหน้าจอ default ตามรูป
@@ -13,7 +12,9 @@ tags:
 - Web Development
 title: เพิ่ม Code Snippet ให้ Sublime Text 2
 url: /2011/11/19/code-snippet-sublime-text-2/
-wordpress_id: 1911
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 หลังจากใช้งาน Sublime Text 2 มาได้สักพัก พอคุ้นเคยแล้วก็จะเริ่มหาวิธีการเพิ่ม code snippet ไว้ใช้เอง ([แบบที่เคยทำบน NetBeans](https://armno.in.th/2011/04/25/netbeans-tips-code-templates/)) เพื่อช่วยให้การเขียนโค้ดนั้นสะดวกรวดเร็วยิ่งขึ้นครับ
@@ -34,7 +35,7 @@ wordpress_id: 1911
 
 ![เพิ่มโค้ด snippet ใน Sublime Text](https://files.armno.in.th/uploads/2011/11/pasted-text.jpg)
 
-จากนั้นก็เซฟ (Ctrl + s) ตั้งชื่อไฟล์เป็นอะไรก็ได้ แต่นามสกุลไฟล์ต้องเป็น .sublime-snippet นะครับ
+จากนั้นก็เซฟ (Ctrl + s) ตั้งชื่อไฟล์เป็นอะไรก็ได้ แต่นามสกุลไฟล์ต้องเป็น `.sublime-snippet` นะครับ
 
 ![Save snippet](https://files.armno.in.th/uploads/2011/11/saved.jpg)
 
@@ -46,7 +47,7 @@ wordpress_id: 1911
 
 ![ใส่ตัวแปรใน snippet](https://files.armno.in.th/uploads/2011/11/supernav.jpg)
 
-ตัวแปรใน content จะมี pattern เป็นแบบ** ${ตัวเลข:ข้อความ default}** โดยที่เรากด tab ตัว cursor มันก็จะเลื่อนไปเรื่อยๆ ตามตัวเลขครับ .. นอกจากนี้ เรายังใส่ตัวแปรซ้ำกันหลายๆ ที่ เพื่อให้ไม่ต้องพิมพ์หลายครั้งก็ได้นะครับ
+ตัวแปรใน content จะมี pattern เป็นแบบ `${ตัวเลข:ข้อความ default}` โดยที่เรากด tab ตัว cursor มันก็จะเลื่อนไปเรื่อยๆ ตามตัวเลขครับ นอกจากนี้ เรายังใส่ตัวแปรซ้ำกันหลายๆ ที่ เพื่อให้ไม่ต้องพิมพ์หลายครั้งก็ได้นะครับ
 
 ![ใส่ตัวแปรใน snippet](https://files.armno.in.th/uploads/2011/11/supernav_repeat.jpg)
 

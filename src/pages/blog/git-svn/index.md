@@ -14,6 +14,10 @@ tags:
   - Version Control
 title: ความแตกต่างระหว่าง Git กับ SVN
 url: /2012/02/26/git-vs-svn/
+thumbnail: /images/git-svn/8506668763_d37fa72aaf_o.jpg
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 บริษัทที่ผมทำงานอยู่ใช้ **Git** เป็น version control system ครับ ก่อนหน้านี้ผมเคยศึกษาและลองใช้ Subversion (SVN) ดูบ้างตอนฝึกงาน และตอนทำโปรเจ็คจบ พี่เต้ ([@siwawong](https://twitter.com/siwawong)) เคยถามไว้นานแล้วว่า Git กับ SVN นั้นต่างกันยังไง ผมก็เลยลองไปค้นข้อมูลดูครับ
@@ -22,9 +26,9 @@ url: /2012/02/26/git-vs-svn/
 
 ไม่ขอลงรายละเอียดว่า Git หรือ SVN คืออะไรนะครับ ลองตามไปอ่านได้ที่ เว็บไซต์ของ [Git](https://git-scm.com/) และ ​[SVN](https://subversion.tigris.org/) ได้เลยครับผม
 
-![subversion](images/svn-name-banner.jpg)
+![subversion](/images/git-svn/svn-name-banner.jpg)
 
-![git](images/8507774158_4e737d4d86_o.jpg)
+![git](/images/git-svn/8507774158_4e737d4d86_o.jpg)
 
 ### Distributed vs. Centralized
 
@@ -36,7 +40,7 @@ url: /2012/02/26/git-vs-svn/
 
 Git ใช้รันเลข revision ด้วย hashed string เช่น `247ece...8a8572` ส่วน SVN นั้นรันเป็นเลข integer ธรรมดา เหตุผลที่เป็นแบบนี้เพราะถ้า Git ใช้ integer ก็อาจจะทำให้ revision number ของเราใน local repo ไปชนกับของคนอื่นได้ (เช่น version 3 ใน repo ของเรา อาจไม่เหมือนกัน version 3 ในเครื่องของเพื่อน ซึ่งเกิดขึ้นได้เพราะมันเป็น distributed นี่แหละ) สำหรับ SVN รันเป็น integer ได้เพราะทุกครั้งที่ commit การ commit นั้นก็จะพุ่งไปยัง SVN server เลย และเลข revision ก็จะถูกเพิ่มไปอีก 1 ดังนั้นเลข revision ต้องตรงกันทุกคนอยู่แล้ว
 
-![git-revision-number](images/8506668763_d37fa72aaf_o.jpg)
+![git-revision-number](/images/git-svn/8506668763_d37fa72aaf_o.jpg)
 
 ### การทำ Branch
 

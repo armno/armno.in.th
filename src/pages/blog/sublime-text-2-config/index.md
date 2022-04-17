@@ -12,6 +12,9 @@ tags:
 - Web Development
 title: แก้ไขการตั้งค่าต่างๆ ใน Sublime Text 2
 url: /2011/12/11/sublime-text-2-config/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 สำหรับคนที่เปลี่ยนจาก full-featured IDE อย่าง [NetBeans](https://armno.in.th/2010/07/10/netbeans-ide-for-php-coding/), [Aptana](https://armno.in.th/2011/08/19/aptana-studio/) หรือแม้แต่ [Notepad++](http://notepad-plus-plus.org/) มาใช้ editor จรวดอย่าง [Sublime Text 2](https://armno.in.th/2011/09/20/sublime-text-2-editor-v12-engine/) ในตอนแรกอาจจะงงว่า หน้าจอการตั้งค่าต่างๆ ของ Sublime Text 2 มันอยู่ตรงไหน อย่างใน Netbeans ก็จะมีหน้าต่าง Options แบบในรูปข้างล่าง เอาไว้เข้าไปแก้ไขการตั้งค่าต่างๆ ของ IDE .. แต่ว่า ของ ​Sublime Text 2  มันอยู่ตรงไหนล่ะ
