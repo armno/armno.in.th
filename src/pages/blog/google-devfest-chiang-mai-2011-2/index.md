@@ -14,6 +14,9 @@ tags:
 - JavaScript
 title: บันทึก Google DevFest Chiang Mai 2011 ตอนที่ 1
 url: /2011/09/26/google-devfest-chiang-mai-2011-2/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ไปงาน Google DevFest 2011 มาเหมือนกันครับ ต้องขอจดบันทึกไว้ (ไม่งั้นลืมแน่นอน) เอาเท่าที่จดทันนะครับ ผิดถูกตรงไหน รบกวนบอกด้วยครับ .. อ้อ ไม่ได้ถ่ายรูปมา เพราะว่าไม่ได้ติดกล้องไปด้วยในวันงานครับผม
@@ -26,7 +29,9 @@ url: /2011/09/26/google-devfest-chiang-mai-2011-2/
 
 การใช้งาน เรียกใช้ผ่าน window object ได้เลย
 
-<pre><code class="language-javascript">window.requestAnimationFrame(time, callbackFunction, boundingElement);</code></pre>
+```js
+window.requestAnimationFrame(time, callbackFunction, boundingElement);
+```
 
 
 ดูเพิ่มเติมที่ Paul Irish blog ครับ [requestAnimationFrame for smart animating
@@ -38,7 +43,9 @@ url: /2011/09/26/google-devfest-chiang-mai-2011-2/
 
 การใช้งานก็โดยการใส่ event listener ให้กับ document object ครับ
 
-<pre><code class="language-javascript">document.addEventListener('webkitvisibilitychange', callbackFunction, false);</code></pre>
+```js
+document.addEventListener('webkitvisibilitychange', callbackFunction, false);
+```
 
 ซึ่งสถานะของ page visibility ก็มี 3 สถานะคือ `visible`, `hidden`, แล้วก็ `prerender` ครับผม
 
@@ -48,7 +55,9 @@ url: /2011/09/26/google-devfest-chiang-mai-2011-2/
 
 วิธีใช้ก็โคตรจะง่าย แค่ใส่ URL ของหน้าที่ต้องการ prerender ไว้ตรง tag head ครับ
 
-<pre><code class="language-markup">&lt;link rel="prerender" href="https://armno.in.th/"&gt;</code></pre>
+```html
+<link rel="prerender" href="https://armno.in.th/">
+```
 
 ลองไปเล่น API นี้ได้ที่ [http://prerender-test.appspot.com/](http://prerender-test.appspot.com/)
 
@@ -58,17 +67,21 @@ url: /2011/09/26/google-devfest-chiang-mai-2011-2/
 
 เช็คว่า user นั้น online หรือ offline จาก `window.navigator` object ซึ่งจะ return เป็น boolean กลับมาให้
 
-<pre><code class="language-javascript">var online = window.navigator.onLine;
+```js
+var online = window.navigator.onLine;
 if (online) {
     alert('user is online');
 } else {
     alert('user is offline');
-}</code></pre>
+}
+```
 
 ตัวอย่างการใช้งานอีกแบบ คือการเพิ่ม event listener ให้กับ `window` object เลย หน้าที่ของเราก็แค่เขียน callback function ขึ้นมาเมื่อ event `online` หรือ `offline` ถูก trigger ให้ทำงาน
 
-<pre><code class="language-javascript">window.addEventListener('online', syncWithServer);
-window.addEventListener('offline', turnOnLocalStorage);</code></pre>
+```js
+window.addEventListener('online', syncWithServer);
+window.addEventListener('offline', turnOnLocalStorage);
+```
 
 ใช้งานร่วมกับ local storage ได้เป็นอย่างดี ทำให้สามารถใช้งาน web app ได้อย่างต่อเนื่อง แม้เน็ตจะล่มระหว่างทาง
 
@@ -78,18 +91,22 @@ window.addEventListener('offline', turnOnLocalStorage);</code></pre>
 
 ถ้าให้เดา น่าจะต้องสร้าง intent object ใน document ของเราก่อน
 
-<pre><code class="language-markup">&lt;intent
+```html
+<intent
   action="http://webintents.org/share"
   type="image/*"
   href="share.html"
- /&gt;</code></pre>
+ />
+```
 
 แล้วถึงค่อยใช้ JavaScript ในการเรียกให้ intent object นั้นทำงาน
 
-<pre><code class="language-javascript">var intent = new Intent("http://webintents.org/share",
+```js
+var intent = new Intent("http://webintents.org/share",
   "text/uri-list",
   "http://news.bbc.co.uk");
-window.navigator.startActivity(intent);</code></pre>
+window.navigator.startActivity(intent);
+```
 
 งงมั้ยครับ ถ้าคุณงง ผมก็งง .. ลองโค้ดดูแล้ว ยังไม่มีอะไรเกิดขึ้น นอกจาก log ที่ console
 
@@ -109,11 +126,13 @@ API นี้สามารถแตกไฟล์ audio ออกมาใน
 
 เก็บข้อมูลในระดับ user action ตัวอย่างในงาน ใช้เก็บข้อมูลการคลิกลิงก์ออกไปยังเว็บไซต์อื่นของ user หรือสำหรับหน้าเพจที่ URL ไม่เปลี่ยน หากเราต้องการรู้ว่า user นั้นทำอะไรกับหน้านั้นบ้าง ทำได้โดยการเขียน observer ให้กับ element พร้อมกับ callback function ที่บันทึกข้อมูลไปที่ Google Analytics
 
-<pre><code class="language-javascript">// add event tracking on any links going to another sites
+```js
+// add event tracking on any links going to another sites
 link.observe('click', trackEventFunction);
 function trackEventFunction() {
     _gaq.push(['_trackEvent', 'Outbound Links', 'click', this.href);
-}</code></pre>
+}
+```
 
 สามารถนำไปประยุกต์ใช้อย่างอื่นเช่น HTML5 video player เพื่อดูว่าแต่ละปุ่มใน control (เช่น play, pause, replay) มีปุ่มไหนที่ถูกใช้งานบ่อยๆ บ้าง ซึ่งเราก็อาจจะนำข้อมูลตัวนี้ไปตัดสินใจว่า ควรให้ความสำคัญกับปุ่มใดมากกว่ากัน
 
@@ -121,24 +140,28 @@ function trackEventFunction() {
 
 ฟังไม่ค่อยรู้เรื่องครับ แต่เหมือนจะเป็นการ tag user อะไรซักอย่างเนี่ยแหละ ใครอ่าน code เข้าใจบอกผมด้วยนะครับ
 
-<pre><code class="language-javascript">// adding additional tags to users
+```js
+// adding additional tags to users
 _setCustomVar(
     index, // 1-5, block to store data
     name,
     value,
     opt_scope // scope/level of tracking
-);</code></pre>
+);
+```
 
 ### TrackSocial
 
 เอาไว้เก็บข้อมูลการใช้งาน Social Widgets (ปุ่ม share ยอดฮิตทั้งหลาย) ว่ามีการใช้งานอย่างไรบ้าง
 
-<pre><code class="language-javascript">// how social plugins are used
+```js
+// how social plugins are used
 _trackSocial(
     network, //facebook, g+, email
     action, // like, +1, share
     target_url // url of the acition
-);</code></pre>
+);
+```
 
 ### Campaign Variables
 
@@ -148,6 +171,8 @@ _trackSocial(
 
 ทำไปได้ ง่ายๆเลย ตามชื่อครับ เก็บข้อมูลเวลาการโหลดเพจของเรา .. โหลดไว ได้เปรียบ
 
-<pre><code class="language-javascript">_gaq.push(['_trackPageLoadTime']);</code></pre>
+```js
+_gaq.push(['_trackPageLoadTime']);
+```
 
 ตั้งใจว่าจะเขียนทั้งหมดในตอนเดียวเลย พบว่า ไม่สามารถทำได้ครับ แม่งจะโคตรยาว ขอจบตอนนี้ไว้แค่นี้ก่อน ไว้พบกันใหม่ตอนต่อไป สำหรับวันนี้ ขอลาไปก่อน สวัสดีครับ

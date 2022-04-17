@@ -12,6 +12,9 @@ tags:
 - Web Development
 title: Sublime Text 2 - Editor เครื่องยนต์ V12
 url: /2011/09/20/sublime-text-2-editor-v12-engine/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ### ปัญหากับ Aptana

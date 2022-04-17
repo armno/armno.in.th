@@ -10,7 +10,9 @@ tags:
 - Multitasking Gesture
 title: Jailbreak iPad 3G
 url: /2011/05/15/jailbreak-ipad-3g/
-wordpress_id: 1667
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 iPad 3G ของผมได้ถูก Jailbreak เป็นที่เรียบร้อยแล้วครับ .. โดยผมเอง

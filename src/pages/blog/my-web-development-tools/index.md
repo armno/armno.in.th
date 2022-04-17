@@ -13,7 +13,9 @@ tags:
 - Web Development
 title: เครื่องมือทำมาหากิน ฉบับ Web Developer
 url: /2011/07/19/my-web-development-tools/
-wordpress_id: 1775
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 เนื่องด้วยเพื่อนผม **@YuthNo** ได้ mention พาดพิงมาใน twitter ว่าไม่ค่อยมี tool อะไรใหม่ๆให้ลองเล่น ผมก็เลยได้ไอเดียมาเขียนบล็อกซะเลย ว่ากันด้วยเครื่องไม้เครื่องมือที่ผมใช้ทำมาหากิน (ด้วยอาชีพ web developer) อยู่ทุกวันนี้ ว่ามีอะไรบ้าง
