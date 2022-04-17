@@ -3,12 +3,15 @@ title: "Hugo: Resize รูปด้วย Image Processing"
 date: 2019-07-25T22:10:57+07:00
 url: /2019/07/25/hugo-image-resize
 description: Hugo มาพร้อมกับฟีเจอร์ Image Processing ที่ช่วยย่อรูป/crop รูปเป็นขนาดต่างๆ ได้จากรูปต้นฉบับที่เราเตรียมไว้รูปเดียว
-thumbnail: images/thumbnail.png
+thumbnail: /images/hugo-image-resize/thumbnail.png
 tags:
 - blog
 - hugo
 - performance
 - content
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 Hugo มาพร้อมกับฟีเจอร์ [Image Processing](https://gohugo.io/content-management/image-processing/) ที่ช่วยย่อรูป/crop รูปเป็นขนาดต่างๆ ได้
@@ -21,7 +24,7 @@ Hugo มาพร้อมกับฟีเจอร์ [Image Processing](http
   ถึงแม้ตั้ง quality เป็น 100 แล้วก็ตาม ปัญหานี้ผมยังหาทางแก้ไม่ได้ จึงปิดฟีเจอร์ไว้ก่อนครับ
 </p>
 
-![bigger file size after resized](images/resized-image-bigger.png)
+![bigger file size after resized](/images/hugo-image-resize/resized-image-bigger.png)
 
 ---
 
@@ -110,7 +113,7 @@ content/      # โฟลเดอร์เก็บ content ทั้งหม�
 
 ตอนรัน local server หรือตอน build Hugo ก็จะสร้างรูปใหม่ และแก้ path ของรูปใน build output ให้ ตัวอย่าง
 
-![path ของรูปที่ Hugo generate ให้](images/img.png)
+![path ของรูปที่ Hugo generate ให้](/images/hugo-image-resize/img.png)
 
 ### ย่อรูปพร้อมกันทีละหลายๆ ขนาด
 

@@ -27,11 +27,11 @@ url: /2015/02/26/setting-up-vim-part-2/
 เลยลองเปลี่ยนมาใช้ [Vundle][vundle-website] แทน Vundle ทำให้สามารถเก็บรายชื่อ plugin ไว้ในไฟล์ `.vimrc` ได้เลย
 จะเพิ่ม/ลบ/update plugin นั้นจะง่ายกว่า Pathogen มาก ทำได้ใน vim เลย
 
-{{< highlight bash >}}
+```bash
 :PluginInstall
 :PluginUpdate
 :PluginClean
-{{< / highlight >}}
+```
 
 วิธีติดตั้งแบบละเอียด ดูได้จาก [Quick start guide][vundle-quickstart] ของ Vundle ได้เลยครับ
 
@@ -39,11 +39,11 @@ url: /2015/02/26/setting-up-vim-part-2/
 
 ผมมี repo [dotfiles][my-dotfiles] ไว้เก็บ configuration ของโปรแกรมต่างๆ รวมถึง Vim ด้วย มีไฟล์ `.vimrc` กับโฟลเดอร์ `.vim` ทำให้แชร์ config ของ Vim ได้จากการทำ symlink มาที่ repo dotfiles
 
-{{< highlight bash >}}
+```bash
 $ git clone https://github.com/armno/dotfiles.git ~/dotfiles
 $ ln -s ~/dotfiles/.vimrc ~/.vimrc
 $ ln -s ~/dotfiles/.vim ~/.vim
-{{< / highlight >}}
+```
 
 เวลาอัพเดท config ใน `.vimrc` ก็สามารถ push ไปที่ repo dotfiles เพื่ออัพเดท vim config ในเครื่องอื่นๆ ได้ด้วย
 
@@ -55,10 +55,10 @@ $ ln -s ~/dotfiles/.vim ~/.vim
 
 แต่ fuzzy search ที่ติดมากับ CtrlP นั้น บางทีก็ช้าอยู่บ้างกับโปรเจ็คใหญ่ๆ โชคดีที่ CtrlP เราสามารถใช้ "custom command" ในการ search หาไฟล์ได้ ผมใช้ [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) ซึ่งเร็วกว่าพอสมควร
 
-{{< highlight vim >}}
+```vim
 # ในไฟล์ .vimrc
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-{{< / highlight >}}
+```
 
 ## แทนที่ Powerline ด้วย Vim-airline
 

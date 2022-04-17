@@ -31,23 +31,23 @@ Sublime Text นั้นเป็น editor ที่ได้รับคว�
 
 สำหรับ Mac จะอยู่ที่
 
-{{< highlight sh >}}
+```sh
 ~/Library/Application Support/Sublime Text 3/Packages
-{{< / highlight >}}
+```
 
 ส่วน Ubuntu นันจะอยู่ที่
 
-{{< highlight sh >}}
+```sh
 ~/.config/sublime-text-3/Packages
-{{< / highlight >}}
+```
 
 จากนั้น <code>clone</code> Git repo ของ Package Control ลงมาครับ แล้วก็ <code>checkout</code> ไปที่ branch <code>python3</code>
 
-{{< highlight sh >}}
+```sh
 $ git clone https://github.com/wbond/sublime_package_control.git "Package Control"
 $ cd "Package Control"
 \$ git checkout python3
-{{< / highlight >}}
+```
 
 หลังจากนั้นก็ restart Sublime Text ครับ
 
@@ -108,10 +108,10 @@ Sidebar Enhancement เป็น plugin ตัวหนึ่งที่ผม�
 
 จากนั้นไปที่ terminal ครับ <code>cd</code> ไปยังโฟลเดอร์ Packages (ที่เดียวกับที่ลง Package Control)
 
-{{< highlight sh >}}
+```sh
 $ cd ~/Library/Application Support/Sublime\ Text\ 3/Packages
 $ git clone -b st3 git://github.com/titoBouzout/SideBarEnhancements.git "SideBarEnhancements"
-{{< / highlight >}}
+```
 
 จากนั้น restart Sublime Text แล้ว Sidebar Enhancement ก็จะใช้ได้ครับ
 
@@ -119,9 +119,9 @@ $ git clone -b st3 git://github.com/titoBouzout/SideBarEnhancements.git "SideBar
 
 ขั้นตอนเหมือนกัน Sidebar Enhancement เพียงแต่ชื่อ branch ที่ checkout หลังจาก clone นั้น ชื่อ branch `sublime-text-3` ครับ
 
-{{< highlight sh >}}
+```sh
 $ cd ~/Library/Application Support/Sublime\ Text\ 3/Packages
 $ git clone -b sublime-text-3 https://github.com/SublimeLinter/SublimeLinter.git
-{{< / highlight >}}
+```
 
 แต่ละคนมีวิธี set up Sublime Text กันยังไงบ้าง เอามาแชร์กันได้นะครับ

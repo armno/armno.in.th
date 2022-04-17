@@ -19,11 +19,11 @@ tags:
 ยาวๆ มาทั้งหมด (ซึ่งยาวมาก) ก็จะเหลือแค่
 
 ```markdown
-{{</* instagram BhjmuHLBs48 */>}}
+{{</* instagram BhjmuHLBs48 *//>
 ```
 
 `instagram` คือชื่อของ shortcode ส่วน `Bhj..` คือ ID ของรูปจาก Instagram
-ทั้งหมดถูกหุ้มด้วย `{{</* */>}}`
+ทั้งหมดถูกหุ้มด้วย `{{</* *//>`
 
 นอกจาก Instagram แล้ว Hugo ยังมี [built-in shortcode](https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes)
 ให้อีกจำนวนหนึ่งไว้ช่วยทุ่นแรง
@@ -88,7 +88,7 @@ _(ในโพสต์[รีวิวจักรยาน Storck Visioner](ht
 `picture` และให้ส่ง parameter เข้าไปได้ แบบนี้
 
 ```markdown
-{{</* picture style="full" src="image.png" alt="image alternate text" */>}}
+{{</* picture style="full" src="image.png" alt="image alternate text" *//>
 ```
 
 เริ่มจาก ต้องไปสร้างไฟล์ HTML สำหรับ shortcode นี้ก่อน ผมเลือกเก็บไว้ใน theme
@@ -118,4 +118,4 @@ _(ในโพสต์[รีวิวจักรยาน Storck Visioner](ht
 
 ทดสอบเพิ่มรูปโดยใช้ `pitcure` shortcode
 
-{{< picture wrapper-class="semi-full" src="images/platoo.jpg" alt="ทดสอบ picture shortcode ด้วยรูปปลาทู" >}}
+<Picture wrapper-class="semi-full" src="images/platoo.jpg" alt="ทดสอบ picture shortcode ด้วยรูปปลาทู" />

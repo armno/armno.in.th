@@ -17,15 +17,15 @@ url: /2012/04/19/wp-enqueue-script-wordpress/
 
 ปกติเราจะโหลดไฟล์ JavaScript เข้ามาในเพจโดยใช้แท็ก `<script>`
 
-{{< highlight html >}}
+```html
 <script src="js/script.js"></script>
-{{< / highlight >}}
+```
 
 ซึ่งพอมาทำธีม WordPress ผมก็จะมักง่ายโดยการใช้แท็ก `<script>` อย่างเดิมนี่แหละ
 
-{{< highlight html >}}
+```html
 <script src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
-{{< / highlight >}}
+```
 
 จริงๆ แล้ว WordPress มีฟังก์ชั่นสำหรับโหลด JavaScript อยู่แล้วนั่นก็คือ `wp_enqueue_script` ที่ผลลัพธ์ก็เหมือนกัน คือได้แท็ก `<script>` ออกมา แต่ฟังก์ชั่นนี้มีประสิทธิภาพมากกว่า ซึ่งก็คือ
 
@@ -39,7 +39,7 @@ url: /2012/04/19/wp-enqueue-script-wordpress/
 1. โหลด jquery.colorbox.min เข้ามาเก็บที่ `/wp-content/themes/sera/js/jquery.colorbox.min.js`
 2. ในไฟล์ `functions.php` ของธีม เรียกใช้ฟังก์ชั่น `wp_enqueue_script`
 
-{{< highlight php >}}
+```php
 <?php
 wp_enqueue_script(
     'colorbox',
@@ -47,7 +47,7 @@ wp_enqueue_script(
     'jquery',
     '1.3.19'
 );
-{{< / highlight >}}
+```
 
 เพียงเท่านี้ เจ้าไฟล์ jquery.colorbox.min.js ก็จะถูกโหลดเข้ามาอย่างถูกหลักอนามัย (ซึ่งก็คือหลังจากที่ jQuery ถูกโหลดเข้ามาแล้วนั่นเอง)
 

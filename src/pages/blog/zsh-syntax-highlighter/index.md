@@ -41,20 +41,20 @@ url: /2016/04/12/zsh-syntax-highlighter/
 
 ขั้นแรกก็ต้อง clone repo ของ `zsh-syntax-highlighting` มาไว้ใน `oh-my-zsh` ในเครื่องเราก่อน
 
-{{< highlight sh >}}
+```sh
 $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-{{< / highlight >}}
+```
 
 จากนั้นเพิ่มชื่อ `zsh-syntax-highlighting` ใน `plugins` ในไฟล์ `~/.zshrc`
 
-{{< highlight text >}}
+```text
 plugins=(git colorize sublime vi-mode zsh-syntax-highlighting)
-{{< / highlight >}}
+```
 
 สุดท้ายก็ source ไฟล์ `~/.zshrc` ให้ config ใหม่นี้ทำงาน เป็นอันเสร็จพิธี
 
-{{< highlight sh >}}
+```sh
 $ source ~/.zshrc
-{{< / highlight >}}
+```
 
 Happy Songkran จ้า

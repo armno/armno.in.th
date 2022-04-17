@@ -21,7 +21,7 @@ EditorConfig ก็เป็นไฟล์​ text ธรรมดาที่�
 
 ### ตัวอย่างไฟล์ `.editorconfig`
 
-{{< highlight text >}}
+```text
 
 # editorconfig.org
 
@@ -34,11 +34,11 @@ end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
-{{< / highlight >}}
+```
 
 ทุกไฟล์ใน project ก็จะใช้ coding style แบบนี้ครับ ซึ่งเรายังสามารถกำหนด coding style ที่แตกต่างกันไปตามแต่ละชนิดของไฟล์ก็ได้ เช่น
 
-{{< highlight text >}}
+```text
 
 # editorconfig.org
 
@@ -55,7 +55,7 @@ indent_size = 4
 [tests/**.html]
 indent_style = tab
 indent_size = 2
-{{< / highlight >}}
+```
 
 ส่วนในไฟล์ `.editorconfig` นั้นสามารถตั้งค่าอะไรได้บ้าง ดูได้จาก [EditorConfig Properties](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties) ได้เลยจ้า
 
@@ -71,7 +71,7 @@ indent_size = 2
 
 ส่วน vim นั้นก็มี plugin [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) ลงผ่าน pathogen ได้เลย ลงปุ๊บก็อ่าน `.editorconfig` ได้ทันทีครับ
 
-{{< highlight bash >}}
+```bash
 $ cd ~/.vim/bundle
 $ git clone https://github.com/editorconfig/editorconfig-vim.git
-{{< / highlight >}}
+```

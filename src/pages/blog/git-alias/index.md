@@ -21,15 +21,15 @@ Workflow ของ Git ในชีวิตประจำวันของผ
 
 ### วิธีการสร้าง Git alias
 
-{{< highlight sh >}}
+```sh
 \$ git config --global alias.s "status"
-{{< / highlight >}}
+```
 
 ซึ่งเวลาเราพิมพ์ `git s` ก็จะเรียกใช้คำสั่ง `git status` ครับผม
 
-{{< highlight sh >}}
+```sh
 \$ git config --global alias.lol "log --decorate --oneline --graph"
-{{< / highlight >}}
+```
 
 ก็จะได้ผลอย่างในรูปครับ
 
@@ -45,9 +45,9 @@ alias ที่เราสร้างไว้ ถ้าเป็น global al
 
 ใช้คำสั่งเดียวกันครับ เพียงแต่ลบ `--global` ออก ก็จะเหลือแค่
 
-{{< highlight sh >}}
+```sh
 \$ git config alias.s "status"
-{{< / highlight >}}
+```
 
 alias ที่ถูกสร้างขึ้นก็จะอยู่ในไฟล์ `.git/config` ในโฟลเดอร์โปรเจ็คครับผม
 

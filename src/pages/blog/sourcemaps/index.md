@@ -14,17 +14,17 @@ url: /2013/04/22/using-source-maps-with-sass/
 
 เวลาทำงานโปรเจ็คที่ต้องใช้ [Sass](https://armno.in.th/2012/05/20/setting-up-sass/) เรามักวางโครงสร้างไฟล์ประมาณนี้
 
-{{< highlight sh >}}
+```sh
 css
 |-- _normalize.scss
 |-- _base.scss
 |-- _common.scss
 `-- _style.scss
-{{< / highlight >}}
+```
 
 แล้วใช้ `@import` (ของ Sass) ในการรวมไฟล์เป็นไฟล์เดียวตอน compile
 
-{{< highlight scss >}}
+```scss
 // style.scss
 
 @import "normalize";
@@ -34,13 +34,13 @@ css
 // style อื่นๆ ...
 .class1 { ... }
 .class2 { ... }
-{{< / highlight >}}
+```
 
 สั่ง watch แบบ compress css ไฟล์ output ให้เลย
 
-{{< highlight sh >}}
+```sh
 $ sass --watch style.scss:style.css --style=compressed
-{{< / highlight >}}
+```
 
 ปัญหาที่พบก็คือตอน inspect element โดยใช้ devtools นั้น inspector บอกเลขบรรทัดไม่ตรงกับความจริง (ถ้า compress มาก็เป็นบรรทัดที่ 1 หมดเลย) ทำให้ตามไปแก้ยากหน่อยครับ (โดยเฉพาะเมื่อเราไม่ได้เป็นคนวางโครงสร้างไฟล์ `.scss` เอง)
 
@@ -68,9 +68,9 @@ $ sass --watch style.scss:style.css --style=compressed
 
 เราต้องเพิ่ม option `--debug-info` ต่อท้ายคำสั่ง `sass` เข้าไป ส่วน output style เป็นอะไรก็ได้ **ยกเว้น** `compressed`
 
-{{< highlight sh >}}
+```sh
 $ sass --watch style.scss:style.css --debug-info
-{{< / highlight >}}
+```
 
 ทีนี้เมื่อเราใช้ inspector จิ้ม element ดู path ของไฟล์ css ก็จะเป็นของ scss แทน
 
@@ -91,6 +91,6 @@ $ sass --watch style.scss:style.css --debug-info
 
 ถ้าใช้ [guard](https://github.com/guard/guard) เป็นตัว watch ใน `Guardfile` ก็จะประมาณนี้ครับ
 
-{{< highlight ruby >}}
+```ruby
 guard 'sass', :input => 'scss', :output => 'css', :debug_info => true
-{{< / highlight >}}
+```

@@ -20,7 +20,7 @@ automated deploy ไว้เหมือนเดิม พร้อมกั�
 
 ## Netlify คืออะไร
 
-{{< picture-lazy src="images/netlify-homepage.png" alt="netlify.com screenshot">}}
+<Picture src="images/netlify-homepage.png" alt="netlify.com screenshot"/>
 
 [Netlify](https://www.netlify.com/) เป็นผู้ให้บริการโฮสต์ static website บน cloud server
 รองรับทั้ง static HTML website ธรรมดา หรือจะให้ build จาก static site generator
@@ -89,50 +89,50 @@ _(ใช้คำว่า "ลงมือ" เพื่อให้อ่า�
 
 ก่อนอื่นก็ต้องสร้างบัญชีของ Netlify ก่อน จากปุ่ม Sign Up ในหน้าแรก ผมเลือก Sign Up จาก GitHub account เลย ง่ายดี
 
-{{< picture-lazy src="images/00-create-account.png" alt="สมัครบริการ Netlify">}}
+<Picture src="images/00-create-account.png" alt="สมัครบริการ Netlify"/>
 
 หลังจากนั้นก็สร้าง project ใน Netlify โดยเลือก repo จาก GitHub .. ของผมก็เลือก `armno/blog`
 
-{{< picture-lazy src="images/00-create-new-site-in-netlify.png" alt="สร้างโปรเจ็ค Netlify">}}
+<Picture src="images/00-create-new-site-in-netlify.png" alt="สร้างโปรเจ็ค Netlify"/>
 
 ขั้นตอนต่อไปคือการเลือก branch ที่จะให้ deploy (`master`) พร้อมทั้งใส่ build command (`hugo`)
 Publish directory คือ folder output จาก build command (`public` กรณีที่ใช้ค่า default ของ Hugo)
 
-{{< picture src="images/01-just-hugo-as-build-script.png" alt="ระบุ build command และ publish directory">}}
+<Picture src="images/01-just-hugo-as-build-script.png" alt="ระบุ build command และ publish directory"/>
 
 แค่ 3 ขั้นตอน Netlify ก็จะสร้าง site ใหม่พร้อม URL ที่ไม่ซ้ำกับชาวบ้านมาให้ (`cranky-bohr-0e8ecb`, เปลี่ยนทีหลังได้) แล้วเริ่ม build และ deploy ทันที
 
 แน่นอนว่าต้องพังก่อน.. จะให้ build ผ่านตั้งแต่ครั้งแรกเลย ชีวิตก็ดูจะง่ายเกินไป
 
-{{< picture-lazy src="images/02-first-deploy-attempt-fails-of-course.png" alt="build แรกก็พังเลย">}}
+<Picture src="images/02-first-deploy-attempt-fails-of-course.png" alt="build แรกก็พังเลย"/>
 
 ข้อดีของการมีระบบ CD แบบนี้คือ เรากดเข้าไปดู log ของการ build หรือ deploy แต่ละครั้งได้ ว่าเกิดปัญหาอะไรขึ้น
 (build log เป็น public ใครจะ[กดเข้าไปดู](https://app.netlify.com/sites/armno/deploys/5b769bc9c96592071cef82df)ก็ได้ครับ)
 
 ใน log (ยาวมาก) บอกว่า error code คือ 255
 
-{{< picture-lazy src="images/02-failed-logs.png" alt="logs ของ build แรกที่พัง">}}
+<Picture src="images/02-failed-logs.png" alt="logs ของ build แรกที่พัง"/>
 
 ด้านบนของ build log จะมี link ["Debugging guide"](https://www.netlify.com/docs/build-gotchas/?_ga=2.119989133.400480420.1534516918-2113870570.1534516918) เตรียมไว้รอเราอยู่แล้ว กดเข้าไปดูได้เลย
 
-{{< picture-lazy src="images/02-debugging-guide.png" alt="สำหรับ build ที่ fail มี debugging guide เตรียมไว้ให้">}}
+<Picture src="images/02-debugging-guide.png" alt="สำหรับ build ที่ fail มี debugging guide เตรียมไว้ให้"/>
 
 ค้นหาคำว่า `255` ก็เจอจริงๆ คำแนะนำสำหรับ error code 255 คือลองเซ็ต version ของ Hugo ผ่านทาง Environment Variable ให้ตรงตามที่เราใช้จริงดู
 
-{{< picture-lazy src="images/03-fix-failed-build-hugo-instruction.png" alt="คำแนะนำสำหรับ error code 255 คือลองเซ็ต version ของ Hugo ให้ตรงตามที่เราใช้ดู">}}
+<Picture src="images/03-fix-failed-build-hugo-instruction.png" alt="คำแนะนำสำหรับ error code 255 คือลองเซ็ต version ของ Hugo ให้ตรงตามที่เราใช้ดู"/>
 
 Environement variables จะอยู่ที่หน้า **Project > Deploy Settings > Continuous Deployment**
 ผมใช้ Hugo เวอร์ชั่น `0.46` ก็ตั้งค่า `HUGO_VERSION` ตามนั้น ตามที่ debugging guide แนะนำ
 
-{{< picture-lazy src="images/04-fix-failed-build-by-putting-hugo-version-env-variable.png" alt="ตั้งค่าเวอร์ชั่นของ Hugo ผ่าน environment variable">}}
+<Picture src="images/04-fix-failed-build-by-putting-hugo-version-env-variable.png" alt="ตั้งค่าเวอร์ชั่นของ Hugo ผ่าน environment variable"/>
 
 จากนั้นในหน้า Project กดปุ่ม **Trigger Deploy** เพื่อ deploy ซ้ำอีกครั้ง
 
-{{< picture-lazy src="images/05-first-deploy-success.png" alt="build ผ่านแล้ว">}}
+<Picture src="images/05-first-deploy-success.png" alt="build ผ่านแล้ว"/>
 
 เมื่อ deploy สำเร็จ เราก็จะได้ URL ของ website บน Netlify มา (ตัวเขียวๆ ข้างบน) กดเข้าไปดูได้เลย
 
-{{< picture-lazy src="images/06-new-site-deployed-with-netlify-generated-url.png" alt="website บน Netlify">}}
+<Picture src="images/06-new-site-deployed-with-netlify-generated-url.png" alt="website บน Netlify"/>
 
 ---
 
@@ -143,55 +143,55 @@ Environement variables จะอยู่ที่หน้า **Project > Deplo
 
 เลือก **Add custom domain** จากเมนู Domain Management
 
-{{< picture-lazy src="images/07-add-custom-domain.png" alt="add custom domain บน Netlify">}}
+<Picture src="images/07-add-custom-domain.png" alt="add custom domain บน Netlify"/>
 
 จากนั้นก็ใส่ domain name เข้าไป
 
-{{< picture-lazy src="images/08-added-custom-domain.png" alt="add custom domain บน Netlify">}}
+<Picture src="images/08-added-custom-domain.png" alt="add custom domain บน Netlify"/>
 
 ในตอนแรก domain name ของเราจะยังไม่ได้แก้ DNS มันก็จะขึ้น warning แบบนี้ก่อน
 ซึ่งตอนนี้ DNS (Domain Name Server) ยังเป็นที่ DigitalOcean และยังชี้ไปที่ IP Address ของ server ที่ DigitalOcean อยู่
 (ในกรณีของผมที่จด domain name กับ [DotArai.com](https://dotarai.com) คือ **DotArai Registra > DigitalOcean DNS > DigitalOcean server**)
 
-{{< picture-lazy src="images/09-waiting-for-dns-propagation.png" alt="DNS settings ที่ยังไม่ถูกต้่อง">}}
+<Picture src="images/09-waiting-for-dns-propagation.png" alt="DNS settings ที่ยังไม่ถูกต้่อง"/>
 
 Netlify มีให้เลือก 2 ทาง คือ
 
 **แบบแรก**: ตั้งค่า `ALIAS` หรือ `ANAME` record ให้ชี้มาที่ server หรือ IP address ของ Netlify
 โดยที่เรายังใช้ DNS ของเราเองอยู่
 
-{{< picture-lazy src="images/10-dns-config-instructions.png" alt="DNS settings ที่ Netlify แนะนำ">}}
+<Picture src="images/10-dns-config-instructions.png" alt="DNS settings ที่ Netlify แนะนำ"/>
 
 **แบบที่สอง**: ใช้ Netlify เป็น DNS (ของผมก็จะเป็น **DotArai Registra > Netlify DNS > Netlify server** แทน)
 ผมเลือกทางนี้เพราะจะได้จัดการทุกอย่างได้ใน Netlify เลย
 
-{{< picture-lazy src="images/11-use-netlify-as-dns.png" alt="เลือกใช้ Netlify DNS">}}
+<Picture src="images/11-use-netlify-as-dns.png" alt="เลือกใช้ Netlify DNS"/>
 
 พอกด Set up Netlify DNS ก็จะพบขั้นตอนการเปลี่ยนค่า name server ของ domain ของเรา
 
-{{< picture-lazy src="images/12-dns-instructions-to-put-in-dotarai.png" alt="Netlify DNS">}}
+<Picture src="images/12-dns-instructions-to-put-in-dotarai.png" alt="Netlify DNS"/>
 
 ผมจด domain name ที่ DotArai.com ก็ต้องเข้าไปแก้ไขค่า name server ที่ DotArai ให้เป็นค่าใหม่
 
-{{< picture-lazy src="images/14-updated-dns-dotarai.png" alt="เปลี่ยน name servers ให้ชี้ไปที่ Netlify DNS">}}
+<Picture src="images/14-updated-dns-dotarai.png" alt="เปลี่ยน name servers ให้ชี้ไปที่ Netlify DNS"/>
 
 ในระหว่างนี้ต้องรอให้ค่า name server ของเราเปลี่ยนค่า (DNS propagation) ปกติแล้วจะไม่เกิน 24 ชั่วโมง
 ของ DotArai ค่อนข้างไว ในถึง 1 ชั่วโมงก็อัพเดทแล้ว
 
 พอไม่ได้ใช้ DNS เดิมแล้ว ก็ต้องค่า SSL/TLS certificate ใหม่ ให้มาใช้ของ Netlify แทน
 
-{{< picture-lazy src="images/15-ssl-waiting-for-dns-propagation.png" alt="ระหว่างรอ dns">}}
+<Picture src="images/15-ssl-waiting-for-dns-propagation.png" alt="ระหว่างรอ dns"/>
 
 ระหว่างที่รอก็ไป revoke certificate ของเดิมบน DigitalOcean server, ลบ virtual host,
 หรือแม้แต่ลบ domain name ของจาก account ของ DigitalOcean ได้เลย
 
 พอ DNS อัพเดทเสร็จสมบูรณ์แล้ว Netlify ก็จะขึ้น status ว่าเราได้ใช้ Netlify DNS แล้ว
 
-{{< picture-lazy src="images/18-dns-successfully-setup-on-netlify.png" alt="dns อัพเดทเสร็จแล้ว">}}
+<Picture src="images/18-dns-successfully-setup-on-netlify.png" alt="dns อัพเดทเสร็จแล้ว"/>
 
 SSL/TLS certificate ก็เช่นกัน
 
-{{< picture-lazy src="images/17-dns-verification-after-update-dns.png" alt="dns อัพเดทเสร็จแล้ว">}}
+<Picture src="images/17-dns-verification-after-update-dns.png" alt="dns อัพเดทเสร็จแล้ว"/>
 
 ถึงตอนนี้เท่ากับว่า armno.in.th ได้ไปอยู่บน Netlify อย่างสมบูรณ์แล้ว
 
@@ -208,18 +208,18 @@ sub-domain ที่สร้างขึ้นมาอัตโนมัติ
 ที่กำหนด redirect rules ไว้ แล้วเก็บไฟล์ไว้ในโฟลเดอร์ `static` ก็เสร็จเรียบร้อย
 _(Netlify ให้กำหนด redirect ได้ค่อนข้างละเอียด อ่านเพิ่มเติมได้ใน [Doc](https://www.netlify.com/docs/redirects/) ครับ)_
 
-{{< picture-lazy src="images/19-redirect-rules.png" alt="ตั้งค่า redirect rules ใน Netlify">}}
+<Picture src="images/19-redirect-rules.png" alt="ตั้งค่า redirect rules ใน Netlify"/>
 
 ### 4. เปิดใช้ Assets Optimization
 
 ในขั้นตอนการ deploy เราสามารถตั้งค่าให้ Netlify optimize assets เบื้องต้น ให้เราแบบอัตโนมัติได้เลย
 พร้อมกับนำไปวางไว้บน CDN แล้วทำให้เว็บเราเรียก assets จาก CDN แทน สะดวกมากมาย
 
-{{< picture-lazy src="images/20-automated-assets-optimization.png" alt="เปิดใช้งาน assets optimization">}}
+<Picture src="images/20-automated-assets-optimization.png" alt="เปิดใช้งาน assets optimization"/>
 
 ## สรุป
 
-{{< picture-lazy src="images/quick-perf-audit.png" alt="ผล audits">}}
+<Picture src="images/quick-perf-audit.png" alt="ผล audits"/>
 
 ประทับใจกับ Netlify มากตั้งแต่ใช้งานครั้งแรก นอกจากได้ฟีเจอร์ทาง CD/automation มาเพียบแล้ว
 UI ของ Netlify ก็ทำมาสวยงามและใช้งานง่ายมาก เป็น product ที่ทำมาดี ขอเชียร์ครับ

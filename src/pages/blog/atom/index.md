@@ -69,10 +69,10 @@ Atom มาพร้อมกับ [`apm`](https://github.com/atom/apm) หร�
 จริงๆ ผม map แค่ตัวเดียวคือ <kbd>,</kbd> + <kbd>e</kbd> เป็น escape เพื่อออกจาก insert mode ไปหา command mode
 วิธีการตั้ง keymap เอง กด <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>p</kbd> แล้วหาคำว่า `open your keymap` แล้วก็ใส่แบบนี้
 
-{{< highlight text >}}
+```text
 'body':
   ', e': 'vim-mode:activate-normal-mode'
-{{< / highlight >}}
+```
 
 ## 3. UI Theme & Syntax Theme
 
@@ -99,11 +99,11 @@ Atom มันแปลกตรงที่ UI Theme กับ Syntax Theme ส
 
 เปิด command palette แล้วเลือก `open your stylesheet` แล้วก็ใส่ CSS ให้ `.tab-bar` เป็น `display: none`
 
-{{< highlight css >}}
+```css
 .tab-bar {
   display: none;
 }
-{{< / highlight >}}
+```
 
 ## 4. Packages
 
@@ -118,7 +118,7 @@ Atom มันแปลกตรงที่ UI Theme กับ Syntax Theme ส
 
 อื่นๆ ก็ตามนี้จ้า
 
-{{< highlight sh >}}
+```sh
 $ apm list
 
 /Users/armno/.atom/packages (17)
@@ -139,7 +139,7 @@ $ apm list
 ├── react@0.12.10
 ├── vim-mode@0.60.0
 └── vim-mode-visual-block@0.2.13
-{{< / highlight >}}
+```
 
 ถ้าใครมี package อะไรเจ๋งๆ แนะนำกันหน่อยนะครับ :D
 

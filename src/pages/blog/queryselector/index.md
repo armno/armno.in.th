@@ -18,44 +18,44 @@ url: /2012/03/26/queryselector-queryselectorall-selectors-api/
 
 ปกติ [DOM](https://www.w3.org/DOM/) _(Document Object Model)_ มี API method สำหรับการหา element จาก ID และจากชื่อ class อยู่แล้ว ตัวอย่างเช่น มี HTML แบบนี้
 
-{{< highlight html >}}
+```html
 
 <p id="welcome" class="message">
   Aloha! Welcome to Panda Empire!
 </p>
-{{< / highlight >}}
+```
 
 เราจากสามารถหา element p ได้จาก ID โดย
 
-{{< highlight javascript >}}
+```js
 var p = document.getElementById('welcome');
-{{< / highlight >}}
+```
 
 หรือหาจากชื่อ class
 
-{{< highlight javascript >}}
+```js
 var p = document.getElementsByClassName('message')[0];
-{{< / highlight >}}
+```
 
 แต่ใน HTML5 มี **Selectors API** เกิดขึ้นมาทำให้เราสามารถใช้ CSS selector ในการหา element ได้ง่ายๆ เลย (อารมณ์เดียวกับ selector ใน jQuery) โดยใช้ method `querySelector()` หรือ `querySelectorAll()`
 
 จากตัวอย่างข้างบน เราสามารถเขียนใหม่โดยใช้ Selectors API ได้เป็น
 
-{{< highlight javascript >}}
+```js
 var p = document.querySelector('#welcome');
-{{< / highlight >}}
+```
 
 หรือ
 
-{{< highlight javascript >}}
+```js
 var p = document.querySelector('.message');
-{{< / highlight >}}
+```
 
 หรือ
 
-{{< highlight javascript >}}
+```js
 var p = document.querySelectorAll('.message')[0];
-{{< / highlight >}}
+```
 
 ข้อสังเกตคือ parameter ที่เราส่งให้ `querySelector()` และ `querySelectorAll()` นั้นเป็น string ที่เป็น CSS Selector ต่างจากเดิมที่ใช้ชื่อ ID และ class
 
@@ -63,22 +63,22 @@ var p = document.querySelectorAll('.message')[0];
 
 สามารถใช้ CSS selector ที่ซับซ้อนๆ (รวมไปถึง CSS3 selector) เป็น parameter ในการ query DOM ได้ในครั้งเดียว เช่น
 
-{{< highlight javascript >}}
+```js
 var el = document.querySelector('.navigation li > a#current');
-{{< / highlight >}}
+```
 
 เปลี่ยน scope ของการ query DOM นอกเหนือจาก document element ก็ได้
 
-{{< highlight javascript >}}
+```js
 var ul = document.querySelector('#adminmenu');
 var li = ul.querySelectorAll('li');
-{{< / highlight >}}
+```
 
 chain ก็ยังได้
 
-{{< highlight javascript >}}
+```js
 var li = document.querySelector('#adminmenu').querySelectorAll('li');
-{{< / highlight >}}
+```
 
 ### Performance
 

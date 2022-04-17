@@ -24,26 +24,26 @@ url: /2014/03/22/install-vim-powerline-osx-mavericks/
 
 อันดับแรกเช็คเวอร์ชั่นของ Python ในเครื่องก่อน ซึ่งใน document ของ Powerline แนะนำให้ใช้เวอร์ชั่น 2.7 ครับ
 
-{{< highlight bash >}}
+```bash
 $ python --version
 # ของผมเป็น python 2.7.5
-{{< / highlight >}}
+```
 
 จากนั้นก็พบว่า ในเครื่องยังไม่มี `pip` ซึ่งจำเป็นสำหรับลง Powerline ก็ต้องลง `pip` ซะก่อน
 
-{{< highlight bash >}}
+```bash
 $ sudo easy_install pip
-{{< / highlight >}}
+```
 
 แล้วก็ลง Powerline ผ่าน `pip`
 
-{{< highlight bash >}}
+```bash
 $ pip install --user git+git://github.com/Lokaltog/powerline
-{{< / highlight >}}
+```
 
 เพื่อให้ Powerline ทำงาน ก็ต้องเพิ่ม path ของ Powerline ในไฟล์ `~/.vimrc`
 
-{{< highlight vim >}}
+```vim
 if has('statusline')
   " Always show status line
   set laststatus=2
@@ -51,7 +51,7 @@ if has('statusline')
   " Vim Powerline
   set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 endif
-{{< / highlight >}}
+```
 
 สุดท้ายเลือกใช้ font ที่ support Powerline (ซึ่งมักจะมีตัวอักษรแปลกๆ) ได้จาก [Lokaltog/powerline-fonts](https://github.com/Lokaltog/powerline-fonts)
 

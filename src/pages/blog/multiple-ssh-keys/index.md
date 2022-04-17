@@ -4,12 +4,15 @@ title: "TIL: Using Multiple SSH Keys"
 date: 2019-08-14T21:50:35+07:00
 url: /2019/08/14/multiple-ssh-keys
 description: Today I learned how to use multiple SSH keys on the same computer
-thumbnail: images/thumbnail.png
+thumbnail: /images/multiple-ssh-keys/thumbnail.png
 tags:
 - shell
 - ssh
 - security
 - command line
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 Today I learned how to use multiple SSH keys on one computer.
@@ -65,7 +68,7 @@ This includes git as well.
 
 I added the public key `~/.ssh/github.pub` to my GitHub [account settings page](https://github.com/settings/ssh/new).
 
-![Adding a new SSH Key in GitHub](images/github-settings.png)
+![Adding a new SSH Key in GitHub](/images/multiple-ssh-keys/github-settings.png)
 
 and make a test connection to verify that it works.
 

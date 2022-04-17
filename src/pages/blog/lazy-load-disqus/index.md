@@ -20,12 +20,12 @@ tags:
 
 แต่จริงๆ ไฟล์ที่ถูกโหลดมันไม่ได้มีแค่ไฟล์นี้ไฟล์เดียว เพราะไฟล์นี้มันก็ไปโหลดไฟล์อื่นๆ มาอีก
 
-{{< picture-lazy
+<Picture
   wrapper-class="semi-full"
   src="images/before.jpg"
   alt="before"
   ratio="16-10"
->}}
+/>
 
 <p class="message--warning">
   <a href="https://css-tricks.com/lazy-loading-disqus-comments/#comment-1605581">ผู้พัฒนา Disqus ชี้แจงใน css-tricks.com</a>ว่า
@@ -155,7 +155,7 @@ function loadDisqus(pageURL, id) {
 
 เรียก method `self.unobserve()` เพื่อหยุดการทำงานของ observer
 
-{{< highlight javascript "hl_lines=16 21" >}}
+```javascript
 const commentsElement = document.querySelector('#comments');
 if (!commentsElement) {
   return;
@@ -200,7 +200,7 @@ function loadDisqus(pageURL, id) {
     (d.head || d.body).appendChild(s);
   })();
 }
-{{< /highlight >}}
+```
 
 (หรือดู [main.js](https://github.com/armno/blog/blob/master/themes/lazy/static/js/main.js#L30) ใน repo ก็ได้ครับ)
 
@@ -219,12 +219,12 @@ resource ของ Disqus จะถูกโหลดเมื่อ scroll ล�
 การไม่โหลด Disqus ตั้งแต่แรก ลดเวลา [Time to Interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive) กับ Max Potential [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) ได้นิดหน่อย
 เพราะ CPU ทำงานน้อยลงกว่าเดิม
 
-{{< picture-lazy
+<Picture
   wrapper-class="semi-full"
   src="images/compare.png"
   alt="รูปเปรียบเทียบระหว่างก่อนและหลัง lazy load disqus"
   ratio="16-9"
->}}
+/>
 
 
 ## ⚠️ ข้อควรระวัง

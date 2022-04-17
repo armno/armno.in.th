@@ -8,7 +8,10 @@ tags:
 - angular
 - web development
 - javascript
-thumbnail: images/rename-folder.png
+thumbnail: /images/rename-angular-component/rename-folder.png
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 <p class="lead"><strong>TL;DR</strong> - There is no easy way to rename an Angular component.
@@ -33,7 +36,7 @@ Select **"Rename Symbol"** command and change the class name.
 VSCode will change the class name, and update all the references to this class in other files.
 This is safer than using global search and replace.
 
-<video src="images/rename-symbol.mp4" width="100%" autoplay muted controls loop></video>
+<video src="/images/rename-angular-component/rename-symbol.mp4" width="100%" autoplay muted controls loop></video>
 
 ### 2. Save all files with `Save All` command
 
@@ -43,39 +46,39 @@ A quick way to save all files is also using the command palette.
 
 <kbd>cmd+shift+p</kbd> and select **"File: Save All"**.
 
-<video src="images/save-all.mp4" width="100%" autoplay muted controls loop></video>
+<video src="/images/rename-angular-component/save-all.mp4" width="100%" autoplay muted controls loop></video>
 
 ### 3. Rename folder and file names manually
 
 Rename the component's folder and files names to the new name.
 This is done manually from VSCode's file explorer.
 
-![rename folder](images/rename-folder.png)
+![rename folder](/images/rename-angular-component/rename-folder.png)
 
-![rename files](images/rename-files.png)
+![rename files](/images/rename-angular-component/rename-files.png)
 
 VSCode will prompt to update import paths in other files. Select Yes.
 
-![rename files](images/auto-update-imports.png)
+![rename files](/images/rename-angular-component/auto-update-imports.png)
 
 ### 4. Update paths in component decorator
 
 Back to the component class, update paths in component decorator
 with new file names that were changed in the previous step.
 
-<video src="images/update-references.mp4" width="100%" autoplay muted controls loop></video>
+<video src="/images/rename-angular-component/update-references.mp4" width="100%" autoplay muted controls loop></video>
 
 ### 5. Update component selector used in the templates
 
 Since the component's selector is changed, there will be a need to update component's template tag in other templates too.
 
-![update template tag](images/update-template-tag.png)
+![update template tag](/images/rename-angular-component/update-template-tag.png)
 
 ### 6. Update component name in its spec file
 
 Update component's name in its spec file `*.spec.ts` to make the unit test report correct with updated name.
 
-<video src="images/update-spec.mp4" width="100%" autoplay muted controls loop></video>
+<video src="/images/rename-angular-component/update-spec.mp4" width="100%" autoplay muted controls loop></video>
 
 ### 7. Verify
 
@@ -89,4 +92,4 @@ just to see if there is any error reported.
 
 If not, I *assume* renaming the component is done. 🤞
 
-![production build](images/prod-build.png)
+![production build](/images/rename-angular-component/prod-build.png)

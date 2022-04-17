@@ -84,7 +84,7 @@ $ chmod +x rename.sh
 เจอคำตอบจาก [StackOverflow](https://stackoverflow.com/a/43661580)
 ก็คือใช้ command `ls` นั่นเอง
 
-```sh {hl_lines=[3,"5-6",9]}
+```sh
 #!/bin/bash
 
 markdownfiles=`ls *.markdown`
@@ -112,7 +112,7 @@ done
 
 ผมเสิชหาด้วย keyword `bash cut string` เจอกระทู้ใน [StackOverflow](https://stackoverflow.com/a/19482947) อีกแล้ว
 
-```sh {hl_lines=[7]}
+```sh
 #!/bin/bash
 
 markdownfiles=`ls *.markdown`
@@ -134,7 +134,7 @@ done
 จะใช้วิธีนับ index แบบเดิมไม่ได้แล้ว เพราะชื่อไฟล์แต่ละไฟล์ยาวไม่เท่ากัน
 ก็เลยให้มันตัด string หลังจากตัวจุด `.` ออกไปแทน
 
-```sh {hl_lines=[8]}
+```sh
 #!/bin/bash
 
 markdownfiles=`ls *.markdown`
@@ -155,7 +155,7 @@ done
 
 จาก variable ที่ได้จากขั้นตอนที่แล้ว เอาไปสร้างโฟลเดอร์ใหม่ด้วย `mkdir`.
 
-```sh {hl_lines=[9]}
+```sh
 #!/bin/bash
 
 markdownfiles=`ls *.markdown`
@@ -172,7 +172,7 @@ done
 
 ใช้ `mv`
 
-```sh {hl_lines=[10]}
+```sh
 #!/bin/bash
 
 markdownfiles=`ls *.markdown`

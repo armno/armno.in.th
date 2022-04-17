@@ -85,13 +85,13 @@ render ของเพจ (non-blocking) ส่วนข้อเสียก็
 
 แทนที่ (ใน tag `<head>`)
 
-{{< highlight html >}}
+```html
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-{{< / highlight >}}
+```
 
 ด้วย
 
-{{< highlight html >}}
+```html
 <script>
   WebFontConfig = {
     google: {
@@ -110,7 +110,7 @@ render ของเพจ (non-blocking) ส่วนข้อเสียก็
     s.parentNode.insertBefore(wf, s);
   })();
 </script>
-{{< / highlight >}}
+```
 
 (ในหน้า quick use ของ Google Fonts มี code ข้างบนให้ครับ)
 
@@ -125,17 +125,17 @@ tag `<link>` ด้วยการใช้ [loadCss][loadcss] ซึ่งเ�
 วิธีการใช้งานก็แค่ copy &amp; paste function loadCss ไว้ใน tag `<head>` ของเราเลย
 ขนาดของ function loadCss เล็กมากจนใส่แบบ inline ไปในเพจเลยก็ยังได้ (minify แล้วเหลือประมาณ 0.5KB)
 
-{{< highlight html >}}
+```html
 <!-- ใน <head> -->
 <script>
   function loadCSS(e,n,o,t){"use strict";var d=window.document.createElement("link"),i=n||window.document.getElementsByTagName("script")[0],s=window.document.styleSheets;return d.rel="stylesheet",d.href=e,d.media="only x",t&&(d.onload=t),i.parentNode.insertBefore(d,i),d.onloadcssdefined=function(n){for(var o,t=0;t<s.length;t++)s[t].href&&s[t].href.indexOf(e)>-1&&(o=!0);o?n():setTimeout(function(){d.onloadcssdefined(n)})},d.onloadcssdefined(function(){d.media=o||"all"}),d}
 </script>
-{{< / highlight >}}
+```
 
 แล้วเรียก function loadCss กับไฟล์ CSS ของเรา ซึ่งก็ควรมี tag `<noscript>` เป็น fallback สำหรับ
 user ที่ไม่มี JavaScript (หรือปิดไว้) เพื่อโหลดไฟล์ CSS ด้วย tag `<link>` ตามปกติครับ
 
-{{< highlight html >}}
+```html
 <!-- ใน <head> -->
 <script>
   loadCSS('/css/main.css');
@@ -143,7 +143,7 @@ user ที่ไม่มี JavaScript (หรือปิดไว้) เพ
 <noscript>
   <link rel="stylesheet" href="/css/main.css" media="all">
 </noscript>
-{{< / highlight >}}
+```
 
 - ☺ CSS ถูกโหลดเข้ามาแบบ non-blocking (asynchronous)
 - ☹ ต้องใช้ JavaScript

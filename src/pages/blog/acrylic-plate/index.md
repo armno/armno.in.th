@@ -10,8 +10,11 @@ tags:
 - acrylic
 categories:
 - hobby
-thumbnail: images/on-keyboard.jpg
-cover: images/on-keyboard.jpg
+thumbnail: /images/acrylic-plate/on-keyboard.jpg
+cover: /images/acrylic-plate/on-keyboard.jpg
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ความเดิมจากตอนที่แล้ว: [Mechanical Keyboard จาก DZ60RGB](https://armno.in.th/2019/07/19/mechanical-keyboard-mark-6/)
@@ -35,13 +38,13 @@ cover: images/on-keyboard.jpg
 เป็นเว็บที่ทำมาเพื่อออกแบบ plate กับ case ของ mechanical keyboard โดยเฉพาะ
 โดยที่ใส่ข้อมูลในเว็บแล้วมันจะ generate ไฟล์ CAD มาให้เลย พร้อมขนาดที่ถูกต้องเป๊ะๆ ไม่ต้องวาดเอง
 
-{{< picture-lazy
+<Picture
   wrapper-class="semi-full"
-  src="images/plate-case-builder.png"
+  src="/images/acrylic-plate/plate-case-builder.png"
   alt="หน้าเว็บ plate & case builder"
   ratio="16-10"
   caption="หน้าเว็บ Plate & Case Builder (http://builder.swillkb.com/)"
->}}
+/>
 
 plate ที่ผมอยากได้ ก็คือ plate ขนาด 60% layout ANSI เหมือนกับของเดิมที่ใช้อยู่
 วิธีการสร้างไฟล์ CAD ก็คือ
@@ -53,38 +56,38 @@ plate ที่ผมอยากได้ ก็คือ plate ขนาด 60
   * Stablizer Type เลือก `Cherry + Costar`
   * Case Type เลือก `Poker - 60%`
 
-{{< picture
+<Picture
   wrapper-class="semi-full"
-  src="images/kle.png"
+  src="/images/acrylic-plate/kle.png"
   alt="keyboard-layout-editor.com"
   caption="1. เลือก Default 60%"
->}}
+/>
 
-{{< picture
+<Picture
   wrapper-class="semi-full"
-  src="images/copy.png"
+  src="/images/acrylic-plate/copy.png"
   alt="เลือกแท็บ Raw data ด้านล่างของ keymap แล้ว copy code ทั้งหมดในช่อง Raw data มา"
   caption="2. copy Raw Data"
->}}
+/>
 
-{{< picture
+<Picture
   wrapper-class="semi-full"
-  src="images/builder.png"
+  src="/images/acrylic-plate/builder.png"
   alt="3"
   caption="3. เอา Raw Data มาใส่ในช่อง plate layout"
->}}
+/>
 
 เสร็จแล้วก็กดปุ่ม `Draw My CAD!!!` ข้างล่าง
 
 จากนั้นในแท็บ CAD Output ก็จะได้ไฟล์ออกมาให้เลือกโหลดได้ทั้ง SVG, DXF หรือ EPS
 ซึ่งไฟล์นี้สามารถปริ๊นต์ลงกระดาษ A4 ขนาดเท่าของจริงได้เลย
 
-{{< picture
+<Picture
   wrapper-class="semi-full"
-  src="images/cad-output.png"
+  src="/images/acrylic-plate/cad-output.png"
   alt="3"
   caption="output ดาวน์โหลดไฟล์เก็บไว้ได้"
->}}
+/>
 
 <p class="message--warning">
   หากอยากวาดแบบ CAD เอง แนะนำบทความ <a href="https://matt3o.com/anatomy-of-a-keyboard/" target="_blank" rel="noopener">Anatomy of a keyboard</a>
@@ -115,19 +118,19 @@ plate ของผม ร้านคิดค่าตัด 250 บาท ต�
 
 ร้านตัดได้ละเอียดดีมาก ขนาดตรงตามในแบบ รอยตัดก็คมและเนียนดี
 
-{{< picture-lazy
+<Picture
   wrapper-class="semi-full"
-  src="images/acrylic-plate.jpg"
+  src="/images/acrylic-plate/acrylic-plate.jpg"
   alt="plate อะคริลิค"
   ratio="16-9"
->}}
+/>
 
-{{< picture-lazy
+<Picture
   wrapper-class="semi-full"
-  src="images/plate-2.jpg"
+  src="/images/acrylic-plate/plate-2.jpg"
   alt="plate อะคริลิค"
   ratio="16-9"
->}}
+/>
 
 <p class="message--warning">
   ในคณะวิศวะฯ มช. เองก็มี<a href="http://me.eng.cmu.ac.th/new/?page_id=608">เครื่อง Laser Cut และ CNC</a> บริการสำหรับบุคคลภายนอกด้วย แต่ผมเองยังไม่ได้ไปลองใช้บริการครับ
@@ -140,12 +143,12 @@ plate ของผม ร้านคิดค่าตัด 250 บาท ต�
 ใส่ switch และ stabilizer ได้ตรงตามช่องทุกตัว
 เพียงแต่ต้องระวังมากขึ้นกว่าแผ่นอลูมิเนียม เพราะแผ่นอะคริลิคมันบอบบางกว่า
 
-{{< picture-lazy
+<Picture
   wrapper-class="semi-full"
-  src="images/on-keyboard.jpg"
+  src="/images/acrylic-plate/on-keyboard.jpg"
   alt="plate อะคริลิค"
   ratio="16-9"
->}}
+/>
 
 เรื่องเสียงนั้น รู้สึกว่าเปลี่ยนไปนิดหน่อย คิดว่าเสียงหลักๆ ยังมาจากเคสซึ่งก็ยังเป็นโลหะอยู่
 
@@ -162,10 +165,10 @@ plate ของผม ร้านคิดค่าตัด 250 บาท ต�
 คราวหน้าอยากจะลองใช้แผ่นอะคริลิคทำส่วนประกอบแบบอื่นๆ ดูบ้าง
 มีอะไรให้ลองเล่นอีกเยอะเลย
 
-{{< picture-lazy
+<Picture
   wrapper-class="semi-full"
-  src="images/full-with-keycaps.jpg"
+  src="/images/acrylic-plate/full-with-keycaps.jpg"
   alt="60% custom mechanical keyboard"
   ratio="16-9"
   caption="Keycaps: MDA Bigbone"
->}}
+/>

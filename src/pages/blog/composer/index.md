@@ -24,15 +24,15 @@ Composer นั้นใช้งานผ่าน command line ดังนั
 
 <em>[updated 2014.01.16]</em> ติดตั้งผ่าน [homebrew](http://brew.sh) นั้นดูเหมือนจะง่ายที่สุดครับ โดยก่อนอื่นเราต้อง tap composer ให้ homebrew รู้จักก่อน
 
-{{< highlight sh >}}
+```sh
 \$ brew tap josegonzalez/homebrew-php
-{{< / highlight >}}
+```
 
 จากนั้นก็ติดตั้ง composer
 
-{{< highlight sh >}}
+```sh
 \$ brew install josegonzalez/php/composer
-{{< / highlight >}}
+```
 
 #### ติดตั้งแบบ manual
 
@@ -40,36 +40,36 @@ Composer นั้นใช้งานผ่าน command line ดังนั
 
 เปิด terminal ขึ้นมาแล้วก็พิมพ์ command สองบรรทัดนี้เลย
 
-{{< highlight sh >}}
+```sh
 \$ curl -sS https://getcomposer.org/installer | php
-{{< / highlight >}}
+```
 
 ตามด้วย
 
-{{< highlight sh >}}
+```sh
 \$ mv composer.phar /usr/local/bin/composer
-{{< / highlight >}}
+```
 
 เสร็จแล้วเราก็จะสามารถเรียกใช้ <code>composer</code> command ได้จาก terminal แล้วครับ ทดสอบโดย
 
-{{< highlight sh >}}
+```sh
 \$ which composer
-{{< / highlight >}}
+```
 
 ก็จะได้ path ที่เราติดตั้ง Composer ไว้ครับ
 
-{{< highlight sh >}}
+```sh
 /usr/local/bin/composer
-{{< / highlight >}}
+```
 
 ### ใช้งาน Composer
 
 ผมจะลองติดตั้ง SwiftMailer เป็น library สำหรับส่ง email ใน PHP ด้วย Composer ขั้นตอนแรกก็สร้าง directory เปล่าๆ ขึ้นมาก่อน
 
-{{< highlight sh >}}
+```sh
 $ mkdir swift
 $ cd swift
-{{< / highlight >}}
+```
 
 จากนั้นสร้างไฟล์ชื่อ <code>composer.json</code> ขึ้นมา ไฟล์นี้จะเป็นตัวบอกว่าโปรเจ็คของเราต้องใช้ dependency ตัวไหนบ้าง สำหรับ library ต่างๆ หาได้จาก [packagist.org](https://packagist.org/) ครับ
 
@@ -77,19 +77,19 @@ $ cd swift
 
 ไฟล์ <code>composer.json</code> ก็จะประมาณนี้ครับ
 
-{{< highlight json >}}
+```json
 {
 "require" : {
 "swiftmailer/swiftmailer": "5.1.\*@dev"
 }
 }
-{{< / highlight >}}
+```
 
 แล้วก็รัน
 
-{{< highlight sh >}}
+```sh
 \$ composer install
-{{< / highlight >}}
+```
 
 ![image](images/9075336190_a56f25d621_o.png)
 
@@ -99,8 +99,8 @@ $ cd swift
 
 ใน directory <code>vendor</code> จะมีไฟล์ <code>autoload.php</code> ให้พร้อมให้เราใช้งาน ในโปรเจ็คของเราก็แค่เพิ่ม
 
-{{< highlight sh >}}
+```sh
 require 'vendor/autoload.php';
-{{< / highlight >}}
+```
 
 ก็จะทำให้สามารถใช้ SwiftMailer ในโปรเจ็คได้ครับ

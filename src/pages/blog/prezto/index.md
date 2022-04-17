@@ -48,12 +48,12 @@ Jerome Dalbert เขียนโพสต์ [Migrate From Oh-my-zsh to Prezto]
 - ไฟล์ config หลักของ Prezto คือ `~/.zpreztorc` ลองเปิดอ่านดูได้ครับ มี comment กำกับไว้ค่อนข้างดี
 - Prezto ตัวมันเองก็ถูกเรียกผ่าน `~/.zshrc` อีกที ในไฟล์ `~/.zshrc` ก็จะเจอ code ประมาณนี้
 
-{{< highlight bash >}}
+```bash
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-{{< / highlight >}}
+```
 
 ![file ต่างๆ ของ Prezto](images/prezto-files.png)
 
@@ -69,12 +69,12 @@ fi
 
 เมื่อเลือก theme ได้แล้ว ก็ไปเซ็ตที่ไฟล์ `~/.zpreztorc` หาคำว่า theme แล้วใส่ชื่อ theme ที่จะใช้ลงไป
 
-{{< highlight bash >}}
+```bash
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'cloud'
-{{< / highlight >}}
+```
 
 ส่วน module (plugin) นั้น มี default มาให้บ้างแล้ว (ในไฟล์ `~/.zpreztorc` อีกเช่นกัน)
 ซึ่งลำดับในการเรียก module นั้นสำคัญ ถ้าเรียงผิด module นั้นก็อาจจะไม่ทำงานได้

@@ -80,14 +80,14 @@ asset ที่รองรับคือ รูปภาพ วิดีโอ
 (ทดสอบการปิด JavaScript ใน Chrome DevTools โดยการเปิด command palette (CMD + Shift + P) แล้วหา `disable javascript`
 แล้ว refresh)
 
-{{< picture-lazy src="images/disable-javascript-in-devtools.png" alt="ปิด JavaScript ใน Chrome DevTools" >}}
+<Picture src="images/disable-javascript-in-devtools.png" alt="ปิด JavaScript ใน Chrome DevTools" />
 
 โชคดีที่มี [shortcode ใน Hugo](https://armno.in.th/2018/09/08/hugo-shortcode/)
 ผมเลยสร้าง [shortcode อีกอัน](https://github.com/armno/blog/blob/master/themes/armno/layouts/shortcodes/picture-lazy.html)สำหรับใส่รูปที่ต้องการใช้ lazy load ใน content ได้
 ไม่ต้องไปตามใส่ tag ```<noscript>``` ให้กับทุกรูป
 
 ```markdown
-{{</* picture-lazy src="/path/to/image" alt="test" */>}}
+{{</* picture-lazy src="/path/to/image" alt="test" *//>
 ```
 
 ## วัดผล
@@ -103,11 +103,11 @@ asset ที่รองรับคือ รูปภาพ วิดีโอ
 
 ก่อน
 
-{{< picture-lazy wrapper-class="semi-full" src="images/audit-results-before.png" alt="ก่อนใช้ LazyLoad คะแนน performance อยู่ที่ 73" >}}
+<Picture wrapper-class="semi-full" src="images/audit-results-before.png" alt="ก่อนใช้ LazyLoad คะแนน performance อยู่ที่ 73" />
 
 หลัง
 
-{{< picture-lazy wrapper-class="semi-full" src="images/audit-results-after.png" alt="หลังใช้ LazyLoad คะแนน performance อยู่ที่ 90" >}}
+<Picture wrapper-class="semi-full" src="images/audit-results-after.png" alt="หลังใช้ LazyLoad คะแนน performance อยู่ที่ 90" />
 
 นอกจากนั้นคือ ช่วยประหยัด bandwidth สำหรับ user ที่ใช้ 3g/4g ไม่ต้องเสียเวลาและค่าเน็ตมือถือ รอโหลดรูปทั้งหมดก่อนที่จะเริ่มอ่านบทความได้
 

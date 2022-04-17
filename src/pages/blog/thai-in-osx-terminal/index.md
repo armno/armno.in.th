@@ -22,7 +22,7 @@ url: /2014/03/18/thai-in-osx-terminal/
 
 ลองหาใน Google ดู ก็พบว่าเป็นปัญหาที่ locale ในเครื่องเรา ที่มันอ่านภาษาไทยไม่ออก เมื่อรัน command `locale` มันก็ได้แบบนี้ครับ
 
-{{< highlight bash >}}
+```bash
 \$ locale
 LANG=
 LC_COLLATE="C"
@@ -32,17 +32,17 @@ LC_MONETARY="C"
 LC_NUMERIC="C"
 LC_TIME="C"
 LC_ALL=
-{{< / highlight >}}
+```
 
 วิธีแก้ก็คือ เซ็ต locale ให้มันเป็น `en_US.UTF-8` ครับ โดยเพิ่ม 2 บรรทัดนี้เข้าไปใน `~/.zshrc` (ถ้าใครใช้ bash ก็เป็น `~/.bashrc`)
 
-{{< highlight bash >}}
+```bash
 
 # ~/.zshrc
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-{{< / highlight >}}
+```
 
 พบว่าภาษาไทยแสดงผลได้ดีแล้ว
 
@@ -52,7 +52,7 @@ export LANG=en_US.UTF-8
 
 เช็ค locale ดูก็เป็น `en_US.UTF-8`
 
-{{< highlight bash >}}
+```bash
 \$ locale
 LANG="en_US.UTF-8"
 LC_COLLATE="en_US.UTF-8"
@@ -62,7 +62,7 @@ LC_MONETARY="en_US.UTF-8"
 LC_NUMERIC="en_US.UTF-8"
 LC_TIME="en_US.UTF-8"
 LC_ALL="en_US.UTF-8"
-{{< / highlight >}}
+```
 
 ที่มา: [In OSX Lion, LANG is not set to utf8. how to fix?](https://stackoverflow.com/questions/7165108/in-osx-lion-lang-is-not-set-to-utf8-how-fix)
 
