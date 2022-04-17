@@ -8,9 +8,12 @@ tags:
   - gulp
   - tooling
   - buildtools
-thumbnail: images/12794346545_facca0edf4_c.jpg
+thumbnail: /images/gulp/12794346545_facca0edf4_c.jpg
 title: ใช้งาน Gulp.js
 url: /2014/02/26/using-gulpjs-for-basic-build-process/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ปกติเมื่อเราทำเว็บ ก็จะมีสิ่งที่ต้องทำเป็นประจำอยู่จำนวนหนึ่ง เช่น
@@ -24,7 +27,7 @@ url: /2014/02/26/using-gulpjs-for-basic-build-process/
 
 ถ้าใครใช้ [Grunt](https://gruntjs.com/) อยู่ก็จะพบว่าเป็น tool ลักษณะเดียวกัน เพียงแต่มีแนวคิดในการ config คนละแบบ และ gulp มี built-in watcher มาให้ตั้งแต่แรก
 
-![gulp logo](images/12794817294_bd522b5461_z.jpg)
+![gulp logo](/images/gulp/12794817294_bd522b5461_z.jpg)
 
 ## ติดตั้ง Gulp
 
@@ -69,7 +72,7 @@ gulp.task('default', function() {
 $ gulp
 ```
 
-![gulp-lorem](images/12794346545_facca0edf4_c.jpg)
+![gulp-lorem](/images/gulp/12794346545_facca0edf4_c.jpg)
 
 ในความเป็นจริงคงไม่มีใครใช้ gulp เพื่อ `console.log`  เพียงอย่างเดียว มาดู use case ที่ใช้งานกันจริงๆ ดีกว่า
 

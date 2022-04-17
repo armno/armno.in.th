@@ -1,18 +1,20 @@
 ---
 categories:
 - Life
-comments: true
 date: 2012-11-05T18:32:51Z
 description: เป็นคำถามที่ผมสงสัยมาตั้งแต่ iPhone 5 เปิดตัวแล้วว่า กล้องหลังนั้นดีขึ้นไหม
   (กล้อง 4S ของเราตกรุ่นแล้วหรือยัง) วันนี้ได้ลองถ่ายรูปด้วย iPhone 5 และ iPhone 4S
   ด้วยมุมใกล้ๆ กันแล้วมาเทียบกันดูครับ
-slug: iphone-5-vs-iphone-4s-camera
 tags:
 - iPhone
 - iPhone 5
 - Photography
 title: เปรียบเทียบกล้อง iPhone 5 vs. iPhone 4S
 url: /2012/11/05/iphone-5-vs-iphone-4s-camera/
+thumbnail: /images/iphone-cameras/8157348942_29bfe70395_z.jpg
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 เป็นคำถามที่ผมสงสัยมาตั้งแต่ iPhone 5 เปิดตัวแล้วว่า กล้องหลังนั้นดีขึ้นไหม (กล้อง 4S ของเราตกรุ่นแล้วหรือยัง) วันนี้ได้ลองถ่ายรูปด้วย iPhone 5 และ iPhone 4S ด้วยมุมใกล้ๆ กันแล้วมาเทียบกันดูครับ
@@ -23,41 +25,41 @@ url: /2012/11/05/iphone-5-vs-iphone-4s-camera/
 
 **iPhone 5**
 
-![iPhone 5 สภาพแสงจากด้านข้าง](images/8157348942_29bfe70395_z.jpg)
+![iPhone 5 สภาพแสงจากด้านข้าง](/images/iphone-cameras/8157348942_29bfe70395_z.jpg)
 
 **iPhone 4S**
 
-![iPhone 4s สภาพแสงจากด้านข้าง](images/8157314229_6239a5b7a4_z.jpg)
+![iPhone 4s สภาพแสงจากด้านข้าง](/images/iphone-cameras/8157314229_6239a5b7a4_z.jpg)
 
 รูปที่สอง สภาพแสงจัด
 
 **iPhone 5**
 
-![iPhone 5 สภาพแสงจัด](images/8157316101_358e9092f0_z.jpg)
+![iPhone 5 สภาพแสงจัด](/images/iphone-cameras/8157316101_358e9092f0_z.jpg)
 
 **iPhone 4S**
 
-![iPhone 4s สภาพแสงจัด](images/8157350788_31323a7ff7_z.jpg)
+![iPhone 4s สภาพแสงจัด](/images/iphone-cameras/8157350788_31323a7ff7_z.jpg)
 
 รูปที่สาม รูปนี้ dynamic range กับ contrast ต่างกันพอสังเกตได้ รูปจาก iPhone 5 สีสันจะดูสมจริงกว่านิดหน่อย
 
 **iPhone 5**
 
-![Dynamic range ของ iPhone 5](images/8157351876_4c35bcda19_z.jpg)
+![Dynamic range ของ iPhone 5](/images/iphone-cameras/8157351876_4c35bcda19_z.jpg)
 
 **iPhone 4S**
 
-![Dynamic range ของ iPhone 4s](images/8157353070_62fb6db7a4_z.jpg)
+![Dynamic range ของ iPhone 4s](/images/iphone-cameras/8157353070_62fb6db7a4_z.jpg)
 
 รูปที่สี่ สภาพแสงค่อยข้างน้อย iPhone 5 จะมีแสงม่วงๆ ฟุ้งๆ มาด้วย (ตามข่าว) แต่ถ้าถ่ายหลบเป็นก็ไม่น่ามีปัญหาครับ
 
 **iPhone 5**
 
-![iPhone 5 สภาพแสงค่อนข้างน้อย](images/8157320123_32343da4a5_z.jpg)
+![iPhone 5 สภาพแสงค่อนข้างน้อย](/images/iphone-cameras/8157320123_32343da4a5_z.jpg)
 
 **iPhone 4S**
 
-![iPhone 4s สภาพแสงค่อนข้างน้อย](images/8157354836_111a2b3338_z.jpg)
+![iPhone 4s สภาพแสงค่อนข้างน้อย](/images/iphone-cameras/8157354836_111a2b3338_z.jpg)
 
 เทียบกันหมัดต่อหมัดแล้ว แทบจะไม่ต่างกันเลย ใครใช้ 4S แบบผมอยู่ ก็อุ่นใจได้ครับ กล้องเรายังสู้ไหว :)
 

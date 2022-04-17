@@ -1,7 +1,6 @@
 ---
 title: "Update Blog อัตโนมัติด้วย Docker และ CircleCI"
 date: 2018-08-16T13:38:04+07:00
-draft: false
 url: /2018/08/16/blog-automated-deployment
 description: "ลองใช้ Docker กับ CircleCI เพื่อ deploy blog แบบอัตโนมัติทุกครั้งที่ push ไปที่ GitHub repo"
 tags:

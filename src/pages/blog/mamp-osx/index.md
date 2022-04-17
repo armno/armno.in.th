@@ -10,6 +10,10 @@ tags:
   - development
 title: ติดตั้ง Apache, PHP, MySQL บน OSX แบบไม่ง้อ MAMP
 url: /2013/06/28/set-up-apache-php-mysql-without-mamp/
+thumbnail: /images/mamp-osx/9158338115_1a9c7169eb_o.png
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 [MAMP](https://www.mamp.info/en) (รวมถึง MAMP Pro) นั้นเป็นเครื่องมือที่ดีสำหรับติดตั้ง local web server บน OSX แต่ปัญหาที่ผมพบกับ MAMP คือกินแรมเยอะ (และใช้งานยุ่งยากด้วย) ซึ่งจริงๆ แล้วเราไม่ต้องมี MAMP ก็รัน web server ในเครื่องได้
@@ -48,7 +52,7 @@ $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 ต่อไปก็ต้องลง PHP ผ่าน Homebrew ครับ สำหรับการลง package ด้วย homebrew นั้นใช้ command <code>brew install &lt;package name&gt;</code> แต่ถ้าไม่แน่ใจว่า <code>package name</code> นั้นมีอะไรบ้าง ใช้ command <code>brew search</code> หาดูก่อนได้ครับ
 
-![brew search](images/9160240552_c55243a996_o.png)
+![brew search](/images/mamp-osx/9160240552_c55243a996_o.png)
 
 สำหรับ PHP 5.4 นั้นชื่อ package <code>php54</code> (ณ วันที่เขียนยังไม่มี PHP 5.5 ใน homebrew ครับ)
 
@@ -64,7 +68,7 @@ $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 /usr/local/Cellar/php54/5.4.15
 ```
 
-![installed php 5.4](images/9158088329_903636e415_z.jpg)
+![installed php 5.4](/images/mamp-osx/9158088329_903636e415_z.jpg)
 
 > Package ที่ติดตั้งผ่าน Homebrew จะอยู่ที่ <code>/usr/local/Cellar</code> ครับ
 
@@ -164,7 +168,7 @@ DirectoryIndex index.php index.html
 
 แล้วเปิด <code>http://localhost/info.php</code> ใน browser ก็จะเจอข้อมูล <code>phpinfo</code> ครับ
 
-![phpinfo](images/9158338115_1a9c7169eb_o.png)
+![phpinfo](/images/mamp-osx/9158338115_1a9c7169eb_o.png)
 
 เสร็จแล้ว :D
 

@@ -11,6 +11,10 @@ tags:
   - editor
 title: Setting up Vim
 url: /2013/09/05/setting-up-vim/
+thumbnail: /images/setting-up-vim/9676557587_90c9c8c01e_c.jpg
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ปกติผมใช้ [Sublime Text 3](https://armno.in.th/2013/07/08/setting-up-sublime-text-3/) เป็น code editor ตัวหลัก แต่บางครั้งต้องการแก้ไขไฟล์ง่ายๆ เร็วๆ จาก terminal หรือทำโปรเจ็คเล็กๆ (เขียนโค้ดตาม tutorial ในเว็บต่างๆ) ผมก็จะเลือกใช้ Vim แทน เพราะเร็วกว่าเปิดใน Sublime Text ครับ
@@ -21,7 +25,7 @@ url: /2013/09/05/setting-up-vim/
 
 <blockquote><p>บน OSX นั้น ผมใช้ homebrew เป็นหลัก สามารถดูวิธีติดตั้งได้จาก <a href="https://brew.sh">brew.sh</a> ครับ (ง่ายมาก)</p></blockquote>
 
-![vim](images/9679791742_e1cae8d157_c.jpg)
+![vim](/images/setting-up-vim/9679791742_e1cae8d157_c.jpg)
 
 ### ติดตั้ง Vim
 
@@ -47,8 +51,6 @@ Ubuntu
 
 สำหรับไฟล์ `.vimrc` ของผม ก็หน้าตาประมาณนี้ครับ ส่วนมากก็ลอกมาจากหลายๆ ที่ครับ ส่วนที่สองนั้นเป็น color scheme ชื่อว่า railscasts ซึ่งผมไม่ได้หรอกครับ (อ้าว?) เอาเก็บไว้ด้วยกัน กันหาย ส่วน colorscheme ที่ผมใช้จริงๆ ชื่อว่า [Tomorrow Night](https://github.com/chriskempson/tomorrow-theme) ครับ
 
-<script src="https://gist.github.com/armno/2908559.js"></script>
-
 ### Plugins
 
 #### [Pathogen](https://github.com/tpope/vim-pathogen)
@@ -63,7 +65,7 @@ https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 #### [NERDTree](https://github.com/scrooloose/nerdtree)
 
-![nerdtree](images/9679791406_60985bce2e_o.png)
+![nerdtree](/images/setting-up-vim/9679791406_60985bce2e_o.png)
 
 NERDTree เป็น file explorer ของ Vim ครับ ใช้เป็น sidebar คล้ายๆ ของ Sublime Text ได้ ติดตั้ง plugin ตัวนี้ได้ผ่าน Pathogen ครับ
 
@@ -98,7 +100,7 @@ $ wget --no-check-certificate https://raw.github.com/Townk/vim-autoclose/master/
 
 #### [neocomplcache](https://github.com/Shougo/neocomplcache.vim)
 
-![neocomplcache](images/9679852438_c0db1272a3_o.png)
+![neocomplcache](/images/setting-up-vim/9679852438_c0db1272a3_o.png)
 
 เป็น auto complete ของ Vim ที่ผมใช้อยู่ครับ ทำงานได้ค่อนข้างดีเลยทีเดียว การติดตั้งนั้นทำได้โดยดาวน์โหลดไฟล์เป็น .zip จาก Github repo แล้ว extract ไฟล์ทั้งหมดไปที่โฟลเดอร์ `~/.vim` ครับ
 
@@ -110,7 +112,7 @@ $ wget --no-check-certificate https://raw.github.com/Townk/vim-autoclose/master/
 
 #### [Powerline](https://github.com/Lokaltog/powerline)
 
-![powerline](images/9676557587_90c9c8c01e_c.jpg)
+![powerline](/images/setting-up-vim/9676557587_90c9c8c01e_c.jpg)
 
 ทำให้ status bar ของ Vim นั้นมีประโยชน์และน่าสนใจขึ้นมาอีกหน่อย วิธีติดตั้งดูได้จาก [documentation](https://powerline.readthedocs.org/en/latest/overview.html#installation) บนเว็บของ Powerline ได้เลย คอนข้างยาวและยุ่งครับ
 
@@ -137,7 +139,7 @@ $ git clone https://github.com/terryma/vim-multiple-cursors.git
 
 อีกหนึ่งความสามารถของ Sublime Text คือ เปิดไฟล์แบบเร็วๆ ด้วย `Cmd+t` (หรือ `Cmd+p`) ก็มี plugin สำหรับ Vim เหมือนกันครับ คือเจ้า CtrlP ตัวนี้เอง อย่างในรูปผมลองหา bower ใน repo นี้ ก็จะเจอไฟล์ตามข้างล่าง ความเร็วในการหานั้นพอๆ กับ Sublime Text เลยทีเดียว เพียงแต่มันกลับด้านกันเท่านั้น
 
-![vim ctrlp](images/12290596375_dc2ae27dd8_c.jpg)
+![vim ctrlp](/images/setting-up-vim/12290596375_dc2ae27dd8_c.jpg)
 
 ใช้งานผ่าน Pathogen ได้อีกแล้วจ้า
 

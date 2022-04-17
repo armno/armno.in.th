@@ -1,5 +1,5 @@
 ---
-cover-image: images/cover.png
+cover-image: /images/github-pages-to-do-part-2/cover.png
 date: 2016-11-10T00:00:00Z
 description: หลังจาก setup server พร้อมกับ deploy process เสร็จแล้ว ก็ถึงเวลาที่ต้อง
   optimize blog นี้ให้ไวขึ้น โพสต์นี้จะเกี่ยวกับการ config server nginx กับ jekyll
@@ -10,9 +10,12 @@ tags:
   - nginx
   - browsers
   - perfmatters
-thumbnail: images/thumbnail.png
+thumbnail: /images/github-pages-to-do-part-2/thumbnail.png
 title: 'ย้าย Blog จาก GitHub Pages มาที่ DigitalOcean ตอน 2: #PERFMATTERS'
 url: /2016/11/10/optimize-performance-on-nginx-for-jekyll-blog/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ต่อจาก[ตอนที่ 1](https://armno.in.th/2016/11/08/moving-from-github-pages-to-digital-ocean/) หลังจาก setup server พร้อมกับ deploy process เสร็จแล้ว ก็ถึงเวลาที่ต้อง optimize blog นี้ให้ไวขึ้น
@@ -26,8 +29,8 @@ url: /2016/11/10/optimize-performance-on-nginx-for-jekyll-blog/
 ก่อนอื่นก็ต้องรู้ก่อนว่า สิ่งที่ควรปรับปรุงมีจุดไหนบ้าง ซึ่ง tool ที่ผมใช้ประจำก็คือ [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) นี่แหละ เพราะว่าเร็วและง่ายดี
 
 <div class="text-center">
-  <img src="images/pagespeed-summary.png"
-  srcset="images/pagespeed-summary-2x.png 2x" alt="ผลจาก PageSpeed Insights ก่อน optimize">
+  <img src="/images/github-pages-to-do-part-2/pagespeed-summary.png"
+  srcset="/images/github-pages-to-do-part-2/pagespeed-summary-2x.png 2x" alt="ผลจาก PageSpeed Insights ก่อน optimize">
 </div>
 
 PageSpeed Insights บอกว่ามีสิ่งที่ควรปรับปรุงคือ
@@ -36,13 +39,13 @@ PageSpeed Insights บอกว่ามีสิ่งที่ควรปร�
 - ใช้งาน GZIP compression
 
 <div class="text-center">
-  <img src="images/pagespeed-browser-caching.png"
-  srcset="images/pagespeed-browser-caching-2x.png 2x" alt="PageSpeed แนะนำว่า ควรใช้งาน HTTP Caching">
+  <img src="/images/github-pages-to-do-part-2/pagespeed-browser-caching.png"
+  srcset="/images/github-pages-to-do-part-2/pagespeed-browser-caching-2x.png 2x" alt="PageSpeed แนะนำว่า ควรใช้งาน HTTP Caching">
 </div>
 
 <div class="text-center">
-  <img src="images/pagespeed-gzip.png"
-  srcset="images/pagespeed-gzip-2x.png 2x" alt="PageSpeed แนะนำว่า ควรใช้งาน GZIP compression">
+  <img src="/images/github-pages-to-do-part-2/pagespeed-gzip.png"
+  srcset="/images/github-pages-to-do-part-2/pagespeed-gzip-2x.png 2x" alt="PageSpeed แนะนำว่า ควรใช้งาน GZIP compression">
 </div>
 
 ทั้งสองอย่างต้องตั้งค่าที่ nginx โชคดีที่ทีม [H5BP](https://github.com/h5bp/) ทำตัวอย่าง config ของ nginx เอาไว้ที่ repo [server-configs-nginx](https://github.com/h5bp/server-configs-nginx) ซึ่งรวบรวมเอา best practices ต่างๆ ไว้ ผมก็เลยไปดูเป็นตัวอย่างและนำมาปรับใช้แบบบูรณาการ .. ก็คือลอกมานั่นเอง
@@ -156,8 +159,8 @@ layout: '../../../layouts/PostLayout.astro'ress
 [Disqus](https://disqus.com) เป็น comment widget ที่มี JavaScript ค่อนข้างเยอะถ้าเทียบกับขนาดทั้งหมดของเพจ (`embed.js` ขนาด 17.5KB ที่ไปโหลดไฟล์ JavaScript อื่นๆ มาอีกเกือบ 500KB) ยังดีที่ถูกโหลดเข้ามาแบบ asynchronous ทำให้ไม่ block การ render
 
 <div class="text-center">
-  <img src="images/disqus-javascripts.png"
-  srcset="images/disqus-javascripts-2x.png 2x" alt="JavaScript ทั้งหมดที่ถูกโหลดจาก Disqus ขนาดรวมเกือบ 500KB">
+  <img src="/images/github-pages-to-do-part-2/disqus-javascripts.png"
+  srcset="/images/github-pages-to-do-part-2/disqus-javascripts-2x.png 2x" alt="JavaScript ทั้งหมดที่ถูกโหลดจาก Disqus ขนาดรวมเกือบ 500KB">
 </div>
 
 แต่ยังไง blog นี้ก็ไม่ค่อยมีใคร comment อยู่แล้ว (😭..) น่าจะดีกว่าถ้าตัด JavaScript ส่วนนี้ออกไป โดยที่ไม่จำเป็นต้องโหลดทุกครั้งที่แสดงผล แต่จะแสดงเมื่อจำเป็นเท่านั้น
@@ -170,22 +173,22 @@ layout: '../../../layouts/PostLayout.astro'ress
 PageSpeed Insights บอกว่ายังคงเหลือไฟล์ JavaScript อีกบางส่วนที่ควรจะปรับปรุงเรื่อง expiration time แต่ทั้งเนื่องด้วยไฟล์นั้นถูกดึงมาจาก remote server (Google Analytics, YouTube) ที่ไม่สามารถคุม expiration time ได้ ก็คงต้องปล่อยไว้แบบนั้นครับ ส่วนไฟล์อื่นๆ ที่โหลดมาจาก server ตัวเองก็ถูก optimize ได้หมด
 
 <div class="text-center">
-  <img src="images/result-pagespeed.png"
-  srcset="images/result-pagespeed-2x.png 2x" alt="ผลจาก PageSpeed Insights หลัง optimize">
+  <img src="/images/github-pages-to-do-part-2/result-pagespeed.png"
+  srcset="/images/github-pages-to-do-part-2/result-pagespeed-2x.png 2x" alt="ผลจาก PageSpeed Insights หลัง optimize">
 </div>
 
 สามารถเช็คได้โดยใช้ webpagetest.org ซึ่งจะแสดงข้อมูลได้ละเอียดกว่า
 
 <div class="text-center">
-  <img src="images/webpagetest-overview.png"
-  srcset="images/webpagetest-overview-2x.png 2x" alt="ผลจาก PageSpeed Insights หลัง optimize">
+  <img src="/images/github-pages-to-do-part-2/webpagetest-overview.png"
+  srcset="/images/github-pages-to-do-part-2/webpagetest-overview-2x.png 2x" alt="ผลจาก PageSpeed Insights หลัง optimize">
 </div>
 
 ดูได้ว่า static assets แต่ละไฟล์ มีการใช้งาน HTTP caching และ GZIP ไว้ทั้งหมด
 
 <div class="text-center">
-  <img src="images/webpagetest-static-assets.png"
-  srcset="images/webpagetest-static-assets-2x.png 2x" alt="ข้อมูลต่างๆ ของ static resources จาก webpagetest.org">
+  <img src="/images/github-pages-to-do-part-2/webpagetest-static-assets.png"
+  srcset="/images/github-pages-to-do-part-2/webpagetest-static-assets-2x.png 2x" alt="ข้อมูลต่างๆ ของ static resources จาก webpagetest.org">
 </div>
 
 ## สรุป

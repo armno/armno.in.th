@@ -1,23 +1,23 @@
 ---
-cover-image: images/cover.jpg
 date: 2015-09-25T00:00:00Z
 description: Atom เป็น open source text editor จาก GitHub ที่หน้าตาและการใช้งานคล้ายกับ
-  Sublime Text มาก เพิ่งจะเปิดตัวเวอร์ชั่น 1.0 ไปเมื่อไม่กี่เดือนก่อน ซึ่งผมเองได้ลองใช้มาตั้งแต่เวอร์ชั่นแรกๆ
+  Sublime Text มาก ซึ่งผมเองได้ลองใช้มาตั้งแต่เวอร์ชั่นแรกๆ
   ตอนนั้นไม่ประทับใจเลย ช่วงนี้ได้มาทดลองใช้งานจริงจังอีกครั้ง พบว่าความเร็วนั้นถือว่าใช้งานได้อย่างไม่ติดขัดแล้ว
-  ผมเลยถือโอกาสทดสอบต่อเลยว่า จะมีฟีเจอร์ที่ต้องการ ใช้งานจริงจังแทน Sublime Text
-  เลยได้หรือไม่
 published: true
 tags:
   - coding
   - editor
   - atom
-thumbnail: images/atom-editor.png
+thumbnail: /images/atom/atom-editor.png
 title: ใช้งาน Atom
 url: /2015/09/25/setting-up-atom/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 <div class="text-center">
-  <img src="images/atom-logo-2x.png" alt="Atom Logo" width="290" height="60">
+  <img src="/images/atom/atom-logo-2x.png" alt="Atom Logo" width="290" height="60">
 </div>
 
 [Atom](https://atom.io/) เป็น open source text editor จาก GitHub ที่หน้าตาและการใช้งานคล้ายกับ Sublime Text มาก
@@ -26,7 +26,7 @@ url: /2015/09/25/setting-up-atom/
 Sublime Text ได้
 
 <div class="text-center">
-  <img src="images/atom-editor.png" alt="Atom Editor">
+  <img src="/images/atom/atom-editor.png" alt="Atom Editor">
 </div>
 
 ช่วงนี้ได้มาทดลองใช้งานจริงจังอีกครั้ง พบว่าความเร็วนั้นถือว่าใช้งานได้อย่างไม่ติดขัดแล้ว
@@ -46,12 +46,12 @@ Atom มาพร้อมกับ [`apm`](https://github.com/atom/apm) หร�
 ได้จากสะดวกเลยทีเดียว
 
 <div class="text-center">
-  <img src="images/apm-command.png" alt="apm command" width="798" height="392">
+  <img src="/images/atom/apm-command.png" alt="apm command" width="798" height="392">
 </div>
 
 เปิด `atom` จาก terminal ได้เลย
 
-<img src="images/atom-executable.png" alt="atom command" width="221" height="65">
+<img src="/images/atom/atom-executable.png" alt="atom command" width="221" height="65">
 
 ## 2. `vim-mode` กับ `ex-mode`
 
@@ -59,7 +59,7 @@ Atom มาพร้อมกับ [`apm`](https://github.com/atom/apm) หร�
 มีคนรู้สึกเหมือนกันเยอะ เลยมีคนทำ [`vim-mode-visual-block`](https://atom.io/packages/vim-mode-visual-block) package มา ลงคู่กับ vim-mode ทำให้ใช้ <kbd>Ctrl</kbd> + <kbd>v</kbd> ใช้งาน visual block mode ได้ครับ
 
 <div class="text-center">
-  <img src="images/virtual-block-mode.png" alt="virtual block mode" width="460" height="227">
+  <img src="/images/atom/virtual-block-mode.png" alt="virtual block mode" width="460" height="227">
 </div>
 
 ส่วน [`ex-mode`](https://atom.io/packages/ex-mode) นั้นก็ส่วนเสริมของ vim-mode ที่ทำให้ใช้คีย์ <kbd>:</kbd> สำหรับ command mode ของ vim ได้
@@ -83,13 +83,13 @@ Atom มันแปลกตรงที่ UI Theme กับ Syntax Theme ส
 **Afterglow Monokai**
 
 <div class="text-center">
-  <img src="images/syntax-afterglow-monokai.png" alt="afterglow monokai syntax theme" width="664" height="773">
+  <img src="/images/atom/syntax-afterglow-monokai.png" alt="afterglow monokai syntax theme" width="664" height="773">
 </div>
 
 **Afterglow-Plus**
 
 <div class="text-center">
-  <img src="images/syntax-afterglow-plus.png" alt="afterglow plus syntax theme" width="664" height="773">
+  <img src="/images/atom/syntax-afterglow-plus.png" alt="afterglow plus syntax theme" width="664" height="773">
 </div>
 
 ### ซ่อน Tab bar
@@ -113,7 +113,7 @@ Atom มันแปลกตรงที่ UI Theme กับ Syntax Theme ส
 พวกตระกูล [Atom-linter](https://atom.io/packages/linter) ทั้งหลายก็แจ่มเลยทีเดียว แสดง error/warning แบบ inline ได้เลย
 
 <div class="text-center">
-  <img src="images/inline-linting.png" alt="eslint in atom">
+  <img src="/images/atom/inline-linting.png" alt="eslint in atom">
 </div>
 
 อื่นๆ ก็ตามนี้จ้า
@@ -148,7 +148,7 @@ $ apm list
 การพิมพ์ภาษาไทยใน Atom นั้นสระไม่ลอยเหมือนใน Sublime Text ครับ เยี่ยมเลย
 
 <div class="text-center">
-  <img src="images/thai.png" alt="ภาษาไทยใน Atom">
+  <img src="/images/atom/thai.png" alt="ภาษาไทยใน Atom">
 </div>
 
 ### (ไม่ชอบใจ)

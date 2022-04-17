@@ -14,10 +14,13 @@ tags:
   - Zen Coding
 title: Emmet - ตัวแทน Zen Coding
 url: /2012/11/06/emmet-zen-coding-replacement/
-wordpress_id: 2105
+thumbnail: /images/emmet/logo.svg
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
-![emmet-logo](images/logo.svg)
+![emmet-logo](/images/emmet/logo.svg)
 
 เคยเขียนเรื่อง [Zen Coding ใน Netbeans](https://armno.in.th/2010/10/20/zen-coding-netbeans/) มาแล้วครั้งหนึ่ง ตอนนี้ Zen Coding เปลี่ยนชื่อเป็น [**Emmet**](https://emmet.io) แล้วครับ มาพร้อมกับฟีเจอร์ใหม่อีกเยอะแยะมากมาย เห็นที่ฮอตๆ ก็คงเป็นส่วนของ CSS เช่น `m10` เป็น `margin: 10px;` รวมถึงจัดการ vendor prefix ให้ด้วย ([ดูตัวอย่าง](https://docs.emmet.io/css-abbreviations/vendor-prefixes/)) นอกจากนี้ยังมี action อีกมากมายที่ทำให้โค้ดได้เร็วขึ้น ผมเขียนเองไม่หมด ตามไปดูได้ที่ [https://docs.emmet.io/](https://docs.emmet.io/) ครับผม เขาทำ document ไว้ดีมากเลยล่ะ
 

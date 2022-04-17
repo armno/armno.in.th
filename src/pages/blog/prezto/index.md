@@ -9,9 +9,12 @@ tags:
   - prezto
   - terminal
   - nerd
-thumbnail: images/substring-search.png
+thumbnail: /images/prezto/substring-search.png
 title: ลองใช้ Prezto กับ zsh
 url: /2015/03/24/oh-my-zsh-to-prezto/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 สวัสดีชาวเนิร์ด
@@ -27,7 +30,7 @@ url: /2015/03/24/oh-my-zsh-to-prezto/
 แรกเริ่มเดิมทีนั้น Prezto นั้นเป็น fork ของ oh-my-zsh แต่เนื่องจากแนวคิดไปคนละทางกับ oh-my-zsh เลยถูก rewrite ใหม่ซะเลย
 (อ่านเรื่องต้นทางได้ที่ [oh-my-zsh#377](https://github.com/robbyrussell/oh-my-zsh/issues/377) ยาวมาก)
 
-![Pull Request ต้นกำเนิด Prezto](images/prezto-original-pr.png)
+![Pull Request ต้นกำเนิด Prezto](/images/prezto/prezto-original-pr.png)
 
 พอสรุปได้ว่า oh-my-zsh นั้นเน้นที่ความง่ายในการใช้งาน ไม่ต้อง config มากมาย เซ็ตมาให้ก่อนแล้ว
 ส่วน Prezto มีฟีเจอร์คล้ายๆ กับ oh-my-zsh แต่ส่วนมากจะถูก disable ไว้แล้วให้ user ไป enable เอาเองตามที่ต้องการ
@@ -55,17 +58,17 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 ```
 
-![file ต่างๆ ของ Prezto](images/prezto-files.png)
+![file ต่างๆ ของ Prezto](/images/prezto/prezto-files.png)
 
 ## theme/module
 
 เราสามารถใช้ command `$ prompt -l` เพื่อดูรายชื่อ shell theme ทั้งหมดที่ Prezto มีอยู่ได้
 
-![output จาก prompt -l](images/prompt-l.png)
+![output จาก prompt -l](/images/prezto/prompt-l.png)
 
 และยัง preview ก่อนได้ด้วย `$ promt -p <theme name>` ตรงนี้เจ๋งดี
 
-![preview theme paradox](images/prompt-paradox.png)
+![preview theme paradox](/images/prezto/prompt-paradox.png)
 
 เมื่อเลือก theme ได้แล้ว ก็ไปเซ็ตที่ไฟล์ `~/.zpreztorc` หาคำว่า theme แล้วใส่ชื่อ theme ที่จะใช้ลงไป
 
@@ -84,9 +87,9 @@ module ที่ผมเพิ่มเข้าไปมีอีก 2 อั�
 
 ตามภาพเลยครับ ทำให้มี shell command เป็นสีๆ คล้าย fish shell
 
-![ปิด module syntax highlighting](images/syntax-highlight-disabled.png)
+![ปิด module syntax highlighting](/images/prezto/syntax-highlight-disabled.png)
 
-![เปิด module syntax highlighting](images/syntax-highlight-enabled.png)
+![เปิด module syntax highlighting](/images/prezto/syntax-highlight-enabled.png)
 
 ### `history-substring-search`
 
@@ -96,7 +99,7 @@ module ที่ผมเพิ่มเข้าไปมีอีก 2 อั�
 อย่างเช่น ผมพิมพ์ `vi` แล้วกด ขึ้น ไปเรื่อยๆ ก็จะมี history ขึ้นมาเฉพาะ command ที่มี `vi` อยู่ข้างใน
 พร้อมกับ highlight ให้ด้วย ดีครับดี
 
-![substring history search ใน Prezto](images/substring-search.png)
+![substring history search ใน Prezto](/images/prezto/substring-search.png)
 
 จากที่ใช้ Prezto แทน oh-my-zsh มา ก็ยังไม่พบปัญหาอะไร และก็คงจะใช้เรื่อยๆ ไปก่อน ลองเล่นกันดูได้ครับ
 

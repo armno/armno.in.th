@@ -8,9 +8,12 @@ tags:
   - editorconfig
   - sublimetext
   - vim
-thumbnail: images/9797239403_d6949b2514_o.png
+thumbnail: /images/editor-config-sublime-text/9797239403_d6949b2514_o.png
 title: ใช้งาน EditorConfig
 url: /2013/09/18/editorconfig-with-sublime-text/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 อีกปัญหาหนึ่งที่พบบ่อยๆ กับการ coding เป็นทีมนั่นก็คือ developer แต่ละคนนั้นตั้งค่า editor ของตัวเองไม่เหมือนกัน บางคนก็ใช้ tab บางคนก็ใช้ space ระยะห่างแต่ละ tab ก็ไม่เท่ากันอีก ทำงานบน version control บางทีก็ conflict กระจาย หลายๆ ทีมจึงเซ็ต coding style เป็นบรรทัดฐานขึ้นมา ที่ทุกคนต้องทำตาม
@@ -67,7 +70,7 @@ indent_size = 2
 
 พอลงไว้แล้ว Sublime Text ก็จะอ่านค่าและใช้งาน config ในไฟล์ `.editorconfig` ในแต่ละ project/repo ได้โดยอัตโนมัติ อย่างรูปผมลองตั้งค่าใน `.editorconfig` ให้ไฟล์ `.css` กับ `.scss` ใช้ `indent_size` ที่ไม่เท่ากัน Sublime Text ก็มองออกครับ (สังเกตเส้น guide)
 
-![editorconfig for sublime text](images/9797239403_d6949b2514_o.png)
+![editorconfig for sublime text](/images/editor-config-sublime-text/9797239403_d6949b2514_o.png)
 
 ส่วน vim นั้นก็มี plugin [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) ลงผ่าน pathogen ได้เลย ลงปุ๊บก็อ่าน `.editorconfig` ได้ทันทีครับ
 

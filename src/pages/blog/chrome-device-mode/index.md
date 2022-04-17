@@ -8,9 +8,12 @@ tags:
   - chrome
   - devtools
   - mobileweb
-thumbnail: null
+thumbnail: /images/chrome-device-mode/device-mode-activated.png
 title: ใช้ Device Mode ใน Google Chrome ทำงานกับ Mobile Web/Hybrid App
 url: /2015/07/02/device-mode-in-google-chrome/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ใน Chrome Devtools จะมี [Device Mode](https://developer.chrome.com/devtools/docs/device-mode) เป็นส่วนหนึ่งที่มีประโยชน์มากกับการทำ responsive website หรือ mobile web app
@@ -32,27 +35,27 @@ url: /2015/07/02/device-mode-in-google-chrome/
 
 เปิด Devtools ขึ้นมาใน Chrome (<kbd>command</kbd> + <kbd>shift</kbd> + <kbd>I</kbd>) แล้วคลิก icon รูปโทรศัพท์ อยู่ใกล้ๆ รูปแว่นขยาย
 
-![activate Device Mode](images/activate-icon.png)
+![activate Device Mode](/images/chrome-device-mode/activate-icon.png)
 
 ก็จะได้เจอหน้าจอแบบนี้ครับ
 
-![Chrome Device Mode](images/device-mode-activated.png)
+![Chrome Device Mode](/images/chrome-device-mode/device-mode-activated.png)
 
 ## เลือก mobile device
 
 อันดับแรกเลย เราสามารถเลือก device จาก preset ที่มีอยู่แล้วได้ มี mobile device พื้นฐานมาให้ครบๆ ตามแต่ละ OS/platform แต่ละ device ก็จะมีขนาดหน้าจอ, device pixel ratio กับ user agent string ที่ต่างกันออกไป
 
-![device presets](images/device-preset.png)
+![device presets](/images/chrome-device-mode/device-preset.png)
 
 นอกจากนี้เราก็ยังสามารถเพิ่ม device เข้าไปใน list ได้ด้วย โดยไปที่ <em>Settings</em> ใน Devtools (icon รูปเฟือง) > <em>Devices</em> > <em>Add custom device ...</em>
 
-![add custom device](images/add-custom-device.png)
+![add custom device](/images/chrome-device-mode/add-custom-device.png)
 
 **(Canary)** ถัดมาเป็นส่วน orientation ซึ่งใน canary มีตัวเลือกนี้เพิ่มเข้ามา ทำให้เราสามารถเลือกว่าจะให้ขนาดหน้าจอนั้นเป็นแนวตั้งหรือแนวนอน แถมยังเลือกได้ด้วยว่าจะให้เป็นแบบที่มี navigation bar (UI ของ browser) พร้อมทั้ง keyboard ติดมาด้วยหรือไม่ ทำให้เราเห็นภาพขนาดจริงๆ ของ viewport เวลาเว็บของเราไปอยู่บน browser ได้ด้วย
 
 อย่างในรูปนี้ ส่วนที่เป็นขอบดำด้านบนและล่าง ก็คือ UI ของ Safari บน iOS เทียบกับ iOS Simulator แล้วถือว่า Devtools ทำได้ใกล้เคียงของจริงมาก
 
-![orientation options](images/orientation-options.png)
+![orientation options](/images/chrome-device-mode/orientation-options.png)
 
 ## Network Throttling
 
@@ -62,27 +65,27 @@ url: /2015/07/02/device-mode-in-google-chrome/
 
 สิ่งที่ผมชอบก็คือ นอกจากจะจำลองความเร็วเน็ตได้แล้ว ยังจำลอง network latency ให้ด้วย ซึ่งตรงกับสถานการณ์ที่ mobile internet นั้นมี latency สูงกว่าเน็ตธรรมดาอยู่เยอะพอสมควร
 
-![network options](images/network-options.png)
+![network options](/images/chrome-device-mode/network-options.png)
 
 ## Media Queries Indicator
 
 ถ้าในไฟล์ CSS ของเรามี media queries `@media` อยู่ด้วย ก็จะเห็นแถบสีสำหรับแบ่ง breakpoint ใน CSS ตามที่เราเขียนได้ด้วย
 
-![media queries](images/media-queries.png)
+![media queries](/images/chrome-device-mode/media-queries.png)
 
-![media queries](images/media-queries-2.png)
+![media queries](/images/chrome-device-mode/media-queries-2.png)
 
 ## `@media` override
 
 Device Mode ยังมีตัวเลือกอื่นๆ ให้เล่นกันอีก เช่น บางครั้งต้องเขียน CSS ให้ `@media print` Devtools ก็มีตัวเลือกให้ Chrome แปลงร่างเป็น printer ได้ CSS ที่มี `@media print` กำกับอยู่ก็จะทำงาน (เมื่อก่อนต้องกด print preview แล้วก็เดาเอา)
 
-![media override](images/media-override.png)
+![media override](/images/chrome-device-mode/media-override.png)
 
 ## Sensors
 
 ใน tab Sensors เราสามารถจำลอง touch event, geolocation กับ accelerometer ได้ ผมเองไม่ค่อยได้ใช้ส่วนนี้มาก แต่คิดว่าถ้าใครได้ทำเว็บที่ใช้ API พวกนี้บ่อยๆ น่าจะมีประโยชน์พอสมควรครับ
 
-![sensors options](images/sensors.png)
+![sensors options](/images/chrome-device-mode/sensors.png)
 
 นั่นแหละครับท่านผู้ชม สำหรับผมแล้ว Device Mode ใน Devtools ถือว่าเป็น tool ที่ช่วยทำ responseive web/hybrid app ได้ง่ายขึ้นอีกเยอะเลย (ลดการยืดๆ หดๆ หน้าจอลงไปได้เยอะ)
 แต่ก็ยังมีส่วนที่ขาดหายไปอยู่ เช่น

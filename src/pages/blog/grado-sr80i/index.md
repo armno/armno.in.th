@@ -11,8 +11,10 @@ tags:
   - music
 title: Grado SR-80i
 url: /2013/05/18/grado-sr-80-i-headphone
-aliases:
-  - /grado-sr-80-i-headphone
+thumbnail: /images/grado-sr80i//8639385288_869df0b921_z.jpg
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 หูฟังตัวที่ผมใช้ก่อนหน้านี้คือ [AKG K420](https://armno.in.th/2010/05/30/review-akg-k420/) และ [Senheisser HD407](https://www.google.co.th/search?q=sennheiser+hd+407&bav=on.2,or.r_qf.&bvm=bv.46751780,d.bmk&biw=1366&bih=682&um=1&ie=UTF-8&hl=th&tbm=isch&source=og&sa=N&tab=wi&ei=5w-XUcWbMoSyrgfCy4HYBg) ที่ต้องมีสองตัวเพราะต้องใช้หูฟังทั้งที่บ้านและที่ทำงาน โดยที่บ้านใช้ HD407 ส่วน K420 นั้นไว้ใช้ที่ทำงาน ปกติจะเสียบหูฟังและเปิดเพลงไว้ตลอด เพลงแนวที่ฟังก็แล้วแต่ที่จะ random ได้จาก iPhone มีเกือบทุกแนวยกเว้นพวกเต้นๆ ตึ๊บๆ
@@ -27,7 +29,7 @@ aliases:
 
 ไปที่ร้าน eartips ลองหูฟังอยู่หลายตัวมาก เหลือผู้เข้ารอบคือ Alessesandro MS-1i, Grado SR-80i, Audio Technica สักรุ่น และ AKG อะไรซักอย่าง ประทับใจ Audio Technica ใส่สบายมาก แต่ดูเทอะทะไปหน่อย สุดท้ายเลือก SR-80i เพราะชอบเสียงมากที่สุด (MS-1i ก็เสียงดีนะครับ แต่ผมรู้สึกว่า SR-80i นั้นให้เสียงกว้างกว่า)
 
-![Grado SR-80i](images/8577399028_2dce902f09_z.jpg)
+![Grado SR-80i](/images/grado-sr80i//8577399028_2dce902f09_z.jpg)
 
 ### Burn
 
@@ -35,7 +37,7 @@ aliases:
 
 หลังจาก burn แล้วที่สังเกตได้คือ เบสฟังดูไม่กระด้างมากเหมือนตอนแกะกล่องใหม่ๆ  และช่วงเสียงนั้นกว้างกว่าเดิมเยอะ ออกแนวสะอาดๆ ใสๆ ให้รายละเอียดเยอะดี เยอะกว่า K420 แบบรู้สึกได้ครับ
 
-![Grado SR-80i หลังจาก burn มาแล้ว 500 ชั่วโมง](images/8639385288_869df0b921_z.jpg)
+![Grado SR-80i หลังจาก burn มาแล้ว 500 ชั่วโมง](/images/grado-sr80i//8639385288_869df0b921_z.jpg)
 
 ### ใช้งาน
 
@@ -50,6 +52,6 @@ aliases:
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/OjKuVejVyyg?rel=0" frameborder="0" allowfullscreen></iframe>
 
-![Grado SR-80i บนโต๊ะทำงาน](images/8640279034_833ac5a390_z.jpg)
+![Grado SR-80i บนโต๊ะทำงาน](/images/grado-sr80i//8640279034_833ac5a390_z.jpg)
 
-![Grado SR-80i ยามเช้า](images/8615368581_36634a6b48_o.jpg)
+![Grado SR-80i ยามเช้า](/images/grado-sr80i//8615368581_36634a6b48_o.jpg)

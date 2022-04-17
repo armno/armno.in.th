@@ -6,9 +6,12 @@ published: true
 tags:
   - bower
   - terminal
-thumbnail: images/11576530464_6dd5174254_o.png
+thumbnail: /images/bower/11576530464_6dd5174254_o.png
 title: ใช้งาน Bower
 url: /2013/12/25/using-bower/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ปกติแล้วเวลาเราจะติดตั้ง package หรือ plugin สักตัว สิ่งที่ต้องทำก็คือ (สมมุติ jQuery)
@@ -20,7 +23,7 @@ url: /2013/12/25/using-bower/
 
 หรือสะดวกขึ้นมาหน่อยก็จะใช้ plugin ของ editor อย่าง [Nettuts+ Fetch](https://armno.in.th/2012/09/09/sublime-text-2-nettuts-fetch/) แต่ก็ยังไม่สะดวกสำหรับการหา package ใหม่ หรือการอัพเกรดเวอร์ชั่นของ package เดิม Bower ช่วยแก้ปัญหาเหล่านี้ได้ครับ
 
-![bower logo](images/11576530464_b141d1b021.jpg)
+![bower logo](/images/bower/11576530464_b141d1b021.jpg)
 
 [Bower](https://bower.io) เป็น client-side package manager จากทาง Twitter ใช้สำหรับติดตั้ง / ค้นหา / อัพเดท 3rd-party package ได้สะดวกมากขึ้น ทำได้ผ่าน Terminal ที่เดียวเลย
 
@@ -48,11 +51,11 @@ $ bower install normalize-css
 
 ซึ่งโดยปกติแล้ว package ที่ติดตั้งผ่าน Bower ก็จะถูกเก็บไว้ใน directory `bower_components` ครับ (เปลี่ยนได้)
 
-![bower_components directory](images/11545868783_cb11223bcb_b.jpg)
+![bower_components directory](/images/bower/11545868783_cb11223bcb_b.jpg)
 
 ในไฟล์ html เราก็โหลดไฟล์เข้ามาตามปกติ
 
-![include bower packages](images/11558637724_591f9bf4e7_z.jpg)
+![include bower packages](/images/bower/11558637724_591f9bf4e7_z.jpg)
 
 ปกติแล้ว `bower install` จะติดตั้ง package เวอร์ชั่นล่าสุดให้เราเสมอ แต่เราก็สามารถระบุเวอร์ชั่นของ package ที่จะติดตั้งได้ โดยเพิ่ม `#<version>` ต่อท้ายเข้าไปหลังชื่อ package ครับ (ของผมต้องใส่ `"` ครอบเพราะเวลาพิมพ์เครื่องหมาย `#` แล้ว zsh มันบ่นครับ)
 
@@ -84,7 +87,7 @@ $ bower search normalize
 $ bower search normalize | grep bootstrap
 ```
 
-![bower search](images/11558436455_3abf8cacf8_z.jpg)
+![bower search](/images/bower/11558436455_3abf8cacf8_z.jpg)
 
 search มีประโยชน์เวลาติดตั้ง package ครับ เนื่องจากเราต้องใส่ชื่อ package ให้ตรงกับชื่อ package ของ Bower (ในรูปบนคือตัวสีฟ้า) ไม่งั้น Bower จะหา package ไม่เจอ
 
@@ -96,7 +99,7 @@ $ bower list
 
 command นี้จะแสดงรายชื่อ package กับเวอร์ชั่นที่ติดตั้งไว้แล้ว และก็มีบอกด้วยว่า package ไหนมีเวอร์ชั่นใหม่ออกมาหรือยัง ส่วนที่ซ้อนกันเป็นขั้นๆ ก็บอกถึงลำดับ dependency ของแต่ละ package ครับ
 
-![bower list](images/11568157035_256a332c6c_z.jpg)
+![bower list](/images/bower/11568157035_256a332c6c_z.jpg)
 
 ### `bower.json` / `.bowerrc`
 

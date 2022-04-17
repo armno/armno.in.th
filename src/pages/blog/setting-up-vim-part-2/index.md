@@ -7,9 +7,12 @@ tags:
   - vim
   - terminal
   - vundle
-thumbnail: images/vim-airline.png
+thumbnail: /images/setting-up-vim-part-2/vim-airline.png
 title: 'Setting up Vim : Part II'
 url: /2015/02/26/setting-up-vim-part-2/
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 เคยเขียน [Setting up Vim][setting-up-vim-part-1] ตอนแรกไปแล้ว พอใช้งานไปเรื่อยๆ ผมว่ามีอะไรหลายๆ อย่างที่ปรับเปลี่ยนไปตามการใช้งาน
@@ -51,7 +54,7 @@ $ ln -s ~/dotfiles/.vim ~/.vim
 
 [CtrlP][vim-ctrlp] เป็น plugin ของ vim ที่ทำงานได้คล้ายกับ `cmd+p` (หรือ `cmd+t`) ใน Sublime Text ใช้เพื่อเปิดไฟล์ในโปรเจ็ค หรือจาก buffer ที่กำลังใช้อยู่ ผ่าน fuzzy search จาก path ได้ (พิมพ์แค่บางส่วนของ path) ใช้ CtrlP นั้นทำให้หา และเปิดไฟล์ได้เร็วกว่า file explorer (NERDTree) ได้เยอะเลย
 
-![vim ctrlp](images/vim-ctrlp.png)
+![vim ctrlp](/images/setting-up-vim-part-2/vim-ctrlp.png)
 
 แต่ fuzzy search ที่ติดมากับ CtrlP นั้น บางทีก็ช้าอยู่บ้างกับโปรเจ็คใหญ่ๆ โชคดีที่ CtrlP เราสามารถใช้ "custom command" ในการ search หาไฟล์ได้ ผมใช้ [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) ซึ่งเร็วกว่าพอสมควร
 
@@ -64,7 +67,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 [vim-airline][vim-airline] เป็น plugin ที่เราเซ็ต status bar แบบฉูดฉาดเหมือน powerline ได้ แต่โหลดเร็วกว่า (และไม่ต้องลง python ด้วย) แถมยังทำงานร่วมกับ plugin ตัวอื่นๆ ของ vim ได้ดีอีกด้วย
 
-![vim airline](images/vim-airline.png)
+![vim airline](/images/setting-up-vim-part-2/vim-airline.png)
 
 นอกจากนี้ก็เป็น plugin อื่นๆ ที่เกี่ยวกับแต่ละภาษาที่เขียน list เต็มๆ ของผมอยู่ในไฟล์ [.vimrc][my-vim-plugins] ครับ
 

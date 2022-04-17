@@ -1,5 +1,5 @@
 ---
-cover-image: images/cover-devtools-timeline.png
+cover-image: /images/how-web-browsers-work/cover-devtools-timeline.png
 date: 2016-01-28T00:00:00Z
 description: Web browser นั้นก็มีหน้าที่แปลง code ของทั้ง 3 ส่วนประกอบนั้น แสดงผลออกมาเป็นเว็บไซต์ให้เราได้ใช้งาน
   ในฐานะคนทำเว็บ การเข้าใจหลักการทำงานของ web browser นั้นช่วยให้เข้าใจถึงที่มาที่ไปของสิ่งที่ปรากฏบนหน้าจอ
@@ -10,10 +10,12 @@ tags:
   - browser
   - rendering
   - performance
-thumbnail: images/cover-devtools-timeline.png
+thumbnail: /images/how-web-browsers-work/cover-devtools-timeline.png
 title: วิธีการทำงานของ web browser
 url: /2016/01/28/how-web-browsers-work/
 layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 HTML, CSS กับ JavaScript เป็น 3 องค์ประกอบหลักของเว็บไซต์ทั่วๆ ไปที่เราเห็นกันอยู่
@@ -92,7 +94,7 @@ node ไหน เป็น parent/child ของ node ไหน ซึ่ง�
 DOM tree ก็จะออกมาแบบนี้
 
 <div class="text-center">
-  <img src="images/dom-tree.min.svg" alt="รูป DOM tree">
+  <img src="/images/how-web-browsers-work/dom-tree.min.svg" alt="รูป DOM tree">
 </div>
 
 แต่ CSSOM นั้น ไม่มีโครงสร้างชัดเจนเหมือน DOM แต่ก็มีโครงสร้างเป็น tree เหมือนกัน
@@ -100,7 +102,7 @@ DOM tree ก็จะออกมาแบบนี้
 และทุก element ก็จะ inherit style ของ `<body>` และ `<html>` มาเช่นกัน
 
 <div class="text-center">
-  <img src="images/inherited-styles.png" alt="รูป inherit styles จาก devtools">
+  <img src="/images/how-web-browsers-work/inherited-styles.png" alt="รูป inherit styles จาก devtools">
 </div>
 
 สมมุติว่าเรามี CSS แบบนี้
@@ -116,7 +118,7 @@ style ที่แท็ก `<p>` แต่ละตัวจะได้รั�
 และจะถูกนำไปใช้ในขั้นตอนการ render ต่อไปครับ
 
 <div class="text-center">
-  <img src="images/cssom-tree.min.svg" alt="รูป CSSOM Tree">
+  <img src="/images/how-web-browsers-work/cssom-tree.min.svg" alt="รูป CSSOM Tree">
 </div>
 
 หลังจากที่ได้ DOM Tree กับ CSSOM Tree แล้ว ก็จะถึงขั้นตอนต่อไปที่การสร้าง Render Tree
@@ -155,7 +157,7 @@ Paint คือการ render แต่ละ element ใน render tree อ�
 พอ render ครบทุก element ก็จะได้เป็นเว็บออกมาครับ
 
 <div class="text-center">
-  <img src="images/paint-profiler.png" alt="รูป Paint profiler ใน Devtools">
+  <img src="/images/how-web-browsers-work/paint-profiler.png" alt="รูป Paint profiler ใน Devtools">
 </div>
 
 ขั้นตอนเหล่านี้ไม่เกิดขึ้นเพียงครั้งเดียวแล้วก็จบไป แต่อาจเกิดขึ้นได้หลายๆ ครั้ง เช่น กรณีที่ DOM ถูกอัพเดท
