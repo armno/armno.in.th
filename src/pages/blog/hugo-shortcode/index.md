@@ -2,12 +2,15 @@
 title: "Hugo: สร้าง custom shortcode"
 date: 2018-09-08T20:04:30+07:00
 url: /2018/09/08/hugo-shortcode
-thumbnail: images/platoo.jpg
+thumbnail: /images/hugo-shortcode/platoo.jpg
 description: สร้าง custom shortcode ไว้ใช้เพื่อประหยัดเวลา ไม่ต้องพิมพ์ HTML เต็มๆ
 tags:
   - Hugo
   - Blog
   - Shortcode
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ## Shortcode ใน Hugo คืออะไร
@@ -19,11 +22,11 @@ tags:
 ยาวๆ มาทั้งหมด (ซึ่งยาวมาก) ก็จะเหลือแค่
 
 ```markdown
-{{</* instagram BhjmuHLBs48 *//>
+{{< instagram BhjmuHLBs48 />
 ```
 
 `instagram` คือชื่อของ shortcode ส่วน `Bhj..` คือ ID ของรูปจาก Instagram
-ทั้งหมดถูกหุ้มด้วย `{{</* *//>`
+ทั้งหมดถูกหุ้มด้วย `{{< />`
 
 นอกจาก Instagram แล้ว Hugo ยังมี [built-in shortcode](https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes)
 ให้อีกจำนวนหนึ่งไว้ช่วยทุ่นแรง
@@ -88,7 +91,7 @@ _(ในโพสต์[รีวิวจักรยาน Storck Visioner](ht
 `picture` และให้ส่ง parameter เข้าไปได้ แบบนี้
 
 ```markdown
-{{</* picture style="full" src="image.png" alt="image alternate text" *//>
+{{< picture style="full" src="image.png" alt="image alternate text" />
 ```
 
 เริ่มจาก ต้องไปสร้างไฟล์ HTML สำหรับ shortcode นี้ก่อน ผมเลือกเก็บไว้ใน theme
@@ -118,4 +121,4 @@ _(ในโพสต์[รีวิวจักรยาน Storck Visioner](ht
 
 ทดสอบเพิ่มรูปโดยใช้ `pitcure` shortcode
 
-<Picture wrapper-class="semi-full" src="images/platoo.jpg" alt="ทดสอบ picture shortcode ด้วยรูปปลาทู" />
+<Picture  src="/images/hugo-shortcode/platoo.jpg" alt="ทดสอบ picture shortcode ด้วยรูปปลาทู" />

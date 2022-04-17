@@ -2,9 +2,8 @@
 title: "แนะนำหนังสือ Better Web Typography for a Better Web"
 date: 2019-06-09T10:29:00+07:00
 url: /2019/06/09/better-web-typography-for-a-better-web-book
-cover: images/book-cover.jpg
-thumbnail: images/thumbnail.jpg
-layout: '../../../layouts/PostLayout.astro'
+cover: /images/web-typography-book/book-cover.jpg
+thumbnail: /images/web-typography-book/thumbnail.jpg
 description: หนังสือ Better Web Typography for a Better Web เขียนโดย Matej Latin เป็นหนังสืออีกเล่มที่อยู่บนชั้นหนังสือเล็กๆ ที่บริษัท ผมยืมมาอ่านแล้วรู้สึกชอบจึงอยากจะแนะนำครับ
 tags:
   - book
@@ -14,6 +13,9 @@ tags:
   - coding
 categories:
 - books
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 <p class="lead">
@@ -22,7 +24,7 @@ categories:
 </p>
 
 <Picture
-  image src="images/book-cover.jpg"
+  src="/images/web-typography-book/book-cover.jpg"
   alt="ปกหนังสือ Better Web Typography for a Better Web"
   caption="ปกหนังสือ Better Web Typography for a Better Web"
   ratio="3-2"
@@ -56,8 +58,7 @@ categories:
 เดี๋ยวนี้อักษรแบบ serif สมัยใหม่หลายๆ แบบ ก็ถูกออกแบบมาให้แสดงผลได้ดีบนจอคอมพิวเตอร์/มือถือแล้ว
 
 <Picture
-  image
-  src="images/ch-5.jpg"
+  src="/images/web-typography-book/ch-5.jpg"
   alt="บทที่ 5"
   ratio="3-2"
 />
@@ -69,7 +70,7 @@ categories:
 (แต่ก็ไม่ได้เป็นกฎที่ตายตัวนะครับ เป็นเพียงแนวทางเท่านั้น)
 
 <Picture
-  src="images/triangle-paragraph.jpg"
+  src="/images/web-typography-book/triangle-paragraph.jpg"
   alt="triangle paragraph อธิบายความสัมพันธ์ระหว่าง font-size, line-height, กับ line-length"
   caption="(ภาพจาก https://betterwebtype.com/triangle/ ในเว็บมีเกมให้เล่นด้วย สนุกดี)"
 />
@@ -90,21 +91,21 @@ categories:
 มี code CSS/SCSS ประกอบเยอะเพื่อให้ developer อย่างเราๆ เข้าใจได้ง่าย
 
 <Picture
-  src="images/code.jpg"
+  src="/images/web-typography-book/code.jpg"
   alt="Code SCSS/CSS"
   ratio="3-2"
 />
 
 <Picture
   ratio="3-2"
-  src="images/print.jpg"
+  src="/images/web-typography-book/print.jpg"
   alt="รูปประกอบเนื้อหามีเยอะ"
   caption="การยกตัวอย่างประกอบเนื้อหาก็เข้าใจง่ายดี ไม่ต้องเป็น designer จ๋าๆ ก็เข้าใจได้"
 />
 
 <Picture
   ratio="3-2"
-  src="images/page.jpg"
+  src="/images/web-typography-book/page.jpg"
   alt="รูปตัวอย่างจากหนังสือ"
   caption="คุณภาพการพิมพ์ดีมาก"
 />

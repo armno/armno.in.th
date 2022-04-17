@@ -2,12 +2,14 @@
 title: "ทดสอบฟีเจอร์ก่อน deploy ด้วย Netlify Deploy Preview"
 date: 2018-09-02T11:14:22+07:00
 url: /2018/09/02/netlify-deploy-preview
-layout: '../../../layouts/PostLayout.astro'
 description: Netlify มีฟีเจอร์หนึ่งชื่อว่า Deploy Preview ที่ทุกครั้งที่เราสร้าง pull request (หรือ merge request สำหรับ GitLab) Netlify จะสร้าง URL สำหรับ pull requets นั้นให้โดยอัตโนมัติ ทำให้เราสามารถเช็คดูก่อนได้โดยที่ยังไม่ต้อง merge branch นั้น เข้า production branch
-thumbnail: images/idea.png
+thumbnail: /images/netlify-deploy-preview/idea.png
 tags:
   - Netlify
   - Continuous Deployment
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 [Netlify](https://www.netlify.com/) มีฟีเจอร์หนึ่งชื่อว่า Deploy Preview ที่ทุกครั้งที่เราสร้าง pull request (หรือ merge request สำหรับ GitLab)
@@ -22,7 +24,7 @@ Netlify จะสร้าง URL สำหรับ pull requets นั้น�
 ตัวอย่างเช่น ผมอยากแก้หน้า home page ของบล็อกนี้ ด้วยการเปลี่ยนรูปและข้อความ
 
 <p class="media semi-full">
-  <img src="images/idea.png" alt="new homepage idea">
+  <img src="/images/netlify-deploy-preview/idea.png" alt="new homepage idea">
 </p>
 
 หลังจากสร้าง branch และแก้ code แล้ว ผมก็ push branch นี้ขึ้นไปบน GitHub repo
@@ -31,25 +33,25 @@ Netlify จะสร้าง URL สำหรับ pull requets นั้น�
 พอสร้าง pull request ปุ๊บ Netlify ก็จะเริ่มสร้าง deploy preview ให้อัตโนมัติ
 
 <p class="media semi-full">
-  <img src="images/new-pull-request.png" alt="netlify สร้าง deploy preview เมื่อสร้าง pull request">
+  <img src="/images/netlify-deploy-preview/new-pull-request.png" alt="netlify สร้าง deploy preview เมื่อสร้าง pull request">
 </p>
 
 เมื่อ build เสร็จ URL ใหม่ก็จะถูกสร้างขึ้นใน pattern `https://deploy-preview-<PULL_REQUEST_ID>--yoursitename.netlify.com` เช่นของผมก็จะเป็น [`https://deploy-preview-24--armno.netlify.com`](https://deploy-preview-24--armno.netlify.com/)
 
 <p class="media semi-full">
-  <img src="images/deploy-preview-ready.png" alt="netlify สร้าง deploy preview เมื่อสร้าง pull request">
+  <img src="/images/netlify-deploy-preview/deploy-preview-ready.png" alt="netlify สร้าง deploy preview เมื่อสร้าง pull request">
 </p>
 
 เราสามารถกด link `Details` ไปดู deploy preview ที่ถูกสร้างขึ้นอัตโนมัติได้เลย
 
 <p class="media semi-full">
-  <img src="images/preview-deployed.png" alt="กด details เข้าไปดูได้เลย">
+  <img src="/images/netlify-deploy-preview/preview-deployed.png" alt="กด details เข้าไปดูได้เลย">
 </p>
 
 ในหน้า dashboard ของ Netlify ก็จะมีข้อมูลของ deploy preview ขึ้นมาแยกกับ production deploy
 
 <p class="media semi-full">
-  <img src="images/builds-on-netlify.png" alt="deploy previews บน dashboard ของ Netlify">
+  <img src="/images/netlify-deploy-preview/builds-on-netlify.png" alt="deploy previews บน dashboard ของ Netlify">
 </p>
 
 ### ข้อสังเกต

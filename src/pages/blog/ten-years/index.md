@@ -17,19 +17,17 @@ setup: |
 เดือนพฤษภาคม 2019 ที่ผ่านมา ผมได้รับ email จาก [dotarai](https://www.dotarai.co.th) ว่า ชื่อโดเมน armno.in.th
 ใกล้จะหมดอายุแล้ว หลังจากต่ออายุโดเมนครั้งล่าสุดเมื่อ 10 ปีก่อน ในปี 2009
 
-ทำให้ผมนึกขึ้นได้ .. นี่ผ่านมา 10 ปีแล้วเหรอวะ
+ทำให้ผมนึกขึ้นได้ .. นี่ผ่านมา 10 ปีแล้วเหรอ(วะ)
 
 ก็เลยถือโอกาสในวาระที่โดเมนหมดอายุ ฉลองครบรอบ 10 ปี ของบล็อกนี้
 อยากจะเล่าถึงที่มาที่ไป สิ่งที่ได้พบเจอระหว่างทาง ปัจจุบัน และอนาคตของบล็อกนี้ครับ
 
 <Picture
-  wrapper-class="semi-full"
-  src="images/relaunch.png"
+  
+  src="/images/ten-years/relaunch.png"
   alt="ภาพ screenshot เมื่อ 10 ปีก่อน"
-  caption="ภาพ snapshot ของบล็อกนี้เมื่อ 10 ปีก่อน จาก Web Archive"
+  caption="ภาพ snapshot ของบล็อกนี้เมื่อ 10 ปีก่อน จาก Web Archive (https://web.archive.org/web/20090630010030/http://www.armno.in.th/)"
 />
-
-_บน: ภาพ snapshot ของบล็อกนี้เมื่อ 10 ปีก่อน จาก [Web Archive](https://web.archive.org/web/20090630010030/http://www.armno.in.th/)_
 
 ## Timeline คร่าวๆ
 
@@ -178,8 +176,8 @@ _บน: ภาพ snapshot ของบล็อกนี้เมื่อ 10 
 **อย่ากลัวว่ามันจะไม่ perfect** ไม่มีใครคาดหวังว่าบล็อกของเราจะต้อง perfect นอกจากตัวเราเอง
 
 <Picture
-  wrapper-class="semi-full"
-  src="images/lake.jpg"
+  
+  src="/images/ten-years/lake.jpg"
   alt="ทะเลสาบ Kawaguchi"
   caption="รูปพักสายตา ไม่เกี่ยวกับเนื้อหา - ทะเลสาบ Kawaguchi"
   ratio="3-2"

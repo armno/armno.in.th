@@ -2,13 +2,15 @@
 title: "Lazy Load รูปภาพด้วย LazyLoad library"
 date: 2018-09-10T20:24:15+07:00
 url: /2018/09/10/lazyload-images
-layout: '../../../layouts/PostLayout.astro'
-thumbnail: images/audit-results-after.png
+thumbnail: /images/lazyload-images/audit-results-after.png
 description: การใช้ lazy loading กับไฟล์จำพวกรูปภาพ เป็นเทคนิคที่นำมาใช้ได้ง่าย และส่งผลดีอย่างเห็นได้ชัด ในโพสต์นี้ผมนำ library ที่ชื่อว่า LazyLoad มาใช้งานกับบล็อกนี้ครับ
 tags:
   - lazy load
   - performance
   - javascript
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 [Lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) เป็นเทคนิคหนึ่งในการทำให้เว็บแสดงผลได้ไวขึ้น หลักการก็คือ
@@ -80,14 +82,14 @@ asset ที่รองรับคือ รูปภาพ วิดีโอ
 (ทดสอบการปิด JavaScript ใน Chrome DevTools โดยการเปิด command palette (CMD + Shift + P) แล้วหา `disable javascript`
 แล้ว refresh)
 
-<Picture src="images/disable-javascript-in-devtools.png" alt="ปิด JavaScript ใน Chrome DevTools" />
+<Picture src="/images/lazyload-images/disable-javascript-in-devtools.png" alt="ปิด JavaScript ใน Chrome DevTools" />
 
 โชคดีที่มี [shortcode ใน Hugo](https://armno.in.th/2018/09/08/hugo-shortcode/)
 ผมเลยสร้าง [shortcode อีกอัน](https://github.com/armno/blog/blob/master/themes/armno/layouts/shortcodes/picture-lazy.html)สำหรับใส่รูปที่ต้องการใช้ lazy load ใน content ได้
 ไม่ต้องไปตามใส่ tag ```<noscript>``` ให้กับทุกรูป
 
 ```markdown
-{{</* picture-lazy src="/path/to/image" alt="test" *//>
+{{< picture-lazy src="/path/to/image" alt="test" />
 ```
 
 ## วัดผล
@@ -103,11 +105,11 @@ asset ที่รองรับคือ รูปภาพ วิดีโอ
 
 ก่อน
 
-<Picture wrapper-class="semi-full" src="images/audit-results-before.png" alt="ก่อนใช้ LazyLoad คะแนน performance อยู่ที่ 73" />
+<Picture  src="/images/lazyload-images/audit-results-before.png" alt="ก่อนใช้ LazyLoad คะแนน performance อยู่ที่ 73" />
 
 หลัง
 
-<Picture wrapper-class="semi-full" src="images/audit-results-after.png" alt="หลังใช้ LazyLoad คะแนน performance อยู่ที่ 90" />
+<Picture  src="/images/lazyload-images/audit-results-after.png" alt="หลังใช้ LazyLoad คะแนน performance อยู่ที่ 90" />
 
 นอกจากนั้นคือ ช่วยประหยัด bandwidth สำหรับ user ที่ใช้ 3g/4g ไม่ต้องเสียเวลาและค่าเน็ตมือถือ รอโหลดรูปทั้งหมดก่อนที่จะเริ่มอ่านบทความได้
 

@@ -29,7 +29,7 @@ gaming series ที่วางขายตามร้านทั่วไป
 สุดท้ายด้วยความที่ไม่มีตัวเลือกมากนัก เลยได้ [SteelSeries Apex M500](https://steelseries.com/gaming-keyboards/apex-m500) มา
 ด้วยเหตุผลคือ key เป็นภาษาอังกฤษล้วน ราคาอยู่ในช่วงที่จ่ายไหว และเสียงก็ไม่ได้ดังมากด้วย
 
-<Picture wrapper-class="semi-full" src="images/01-steelseries-m500.jpg" alt="SteelSeries Apex M500 ตอนถอดมาเช็ดทำความสะอาด" />
+<Picture  src="images/01-steelseries-m500.jpg" alt="SteelSeries Apex M500 ตอนถอดมาเช็ดทำความสะอาด" />
 
 ใช้งาน M500 มาได้ประมาณ 4 เดือน พอเริ่มได้รู้จัก mechanical keyboard มากขึ้น ก็เริ่มมองหา mechanical keyboard ตัวใหม่
 โดยตั้งโจทย์ไว้คร่าวๆ ว่า

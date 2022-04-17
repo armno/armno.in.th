@@ -8,9 +8,11 @@ tags:
   - Blog
   - Hugo
   - CI
-thumbnail: images/jobs.png
-cover-image: images/cover.png
+thumbnail: /images/blog-automate-deployment/jobs.png
+cover-image: /images/blog-automate-deployment/cover.png
 layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 บล็อก [armno.in.th](https://armno.in.th) ถูกสร้างขึ้นมาด้วย [Hugo](https://gohugo.io/)
@@ -43,7 +45,7 @@ script มันก็หยุดทำงานเพราะผมไม่�
 ถึงแม้นานๆ จะอัพเดทบล็อกนี้สักที แต่ก็ไม่ได้อยากทำเหมือนเดิมซ้ำๆ ทุกครั้ง ก็เลยจดโน้ตไว้ว่าวันหนึ่งจะทำ
 
 <p class="semi-full media">
-  <img src="images/github-issue.png" alt="issue ที่สร้างไว้กันลืมบน GitHub repo">
+  <img src="/images/blog-automate-deployment/github-issue.png" alt="issue ที่สร้างไว้กันลืมบน GitHub repo">
 </p>
 
 ผ่านไปปีกว่า ถึงเพิ่งได้ลงมือทำจริงๆ
@@ -109,13 +111,13 @@ image นี้มี command `server` ใช้สำหรับรัน loca
 ในเครื่อง dev แต่เปลี่ยนเป็น `$ docker-compose up --detach` แทน
 
 สำหรับ `Dockerfile` ที่จะนำไปใช้ build image เพื่อใช้บน CI และ production server ใช้
-[docker multi-stage build](https://docs.docker.com/develop/develop-images/multistage-build/)
+[docker multi-stage build](https://docs.docker.com/develop/develop-/images/blog-automate-deployment/multistage-build/)
 เพื่อให้ Hugo build ไฟล์ output ออกมาก่อน แล้วค่อยนำ output ไปใส่ใน nginx web server
 
 image มีแบบ [`onbuild`](https://github.com/klakegg/docker-hugo/blob/master/lib/template/Dockerfile-onbuild)
 ให้เลือกด้วย ใน `Dockerfile` ก็เลยมีแค่ 3 บรรทัด
 
-```dockerfile
+```
 FROM klakegg/hugo:0.46-onbuild AS hugo
 
 FROM nginx:1.15.2-alpine
@@ -135,20 +137,20 @@ COPY --from=hugo /onbuild /usr/share/nginx/html
 จาก GitHub repo ที่เรามีอยู่
 
 <p class="media semi-full">
-  <img src="images/set-up-project.png" alt="สร้าง project ใน CircleCI">
+  <img src="/images/blog-automate-deployment/set-up-project.png" alt="สร้าง project ใน CircleCI">
 </p>
 
 พอกด Set Up Project ก็ต้องเลือก OS กับ ภาษาที่ใช้กับ project แล้ว CircleCI จะสร้าง template
 ของไฟล์ config ให้ .. สำหรับบล็อก Hugo เลือกภาษาอะไรก็ได้
 
 <p class="media semi-full">
-  <img src="images/select-os-language.png" alt="สร้าง project ใน circleci">
+  <img src="/images/blog-automate-deployment/select-os-language.png" alt="สร้าง project ใน circleci">
 </p>
 
 เลื่อนลงมาข้างล่างอีกนิด จะมีขั้นตอนบอกว่าต้องทำอะไรบ้าง
 
 <p class="media semi-full">
-  <img src="images/steps.png" alt="ขั้นตอนการ set up project ใน CircleCI">
+  <img src="/images/blog-automate-deployment/steps.png" alt="ขั้นตอนการ set up project ใน CircleCI">
 </p>
 
 ดูเหมือนมีหลายขั้นตอน จริงๆ แล้วมีเพียงการสร้างไฟล์ `.circleci/config.yml` แล้ว commit และ push
@@ -202,11 +204,11 @@ workflows:
 - `workflows:` - บอกความสัมพันธ์ของแต่ละ job ว่าใครรันก่อน-หลัง หรือให้รันเฉพาะ branch ไหน (ใน GitLab CI มันคือ concept ของ Pipelines)
 
 <p class="media semi-full">
-  <img src="images/jobs.png" alt="jobs ใน CircleCI">
+  <img src="/images/blog-automate-deployment/jobs.png" alt="jobs ใน CircleCI">
 </p>
 
 <p class="media semi-full">
-  <img src="images/workflows.png" alt="workflows ใน CircleCI">
+  <img src="/images/blog-automate-deployment/workflows.png" alt="workflows ใน CircleCI">
 </p>
 
 ไฟล์ config.yml ของผมมีอยู่ 2 jobs คือ
@@ -268,5 +270,5 @@ $ sudo service nginx restart
 Update: ตอน 2 มาแล้ว [Update Blog อัตโนมัติด้วย Netlify](https://armno.in.th/2018/08/18/move-to-netlify/)
 
 <p class="media text-center">
-  <img src="images/pick-none.png" alt="issue closed">
+  <img src="/images/blog-automate-deployment/pick-none.png" alt="issue closed">
 </p>

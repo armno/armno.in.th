@@ -3,13 +3,16 @@ title: "ลองใช้ IntersectionObserver โหลด Disqus Comments"
 date: 2019-06-26T20:25:44+07:00
 url: /2019/06/26/lazy-load-disqus
 description: ใช้ IntersectionObserver เพื่อ lazy load Disqus comment เมื่อ scroll ลงไปถึงด้านล่างของโพสต์
-thumbnail: images/before.jpg
+thumbnail: /images/lazy-load-disqus/before.jpg
 tags:
 - JavaScript
 - performance
 - Disqus
 - blog
 - IntersectionObserver
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 [Disqus](https://disqus.com/) เป็น service ที่ทำให้เราสามารถ embed comments ในบล็อกหรือเว็บไซต์ที่เป็น static HTML ได้
@@ -21,8 +24,8 @@ tags:
 แต่จริงๆ ไฟล์ที่ถูกโหลดมันไม่ได้มีแค่ไฟล์นี้ไฟล์เดียว เพราะไฟล์นี้มันก็ไปโหลดไฟล์อื่นๆ มาอีก
 
 <Picture
-  wrapper-class="semi-full"
-  src="images/before.jpg"
+  
+  src="/images/lazy-load-disqus/before.jpg"
   alt="before"
   ratio="16-10"
 />
@@ -42,7 +45,7 @@ tags:
 เราสามารถใช้ [`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) เพื่อบอกว่า ให้จับตามอง (observe) กล่อง comment ไว้
 ถ้าแกถูกเลื่อนขึ้นมาอยู่ใน viewport เมื่อไหร่ ให้ไปเรียก callback function ที่เตรียมไว้นะ
 
-callback zfunction ที่เตรียมไว้จะเป็นอะไรก็ได้ ในกรณีของผมก็คือ function สำหรับการโหลด Disqus comment
+callback function ที่เตรียมไว้จะเป็นอะไรก็ได้ ในกรณีของผมก็คือ function สำหรับการโหลด Disqus comment
 
 > ถ้าเป็นเมื่อก่อน เราอาจต้องใช้ scroll event ร่วมกับ event handler function
 โดยการเทียบค่า scroll offset ของทั้งตัว element เอง และ `window` object
@@ -210,8 +213,8 @@ resource ของ Disqus จะถูกโหลดเมื่อ scroll ล�
 มี delay นิดหน่อยในระหว่างที่ Disqus กำลังโหลด (เพิ่ม `rootMargin` ด้านบนอีกได้ callback function จะได้เริ่มทำงานไวกว่าเดิม)
 
 <video controls width="100%" autoplay controls>
-  <source src="images/scroll.webm" type="video/webm">
-  <source src="images/scroll.mp4" type="video/mp4">
+  <source src="/images/lazy-load-disqus/scroll.webm" type="video/webm">
+  <source src="/images/lazy-load-disqus/scroll.mp4" type="video/mp4">
   Sorry, your browser doesn't support embedded videos.
 </video>
 
@@ -220,8 +223,8 @@ resource ของ Disqus จะถูกโหลดเมื่อ scroll ล�
 เพราะ CPU ทำงานน้อยลงกว่าเดิม
 
 <Picture
-  wrapper-class="semi-full"
-  src="images/compare.png"
+  
+  src="/images/lazy-load-disqus/compare.png"
   alt="รูปเปรียบเทียบระหว่างก่อนและหลัง lazy load disqus"
   ratio="16-9"
 />

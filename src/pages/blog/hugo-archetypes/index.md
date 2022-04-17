@@ -2,14 +2,16 @@
 title: "Hugo: สร้าง template ของ front matter ด้วย Archetypes"
 date: 2018-09-03T17:03:27+07:00
 url: /2018/09/03/hugo-archetypes
-layout: '../../../layouts/PostLayout.astro'
-cover-image: images/cover.png
-thumbnail: images/thumbnail.png
+cover-image: /images/hugo-archetypes/cover.png
+thumbnail: /images/hugo-archetypes/thumbnail.png
 description: ใช้ประโยชน์จาก archetype ใน hugo สำหรับสร้าง template ของ front matter เวลาสร้างโพสต์ใหม่
 tags:
   - hugo
   - archetypes
   - blog
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 ## Archetype คืออะไร
@@ -90,7 +92,7 @@ date: 2018-09-02T11:14:22+07:00
 url: /2018/09/02/netlify-deploy-preview
 layout: free
 description: Netlify มีฟีเจอร์หนึ่งชื่อว่า Deploy Preview ที่ทุกครั้งที่เราสร้าง pull request (หรือ merge request สำหรับ GitLab) Netlify จะสร้าง URL สำหรับ pull requets นั้นให้โดยอัตโนมัติ ทำให้เราสามารถเช็คดูก่อนได้โดยที่ยังไม่ต้อง merge branch นั้น เข้า production branch
-thumbnail: images/idea.png
+thumbnail: /images/hugo-archetypes/idea.png
 tags:
   - Netlify
   - Continuous Deployment
@@ -116,7 +118,7 @@ title: "{{ .Name }}"
 date: {{ .Date }}
 url: {{ dateFormat "/2006/01/02/" .Date }}{{ .Name }}
 layout: free
-cover-image: images/cover.jpg
+cover-image: /images/hugo-archetypes/cover.jpg
 thumbnail:
 description:
 tags:
@@ -138,7 +140,7 @@ title: "test-new-post"
 date: 2018-09-04T08:39:14+07:00
 url: /2018/09/04/test-new-post
 layout: free
-cover-image: images/cover.jpg
+cover-image: /images/hugo-archetypes/cover.jpg
 thumbnail:
 description:
 tags:
