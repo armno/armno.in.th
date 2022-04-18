@@ -10,7 +10,9 @@ tags:
 - IT Finishing School
 title: A Good Programmer
 url: /2009/11/15/a-good-programmer/
-wordpress_id: 921
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 From a discussion with [Snapplabs](http://www.snapplabs.com/) in [IT Finishing School Project](http://www.doc.eng.cmu.ac.th/~fs/) about 2 weeks ago,

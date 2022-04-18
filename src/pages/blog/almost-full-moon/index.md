@@ -11,7 +11,9 @@ tags:
 - ภาพภ่ายพระจันทร์
 title: ภาพถ่ายพระจันทร์(เกือบ)เต็มดวง
 url: /2009/10/05/almost-full-moon/
-wordpress_id: 881
+layout: '../../../layouts/PostLayout.astro'
+setup: |
+  import Picture from '../../../components/Picture.astro';
 ---
 
 [![](https://armno.in.th/wp-content/uploads/ba5eba3351bd_121AD/DSC_7708_thumb.jpg)](https://armno.in.th/wp-content/uploads/ba5eba3351bd_121AD/DSC_7708.jpg)
