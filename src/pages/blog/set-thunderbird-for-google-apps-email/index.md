@@ -11,7 +11,7 @@ tags:
 - การตั้งค่า Thunderbird
 title: วิธีตั้งค่า Mozilla Thunderbird ให้ใช้งานอีเมล Google Apps ได้
 url: /2010/05/31/set-thunderbird-for-google-apps-email/
-wordpress_id: 1195
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ผมเป็นคนหนึ่งที่ใช้บริการ [Google Apps](http://www.google.com/apps/index1.html) กับโดเมนเนมของตัวเองครับ _(ทั้ง loveofze.com และ armno.in.th)_ ที่ใช้เป็นหลัก และเหมือนจะใช้อยู่อย่างเดียวด้วย ก็คือ GMail มี email address เป็นชื่อเว็บตัวเอง นอกจากจะดูเท่แล้ว ยังใช้งานได้จริงด้วย

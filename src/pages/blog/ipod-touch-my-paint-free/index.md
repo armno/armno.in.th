@@ -11,7 +11,7 @@ tags:
 - ศิลปะ
 title: ฝึกวาดภาพใน iPod Touch ด้วยแอพ MyPaint Free
 url: /2010/04/28/ipod-touch-my-paint-free/
-wordpress_id: 1150
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ช่วงนี้กำลังเห่อโปรแกรม **MyPaint Free** ใน [iPod Touch](https://armno.in.th/content/ipod-touch) อยู่ครับ เป็นโปรแกรมวาดภาพด้วยแปรง (Brush, แต่ในภาพเป็นดินสอแฮะ) แบบง่ายๆครับ

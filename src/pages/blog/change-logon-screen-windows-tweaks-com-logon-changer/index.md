@@ -10,7 +10,7 @@ tags:
 - Windows 7
 title: เปลี่ยน Logon Screen ของ Windows 7 ด้วย Tweaks.com Logon Changer
 url: /2010/05/07/change-logon-screen-windows-tweaks-com-logon-changer/
-wordpress_id: 1158
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 เบื่อ Logon Screen แบบเดิมๆของ Window 7 กันไหมครับ?

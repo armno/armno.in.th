@@ -10,7 +10,7 @@ tags:
 - Jailbreak iPod Touch 2G
 title: ประสบการณ์ Jailbreak iPod Touch 2G
 url: /2009/02/10/jailbreak-ipod-touch-2g/
-wordpress_id: 574
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ก่อนหน้านี้ เพื่อนผมซึ่งใช้ iPhone 3G อยู่ ก็ยุนักยุหนา ว่าให้ Jailbreak ซะ ผมเองก็ไม่รู้เหมือนกันว่าจะทำไปทำไม หลักๆใช้ Calendar กับ Ultimate To-Do แค่สองโปรแกรมเอง จริงๆแล้วไม่ได้อยาก Jailbreak อะไรมันมากมายหรอกครับ แต่พอดีนั่งทำงานไปนานๆแล้วเริ่มรู้สึกเบื่อ เลยลองหาอะไรทำเล่นๆ ก็เลย Jailbreak iPod Touch 2G มันซะเลย .. นั่งอ่านในสยามพอดมาหลายวันละ ขอลองดูมั่งละกัน.. [ ![DSC_0543](https://armno.in.th/wp-content/uploads/2009/02/dsc-0543-thumb.jpg)](https://armno.in.th/wp-content/uploads/2009/02/dsc-0543.jpg) นานมาแล้ว ตอนที่ไปเรียน Mobile 3D Gaming นั้น ได้รู้วิธีการ Jailbreak iPhone เหมือนกันครับ แค่คลิกเดียวก็แหกคุกได้แล้ว .. แต่สำหรับ iPod Touch ในวันนี้ ต่างกันอย่างสิ้นเชิง วิธีอาจมีหลากหลาย แต่วิธีที่ผมทำ ก็ถือได้ว่า มีขั้นตอนเยอะพอสมควร

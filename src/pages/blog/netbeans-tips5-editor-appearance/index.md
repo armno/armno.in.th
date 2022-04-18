@@ -10,7 +10,7 @@ tags:
 - NetBeans IDE
 title: NetBeans Tips#5 เปลี่ยนลักษณะ Editor ได้ดั่งใจ
 url: /2010/07/26/netbeans-tips5-editor-appearance/
-wordpress_id: 1311
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 NetBeans Tips มาอีกแล้ววว

@@ -13,6 +13,7 @@ tags:
   - หลุมดำ
 title: จุดจบของดวงดาว
 url: /2008/12/08/ending-of-stars/
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ก่อนอื่น อยากให้กลับไปอ่านเรื่องที่ผมเคยเขียนไว้ เกี่ยวกับ[ดาวฤกษ์](https://armno.in.th/content/%e0%b8%94%e0%b8%b2%e0%b8%a7%e0%b8%a4%e0%b8%81%e0%b8%a9%e0%b9%8c)ก่อนนะครับ

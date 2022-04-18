@@ -9,7 +9,7 @@ tags:
 - NetBeans IDE
 title: 'NetBeans Tips #4 หาคลาส ตัวแปร ยังไงก็เจอ'
 url: /2010/07/17/netbeans-tips-4-finding-declarations/
-wordpress_id: 1272
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ยังไม่จบไม่สิ้นกับ [NetBeans IDE](https://armno.in.th/content/netbeans-ide) นะครับ แหะๆ

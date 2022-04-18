@@ -14,7 +14,7 @@ tags:
 - แสง
 title: Rush Hour
 url: /2009/04/07/rush-hour/
-wordpress_id: 683
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 [![Rush Hour by ArmNo](https://armno.in.th/wp-content/uploads/2009/04/rushhour-thumb.jpg)](https://armno.in.th/wp-content/uploads/2009/04/rushhour.jpg)

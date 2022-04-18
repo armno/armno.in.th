@@ -13,7 +13,7 @@ tags:
 - อำเภอปัว
 title: '[Gallery] The Northern Freshness'
 url: /2009/04/21/gallery-the-northern-freshness/
-wordpress_id: 693
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 เป็นรูปที่ถ่ายตอนกลับบ้านสงกรานต์ครับ ขับรถไปถ่ายรูปกับพี่ชาย แถวๆบ้านน่ะแหละ (อ.ปัว จ.น่าน) อากาศดีมากๆเลย

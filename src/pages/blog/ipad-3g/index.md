@@ -10,7 +10,7 @@ tags:
 - iPod Touch
 title: สวัสดี iPad 3G
 url: /2010/12/13/ipad-3g/
-wordpress_id: 1447
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 **iPad Wifi + 3G** รุ่น 32GB ตัวนี้ เป็น**ของขวัญรับปริญญาจากคุณแม่ของผมครับ** .. แม่ให้ผมเลือกเอง ผมเลือก iPad .. ต้องขอบคุณคุณแม่ตัวโตๆอีกที ^^"

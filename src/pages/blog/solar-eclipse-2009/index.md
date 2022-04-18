@@ -9,7 +9,7 @@ tags:
 - สุริยุปราคาวงแหวน
 title: สุริยุปราคา 26 มกราคม 2552
 url: /2009/01/25/solar-eclipse-2009/
-wordpress_id: 498
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 (เกือบลืมไปแล้วล่ะสิ ช่วงนี้งานรัดตัวครับ)

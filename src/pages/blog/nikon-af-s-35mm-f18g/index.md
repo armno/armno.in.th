@@ -14,7 +14,7 @@ tags:
 - เลนส์
 title: ความรู้สึกจากการใช้เลนส์ Nikon AF-S 35mm f/1.8G
 url: /2010/09/19/nikon-af-s-35mm-f18g/
-wordpress_id: 1363
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 โพสต์นี้เน้นความรู้สึกจากการใช้งาน มากกว่าที่จะเป็นรีวิวเลนส์นะครับ

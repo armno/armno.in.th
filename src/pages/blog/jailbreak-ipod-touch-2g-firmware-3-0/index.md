@@ -13,7 +13,7 @@ tags:
 - ปลดล็อก iPod Touch
 title: ประสบการณ์ Jailbreak iPod Touch 2G Firmware 3.0
 url: /2009/07/28/jailbreak-ipod-touch-2g-firmware-3-0/
-wordpress_id: 864
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ตอนแรกผมไม่ได้สนใจ Firmware 3.0 ของ iPhone/iPod Touch เลยครับ เนื่องจากขี้เกียจหาโหลด และก็ขี้เกียจ Jailbreak ใหม่อีกรอบ แต่นั่งเล่นเน็ตดึกๆของคืนเมื่อวาน เจอ Review จาก [PDAMobiz.com](http://www.pdamobiz.com) ซึ่งคุณ** tarnpee** ได้เขียน[วิธีการ Jailbreak iPod Touch สำหรับ Firmware 3.0 โดยใช้ RedPwn](http://pdamobiz.com/forum/forum_posts.asp?TID=232197&PN=1&TPN=1) .. อ่านดูคร่าวๆแล้วไม่น่าจะยาก (เหมือนครั้งก่อนที่ผม [Jailbreak Firmware 2.0 ตอนที่ยังไม่มี QuickPwn](https://armno.in.th/20090210/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%93%E0%B9%8C-jailbreak-ipod-touch-2g)) ก็เลยลองทำดูครับ

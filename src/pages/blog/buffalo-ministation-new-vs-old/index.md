@@ -10,7 +10,7 @@ tags:
 - External Harddisk
 title: Buffalo Ministation ตัวเก่าปะทะตัวใหม่
 url: /2009/11/07/buffalo-ministation-new-vs-old/
-wordpress_id: 912
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ปีนี้กระแส [External Harddisk ยี่ห้อ Buffalo](https://armno.in.th/20081109/external-harddisk-%E0%B8%A2%E0%B8%B5%E0%B9%88%E0%B8%AB%E0%B9%89%E0%B8%AD-buffalo) มาแรงมาก งาน Dgital ICT Chiang Mai 2009 ที่เพิ่งผ่านมาหยกๆ ก็มีเจ้านี่วางขายแทบจะทุกร้าน (ผิดกับปีที่แล้ว ที่ทั้งงานมีขายอยู่ร้านเดียว) และก็คิดว่างาน Commart Thailand ปีนี้ [Buffalo](https://armno.in.th/content/buffalo) ก็คงจะมาแรงเหมือนกัน (สังเกตเอาจากคนเข้าบล็อกช่วงนี้นะ ^^”)

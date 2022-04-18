@@ -10,7 +10,7 @@ tags:
   - เว็บไซต์
 title: NASA's Astronomy picture of the day
 url: /2008/05/25/nasas-astronomy-picture-of-the-day/
-wordpress_id: 44
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 สวัสดีครับทุกคน วันนี้ผมมีเว็บไซต์เกี่ยวกับดาราศาสตร์อีกเว็บหนึ่งมาแนะนำครับ มีชื่อว่า **[Astronomy Picture of the Day](https://antwrp.gsfc.nasa.gov/apod/lib/aptree.html)** ครับ ([https://antwrp.gsfc.nasa.gov/apod/lib/aptree.html](https://antwrp.gsfc.nasa.gov/apod/lib/aptree.html)) ซึ่งเป็นเว็บไซต์ย่อยของ **[องค์การบริหารการบินและอวกาศแห่งชาติ](https://th.wikipedia.org/wiki/%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B2%E0%B8%8B%E0%B8%B2)** **[(The National Aeronautics and Space Administration, NASA)](https://en.wikipedia.org/wiki/Nasa)** อีกทีนะครับ ซึ่งเป็นเว็บไซต์ที่มีภาพเกี่ยวกับดาราศาสตร์ เสิร์ฟร้อนๆทุกๆวันเลยครับ

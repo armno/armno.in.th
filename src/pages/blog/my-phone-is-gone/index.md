@@ -12,7 +12,7 @@ tags:
 - โทรศัพท์มือถือ
 title: โทรศัพท์เสีย
 url: /2009/08/11/my-phone-is-gone/
-wordpress_id: 867
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 นี่คือ Gadget สุดที่รักของผมครับ [**iPod Touch 2G**](https://armno.in.th/20090202/ipod-touch-2g-8gb)

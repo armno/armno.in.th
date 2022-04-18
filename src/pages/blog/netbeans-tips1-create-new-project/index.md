@@ -10,7 +10,7 @@ tags:
 - Web Developement
 title: 'NetBeans Tips#1: เริ่มสร้างโปรเจ็ค'
 url: /2010/07/10/netbeans-tips1-create-new-project/
-wordpress_id: 1240
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ### ทำไมถึงต้องสร้างเป็นโปรเจ็คใน NetBeans?

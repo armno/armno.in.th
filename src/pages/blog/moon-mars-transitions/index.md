@@ -13,7 +13,7 @@ tags:
   - ดาวอังคาร
 title: ดวงจันทร์บังดาวอังคาร 10 พฤษภาคม นี้
 url: /2008/05/04/moon-and-mars-transition/
-wordpress_id: 42
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ข่าวจาก **[สมาคมดาราศาสตร์ไทยครับ](http://thaiastro.nectec.or.th)** วันที่ 10 พฤษภาคม 2551 นี้ จะมีปรากฏการณ์ดวงจันทร์บังดาวอังคารครับ

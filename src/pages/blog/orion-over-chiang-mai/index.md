@@ -11,7 +11,7 @@ tags:
 - อ่างแก้ว
 title: กลุ่มดาวนายพราน เหนือเมืองเชียงใหม่
 url: /2008/12/28/orion-over-chiang-mai/
-wordpress_id: 410
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ![DSC_0511](https://armno.in.th/wp-content/uploads/2008/12/dsc-0511.jpg)

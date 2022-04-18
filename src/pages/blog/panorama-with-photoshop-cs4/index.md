@@ -11,7 +11,7 @@ tags:
 - พาโนรามา
 title: ทำภาพพาโนรามาง่ายๆด้วย Adobe Photoshop CS4
 url: /2009/02/20/panorama-with-photoshop-cs4/
-wordpress_id: 593
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 สวัสดีครับ วันนี้มาแนะนำวิธีทำภาพพาโนรามาอย่างง่ายด้วย **Adobe Photoshop CS4** กันครับ ซึ่งวิธีการนั้นไม่ยากเลย

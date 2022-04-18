@@ -8,14 +8,14 @@ tags:
 - Buffalo
 - External Harddisk
 - รีวิว
-title: 'รีวิว External Harddisk: Buffalo Ministation (จริงๆแล้วนะ)'
+title: 'รีวิว External Harddisk: Buffalo Ministation'
 url: /2008/12/24/review-external-harddisk-buffalo-ministation/
-wordpress_id: 406
+layout: '../../../layouts/PostLayout.astro'
 ---
 
-โพสต์นี้ถูกเขียนขึ้นเมื่อปี 2008 ข้อมูลตกยุคแล้วนะครับ -- ArmNo
+โพสต์นี้ถูกเขียนขึ้นเมื่อปี 2008 ข้อมูลตกยุคแล้วนะครับ -- Armno
 
-ใช้งานเจ้า** External Harddisk Buffalo Ministation** มาได้สักพักแล้ว เลยอยากเขียนรีวิวซะหน่อย เผื่อเป็นประโยชน์ต่อผู้ที่กำลังหาข้อมูลครับ
+ใช้งานเจ้า **External Harddisk Buffalo Ministation** มาได้สักพักแล้ว เลยอยากเขียนรีวิวซะหน่อย เผื่อเป็นประโยชน์ต่อผู้ที่กำลังหาข้อมูลครับ
 
 [![DSC_0407](https://armno.in.th/wp-content/uploads/2008/12/dsc-0407-thumb.jpg)](https://armno.in.th/wp-content/uploads/2008/12/dsc-0407.jpg)
 

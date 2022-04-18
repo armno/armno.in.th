@@ -11,6 +11,7 @@ tags:
 - WordPress Theme
 title: โค้ดสำคัญสำหรับ WordPress Theme หากเปิดใช้งาน Threaded Comments
 url: /2010/11/03/comment-reply-javascript-for-wordpress/
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ประสบการณ์อย่างหนึ่งจากการทำธีม [**Notte**](https://armno.in.th/my-first-wordpress-theme) ก็คือ เวลาทำธีมเสร็จ และเปิดใช้งาน **Threaded Comments** (ฟีเจอร์พื้นฐานของ WordPress) พบว่า หากดปุ่ม Reply ของแต่ละคอมเม้นต์ ต้องรอเพจโหลดสักครู่ (รีโหลดหน้าใหม่) ต่างจากธีมอื่นๆที่พอกด reply ปุ๊บ ฟอร์มคอมเม้นต์ก็จะมาอยู่ใต้คอมเม้นนั้นปั๊บ ไม่ต้องรอโหลดหน้าเพจใหม่ .. ด้วยความสงสัย จึงไปหาคำตอบมาครับ

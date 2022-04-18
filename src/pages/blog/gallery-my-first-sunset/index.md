@@ -13,7 +13,7 @@ tags:
 - อัลบั้มภาพ
 title: '[Gallery] My First Sunset'
 url: /2009/06/01/gallery-my-first-sunset/
-wordpress_id: 826
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ถ่ายรูปช่วงพระอาทิตย์ตกดิน ครั้งแรกกับ[เลนส์ตัวใหม่](https://armno.in.th/content/nikon-af-s-55-200-vr)ครับ ตื่นเต้นมากๆ รีบด้วย .. ถือว่าเป็นการลองใช้เลนส์ละกันนะ

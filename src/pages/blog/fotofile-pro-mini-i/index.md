@@ -10,7 +10,7 @@ tags:
 - กระเป๋ากล้อง
 title: 'กระเป๋ากล้องใบใหม่: Fotofile PRO-mini I'
 url: /2009/01/19/fotofile-pro-mini-i/
-wordpress_id: 493
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 จับ DSLR มีเรื่องให้เสียเงินอยู่เรื่อย วันนี้ก็เสียเงินไปกับกระเป๋ากล้องอีกละครับ

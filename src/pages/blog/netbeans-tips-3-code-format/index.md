@@ -10,7 +10,7 @@ tags:
 - Web Developement
 title: 'NetBeans Tips #3 จัดระเบียบโค้ดด้วยเมนู Format'
 url: /2010/07/13/netbeans-tips-3-code-format/
-wordpress_id: 1266
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 สวัสดีครับ มาต่อกันกับ**ตอนที่ 4** ของซีรี่ส์เกาหลีเรื่อง ยัยตัวร้ายกับนายเน็ตบีนส์ กันเลยนะครับ - -“

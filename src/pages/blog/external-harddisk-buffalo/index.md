@@ -10,7 +10,7 @@ tags:
 - พันธุ์ทิพย์เชียงใหม่
 title: External Harddisk ยี่ห้อ Buffalo
 url: /2008/11/09/external-harddisk-buffalo/
-wordpress_id: 353
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ซื้อ External Harddisk ยี่ห้อ **Buffalo **รุ่น **MiniStation 250 GB** มาจากพันธุ์ทิพย์เชียงใหม่ ในราคาตั้ง **2,990** บาท ( ในงานคอมฯที่ผ่านมา ขาย 2,590 แต่ผมซื้อไม่ทัน) ยี่ห้อนี้ Made in Japan ครับผม

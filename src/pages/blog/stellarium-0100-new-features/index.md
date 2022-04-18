@@ -10,7 +10,7 @@ tags:
 - โปรแกรมดูดาว
 title: Stellarium 0.10.0 ฟีเจอร์ใหม่เพียบ
 url: /2008/10/29/stellarium-0100-new-features/
-wordpress_id: 284
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ![](https://armno.in.th/wp-content/uploads/2007/12/logo.jpg)

@@ -12,7 +12,7 @@ tags:
 - การถ่ายภาพ
 title: เปรียบเทียบ Optimize Image แบบต่างๆใน Nikon D60
 url: /2009/11/25/nikon-d60-optimize-image/
-wordpress_id: 946
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 ฟีเจอร์ **Optimize Image** ในกล้องดิจิตอล [Nikon D60](https://armno.in.th/content/nikon-d60) ก็คงเทียบได้กับ **[Picture Control](http://imaging.nikon.com/products/imaging/lineup/picturecontrol/index.htm)** ในกล้อง Nikon รุ่นใหญ่กว่า หรือทางฝั่ง Canon เรียก **Picture Style** ครับ เป็นการปรับเลือกลักษณะด้านสีสัน คอนทราสต์ ของภาพตามความต้องการของเรา ซึ่งในกล้อง [Nikon D60](https://armno.in.th/content/nikon-d60) ที่ผมใช้อยู่ มีให้เลือกด้วยกัน 6 แบบครับ คือ **Normal, Softer, Vivid, More Vivid, Portrait, Black-and-White**, และก็ **Custom** .. วันนี้ลองมาเปรียบเทียบให้ดูครับว่าแต่ละแบบแตกต่างกันอย่างไร

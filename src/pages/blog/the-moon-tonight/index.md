@@ -10,7 +10,7 @@ tags:
 - ภาพภ่ายพระจันทร์
 title: พระจันทร์คืนนี้
 url: /2009/06/03/the-moon-tonight/
-wordpress_id: 832
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 **สถานที่:** อ่างแก้ว ม.เชียงใหม่

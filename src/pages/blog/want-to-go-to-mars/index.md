@@ -10,7 +10,7 @@ tags:
 - ไปดาวอังคาร
 title: ไปดาวอังคารด้วยกันมั้ย
 url: /2009/07/19/want-to-go-to-mars/
-wordpress_id: 856
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 [![missiontomars](https://armno.in.th/wp-content/uploads/3f1ab3beedce_D1DD/missiontomars_thumb.jpg)](https://armno.in.th/wp-content/uploads/3f1ab3beedce_D1DD/missiontomars.jpg)

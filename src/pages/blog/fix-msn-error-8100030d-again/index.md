@@ -10,14 +10,14 @@ tags:
 - วีธีแก้ Error MSN
 title: วิธีแก้ MSN Error 8100030d ฉบับเอาจริง!
 url: /2009/04/29/fix-msn-error-8100030d-again/
-wordpress_id: 772
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 [![msn-error-8100030d](https://armno.in.th/wp-content/uploads/2009/04/msnerror8100030d-thumb.gif)](https://armno.in.th/wp-content/uploads/2009/04/msnerror8100030d.gif)
 
 คิดว่าหลายๆคนยังติดปัญหากับเจ้า **Error Code: 8100030d** ใน MSN กันอยู่ สำหรับผมเองก็ยังมีโผล่มาให้เห็นบ้างเหมือนกัน (นานๆครั้ง) วันนี้เอาวิธีแก้เจ้า 8100030d มาฝาก จากบล็อกของ Messenger Support ครับผม แต่ขอรวบรัดหน่อยละกันนะครับ
 
-เท่าที่อ่านๆมา ต้นเหตุของปัญหานี้มาจาก 2 สิ่งนี้เป็นสำคัญครับ คือ **Contact Cache ของ MSN** กับ** AVG Antivirus** .. สำหรับ AVG Antivirus นั้น ผม[เคยเขียนวิธีแก้ไว้แล้ว](https://armno.in.th/20081220/error-8100030d-%e0%b9%83%e0%b8%99-windows-live-messenger-2009)นะครับ คราวนี้มาดูวิธีแก้สำหรับคนที่ไม่ใช้ AVG กันนะครับ
+เท่าที่อ่านๆมา ต้นเหตุของปัญหานี้มาจาก 2 สิ่งนี้เป็นสำคัญครับ คือ **Contact Cache ของ MSN** กับ **AVG Antivirus** .. สำหรับ AVG Antivirus นั้น ผม[เคยเขียนวิธีแก้ไว้แล้ว](https://armno.in.th/20081220/error-8100030d-%e0%b9%83%e0%b8%99-windows-live-messenger-2009)นะครับ คราวนี้มาดูวิธีแก้สำหรับคนที่ไม่ใช้ AVG กันนะครับ
 
 1. อัพเกรด Windows Live Messengerให้ เป็นเวอร์ชั่นล่าสุด .. สำหรับคนที่ไม่มีปัญหาอะไรกับการใช้เวอร์ชั่นใหม่ ก็อัพเกรดซะเถอะครับ
 2. ลบ cache files ของ Windows Live Messenger** .. วิธีการจะแตกต่างกันไปตาม Windows ที่ใช้อยู่นะครับ

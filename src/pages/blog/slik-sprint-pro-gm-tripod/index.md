@@ -10,7 +10,7 @@ tags:
   - ขาตั้งกล้อง
 title: พรีวิวขาตั้งกล้อง Slik Sprint Pro GM
 url: /2008/11/30/slik-sprint-pro-gm-tripod/
-wordpress_id: 365
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 _(เขียนแบบ “พรีวิว” จริงๆนะ)_

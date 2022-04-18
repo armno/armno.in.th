@@ -11,7 +11,7 @@ tags:
 - Web Usability
 title: Don't Make Me Think - หนังสือดีๆเกี่ยวกับ Web Usability
 url: /2010/03/24/dont-make-me-think-web-usability-book/
-wordpress_id: 1142
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 <div class="aligncenter">

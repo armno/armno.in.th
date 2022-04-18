@@ -11,7 +11,7 @@ tags:
 - ภาพถ่ายพระจันทร์
 title: พระจันทร์เต็มดวง 01/12/2552
 url: /2009/12/01/full-moon-01122552/
-wordpress_id: 953
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 [![Full Moon 12.01.2009](https://armno.in.th/wp-content/uploads/2009/12/DSC_1858_thumb.jpg)](https://armno.in.th/wp-content/uploads/2009/12/DSC_1858.jpg)

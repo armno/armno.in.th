@@ -10,7 +10,7 @@ tags:
 - Zen Coding
 title: เขียน HTML ให้เร็วปรี๊ดด้วย Zen Coding สำหรับ NetBeans IDE
 url: /2010/10/20/zen-coding-netbeans/
-wordpress_id: 1397
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 [Zen Coding](http://code.google.com/p/zen-coding/) เป็นปลั๊กอินที่จะช่วยทำให้เราเขียนโค้ด HTML กับ CSS ได้เร็วขึ้น(มากๆ)ครับ ตอนนี้ก็มี IDE และ Editor หลายตัวที่รองรับ (ทั้งเต็มรูปแบบ และบางส่วน) .. รายละเอียดมากกว่านี้ รบกวนไปอ่านที่เว็บผู้พัฒนาเอาเองละกันครับ ผมก็ไม่รู้จะอธิบายยังไงเหมือนกัน ลองดูสักนิดแล้วจะรู้ว่ามันสุดยอดมาก

@@ -12,7 +12,7 @@ tags:
 - PHP
 title: NetBeans Tips#2 ใช้งาน Code Auto-complete
 url: /2010/07/11/netbeans-tips2-code-auto-complete/
-wordpress_id: 1258
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 บทความที่ 3 ในซีรี่ส์ [NetBeans IDE](https://armno.in.th/content/netbeans-ide) นะครับ

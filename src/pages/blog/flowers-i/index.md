@@ -10,7 +10,7 @@ tags:
 - อัลบั้มภาพ
 title: Flowers & I
 url: /2009/02/04/flowers-i/
-wordpress_id: 571
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 [![cover](https://armno.in.th/wp-content/uploads/2009/02/cover-thumb.jpg)](https://armno.in.th/wp-content/uploads/2009/02/cover.jpg)
