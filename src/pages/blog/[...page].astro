@@ -8,7 +8,7 @@ import { sortBy } from 'lodash-es';
 export async function getStaticPaths({ paginate }) {
   let allPosts = await Astro.glob<Frontmatter>('./**/*.md');
   allPosts = sortBy(allPosts, ['frontmatter.date']).reverse();
-  return paginate(allPosts, { pageSize: 9 });
+  return paginate(allPosts, { pageSize: 100 });
 }
 
 const { page } = Astro.props;
