@@ -74,3 +74,8 @@ issues found:
 - tailwind not update when add new class. need to restart dev server
 - `getStaticPaths() called twice during the build.`
 - imporing images with the same file name, in different pages -> the build takes forever
+- migrate all posts was a pain
+  - to replace all Hugo's shortcodes with Components
+  - to update all image paths
+  - to add `layout` entry in every `.md` file
+  - to add a new redirect entry in `_redirect` file
