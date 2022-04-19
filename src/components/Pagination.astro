@@ -1,12 +1,16 @@
 ---
+import { Pagination } from '@sarissa/pagination';
+
 export interface Props {
   next?: string;
   prev?: string;
+  currentPage: number;
+  lastPage: number;
 }
-const { next, prev } = Astro.props as Props;
+const { next, prev, lastPage, currentPage } = Astro.props as Props;
+const totalPage = lastPage;
 ---
 
 <div class="text-lg flex justify-center mt-12 gap-x-4">
-  {prev && <a href={prev}>« Newer</a> }
-  {next && <a href={next}>Older »</a> }
+  <Pagination {currentPage} {totalPage} url="blog" />
 </div>

@@ -17,5 +17,8 @@
     "lodash-es": "^4.17.21",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.23"
+  },
+  "dependencies": {
+    "@sarissa/pagination": "^1.0.3"
   }
 }

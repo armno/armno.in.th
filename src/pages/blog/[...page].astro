@@ -22,7 +22,7 @@ export async function getStaticPaths({ paginate, rss }) {
     dest: '/rss/feed.xml'
   });
 
-  return paginate(allPosts, { pageSize: 100 });
+  return paginate(allPosts, { pageSize: 12 });
 }
 
 const { page } = Astro.props;
@@ -52,5 +52,5 @@ const content = {
     )}
   </ol>
 
-  <Pagination next={page.url.next} prev={page.url.prev} />
+  <Pagination next={page.url.next} prev={page.url.prev} lastPage={page.lastPage} currentPage={page.currentPage} />
 </PageLayout>
