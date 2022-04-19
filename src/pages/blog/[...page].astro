@@ -5,9 +5,23 @@ import PostItem from '@components/PostItem.astro';
 import { Frontmatter } from '@shared/frontmatter.interface';
 import { sortBy } from 'lodash-es';
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({ paginate, rss }) {
   let allPosts = await Astro.glob<Frontmatter>('./**/*.md');
   allPosts = sortBy(allPosts, ['frontmatter.date']).reverse();
+
+  rss({
+    title: `Armno's blog`,
+    stylesheet: true,
+    description: 'Notes from my thoughts and learnings.',
+    items: allPosts.map(post => ({
+      title: post.frontmatter.title,
+      description: post.frontmatter.description,
+      link: post.url,
+      pubDate: post.frontmatter.date,
+    })),
+    dest: '/rss/feed.xml'
+  });
+
   return paginate(allPosts, { pageSize: 100 });
 }
 
@@ -27,7 +41,7 @@ const content = {
   <ol class="list-none p-0 lg:p-0 not-prose grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-32 container mx-auto">
     {page.data.map(post => (
       <li class="text-3xl">
-        <PostItem 
+        <PostItem
           title={post.frontmatter.title}
           url={post.url}
           thumbnail={post.frontmatter.thumbnail}
