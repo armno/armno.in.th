@@ -93,7 +93,6 @@ And an iPhone 12.
 Not something I use everyday, but still worth mentioning.
 
 - Digital camera: Fuji XE-1 digital camera with TTArtisans 50mm f/1.2 manual focus lense
-- Bike: [2022 Nich Faith 2](https://www.nichcycling.com/pages/faith2) road bike.
-I use my bike for mostly commuting to work and sometimes for recreational cycling. Bicycle is a big part of my life.
+- Bike: [2022 Nich Faith 2](https://www.nichcycling.com/pages/faith2) road bike which I use for commuting to work and sometimes for recreational cycling.
 
 ![Nich Faith 2 Custom](/images/uses/nich-faith-2-custom-small.jpg)
