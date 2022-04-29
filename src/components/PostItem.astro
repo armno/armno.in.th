@@ -12,7 +12,7 @@ const { url, title, thumbnail, date, description } = Astro.props as Props;
 ---
 
 <article>
-  <a href={url} class="hover:text-green-600 block">
+  <a href={url} class="no-underline hover:text-green-600 block">
     {thumbnail &&
     <img class="object-cover aspect-[3/2] w-full" src={thumbnail} alt={title} width="300" height="200">
     }

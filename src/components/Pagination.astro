@@ -6,7 +6,7 @@ export interface Props {
 const { next, prev } = Astro.props as Props;
 ---
 
-<div class="text-lg flex justify-center mt-12 gap-x-4">
+<div class="flex justify-center mt-20 gap-x-8">
   {prev && <a href={prev}>« Newer</a> }
   {next && <a href={next}>Older »</a> }
 </div>

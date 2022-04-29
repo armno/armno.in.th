@@ -22,7 +22,7 @@ export async function getStaticPaths({ paginate, rss }) {
     dest: '/rss/feed.xml'
   });
 
-  return paginate(allPosts, { pageSize: 100 });
+  return paginate(allPosts, { pageSize: 12 });
 }
 
 const { page } = Astro.props;
