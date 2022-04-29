@@ -6,23 +6,20 @@ description: 'A collection of hardware/software/tools I use on a daily basis.'
 
 # Tools I use
 
-Inspired by [`wesbos/uses`](https://github.com/wesbos/awesome-uses) repo on GitHub
-and [uses.tech](https://uses.tech)
-where developers share their
-hardware/software/tools they use regularly via the `/uses` page on their blog.
-
-Here are my tools, updated for 2021-2022.
+Inspired by [uses.tech](https://uses.tech) where developers share their
+hardware/software/tools they use regularly, here are my tools, updated for 2021-2022.
 
 ## Software
 
 ### Programming
 
-- [iTerm2](https://www.iterm2.com/version3.html) with
+- Terminal: [iTerm2](https://www.iterm2.com/version3.html) with
   - [zsh](https://www.zsh.org/) and [oh-my-zsh](https://ohmyz.sh/) with my slightly modified version of [cloud](https://github.com/armno/dotfiles/blob/master/cloud-armno.zsh-theme) theme
   - [base16-shell](https://github.com/chriskempson/base16-shell)
+  - [zoxide](https://github.com/ajeetdsouza/zoxide)
   - [dotfiles ](https://github.com/armno/dotfiles)
-- [Vim](https://www.vim.org/) for a quick editing from the terminal
-  - Here is my [`.vimrc`](https://github.com/armno/dotfiles/blob/master/.vimrc).
+- [Vim](https://www.vim.org/) for a quick editing from the terminal. Here is my [`.vimrc`](https://github.com/armno/dotfiles/blob/master/.vimrc).
+- Git: I use command line Git with [delta](https://github.com/dandavison/delta)
 - [JetBrains Mono fonts](https://www.jetbrains.com/lp/mono/) in both code editors and terminal.
 - Terminal colors: I have both dark and light themes set up and use depending on the light conditions. I create `dark` and `light` shell commands to switch between base16 themes.
   - dark: `base16_material-darker`
@@ -32,25 +29,18 @@ Here are my tools, updated for 2021-2022.
 
 ![light terminal screenshot](/images/uses/light.png)
 
-- [VSCode](https://code.visualstudio.com/) - I code HTML/JS/CSS primarily. I use VSCode as my primary code editor with these extensions
-  - [VSCodeVim](https://github.com/VSCodeVim/Vim)
-  - [EditorConfig](https://github.com/editorconfig/editorconfig-vscode)
-  - [ESLint](https://github.com/Microsoft/vscode-eslint)
-  - [Prettier](https://github.com/prettier/prettier-vscode)
-  - [IntelliCode](https://github.com/MicrosoftDocs/intellicode)
-  - [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
+- [VSCode](https://code.visualstudio.com/)
 - VSCode Themes: also both dark and light themes
   - dark: [`New Moon`](https://taniarascia.github.io/new-moon/)
   - light: [`GitHub Light Default`](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
-- Git: I use command line Git with [delta](https://github.com/dandavison/delta)
 
 ### Others
 
 - [Homebrew](https://brew.sh/) package manager
-- [Google Chrome](https://www.google.com/chrome/) and [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) as the main browsers
+- [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) as the main browser
 - [Google Chrome Canary](https://www.google.com/chrome/canary) as the development browser
 - [Raycast](https://www.raycast.com/) for shortcuts, windows management
-- [Affinity Designer](https://affinity.serif.com/en-us/) for image editing
+- [Pixelmator Pro](https://www.pixelmator.com/pro/) for image editing
 - [Skitch](https://evernote.com/products/skitch) for quick image editing
 - Google Photos
 
@@ -58,8 +48,9 @@ Here are my tools, updated for 2021-2022.
 
 ## Hardware
 
-Computers: I use a [2015, 15-inch MacBook Pro](https://support.apple.com/kb/SP719?locale=en_US) (2.2GHz Core i7, 16GB RAM) at work
-and a [2013, 13-inch MacBook Pro](https://support.apple.com/kb/sp691?locale=th_TH) (2.4GHz Core i5, 8GB RAM) at home.
+Computers: I use
+- [**2015, 15-inch MacBook Pro**](https://support.apple.com/kb/SP719?locale=en_US) (2.2GHz Core i7, 16GB RAM) at work
+- [**2013, 13-inch MacBook Pro**](https://support.apple.com/kb/sp691?locale=th_TH) (2.4GHz Core i5, 8GB RAM) at home
 
 ![2015, 15-inch MacBook Pro](/images/uses/laptop.jpg)
 
@@ -75,16 +66,14 @@ Keyboards: [Portico](https://thekey.company/products/portico-keyboard) 65% mecha
 
 ![Build details: Tofu alu case / DZ60 PCB / alu plate / Everglide stabs / Gateron milky brown, Maxkeys SA keycaps](/images/uses/keyboard-tofu-sa-bluegray.jpg)
 
-Mouse: [Logitech MX331 Silent](https://www.logitech.com/th-th/products/mice/m331-silent-plus-mouse.910-004914.html) - I found a silent mouse gives me a peace of mind.
-
-![Logitech m331 silent mouse](/images/uses/mouse-m331.jpg)
+Mouse: [Mi Dual Mode Wireless Mouse](https://duckduckgo.com/?t=ffab&q=mii+bluetooth+silent+mouse&ia=web)
 
 Headphones: I have a few of them for my various use cases
 
 - [Sony WH-1000XM4](https://www.sony.co.th/en/electronics/headband-headphones/wh-1000xm4) for music listenening
 - [Audio-Technica M50x](https://armno.in.th/2015/08/04/audio-technica-ath-m50x/) with [Audirect Beam 2se DAC/Amp](https://www.google.com/search?q=Audirect+Beam+2se+DAC) for more serious music listening
 - [JBL Quantum 100](https://th.jbl.com/gaming/QUANTUM100.html) for calls and remote meetings. (This one has a really good mic!)
-- [Soundpeats TrueAir 2](https://www.google.com/search?q=Soundpeats+TrueAir+2) for commuting and workouts
+- [Soundpeats Air3](https://us.soundpeats.com/products/air3) for commuting and workouts
 - plus: a [DIY headphones stand](https://armno.wordpress.com/2013/05/09/746-headphone-stand/) made of teak wood.
 
 ![Sony WH-1000XM4 headphones](/images/uses/sony-xm4.jpg)
@@ -93,15 +82,18 @@ Headphones: I have a few of them for my various use cases
 
 ![JBL Quantum 100 headphones](/images/uses/jbl-quantum-100.jpg)
 
-Notes: A normal notebook and a black pen
+Notes: Any normal notebook and a black pen
 
 ![muji pens](/images/uses/pens.jpg)
 
+And an iPhone 12.
+
 ### Other
 
-- A Fuji XE-1 digital camera with TTArtisans 50mm f/1.2 manual focus lense
-- An iPhone 12
-- A [2018 Canyon Endurace CF SL](https://armno.in.th/2019/01/28/ordering-a-canyon-bike-review/) road bike.
+Not something I use everyday, but still worth mentioning.
+
+- Digital camera: Fuji XE-1 digital camera with TTArtisans 50mm f/1.2 manual focus lense
+- Bike: [2022 Nich Faith 2](https://www.nichcycling.com/pages/faith2) road bike.
 I use my bike for mostly commuting to work and sometimes for recreational cycling. Bicycle is a big part of my life.
 
-![Canyon Endurace CF SL 2018](/images/uses/bike.jpg)
+![Nich Faith 2 Custom](/images/uses/nich-faith-2-custom-small.jpg)
