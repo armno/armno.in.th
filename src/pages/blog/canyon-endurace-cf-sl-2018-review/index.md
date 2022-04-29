@@ -11,6 +11,7 @@ tags:
   - road bike
 categories:
   - bicycle
+layout: '../../../layouts/PostLayout.astro'
 setup: |
   import Picture from '../../../components/Picture.astro';
 ---
