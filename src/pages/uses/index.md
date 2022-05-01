@@ -92,7 +92,9 @@ And an iPhone 12.
 
 Not something I use everyday, but still worth mentioning.
 
-- Digital camera: Fuji XE-1 digital camera with TTArtisans 50mm f/1.2 manual focus lense
+- Digital camera: Fujifilm XE-1 digital camera with TTArtisans 50mm f/1.2 manual focus lense
 - Bike: [2022 Nich Faith 2](https://www.nichcycling.com/pages/faith2) road bike which I use for commuting to work and sometimes for recreational cycling.
+
+![Fujifilm XE-1](/images/uses/fuji-xe1.jpg)
 
 ![Nich Faith 2 Custom](/images/uses/nich-faith-2-custom-small.jpg)
