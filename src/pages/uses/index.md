@@ -2,6 +2,7 @@
 title: 'Tools I use'
 layout: '../../layouts/PageLayout.astro'
 description: 'A collection of hardware/software/tools I use on a daily basis.'
+thumbnail: /images/uses/laptop.jpg
 ---
 
 # Tools I use
