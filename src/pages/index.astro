@@ -1,11 +1,15 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
+import Picture from '@components/picture.astro';
 const content = {
 	title: 'Armno P.'
 }
 ---
 <PageLayout { content }>
-	<div class="text-gray-400 uppercase font-semibold tracking-wider text-sm">Hi there</div>
+
+  <Picture src="/images/anc.jpg" alt="Armno Prommarak's photo" />
+
+	<div class="text-gray-400 uppercase font-semibold tracking-wider text-sm">Hi there 👋</div>
 	<h1 class="text-2xl lg:text-3xl font-light">My name is <strong class="font-semibold">Armno Prommarak</strong>.<br>
 		I&rsquo;m a frontend developer at <a href="https://buzzwoo.de" target="_blank">buzzwoo</a>.</h1>
 
