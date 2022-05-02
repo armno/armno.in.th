@@ -1,38 +1,57 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
 import Picture from '@components/picture.astro';
-const content = {
-	title: 'Armno P.'
-}
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import BaseHead from '@components/BaseHead.astro';
+
+const title = 'Armno P.';
+const language = 'en';
+const thumbnail = '/images/anb.jpg';
+const description = 'I am a frontend developer at buzzwoo, focusing on building user interfaces with HTML, CSS, and JavaScript';
 ---
-<PageLayout { content }>
 
-  <Picture src="/images/anc.jpg" alt="Armno Prommarak's photo" />
+<html lang={language ? language : 'th'}>
+	<head>
+		<BaseHead {title} {description} {thumbnail} />
+	</head>
+	<body class="antialiased">
+		<Header />
+		<main class="lg:grid lg:grid-cols-3 lg:gap-8 lg:max-w-6xl lg:mx-auto">
+      <div class="mt-12 lg:pt-16">
+        <Picture src="/images/anb.jpg" alt="Armno Prommarak's photo" />
+      </div>
 
-	<div class="text-gray-400 uppercase font-semibold tracking-wider text-sm">Hi there 👋</div>
-	<h1 class="text-2xl lg:text-3xl font-light">My name is <strong class="font-semibold">Armno Prommarak</strong>.<br>
-		I&rsquo;m a frontend developer at <a href="https://buzzwoo.de" target="_blank">buzzwoo</a>.</h1>
+      <div class="px-6 mt-12 lg:pt-12 lg:col-span-2 mx-auto prose prose-slate leading-relaxed">
+        <div class="text-gray-400 uppercase font-semibold tracking-wider text-sm">Hi there 👋</div>
+        <h1 class="text-2xl lg:text-3xl font-light">My name is <strong class="font-semibold">Armno Prommarak</strong>.<br>
+          I&rsquo;m a frontend developer at <a href="https://buzzwoo.de" target="_blank">buzzwoo</a>.</h1>
 
-	<p class="mt-20 lg:mt-24">
-		<strong>I build user interfaces to deliver good user experiences on the web.</strong><br>
-		I&rsquo;m currently leading the frontend team at buzzwoo where my focus is on JavaScript, Angular, and frontend performance.
-	</p>
+        <p class="mt-20 lg:mt-12">
+          <strong>I build user interfaces to deliver good user experiences on the web.</strong><br>
+          I&rsquo;m currently leading the frontend team at buzzwoo where my focus is on JavaScript, Angular, and frontend performance.
+        </p>
 
-	<p>In my free time, I enjoy writing, reading books, taking photos, <a href="#">building mechanical keyboards</a> and getting lost on my <a href="#">road bike</a>.</p>
+        <p>In my free time, I enjoy reading books, taking photos, <a href="https://armno.in.th/2017/08/20/building-custom-mechanical-keyboard/">building mechanical keyboards</a> and cycling with my <a href="https://www.strava.com/athletes/3637623">road bike</a>.</p>
 
-	<p>
-		You can find what I&rsquo;m doing on <a href="https://github.com/armno">GitHub</a>,
-		or check out my <a href="/post">blog</a> to see what I&rsquo;ve learned recently.
-	</p>
+        <p>
+          You can find what I&rsquo;m doing on <a href="https://github.com/armno">GitHub</a>,
+          or check out my <a href="/post">blog</a> to see what I&rsquo;ve learned recently.
+        </p>
 
-	<h3>Get in touch</h3>
-	<p>
-		If you want to contact me, or just want to say hi, you can send me an email at <a href="mailto:monkeyarmno@gmail.com">monkeyarmno@gmail.com</a>.
-	</p>
+        <h3>Get in touch</h3>
+        <p>
+          If you want to contact me, or just want to say hi, you can send me an email at <a href="mailto:monkeyarmno@gmail.com">monkeyarmno@gmail.com</a>.
+        </p>
 
-	<p>
-		Have a great day!
-		<br>
-		&ndash; Armno
-	</p>
-</PageLayout>
+        <p>
+          Have a great day!
+          <br>
+          &ndash; Armno
+        </p>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
