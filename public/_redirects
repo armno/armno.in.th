@@ -1,5 +1,6 @@
 # Redirect default Netlify subdomain to primary domain
 https://armno.netlify.com/* https://armno.in.th/:splat 301!
+https://armnointh.netlify.app/* https://armno.in.th/:splat 301!
 /post /blog
 /2021/07/28/canyon-endurace-cf-sl-2018-review/ /blog/canyon-endurace-cf-sl-2018-review/
 /2019/12/24/blog-inline-css/ /blog/inline-css/
