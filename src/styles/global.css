@@ -18,6 +18,22 @@
   a {
     @apply underline underline-offset-2 hover:text-green-600;
   }
+
+  a[href*="files.armno.in.th"] {
+    @apply no-underline;
+  }
+
+  img[src*="files.armno.in.th"],
+  img[src*="armno.in.th/wp-content/uploads"] {
+    @apply border border-dashed border-slate-300 h-36 text-transparent relative;
+  }
+
+  img[src*="files.armno.in.th"]::after,
+  img[src*="armno.in.th/wp-content/uploads"]::after {
+    @apply absolute text-slate-300 w-full h-full  flex justify-center items-center text-sm top-0 left-0 right-0 bottom-0;
+
+    content: "(missing image: " attr(alt) ")";
+  }
 }
 
 @layer components {
