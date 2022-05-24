@@ -41,6 +41,7 @@ hardware/software/tools they use regularly, here are my tools, updated for 2021-
 - [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) as the main browser
 - [Google Chrome Canary](https://www.google.com/chrome/canary) as the development browser
 - [Raycast](https://www.raycast.com/) for shortcuts, windows management
+- [BetterTouchTool](https://folivora.ai/) for shortcuts, keyboard remappings
 - [Pixelmator Pro](https://www.pixelmator.com/pro/) for image editing
 - [Skitch](https://evernote.com/products/skitch) for quick image editing
 - Google Photos
