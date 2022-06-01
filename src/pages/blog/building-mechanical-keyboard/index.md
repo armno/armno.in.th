@@ -48,12 +48,8 @@ gaming series ที่วางขายตามร้านทั่วไป
 ซึ่งผมว่ามันแพงเกินที่จะจ่ายไหว ก็เลยกินแห้วครับ 😅
 
 <figure>
-  <img src="https://farm9.staticflickr.com/8592/28775343622_88ac4f4c22_c.jpg" alt="mechanical keyboard สวยๆ ของ WASD Keyboards">
-  <figcaption>ภาพจาก:
-    <a href="https://www.flickr.com/photos/wasdkeyboards/28775343622">
-    https://www.flickr.com/photos/wasdkeyboards/28775343622
-    </a>
-  </figcaption>
+  <img src="https://farm9.staticflickr.com/8592/28775343622_88ac4f4c22_c.jpg" alt="mechanical keyboard สวยๆ ของ WASD Keyboards" />
+  <figcaption>ภาพจาก: <a href="https://www.flickr.com/photos/wasdkeyboards/28775343622"> https://www.flickr.com/photos/wasdkeyboards/28775343622 </a> </figcaption>
 </figure>
 
 เลยนึกเล่นๆ ว่า ถ้าการหา mechanical keyboard สักตัวมันยากเย็นนัก ทำไมเราไม่สร้างมันขึ้นมาเองล่ะ
@@ -72,7 +68,7 @@ video นี้ได้จุดประกายความหวังใ�
 
 <figure class="media">
   <a href="https://www.youtube.com/watch?v=W0FSvTYlggw" target="_blank" noopener noreferer>
-    <img class="no-medium-zoom" src="/images/building-mechanical-keyboard/build-custom-keyboard-yt-video.jpg" alt="Beginner's Guide : How to Build a 60% Mechanical Keyboard video on youtube">
+    <img class="no-medium-zoom" src="/images/building-mechanical-keyboard/build-custom-keyboard-yt-video.jpg" alt="Beginner's Guide : How to Build a 60% Mechanical Keyboard video on youtube" />
   </a>
   <figcaption class="media-caption">
     <a href="https://www.youtube.com/watch?v=W0FSvTYlggw" target="_blank" noopener noreferer>
@@ -246,5 +242,5 @@ Happy building กับ Happy coding ครับ
 
 <a href="https://shopee.co.th/endgameagain">
   <img src="/images/building-mechanical-keyboard/endgame-shopee.jpg" alt="ร้านขายสวิตช์ mechanical keyboard บน Shopee"
-    width="490" height="800">
+    width="490" height="800" />
 </a>

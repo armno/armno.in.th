@@ -17,7 +17,7 @@ setup: |
 ---
 
 หลังจากได้ลองทำ [custom mechanical keyboard ขนาด 60% แบบมี arrow keys](https://armno.in.th/2019/05/01/custom-mechanical-keyboard-build-2/#mark-5) ให้ภรรยาใช้
-ได้ปริศนามาคิดต่อว่า สามารทำ keyboard ขนาด 60% ที่มี arrow keys แบบไม่ต้องเสียสละปุ่ม <kdb>/</kbd> ให้ทับกับปุ่ม <kbd>right shift</kbd> ได้ไหม
+ได้ปริศนามาคิดต่อว่า สามารทำ keyboard ขนาด 60% ที่มี arrow keys แบบไม่ต้องเสียสละปุ่ม <kbd>/</kbd> ให้ทับกับปุ่ม <kbd>right shift</kbd> ได้ไหม
 
 ![ปุ่ม shift ขวาของ Mark 5](/images/60-percent-mechanical-keyboard-with-arrows/mark5-shift.jpg)
 

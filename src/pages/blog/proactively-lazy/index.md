@@ -215,5 +215,5 @@ content ทุกโพสต์ก็ถูกจัดระเบียบใ
 แนะนำให้ไปชมวิธีการแก้โจทย์ของเขาครับ
 
 <a href="https://www.youtube.com/watch?v=UFc-RPbq8kg" target="_blank" rel="noopener noreferrer">
-  <img class="no-medium-zoom" src="/images/proactively-lazy/yt-video.png" alt="Problem-Solving for Developers - A Beginner's Guide" width="800">
+  <img class="no-medium-zoom" src="/images/proactively-lazy/yt-video.png" alt="Problem-Solving for Developers - A Beginner's Guide" width="800" />
 </a>

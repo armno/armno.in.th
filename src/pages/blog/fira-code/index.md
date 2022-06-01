@@ -58,13 +58,13 @@ Fira Code ถูกพัฒนามาจาก Fira Mono ที่เพิ�
 iTerm2 เวอร์ชั่นล่าสุด (Stable Release: 3.0) นั้นยังไม่ support font ligatures ก็เลยต้องไปดาวน์โหลด [beta version](https://www.iterm2.com/downloads.html) (Test Release: 3.1) มาใช้ก่อน จากนั้นก็เปลี่ยน font ใน Preferences ได้เลยครับ
 
 <div class="text-center">
-  <img src="/images/fira-code/iterm-preferences.png" alt="เปลี่ยน font settings ใน iTerm2 beta 3.1">
+  <img src="/images/fira-code/iterm-preferences.png" alt="เปลี่ยน font settings ใน iTerm2 beta 3.1" />
 </div>
 
 Vim ใน iTerm ก็ใช้ได้เหมือนกัน อาจจะเพี้ยนๆ บ้างนิดหน่อย แต่ไม่ค่อยเจอ (บรรทัดสุดท้าย)
 
 <div class="text-center">
-  <img src="/images/fira-code/fira-code-in-vim.png" alt="font Fira Code ใน Vim">
+  <img src="/images/fira-code/fira-code-in-vim.png" alt="font Fira Code ใน Vim" />
 </div>
 
 ส่วน Editor ตัวอื่นๆ ดูได้จาก [repo readme](https://github.com/tonsky/FiraCode#editor-support) ได้ครับ มีทั้งที่ support และไม่ support เลือกใช้ได้ตามใจชอบเลย นอกจาก Fira Code แล้วก็ยังมีอีกหลายตัวที่ support ligatures ลองเล่นดูได้ครับ

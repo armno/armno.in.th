@@ -20,7 +20,7 @@ setup: |
 ### เกี่ยวกับ WordPress
 
 <div class="text-center">
-  <img src="//images/wp-to-jekyll/wp-to-jekyll/8540179341_f34d468c82_o.png" alt="WordPress Logo">
+  <img src="/images/wp-to-jekyll/wp-to-jekyll/8540179341_f34d468c82_o.png" alt="WordPress Logo" />
 </div>
 
 ผมเริ่มทำบล็อกด้วย [WordPress](https://wordpress.org) มาตั้งแต่ปี 2007 (น่าจะราวๆ เวอร์ชั่น 2.0) หลังจากนั้นก็ลองผิดลองถูกอยู่เรื่อยมาจนถึงทุกวันนี้ สังเกตความเปลี่ยนแปลงของ WordPress จาก blogging platform จนทุกวันนี้เป็นมากกว่านั้นไปเยอะแล้ว สำหรับผม WordPress ตอนนี้ "เยอะเกินไป" สำหรับการเขียนบล็อก เลยรู้สึกเบื่อขึ้นมา
@@ -32,7 +32,7 @@ setup: |
 ### Jekyll & Github Pages
 
 <div class="text-center">
-  <img src="/images/wp-to-jekyll/8540179349_5cb4d1be5f_o.png" alt="Jekyll Blog Engine">
+  <img src="/images/wp-to-jekyll/8540179349_5cb4d1be5f_o.png" alt="Jekyll Blog Engine" />
 </div>
 
 [Jekyll](https://github.com/mojombo/jekyll) นั้นเป็น static website generator ที่เขียนด้วย Ruby ผลลัพธ์ที่ออกมาก็คือเว็บที่เป็น HTML ธรรมดาๆ ผมชอบ Jekyll ตรงที่มี server ในตัว (ไม่ต้องมี Apache ก็รันบล็อกได้) อีกทั้งใช้ Markdown ในการเขียน content ด้วย เลยทำให้ชอบมากขึ้น

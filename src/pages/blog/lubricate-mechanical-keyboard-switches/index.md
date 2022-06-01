@@ -76,7 +76,7 @@ setup: |
 
 <figure class="media">
   <div>
-    <img src="/images/lubricate-mechanical-keyboard-switches/stem.jpg" alt="Cherry MX Brown stem lubed with Krytox 205g0" width="600">
+    <img src="/images/lubricate-mechanical-keyboard-switches/stem.jpg" alt="Cherry MX Brown stem lubed with Krytox 205g0" width="600" />
   </div>
   <figcaption class="media-caption">
     ยืม stem ของ Cherry Brown มา lube และถ่ายรูปดู
@@ -187,5 +187,5 @@ Happy Clacking ครับผม<br>อามโน
 
 <a href="https://shopee.co.th/endgameagain">
   <img src="/images/lubricate-mechanical-keyboard-switches/endgame-shopee.jpg" alt="ร้านขายสวิตช์ mechanical keyboard บน Shopee"
-    width="490" height="800">
+    width="490" height="800" />
 </a>

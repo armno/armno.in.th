@@ -94,7 +94,7 @@ node ไหน เป็น parent/child ของ node ไหน ซึ่ง�
 DOM tree ก็จะออกมาแบบนี้
 
 <div class="text-center">
-  <img src="/images/how-web-browsers-work/dom-tree.min.svg" alt="รูป DOM tree">
+  <img src="/images/how-web-browsers-work/dom-tree.min.svg" alt="รูป DOM tree" />
 </div>
 
 แต่ CSSOM นั้น ไม่มีโครงสร้างชัดเจนเหมือน DOM แต่ก็มีโครงสร้างเป็น tree เหมือนกัน
@@ -102,7 +102,7 @@ DOM tree ก็จะออกมาแบบนี้
 และทุก element ก็จะ inherit style ของ `<body>` และ `<html>` มาเช่นกัน
 
 <div class="text-center">
-  <img src="/images/how-web-browsers-work/inherited-styles.png" alt="รูป inherit styles จาก devtools">
+  <img src="/images/how-web-browsers-work/inherited-styles.png" alt="รูป inherit styles จาก devtools" />
 </div>
 
 สมมุติว่าเรามี CSS แบบนี้
@@ -118,7 +118,7 @@ style ที่แท็ก `<p>` แต่ละตัวจะได้รั�
 และจะถูกนำไปใช้ในขั้นตอนการ render ต่อไปครับ
 
 <div class="text-center">
-  <img src="/images/how-web-browsers-work/cssom-tree.min.svg" alt="รูป CSSOM Tree">
+  <img src="/images/how-web-browsers-work/cssom-tree.min.svg" alt="รูป CSSOM Tree" />
 </div>
 
 หลังจากที่ได้ DOM Tree กับ CSSOM Tree แล้ว ก็จะถึงขั้นตอนต่อไปที่การสร้าง Render Tree
@@ -157,7 +157,7 @@ Paint คือการ render แต่ละ element ใน render tree อ�
 พอ render ครบทุก element ก็จะได้เป็นเว็บออกมาครับ
 
 <div class="text-center">
-  <img src="/images/how-web-browsers-work/paint-profiler.png" alt="รูป Paint profiler ใน Devtools">
+  <img src="/images/how-web-browsers-work/paint-profiler.png" alt="รูป Paint profiler ใน Devtools" />
 </div>
 
 ขั้นตอนเหล่านี้ไม่เกิดขึ้นเพียงครั้งเดียวแล้วก็จบไป แต่อาจเกิดขึ้นได้หลายๆ ครั้ง เช่น กรณีที่ DOM ถูกอัพเดท

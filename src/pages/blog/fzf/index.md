@@ -92,7 +92,7 @@ Let's break it down:
 3. `--no-sort --reverse`: disable sorting (no need here), use reverse layout to display the list from the top.
 4. `--preview 'git diff --color=always {+2} | diff-so-fancy`: display file preview using `git diff` command with [`diff-so-fancy`](https://github.com/so-fancy/diff-so-fancy).
 The `{+2}` part is to tell fzf to split selected line (which is the output from `git status -s`) with a space, and take the 2nd part which is the file name to use with `git diff`.
-5. `--bind=ctrl-j:preview-down --bind=ctrl-k:preview-up`: bind 2 keys <kdb>ctrl-j</kbd> and <kbd>ctrl-k</kbd> to scroll down and up in the preview panel without using the mouse.
+5. `--bind=ctrl-j:preview-down --bind=ctrl-k:preview-up`: bind 2 keys <kbd>ctrl-j</kbd> and <kbd>ctrl-k</kbd> to scroll down and up in the preview panel without using the mouse.
 6. `--preview-window=right:60%:wrap`: set the layout for preview window to display at the right side of the screen, take 60% of the screen space, and wrap the text if it is too long.
 
 I create an alias `gd` for this long command in my `.zshrc` profile.

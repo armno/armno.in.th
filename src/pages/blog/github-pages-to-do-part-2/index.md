@@ -30,7 +30,7 @@ setup: |
 
 <div class="text-center">
   <img src="/images/github-pages-to-do-part-2/pagespeed-summary.png"
-  srcset="/images/github-pages-to-do-part-2/pagespeed-summary-2x.png 2x" alt="ผลจาก PageSpeed Insights ก่อน optimize">
+  srcset="/images/github-pages-to-do-part-2/pagespeed-summary-2x.png 2x" alt="ผลจาก PageSpeed Insights ก่อน optimize" />
 </div>
 
 PageSpeed Insights บอกว่ามีสิ่งที่ควรปรับปรุงคือ
@@ -40,12 +40,12 @@ PageSpeed Insights บอกว่ามีสิ่งที่ควรปร�
 
 <div class="text-center">
   <img src="/images/github-pages-to-do-part-2/pagespeed-browser-caching.png"
-  srcset="/images/github-pages-to-do-part-2/pagespeed-browser-caching-2x.png 2x" alt="PageSpeed แนะนำว่า ควรใช้งาน HTTP Caching">
+  srcset="/images/github-pages-to-do-part-2/pagespeed-browser-caching-2x.png 2x" alt="PageSpeed แนะนำว่า ควรใช้งาน HTTP Caching" />
 </div>
 
 <div class="text-center">
   <img src="/images/github-pages-to-do-part-2/pagespeed-gzip.png"
-  srcset="/images/github-pages-to-do-part-2/pagespeed-gzip-2x.png 2x" alt="PageSpeed แนะนำว่า ควรใช้งาน GZIP compression">
+  srcset="/images/github-pages-to-do-part-2/pagespeed-gzip-2x.png 2x" alt="PageSpeed แนะนำว่า ควรใช้งาน GZIP compression" />
 </div>
 
 ทั้งสองอย่างต้องตั้งค่าที่ nginx โชคดีที่ทีม [H5BP](https://github.com/h5bp/) ทำตัวอย่าง config ของ nginx เอาไว้ที่ repo [server-configs-nginx](https://github.com/h5bp/server-configs-nginx) ซึ่งรวบรวมเอา best practices ต่างๆ ไว้ ผมก็เลยไปดูเป็นตัวอย่างและนำมาปรับใช้แบบบูรณาการ .. ก็คือลอกมานั่นเอง
@@ -160,7 +160,7 @@ layout: '../../../layouts/PostLayout.astro'ress
 
 <div class="text-center">
   <img src="/images/github-pages-to-do-part-2/disqus-javascripts.png"
-  srcset="/images/github-pages-to-do-part-2/disqus-javascripts-2x.png 2x" alt="JavaScript ทั้งหมดที่ถูกโหลดจาก Disqus ขนาดรวมเกือบ 500KB">
+  srcset="/images/github-pages-to-do-part-2/disqus-javascripts-2x.png 2x" alt="JavaScript ทั้งหมดที่ถูกโหลดจาก Disqus ขนาดรวมเกือบ 500KB" />
 </div>
 
 แต่ยังไง blog นี้ก็ไม่ค่อยมีใคร comment อยู่แล้ว (😭..) น่าจะดีกว่าถ้าตัด JavaScript ส่วนนี้ออกไป โดยที่ไม่จำเป็นต้องโหลดทุกครั้งที่แสดงผล แต่จะแสดงเมื่อจำเป็นเท่านั้น
@@ -174,21 +174,21 @@ PageSpeed Insights บอกว่ายังคงเหลือไฟล์ 
 
 <div class="text-center">
   <img src="/images/github-pages-to-do-part-2/result-pagespeed.png"
-  srcset="/images/github-pages-to-do-part-2/result-pagespeed-2x.png 2x" alt="ผลจาก PageSpeed Insights หลัง optimize">
+  srcset="/images/github-pages-to-do-part-2/result-pagespeed-2x.png 2x" alt="ผลจาก PageSpeed Insights หลัง optimize" />
 </div>
 
 สามารถเช็คได้โดยใช้ webpagetest.org ซึ่งจะแสดงข้อมูลได้ละเอียดกว่า
 
 <div class="text-center">
   <img src="/images/github-pages-to-do-part-2/webpagetest-overview.png"
-  srcset="/images/github-pages-to-do-part-2/webpagetest-overview-2x.png 2x" alt="ผลจาก PageSpeed Insights หลัง optimize">
+  srcset="/images/github-pages-to-do-part-2/webpagetest-overview-2x.png 2x" alt="ผลจาก PageSpeed Insights หลัง optimize" />
 </div>
 
 ดูได้ว่า static assets แต่ละไฟล์ มีการใช้งาน HTTP caching และ GZIP ไว้ทั้งหมด
 
 <div class="text-center">
   <img src="/images/github-pages-to-do-part-2/webpagetest-static-assets.png"
-  srcset="/images/github-pages-to-do-part-2/webpagetest-static-assets-2x.png 2x" alt="ข้อมูลต่างๆ ของ static resources จาก webpagetest.org">
+  srcset="/images/github-pages-to-do-part-2/webpagetest-static-assets-2x.png 2x" alt="ข้อมูลต่างๆ ของ static resources จาก webpagetest.org" />
 </div>
 
 ## สรุป

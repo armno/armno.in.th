@@ -3,6 +3,8 @@ title: 'Tools I use'
 layout: '../../layouts/PageLayout.astro'
 description: 'A collection of hardware/software/tools I use on a daily basis.'
 thumbnail: /images/uses/laptop.jpg
+setup: |
+  import Picture from '@components/Picture.astro';
 ---
 
 # Tools I use
@@ -26,9 +28,18 @@ hardware/software/tools they use regularly, here are my tools, updated for 2021-
   - dark: `base16_material-darker`
   - light: `base16_google-light`
 
-![dark terminal screenshot](/images/uses/dark.png)
-
-![light terminal screenshot](/images/uses/light.png)
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src="/images/uses/dark.png"
+      alt="dark terminal screenshot"
+    />
+    <Picture
+      src="/images/uses/light.png"
+      alt="light terminal screenshot"
+    />
+  </div>
+</div>
 
 - [VSCode](https://code.visualstudio.com/)
 - VSCode Themes: also both dark and light themes
@@ -54,19 +65,35 @@ Computers: I use
 - [**2015, 15-inch MacBook Pro**](https://support.apple.com/kb/SP719?locale=en_US) (2.2GHz Core i7, 16GB RAM) at work
 - [**2013, 13-inch MacBook Pro**](https://support.apple.com/kb/sp691?locale=th_TH) (2.4GHz Core i5, 8GB RAM) at home
 
-![2015, 15-inch MacBook Pro](/images/uses/laptop.jpg)
+<Picture
+  src="/images/uses/laptop.jpg"
+  alt="2015, 15-inch MacBook Pro"
+/>
 
 Monitor: a [Samsung 28" UR55 UHD 4K Monitor](https://www.samsung.com/th/business/monitors/ur55/lu28r550uqexxt/) mounted with an [NB-F80 Monitor arm](https://www.google.com/search?q=nb-f80+monitor+arm).
 
-![Samsung UR55 4k monitor](/images/uses/desk-monitor.jpg)
-
-![NB-F80 monitor arm](/images/uses/nb80-monitor-arm.jpg)
+<Picture
+  src="/images/uses/desk-monitor.jpg"
+  alt="Samsung UR55 4k monitor"
+  full
+/>
 
 Keyboards: [Portico](https://thekey.company/products/portico-keyboard) 65% mechanical keyboard at work and a [custom 60% mechanical keyboard](https://armno.in.th/2019/05/01/custom-mechanical-keyboard-build-2/) at home.
 
-![Build details: Portico Smoke / FR4 plate / Durock V2 stabs / Tangerine 67g + Krytox 205g0 / Susuwatari MT3 keycaps](/images/uses/portico-keyboard.jpg)
-
-![Build details: Tofu alu case / DZ60 PCB / alu plate / Everglide stabs / Gateron milky brown, Maxkeys SA keycaps](/images/uses/keyboard-tofu-sa-bluegray.jpg)
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src="/images/uses/portico-gmk-wob.jpg"
+      alt="my Portinco mechanical keyboard at work"
+      caption="Build details: Portico Smoke / FR4 plate / Durock V2 stabs / NK Cream + Krytox 205g0 / GMK WoB Katakana"
+    />
+    <Picture
+      src="/images/uses/tofu-susuwatari.jpg"
+      alt="my custom 60% mechanical keyboard"
+      caption="Build details: Tofu alu case / DZ60 PCB / alu plate / Everglide stabs / Gateron milky brown, Susuwatari MT3 keycaps"
+    />
+  </div>
+</div>
 
 Mouse: [Mi Dual Mode Wireless Mouse](https://duckduckgo.com/?t=ffab&q=mii+bluetooth+silent+mouse&ia=web)
 
@@ -78,17 +105,26 @@ Headphones: I have a few of them for my various use cases
 - [Soundpeats Air3](https://us.soundpeats.com/products/air3) for commuting and workouts
 - plus: a [DIY headphones stand](https://armno.wordpress.com/2013/05/09/746-headphone-stand/) made of teak wood.
 
-![Sony WH-1000XM4 headphones](/images/uses/sony-xm4.jpg)
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src="/images/uses/sony-xm4.jpg"
+      alt="Sony WH-1000XM4 headphones"
+    />
+    <Picture
+      src="/images/uses/headphones.jpg"
+      alt="Audio Technica M50x"
+    />
+    <Picture
+      src="/images/uses/jbl-quantum-100.jpg"
+      alt="JBL Quantum 100 headphones"
+    />
+  </div>
+</div>
 
-![Audio Technica M50x](/images/uses/headphones.jpg)
-
-![JBL Quantum 100 headphones](/images/uses/jbl-quantum-100.jpg)
-
-Notes: Any normal notebook and a black pen
+Note taking: Any normal notebook and a black pen.
 
 ![muji pens](/images/uses/pens.jpg)
-
-And an iPhone 12.
 
 ### Other
 
@@ -97,6 +133,15 @@ Not something I use everyday, but still worth mentioning.
 - Digital camera: Fujifilm XE-1 digital camera with TTArtisan 50mm f/1.2 manual focus lense
 - Bike: [2022 Nich Faith 2](https://www.nichcycling.com/pages/faith2) road bike which I use for commuting to work and sometimes for recreational cycling.
 
-![Fujifilm XE-1](/images/uses/fuji-xe1.jpg)
-
-![Nich Faith 2 Custom](/images/uses/nich-faith-2-custom-small.jpg)
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src="/images/uses/fuji-xe1.jpg"
+      alt="Fujifilm XE-1"
+    />
+    <Picture
+      src="/images/uses/nich-faith-2-custom-small.jpg"
+      alt="Nich Faith 2 Custom"
+    />
+  </div>
+</div>
