@@ -1,5 +1,5 @@
 ---
-title: 'Tools I use'
+title: 'Tools I use - armno.in.th'
 layout: '../../layouts/PageLayout.astro'
 description: 'A collection of hardware/software/tools I use on a daily basis.'
 thumbnail: /images/uses/laptop.jpg
