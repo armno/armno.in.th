@@ -17,12 +17,12 @@ hardware/software/tools they use regularly, here are my tools, updated for 2021-
 ### Programming
 
 - Terminal: [iTerm2](https://www.iterm2.com/version3.html) with
-  - [zsh](https://www.zsh.org/) and [oh-my-zsh](https://ohmyz.sh/) with my slightly modified version of [cloud](https://github.com/armno/dotfiles/blob/master/cloud-armno.zsh-theme) theme
-  - [base16-shell](https://github.com/chriskempson/base16-shell)
-  - [zoxide](https://github.com/ajeetdsouza/zoxide)
+  - [zsh](https://www.zsh.org/) and [oh-my-zsh](https://ohmyz.sh/) with my slightly modified version of the [cloud](https://github.com/armno/dotfiles/blob/master/cloud-armno.zsh-theme) theme
+  - [base16-shell](https://github.com/chriskempson/base16-shell) and [base16-iterm2](https://github.com/martinlindhe/base16-iterm2)
+  - [zoxide](https://github.com/ajeetdsouza/zoxide) - the replacement for `cd` command.
   - [dotfiles ](https://github.com/armno/dotfiles)
 - [Vim](https://www.vim.org/) for a quick editing from the terminal. Here is my [`.vimrc`](https://github.com/armno/dotfiles/blob/master/.vimrc).
-- Git: I use command line Git with [delta](https://github.com/dandavison/delta)
+- Git: I use command line Git with [delta](https://github.com/dandavison/delta) to render better diffs and logs
 - [JetBrains Mono fonts](https://www.jetbrains.com/lp/mono/) in both code editors and terminal.
 - Terminal colors: I have both dark and light themes set up and use depending on the light conditions. I create `dark` and `light` shell commands to switch between base16 themes.
   - dark: `base16_material-darker`
@@ -41,8 +41,7 @@ hardware/software/tools they use regularly, here are my tools, updated for 2021-
   </div>
 </div>
 
-- [VSCode](https://code.visualstudio.com/)
-- VSCode Themes: also both dark and light themes
+- [VSCode](https://code.visualstudio.com/) and themes
   - dark: [`New Moon`](https://taniarascia.github.io/new-moon/)
   - light: [`GitHub Light Default`](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
 
@@ -55,7 +54,7 @@ hardware/software/tools they use regularly, here are my tools, updated for 2021-
 - [BetterTouchTool](https://folivora.ai/) for shortcuts, keyboard remappings
 - [Pixelmator Pro](https://www.pixelmator.com/pro/) for image editing
 - [Skitch](https://evernote.com/products/skitch) for quick image editing
-- Google Photos
+- Google Photos to backup all of my photos
 
 ---
 
