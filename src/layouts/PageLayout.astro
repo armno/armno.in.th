@@ -4,7 +4,7 @@ import Footer from '@components/Footer.astro';
 import BaseHead from '@components/BaseHead.astro';
 import '../styles/global.css';
 
-const { content, notProse } = Astro.props;
+const { content, notProse, isPost } = Astro.props;
 const { title, description, thumbnail, language } = content;
 
 let classes = 'mt-20 mx-auto pb-24 prose prose-slate leading-relaxed main';
@@ -18,9 +18,17 @@ if (notProse) {
 	</head>
 	<body class="antialiased">
 		<Header />
+    {isPost &&
+		<article class={classes}>
+      <slot />
+    </article>
+    }
+
+    {!isPost &&
 		<main class={classes}>
       <slot />
     </main>
+    }
     <Footer />
 	</body>
 </html>

@@ -8,11 +8,9 @@ const { content } = Astro.props;
 const { title, date } = content;
 const canonicalURL = Astro.canonicalURL;
 ---
-<PageLayout { content }>
-  <article>
-    <h1 class="text-4xl lg:text-5xl leading-tight lg:leading-tight">{title}</h1>
-    <PublishedDate {date} />
-    <slot />
-    <RelatedPosts tags={content.tags} currentPathname={canonicalURL.pathname} />
-  </article>
+<PageLayout { content } isPost={true}>
+  <h1 class="text-4xl lg:text-5xl leading-tight lg:leading-tight">{title}</h1>
+  <PublishedDate {date} />
+  <slot />
+  <RelatedPosts tags={content.tags} currentPathname={canonicalURL.pathname} />
 </PageLayout>
