@@ -23,7 +23,7 @@ layout: '../../../layouts/PostLayout.astro'
 ตอน Setup ใช้เวลาน้อยมากๆ แค่ไม่กี่อึดใจ Google Chrome ก็ถูกติดตั้งบนเครื่องผมแล้ว ดูฟีเจอร์กันเลยดีกว่า
 
 
-[![newtab](https://armno.in.th/wp-content/uploads/2008/09/newtab-thumb.jpg)](https://armno.in.th/wp-content/uploads/2008/09/newtab.jpg) 
+[![newtab](https://armno.in.th/wp-content/uploads/2008/09/newtab-thumb.jpg)](https://armno.in.th/wp-content/uploads/2008/09/newtab.jpg)
 
 
 

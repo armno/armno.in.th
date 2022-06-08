@@ -8,7 +8,7 @@ const { tags, currentPathname } = Astro.props;
 
 const allRelatedPosts = allPosts.filter(({ url }) => !currentPathname.includes(url))
   // sort posts by most recent first
-  .sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf())
+  .sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf())
   // filter to posts with only matched tags with the current post
   .filter(post => {
     const matchedTags = intersection(tags, post.frontmatter.tags);
@@ -23,7 +23,7 @@ const relatedPosts = sampleSize(allRelatedPosts, 3, null);
   <h4 class="text-sm text-slate-600 uppercase tracking-widest font-bold mb-4">Related posts</h4>
   <ul class="grid grid-cols-3 gap-x-8">
     {relatedPosts.map(post => (
-      <PostItem url={post.url} date={post.frontmatter.date} title={post.frontmatter.title} thumbnail={post.frontmatter.thumbnail} />
+      <PostItem url={post.url} pubDate={post.frontmatter.pubDate} title={post.frontmatter.title} thumbnail={post.frontmatter.thumbnail} />
     ))}
   </ul>
 </section>

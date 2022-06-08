@@ -20,7 +20,6 @@ setup: |
 เพราะเธอได้ยึด[คีย์บอร์ดของผม](https://armno.in.th/2019/05/01/custom-mechanical-keyboard-build-2/#mark-4)ไปใช้เป็นที่เรียบร้อยแล้ว...
 
 <Picture
-  
   src="/images/dz60rgb-pcb-reviews/build.jpg"
   alt="mechanical keyboard mark 6"
   ratio="3-2"
@@ -51,7 +50,6 @@ switch Gateron Yellow ที่ใช้เป็นแบบ 5-pin ก็ยั
 ยิ่งไม่ได้บัดกรีแบบนี้ด้วย ถึงตอนแรกจะวางไปตรงๆ แล้ว ใช้ไปๆ อาจจะบิดเบี้ยวได้อยู่
 
 <Picture
-  
   src="/images/dz60rgb-pcb-reviews/top-view.jpg"
   alt="รูปตอนวาง switch ลงไปบนบอร์ด"
   ratio="3-2"
@@ -62,7 +60,6 @@ switch Gateron Yellow ที่ใช้เป็นแบบ 5-pin ก็ยั
 plate แบบ ANSI layout มีเหลือที่บ้านตัวสุดท้ายพอดี
 
 <Picture
-  
   src="/images/dz60rgb-pcb-reviews/with-plate.jpg"
   alt="เรียง switch ใหม่โดยใช้ plate ด้วย"
   ratio="3-2"
@@ -81,7 +78,6 @@ Gateron Yellows เป็น linear switch ที่มี actuation force ท�
 ส่วน feedback ของ Gateron Yellows ก็หนึบๆ สำหรับผมแล้วใช้คู่กับ DSA keycaps เข้ากันดีเลยครับ
 
 <Picture
-  
   src="/images/dz60rgb-pcb-reviews/leds.jpg"
   alt="ไฟ LED ที่ติดมากับ PCB เลย"
   ratio="16-9"
@@ -104,7 +100,6 @@ Gateron Yellows เป็น linear switch ที่มี actuation force ท�
 เพราะล็อกได้แน่นกว่า แต่ก็ควรจะมี [switch puller](https://www.google.com/search?tbm=isch&source=hp&biw=1440&bih=803&ei=hUCUXpDNKNi7rQH84ZPgBA&q=keyboard+switch+puller&oq=keyboard+switch+puller&gs_lcp=CgNpbWcQAzICCAAyBggAEAUQHjoFCAAQgwE6BggAEAgQHkorCBcSJzBnODlnMTAyZzg3Zzg2ZzgzZzgzZzg1ZzgyZzgyZzExNGc4N2c4NEodCBgSGTBnMWcxZzFnMWcxZzFnMWcxZzFnNWc1ZzNQlwlYhB1giiFoAHAAeACAAfIBiAGAD5IBBjIxLjAuMZgBAKABAaoBC2d3cy13aXotaW1n&sclient=img&ved=0ahUKEwjQo56smuXoAhXYXSsKHfzwBEwQ4dUDCAY&uact=5) ติดบ้านไว้ด้วยครับ ไม่งั้นดึงออกมายาก
 
 <Picture
-  
   src="/images/dz60rgb-pcb-reviews/side.jpg"
   alt="ถ่ายจากด้านข้าง"
   ratio="3-2"

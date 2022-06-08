@@ -24,9 +24,7 @@ setup: |
 
 - โพสต์นี้ทดสอบบน OSX 10.8+ นะครับ
 
-<blockquote>
-  Update 27/07/2014 &ndash; ทดสอบทั้งบน OSX Mavericks กับ Yosemite Beta แล้ว ได้เหมือนกันครับ
-</blockquote>
+> Update 27/07/2014 &ndash; ทดสอบทั้งบน OSX Mavericks กับ Yosemite Beta แล้ว ได้เหมือนกันครับ
 
 ### ติดตั้ง Homebrew
 
@@ -41,14 +39,12 @@ $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ตั้งแต่ OSX 10.8 เป็นต้นมานั้น ไม่มีตัวเลือก Web Sharing ให้เลือกใน System Preferences > Sharing แล้ว ซึ่งเราสามารถรัน Apache ได้จาก terminal ครับ
 
 ```bash
-\$ sudo apachectl start
+$ sudo apachectl start
 ```
 
 ### ติดตั้ง PHP 5.4
 
-<blockquote>
-  Update 27/07/2014 &ndash; ใน homebrew นั้นมี PHP เวอร์ชั่นใหม่ๆ มาตลอด รวมถึง rc ด้วย ลองเช็คผ่าน <code>brew search php</code> ดูก่อน สำหรับผมจะเลือกเวอร์ชั่น stable ล่าสุดเสมอครับ
-</blockquote>
+> Update 27/07/2014 &ndash; ใน homebrew นั้นมี PHP เวอร์ชั่นใหม่ๆ มาตลอด รวมถึง rc ด้วย ลองเช็คผ่าน <code>brew search php</code> ดูก่อน สำหรับผมจะเลือกเวอร์ชั่น stable ล่าสุดเสมอครับ
 
 ต่อไปก็ต้องลง PHP ผ่าน Homebrew ครับ สำหรับการลง package ด้วย homebrew นั้นใช้ command <code>brew install &lt;package name&gt;</code> แต่ถ้าไม่แน่ใจว่า <code>package name</code> นั้นมีอะไรบ้าง ใช้ command <code>brew search</code> หาดูก่อนได้ครับ
 
@@ -59,7 +55,7 @@ $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 > เลขเวอร์ชั่นของ PHP อาจจะต่างออกไป ตามเวอร์ชั่นที่เลือกลง โพสต์นี้เขียนตอน PHP 5.4 ครับ
 
 ```bash
-\$ brew install php54
+$ brew install php54
 ```
 
 รอสักพักจนเสร็จ PHP 5.4 ก็จะถูกติดตั้งไว้ที่
@@ -77,13 +73,13 @@ $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ใช้คำสั่ง <code>brew install</code> เหมือนเดิม
 
 ```bash
-\$ brew install mysql
+$ brew install mysql
 ```
 
 หลังจาก install เสร็จก็เซ็ต root password ด้วย command
 
 ```bash
-\$ mysql_secure_installation
+$ mysql_secure_installation
 ```
 
 ทำตามขั้นตอนไปเรื่อยๆ จนจบได้เลย
@@ -95,7 +91,7 @@ $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ซึ่งก็คือ เราต้องไปแก้ path ในไฟล์ <code>httpd.conf</code> ครับ
 
 ```bash
-\$ sudo vim /etc/apache2/httpd.conf
+$ sudo vim /etc/apache2/httpd.conf
 ```
 
 หาบรรทัดนี้
@@ -113,7 +109,7 @@ LoadModule php5_module /usr/local/Cellar/php54/5.4.15/libexec/apache2/libphp5.so
 จากนั้น restart Apache
 
 ```text
-\$ sudo apachectl restart
+$ sudo apachectl restart
 ```
 
 ### เซ็ต DocumentRoot
@@ -121,7 +117,7 @@ LoadModule php5_module /usr/local/Cellar/php54/5.4.15/libexec/apache2/libphp5.so
 ปกติผมจะเซ็ตให้ directory <code>~/code</code> เป็น root directory ของ localhost ครับ (เปรียบเสมือน <code>/var/www/</code> ใน Ubuntu) ซึ่งก็ต้องไปแก้ path ในไฟล์ <code>httpd.conf</code> เหมือนเดิม
 
 ```bash
-\$ sudo vim /etc/apache2/httpd.conf
+$ sudo vim /etc/apache2/httpd.conf
 ```
 
 หา
@@ -136,7 +132,7 @@ DocumentRoot "/Library/WebServer/Documents"
 DocumentRoot "/Users/armno/code" # อย่าลืมเปลี่ยน username เป็นของคุณ
 ```
 
-และตรง <code>&lt;Directory&gt;</code> ก็ต้องเปลี่ยนเป็น path เดียวกันด้วยครับ
+และตรง `<Directory>` ก็ต้องเปลี่ยนเป็น path เดียวกันด้วยครับ
 
 ```text
 <Directory "/Users/armno/code">

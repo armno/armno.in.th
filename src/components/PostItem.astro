@@ -4,11 +4,11 @@ import { format } from 'date-fns';
 export interface Props {
   url: string;
   title: string;
-  date: Date;
+  pubDate: Date;
   thumbnail?: string;
   description?: string;
 }
-const { url, title, thumbnail, date, description } = Astro.props as Props;
+const { url, title, thumbnail, pubDate, description } = Astro.props as Props;
 ---
 
 <article>
@@ -21,9 +21,9 @@ const { url, title, thumbnail, date, description } = Astro.props as Props;
     }
     <div class="font-bold font-headings leading-tight mt-[1em]">{title}</div>
   </a>
-  {date &&
-  <time class="text-sm text-slate-600" datetime={date.toString()}>
-    {format(new Date(date), 'PPP')}
+  {pubDate &&
+  <time class="text-sm text-slate-600" datetime={pubDate.toString()}>
+    {format(new Date(pubDate), 'PPP')}
   </time>
   }
   {description &&

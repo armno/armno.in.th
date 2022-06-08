@@ -5,12 +5,12 @@ import PageLayout from './PageLayout.astro';
 import '../styles/global.css';
 
 const { content } = Astro.props;
-const { title, date } = content;
+const { title, pubDate } = content;
 const canonicalURL = Astro.canonicalURL;
 ---
 <PageLayout { content } isPost={true}>
   <h1 class="text-4xl lg:text-5xl leading-tight lg:leading-tight">{title}</h1>
-  <PublishedDate {date} />
+  <PublishedDate {pubDate} />
   <slot />
   <RelatedPosts tags={content.tags} currentPathname={canonicalURL.pathname} />
 </PageLayout>

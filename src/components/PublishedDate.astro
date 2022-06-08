@@ -2,17 +2,17 @@
 import { format } from 'date-fns';
 
 export interface Props {
-  date: string;
+  pubDate: Date;
   align?: string;
 }
-const { date, align } = Astro.props as Props;
+const { pubDate, align } = Astro.props as Props;
 ---
 
 <div class={
   `text-slate-500 ${align === 'center' ? 'text-center mb-16': ''}`
 }>
-  <time datetime={date}>
-    {format(new Date(date), 'PPP')}
+  <time datetime={pubDate.toString()}>
+    {format(new Date(pubDate), 'PPP')}
   </time>
   by Armno P.
 </div>

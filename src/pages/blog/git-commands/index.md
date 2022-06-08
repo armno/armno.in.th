@@ -51,7 +51,6 @@ $ git status
 สมมุติว่า output ออกมาเป็นแบบนี้
 
 <Picture
-  
   src="/images/git-commands/normal-status.png"
   alt="รูป output จาก git status แบบปกติ"
   caption="รูป output จาก git status แบบปกติ"
@@ -60,7 +59,6 @@ $ git status
 สิ่งที่ผมเห็นคือ: ก้อนสีเหลือง ก้อนสีเขียว และก้อนสีแดง ในขนาดที่ต่างกัน
 
 <Picture
-  
   src="/images/git-commands/normal-status-graphic.png"
   alt="รูป output จาก git status แบบก้อนๆ"
   caption="รูป output จาก git status แบบก้อนๆ"
@@ -84,7 +82,6 @@ $ git diff --staged
 และจะดู diff view ก่อน commit ทุกครั้งเพื่อเช็คอีกทีว่าทุกอย่างที่แก้ไป ใช่สิ่งที่ต้องการหรือไม่
 
 <Picture
-  
   src="/images/git-commands/git-diff-output.png"
   alt="รูป output จาก git diff"
   caption="รูป output จาก git diff"
@@ -251,7 +248,6 @@ $ man git-<sub_command>
 คำอธิบายละเอียดยิบพร้อมตัวอย่าง
 
 <Picture
-  
   src="/images/git-commands/git-man.png"
   alt="รูป ตัวอย่าง man page ของ git merge"
   caption="ตัวอย่าง man page ของ git merge"
@@ -279,7 +275,6 @@ $ man git-<sub_command>
 
 
 <Picture
-  
   src="/images/git-commands/git-ldm.png"
   alt="รูป output จาก git ldm"
   caption="รูป output จาก `git ldm`"

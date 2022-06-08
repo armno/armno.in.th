@@ -1,6 +1,6 @@
 export interface Frontmatter {
   title: string;
-  date: Date;
+  pubDate: Date;
   url: string;
   description?: string;
   thumbnail?: string;

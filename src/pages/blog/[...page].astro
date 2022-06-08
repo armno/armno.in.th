@@ -7,21 +7,7 @@ import { sortBy } from 'lodash-es';
 
 export async function getStaticPaths({ paginate, rss }) {
   let allPosts = await Astro.glob<Frontmatter>('./**/*.md');
-  allPosts = sortBy(allPosts, ['frontmatter.date']).reverse();
-
-  // rss({
-  //   title: `Armno's blog`,
-  //   stylesheet: true,
-  //   description: 'Notes from my thoughts and learnings.',
-  //   items: allPosts.map(post => ({
-  //     title: post.frontmatter.title,
-  //     description: post.frontmatter.description,
-  //     link: post.url,
-  //     pubDate: post.frontmatter.date,
-  //   })),
-  //   dest: '/rss/feed.xml'
-  // });
-
+  allPosts = sortBy(allPosts, ['frontmatter.pubDate']).reverse();
   return paginate(allPosts, { pageSize: 12 });
 }
 
@@ -45,7 +31,7 @@ const content = {
           title={post.frontmatter.title}
           url={post.url}
           thumbnail={post.frontmatter.thumbnail}
-          date={post.frontmatter.date}
+          pubDate={post.frontmatter.pubDate}
           description={post.frontmatter.description}
         />
       </li>)
