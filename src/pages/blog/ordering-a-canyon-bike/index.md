@@ -1,6 +1,6 @@
 ---
 title: "รีวิว: สั่งซื้อจักรยานจาก Canyon"
-date: 2019-01-28T23:08:07+07:00
+pubDate: 2019-01-28T23:08:07+07:00
 url: /2019/01/28/ordering-a-canyon-bike-review
 cover: /images/ordering-a-canyon-bike/box-front.jpg
 thumbnail: /images/ordering-a-canyon-bike/box-front.jpg
@@ -59,7 +59,7 @@ setup: |
 ## 1. เลือกรุ่น ดูราคา
 
 <p class="message--warning">
-  <strong>Update:</strong> กลางปี 2019 Canyon ได้ปรับโฉมเว็บ canyon.com ใหม่ทั้งหมด
+  <strong>UppubDate:</strong> กลางปี 2019 Canyon ได้ปรับโฉมเว็บ canyon.com ใหม่ทั้งหมด
   ทำให้หน้าตาไม่เหมือนกับในรูป screenshot ประกอบบทความแล้วนะครับ
 </p>
 

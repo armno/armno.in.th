@@ -2,7 +2,7 @@
 categories:
   - Web Development
 comments: true
-date: 2012-06-26T23:14:57Z
+pubDate: 2012-06-26T23:14:57Z
 description:
   ปกติใช้ Sublime Text 2 ผมจะใช้งานใน Distraction Free mode แทบตลอดเวลา
   อยากให้มันแสดงเลขบรรทัดใน Distraction Free mode ด้วย

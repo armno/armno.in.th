@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2007-11-29T01:09:38Z
+pubDate: 2007-11-29T01:09:38Z
 slug: facts-of-the-sun
 tags:
 - จุดบนดวงอาทิตย์

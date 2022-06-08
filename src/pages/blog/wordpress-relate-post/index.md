@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2011-12-09T22:08:49Z
+pubDate: 2011-12-09T22:08:49Z
 description: WordPress มี plugin ช่วยแสดงผล related posts อยู่มากมาย แต่ความจริงแล้ว
   เราสามารถเขียนเองได้ไม่ยากนัก วิธีที่ผมใช้คือเขียนลงไปใน theme เลย
 slug: wordpress-related-posts-without-plugin

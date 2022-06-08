@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2009-12-01T23:52:18Z
+pubDate: 2009-12-01T23:52:18Z
 slug: full-moon-01122552
 tags:
 - Photoshop Lightroom

@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2010-07-26T22:11:41Z
+pubDate: 2010-07-26T22:11:41Z
 slug: netbeans-tips5-editor-appearance
 tags:
 - Coding

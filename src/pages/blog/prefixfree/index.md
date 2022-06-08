@@ -2,7 +2,7 @@
 categories:
   - Life
 comments: true
-date: 2012-03-18T18:00:50Z
+pubDate: 2012-03-18T18:00:50Z
 description:
   Prefixfree.js เป็น JavaScript เล็กๆ ที่ทำให้เราสามารถเขียน CSS แบบไม่ต้องมี
   vendor prefix ได้ โดย prefixfree.js จะเติม vendor prefix ให้เองตอน runtime ครับ

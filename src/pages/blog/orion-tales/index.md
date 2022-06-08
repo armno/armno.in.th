@@ -2,7 +2,7 @@
 categories:
   - Astronomy
 comments: true
-date: 2007-11-18T18:06:00Z
+pubDate: 2007-11-18T18:06:00Z
 slug: oriontales1
 tags:
   - กลุ่มดาวนายพราน

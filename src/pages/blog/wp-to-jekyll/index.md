@@ -1,5 +1,5 @@
 ---
-date: 2013-03-09T00:00:00Z
+pubDate: 2013-03-09T00:00:00Z
 description:
   Armno.in.th เปลี่ยน blog engine จาก WordPress มาเป็น Jekyll และ Github
   Pages ถือเป็นการเปลี่ยนแปลงครั้งใหญ่ที่สุด ตั้งแต่ผมเริ่มเขียนบล็อกมาเมื่อปี 2007

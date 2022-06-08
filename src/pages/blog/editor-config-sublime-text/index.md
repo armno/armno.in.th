@@ -1,5 +1,5 @@
 ---
-date: 2013-09-18T00:00:00Z
+pubDate: 2013-09-18T00:00:00Z
 description:
   EditorConfig นั้นเป็นไฟล์ config ที่ทำให้ editor/IDE ต่างๆ นั้นใช้ coding
   style แบบเดียวกันได้ (เช่นการใช้ tab หรือ space) ถ้าทั้งทีมใช้ coding style แบบเดียวกันก็ช่วยให้

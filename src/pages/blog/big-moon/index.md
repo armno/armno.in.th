@@ -2,7 +2,7 @@
 categories:
   - Astronomy
 comments: true
-date: 2007-11-26T23:36:01Z
+pubDate: 2007-11-26T23:36:01Z
 slug: why-the-sun-so-big
 tags:
   - ขนาด

@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2010-07-17T12:17:53Z
+pubDate: 2010-07-17T12:17:53Z
 slug: netbeans-tips-4-finding-declarations
 tags:
 - Coding

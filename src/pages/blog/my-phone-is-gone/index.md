@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2009-08-11T16:15:42Z
+pubDate: 2009-08-11T16:15:42Z
 slug: my-phone-is-gone
 tags:
 - Gadget

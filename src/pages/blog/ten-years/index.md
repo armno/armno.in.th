@@ -1,6 +1,6 @@
 ---
 title: "เขียนบล็อก 10 ปี"
-date: 2019-07-03T21:26:45+07:00
+pubDate: 2019-07-03T21:26:45+07:00
 url: /2019/07/03/ten-years
 description: บันทึกครบรอบ 10 ปี ของ armno.in.th ที่มาที่ไป สิ่งที่ได้พบเจอระหว่างทาง ปัจจุบัน และอนาคต
 thumbnail: /images/ten-years/relaunch.png

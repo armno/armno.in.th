@@ -2,7 +2,7 @@
 categories:
   - Life
 comments: true
-date: 2008-04-03T16:16:20Z
+pubDate: 2008-04-03T16:16:20Z
 slug: gemini-constellation
 tags:
   - M35

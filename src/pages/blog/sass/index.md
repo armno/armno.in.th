@@ -2,7 +2,7 @@
 categories:
   - Web Development
 comments: true
-date: 2012-05-20T22:58:44Z
+pubDate: 2012-05-20T22:58:44Z
 description:
   Sass นั้นช่วยให้การเขียน CSS นั้นสนุกขึ้นเยอะ โพสต์นี้จะไม่เน้นเรื่องวิธีการเขียน
   Sass แต่จะเกี่ยวกับการติดตั้งและเซ็ต environment ให้เข้าที่เข้าทางเพื่อทำงานกับ
@@ -134,7 +134,7 @@ $ sass --watch style.scss:style.css --style compressed
 
 หรือ ลง plugin ชื่อว่า Sass ผ่าน Package Manger ..<del> ผมลองดูแล้วมันยังเอ๋อๆ กับ CSS comment แล้วก็ attribute selector ด้วย แนะนำให้ใช้แบบแรกดีกว่าครับ</del>
 
-(Update: ผมมึนเองครับที่ลง plugin Sass แล้วไปเปิดไฟล์ .scss จริงๆ แล้วมี plugin อีกตัวนึงชื่อ [SCSS](https://github.com/kuroir/SCSS.tmbundle/tree/SublimeText2) อ่านไฟล์ .scss ได้ถูกต้องทุกประการครับ)
+(UppubDate: ผมมึนเองครับที่ลง plugin Sass แล้วไปเปิดไฟล์ .scss จริงๆ แล้วมี plugin อีกตัวนึงชื่อ [SCSS](https://github.com/kuroir/SCSS.tmbundle/tree/SublimeText2) อ่านไฟล์ .scss ได้ถูกต้องทุกประการครับ)
 
 ![sublime-text-sass-plugin](/images/sass/8507408254_23d0a26632_o.png)
 

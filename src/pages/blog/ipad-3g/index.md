@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2010-12-13T23:07:00Z
+pubDate: 2010-12-13T23:07:00Z
 slug: ipad-3g
 tags:
 - Apple

@@ -2,7 +2,7 @@
 categories:
   - Life
 comments: true
-date: 2008-07-16T17:57:52Z
+pubDate: 2008-07-16T17:57:52Z
 slug: full-solar-eclipse-01-08-2008
 tags:
   - ดวงจันทร์

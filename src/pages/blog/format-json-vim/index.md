@@ -1,6 +1,6 @@
 ---
 thumbnail: /images/format-json-vim/format-json-in-vim.png
-date: 2016-01-25T00:00:00Z
+pubDate: 2016-01-25T00:00:00Z
 description: การ format file JSON (จัดให้เป็นระเบียบ, uncompressed, prettify) ปกติเป็นงานที่ผมไม่ได้ทำใน
   Vim ต้องพึ่ง editor ตัวอื่น แต่ด้วยความสงสัยก็เลยลองค้นหาวิธีในเน็ตดู ก็พบว่ามีหลายทางให้เลือก
   และก็ไม่อยากเลย

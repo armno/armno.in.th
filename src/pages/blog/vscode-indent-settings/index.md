@@ -1,6 +1,6 @@
 ---
 title: "VSCode: Tree Indent Settings"
-date: 2019-10-29T10:21:53+07:00
+pubDate: 2019-10-29T10:21:53+07:00
 url: /2019/10/29/vscode-indent-settings
 description: ทำให้ File Explorer (Sidebar) ของ VSCode ดูง่ายขึ้นอีกนิด ด้วยการเพิ่มค่า indent size หรือจะเอาไว้แกล้งเพื่อนก็ได้ครับ
 thumbnail: /images/vscode-indent-settings/indent-guide-on.png

@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2007-11-11T17:07:21Z
+pubDate: 2007-11-11T17:07:21Z
 slug: preparation
 tags:
 - Astronomy

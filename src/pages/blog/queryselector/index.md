@@ -2,7 +2,7 @@
 categories:
   - Web Development
 comments: true
-date: 2012-03-26T23:09:42Z
+pubDate: 2012-03-26T23:09:42Z
 description:
   เราสามารถใช้ querySelector() และ querySelectorAll() สำหรับ query DOM
   element โดยใช้ CSS selector ได้อย่างสะดวกใจ คล้าย selector ของ jQuery ครับ

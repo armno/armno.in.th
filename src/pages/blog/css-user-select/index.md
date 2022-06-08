@@ -1,6 +1,6 @@
 ---
 title: "Fixing a weird Bug: Cannot type in Safari's Input Fields"
-date: 2020-11-26T18:04:34+07:00
+pubDate: 2020-11-26T18:04:34+07:00
 url: /2020/11/26/css-user-select
 description: A small thing I learned about `user-select` CSS property.
 thumbnail: /images/css-user-select/cover.png

@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2008-02-01T00:04:50Z
+pubDate: 2008-02-01T00:04:50Z
 slug: jupiter-and-venus
 tags:
 - ดาวพฤหัส

@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2007-12-26T03:15:13Z
+pubDate: 2007-12-26T03:15:13Z
 slug: fullmoon-on-dec24
 tags:
 - พระจันทร์เต็มดวง

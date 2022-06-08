@@ -1,6 +1,6 @@
 ---
 title: "ลองทำ mechanical keyboard แบบไม่ใช้ plate"
-date: 2019-06-08T15:51:22+07:00
+pubDate: 2019-06-08T15:51:22+07:00
 url: /2019/06/08/60-percent-mechanical-keyboard-with-arrows
 cover-image: /images/60-percent-mechanical-keyboard-with-arrows/cover.jpg
 thumbnail: /images/60-percent-mechanical-keyboard-with-arrows/after-fixes.jpg

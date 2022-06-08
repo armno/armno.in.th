@@ -1,6 +1,6 @@
 ---
 title: 'รีวิว Canyon Endurace CF SL (2018)'
-date: 2021-07-28T23:01:15+07:00
+pubDate: 2021-07-28T23:01:15+07:00
 url: /2021/07/28/canyon-endurace-cf-sl-2018-review
 description: เฟรม disc brake แนว endurance ของ Canyon ที่จะปั่นชิวๆ หรือซิ่งๆ ก็ได้เหมือนกัน
 thumbnail: /images/canyon-endurace-cf-sl-2018-review/cover.jpg

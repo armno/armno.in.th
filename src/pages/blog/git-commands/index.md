@@ -1,6 +1,6 @@
 ---
 title: "Git Commands ที่ใช้บ่อยๆ"
-date: 2019-07-29T21:10:42+07:00
+pubDate: 2019-07-29T21:10:42+07:00
 url: /2019/07/29/frequently-used-git-commands
 description: รวม Git Commands ที่ผมต้องใช้ทำงานอยู่เป็นประจำ
 thumbnail: /images/git-commands/normal-status-graphic.png

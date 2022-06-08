@@ -2,7 +2,7 @@
 categories:
   - Astronomy
 comments: true
-date: 2007-11-07T19:45:52Z
+pubDate: 2007-11-07T19:45:52Z
 slug: nextmeteorshower
 tags:
   - ดาวตก

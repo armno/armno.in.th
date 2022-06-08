@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2009-11-15T10:59:10Z
+pubDate: 2009-11-15T10:59:10Z
 description: A good programmer is who ...
 slug: a-good-programmer
 tags:

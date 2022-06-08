@@ -1,5 +1,5 @@
 ---
-date: 2013-09-05T00:00:00Z
+pubDate: 2013-09-05T00:00:00Z
 description:
   ปกติผมใช้ Sublime Text 3 เป็น code editor ตัวหลัก แต่บางครั้งต้องการแก้ไขไฟล์ง่ายๆ
   เร็วๆ จาก terminal หรือทำโปรเจ็คเล็กๆ (เขียนโค้ดตาม tutorial ในเว็บต่างๆ) ผมก็จะเลือกใช้
@@ -157,4 +157,4 @@ let g:ctrlp_cmd = 'CtrlP'
 
 ตอนนี้ Vim ก็คล้าย Sublime Text ขึ้นมาอีกหน่อย :)
 
-Update: เขียนตอน 2 แล้วครับ ตามไปอ่านได้ที่ [Setting Vim: Part II](https://armno.in.th/2015/02/26/setting-up-vim-part-2/)
+UppubDate: เขียนตอน 2 แล้วครับ ตามไปอ่านได้ที่ [Setting Vim: Part II](https://armno.in.th/2015/02/26/setting-up-vim-part-2/)

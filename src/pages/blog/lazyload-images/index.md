@@ -1,6 +1,6 @@
 ---
 title: "Lazy Load รูปภาพด้วย LazyLoad library"
-date: 2018-09-10T20:24:15+07:00
+pubDate: 2018-09-10T20:24:15+07:00
 url: /2018/09/10/lazyload-images
 thumbnail: /images/lazyload-images/audit-results-after.png
 description: การใช้ lazy loading กับไฟล์จำพวกรูปภาพ เป็นเทคนิคที่นำมาใช้ได้ง่าย และส่งผลดีอย่างเห็นได้ชัด ในโพสต์นี้ผมนำ library ที่ชื่อว่า LazyLoad มาใช้งานกับบล็อกนี้ครับ

@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2009-07-21T21:35:17Z
+pubDate: 2009-07-21T21:35:17Z
 slug: tomorrow-solar-eclipse
 tags:
 - มอชอ

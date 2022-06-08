@@ -2,7 +2,7 @@
 categories:
   - Astronomy
 comments: true
-date: 2009-08-12T14:06:56Z
+pubDate: 2009-08-12T14:06:56Z
 slug: perseids-meteor-shower-2009
 tags:
   - Astronomy

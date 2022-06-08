@@ -2,7 +2,7 @@
 categories:
   - Life
 comments: true
-date: 2008-05-04T02:51:12Z
+pubDate: 2008-05-04T02:51:12Z
 slug: moon-and-mars-transition
 tags:
   - Google

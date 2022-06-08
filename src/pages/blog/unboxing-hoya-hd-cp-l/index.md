@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2009-12-19T22:08:41Z
+pubDate: 2009-12-19T22:08:41Z
 slug: unboxing-hoya-hd-cp-l
 tags:
 - C-PL

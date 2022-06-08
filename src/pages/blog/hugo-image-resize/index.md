@@ -1,6 +1,6 @@
 ---
 title: "Hugo: Resize รูปด้วย Image Processing"
-date: 2019-07-25T22:10:57+07:00
+pubDate: 2019-07-25T22:10:57+07:00
 url: /2019/07/25/hugo-image-resize
 description: Hugo มาพร้อมกับฟีเจอร์ Image Processing ที่ช่วยย่อรูป/crop รูปเป็นขนาดต่างๆ ได้จากรูปต้นฉบับที่เราเตรียมไว้รูปเดียว
 thumbnail: /images/hugo-image-resize/thumbnail.png
@@ -19,7 +19,7 @@ Hugo มาพร้อมกับฟีเจอร์ [Image Processing](http
 ผมได้ลองใช้แล้วพบว่าสะดวกดี จึงอยากจะบันทึกไว้ครับ
 
 <p class="message--warning">
-  <strong>Update:</strong> พบปัญหาจากการใช้งาน image processing อยู่ 2 อย่าง อย่างแรกคือ ขนาดไฟล์อาจจะใหญ่ขึ้นกว่าเดิม
+  <strong>UppubDate:</strong> พบปัญหาจากการใช้งาน image processing อยู่ 2 อย่าง อย่างแรกคือ ขนาดไฟล์อาจจะใหญ่ขึ้นกว่าเดิม
   อย่างที่สองคือ คุณภาพของรูปที่ผ่าน image processing ของ hugo นั้นค่อนข้างแย่ ภาพดูแตกอย่างชัดเจน
   ถึงแม้ตั้ง quality เป็น 100 แล้วก็ตาม ปัญหานี้ผมยังหาทางแก้ไม่ได้ จึงปิดฟีเจอร์ไว้ก่อนครับ
 </p>

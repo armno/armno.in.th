@@ -1,6 +1,6 @@
 ---
 title: "บันทึกการทำ Custom Mechanical Keyboard ภาค 2"
-date: 2019-05-01T22:38:57+07:00
+pubDate: 2019-05-01T22:38:57+07:00
 url: /2019/05/01/custom-mechanical-keyboard-build-2
 cover: /images/mechanical-keyboard-build-2/mark4-3.jpg
 thumbnail: /images/mechanical-keyboard-build-2/mark4-3.jpg

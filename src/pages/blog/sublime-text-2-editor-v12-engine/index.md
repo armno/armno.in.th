@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2011-09-20T23:01:09Z
+pubDate: 2011-09-20T23:01:09Z
 description: ก่อนหน้านี้ใช้ NetBeans กับ Aptana พบว่ายังชักช้าไม่ทันใจ พอเปลี่ยนมาใช้
   editor อย่าง Sublime Text แล้วชีวิตสนุกขึ้นเยอะครับ
 slug: sublime-text-2-editor-v12-engine

@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2010-05-31T19:33:41Z
+pubDate: 2010-05-31T19:33:41Z
 slug: set-thunderbird-for-google-apps-email
 tags:
 - GMail

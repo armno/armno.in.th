@@ -1,6 +1,6 @@
 ---
 title: "ลองใช้ IntersectionObserver โหลด Disqus Comments"
-date: 2019-06-26T20:25:44+07:00
+pubDate: 2019-06-26T20:25:44+07:00
 url: /2019/06/26/lazy-load-disqus
 description: ใช้ IntersectionObserver เพื่อ lazy load Disqus comment เมื่อ scroll ลงไปถึงด้านล่างของโพสต์
 thumbnail: /images/lazy-load-disqus/before.jpg

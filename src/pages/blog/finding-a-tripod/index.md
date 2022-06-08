@@ -2,7 +2,7 @@
 categories:
   - Photography
 comments: true
-date: 2009-06-17T23:15:44Z
+pubDate: 2009-06-17T23:15:44Z
 slug: finding-a-tripod
 tags:
   - Benro A-300EX

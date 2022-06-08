@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2009-07-22T17:46:23Z
+pubDate: 2009-07-22T17:46:23Z
 slug: cmu-solar-eclipse
 tags:
 - ปรากฏการณ์ทางดาราศาสตร์

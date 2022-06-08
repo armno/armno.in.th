@@ -1,6 +1,6 @@
 ---
 title: "ลอง Lube Mechanical Keyboard Switch"
-date: 2020-04-13T11:06:42+07:00
+pubDate: 2020-04-13T11:06:42+07:00
 description: ลอง lube gateron yellow switch ของ mechanical keyboard ครั้งแรกด้วย Tribosys 3203 กับ Krytox 205g0 ได้ผลที่น่าประทับใจพอสมควร
 thumbnail: /images/lubricate-mechanical-keyboard-switches/gateron-milky-yellows-lubed-with-3203.jpg
 tags:

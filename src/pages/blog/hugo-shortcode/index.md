@@ -1,6 +1,6 @@
 ---
 title: "Hugo: สร้าง custom shortcode"
-date: 2018-09-08T20:04:30+07:00
+pubDate: 2018-09-08T20:04:30+07:00
 url: /2018/09/08/hugo-shortcode
 thumbnail: /images/hugo-shortcode/platoo.jpg
 description: สร้าง custom shortcode ไว้ใช้เพื่อประหยัดเวลา ไม่ต้องพิมพ์ HTML เต็มๆ

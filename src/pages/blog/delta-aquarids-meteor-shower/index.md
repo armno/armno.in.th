@@ -2,7 +2,7 @@
 categories:
   - Life
 comments: true
-date: 2008-07-25T23:23:35Z
+pubDate: 2008-07-25T23:23:35Z
 slug: delta-aquarids-meteor-shower
 tags:
   - Aquarius

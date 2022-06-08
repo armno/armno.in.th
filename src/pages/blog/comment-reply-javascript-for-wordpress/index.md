@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2010-11-03T23:16:17Z
+pubDate: 2010-11-03T23:16:17Z
 slug: comment-reply-javascript-for-wordpress
 tags:
 - JavaScript

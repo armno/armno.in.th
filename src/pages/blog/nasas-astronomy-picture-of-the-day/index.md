@@ -2,7 +2,7 @@
 categories:
   - Life
 comments: true
-date: 2008-05-25T17:14:09Z
+pubDate: 2008-05-25T17:14:09Z
 slug: nasas-astronomy-picture-of-the-day
 tags:
   - ดูดาวในคอม

@@ -1,6 +1,6 @@
 ---
 title: "Update Blog อัตโนมัติด้วย Docker และ CircleCI"
-date: 2018-08-16T13:38:04+07:00
+pubDate: 2018-08-16T13:38:04+07:00
 url: /2018/08/16/blog-automated-deployment
 description: "ลองใช้ Docker กับ CircleCI เพื่อ deploy blog แบบอัตโนมัติทุกครั้งที่ push ไปที่ GitHub repo"
 tags:
@@ -266,7 +266,7 @@ $ sudo service nginx restart
 ในตอนหน้าจะทำให้ชีวิตง่ายขึ้นด้วยการใช้ [Netlify](https://www.netlify.com/) เข้ามาแทน CI/CD ข้างบน
 จะเป็นยังไงก็โปรดติดตาม~~ตอนต่อไป~~ข้างล่างเลย
 
-Update: ตอน 2 มาแล้ว [Update Blog อัตโนมัติด้วย Netlify](https://armno.in.th/2018/08/18/move-to-netlify/)
+UppubDate: ตอน 2 มาแล้ว [Update Blog อัตโนมัติด้วย Netlify](https://armno.in.th/2018/08/18/move-to-netlify/)
 
 <p class="media text-center">
   <img src="/images/blog-automate-deployment/pick-none.png" alt="issue closed" />

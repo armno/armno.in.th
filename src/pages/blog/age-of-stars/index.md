@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2007-12-06T12:54:37Z
+pubDate: 2007-12-06T12:54:37Z
 slug: age-of-stars
 tags:
 - ดาวฤกษ์

@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2010-05-07T23:56:22Z
+pubDate: 2010-05-07T23:56:22Z
 slug: change-logon-screen-windows-tweaks-com-logon-changer
 tags:
 - Logon Screen

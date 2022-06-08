@@ -2,7 +2,7 @@
 categories:
   - Life
 comments: true
-date: 2008-09-23T15:37:09Z
+pubDate: 2008-09-23T15:37:09Z
 slug: what-is-lhc
 tags:
   - LHC

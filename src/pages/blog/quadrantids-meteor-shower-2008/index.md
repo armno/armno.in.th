@@ -2,7 +2,7 @@
 categories:
   - Life
 comments: true
-date: 2008-01-02T12:18:01Z
+pubDate: 2008-01-02T12:18:01Z
 slug: quadrantids-meteor-shower-2008
 tags:
   - กลุ่มดาวคนเลี้ยงสัตว์

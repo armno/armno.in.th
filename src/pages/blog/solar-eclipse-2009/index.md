@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2009-01-25T09:50:37Z
+pubDate: 2009-01-25T09:50:37Z
 slug: solar-eclipse-2009
 tags:
 - สุริยุปราคา

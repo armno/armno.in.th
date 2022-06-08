@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2008-12-28T21:32:25Z
+pubDate: 2008-12-28T21:32:25Z
 slug: orion-over-chiang-mai
 tags:
 - Astronomy

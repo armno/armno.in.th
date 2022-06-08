@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2008-09-03T11:04:32Z
+pubDate: 2008-09-03T11:04:32Z
 slug: google-launches-chrome-web-browser
 tags:
 - Google

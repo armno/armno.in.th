@@ -1,6 +1,6 @@
 ---
 cover-image: /images/github-pages-to-do-part-2/cover.png
-date: 2016-11-10T00:00:00Z
+pubDate: 2016-11-10T00:00:00Z
 description: หลังจาก setup server พร้อมกับ deploy process เสร็จแล้ว ก็ถึงเวลาที่ต้อง
   optimize blog นี้ให้ไวขึ้น โพสต์นี้จะเกี่ยวกับการ config server nginx กับ jekyll
   เพื่อ performance ครับ

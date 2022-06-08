@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2009-12-29T23:30:48Z
+pubDate: 2009-12-29T23:30:48Z
 slug: hoya-hd-c-pl-field-test
 tags:
 - C-PL

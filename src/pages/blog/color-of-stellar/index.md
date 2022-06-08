@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2007-12-18T02:20:52Z
+pubDate: 2007-12-18T02:20:52Z
 slug: color-of-stellar
 tags:
 - สีของดาวฤกษ์

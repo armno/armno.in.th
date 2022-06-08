@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2011-05-07T21:14:15Z
+pubDate: 2011-05-07T21:14:15Z
 slug: ipad-2-vs-ipad
 tags:
 - Apple

@@ -1,7 +1,7 @@
 ---
 title: 'ทำ Custom Mechanical Keyboard ใช้เอง'
 url: /2017/08/20/building-custom-mechanical-keyboard
-date: 2017-08-20T15:24:09+07:00
+pubDate: 2017-08-20T15:24:09+07:00
 description: 'ลองทำ mechanical keyboard ขนาด 60% เองด้วยบอร์ด GH60 Satan กับ Gateron Brown Switch โดยหาซื้อชิ้นส่วนจาก AliExpress แล้วนำมาประกอบเองครับ'
 tags:
   - Mechanical Keyboard
@@ -171,7 +171,7 @@ Costar เป็นศัพท์เฉพาะที่เขาใช้เ�
 
 เมื่อใส่ PBT blank keycap ที่ตั้งใจซื้อแบบสีล้วนมา ชอบที่มันดู minimal ดีครับ
 
-<Picture wrapper-class="full" src="/images/building-mechanical-keyboard/18-with-all-black-keycaps.jpg" alt="update: เมื่อใส่กับ blank PBT keycap สีดำ" />
+<Picture wrapper-class="full" src="/images/building-mechanical-keyboard/18-with-all-black-keycaps.jpg" alt="uppubDate: เมื่อใส่กับ blank PBT keycap สีดำ" />
 
 ## ลองใช้งาน
 

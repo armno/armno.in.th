@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2009-08-04T10:11:05Z
+pubDate: 2009-08-04T10:11:05Z
 slug: sai-yoi-waterfall-chiang-mai
 tags:
 - น้ำตกไทรย้อย

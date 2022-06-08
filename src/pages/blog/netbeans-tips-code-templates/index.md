@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2011-04-25T22:27:10Z
+pubDate: 2011-04-25T22:27:10Z
 slug: netbeans-tips-code-templates
 tags:
 - Code Templates

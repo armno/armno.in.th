@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2011-12-11T19:45:25Z
+pubDate: 2011-12-11T19:45:25Z
 description: หลายคนเปลี่ยนมาใช้ Sublime Text แล้วงงว่าหน้าต่างตั้งค่าของมันอยู่ตรงไหน
   จริงๆ แล้วมีไฟล์เก็บ config ต่างๆ ของมันอยู่ครับ
 slug: sublime-text-2-config

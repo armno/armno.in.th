@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2007-12-05T10:19:00Z
+pubDate: 2007-12-05T10:19:00Z
 slug: what-is-lightyears
 tags:
 - ปีแสง

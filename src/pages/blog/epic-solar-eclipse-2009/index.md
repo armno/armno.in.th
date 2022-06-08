@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2009-05-12T21:48:06Z
+pubDate: 2009-05-12T21:48:06Z
 slug: epic-solar-eclipse-2009
 tags:
 - Stellarium

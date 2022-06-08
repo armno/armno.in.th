@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2011-10-27T21:37:53Z
+pubDate: 2011-10-27T21:37:53Z
 description: ปกติ Adobe Photoshop Lightroom มี presets มาให้เยอะพอสวมควรครับ ซึ่งทำให้เราสามารถปรับแต่งรูปของเราได้หลายๆ
   แนว นอกจากนี้ เรายังสามารถเพิ่ม presets ให้กับ Lightroom ได้อีกด้วยครับ
 slug: installing-lightroom-presets

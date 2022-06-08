@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2009-02-10T02:52:17Z
+pubDate: 2009-02-10T02:52:17Z
 slug: jailbreak-ipod-touch-2g
 tags:
 - iPod

@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2010-10-20T00:05:30Z
+pubDate: 2010-10-20T00:05:30Z
 slug: zen-coding-netbeans
 tags:
 - NetBeans IDE

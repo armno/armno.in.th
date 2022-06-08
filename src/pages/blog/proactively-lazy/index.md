@@ -1,6 +1,6 @@
 ---
 title: "ใช้ประโยชน์จากความขี้เกียจ"
-date: 2020-03-20T17:03:05+07:00
+pubDate: 2020-03-20T17:03:05+07:00
 description: ถ้าไม่อยากทำงานซ้ำๆ ก็ต้องหาเครื่องไม้เครื่องมือมาช่วย ในการจัดระเบียบไฟล์ content ของบล็อก
 thumbnail: /images/proactively-lazy/remove-ext.png
 tags:

@@ -2,7 +2,7 @@
 categories:
   - Web Development
 comments: true
-date: 2012-03-12T23:05:39Z
+pubDate: 2012-03-12T23:05:39Z
 description:
   เป็นเหมือนสนามทดลอง CSS ให้เราได้เล่นกันก่อนนำไปใช้งานจริง คล้ายกับทางฝั่ง
   JavaScript ที่มี JsFiddle หรือ JsBin ให้ลองเล่นกัน

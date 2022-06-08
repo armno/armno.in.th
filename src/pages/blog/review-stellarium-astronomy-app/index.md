@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2007-12-20T20:54:59Z
+pubDate: 2007-12-20T20:54:59Z
 slug: review-stellarium-astronomy-app
 tags:
 - Stellarium

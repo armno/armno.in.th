@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2010-03-24T01:25:30Z
+pubDate: 2010-03-24T01:25:30Z
 slug: dont-make-me-think-web-usability-book
 tags:
 - Book

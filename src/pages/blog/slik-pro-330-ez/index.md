@@ -2,7 +2,7 @@
 categories:
   - Photography
 comments: true
-date: 2009-07-26T00:07:27Z
+pubDate: 2009-07-26T00:07:27Z
 slug: slik-pro-330-ez
 tags:
   - Photobug

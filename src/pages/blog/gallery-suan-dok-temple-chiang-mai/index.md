@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2009-07-12T14:43:41Z
+pubDate: 2009-07-12T14:43:41Z
 slug: gallery-suan-dok-temple-chiang-mai
 tags:
 - HDR

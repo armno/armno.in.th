@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2007-12-23T13:21:24Z
+pubDate: 2007-12-23T13:21:24Z
 slug: appearent-and-absolute-magnitude
 tags:
 - ความสว่างปรากฏ

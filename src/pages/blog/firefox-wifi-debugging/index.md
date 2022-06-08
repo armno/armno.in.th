@@ -1,6 +1,6 @@
 ---
 cover-image: /images/firefox-wifi-debugging/cover.png
-date: 2016-10-25T00:00:00Z
+pubDate: 2016-10-25T00:00:00Z
 description: Developer Tools ใน Firefox มี feature WebIDE ที่เราสามารถใช้ debug web
   app จาก Firefox บน Android ได้ผ่าน WiFi ถือว่าสะดวกดี มีขั้นตอนการ setup เพียงเล็กน้อยครับ
 published: true

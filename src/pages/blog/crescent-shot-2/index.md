@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2009-07-25T00:11:40Z
+pubDate: 2009-07-25T00:11:40Z
 slug: crescent-shot-2
 tags:
 - กลุ่มดาวหมีใหญ่

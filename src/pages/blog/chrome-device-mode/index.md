@@ -1,5 +1,5 @@
 ---
-date: 2015-07-02T00:00:00Z
+pubDate: 2015-07-02T00:00:00Z
 description: Device mode เป็นส่วนหนึ่งของ Chrome Devtools ทำให้เราทำงานกับ responsive
   website หรือ mobile web app ได้สะดวกมากขึ้น โดยที่เราสามารถให้ Chrome จำลองตัวเองเป็น
   mobile device ที่ไม่เพียงแค่เซ็ตขนาดหน้าจอ แต่ยังมีฟีเจอร์อื่นๆ ให้อีกมากมายครับ

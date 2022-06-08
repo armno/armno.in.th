@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2009-03-20T17:38:30Z
+pubDate: 2009-03-20T17:38:30Z
 slug: today-is-the-vernal-equinox
 tags:
 - Equinox

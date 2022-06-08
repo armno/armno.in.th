@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2010-07-10T09:30:47Z
+pubDate: 2010-07-10T09:30:47Z
 slug: netbeans-tips1-create-new-project
 tags:
 - NetBeans IDE

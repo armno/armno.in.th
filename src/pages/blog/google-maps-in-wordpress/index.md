@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2011-04-06T19:21:32Z
+pubDate: 2011-04-06T19:21:32Z
 slug: google-maps-in-wordpress
 tags:
 - Google Maps

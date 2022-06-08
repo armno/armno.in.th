@@ -2,7 +2,7 @@
 categories:
   - Web Development
 comments: true
-date: 2012-09-09T16:42:35Z
+pubDate: 2012-09-09T16:42:35Z
 description:
   หากต้องทำ HTML Mockup อยู่บ่อยๆ ปลั๊กอิน Nettuts+ Fetch นั้นช่วยประหยัดเวลาในช่วงแรกๆ
   ไปได้เยอะเลยครับ

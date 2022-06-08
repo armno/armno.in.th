@@ -1,6 +1,6 @@
 ---
 title: "Lazy-load nvm to Reduce ZSH's Startup Time"
-date: 2020-08-24T16:39:49+07:00
+pubDate: 2020-08-24T16:39:49+07:00
 url: /2020/08/24/lazyload-nvm-to-reduce-zsh-startup-time
 description: Lazy-loading nvm in `.zshrc` can make zsh starts faster when open a new terminal window
 thumbnail: /images/zsh-startup-time/cover.png

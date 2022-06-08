@@ -1,7 +1,7 @@
 ---
 categories:
 - Web Development
-date: 2011-11-19T23:31:27Z
+pubDate: 2011-11-19T23:31:27Z
 description: สำหรับการเพิ่ม code snippet ให้กับ Sublime Text 2 นั้นก็ง่ายๆ เลย เริ่มจากไปที่เมนู
   Tools > New Snippet ก็จะเจอหน้าจอ default ตามรูป
 slug: code-snippet-sublime-text-2

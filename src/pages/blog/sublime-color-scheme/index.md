@@ -1,7 +1,7 @@
 ---
 categories:
   - Web Development
-date: 2013-01-25T18:58:05Z
+pubDate: 2013-01-25T18:58:05Z
 description:
   Sublime Text นั้นมาพร้อมกับ color scheme ให้เลือกใช้กันมากมาย นอกจากนี้เรายังสามารถติดตั้ง
   color scheme จาก source อื่นๆ ได้ด้วย

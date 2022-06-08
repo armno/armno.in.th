@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2009-01-19T22:15:47Z
+pubDate: 2009-01-19T22:15:47Z
 slug: fotofile-pro-mini-i
 tags:
 - DSLR

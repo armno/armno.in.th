@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2008-12-12T20:04:34Z
+pubDate: 2008-12-12T20:04:34Z
 slug: geminids-meteo-shower-2008
 tags:
 - Astronomy

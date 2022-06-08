@@ -1,6 +1,6 @@
 ---
 title: 'จาก Jekyll สู่ Hugo'
-date: 2018-03-24T16:40:16+07:00
+pubDate: 2018-03-24T16:40:16+07:00
 url: /2018/03/24/jekyll-to-hugo
 description: บันทึกเรื่องราว การเปลี่ยน static site generator ของบล็อกนี้ จาก Jekyll เป็น Hugo ครับ
 tags:

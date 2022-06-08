@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2009-01-02T19:11:46Z
+pubDate: 2009-01-02T19:11:46Z
 slug: unseen-doi-pui-chiang-mai
 tags:
 - ดอยปุย

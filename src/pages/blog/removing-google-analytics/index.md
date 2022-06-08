@@ -1,6 +1,6 @@
 ---
 title: "เลิกใช้ Google Analytics"
-date: 2020-01-18T14:46:32+07:00
+pubDate: 2020-01-18T14:46:32+07:00
 url: /2020/01/18/removing-google-analytics
 description: เลิกใช้งาน Google Analytics และเปลี่ยนไปใช้ Netlify Analytics แทน
 thumbnail: /images/removing-google-analytics/netlify-analytics-screenshot.png

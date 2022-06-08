@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2009-02-20T19:27:47Z
+pubDate: 2009-02-20T19:27:47Z
 slug: panorama-with-photoshop-cs4
 tags:
 - Nikon D60

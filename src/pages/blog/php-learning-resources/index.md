@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2009-08-27T21:28:01Z
+pubDate: 2009-08-27T21:28:01Z
 slug: php-learning-resources
 tags:
 - PHP

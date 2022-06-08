@@ -2,7 +2,7 @@
 categories:
   - Life
 comments: true
-date: 2008-01-06T11:52:17Z
+pubDate: 2008-01-06T11:52:17Z
 slug: scopius-constellation
 tags:
   - กลุ่มดาว

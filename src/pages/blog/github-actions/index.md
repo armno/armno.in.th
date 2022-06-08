@@ -1,6 +1,6 @@
 ---
 title: "Optimize Images in a Pull Request with GitHub Actions"
-date: 2020-08-31T15:06:46+07:00
+pubDate: 2020-08-31T15:06:46+07:00
 description: Automatically optimize images in a pull request with Image Actions
 thumbnail: /images/github-actions/action-details.png
 tags:

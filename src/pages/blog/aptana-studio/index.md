@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2011-08-19T22:49:27Z
+pubDate: 2011-08-19T22:49:27Z
 description: Aptana นั้นเป็น IDE ทางเลือกอีกตัวนึงที่น่าใช้ครับ บน Linux (Ubuntu)
   นั้น Aptana ทำงานได้ไวกว่า Netbeans พอสมควรเลยล่ะ
 slug: aptana-studio

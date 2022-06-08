@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2011-09-29T23:38:43Z
+pubDate: 2011-09-29T23:38:43Z
 description: บันทึกตอนที่สองจากงาน Google DevFest Chiang Mai 2011 เรื่อง HTML5 Offline
   Application กับ Creating Modern Web Applications ครับ
 slug: google-devfest-chiang-mai-2011-part-2

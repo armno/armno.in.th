@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2007-12-07T17:09:16Z
+pubDate: 2007-12-07T17:09:16Z
 slug: geminids-meteorite
 tags:
 - กลุ่มดาวคนคู่

@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2011-03-20T20:37:56Z
+pubDate: 2011-03-20T20:37:56Z
 slug: super-moon-shot-2011
 tags:
 - Super Moon 2011

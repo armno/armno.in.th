@@ -1,7 +1,7 @@
 ---
 language: en
 title: "TIL: Convert a PNG to a JPG with sips"
-date: 2019-11-05T13:42:15+07:00
+pubDate: 2019-11-05T13:42:15+07:00
 url: /2019/11/05/convert-png-to-jpg-command-line-sips
 description: Today I learned how to convert a PNG image to a JPG image from the command line with sips command
 thumbnail: /images/convert-png-to-jpg-command-line-sips/screenshot-jpg.jpg

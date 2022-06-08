@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2011-01-02T22:59:00Z
+pubDate: 2011-01-02T22:59:00Z
 slug: khun-change-kean-2011
 tags:
 - ขุนช่างเคี่ยน

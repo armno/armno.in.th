@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2008-04-17T01:42:53Z
+pubDate: 2008-04-17T01:42:53Z
 slug: geminitales
 tags:
 - กลุ่มดาวคนคู่

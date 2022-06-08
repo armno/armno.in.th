@@ -1,6 +1,6 @@
 ---
 title: "Mechanical Keyboard จาก DZ60RGB"
-date: 2019-07-19T11:31:05+07:00
+pubDate: 2019-07-19T11:31:05+07:00
 url: /2019/07/19/dz60rgb-pcb-reviews
 description: ทำ mechanical keyboard จาก DZ60RGB PCB ที่เป็น Hot-swappable ด้วย
 thumbnail: /images/dz60rgb-pcb-reviews/build.jpg

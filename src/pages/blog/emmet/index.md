@@ -2,7 +2,7 @@
 categories:
   - Web Development
 comments: true
-date: 2012-11-06T12:07:33Z
+pubDate: 2012-11-06T12:07:33Z
 description:
   เคยเขียนเรื่อง Zen Coding ใน Netbeans มาแล้วครั้งหนึ่ง ตอนนี้ Zen Coding
   เปลี่ยนชื่อเป็น Emmet แล้วครับ มาพร้อมกับฟีเจอร์ใหม่อีกเยอะแยะมากมาย

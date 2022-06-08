@@ -1,5 +1,5 @@
 ---
-date: 2016-04-12T00:00:00Z
+pubDate: 2016-04-12T00:00:00Z
 description: zsh-syntax-highlighting เป็น plugin ของ zsh ที่จะทำให้ command ที่เราพิมพ์ใน
   terminal มีสีสันขึ้นมาได้ และช่วยป้องกันไม่ให้เราพิมพ์ command ผิดได้อีกด้วย
 published: true

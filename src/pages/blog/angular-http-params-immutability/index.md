@@ -1,6 +1,6 @@
 ---
 title: "Creating a URL with HttpParams in Angular"
-date: 2020-02-24T14:25:34+07:00
+pubDate: 2020-02-24T14:25:34+07:00
 url: /2020/02/24/angular-http-params-immutability
 description: Today I learned how to create a URL with query string parameters with HttpParams class in Angular
 thumbnail: /images/angular-http-params-immutability/httpparams-docs.png

@@ -1,5 +1,5 @@
 ---
-date: 2014-02-26T00:00:00Z
+pubDate: 2014-02-26T00:00:00Z
 description: Gulp.js นั้นเป็น build tool/task runner ช่วยให้เราลดเวลาของขั้นตอนการทำงานซ้ำๆ
   ใน build process ไปได้เยอะ (sass/minify/concat js/html) เป็น tool ลักษณะเดียวกับ
   Grunt แต่ config คนละแบบครับ

@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2008-01-13T09:58:37Z
+pubDate: 2008-01-13T09:58:37Z
 slug: what-is-comet
 tags:
 - ดาวหาง

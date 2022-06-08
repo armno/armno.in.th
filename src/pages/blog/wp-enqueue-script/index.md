@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2012-04-19T21:50:26Z
+pubDate: 2012-04-19T21:50:26Z
 description: WordPress นั้นมีฟังก์ชั่น wp_enqueue_script สำหรับแทรกไฟล์ JavaScript
   ใน theme อย่างถูกหลักอนามัย ดีกว่าการใช้แท็ก script ธรรมดาอยู่นะ
 slug: wp-enqueue-script-wordpress

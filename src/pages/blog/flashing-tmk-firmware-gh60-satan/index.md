@@ -1,6 +1,6 @@
 ---
 title: "Customizing Keyboard Firmware for GH60"
-date: 2020-03-10T21:52:49+07:00
+pubDate: 2020-03-10T21:52:49+07:00
 description: A note to my future self on customizing firmware for a custom mechanical keyboard built with GH60 PCB
 thumbnail: /images/flashing-tmk-firmware-gh60-satan/fn0.png
 tags:

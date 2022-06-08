@@ -3,7 +3,7 @@ categories:
 - Astronomy
 - Photography
 comments: true
-date: 2009-05-28T11:21:54Z
+pubDate: 2009-05-28T11:21:54Z
 slug: crescent-shot
 tags:
 - Nikon AF-S 55-200 VR

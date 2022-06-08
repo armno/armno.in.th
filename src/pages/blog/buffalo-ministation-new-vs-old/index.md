@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2009-11-07T23:08:41Z
+pubDate: 2009-11-07T23:08:41Z
 slug: buffalo-ministation-new-vs-old
 tags:
 - Buffalo

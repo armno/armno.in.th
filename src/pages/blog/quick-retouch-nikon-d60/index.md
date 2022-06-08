@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2008-10-22T16:24:25Z
+pubDate: 2008-10-22T16:24:25Z
 slug: quick-retouch-nikon-d60
 tags:
 - C-PL

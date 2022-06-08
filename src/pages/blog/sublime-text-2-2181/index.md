@@ -2,7 +2,7 @@
 categories:
   - Web Development
 comments: true
-date: 2012-02-23T16:56:05Z
+pubDate: 2012-02-23T16:56:05Z
 description: Sublime Text ออกเวอร์ชั่นใหม่ build 2181 มีอัพเดทหลายอย่างที่น่าสนใจครับ
 slug: sublime-text-2-build-2181
 tags:

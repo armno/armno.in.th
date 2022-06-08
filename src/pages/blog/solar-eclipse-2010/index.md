@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2010-01-16T21:35:47Z
+pubDate: 2010-01-16T21:35:47Z
 slug: solar-eclipse-2010
 tags:
 - 15 มกราคม 2553

@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2008-11-17T17:23:15Z
+pubDate: 2008-11-17T17:23:15Z
 slug: leonids-meteor-shower-2008
 tags:
 - Astronomy

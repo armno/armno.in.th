@@ -2,7 +2,7 @@
 categories:
   - Web Development
 comments: true
-date: 2012-03-11T22:39:31Z
+pubDate: 2012-03-11T22:39:31Z
 description:
   Normalize.css เป็น CSS ที่ทำให้ทุก browser แสดงผล default style ได้ใกล้เคียงกันที่สุด
   ต่างจาก CSS Reset ตรงที่ Normalize.css นั้นไม่เคลียร์ style ทุกอย่างทิ้งไปเลย

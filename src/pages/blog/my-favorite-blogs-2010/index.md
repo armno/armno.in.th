@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2010-12-29T22:41:06Z
+pubDate: 2010-12-29T22:41:06Z
 slug: my-favorite-blogs-2010
 tags:
 - "2010"

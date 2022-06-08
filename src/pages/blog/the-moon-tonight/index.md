@@ -3,7 +3,7 @@ categories:
 - Astronomy
 - Photography
 comments: true
-date: 2009-06-03T22:05:39Z
+pubDate: 2009-06-03T22:05:39Z
 slug: the-moon-tonight
 tags:
 - Nikon AF-S 55-200 VR

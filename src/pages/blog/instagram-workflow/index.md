@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2012-07-28T14:33:09Z
+pubDate: 2012-07-28T14:33:09Z
 description: workflow ของรูปรูปหนึ่งของผมบน Instagram นั้นง่ายๆ เลยก็คือ 1. ถ่ายรูป
   2. แต่งรูป 3. อัพโหลดขึ้น Instagram
 slug: my-instagram-workflow

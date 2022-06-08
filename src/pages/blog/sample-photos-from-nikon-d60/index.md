@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2008-10-21T23:23:29Z
+pubDate: 2008-10-21T23:23:29Z
 slug: sample-photos-from-nikon-d60
 tags:
 - 18-55 VR

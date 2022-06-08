@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2010-04-28T23:29:06Z
+pubDate: 2010-04-28T23:29:06Z
 slug: ipod-touch-my-paint-free
 tags:
 - iPod Touch

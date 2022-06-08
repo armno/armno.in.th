@@ -1,5 +1,5 @@
 ---
-date: 2014-03-22T00:00:00Z
+pubDate: 2014-03-22T00:00:00Z
 description: Vim Powerline เป็น plugin ที่ทำให้ status bar ของ Vim จากที่จืดๆ ดูดีขึ้น
   ปรับแต่งได้มากมายตามต้องการ ส่วนผมลงไว้เพราะเน้นความบันเทิงตา
 published: true

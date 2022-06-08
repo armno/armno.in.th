@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2009-11-25T17:02:11Z
+pubDate: 2009-11-25T17:02:11Z
 slug: nikon-d60-optimize-image
 tags:
 - Nikon

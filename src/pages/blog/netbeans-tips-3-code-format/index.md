@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2010-07-13T06:37:53Z
+pubDate: 2010-07-13T06:37:53Z
 slug: netbeans-tips-3-code-format
 tags:
 - NetBeans IDE

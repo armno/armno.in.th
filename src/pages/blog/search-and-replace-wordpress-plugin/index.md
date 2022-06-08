@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2009-07-02T16:25:58Z
+pubDate: 2009-07-02T16:25:58Z
 slug: search-and-replace-wordpress-plugin
 tags:
 - Search and Replace

@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2009-02-26T13:47:31Z
+pubDate: 2009-02-26T13:47:31Z
 slug: huay-tung-tao-chiang-mai
 tags:
 - ห้วยตึงเฒ่า

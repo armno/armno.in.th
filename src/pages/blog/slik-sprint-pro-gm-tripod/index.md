@@ -2,7 +2,7 @@
 categories:
   - Photography
 comments: true
-date: 2008-11-30T18:39:06Z
+pubDate: 2008-11-30T18:39:06Z
 slug: slik-sprint-pro-gm-tripod
 tags:
   - Photobug

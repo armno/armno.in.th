@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: false
-date: 2008-12-24T15:42:03Z
+pubDate: 2008-12-24T15:42:03Z
 slug: review-external-harddisk-buffalo-ministation
 tags:
 - Buffalo

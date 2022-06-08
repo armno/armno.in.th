@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2008-08-03T01:32:50Z
+pubDate: 2008-08-03T01:32:50Z
 slug: solar-eclipse-in-stellarium
 tags:
 - Stellarium

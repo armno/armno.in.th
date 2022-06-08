@@ -2,7 +2,7 @@
 categories:
   - Web Development
 comments: true
-date: 2012-02-01T22:35:10Z
+pubDate: 2012-02-01T22:35:10Z
 description:
   มีหลายอย่างที่สำคัญในการทำ web application ที่ตอนผมเรียนอยู่นั้นไม่เคยได้คิดถึงเลย
   แต่ก็เป็นสิ่งจำเป็นมากในการทำ web application เพื่อใช้งานจริงครับ

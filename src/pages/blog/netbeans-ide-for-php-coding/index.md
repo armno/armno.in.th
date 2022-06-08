@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2010-07-10T01:06:13Z
+pubDate: 2010-07-10T01:06:13Z
 description: Netbeans IDE นั้นถือเป็น IDE ที่ดีตัวหนึ่งสำหรับ web development โดยเฉพาะกับ
   PHP ครับ
 slug: netbeans-ide-for-php-coding

@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2011-11-12T18:21:29Z
+pubDate: 2011-11-12T18:21:29Z
 description: มันเริ่มมาจากการชักชวน "เล่นๆ" ของผมกับเพื่อนๆ อีก 3 คน ว่าอยากทำบล็อกรีวิวแอพมือถือ/แท็บเล็ต
   ดีๆ ซักบล็อกนึง AppArai.in.th จึงถือกำเนิดขึ้น
 slug: apparai-review-mobile-apps

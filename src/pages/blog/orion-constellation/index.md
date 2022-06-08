@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2007-12-09T18:44:48Z
+pubDate: 2007-12-09T18:44:48Z
 slug: orion-constellation
 tags:
 - กลุ่มดาว

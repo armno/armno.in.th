@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2007-11-21T19:25:08Z
+pubDate: 2007-11-21T19:25:08Z
 slug: oriontales2
 tags:
 - ดาวนายพราน

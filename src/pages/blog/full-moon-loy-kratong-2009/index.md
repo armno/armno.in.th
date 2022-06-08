@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2009-11-02T19:59:37Z
+pubDate: 2009-11-02T19:59:37Z
 slug: full-moon-loy-kratong-2009
 tags:
 - พระจันทร์เต็มดวง

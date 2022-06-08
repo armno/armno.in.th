@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2007-12-15T16:52:44Z
+pubDate: 2007-12-15T16:52:44Z
 slug: geminids-lastnight
 tags:
 - ฝนดาวตกเจมินิดส์

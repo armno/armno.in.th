@@ -1,7 +1,7 @@
 ---
 language: en
 title: "TIL: Using fzf to search in command history"
-date: 2020-01-16T11:16:41+07:00
+pubDate: 2020-01-16T11:16:41+07:00
 url: /2020/01/16/fzf-history
 description: Use fzf - the fuzzy finder to search for a command in history
 thumbnail: /images/fzf-history/h-in-action.png

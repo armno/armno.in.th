@@ -1,6 +1,6 @@
 ---
 categeory: Web Development
-date: 2013-06-28T00:00:00Z
+pubDate: 2013-06-28T00:00:00Z
 description:
   MAMP (รวมถึง MAMP Pro) นั้นเป็นเครื่องมือที่ดีสำหรับติดตั้ง local web
   server บน OSX แต่ปัญหาที่ผมพบกับ MAMP คือกินแรมเยอะมาก ซึ่งจริงๆ แล้วเราไม่ต้องมี

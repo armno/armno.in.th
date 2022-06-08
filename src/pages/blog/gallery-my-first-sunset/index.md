@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2009-06-01T15:46:50Z
+pubDate: 2009-06-01T15:46:50Z
 slug: gallery-my-first-sunset
 tags:
 - landscape

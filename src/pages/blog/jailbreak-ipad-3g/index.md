@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2011-05-15T12:44:19Z
+pubDate: 2011-05-15T12:44:19Z
 slug: jailbreak-ipad-3g
 tags:
 - iPad 3G

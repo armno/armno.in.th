@@ -1,5 +1,5 @@
 ---
-date: 2014-03-18T00:00:00Z
+pubDate: 2014-03-18T00:00:00Z
 description:
   เพิ่งลง OSX Mavericks ใหม่แล้วภาษาไทยใน terminal มันเพี้ยนๆ ซ่อมได้ด้วยการ
   set locale ให้ถูกครับ

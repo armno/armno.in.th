@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2011-10-26T08:07:16Z
+pubDate: 2011-10-26T08:07:16Z
 description: Presets ใน Adobe Photoshop Lightroom ก็คือชุดการปรับค่าต่างๆ ของรูปภาพในโหมด
   develop ที่ถูกเซฟเก็บไว้ เพื่อไว้เรียกใช้ในคราวต่อไปได้ทันที
 slug: presets-adobe-photoshop-lightroom

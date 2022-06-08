@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2007-12-03T15:25:13Z
+pubDate: 2007-12-03T15:25:13Z
 slug: bookpreview1
 tags:
 - CMU Book Fair

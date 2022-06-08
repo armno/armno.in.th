@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2008-10-29T22:54:57Z
+pubDate: 2008-10-29T22:54:57Z
 slug: stellarium-0100-new-features
 tags:
 - Astronomy

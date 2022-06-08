@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2009-07-28T11:32:52Z
+pubDate: 2009-07-28T11:32:52Z
 slug: jailbreak-ipod-touch-2g-firmware-3-0
 tags:
 - Firmware 3.0

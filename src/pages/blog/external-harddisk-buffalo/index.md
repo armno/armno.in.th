@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2008-11-09T13:37:58Z
+pubDate: 2008-11-09T13:37:58Z
 slug: external-harddisk-buffalo
 tags:
 - Buffalo

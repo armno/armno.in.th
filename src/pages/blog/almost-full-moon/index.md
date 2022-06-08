@@ -2,7 +2,7 @@
 categories:
 - Astronomy
 comments: true
-date: 2009-10-05T20:50:18Z
+pubDate: 2009-10-05T20:50:18Z
 slug: almost-full-moon
 tags:
 - Nikon AF-S 55-200 VR

@@ -1,6 +1,6 @@
 ---
 title: "Setting up Cypress for an Angular Project"
-date: 2020-02-26T16:47:17+07:00
+pubDate: 2020-02-26T16:47:17+07:00
 url: /2020/02/26/cypress-angular-integration-testing
 description: Use Cypress (cypress.io) to implement automated testing for an Angular project
 thumbnail: /images/cypress-angular-integration-testing/test-running-window.png

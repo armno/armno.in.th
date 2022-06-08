@@ -1,5 +1,5 @@
 ---
-date: 2013-12-25T00:00:00Z
+pubDate: 2013-12-25T00:00:00Z
 description: Bower เป็น client-side package manager จากทาง Twitter ใช้สำหรับติดตั้ง
   / ค้นหา / อัพเดท 3rd-party package ได้สะดวกมาก ทำได้ผ่าน Terminal ครับ
 published: true

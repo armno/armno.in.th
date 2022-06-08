@@ -2,7 +2,7 @@
 categories:
 - Photography
 comments: true
-date: 2009-03-22T19:40:57Z
+pubDate: 2009-03-22T19:40:57Z
 slug: hua-lam-pong-train-station
 tags:
 - Nikon D60

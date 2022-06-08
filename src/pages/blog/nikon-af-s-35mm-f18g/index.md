@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2010-09-19T22:44:14Z
+pubDate: 2010-09-19T22:44:14Z
 description: เลนส์ Nikon AF-S 35mm f/1.8G นั้นถือเป็นเลนส์ที่คุ้มค่า คุ้มราคาที่สุดตัวหนึ่งของ
   Nikon เลยก็ว่าได้ แนะนำให้มีกันทุกคนสำหรับกล้อง DX Format ครับ
 slug: nikon-af-s-35mm-f18g

@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2009-07-19T15:29:53Z
+pubDate: 2009-07-19T15:29:53Z
 slug: want-to-go-to-mars
 tags:
 - NASA

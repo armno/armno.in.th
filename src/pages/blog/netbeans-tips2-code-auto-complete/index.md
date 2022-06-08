@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2010-07-11T08:55:23Z
+pubDate: 2010-07-11T08:55:23Z
 slug: netbeans-tips2-code-auto-complete
 tags:
 - Auto-completion

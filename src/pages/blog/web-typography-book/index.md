@@ -1,6 +1,6 @@
 ---
 title: "แนะนำหนังสือ Better Web Typography for a Better Web"
-date: 2019-06-09T10:29:00+07:00
+pubDate: 2019-06-09T10:29:00+07:00
 url: /2019/06/09/better-web-typography-for-a-better-web-book
 cover: /images/web-typography-book/book-cover.jpg
 thumbnail: /images/web-typography-book/thumbnail.jpg

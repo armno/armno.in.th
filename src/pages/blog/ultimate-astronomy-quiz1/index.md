@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2008-01-27T21:35:50Z
+pubDate: 2008-01-27T21:35:50Z
 slug: ultimate-astronomy-quiz1
 tags:
 - ความรู้ทั่วไป

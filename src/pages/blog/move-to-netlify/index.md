@@ -1,6 +1,6 @@
 ---
 title: "Deploy Blog อัตโนมัติด้วย Netlify"
-date: 2018-08-18T17:35:19+07:00
+pubDate: 2018-08-18T17:35:19+07:00
 url: /2018/08/18/move-to-netlify
 description: "แทนการใช้ Docker กับ CircleCI เพื่อ deploy blog แบบอัตโนมัติด้วยการใช้ continuous delivery ของ Netlify"
 tags:

@@ -2,7 +2,7 @@
 categories:
   - Web Development
 comments: true
-date: 2012-10-25T14:29:26Z
+pubDate: 2012-10-25T14:29:26Z
 description:
   Workflow ของ Git ในชีวิตประจำวันของผมค่อนข้างจะตรงไปตรงมาครับ จะมีคำสั่งที่ใช้งานอยู่บ่อยๆ
   ซึ่งผมมักจะสร้างเป็น alias ไว้เพื่อที่จะไม่ต้องพิมพ์ยาวๆ

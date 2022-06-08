@@ -1,6 +1,6 @@
 ---
 cover-image: /images/how-web-browsers-work/cover-devtools-timeline.png
-date: 2016-01-28T00:00:00Z
+pubDate: 2016-01-28T00:00:00Z
 description: Web browser นั้นก็มีหน้าที่แปลง code ของทั้ง 3 ส่วนประกอบนั้น แสดงผลออกมาเป็นเว็บไซต์ให้เราได้ใช้งาน
   ในฐานะคนทำเว็บ การเข้าใจหลักการทำงานของ web browser นั้นช่วยให้เข้าใจถึงที่มาที่ไปของสิ่งที่ปรากฏบนหน้าจอ
   รวมถึงจะเป็นประโยชน์ในเรื่องการ optimize performance ของเว็บไซต์ด้วยครับ

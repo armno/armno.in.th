@@ -2,7 +2,7 @@
 categories:
 - Life
 comments: true
-date: 2010-05-30T20:16:59Z
+pubDate: 2010-05-30T20:16:59Z
 slug: review-akg-k420
 tags:
 - AKG 420P

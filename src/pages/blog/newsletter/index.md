@@ -2,7 +2,7 @@
 categories:
 - Web Development
 comments: true
-date: 2012-02-18T17:35:07Z
+pubDate: 2012-02-18T17:35:07Z
 description: ข้อดีของ newsletter พวกนี้ก็คือ เราไม่ต้องไปหาให้เสียเวลา มีคนสรุปมาให้เราแล้วครับว่า
   ในรอบสัปดาห์ที่ผ่านมานั้น มีอะไรเกิดขึ้นในแวดวงบ้าง
 slug: web-development-newsletter

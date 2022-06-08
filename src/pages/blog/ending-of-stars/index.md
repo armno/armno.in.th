@@ -2,7 +2,7 @@
 categories:
   - Astronomy
 comments: true
-date: 2008-12-08T13:59:30Z
+pubDate: 2008-12-08T13:59:30Z
 slug: ending-of-stars
 tags:
   - จุดจบของดวงดาว

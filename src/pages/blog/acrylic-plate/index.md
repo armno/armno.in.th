@@ -1,6 +1,6 @@
 ---
 title: "ทำ Keyboard Plate จากแผ่น Acrylic"
-date: 2019-08-26T20:35:49+07:00
+pubDate: 2019-08-26T20:35:49+07:00
 url: /2019/08/26/custom-acrylic-keyboard-plate
 description: บันทึกการลองทำ plate ของ mechanical keyboard จากแผ่น acrylic หนา 2mm
 tags:
