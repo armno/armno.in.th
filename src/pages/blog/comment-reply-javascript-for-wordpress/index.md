@@ -32,6 +32,8 @@ layout: '../../../layouts/PostLayout.astro'
 
 อย่าลืมนะครับ ใส่โค้ดนี้ในแท็ก `<head>` ในธีมด้วย หากเปิดใช้งาน Threaded Comments ครับ
 
-    if (is_singular() && get_option('thread_comments')) {
-        wp_enqueue_script('comment-reply');
-    }
+```php
+if (is_singular() && get_option('thread_comments')) {
+    wp_enqueue_script('comment-reply');
+}
+```

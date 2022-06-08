@@ -26,15 +26,19 @@ layout: '../../../layouts/PostLayout.astro'
 
 ทำให้เครื่องแสดงไฟล์และโฟลเดอร์ที่ซ่อนอยู่ก่อนนะครับ โดยเข้าไปที่ **My Computer > Tools > Folder Options > แท็บ View > เลือก Show hidden files and folders** แล้วก็ OK ครับ หลังจากนั้นให้เข้าไปลบไฟล์ข้างในโฟลเดอร์ตาม path นี้ครับ (ลบไฟล์ข้างในนะครับ ไม่ใช่ลบโฟลเดอร์เหล่านี้)
 
-    C:\Documents and Settings\{ชื่อ User}\Contacts\{email ของคุณ}
-    C:\Documents and Settings\{ชื่อ User }\Local Settings\Application Data\Microsoft\Windows Live Contacts\{email ของคุณ}
+```
+C:\Documents and Settings\{ชื่อ User}\Contacts\{email ของคุณ}
+C:\Documents and Settings\{ชื่อ User }\Local Settings\Application Data\Microsoft\Windows Live Contacts\{email ของคุณ}
+```
 
 ### สำหรับ Windows Vista และ Windows 7
 
 เหมือนกันครับ **My Computer > Organize > Folder and Search Options > แท็บ View > เลือก Show hidden files and folders** แล้วกด OK จากนั้นก็เข้าไปลบ cache เหมือนกันครับ เพียงแต่ path จะต่างไปจาก Windows XP เล็กน้อย คือ
 
-    C:\Users\ {ชื่อ User} \Contacts\ {email ของคุณ}
-    C:\Users\{ชื่อ User}\AppData\Local\Microsoft\Windows Live Contacts\{email ของคุณ}
+```
+C:\Users\ {ชื่อ User} \Contacts\ {email ของคุณ}
+C:\Users\{ชื่อ User}\AppData\Local\Microsoft\Windows Live Contacts\{email ของคุณ}
+```
 
 เสร็จแล้วก็ sign in ใหม่อีกทีครับผม
 
