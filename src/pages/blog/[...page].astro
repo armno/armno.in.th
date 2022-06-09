@@ -24,7 +24,7 @@ const content = {
     <span class="text-2xl text-slate-300">Page {page.currentPage} of {page.lastPage}</span>
   </div>
 
-  <ol class="list-none px-6 md:p-0 not-prose grid container mx-auto grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-12 gap-y-16">
+  <ol class="list-none px-6 md:p-0 not-prose grid container mx-auto grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-12 gap-y-16 lg:gap-x-16 lg:gap-y-24">
     {page.data.map(post => (
       <li class="text-3xl">
         <PostItem
