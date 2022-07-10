@@ -11,10 +11,10 @@ export interface Props {
 const { src, caption, alt, width, height, full } = Astro.props as Props;
 ---
 
-<figure class={`${full ? 'full-bleed' : ''}`}>
+<figure class={`${full ? 'full-bleed' : '' }`}>
   <img {src} {alt} {width} {height} loading="lazy" class="mt-0" />
   {caption &&
-  <figcaption class="px-4 -mt-4">
+  <figcaption class="px-4">
     {caption}
   </figcaption>
   }
