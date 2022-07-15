@@ -225,7 +225,7 @@ workflows:
 
 เดิม
 
-```text
+```
 server_name armno.in.th www.armno.in.th;
 location / {
 	try_files $uri/ $uri $uri.html $uri.htm =404;
@@ -234,7 +234,7 @@ location / {
 
 เป็น
 
-```text
+```
 server_name armno.in.th www.armno.in.th;
 location / {
 	proxy_set_header X-Real-IP $remote_addr;

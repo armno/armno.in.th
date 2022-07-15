@@ -108,7 +108,7 @@ _(ในโพสต์[รีวิวจักรยาน Storck Visioner](ht
 
 และใส่ค่าจาก parameter ของ shortcode โดยใช้ `{{ .Get "param-name" }}` method จาก Hugo
 
-```text
+```
 <!-- picture.html -->
 <p class="media {{ with .Get "style"}}{{.}}{{ end }}">
   <img {{ with .Get "src"}} src="{{.}}"{{ end }}

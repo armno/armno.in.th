@@ -60,7 +60,7 @@ HTTP Caching เป็นการตั้งค่า header ของไฟ�
 
 จากนั้นก็ include ไฟล์ข้างบนใน nginx config file ของโดเมนนี้ ซึ่งอยู่ที่ `/etc/nginx/sites-enabled/armno.in.th`
 
-```text
+```
 server {
   ...
   include conf.d/expires.conf;
@@ -77,7 +77,7 @@ GZIP ช่วยบีบอัดข้อมูลจำพวก text ให
 
 ไฟล์ที่ต้องแก้ก็คือ `/etc/nginx/nginx.conf` โดยเพิ่ม config ที่เกี่ยวกับ gzip ใน `http` block ครับ (code เอามาจาก [nginx.conf template](https://github.com/h5bp/server-configs-nginx/blob/master/nginx.conf) ของ H5BP/server-configs/nginx)
 
-```text
+```
 http {
   ...
   # Enable gzip compression.

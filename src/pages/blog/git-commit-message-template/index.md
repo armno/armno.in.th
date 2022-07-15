@@ -38,7 +38,7 @@ Filename can be anything but I like to name it `.gitmessage`.
 $ touch .gitmessage
 ```
 
-```text
+```
 '#[TICKET_ID] - [COMMIT SUMMARY]
 (empty line)
 ```

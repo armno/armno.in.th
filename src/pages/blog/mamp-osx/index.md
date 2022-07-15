@@ -96,19 +96,19 @@ $ sudo vim /etc/apache2/httpd.conf
 
 หาบรรทัดนี้
 
-```text
+```
 LoadModule php5_module libexec/apache2/libphp5.so
 ```
 
 แล้วแก้เป็น
 
-```text
+```
 LoadModule php5_module /usr/local/Cellar/php54/5.4.15/libexec/apache2/libphp5.so
 ```
 
 จากนั้น restart Apache
 
-```text
+```
 $ sudo apachectl restart
 ```
 
@@ -128,19 +128,19 @@ DocumentRoot "/Library/WebServer/Documents"
 
 เปลี่ยนเป็น
 
-```text
+```
 DocumentRoot "/Users/armno/code" # อย่าลืมเปลี่ยน username เป็นของคุณ
 ```
 
 และตรง `<Directory>` ก็ต้องเปลี่ยนเป็น path เดียวกันด้วยครับ
 
-```text
+```
 <Directory "/Users/armno/code">
 ```
 
 สุดท้าย ค้นหา
 
-```text
+```
 <IfModule dir_module>
 DirectoryIndex index.html
 </IfModule>
@@ -148,7 +148,7 @@ DirectoryIndex index.html
 
 เพิ่ม <code>index.php</code> เข้าไปก่อน <code>index.html</code>
 
-```text
+```
 <IfModule dir_module>
 DirectoryIndex index.php index.html
 </IfModule>

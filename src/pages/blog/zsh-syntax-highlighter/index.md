@@ -50,7 +50,7 @@ $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTO
 
 จากนั้นเพิ่มชื่อ `zsh-syntax-highlighting` ใน `plugins` ในไฟล์ `~/.zshrc`
 
-```text
+```
 plugins=(git colorize sublime vi-mode zsh-syntax-highlighting)
 ```
 
