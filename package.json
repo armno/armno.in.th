@@ -9,14 +9,14 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/rss": "^0.2.0",
-    "@astrojs/sitemap": "^0.2.5",
-    "@tailwindcss/typography": "^0.5.2",
-    "astro": "^1.0.0-beta.64",
-    "autoprefixer": "^10.4.5",
+    "@astrojs/rss": "^1.0.0",
+    "@astrojs/sitemap": "^1.0.0",
+    "@tailwindcss/typography": "^0.5.4",
+    "astro": "^1.1.1",
+    "autoprefixer": "^10.4.8",
     "date-fns": "^2.28.0",
     "lodash-es": "^4.17.21",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.0.23"
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
   }
 }

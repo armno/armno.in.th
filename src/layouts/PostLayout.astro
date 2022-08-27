@@ -6,8 +6,9 @@ import '../styles/global.css';
 
 const { content } = Astro.props;
 const { title, pubDate } = content;
-const canonicalURL = Astro.canonicalURL;
+const canonicalURL = Astro.url;
 ---
+
 <PageLayout { content } isPost={true}>
   <h1 class="text-4xl lg:text-5xl leading-tight lg:leading-tight">{title}</h1>
   <PublishedDate {pubDate} />

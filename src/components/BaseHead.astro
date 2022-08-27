@@ -6,9 +6,10 @@ export interface Props {
 }
 
 const { title, description, thumbnail } = Astro.props as Props;
-const canonicalURL = Astro.canonicalURL;
+const canonicalURL = Astro.url;
 const defaultDescription = `I'm Armno - a Thai frontend developer at buzzwoo. Based in Chiang Mai. I write about what I've learned.`;
 ---
+
 <title>{ title }</title>
 
 <meta charset="utf-8" />
@@ -19,7 +20,9 @@ const defaultDescription = `I'm Armno - a Thai frontend developer at buzzwoo. Ba
 
 <link rel="preconnect" crossorigin href="https://fonts.gstatic.com">
 <link rel="preconnect" crossorigin href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css?family=Sarabun:300,400,700|Fira+Mono|IBM+Plex+Sans+Thai:400,700&display=swap&subset=thai" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css?family=Sarabun:300,400,700|Fira+Mono|IBM+Plex+Sans+Thai:400,700&display=swap&subset=thai"
+  rel="stylesheet">
 
 <!--Favicon-->
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
