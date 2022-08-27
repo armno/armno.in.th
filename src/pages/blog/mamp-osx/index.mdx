@@ -1,0 +1,177 @@
+---
+categeory: Web Development
+pubDate: 2013-06-28T00:00:00Z
+description:
+  MAMP (รวมถึง MAMP Pro) นั้นเป็นเครื่องมือที่ดีสำหรับติดตั้ง local web
+  server บน OSX แต่ปัญหาที่ผมพบกับ MAMP คือกินแรมเยอะมาก ซึ่งจริงๆ แล้วเราไม่ต้องมี
+  MAMP ก็รัน web server ในเครื่องได้ Homebrew คือพระเอกของเราครับ
+tags:
+  - tooling
+  - development
+title: ติดตั้ง Apache, PHP, MySQL บน OSX แบบไม่ง้อ MAMP
+url: /2013/06/28/set-up-apache-php-mysql-without-mamp/
+thumbnail: /images/mamp-osx/9158338115_1a9c7169eb_o.png
+layout: '../../../layouts/PostLayout.astro'
+---
+import Picture from '../../../components/Picture.astro';
+
+[MAMP](https://www.mamp.info/en) (รวมถึง MAMP Pro) นั้นเป็นเครื่องมือที่ดีสำหรับติดตั้ง local web server บน OSX แต่ปัญหาที่ผมพบกับ MAMP คือกินแรมเยอะ (และใช้งานยุ่งยากด้วย) ซึ่งจริงๆ แล้วเราไม่ต้องมี MAMP ก็รัน web server ในเครื่องได้
+
+จริงๆ แล้ว OSX มี Apache กับ PHP ติดมาด้วยอยู่แล้ว แต่สำหรับ PHP นั้นยังเป็นเวอร์ชั่นเก่าอยู่ ซึ่งเราสามารถลง PHP เวอร์ชั่นล่าสุดได้จาก Homebrew ครับ
+
+[Homebrew](https://brew.sh) คือพระเอกของเราครับ ช่วยให้เราลง package สารพัดได้ใน OSX ได้อย่างไม่ยากเย็นนัก (สำหรับผมที่มาจากโลก Ubuntu Homebrew คือเปรียบเสมือนคำสั่ง `apt-get` นั่นเอง)
+
+- โพสต์นี้ทดสอบบน OSX 10.8+ นะครับ
+
+> Update 27/07/2014 &ndash; ทดสอบทั้งบน OSX Mavericks กับ Yosemite Beta แล้ว ได้เหมือนกันครับ
+
+### ติดตั้ง Homebrew
+
+รัน command ใน terminal
+
+```bash
+$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+```
+
+### ใช้งาน Apache
+
+ตั้งแต่ OSX 10.8 เป็นต้นมานั้น ไม่มีตัวเลือก Web Sharing ให้เลือกใน System Preferences > Sharing แล้ว ซึ่งเราสามารถรัน Apache ได้จาก terminal ครับ
+
+```bash
+$ sudo apachectl start
+```
+
+### ติดตั้ง PHP 5.4
+
+> Update 27/07/2014 &ndash; ใน homebrew นั้นมี PHP เวอร์ชั่นใหม่ๆ มาตลอด รวมถึง rc ด้วย ลองเช็คผ่าน <code>brew search php</code> ดูก่อน สำหรับผมจะเลือกเวอร์ชั่น stable ล่าสุดเสมอครับ
+
+ต่อไปก็ต้องลง PHP ผ่าน Homebrew ครับ สำหรับการลง package ด้วย homebrew นั้นใช้ command <code>brew install &lt;package name&gt;</code> แต่ถ้าไม่แน่ใจว่า <code>package name</code> นั้นมีอะไรบ้าง ใช้ command <code>brew search</code> หาดูก่อนได้ครับ
+
+![brew search](/images/mamp-osx/9160240552_c55243a996_o.png)
+
+สำหรับ PHP 5.4 นั้นชื่อ package <code>php54</code> (ณ วันที่เขียนยังไม่มี PHP 5.5 ใน homebrew ครับ)
+
+> เลขเวอร์ชั่นของ PHP อาจจะต่างออกไป ตามเวอร์ชั่นที่เลือกลง โพสต์นี้เขียนตอน PHP 5.4 ครับ
+
+```bash
+$ brew install php54
+```
+
+รอสักพักจนเสร็จ PHP 5.4 ก็จะถูกติดตั้งไว้ที่
+
+```bash
+/usr/local/Cellar/php54/5.4.15
+```
+
+![installed php 5.4](/images/mamp-osx/9158088329_903636e415_z.jpg)
+
+> Package ที่ติดตั้งผ่าน Homebrew จะอยู่ที่ <code>/usr/local/Cellar</code> ครับ
+
+### ติดตั้ง MySQL
+
+ใช้คำสั่ง <code>brew install</code> เหมือนเดิม
+
+```bash
+$ brew install mysql
+```
+
+หลังจาก install เสร็จก็เซ็ต root password ด้วย command
+
+```bash
+$ mysql_secure_installation
+```
+
+ทำตามขั้นตอนไปเรื่อยๆ จนจบได้เลย
+
+### แก้ path ของ PHP สำหรับ Apache
+
+หลังจากลง PHP ด้วย homebrew แล้ว เราก็ต้องบอก Apache ให้โหลด module php5 จากที่ลงใหม่ ไม่ใช่จากของเดิมที่ติดมากับเครื่องครับ
+
+ซึ่งก็คือ เราต้องไปแก้ path ในไฟล์ <code>httpd.conf</code> ครับ
+
+```bash
+$ sudo vim /etc/apache2/httpd.conf
+```
+
+หาบรรทัดนี้
+
+```
+LoadModule php5_module libexec/apache2/libphp5.so
+```
+
+แล้วแก้เป็น
+
+```
+LoadModule php5_module /usr/local/Cellar/php54/5.4.15/libexec/apache2/libphp5.so
+```
+
+จากนั้น restart Apache
+
+```
+$ sudo apachectl restart
+```
+
+### เซ็ต DocumentRoot
+
+ปกติผมจะเซ็ตให้ directory <code>~/code</code> เป็น root directory ของ localhost ครับ (เปรียบเสมือน <code>/var/www/</code> ใน Ubuntu) ซึ่งก็ต้องไปแก้ path ในไฟล์ <code>httpd.conf</code> เหมือนเดิม
+
+```bash
+$ sudo vim /etc/apache2/httpd.conf
+```
+
+หา
+
+```bash
+DocumentRoot "/Library/WebServer/Documents"
+```
+
+เปลี่ยนเป็น
+
+```
+DocumentRoot "/Users/armno/code" # อย่าลืมเปลี่ยน username เป็นของคุณ
+```
+
+และตรง `<Directory>` ก็ต้องเปลี่ยนเป็น path เดียวกันด้วยครับ
+
+```
+<Directory "/Users/armno/code">
+```
+
+สุดท้าย ค้นหา
+
+```
+<IfModule dir_module>
+DirectoryIndex index.html
+</IfModule>
+```
+
+เพิ่ม <code>index.php</code> เข้าไปก่อน <code>index.html</code>
+
+```
+<IfModule dir_module>
+DirectoryIndex index.php index.html
+</IfModule>
+```
+
+จากนั้น save file แล้วก็ restart Apache อีกครั้งครับ (command เดียวกับข้างบน) พอรัน `http://locahost` Apache ก็จะชี้ไปที่ `~/code` เป็น root directory
+
+### ทดสอบ
+
+```bash
+\$ echo "<?php phpinfo();" > ~/code/info.php
+```
+
+แล้วเปิด <code>http://localhost/info.php</code> ใน browser ก็จะเจอข้อมูล <code>phpinfo</code> ครับ
+
+![phpinfo](/images/mamp-osx/9158338115_1a9c7169eb_o.png)
+
+เสร็จแล้ว :D
+
+### Update - OSX Yosemite
+
+ล่าสุดทดสอบบน OSX Yosemite beta ด้วยการอัพเกรดจาก Mavericks พบว่าต้องเซ็ตค่าในไฟล์ `httpd.conf` ใหม่ ส่วน php นั้นต้องลบแล้วก็ลงใหม่ ถึงจะใช้งานได้ ส่วนวิธีการก็เหมือนเดิมทุกอย่างครับ
+
+```bash
+$ brew uninstall php55
+$ brew install php55
+```
