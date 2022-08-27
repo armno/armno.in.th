@@ -19,5 +19,8 @@
     "lodash-es": "^4.17.21",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8"
+  },
+  "dependencies": {
+    "astro-netlify-cms": "^0.1.0"
   }
 }
