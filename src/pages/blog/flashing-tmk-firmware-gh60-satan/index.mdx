@@ -13,7 +13,8 @@ categories:
 language: en
 layout: '../../../layouts/PostLayout.astro'
 ---
-import Picture from '../../../components/Picture.astro';
+import Picture from '@components/Picture.astro';
+import WarningMessage from '@components/WarningMessage.astro';
 
 <p class="lead">
   I have a custom mechanical keyboard built with GH60 Satan PCB.
@@ -59,9 +60,9 @@ And I do the same for `LEFT`, `DOWN`, and `RIGHT` keys.
 
 ![GH60 with arrow keys](/images/flashing-tmk-firmware-gh60-satan/gh60l0.png)
 
-<p class="message--warning">
+<WarningMessage>
   Values are case-insensitive. <code>up</code> and <code>Up</code> and <code>UP</code> are the same key.
-</p>
+</WarningMessage>
 
 ## Layers
 
@@ -73,9 +74,9 @@ I will use them to toggle another layer of the keyboard.
 
 ![FN0 keys](/images/flashing-tmk-firmware-gh60-satan/fn0.png)
 
-<p class="message--warning">
+<WarningMessage>
   The function key itself doesn't do anything special, but we will set its behavior later on.
-</p>
+</WarningMessage>
 
 For another layer, there are only 2 keys in this layer: `esc` and `print screen`.
 The layout look like this:

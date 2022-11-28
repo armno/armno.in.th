@@ -12,7 +12,8 @@ tags:
 cover: /images/unboxing-canyon-endurace-cf-sl/box-back.jpg
 layout: '../../../layouts/PostLayout.astro'
 ---
-import Picture from '../../../components/Picture.astro';
+import Picture from '@components/Picture.astro';
+import WarningMessage from '@components/WarningMessage.astro';
 
 โพสต์นี้เป็นภาคสองของบทความชุด
 
@@ -27,10 +28,10 @@ import Picture from '../../../components/Picture.astro';
 ยังดูดี ดูแพง ให้ประสบการณ์การแกะกล่องที่ดีด้วย (เหมือนแกะกล่อง iPhone หรือของเล่นราคาแพง)
 ผมชอบก็เลยได้ถ่ายรูปเก็บไว้
 
-<p class="message--warning">
+<WarningMessage>
 กล่องถูกแกะเปิดดูหลายครั้งแล้วก่อนที่จะมีโอกาสได้ถ่ายรูป
 ดังนั้นการแพ็คข้างในกล่องจะไม่เหมือนตอนที่ถูกส่งมาในตอนแรก 100% ครับ
-</p>
+</WarningMessage>
 
 <Picture
   src="/images/unboxing-canyon-endurace-cf-sl/box-front.jpg"

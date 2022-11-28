@@ -13,7 +13,8 @@ categories:
 - hobby
 layout: '../../../layouts/PostLayout.astro'
 ---
-import Picture from '../../../components/Picture.astro';
+import Picture from '@components/Picture.astro';
+import WarningMessage from '@components/WarningMessage.astro';
 
 ผมสั่งซื้อจักรยานจาก [Canyon](https://www.canyon.com/en-th/) เมื่อไม่กี่เดือนก่อน จึงอยากจะเขียนรีวิวขั้นตอนการสั่งซื้อจักรยานจาก canyon.com เก็บไว้ สำหรับคนที่สนใจครับ
 
@@ -25,10 +26,10 @@ import Picture from '../../../components/Picture.astro';
 2. [แกะกล่อง Canyon Endurace CF SL](https://armno.in.th/2019/09/11/unboxing-canyon-endurace-cf-sl/)
 3. [รีวิว Canyon Endurace CF SL (2018)](https://armno.in.th/2021/07/28/canyon-endurace-cf-sl-2018-review/)
 
-<p class="message--warning">
+<WarningMessage>
 ⚠️ เนื้อหาทั้งหมดนี้มาจาก<em>ประสบการณ์และความคิดเห็น</em>ของผมเอง ไม่ใช่<em>ข้อเท็จจริง</em>ที่ใช้อ้างอิงได้ และไม่สามารถรับประกันได้ว่าทุกคนจะได้รับประสบการณ์เดียวกัน
 โปรดใช้วิจารณญาณครับ ⚠️
-</p>
+</WarningMessage>
 
 ## เกริ่นนำ
 
@@ -57,10 +58,10 @@ import Picture from '../../../components/Picture.astro';
 
 ## 1. เลือกรุ่น ดูราคา
 
-<p class="message--warning">
-  <strong>UppubDate:</strong> กลางปี 2019 Canyon ได้ปรับโฉมเว็บ canyon.com ใหม่ทั้งหมด
+<WarningMessage>
+  <strong>Update:</strong> กลางปี 2019 Canyon ได้ปรับโฉมเว็บ canyon.com ใหม่ทั้งหมด
   ทำให้หน้าตาไม่เหมือนกับในรูป screenshot ประกอบบทความแล้วนะครับ
-</p>
+</WarningMessage>
 
 ขั้นตอนแรกคือเข้าไปที่เว็บ canyon.com ก่อน ถ้าเข้าจากเมืองไทยก็จะถูก redirect
 ไปที่ https://www.canyon.com/en-th/ โดยอัตโนมัติ หรือไม่ก็เลือกเปลี่ยนได้จากเมนู

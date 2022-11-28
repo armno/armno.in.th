@@ -12,6 +12,7 @@ categories:
 layout: '../../../layouts/PostLayout.astro'
 ---
 import Picture from '@components/Picture.astro';
+import WarningMessage from '@components/WarningMessage.astro';
 
 > โพสต์นี้ถือว่าเป็นภาคต่อของโพสต์ [_Case study: เปลี่ยนวิธีโหลด CSS เพื่อให้เว็บ render ไวขึ้น_](https://armno.in.th/2015/05/04/use-loadcss-to-improve-rendering-performance/) (2015) ก็ได้ครับ
 
@@ -28,9 +29,9 @@ import Picture from '@components/Picture.astro';
 - **generate critical CSS** โดยใช้ online tool [Critital Path CSS Generator](https://jonassebastianohlsson.com/criticalpathcssgenerator/)
 แล้ว copy critial CSS มา inline ใส่ในแท็ก `<style>` ใน `<head>` อีกที [แบบนี้](https://github.com/armno/blog/blob/3f55490bb0ac275fa02723f4c112e1e811a96a3a/themes/lazy/layouts/partials/style.html#L2)
 
-<p class="message--warning">
+<WarningMessage>
 ที่ทำไว้เยอะขนาดนี้ เพื่อลองเล่นฟีเจอร์ Sass Pipe ของ Hugo พร้อมกับใช้ loadCSS เพื่อเพิ่ม performance เมื่อก่อนนู้นครับ
-</p>
+</WarningMessage>
 
 ---
 

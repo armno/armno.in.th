@@ -13,7 +13,8 @@ categories:
 - hobby
 layout: '../../../layouts/PostLayout.astro'
 ---
-import Picture from '../../../components/Picture.astro';
+import Picture from '@components/Picture.astro';
+import WarningMessage from '@components/WarningMessage.astro';
 
 การ lube (lubricate) switch ของ mechanical keyboard
 คือการใช้สารหล่อลื่นประเภทน้ำมัน (oil) หรือจาระบี (grease)
@@ -178,11 +179,11 @@ Happy Clacking ครับผม<br/>อามโน
 ลอง lube Gateron Milky Brown ด้วย Tribosys 3203 แล้ว เสียงเงียบลงไปเยอะมากกก
 ถึงแม้จะ bottom out ก็ตาม แนะนำเลยครับ
 
-<p class="message--warning">
+<WarningMessage>
 <strong>ปล. 3</strong>: ตอนนี้ผมมีร้านขาย switch สำหรับ mechanical keyboard ร้านเล็กๆ
 บน Shopee แล้วนะครับ ชื่อว่าร้าน <a href="https://shopee.co.th/endgameagain">Endgame</a> ครับ
 ขออนุญาตโฆษณา (และป้ายยา) เผื่อสนใจครับ 😄
-</p>
+</WarningMessage>
 
 <a href="https://shopee.co.th/endgameagain">
   <img src="/images/lubricate-mechanical-keyboard-switches/endgame-shopee.jpg" alt="ร้านขายสวิตช์ mechanical keyboard บน Shopee"

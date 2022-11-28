@@ -14,6 +14,7 @@ language: en
 layout: '../../../layouts/PostLayout.astro'
 ---
 import Picture from '@components/Picture.astro';
+import WarningMessage from '@components/WarningMessage.astro';
 
 I'm working on a mobile web project. Today I found a strange bug that
 input fields were not working. When tap/click on an input field, it receives `:focus` state
@@ -62,12 +63,12 @@ And it causes a side effect &mdash; on Safari, users are not able to type in the
 when there is `user-select: none` applied to them.
 That's why the default behavior of input fields is broken.
 
-<p class="message--warning">
+<WarningMessage>
 <strong>I should have done it differently.</strong> Instead of setting <code>user-select: none</code> to everything,
 set it to only elements that need this behavior.<br/>Setting <code>user-select: none</code>
 can raise some usability and accessibility concerns.
 Read more on <a href="https://ux.stackexchange.com/questions/83184/is-user-select-none-bad-ux" target="_blank" rel="noreferrer noopener"><em>Is “user-select: none” bad UX?</em></a>
-</p>
+</WarningMessage>
 
 Today I learned 2 things:
 

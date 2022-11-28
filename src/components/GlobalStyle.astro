@@ -1,3 +1,4 @@
+<style is:global>
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -37,9 +38,6 @@
 }
 
 @layer components {
-  .message--warning {
-    @apply bg-yellow-100 py-6 px-8;
-  }
 
   .footnotes {
     @apply text-sm;
@@ -58,4 +56,10 @@
   .full-bleed {
     grid-column: 1 / -1;
   }
+
+  .prose :where(ul,ol,p):not(:where([class~="not-prose"] *)) {
+    margin-top: 0;
+  }
 }
+
+</style>

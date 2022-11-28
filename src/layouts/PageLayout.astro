@@ -2,7 +2,7 @@
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import BaseHead from '@components/BaseHead.astro';
-import '../styles/global.css';
+import GlobalStyle from '@components/GlobalStyle.astro';
 
 const { content, notProse, isPost } = Astro.props;
 const { title, description, thumbnail, language } = content;
@@ -15,6 +15,7 @@ if (notProse) {
 <html lang={language ? language : 'th'}>
 	<head>
 		<BaseHead {title} {description} {thumbnail} />
+    <GlobalStyle />
 	</head>
 	<body class="antialiased">
 		<Header />

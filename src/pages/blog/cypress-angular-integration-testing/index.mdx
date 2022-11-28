@@ -15,7 +15,8 @@ categories:
 language: en
 layout: '../../../layouts/PostLayout.astro'
 ---
-import Picture from '../../../components/Picture.astro';
+import Picture from '@components/Picture.astro';
+import WarningMessage from '@components/WarningMessage.astro';
 
 Cypress ([cypress.io](https://www.cypress.io/)) is a testing tool
 that can test [anything that runs in a browser](https://docs.cypress.io/guides/overview/why-cypress.html#Who-uses-Cypress)
@@ -32,10 +33,10 @@ in an Angular project I'm working on.
 Cypress is used as a replacement of the built-in [Protractor](https://protractor.angular.io/)
 to implement integration and end-to-end testing of the project.
 
-<p class="message--warning">
+<WarningMessage>
 Note: in this post, I'm referring Cypress as the open-source Cypress Test Runner,
 and not their commercial <a href="https://www.cypress.io/dashboard" target="_blank" noopener>Dashboard Service</a>.
-</p>
+</WarningMessage>
 
 ## Why Cypress?
 
@@ -58,11 +59,11 @@ Now with Cypress 4.0, [Firefox and Edge](https://cypress.io/blog/2020/02/06/intr
 
 ## 1. Adding Cypress to an Angular project
 
-<p class="message--warning">
+<WarningMessage>
 In this post, I will use a bare bone Angular project generated with
 Angular CLI as a test project,
 but the main content will not be specific to Angular at all.
-</p>
+</WarningMessage>
 
 There are already many articles on the internet on how to use Cypress
 with an Angular project and I learned from some of them.

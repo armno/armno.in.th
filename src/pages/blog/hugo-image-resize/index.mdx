@@ -11,17 +11,18 @@ tags:
 - content
 layout: '../../../layouts/PostLayout.astro'
 ---
-import Picture from '../../../components/Picture.astro';
+import Picture from '@components/Picture.astro';
+import WarningMessage from '@components/Picture.astro';
 
 Hugo มาพร้อมกับฟีเจอร์ [Image Processing](https://gohugo.io/content-management/image-processing/) ที่ช่วยย่อรูป/crop รูปเป็นขนาดต่างๆ ได้
 จากรูปต้นฉบับที่เราเตรียมไว้รูปเดียว
 ผมได้ลองใช้แล้วพบว่าสะดวกดี จึงอยากจะบันทึกไว้ครับ
 
-<p class="message--warning">
+<WarningMessage>
   <strong>UppubDate:</strong> พบปัญหาจากการใช้งาน image processing อยู่ 2 อย่าง อย่างแรกคือ ขนาดไฟล์อาจจะใหญ่ขึ้นกว่าเดิม
   อย่างที่สองคือ คุณภาพของรูปที่ผ่าน image processing ของ hugo นั้นค่อนข้างแย่ ภาพดูแตกอย่างชัดเจน
   ถึงแม้ตั้ง quality เป็น 100 แล้วก็ตาม ปัญหานี้ผมยังหาทางแก้ไม่ได้ จึงปิดฟีเจอร์ไว้ก่อนครับ
-</p>
+</WarningMessage>
 
 ![bigger file size after resized](/images/hugo-image-resize/resized-image-bigger.png)
 
