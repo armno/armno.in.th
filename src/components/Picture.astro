@@ -6,13 +6,14 @@ export interface Props {
   width?: string;
   height?: string;
   full?: boolean;
+  extraClass?: string;
 }
 
-const { src, caption, alt, width, height, full } = Astro.props as Props;
+const { src, caption, alt, width, height, full, extraClass } = Astro.props as Props;
 ---
 
 <figure class={`${full ? 'full-bleed' : '' }`}>
-  <img {src} {alt} {width} {height} loading="lazy" class="mt-0" />
+  <img {src} {alt} {width} {height} loading="lazy" class={`${extraClass ? extraClass : ''} mt-0 mx-auto`} />
   {caption &&
   <figcaption class="px-4">
     {caption}
