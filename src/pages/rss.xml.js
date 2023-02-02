@@ -1,9 +1,13 @@
-import rss from '@astrojs/rss';
+import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 
-export const get = () => rss({
-  title: `Armno's blog`,
-  description: 'Notes from my thoughts and learnings.',
-  site: import.meta.env.SITE,
-  items: import.meta.glob('./**/*.mdx'),
-  stylesheet: '/rss/pretty-feed-v3.xsl'
-});
+export async function get() {
+  return rss({
+    title: `Armno's blog`,
+    description: 'Notes from my thoughts and learnings.',
+    site: import.meta.env.SITE,
+    items: await pagesGlobToRssItems(
+      import.meta.glob('./**/*.mdx')
+    ),
+    stylesheet: '/rss/pretty-feed-v3.xsl'
+  });
+}

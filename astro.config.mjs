@@ -9,6 +9,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://armno.in.th',
+  site: 'https://armno.in.th/',
   integrations: [sitemap(), mdx(), tailwind()]
 });
