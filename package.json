@@ -13,7 +13,7 @@
     "@astrojs/rss": "^1.0.3",
     "@astrojs/sitemap": "^1.0.0",
     "@tailwindcss/typography": "^0.5.8",
-    "astro": "^2.0.5",
+    "astro": "^2.0.8",
     "autoprefixer": "^10.4.13",
     "date-fns": "^2.29.3",
     "lodash-es": "^4.17.21",
