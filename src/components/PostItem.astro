@@ -7,26 +7,36 @@ export interface Props {
   pubDate: Date;
   thumbnail?: string;
   description?: string;
+  isLatest?: boolean;
+  isRelatedPost?: boolean;
 }
-const { url, title, thumbnail, pubDate, description } = Astro.props as Props;
+const { url, title, thumbnail, pubDate, description, isLatest, isRelatedPost } = Astro.props as Props;
 ---
 
 <article>
   <a href={url} class="no-underline hover:text-green-600 block">
-    {thumbnail &&
+    {(isLatest || isRelatedPost) &&
     <img class="object-cover aspect-[3/2] w-full" src={thumbnail} alt={title} width="300" height="200">
     }
     {!thumbnail &&
     <div class="border w-full h-28 max-h-48 text-sm flex justify-center items-center text-slate-300">no thumbnail</div>
     }
+    {isLatest &&
+    <div class="font-bold font-headings text-3xl leading-tight mt-[1em]">{title}</div>
+    }
+    {!isLatest &&
     <div class="font-bold font-headings leading-tight mt-[1em]">{title}</div>
+    }
   </a>
   {pubDate &&
-  <time class="text-sm text-slate-600" datetime={pubDate.toString()}>
+  <time class="text-xs text-slate-600" datetime={pubDate.toString()}>
     {format(new Date(pubDate), 'PPP')}
   </time>
   }
-  {description &&
+  {description && isLatest &&
   <p class="text-base mt-4">{description}</p>
+  }
+  {description && !isLatest &&
+    <p class="text-sm mt-2">{description}</p>
   }
 </article>

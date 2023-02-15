@@ -4,6 +4,7 @@ import Picture from '@components/Picture.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import BaseHead from '@components/BaseHead.astro';
+import GlobalStyle from '@components/GlobalStyle.astro';
 
 const title = 'Armno P.';
 const language = 'en';
@@ -14,10 +15,11 @@ const description = 'I am a frontend developer at buzzwoo, focusing on building 
 <html lang={language ? language : 'th'}>
 	<head>
 		<BaseHead {title} {description} {thumbnail} />
+    <GlobalStyle />
 	</head>
 	<body class="antialiased">
 		<Header />
-		<main class="lg:grid lg:grid-cols-3 lg:gap-8 lg:max-w-6xl lg:mx-auto">
+		<main class="lg:grid lg:grid-cols-3 lg:gap-8 lg:mx-auto max-w-5xl">
       <div class="mt-12 lg:pt-16">
         <Picture src="/images/anb.jpg" alt="Armno Prommarak's photo" extraClass="max-h-[300px]"
           width="300" height="300" />

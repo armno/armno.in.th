@@ -4,13 +4,10 @@ import Footer from '@components/Footer.astro';
 import BaseHead from '@components/BaseHead.astro';
 import GlobalStyle from '@components/GlobalStyle.astro';
 
-const { content, notProse, isPost } = Astro.props;
+const { content, isPost } = Astro.props;
 const { title, description, thumbnail, language } = content;
 
-let classes = 'mt-20 mx-auto pb-24 prose prose-slate leading-relaxed main';
-if (notProse) {
-	classes = 'mt-20 mx-auto pb-24';
-}
+const classes = 'mt-20 mx-auto pb-24 prose prose-slate leading-relaxed main';
 ---
 <html lang={language ? language : 'th'}>
 	<head>

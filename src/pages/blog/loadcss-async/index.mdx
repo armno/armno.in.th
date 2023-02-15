@@ -33,11 +33,11 @@ import Picture from '../../../components/Picture.astro';
 - FontAwesome จาก MaxCDN เพื่อใช้งาน icon font
 - `main.css` CSS หลักของธีม
 
-## Render-blocking resources?
+## Render-blocking resources คืออะไร
 
 Render-block resources คือไฟล์ JavaScript หรือ CSS ที่ browser จะต้องรอให้โหลดเสร็จก่อน
 ถึงจะเริ่ม render ได้ ที่เป็นแบบนี้ก็เพราะว่า ก่อนที่ browser จะสามารถ render หน้าเพจได้นั้น
-ก็ต่อเมื่อมันรู้ว่า
+มันจะต้องรู้ก่อนว่า
 
 - ในหน้าเพจประกอบด้วย element อะไรบ้าง (HTML, DOM construction)
 - และแต่ละ element มีลักษณะหน้าตายังไง วางอยู่ตรงไหนของหน้าเพจ (CSS, CSSOM construction)
