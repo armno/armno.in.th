@@ -9,10 +9,9 @@ const { pubDate, align } = Astro.props as Props;
 ---
 
 <div class={
-  `text-slate-500 mb-6 ${align === 'center' ? 'text-center mb-16': ''}`
+  `text-slate-500 mb-6 text-sm ${align === 'center' ? 'text-center mb-16': ''}`
 }>
   <time datetime={pubDate.toString()}>
-    {format(new Date(pubDate), 'PPP')}
+    {format(new Date(pubDate), 'd MMM yyyy')}
   </time>
-  by Armno P.
 </div>

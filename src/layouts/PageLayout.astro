@@ -18,6 +18,7 @@ const classes = 'mt-20 mx-auto pb-24 prose prose-slate leading-relaxed main';
 		<Header />
     {isPost &&
 		<article class={classes}>
+      <slot name="post-header" />
       <slot />
     </article>
     }
