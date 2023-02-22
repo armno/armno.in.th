@@ -6,7 +6,7 @@
 @layer base {
 
   html {
-    font-size: 112.5%;
+    font-size: 106.25%;
   }
 
   h1,
@@ -59,6 +59,10 @@
 
   .prose :where(ul,ol,p):not(:where([class~="not-prose"] *)) {
     margin-top: 0;
+  }
+
+  .prose blockquote p {
+    margin-top: 1.25em;
   }
 }
 
