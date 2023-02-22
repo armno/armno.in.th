@@ -10,3 +10,22 @@ My website at [https://armno.in.th](https://armno.in.th). Built with [Astro](htt
 $ npm install
 $ npm start
 ```
+
+## Creating a new post
+
+1. create a new file `src/pages/blog/<post-name>/index.mdx`
+2. fill in default frontmatter
+
+```yml
+---
+title: ''
+pubDate: # why do i have to manually fill this in though?
+description: ''
+thumbnail: ''
+tags:
+  -
+categories:
+  -
+layout: '../../../layouts/PostLayout.astro'
+---
+```

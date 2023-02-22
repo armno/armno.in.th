@@ -1,0 +1,56 @@
+---
+title: 'My VSCode setup for 2023'
+pubDate: '2023-02-22T15:26:42.937Z'
+description: 'This is how I setup my VSCode for 2023'
+thumbnail: ''
+tags:
+  - coding
+  - editor
+categories:
+  - web development
+layout: '../../../layouts/PostLayout.astro'
+---
+
+I'm a web developer and I use VSCode as my main code editor for many years.
+Since VSCode is highly customizable,
+I like to tweak it here and there from time to time.
+
+Here is my current setup of VSCode.
+This is what I will do if I have to setup it from scratch.
+
+## Vim
+
+
+I learned Vim some years ago. Still can't say I'm a Vim user but I get used to some of the Vim motions since then.
+The first thing I will do is to _Vimify_ VSCode
+
+by installing Vim extension.
+
+then remap `jf` to `esc` to quickly switch from Insert mode to Command mode.
+It's the same mapping I use in Vim.
+
+That's basically it. I only use standard Vim motions and 1 custom command.
+
+
+0. key repeat (OS settings)
+```
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+````
+2. Basic settings (Theme, Icon, Font, zoom level +1, tree indent)
+3. Extensions
+4. UI
+  - hide status bar
+  - hide minimap
+  - hide breadcrumbs
+  - hide icons in panel
+  - hide right sidebar
+  - move search to bottom
+5. disable Peek
+6. shortcuts and custom shortcuts
+  - shortcuts to open explorer, search, terminal
+  - split pane and moving around
+  - setting custom key binding from command palette
+
+TODO: make auto-complete less annoying by disabling words?
+TODO: open file from sidebar with shortcut
+TODO: share clipboard between cmd+c and p in vim
