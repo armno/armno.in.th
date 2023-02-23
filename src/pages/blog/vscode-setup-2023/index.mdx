@@ -20,7 +20,6 @@ This is what I will do if I have to setup it from scratch.
 
 ## Vim
 
-
 I learned Vim some years ago. Still can't say I'm a Vim user but I get used to some of the Vim motions since then.
 The first thing I will do is to _Vimify_ VSCode
 
@@ -29,22 +28,28 @@ by installing Vim extension.
 then remap `jf` to `esc` to quickly switch from Insert mode to Command mode.
 It's the same mapping I use in Vim.
 
-That's basically it. I only use standard Vim motions and 1 custom command.
+I have to disable Press and Hold feature of the keyboard at system level.
 
-
-0. key repeat (OS settings)
 ```
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ````
-2. Basic settings (Theme, Icon, Font, zoom level +1, tree indent)
+
+That's basically it for my Vim setup in VSCode.
+
+## Basic settings & UI
+
+- Theme and icon theme: Monokai Pro
+- Font: JetBrains Mono
+- Zoom level: +1. Instead of making the font size bigger, I like to zoom the whole window to +1 and make the font size smaller at 11px. It renders the same visual size of font size 14 at zoom level 0, but other UI elements are bigger.
+- Increase tree indent to 20px
+- Hide status bar
+- Hide minimap
+- Hide breadcrumbs
+- Hide icons in panel
+- Hide right sidebar
+- move search to bottom
+
 3. Extensions
-4. UI
-  - hide status bar
-  - hide minimap
-  - hide breadcrumbs
-  - hide icons in panel
-  - hide right sidebar
-  - move search to bottom
 5. disable Peek
 6. shortcuts and custom shortcuts
   - shortcuts to open explorer, search, terminal
