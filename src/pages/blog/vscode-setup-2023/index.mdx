@@ -16,37 +16,44 @@ Since VSCode is highly customizable,
 I like to tweak it here and there from time to time.
 
 Here is my current setup of VSCode.
-This is what I will do if I have to setup it from scratch.
+This is what I will do if I have to setup it from scratch today.
 
 ## Vim
 
-I learned Vim some years ago. Still can't say I'm a Vim user but I get used to some of the Vim motions since then.
-The first thing I will do is to _Vimify_ VSCode
+Still can't say I'm a Vim user, but at least I'm comfortable with basic Vim motions.
+The first thing I will do after installing VSCode is to _Vimify_ it.
 
 by installing Vim extension.
 
-then remap `jf` to `esc` to quickly switch from Insert mode to Command mode.
+then remap `esc` to `jk` to quickly switch from Insert mode to Command mode.
 It's the same mapping I use in Vim.
 
-I have to disable Press and Hold feature of the keyboard at system level.
+In VSCode, I have to disable Press and Hold feature of the keyboard at system level.
+This allows me to long press `j` to turn into `jjjjjj` and not just `j`.
 
 ```
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ````
 
-That's basically it for my Vim setup in VSCode.
-
 ## Basic settings & UI
 
 - Theme and icon theme: Monokai Pro
-- Font: JetBrains Mono
+- Font: JetBrains Mono with ligatures enabled.
 - Zoom level: +1. Instead of making the font size bigger, I like to zoom the whole window to +1 and make the font size smaller at 11px. It renders the same visual size of font size 14 at zoom level 0, but other UI elements are bigger.
 - Increase tree indent to 20px
+
+I was a big fan of Sublime Text's minial UI back then.
+I try to make VSCode looks minimal by:
+
 - Hide status bar
 - Hide minimap
 - Hide breadcrumbs
 - Hide icons in panel
 - Hide right sidebar
+
+Last but no least, I move the global search panel from the left to the bottom sidebar.
+It is easier to read for longer text in the search results.
+
 - move search to bottom
 
 3. Extensions
@@ -57,5 +64,7 @@ That's basically it for my Vim setup in VSCode.
   - setting custom key binding from command palette
 
 TODO: make auto-complete less annoying by disabling words?
+
 TODO: open file from sidebar with shortcut
+
 TODO: share clipboard between cmd+c and p in vim
