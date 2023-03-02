@@ -31,28 +31,36 @@ It's the same mapping I use in Vim.
 In VSCode, I have to disable Press and Hold feature of the keyboard at system level.
 This allows me to long press `j` to turn into `jjjjjj` and not just `j`.
 
-```
+```bash
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-````
+```
 
 ## Basic settings & UI
 
 - Theme and icon theme: Monokai Pro
 - Font: JetBrains Mono with ligatures enabled.
-- Zoom level: +1. Instead of making the font size bigger, I like to zoom the whole window to +1 and make the font size smaller at 11px. It renders the same visual size of font size 14 at zoom level 0, but other UI elements are bigger.
-- Increase tree indent to 20px
 
-I was a big fan of Sublime Text's minial UI back then.
+I was a big fan of Sublime Text's minimal UI back then.
 I try to make VSCode looks minimal by:
 
-- Hide status bar
-- Hide minimap
-- Hide breadcrumbs
-- Hide icons in panel
-- Hide right sidebar
+- Hiding status bar
+- Hiding minimap
+- Hiding breadcrumbs
+- Hiding icons in panel
+- Hiding right sidebar
 
-I also move the global search panel from the left to the bottom sidebar.
-I found it is a bit easier to read for longer text in the search results.
+Search: I use the default global search (e.g. search in the entire project) a lot. The default shortcut is `cmd` + `shift` + `f`,
+which opens the search panel in the left sidebar. There are a few issues there.
+
+- The space is limited so I can't see much of the long text.
+- There is no syntax highlighting there
+- The panel uses sans-serif font instead of the monospace font.
+
+I instead remap the shortcut to Search Editor command. This opens the search window in a new tab.
+It's easier to skim through the results.
+
+- Zoom level: +1. Instead of making the font size bigger, I like to zoom the whole window to +1 and make the font size smaller at 11px. It renders the same visual size of font size 14 at zoom level 0, but other UI elements are bigger.
+- Increase tree indent to 20px
 
 ## Extensions
 
