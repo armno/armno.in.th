@@ -10,26 +10,41 @@ categories:
   - web development
 layout: '../../../layouts/PostLayout.astro'
 ---
+import Picture from '../../../components/Picture.astro';
 
 I'm a web developer and I use VSCode as my main code editor for many years.
 Since VSCode is highly customizable,
 I like to tweak it here and there from time to time.
 
-Here is my current setup of VSCode.
+Here is my current setup of VSCode. It aims for speed and minimal UI.
 This is what I will do if I have to setup it from scratch today.
 
 ## Vim
 
-Still can't say I'm a Vim user, but at least I'm comfortable with basic Vim motions.
-The first thing I will do after installing VSCode is to _Vimify_ it.
+I'm not a regular Vim user, but I got used to move around using Vim motions
+(and I know how to [exit Vim](https://stackoverflow.com/questions/11828270/how-do-i-exit-vim)).
 
-by installing Vim extension in VSCode - it's my most important VSCode extension.
+The first thing I will do after installing VSCode is to _Vimify_ it by installing Vim extension in VSCode.
+I only need to use basic Vim motions
 
-then remap `esc` to `jk` to quickly switch from Insert mode to Command mode.
+<Picture src="/images/vscode-setup-2023/vscodevim.png"
+  alt="Vim extension for VSCode Github page"
+  width="894" height="418"/>
+
+Then I remap `esc` to `jk` to quickly switch from Insert mode to Command mode.
 It's the same mapping I use in Vim.
 
-In VSCode, I have to disable Press and Hold feature of the keyboard at system level.
-This allows me to long press `j` to turn into `jjjjjj` and not just `j`.
+```json
+"vim.insertModeKeyBindings": [
+  {
+    "before": ["j", "f"],
+    "after": ["<Esc>"]
+  }
+]
+```
+
+I also have to disable Press and Hold feature of the keyboard at system level.
+This allows me to long press `j` to turn into `jjjjjj` and not just `j` in VSCode.
 
 ```bash
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
@@ -37,35 +52,61 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 ## Basic settings & UI
 
-- Theme and icon theme: Monokai Pro
-- Font: JetBrains Mono with ligatures enabled.
+- Theme and icon theme: [Monokai Pro](https://monokai.pro/vscode) for dark them, GitHub light for light theme.
+- Font: [JetBrains Mono](https://www.jetbrains.com/lp/mono/) with ligatures.
 
-I was a big fan of Sublime Text's minimal UI back then.
-I try to make VSCode looks minimal by:
+When I used Sublime Text, I was a big fan of its minial UI.
+I try to make VSCode looks minimal by hiding things I don't need to see,
+or things that can be accessed with keyboard shortcuts.
 
-- Hiding status bar
-- Hiding minimap
-- Hiding breadcrumbs
-- Hiding icons in panel
-- Hiding right sidebar
+- Status bar
+- Minimap
+- Breadcrumbs
+- Activity bar a.k.a icons in sidebar panel
+- Right/Secondary sidebar
+- Layout control icons
 
-Search: I use the default global search (e.g. search in the entire project) a lot. The default shortcut is `cmd` + `shift` + `f`,
-which opens the search panel in the left sidebar. There are a few issues there.
+```json
+{
+  "workbench.statusBar.visible": false,
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.visible": false,
+  "workbench.layoutControl.enabled": false,
+}
+```
+My typical VSCode window looks like this
+
+<Picture src="/images/vscode-setup-2023/vscode-window.png"
+  alt="my VSCode window"
+  width="1928" height="1518"/>
+
+
+- Zoom level: +1. Instead of increasing the font size, I like to zoom the whole window to +1 and make the font size smaller at 11px. It renders the same visual size of font size 14 at zoom level 0, but other UI elements are bigger and easier to read.
+- Increase tree indent to 20px
+
+
+
+## Search
+
+The default search menu is initialy accessible from the primary sidebar.
+There are a few issues there.
 
 - The space is limited so I can't see much of the long text.
-- There is no syntax highlighting there
-- The panel uses sans-serif font instead of the monospace font.
+- There is no syntax highlighting in the search text and results
+- The panel uses sans-serif font instead of the monospace font. It's harder to read the code in san-serif font than monospace.
 
-I instead remap the shortcut to Search Editor command. This opens the search window in a new tab.
+<Picture src="/images/vscode-setup-2023/built-in-search.png"
+  alt="VSCode's default search" caption="VSCode's default global search"
+  width="404" height="327"/>
+
+The remap the keyboard shortcut to New Search Editor command instead. This opens the search window in a new tab.
 It's easier to skim through the results.
-
-- Zoom level: +1. Instead of making the font size bigger, I like to zoom the whole window to +1 and make the font size smaller at 11px. It renders the same visual size of font size 14 at zoom level 0, but other UI elements are bigger.
-- Increase tree indent to 20px
 
 ## Extensions
 
-I don't have a lot of extensions and I tend to adjust activated extensions per project
-and try to use as little extension as possible.
+I don't have a lot of extensions installed. I tend to adjust activated extensions based on the project I'm working on
+Since speed it crucial for me, I try to use as little extensions as possible.
 
 5. disable Peek
 6. shortcuts and custom shortcuts

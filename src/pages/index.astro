@@ -1,5 +1,4 @@
 ---
-import PageLayout from '@layouts/PageLayout.astro';
 import Picture from '@components/Picture.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
@@ -14,7 +13,7 @@ const description = 'I am a frontend developer at buzzwoo, focusing on building 
 
 <html lang={language ? language : 'th'}>
 	<head>
-		<BaseHead {title} {description} {thumbnail} />
+		<BaseHead title={title} description={description} thumbnail={thumbnail} />
     <GlobalStyle />
 	</head>
 	<body class="antialiased">
