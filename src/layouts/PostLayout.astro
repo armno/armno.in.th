@@ -2,6 +2,7 @@
 import PublishedDate from '@components/PublishedDate.astro';
 import RelatedPosts from '@components/RelatedPosts.astro';
 import PageLayout from './PageLayout.astro';
+import { format } from 'date-fns';
 
 const { content } = Astro.props;
 const { title, pubDate, thumbnail, tags, categories } = content;
@@ -24,7 +25,17 @@ const canonicalURL = Astro.url;
       }
       </div> -->
       <h1 class="text-3xl lg:text-4xl leading-tight mb-0 max-w-[80%]">{title}</h1>
-      <PublishedDate {pubDate} />
+      <!-- <PublishedDate {pubDate} /> -->
+      <div class="flex gap-5 mt-4">
+        <div>
+          <img src="/images/and.jpg" width="40" height="40" alt="Armno's avatar image"
+          class="rounded-full flex-shrink-0 m-0">
+        </div>
+        <div class="text-sm leading-5">
+          <div>Published on <strong>{format(new Date(pubDate), 'MMMM d, yyyy')}</strong></div>
+          <div>By <strong>Armno P.</strong></div>
+        </div>
+      </div>
     </div>
   </div>
   <slot />
