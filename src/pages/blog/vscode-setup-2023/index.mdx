@@ -2,7 +2,7 @@
 title: 'My VSCode setup for 2023'
 pubDate: '2023-02-22T15:26:42.937Z'
 description: 'This is how I setup my VSCode for 2023'
-thumbnail: ''
+thumbnail: '/images/vscode-setup-2023/vscode-window.png'
 tags:
   - coding
   - editor
@@ -43,10 +43,19 @@ It's the same mapping I use in Vim.
 ]
 ```
 
-I also have to disable Press and Hold feature of the keyboard at system level.
-This allows me to long press `j` to turn into `jjjjjj` and not just `j` in VSCode.
+Another setting I have enabled is sharing clipboard with system.
+This allows me to paste text from system's clipboard in Vim mode using `p`,
+and vice-versa - allows me to copy text in Vim mode (`y` or `yy`) and paste in another application.
+
+<Picture src="/images/vscode-setup-2023/vim-system-clipboard.png"
+  alt="Vim mode's settings to share clipboard with system"
+  width="543" height="282"/>
+
+I also have to disable _Press and Hold_ feature of the keyboard at system level.
+This allows me to have key repeat working as intended. E.g. long press `j` becomes `jjjjjj` and not just `j`.
 
 ```bash
+# in terminal
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
 
@@ -98,12 +107,19 @@ There are a few issues there.
 
 <Picture src="/images/vscode-setup-2023/built-in-search.png"
   alt="VSCode's default search" caption="VSCode's default global search"
-  width="404" height="327"/>
+  width="809" height="466"/>
 
 The remap the keyboard shortcut to New Search Editor command instead. This opens the search window in a new tab.
 It's easier to skim through the results.
 
-However this Search Editor is still not perfect. It doesn't update the search result in real time when the changes are made. Also its syntax highlighting doesn't work for every language.
+<Picture src="/images/vscode-setup-2023/search-editor-example.png"
+  alt="Search Editor window example" caption="Search Editor window"
+  width="976" height="637"/>
+
+However this [Search Editor](https://code.visualstudio.com/docs/editor/codebasics#_search-editor) still have some drawbacks:
+
+- It doesn't update the search result in real time when the changes are made.
+- Its syntax highlighting doesn't work for every language. At the time of writing this article, syntax highlighting doesn't work with `.astro` extension.
 
 ## Extensions
 
@@ -136,9 +152,10 @@ Keyboard shortcuts I use often are
 - <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> to open Extension panel
 - <kbd>cmd</kbd> + <kbd>b</kbd> to hide the sidebar
 - <kbd>cmd</kbd> + <kbd>0</kbd> and <kbd>cmd</kbd> + <kbd>1</kbd> to switch focus between sidebar and editor window
-- <kbd>cmd</kbd> + <kbd>2</kbd> to create a split pane on the right
+- <kbd>cmd</kbd> + <kbd>2</kbd> to create a split pane on the right, or to move focus to the pane if it is already open
 
-- setting custom key binding from command palette
+I recently learned that we can set a custom keyboard shortcut from the command pallete.
+Clicking on the settings icon next of the command will go to command editor, which we can set a custom keyboard shortcut there.
 
 <Picture src="/images/vscode-setup-2023/configure-shortcut.png"
   alt="configure shortcut menu"
@@ -148,8 +165,7 @@ Keyboard shortcuts I use often are
   alt="configure shortcut menu edit window"
   width="976" height="637"/>
 
-TODO: make auto-complete less annoying by disabling words?
+That's pretty much it on how I setup and use VSCode.
+If you have some cool tips & tricks to share, please [let me know](https://github.com/armno/armno.in.th/issues/new).
 
-TODO: open file from sidebar with shortcut
-
-TODO: share clipboard between cmd+c and p in vim
+Cheers!
