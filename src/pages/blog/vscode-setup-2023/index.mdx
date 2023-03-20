@@ -1,7 +1,7 @@
 ---
 title: 'My VSCode setup for 2023'
 pubDate: '2023-02-22T15:26:42.937Z'
-description: 'This is how I setup my VSCode for 2023'
+description: 'This is how I setup and use my VSCode for 2023 - settings, themes, keyboard shortcuts, etc.'
 thumbnail: '/images/vscode-setup-2023/vscode-window.png'
 tags:
   - coding
@@ -12,16 +12,17 @@ layout: '../../../layouts/PostLayout.astro'
 ---
 import Picture from '../../../components/Picture.astro';
 
-I'm a web developer and I use VSCode as my main code editor for many years.
+I have been using VSCode as my main code editor for many years.
 Since VSCode is highly customizable,
 I like to tweak it here and there from time to time.
 
-Here is my current setup of VSCode. It aims for speed and minimal UI.
-This is what I will do if I have to setup it from scratch today.
+Here is my current setup of VSCode, and how I use it.
+It aims for speed and minimal UI.
+This is what I will do if I have to set it up from scratch today.
 
 ## Vim
 
-I'm not a regular Vim user, but I got used to move around using Vim motions
+I'm not a regular Vim user, but I got used to moving around using Vim motions
 (and I know how to [exit Vim](https://stackoverflow.com/questions/11828270/how-do-i-exit-vim)).
 
 The first thing I will do after installing VSCode is to _Vimify_ it by installing Vim extension in VSCode.
@@ -43,15 +44,15 @@ It's the same mapping I use in Vim.
 ]
 ```
 
-Another setting I have enabled is sharing clipboard with system.
-This allows me to paste text from system's clipboard in Vim mode using `p`,
-and vice-versa - allows me to copy text in Vim mode (`y` or `yy`) and paste in another application.
+Another setting I have enabled is sharing the clipboard with the system.
+This allows me to paste text from the system's clipboard in Vim mode using `p`,
+and vice-versa - allows me to copy the text in Vim mode (`y` or `yy`) and paste into another application.
 
 <Picture src="/images/vscode-setup-2023/vim-system-clipboard.png"
   alt="Vim mode's settings to share clipboard with system"
   width="543" height="282"/>
 
-I also have to disable _Press and Hold_ feature of the keyboard at system level.
+I also have to disable _Press and Hold_ feature of the keyboard at the system level.
 This allows me to have key repeat working as intended. E.g. long press `j` becomes `jjjjjj` and not just `j`.
 
 ```bash
@@ -92,18 +93,28 @@ My typical VSCode window looks like this
 
 
 - Zoom level: +1. Instead of increasing the font size, I like to zoom the whole window to +1 and make the font size smaller at 11px. It renders the same visual size of font size 14 at zoom level 0, but it makes other UI elements bigger and easier to read.
-- Increase tree indent in Explorer view from 8px to 16px
-- Disable Peek Preview for multiple references or definitions.
+- Increase [Tree Indent in Explorer view](https://armno.in.th/blog/vscode-indent-settings/) from 8px to 16px
+- Disable Peek Preview for multiple references or definitions and remap it to `goto` command instead.
+
+```json
+{
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+}
+```
 
 
 ## Search
 
-The default search menu is initialy accessible from the primary sidebar.
+The default search menu is initially accessible from the primary sidebar.
 There are a few issues there.
 
 - The space is limited so I can't see much of the long text.
-- There is no syntax highlighting in the search text and results
-- The panel uses sans-serif font instead of the monospace font. It's harder to read the code in san-serif font than monospace.
+- There is no syntax highlighting in the search text and the results.
+- The panel uses sans-serif font instead of monospace font. It's harder to read the code in san-serif font than in monospace.
 
 <Picture src="/images/vscode-setup-2023/built-in-search.png"
   alt="VSCode's default search" caption="VSCode's default global search"
@@ -118,18 +129,18 @@ It's easier to skim through the results.
 
 However this [Search Editor](https://code.visualstudio.com/docs/editor/codebasics#_search-editor) still have some drawbacks:
 
-- It doesn't update the search result in real time when the changes are made.
+- It doesn't update the search result in real-time when the changes are made. I have to press `cmd+shift+R` to refresh search results if the code is updated somewhere else.
 - Its syntax highlighting doesn't work for every language. At the time of writing this article, syntax highlighting doesn't work with `.astro` extension.
 
 ## Extensions
 
-Since speed it crucial for me, I try to install as little extensions as possible to keep things quick and snappy.
-I also like to activate/deactivate installed extensions when switch a project.
+Since speed is crucial for me, I try to install as few extensions as possible to keep things quick and snappy.
+I also like to activate/deactivate installed extensions when switching a project.
 For example, I would activate [Angular Language Service extension](https://github.com/angular/vscode-ng-language-service)
 only when I'm working on an Angular project,
 and deactivate it when I switch to work on something else.
 
-Here are extensions I like and have them activated most of the time.
+Here are extensions I like and have activated most of the time.
 
 - [ESLint](https://github.com/Microsoft/vscode-eslint)
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
@@ -154,8 +165,8 @@ Keyboard shortcuts I use often are
 - <kbd>cmd</kbd> + <kbd>0</kbd> and <kbd>cmd</kbd> + <kbd>1</kbd> to switch focus between sidebar and editor window
 - <kbd>cmd</kbd> + <kbd>2</kbd> to create a split pane on the right, or to move focus to the pane if it is already open
 
-I recently learned that we can set a custom keyboard shortcut from the command pallete.
-Clicking on the settings icon next of the command will go to command editor, which we can set a custom keyboard shortcut there.
+I recently learned that we can set a custom keyboard shortcut from the command palette.
+Clicking on the settings icon next to the command will go to the command editor, where we can set a custom keyboard shortcut there.
 
 <Picture src="/images/vscode-setup-2023/configure-shortcut.png"
   alt="configure shortcut menu"
@@ -165,7 +176,7 @@ Clicking on the settings icon next of the command will go to command editor, whi
   alt="configure shortcut menu edit window"
   width="976" height="637"/>
 
-That's pretty much it on how I setup and use VSCode.
+That's pretty much it on how I set up and use VSCode.
 If you have some cool tips & tricks to share, please [let me know](https://github.com/armno/armno.in.th/issues/new).
 
 Cheers!
