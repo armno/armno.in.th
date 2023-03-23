@@ -172,8 +172,8 @@ I add a glob pattern `**/*.{png,jpg,jpeg,gif,webp}` in `Search: Exclude` setting
 
 ### Use Search Editor instead of Search in Files
 
-The default search menu is initially accessible from the primary sidebar.
-There are a few issues there.
+The default search menu is accessible from the primary sidebar.
+There are a few issues there:
 
 - The space is limited so I can't see much of the long text.
 - There is no syntax highlighting in the search text and the results.
@@ -194,10 +194,11 @@ It's easier to skim through the results.
     width="976" height="637"/>
 </a>
 
-However this [Search Editor](https://code.visualstudio.com/docs/editor/codebasics#_search-editor) still have some drawbacks:
+However this [Search Editor](https://code.visualstudio.com/docs/editor/codebasics#_search-editor) still has some disadvantages to my use:
 
 - It doesn't update the search result in real-time when the changes are made. I have to press `cmd+shift+R` to refresh search results if the code is updated somewhere else.
 - Its syntax highlighting doesn't work for every language. At the time of writing this article, syntax highlighting doesn't work with `.astro` extension even though I have [the Astro extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode) installed.
+- **It doesn't have the replace functionality.** We can only do search here, but not search & replace.
 
 ## Extensions
 
