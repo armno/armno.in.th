@@ -11,10 +11,10 @@
   "devDependencies": {
     "@astrojs/mdx": "^0.18.2",
     "@astrojs/rss": "^2.3.2",
-    "@astrojs/sitemap": "^1.2.1",
+    "@astrojs/sitemap": "^1.2.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/lodash-es": "^4.17.7",
-    "astro": "^2.1.9",
+    "astro": "^2.2.0",
     "autoprefixer": "^10.4.14",
     "date-fns": "^2.29.3",
     "lodash-es": "^4.17.21",
