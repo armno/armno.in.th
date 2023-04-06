@@ -12,7 +12,8 @@ module.exports = {
               backgroundColor: colors.slate[200],
               padding: '0 4px',
               borderRadius: '3px',
-              fontWeight: 'normal'
+              fontWeight: 'normal',
+              fontFamily: 'Fira Mono'
             },
             'code::before': {
               content: ''
@@ -57,8 +58,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        headings: ['IBM Plex Sans Thai', ...defaultTheme.fontFamily.sans],
-        sans: ['Sarabun', ...defaultTheme.fontFamily.sans]
+        headings: ['Anuphan', ...defaultTheme.fontFamily.sans],
+        sans: ['Noto Serif Thai', ...defaultTheme.fontFamily.sans]
       },
     }
   },
