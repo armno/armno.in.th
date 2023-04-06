@@ -1,0 +1,99 @@
+---
+language: en
+title: "TIL: Using fzf to search in command history"
+pubDate: 2020-01-16T11:16:41+07:00
+url: /2020/01/16/fzf-history
+description: Use fzf - the fuzzy finder to search for a command in history
+thumbnail: /images/fzf-history/h-in-action.png
+tags:
+- terminal
+- command line
+- fzf
+- tools
+categories:
+- web development
+---
+import Picture from '../../../components/Picture.astro';
+
+Today I learned how to do a fuzzy search in command history using [`fzf`](https://armno.in.th/2019/08/21/fzf/),
+and a bit about `sed`.
+
+It is useful when I want to search for a specific command I ran before,
+but I don't really remember what it was.
+For example,
+
+```sh
+$ docker-compose exec php artisan migrate --seed
+```
+
+With help of fzf, I can easily search through commands list in `history` and find what I want using the fuzzy search.
+
+![h in action](/images/fzf-history/h-in-action.png)
+
+---
+
+## macOS `sed` and GNU `sed`
+
+In the [Examples page](https://github.com/junegunn/fzf/wiki/examples#command-history) of fzf repo,
+there are examples of `fh()` functions
+that uses fzf to search in command history.
+
+```sh
+# https://github.com/junegunn/fzf/wiki/examples#command-history
+# fh - repeat history
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
+}
+```
+
+When I run `fh` function in the terminal, fzf works fine. I can do the search.
+But when I select a command I want, I got an error from `sed`.
+
+```sh
+sed: illegal option -- r
+usage: sed script [-Ealn] [-i extension] [file ...]
+       sed [-Ealn] [-i extension] [-e script] ... [-f script_file] ... [file ...]
+sed: illegal option -- r
+usage: sed script [-Ealn] [-i extension] [file ...]
+       sed [-Ealn] [-i extension] [-e script] ... [-f script_file] ... [file ...]
+```
+
+I did some Google search, and found that `sed` on macOS [is not the same](https://riptutorial.com/sed/topic/9436/bsd-macos-sed-vs--gnu-sed-vs--the-posix-sed-specification) with `sed` on Linux.
+That's why I don't have `-r` option in my `sed` as I'm using macOS Catalina.
+
+To fix that, There are 2 options
+
+- Change `-r` option of sed to `-E`, which does the same thing - to intepret a regular expression.
+So the function above would be:
+
+```sh
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+}
+```
+
+- Or, install `gnu-sed` which has `-r` option, and replace `sed` with `gsed` instead.
+
+```sh
+$ brew install gnu-sed
+```
+
+```sh
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | gsed -r 's/ *[0-9]*\*? *//' | gsed -r 's/\\/\\\\/g')
+}
+```
+
+I go with the first option.
+
+Finally, I add `--height 50%` option to `fzf` so it takes only half of the screen.
+I also rename the function to just `h()` to make it easier to remember.
+("`h` for history")
+
+```sh
+h() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --height "50%" | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+}
+```
+
+<video src="images/fzf-h.mp4" width="100%" autoplay muted loop controls></video>

@@ -26,6 +26,5 @@ tags:
   -
 categories:
   -
-layout: '../../../layouts/PostLayout.astro'
 ---
 ```

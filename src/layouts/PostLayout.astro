@@ -1,15 +1,14 @@
 ---
-import PublishedDate from '@components/PublishedDate.astro';
-import RelatedPosts from '@components/RelatedPosts.astro';
+// import RelatedPosts from '@components/RelatedPosts.astro';
 import PageLayout from './PageLayout.astro';
 import { format } from 'date-fns';
 
-const { content } = Astro.props;
-const { title, pubDate, thumbnail, tags, categories } = content;
+const { frontmatter } = Astro.props;
+const { title, pubDate, thumbnail, tags, categories } = frontmatter;
 const canonicalURL = Astro.url;
 ---
 
-<PageLayout { content } isPost={true}>
+<PageLayout { frontmatter } isPost={true}>
   <div slot="post-header" class="lg:col-span-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:mb-20">
     <div class="order-2 lg:order-1 lg:col-start-1 lg:col-end-2 mb-10 lg:mb-0">
       <a href={thumbnail}>
@@ -39,5 +38,5 @@ const canonicalURL = Astro.url;
     </div>
   </div>
   <slot />
-  <RelatedPosts tags={tags} currentPathname={canonicalURL.pathname} />
+  <!-- <RelatedPosts tags={tags} currentPathname={canonicalURL.pathname} /> -->
 </PageLayout>
