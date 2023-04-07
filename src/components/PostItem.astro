@@ -1,6 +1,16 @@
 ---
 import { format } from 'date-fns';
 
+interface Props {
+  url: string;
+  title: string;
+  thumbnail?: string;
+  pubDate?: string;
+  description?: string;
+  isLatest?: boolean;
+  isRelatedPost?: boolean;
+}
+
 const { url, title, thumbnail, pubDate, description, isLatest, isRelatedPost } = Astro.props;
 ---
 

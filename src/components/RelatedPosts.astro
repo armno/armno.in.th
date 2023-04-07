@@ -3,6 +3,11 @@ import { getCollection } from 'astro:content';
 import { intersectionBy, sampleSize } from "lodash-es";
 import PostItem from "@components/PostItem.astro";
 
+interface Props {
+  tags: string[];
+  currentPathname: string;
+}
+
 const allPosts = await getCollection('blog');
 const { tags, currentPathname } = Astro.props;
 

@@ -13,7 +13,7 @@ module.exports = {
               padding: '0 4px',
               borderRadius: '3px',
               fontWeight: 'normal',
-              fontFamily: 'Fira Mono'
+              fontFamily: ['JetBrains Mono', ...defaultTheme.fontFamily.mono]
             },
             'code::before': {
               content: ''
