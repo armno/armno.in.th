@@ -1,5 +1,5 @@
 ---
-// import RelatedPosts from '@components/RelatedPosts.astro';
+import RelatedPosts from '@components/RelatedPosts.astro';
 import PageLayout from './PageLayout.astro';
 import { format } from 'date-fns';
 
@@ -38,5 +38,5 @@ const canonicalURL = Astro.url;
     </div>
   </div>
   <slot />
-  <!-- <RelatedPosts tags={tags} currentPathname={canonicalURL.pathname} /> -->
+  <RelatedPosts tags={tags} currentPathname={canonicalURL.pathname} />
 </PageLayout>

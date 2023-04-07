@@ -1,22 +1,22 @@
 ---
-import { Frontmatter } from "@shared/frontmatter.interface";
+import { getCollection } from 'astro:content';
 import { intersection, sampleSize } from "lodash-es";
 import PostItem from "@components/PostItem.astro";
 
-const allPosts = await Astro.glob<Frontmatter>("../pages/blog/**/*.mdx");
+const allPosts = await getCollection('blog');
 const { tags, currentPathname } = Astro.props;
 
 const allRelatedPosts = allPosts
-  .filter(({ url }) => !currentPathname.includes(url))
+  .filter(post => !currentPathname.includes(post.data.url))
   // sort posts by most recent first
   .sort(
     (a, b) =>
-      new Date(b.frontmatter.pubDate).valueOf() -
-      new Date(a.frontmatter.pubDate).valueOf()
+      new Date(b.data.pubDate).valueOf() -
+      new Date(a.data.pubDate).valueOf()
   )
   // filter to posts with only matched tags with the current post
   .filter((post) => {
-    const matchedTags = intersection(tags, post.frontmatter.tags);
+    const matchedTags = intersection(tags, post.data.tags);
     return matchedTags.length > 0;
   });
 
@@ -32,10 +32,10 @@ const relatedPosts = sampleSize(allRelatedPosts, 3);
       <ul class="grid grid-cols-3 gap-x-8">
         {relatedPosts.map((post) => (
           <PostItem
-            url={post.url}
-            pubDate={post.frontmatter.pubDate}
-            title={post.frontmatter.title}
-            thumbnail={post.frontmatter.thumbnail}
+            url={post.slug}
+            pubDate={post.data.pubDate}
+            title={post.data.title}
+            thumbnail={post.data.thumbnail}
             isRelatedPost={true}
           />
         ))}
