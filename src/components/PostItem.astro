@@ -6,7 +6,7 @@ const { url, title, thumbnail, pubDate, description, isLatest, isRelatedPost } =
 
 <article>
   <a href={url} class="no-underline hover:text-green-600 block">
-    {(isLatest || isRelatedPost) &&
+    {(isLatest || isRelatedPost) && thumbnail &&
     <img class="object-cover aspect-[3/2] w-full" src={thumbnail} alt={title} width="300" height="200">
     }
     {!thumbnail &&
