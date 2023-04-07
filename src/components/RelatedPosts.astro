@@ -1,13 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
-import { intersection, sampleSize } from "lodash-es";
+import { intersectionBy, sampleSize } from "lodash-es";
 import PostItem from "@components/PostItem.astro";
 
 const allPosts = await getCollection('blog');
 const { tags, currentPathname } = Astro.props;
 
 const allRelatedPosts = allPosts
-  .filter(post => !currentPathname.includes(post.data.url))
+  .filter(post => !currentPathname.includes(post.slug))
   // sort posts by most recent first
   .sort(
     (a, b) =>
@@ -15,8 +15,9 @@ const allRelatedPosts = allPosts
       new Date(a.data.pubDate).valueOf()
   )
   // filter to posts with only matched tags with the current post
+  .filter(post => !!post.data.tags)
   .filter((post) => {
-    const matchedTags = intersection(tags, post.data.tags);
+    const matchedTags = intersectionBy(tags, post.data.tags, (tag: string) => tag.toLowerCase());
     return matchedTags.length > 0;
   });
 

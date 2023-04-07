@@ -3,13 +3,17 @@ import { getCollection } from 'astro:content';
 import PageLayout from '@layouts/PageLayout.astro';
 import PostItem from '@components/PostItem.astro';
 import WarningMessage from '@components/WarningMessage.astro';
-import { sortBy } from 'lodash-es';
+import Pagination from '@components/Pagination.astro';
 
-const allPosts = await getCollection('blog');
-// const sortedPosts = sortBy(allPosts, ['data.pubDate']).reverse();
-const sortedPosts = allPosts.sort((a, b) => {
-  return new Date(b.data.pubDate) - new Date(a.data.pubDate);
-});
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('blog');
+  const sortedPosts = allPosts.sort((a, b) => {
+    return new Date(b.data.pubDate) - new Date(a.data.pubDate);
+  });
+  return paginate(sortedPosts, { pageSize: 10});
+}
+
+const { page } = Astro.props;
 const content = {
   title: 'blog',
   description: 'Blog',
@@ -28,17 +32,15 @@ const content = {
 
   <div class="flex items-baseline mb-8 container mx-auto px-6 md:px-0 mt-6">
     <h1 class="text-5xl font-bold mb-0">Blog</h1>
-    <!-- <span class="text-2xl text-slate-300 mx-4">/</span> -->
-    <!-- <span class="text-2xl text-slate-300"
-      >Page {page.currentPage} of {page.lastPage}
-    </span> -->
+    <span class="text-2xl text-slate-300 mx-4">/</span>
+    <span class="text-2xl text-slate-300">Page {page.currentPage} of {page.lastPage} </span>
   </div>
 
   <ol
     class="list-none px-6 md:p-0 not-prose grid container mx-auto grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-12 gap-y-12 lg:gap-x-16 lg:gap-y-16"
   >
     {
-      sortedPosts.map((post, index) => (
+      page.data.map((post, index) => (
         <li>
           <PostItem
             title={post.data.title}
@@ -53,4 +55,6 @@ const content = {
       ))
     }
   </ol>
+
+  <Pagination next={page.url.next} prev={page.url.prev} currentPage={page.currentPage} lastPage={page.lastPage} />
 </PageLayout>
