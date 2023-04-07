@@ -1,0 +1,250 @@
+---
+title: 'My VSCode setup for 2023'
+pubDate: '2023-02-22T15:26:42.937Z'
+description: 'This is how I setup and use my VSCode for 2023 - settings, themes, keyboard shortcuts, etc.'
+thumbnail: '/images/vscode-setup-2023/vscode-window.png'
+tags:
+  - coding
+  - editor
+categories:
+  - web development
+
+---
+import Picture from '../../../components/Picture.astro';
+
+I have been using VSCode as my main code editor.
+VSCode is highly customizable.
+I like to tweak it here and there from time to time.
+
+Here is my current setup of VSCode, and how I use it.
+It aims for speed and minimal UI.
+This is what I will do if I have to set it up from scratch today.
+
+## Vim
+
+I'm not a regular Vim user, but I got used to moving around using Vim motions
+(and I know how to [exit Vim](https://stackoverflow.com/questions/11828270/how-do-i-exit-vim)).
+
+The first thing I will do after installing VSCode is to _Vimify_ it by installing Vim extension in VSCode.
+I only need to use basic Vim motions
+
+<a href="/images/vscode-setup-2023/vscodevim.png">
+  <Picture src="/images/vscode-setup-2023/vscodevim.png"
+    alt="Vim extension for VSCode Github page"
+    width="894" height="418"/>
+</a>
+
+Then I remap `esc` to `jk` to quickly switch from Insert mode to Command mode.
+It's the same mapping I use in Vim.
+
+```json
+"vim.insertModeKeyBindings": [
+  {
+    "before": ["j", "f"],
+    "after": ["<Esc>"]
+  }
+]
+```
+
+Another setting I have enabled is sharing the clipboard with the system.
+This allows me to paste text from the system's clipboard in Vim mode using `p`,
+and vice-versa - allows me to copy the text in Vim mode (`y` or `yy`) and paste into another application.
+
+<a href="/images/vscode-setup-2023/vim-system-clipboard.png">
+  <Picture src="/images/vscode-setup-2023/vim-system-clipboard.png"
+    alt="Vim mode's settings to share clipboard with system"
+    width="1586" height="686"/>
+</a>
+
+I also have to disable _Press and Hold_ feature of the keyboard at the system level.
+This allows me to have key repeat working as intended. E.g. long press `j` becomes `jjjjjj` and not just `j`.
+
+```bash
+# in terminal
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+```
+
+## Basic settings & UI
+
+- Theme and icon theme: [Monokai Pro](https://monokai.pro/vscode) for dark them, GitHub light for light theme.
+- Font: [JetBrains Mono](https://www.jetbrains.com/lp/mono/) with ligatures.
+
+When I used Sublime Text, I was a big fan of its minial UI.
+I try to make VSCode looks minimal by hiding things I don't need to see,
+or things that can be accessed with keyboard shortcuts.
+
+- Status bar
+- Minimap
+- Breadcrumbs
+- Activity bar a.k.a icons in sidebar panel
+- Right/Secondary sidebar
+- Layout control icons
+
+```json
+{
+  "workbench.statusBar.visible": false,
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.visible": false,
+  "workbench.layoutControl.enabled": false,
+}
+```
+My typical VSCode window looks like this
+
+<a href="/images/vscode-setup-2023/vscode-window.png">
+  <Picture src="/images/vscode-setup-2023/vscode-window.png"
+    alt="my VSCode window"
+    width="1928" height="1518"/>
+</a>
+
+- Zoom level: +1. Instead of increasing the font size, I like to zoom the whole window to +1 and make the font size smaller at 11px. It renders the same visual size of font size 14 at zoom level 0, but it makes other UI elements bigger and easier to see.
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <a href="/images/vscode-setup-2023/zoom-0.png">
+      <Picture src="/images/vscode-setup-2023/zoom-0.png" width="500" alt="VSCode window at zoom level 0, font size 14px"
+        caption="Zoom level 0, font size 14px" />
+    </a>
+    <a href="/images/vscode-setup-2023/zoom-1.png">
+      <Picture src="/images/vscode-setup-2023/zoom-1.png" width="500" alt="VSCode window at zoom level 1, font size 11px"
+        caption="Zoom level 1, font size 11px" />
+    </a>
+  </div>
+</div>
+
+- Increase [Tree Indent in Explorer view](https://armno.in.th/blog/vscode-indent-settings/) from 8px to 16px
+- Disable Peek Preview for multiple references or definitions - I think this feature is rather annoying than is useful. I instead remap it to `goto` command to always go to the definition at the source file.
+
+<a href="/images/vscode-setup-2023/peek-popup.png">
+  <Picture src="/images/vscode-setup-2023/peek-popup.png"
+    alt="VSCode's peek preview popup" caption="The Peek popup in VSCode"
+    width="1305" height="676"/>
+</a>
+
+```json
+{
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+}
+```
+
+
+## Search
+
+Search is one of the features in VSCode I use a lot - both normal code search and fuzzy search in the command palette.
+There are a few settings I adjust to make it suit my use cases.
+
+### Ignore images from the Search
+
+When working on a repo with many images in it, it can be disturbing when
+I search for some file name, but the command palette shows me
+the list of images I don't want to open - I never have to open images in VSCode (except of SVGs sometimes).
+
+<a href="/images/vscode-setup-2023/search-with-images.png">
+  <Picture src="/images/vscode-setup-2023/search-with-images.png"
+    alt="Search results with image paths spamming the list"
+    caption="Search results with image paths spamming the list"
+    width="858" height="434"/>
+</a>
+
+I add a glob pattern `**/*.{png,jpg,jpeg,gif,webp}` in `Search: Exclude` settings to exclude images from the command palette and the search result, while still keeping them in the repo.
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <a href="/images/vscode-setup-2023/search-exclude-images.png">
+      <Picture src="/images/vscode-setup-2023/search-exclude-images.png"
+        alt="Excluding images from search settings"
+        caption="Excluding images from search settings"
+        width="1080" height="841"/>
+    </a>
+
+    <a href="/images/vscode-setup-2023/search-without-images.png">
+      <Picture src="/images/vscode-setup-2023/search-without-images.png"
+        alt="Search results without image paths spamming the list"
+        caption="Search results without images"
+        width="858" height="434"/>
+    </a>
+  </div>
+</div>
+
+### Use Search Editor instead of Search in Files
+
+The default search menu is accessible from the primary sidebar.
+There are a few issues there:
+
+- The space is limited so I can't see much of the long text.
+- There is no syntax highlighting in the search text and the results.
+- The panel uses sans-serif font instead of monospace font. It's harder to read the code in san-serif font than in monospace.
+
+<a href="/images/vscode-setup-2023/built-in-search.png">
+  <Picture src="/images/vscode-setup-2023/built-in-search.png"
+    alt="VSCode's default search" caption="VSCode's default global search"
+    width="809" height="466"/>
+</a>
+
+The remap the keyboard shortcut to New Search Editor command instead. This opens the search window in a new tab.
+It's easier to skim through the results.
+
+<a href="/images/vscode-setup-2023/search-editor-example.png">
+  <Picture src="/images/vscode-setup-2023/search-editor-example.png"
+    alt="Search Editor window example" caption="Search Editor window"
+    width="976" height="637"/>
+</a>
+
+However this [Search Editor](https://code.visualstudio.com/docs/editor/codebasics#_search-editor) still has some disadvantages to my use:
+
+- It doesn't update the search result in real-time when the changes are made. I have to press `cmd+shift+R` to refresh search results if the code is updated somewhere else.
+- Its syntax highlighting doesn't work for every language. At the time of writing this article, syntax highlighting doesn't work with `.astro` extension even though I have [the Astro extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode) installed.
+- **It doesn't have the replace functionality.** We can only do search here, but not search & replace.
+
+## Extensions
+
+Since speed is crucial for me, I try to install as few extensions as possible to keep things quick and snappy.
+I also like to activate/deactivate installed extensions when switching a project.
+For example, I would activate [Angular Language Service extension](https://github.com/angular/vscode-ng-language-service)
+only when I'm working on an Angular project,
+and deactivate it when I switch to work on something else.
+
+Here are extensions I like and have activated most of the time.
+
+- [ESLint](https://github.com/Microsoft/vscode-eslint)
+- [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [TODO Highlight v2](https://marketplace.visualstudio.com/items?itemName=jgclark.vscode-todo-highlight)
+- [SVG Preview](https://marketplace.visualstudio.com/items?itemName=SimonSiefke.svg-preview)
+- [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
+
+## Keyboard Shortcuts
+
+Keyboard shortcuts I use often are
+
+- <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>p</kbd> to open the Command Palette
+- <kbd>cmd</kbd> + <kbd>p</kbd> to open a file
+- <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>f</kbd> to open the Search Editor window
+- <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>o</kbd> to jump to a variable or a method in the file
+- <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>e</kbd> to open Explorer panel at the sidebar
+- <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>x</kbd> to open Extension panel
+- <kbd>cmd</kbd> + <kbd>b</kbd> to hide the sidebar
+- <kbd>cmd</kbd> + <kbd>0</kbd> and <kbd>cmd</kbd> + <kbd>1</kbd> to switch focus between sidebar and editor window
+- <kbd>cmd</kbd> + <kbd>2</kbd> to create a split pane on the right, or to move focus to the pane if it is already open
+
+I recently learned that we can set a custom keyboard shortcut from the command palette.
+Clicking on the settings icon next to the command will go to the command editor, where we can set a custom keyboard shortcut there.
+
+<Picture src="/images/vscode-setup-2023/configure-shortcut.png"
+  alt="configure shortcut menu"
+  width="737" height="354"/>
+
+<Picture src="/images/vscode-setup-2023/configure-shortcut-edit.png"
+  alt="configure shortcut menu edit window"
+  width="976" height="637"/>
+
+That's pretty much it on how I set up and use VSCode.
+If you have some cool tips & tricks to share, please [let me know](https://github.com/armno/armno.in.th/issues/new).
+
+Cheers!

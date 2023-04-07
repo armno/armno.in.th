@@ -1,15 +1,14 @@
 ---
-import PublishedDate from '@components/PublishedDate.astro';
 import RelatedPosts from '@components/RelatedPosts.astro';
 import PageLayout from './PageLayout.astro';
 import { format } from 'date-fns';
 
-const { content } = Astro.props;
-const { title, pubDate, thumbnail, tags, categories } = content;
+const { frontmatter } = Astro.props;
+const { title, pubDate, thumbnail, tags, categories } = frontmatter;
 const canonicalURL = Astro.url;
 ---
 
-<PageLayout { content } isPost={true}>
+<PageLayout { frontmatter } isPost={true}>
   <div slot="post-header" class="lg:col-span-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:mb-20">
     <div class="order-2 lg:order-1 lg:col-start-1 lg:col-end-2 mb-10 lg:mb-0">
       <a href={thumbnail}>
@@ -17,15 +16,7 @@ const canonicalURL = Astro.url;
       </a>
     </div>
     <div class="order-1 lg:order-2 lg:col-start-2 lg:col-end-3 lg:flex lg:flex-col lg:justify-center lg:gap-3">
-      <!-- <div>
-      {
-        categories.map(tag => (
-          <span class="font-mono text-sm inline-block mr-2">#{ tag }</span>
-        ))
-      }
-      </div> -->
       <h1 class="text-3xl lg:text-4xl leading-tight mb-0 max-w-[80%]">{title}</h1>
-      <!-- <PublishedDate {pubDate} /> -->
       <div class="flex gap-5 mt-4">
         <div>
           <img src="/images/and.jpg" width="40" height="40" alt="Armno's avatar image"

@@ -1,0 +1,122 @@
+---
+title: "Creating a URL with HttpParams in Angular"
+pubDate: 2020-02-24T14:25:34+07:00
+url: /2020/02/24/angular-http-params-immutability
+description: Today I learned how to create a URL with query string parameters with HttpParams class in Angular
+thumbnail: /images/angular-http-params-immutability/httpparams-docs.png
+tags:
+- angular
+- javascript
+- web development
+categories:
+- web development
+language: en
+---
+import Picture from '../../../components/Picture.astro';
+
+Today I learned how to create a URL with query string parameters with [HttpParams](https://angular.io/api/common/http/HttpParams) class in Angular.
+
+I wanted to construct a URL with some query string parameters like:
+`https://api.something.com?id=someid&name=johndoe`
+
+I tried:
+
+```ts
+import { HttpParams } from '@angular/common/http';
+
+...
+const baseURL = 'https://api.something.com';
+const params = new HttpParams();
+
+params.set('id', 'someid');
+params.set('name', 'johndoe');
+
+const fullURL = `${baseURL}?${params.toString()}`;
+console.log({ fullURL });
+```
+
+The URL didn't contain any parameters.
+
+<Picture
+  src="/images/angular-http-params-immutability/url-without-params.png"
+  alt="parameters set to HttpParams are not working"
+  width="542"
+/>
+
+But when I chained `.set()` with `new HttpParams()`, it works.
+
+```ts
+const params = new HttpParams()
+	.set('id', 'someid');
+	.set('name', 'johndoe');
+
+const fullURL = `${baseURL}?${params.toString()}`;
+console.log({ fullURL });
+```
+
+<Picture
+  src="/images/angular-http-params-immutability/url-with-params.png"
+  alt="parameters set to HttpParams correctly"
+  width="709"
+/>
+
+-----
+
+My gotcha moment was then I found out that `HttpParams` class in Angular **is immutable**.
+
+<Picture
+  src="/images/angular-http-params-immutability/httpparams-docs.png"
+  alt="API documentation page for HttpParams"
+  caption="HttpParams class page on Angular Docs"
+  width="687"
+/>
+
+This means `params.set()` method doesn't modify an existing `params` object &mdash;
+it returns **a new `HttpParams` instance**.
+
+The same goes to `append()` and `delete()` methods.
+
+```ts
+append(param: string, value: string): HttpParams;
+set(param: string, value: string): HttpParams;
+delete(param: string, value?: string): HttpParams;
+```
+
+So if I want the `params` object with a new parameter in it,
+I have to put it in a variable, or reassign to itself.
+
+```sh
+let params = new HttpParams();
+params = params.set('id', 'someid');
+params = params.set('name', 'johndoe');
+```
+
+It is opposed to the [native `URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) object,
+or the deprecated [`URLSearchParams` class in `@angular/http`](https://v2.angular.io/docs/ts/latest/api/http/index/URLSearchParams-class.html) module,
+which are both mutable.
+
+
+## Why Immutable?
+
+I looked up on Google search to find why Angular team
+decided to make HttpParams class immutable.
+
+I found [this post from Sparkles Blog](https://medium.com/sparkles-blog/angular-httpclient-enforces-immutability-dad161d8714b)
+which leads to the official document about immutability of `HttpRequest` and `HttpResponse` classes.
+
+<blockquote>
+	<p>[...] They are immutable for a good reason: the app may retry a request several times before it succeeds, which means that the interceptor chain may re-process the same request multiple times.</p>
+	<p>If an interceptor could modify the original request object, the re-tried operation would start from the modified request rather than the original. Immutability ensures that interceptors see the same request for each try.</p>
+	<cite>Source - <a href="https://angular.io/guide/http#immutability">Http Guide</a>, Angular.io</cite>
+</blockquote>
+
+Then it is kind of make sense too if the `HttpParams` class should be also immutable.
+It just feels a bit strange though when a `.set()` method doesn't actually _set_ something to the caller object.
+
+However, we still cannot always assume that everything is immutable,
+as mentioned in another API document page:
+[Instances of HttpRequest class should not be assumed to be immutable](https://angular.io/api/common/http/HttpRequest).
+
+Hmm.. 🤔
+
+![hmm](https://media.giphy.com/media/3o7TKTDn976rzVgky4/giphy.gif)

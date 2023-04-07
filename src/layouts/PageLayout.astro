@@ -4,8 +4,8 @@ import Footer from '@components/Footer.astro';
 import BaseHead from '@components/BaseHead.astro';
 import GlobalStyle from '@components/GlobalStyle.astro';
 
-const { content, isPost } = Astro.props;
-const { title, description, thumbnail, language } = content;
+const { frontmatter, isPost } = Astro.props;
+const { title, description, thumbnail, language } = frontmatter;
 
 const classes = 'mt-20 mx-auto pb-24 prose prose-slate main';
 ---

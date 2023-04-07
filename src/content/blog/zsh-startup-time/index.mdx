@@ -1,0 +1,151 @@
+---
+title: "Lazy-load nvm to Reduce ZSH's Startup Time"
+pubDate: 2020-08-24T16:39:49+07:00
+url: /2020/08/24/lazyload-nvm-to-reduce-zsh-startup-time
+description: Lazy-loading nvm in `.zshrc` can make zsh starts faster when open a new terminal window
+thumbnail: /images/zsh-startup-time/cover.png
+tags:
+- zsh
+- terminal
+- tools
+- performance
+categories:
+- web development
+language: en
+
+---
+
+Inspired by articles by Chai Phonbopit on
+[ทำไม ZSH ของเราช้าจัง? + ทำให้เร็วขึ้นได้มั้ย](https://devahoy.com/blog/2020/08/increase-speed-of-zsh/)
+and by Matthew J. Clemente on [Speeding Up My Shell (Oh My Zsh)](https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load.html),
+I can make my zsh terminal loads faster by lazy-loading [nvm](https://github.com/nvm-sh/nvm).
+
+(Normally I'm not bothered by my zsh's startup time because
+I don't open new terminal windows/tabs a whole lot in a day.
+But if I can make things a bit faster, then why not get some [marginal gains](https://www.youtube.com/watch?v=NQxYlu12ji8)?.)
+
+## 1. Measure the current startup time
+
+zsh's startup can be measured by running a script:
+
+```bash
+$ for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
+
+# or using $SHELL - should work with bash
+$ for i in $(seq 1 10); do /usr/bin/time $SHELL -i -c exit; done
+```
+
+([source](https://htr3n.github.io/2018/07/faster-zsh/#performance-analysis))
+
+- `seq` prints sequences of numbers. We use it with `for .. in` loop to run the commands 10 times
+- `time` is a utility command to execute a command and then print out time used
+- `-i` running `zsh` in interactive mode - meaning we can run (or pass) commands to it to execute
+- `-c` tells `zsh` to take the next part which is `exit` as a command to execute, not as a parameter
+
+My zsh startup time before optimize was ~1.1-1.2 seconds.
+
+<video src="/images/zsh-startup-time/before.mp4" width="100%" autoplay muted controls loop></video>
+
+## 2. Analyze my `.zshrc` file
+
+I'm using zsh with oh-my-zsh. Whatever goes into `.zshrc` file can add more startup time to zsh.
+
+I don't have much in my `.zshrc` file. It looks like this:
+
+```bash
+# (1)
+. /Users/armno/code/z/z.sh
+
+# (2)
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+# (3)
+export ZSH="/Users/armno/.oh-my-zsh"
+ZSH_THEME="cloud-armno"
+DISABLE_UPDATE_PROMPT="true"
+plugins=(zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
+
+source ~/.aliases
+source ~/.functions
+
+export LC_ALL=en_US.UTF-8
+export GPG_TTY=$(tty)
+
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+# (4)
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+
+1. Loads [`z`](https://github.com/rupa/z)
+2. Loads [`base16_shell`](https://github.com/chriskempson/base16-shell)
+3. Initialize oh-my-zsh and its plugins
+4. Loads `nvm`
+
+The biggest bottleneck seems to be nvm's scripts, [as mentioned by many people](https://www.google.com/search?q=nvm+slow+zsh).
+
+## 3. Disable nvm's scripts entirely
+
+I comment out the last 2 lines from my `.zshrc`
+
+```bash
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+
+open a new termnial tab, and re-run the profiling script.
+With this alone, zsh's startup time goes down **from ~1.2s to ~0.17s**.
+
+<video src="/images/zsh-startup-time/disable-nvm.mp4" width="100%" autoplay muted controls loop></video>
+
+This is now a lot faster, but it also means I will not be able to use nvm.
+
+I still need nvm, sometimes.
+
+> If you're not using nvm, I would suggest comment out some scripts/plugins from your `.zshrc` or `.bashrc` file,
+re-run profiling script, and repeat. It should help to see which scripts are slowing down the startup time.
+
+## 4. Lazy-load nvm
+
+Lazy-loading nvm makes nvm available only when it is needed: when running `nvm`, `node`, `npm`
+or gloablly installed command for the first time, and not right away then the shell starts.
+
+It can be done by using [`zsh-nvm`](https://github.com/lukechilds/zsh-nvm) plugin.
+
+First, I install the plugin.
+
+```bash
+$ git clone https://github.com/lukechilds/zsh-nvm $ZSH/custom/plugins/zsh-nvm
+```
+
+Then in `.zshrc` file, set `NVM_LAZY_LOAD` environment variable to `true`
+and add `zsh-nvm` to `plugins=()` list.
+
+```bash
+export NVM_LAZY_LOAD=true
+
+plugins=(... zsh-nvm)
+```
+
+(note: setting `NVM_LAZY_LOAD` variable must be placed <em>before</em> the `plugins=` line in `.zshrc` file.)
+
+Then I `source` the `.zshrc` file so my changes take effect.
+
+## 5. Measure again
+
+Running the same script from 1. again, zsh's startup time is now at ~0.2 seconds.
+
+<video src="/images/zsh-startup-time/after.mp4" width="100%" autoplay muted controls loop></video>
+
+### Summary
+
+- I use [the one-liner script](#1-measure-the-current-startup-time) to measure zsh's startup time
+- Instead of using nvm's [official install script](https://github.com/nvm-sh/nvm#install--update-script), I use **zsh-nvm** plugin to load nvm
+- I set `NVM_LAZY_LOAD` environment in my `.zshrc` file to `true`
+- My zsh's startup time reduces **from ~1.2 seconds to ~0.2 seconds**.

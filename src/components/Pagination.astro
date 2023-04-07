@@ -2,11 +2,14 @@
 export interface Props {
   next?: string;
   prev?: string;
+  currentPage?: string;
+  lastPage?: string;
 }
-const { next, prev } = Astro.props as Props;
+const { next, prev, currentPage, lastPage } = Astro.props as Props;
 ---
 
-<div class="flex justify-center mt-20 gap-x-8">
-  {prev && <a href={prev}>« Newer</a> }
-  {next && <a href={next}>Older »</a> }
+<div class="grid grid-cols-3 mt-20 gap-x-8 text-center">
+  <span>{prev && <a href={prev}>« Newer</a> }</span>
+  <span>Page {currentPage} of {lastPage}</span>
+  <span>{next && <a href={next}>Older »</a> }</span>
 </div>

@@ -1,35 +1,39 @@
 ---
-import PageLayout from "@layouts/PageLayout.astro";
-import Pagination from "@components/Pagination.astro";
-import PostItem from "@components/PostItem.astro";
-import WarningMessage from "@components/WarningMessage.astro";
-import { Frontmatter } from "@shared/frontmatter.interface";
-import { sortBy } from "lodash-es";
+import { getCollection } from 'astro:content';
+import PageLayout from '@layouts/PageLayout.astro';
+import PostItem from '@components/PostItem.astro';
+import WarningMessage from '@components/WarningMessage.astro';
+import Pagination from '@components/Pagination.astro';
 
 export async function getStaticPaths({ paginate }) {
-  let allPosts = await Astro.glob<Frontmatter>("./**/*.mdx");
-  allPosts = sortBy(allPosts, ["frontmatter.pubDate"]).reverse();
-  return paginate(allPosts, { pageSize: 50 });
+  const allPosts = await getCollection('blog');
+  const sortedPosts = allPosts.sort((a, b) => {
+    return new Date(b.data.pubDate) - new Date(a.data.pubDate);
+  });
+  return paginate(sortedPosts, { pageSize: 10});
 }
 
 const { page } = Astro.props;
 const content = {
-  title: "Blog - armno.in.th",
-};
+  title: 'blog',
+  description: 'Blog',
+  thumbnail: '',
+  language: 'en'
+}
 ---
 
-<PageLayout {content}>
+<PageLayout frontmatter={content}>
   <WarningMessage>
     <p>
       Blog listing page is still a work-in-progress.
     </p>
   </WarningMessage>
+
+
   <div class="flex items-baseline mb-8 container mx-auto px-6 md:px-0 mt-6">
     <h1 class="text-5xl font-bold mb-0">Blog</h1>
     <span class="text-2xl text-slate-300 mx-4">/</span>
-    <span class="text-2xl text-slate-300"
-      >Page {page.currentPage} of {page.lastPage}
-    </span>
+    <span class="text-2xl text-slate-300">Page {page.currentPage} of {page.lastPage} </span>
   </div>
 
   <ol
@@ -39,11 +43,11 @@ const content = {
       page.data.map((post, index) => (
         <li>
           <PostItem
-            title={post.frontmatter.title}
-            url={post.url}
-            thumbnail={post.frontmatter.thumbnail}
-            pubDate={post.frontmatter.pubDate}
-            description={post.frontmatter.description}
+            title={post.data.title}
+            url={post.slug}
+            thumbnail={post.data.thumbnail}
+            pubDate={post.data.pubDate}
+            description={post.data.description}
             isLatest={index === 0}
           />
           <hr class="w-1/2 mx-auto mt-12">
@@ -52,5 +56,5 @@ const content = {
     }
   </ol>
 
-  <Pagination next={page.url.next} prev={page.url.prev} />
+  <Pagination next={page.url.next} prev={page.url.prev} currentPage={page.currentPage} lastPage={page.lastPage} />
 </PageLayout>
