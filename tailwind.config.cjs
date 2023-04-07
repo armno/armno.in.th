@@ -58,7 +58,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        headings: ['Anuphan', ...defaultTheme.fontFamily.sans],
+        headings: ['IBM Plex Sans Thai', ...defaultTheme.fontFamily.sans],
         sans: ['Noto Serif Thai', ...defaultTheme.fontFamily.sans]
       },
     }
