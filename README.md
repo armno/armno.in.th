@@ -13,7 +13,7 @@ $ npm start
 
 ## Creating a new post
 
-1. create a new file `src/pages/blog/<post-name>/index.mdx`
+1. create a new file `src/content/blog/<post-name>/index.mdx`
 2. fill in default frontmatter
 
 ```yml
