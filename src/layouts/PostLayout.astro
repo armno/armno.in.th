@@ -14,7 +14,8 @@ const canonicalURL = Astro.url;
     {thumbnail &&
     <div class="order-2 lg:order-1 lg:col-start-1 lg:col-end-2 mb-10 lg:mb-0">
         <a href={thumbnail}>
-          <Image src={thumbnail} alt={title} class="w-full lg:w-4/5 mx-auto my-0 rounded-3xl" width={800} height={533} fit={'cover'} />
+          <Image src={thumbnail} alt={title} class="w-full lg:w-4/5 mx-auto my-0 rounded-3xl" width={800} height={533} fit={'cover'}
+            loading={'eager'} />
         </a>
     </div>
     }
