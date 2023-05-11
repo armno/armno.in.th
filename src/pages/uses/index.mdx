@@ -5,7 +5,7 @@ description: 'A collection of hardware/software/tools I use on a daily basis.'
 thumbnail: /images/uses/laptop.jpg
 pubDate: 2022-06-08T07:51:22+07:00
 ---
-import Picture from '@components/Picture.astro';
+import { Picture } from '@astrojs/image/components';
 
 # Tools I use
 
@@ -33,10 +33,16 @@ hardware/software/tools they use regularly. Here are my tools, updated for 2023.
     <Picture
       src="/images/uses/dark.png"
       alt="dark terminal screenshot"
+      widths={[300,600,1200]}
+      aspectRatio={1958/512}
+      width={600}
     />
     <Picture
       src="/images/uses/light.png"
       alt="light terminal screenshot"
+      widths={[300,600,1200]}
+      aspectRatio={1958/512}
+      width={600}
     />
   </div>
 </div>
@@ -66,6 +72,9 @@ Computers: I use
 <Picture
   src="/images/uses/laptop.jpg"
   alt="2015, 15-inch MacBook Pro"
+  widths={[300,600,1200]}
+  aspectRatio={16/9}
+  width={1600}
 />
 
 Monitor: a [Samsung 28" UR55 UHD 4K Monitor](https://www.samsung.com/th/business/monitors/ur55/lu28r550uqexxt/) mounted with an [NB-F80 Monitor arm](https://www.google.com/search?q=nb-f80+monitor+arm).
@@ -73,7 +82,9 @@ Monitor: a [Samsung 28" UR55 UHD 4K Monitor](https://www.samsung.com/th/business
 <Picture
   src="/images/uses/desk-monitor.jpg"
   alt="Samsung UR55 4k monitor"
-  full
+  widths={[300,600,1200]}
+  aspectRatio={16/9}
+  width={1600}
 />
 
 Keyboards: [Ginkgo65](https://ginkgo65.com/) 65% mechanical keyboard at work and a [custom Tofu 60% mechanical keyboard](https://armno.in.th/2019/05/01/custom-mechanical-keyboard-build-2/) at home.
@@ -84,11 +95,17 @@ Keyboards: [Ginkgo65](https://ginkgo65.com/) 65% mechanical keyboard at work and
       src="/images/uses/ginkgo65-keyboard.jpg"
       alt="my Ginkgo65 mechanical keyboard at work"
       caption="Build details: Ginkgo65 Black x Copper / Polycarbonate plate / Durock V2 stabs / C3 Tangerine 67g + Krytox 205g0 / MT3 Extended 2048 Katakana"
+      widths={[300,600,1200]}
+      aspectRatio={1200/675}
+      width={1200}
     />
     <Picture
       src="/images/uses/tofu-susuwatari.jpg"
       alt="my custom 60% mechanical keyboard"
       caption="Build details: Tofu alu case / DZ60 PCB / Aluminum plate / Everglide stabs / Gateron milky brown / MT3 Susuwatari"
+      widths={[300,600,1200]}
+      aspectRatio={1200/675}
+      width={1200}
     />
   </div>
 </div>
@@ -107,14 +124,23 @@ Headphones: I have ~a few~ too many of them for my various use cases
     <Picture
       src="/images/uses/sony-xm4.jpg"
       alt="Sony WH-1000XM4 headphones"
+      widths={[300,600,1200]}
+      aspectRatio={2000/1125}
+      width={1200}
     />
     <Picture
       src="/images/uses/headphones.jpg"
       alt="Audio Technica M50x"
+      widths={[300,600,1200]}
+      aspectRatio={1400/785}
+      width={1200}
     />
     <Picture
       src="/images/uses/jbl-quantum-100.jpg"
       alt="JBL Quantum 100 headphones"
+      widths={[300,600,1200]}
+      aspectRatio={2000/1125}
+      width={1200}
     />
   </div>
 </div>
@@ -135,10 +161,16 @@ Not something I use everyday, but still worth mentioning.
     <Picture
       src="/images/uses/fuji-xe1.jpg"
       alt="Fujifilm XE-1"
+      widths={[300,600,1200]}
+      aspectRatio={1500/997}
+      width={1200}
     />
     <Picture
       src="/images/uses/nich-faith-2-custom-small.jpg"
       alt="Nich Faith 2 Custom"
+      widths={[300,600,1200]}
+      aspectRatio={1200/798}
+      width={1200}
     />
   </div>
 </div>

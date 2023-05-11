@@ -2,6 +2,7 @@
 import RelatedPosts from '@components/RelatedPosts.astro';
 import PageLayout from './PageLayout.astro';
 import { format } from 'date-fns';
+import { Image } from '@astrojs/image/components';
 
 const { frontmatter } = Astro.props;
 const { title, pubDate, thumbnail, tags, categories } = frontmatter;
@@ -10,11 +11,14 @@ const canonicalURL = Astro.url;
 
 <PageLayout { frontmatter } isPost={true}>
   <div slot="post-header" class="lg:col-span-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:mb-20">
+    {thumbnail &&
     <div class="order-2 lg:order-1 lg:col-start-1 lg:col-end-2 mb-10 lg:mb-0">
-      <a href={thumbnail}>
-        <img src={thumbnail} alt={title} class="w-full lg:w-4/5 mx-auto my-0 rounded-3xl">
-      </a>
+        <a href={thumbnail}>
+          <Image src={thumbnail} alt={title} class="w-full lg:w-4/5 mx-auto my-0 rounded-3xl" width={800} height={533} fit={'cover'}
+            loading={'eager'} />
+        </a>
     </div>
+    }
     <div class="order-1 lg:order-2 lg:col-start-2 lg:col-end-3 lg:flex lg:flex-col lg:justify-center lg:gap-3">
       <h1 class="text-3xl lg:text-4xl leading-tight mb-0 max-w-[80%]">{title}</h1>
       <div class="flex gap-5 mt-4">
