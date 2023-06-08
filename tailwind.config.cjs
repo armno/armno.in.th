@@ -59,7 +59,7 @@ module.exports = {
       },
       fontFamily: {
         headings: ['IBM Plex Sans Thai', ...defaultTheme.fontFamily.sans],
-        sans: ['Noto Serif Thai', ...defaultTheme.fontFamily.sans]
+        sans: ['Sarabun', ...defaultTheme.fontFamily.sans]
       },
     }
   },
