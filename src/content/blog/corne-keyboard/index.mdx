@@ -1,7 +1,7 @@
 ---
 title: 'Corne Mechanical Keyboard Build Logs'
 pubDate: '2023-06-16T15:26:42.937Z'
-thumbnail: /images/corne-keyboard/corne-keyboard-post-thumbnail.jpg
+thumbnail: ./images/corne-keyboard-post-thumbnail.jpg
 ---
 
 import { Picture } from '@astrojs/image/components';
@@ -42,7 +42,7 @@ Then I check out his channel and found a few videos about the **Corne Keyboard**
 
 [**The Corne Keyboard**](https://github.com/foostan/crkbd) aka. "crkbd" is an opensource split keyboard designed by foostan. It has a few different variations that support both traditional MX or low profile switches, and can be built with either 5 or 6 columns. I chose the MX version because I already MX switches and keycaps around. The Github repo also has very details documentation for every variation.
 
-### Getting parts
+## Getting parts
 
 The parts list on build guide looks intimidating to me. I have no idea what TRRS or WS2812B mean. So I play safe by getting a set from Beekeeb shop on Etsy that includes everything I need (and don't need actually) in one package. The set I get is the [Crkbd v3 (Corne Keyboard) MX Hotswap DIY Mechanical Ergonomic Hotswap Split Keyboard PCB](https://www.etsy.com/listing/972779149/crkbd-v3-corne-keyboard-mx-hotswap-diy). Kit option is “PCB + Parts”. It costs me HKD 982.40 / ฿4,345.39 / ~$125.
 
@@ -74,7 +74,7 @@ While waiting for the parts to deliver, I check out different case designs and c
   </div>
 </div>
 
-### Installing Diodes, LEDs, and Hotswap Sockets
+## Installing Diodes, LEDs, and Hotswap Sockets
 
 The parts arrive and it's time to start the build. I follow [the official build guide](https://github.com/foostan/crkbd/blob/main/corne-cherry/doc/v3/buildguide_en.md),
 along with the [video from Rafael Delboni](https://www.youtube.com/watch?v=O49hrYDCL3o)
@@ -143,7 +143,7 @@ After that it is soldering the LEDs. There are 12 underglow LEDs (_WS2812B_) and
 
 Once I the right hand side of the keyboard, do the same for the left hand side. There are just so much of soldering to build this keyboard.
 
-### Installing TRRS Jack, Reset switches, and The Controllers
+## Installing TRRS Jack, Reset switches, and The Controllers
 
 Now for both sides I have all SMD parts installed. The next step is to install the rest of the parts around the controller. I start with soldering the TRRS jack and the Reset switches, which is the normal through-hole soldering.
 
@@ -191,7 +191,7 @@ I learn later on that what I miss was socketing the controller and OLED modules 
   </div>
 </div>
 
-### Testing
+## Testing
 
 After all the soldering work is done, it's time to test the keyboard!
 
@@ -201,16 +201,77 @@ First, I plug each side of the keyboard to the computer via a USB cable to check
 
 The next step is to check if all the keys work with the key tester in Via. I test each of them by putting a switch in and test, one at a time. All the keys are recognized in Via.
 
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('./images/per-key-led.jpg')}
+      alt="Per-key LEDs of the Corne Keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('./images/underglow-led.jpg')}
+      alt="Underglow LEDs of the Corne Keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('./images/rgb.jpg')}
+      alt="RGB LEDs of the Corne Keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
+
 To be honest, I didn't expect it to work at the first attempt. But once I realize everything was functional, it is such a relieve. All my time (and money) are not wasted. At least I should have a working split keyboard.
 
 I put the switches and keycaps in. And I have to say I'm very satisfied with the result.
 
 - Switches: C3 Tangerine 67g (lubed & filmed)
-- Keycaps: A cheap DSA set / MT3 2048 / GMK WoB Katakana
+- Keycaps: MT3 2048 Extended / GMK WoB Katakana
 
-### The 3D Printed Case
+<Picture
+  src={import('./images/corne-keyboard-mt3-biip-extended.jpg')}
+  alt="the Corne Keyboard with MT3 biip Extended 2048 keycaps"
+  widths={[400,800,1600]}
+  aspectRatio={3/2}
+  width={800}
+/>
 
-As mentioned earlier, the 3D printed case and plates have some issues. The surface and edges look a bit rough. Then I know they are really rough when I'm not able put the switches in - the plate slots are a tad too small for the switches because the printing is not precise enough.
+<Picture
+  src={import('./images/front-shot.jpg')}
+  alt="the Corne Keyboard with GMK White on Black Katakana Keycaps"
+  widths={[400,800,1600]}
+  aspectRatio={3/2}
+  width={800}
+/>
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('./images/corne-left.jpg')}
+      alt="Left part of the Corne Keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('./images/corne-right.jpg')}
+      alt="Right part of the Corne Keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
+
+## The 3D Printed Case
+
+As mentioned earlier, the 3D printed case and plates have some issues. The surface and edges look a bit rough. Then I know they are _really_ rough when I'm not able put the switches in - the plate slots are a tad too small for the switches because the printing is not precise enough. 🤯
 
 I have to file down 4 sides of each slot so it can accommodate the switch and hold it in place. It took me forever to do all of them (42 slots) and I still am not happy with the results. I am able to put all switches in eventually, but it is not easy.
 
@@ -218,17 +279,55 @@ After using the keyboard for a week, I want to make the case looks nicer. I use 
 
 And this is a game over.
 
-Because the case is mishaped by the heat and I am not able to put the keyboard back in the case anymore. This is how I learned the hard way that PLA material is actually quite sensitive to the heat. I underestimate also how strong the Sun is in Chiang Mai. This is such a let down.
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('./images/case-v1-closeup.jpg')}
+      alt="first printed case - tented version. Designed by VOID."
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('./images/case-v1-under-sunlight.jpg')}
+      alt="Putting the 3D printed case under the direct sunlight"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
 
-I manage to fix it a bit by using a hair dryer, so that I can (barely) put back the keyboard in. The case is however will never go back into its original shape. This annoys me for a week before I decide to make a new one.
+The case is mishaped by the heat and I am not able to put the keyboard back in the case anymore! This is how I learned the hard way that PLA material is actually quite sensitive to the heat. I underestimate also how strong the Sun is in Chiang Mai. It is such a let down.
 
-This time I contact another shop in BKK and try to make sure the printing quality is better because I don't want to do the finishing again. They guarantee that no extra work is needed from the printing and it would be ready to use of the the box.
+I manage to fix it a bit by using a hair dryer, so that I can barely put back the keyboard in. The case is however will never go back into its original shape. This annoys me for a week before I decide to make a new one.
+
+This time I contact another shop in BKK and try to make sure the printing quality is better because I don't want to do the finishing again. They guarantee that no extra work is needed from the printing and it would be ready to use of the the box. I choose the normal version instead of the tented version this is print.
 
 And the result is very good. The quality is much much better than another shop. The material is now ABS plastic instead of the PLA. The cost is also much at about 400THB/ $12. All switches go in the plate slots easily.
 
 Lesson learned: I will never put a PLA thingy under direct sunlight again.
 
-### Keymaps
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('./images/case-v2.jpg')}
+      alt="the new 3D printed case from another shop"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('./images/plate-v2.jpg')}
+      alt="Plate printed with the new case. Switches can go in easily."
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
+
+## Keymaps
 
 The keyboard uses QMK firmware so it is customizable with [Via](https://usevia.app/). However, the number of keys are much less than my previous 65% keyboard. It took me some time to come up with keymaps that work for me. As the time of writing it is still not perfect and I still keep tweaking the layouts from time to time. What I have so far are
 
@@ -240,7 +339,7 @@ Layer 2: more symbols for coding, numbers.
 
 I'm not 100% happy with the keymaps yet, especially the coding symbols and numpads that are too different from a normal keyboard layout. I still have a lot to learn to make the most of limited keys.
 
-### Review
+## Review
 
 Coming from a normal keyboard to a split keyboard does take me some time to get used to.
 
@@ -264,6 +363,7 @@ Overall it is not a better keyboard. It is just different, and definitely is mor
 - There are now 2 cables I always have to carry instead of 1: TRRS and USB cables, which is cumbersome. A wireless build would get rid of this issue.
 - The OLED display module is kinda useless for me. It looks cool but there's no other benefits yet. And I learned later that it is optional.
 - I didn't socket the controller and the OLED modules. It will be more difficult to remove or to replace the controller.
+- I should have ask for quotes for multiple 3D printing service before deciding to choose one.
 
 ## Summary
 
