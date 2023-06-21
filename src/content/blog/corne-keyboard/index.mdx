@@ -40,11 +40,13 @@ Then I check out his channel and found a few videos about the **Corne Keyboard**
   width={800}
 />
 
-[**The Corne Keyboard**](https://github.com/foostan/crkbd) aka. "crkbd" is an opensource split keyboard designed by foostan. It has a few different variations that support both traditional MX or low profile switches, and can be built with either 5 or 6 columns. I chose the MX version because I already MX switches and keycaps around. The Github repo also has very details documentation for every variation.
+[**The Corne Keyboard**](https://github.com/foostan/crkbd) aka. "crkbd" is an opensource, vertically staggered, split keyboard designed by foostan.
+It has a few different variations that support both traditional MX or low profile switches, and can be built with either 5 or 6 columns.
+I chose the MX version because I already MX switches and keycaps around. The Github repo also has very details documentation for every variation.
 
 ## Getting parts
 
-The parts list on build guide looks intimidating to me. I have no idea what TRRS or WS2812B mean. So I play safe by getting a set from Beekeeb shop on Etsy that includes everything I need (and don't need actually) in one package. The set I get is the [Crkbd v3 (Corne Keyboard) MX Hotswap DIY Mechanical Ergonomic Hotswap Split Keyboard PCB](https://www.etsy.com/listing/972779149/crkbd-v3-corne-keyboard-mx-hotswap-diy). Kit option is “PCB + Parts”. It costs me HKD 982.40 / ฿4,345.39 / ~$125.
+The parts list on build guide looks intimidating to me. I have no idea what TRRS or WS2812B mean. So I play safe by getting a set from [Beekeeb](https://shop.beekeeb.com/) shop on [Etsy](https://www.etsy.com/shop/beekeeb) that includes everything I need in one package. The set I get is the [Crkbd v3 (Corne Keyboard) MX Hotswap DIY Mechanical Ergonomic Hotswap Split Keyboard PCB](https://www.etsy.com/listing/972779149/crkbd-v3-corne-keyboard-mx-hotswap-diy). Kit option is “PCB + Parts”. It costs me HKD 982.40 / ~฿4,300 / ~$125. They ship super fast.
 
 While waiting for the parts to deliver, I check out different case designs and choose the [one desinged by VOID](https://www.printables.com/model/347524-corne-keyboard-case). I send the Printable link to a local 3D printing service and get the tented, 6 columns version of the case with PLA material. The case and plates costs me ~900 THB / $26. The outcome is OK though it also has some issues. More on that shortly.
 
@@ -151,8 +153,7 @@ The controllers that come with the set are the [Sea-Micro controllers](https://c
 
 Finally it's the OLED module, which I also solder them directly to the PCB, just with longer pins so the OLED screens kind of float on top of the controller.
 
-I learn later on that what I miss was socketing the controller and OLED modules - make both modules hotswappable. With soldering modules directly to the PCB, it will be more difficult if I want to remove them because I have to desolder them off from the PCB.
-
+I learn later on that what I miss was [socketing](https://github.com/foostan/crkbd/blob/main/corne-classic/doc/buildguide_en.md#use-socket-to-mount-promicro) the controller and OLED modules - make both modules hotswappable. Without socketing, it will be more difficult if I want to remove them because I have to desolder them off from the PCB.
 
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
@@ -229,9 +230,9 @@ The next step is to check if all the keys work with the key tester in Via. I tes
 
 To be honest, I didn't expect it to work at the first attempt. But once I realize everything was functional, it is such a relieve. All my time (and money) are not wasted. At least I should have a working split keyboard.
 
-I put the switches and keycaps in. And I have to say I'm very satisfied with the result.
+I put the switches and keycaps in. And I have to say I'm very happy with the result.
 
-- Switches: C3 Tangerine 67g (lubed & filmed)
+- Switches: C3 Tangerine 67g (lubed & filmed), plus 1 Banana Split and 1 Alpaca switches just for fun.
 - Keycaps: MT3 2048 Extended / GMK WoB Katakana
 
 <Picture
@@ -250,34 +251,17 @@ I put the switches and keycaps in. And I have to say I'm very satisfied with the
   width={800}
 />
 
-<div class="full-bleed">
-  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
-      src={import('./images/corne-left.jpg')}
-      alt="Left part of the Corne Keyboard"
-      widths={[400,800,1600]}
-      aspectRatio={3/2}
-      width={800}
-    />
-    <Picture
-      src={import('./images/corne-right.jpg')}
-      alt="Right part of the Corne Keyboard"
-      widths={[400,800,1600]}
-      aspectRatio={3/2}
-      width={800}
-    />
-  </div>
-</div>
-
 ## The 3D Printed Case
 
 As mentioned earlier, the 3D printed case and plates have some issues. The surface and edges look a bit rough. Then I know they are _really_ rough when I'm not able put the switches in - the plate slots are a tad too small for the switches because the printing is not precise enough. 🤯
 
 I have to file down 4 sides of each slot so it can accommodate the switch and hold it in place. It took me forever to do all of them (42 slots) and I still am not happy with the results. I am able to put all switches in eventually, but it is not easy.
 
-After using the keyboard for a week, I want to make the case looks nicer. I use sandpaper to sand the surface and to remove some sharp edges of the case, paint it with a black color spray, leave it  dry under the sunlight for 10 minutes.
+After using the keyboard for a week, I want to make the case looks nicer.
+I use sandpaper to sand the surface and to remove some sharp edges of the case,
+paint it with a black color spray, leave it dry *under the direct sunlight* for 10 minutes.
 
-And this is a game over.
+And this is a game over. ☀️ 🫠
 
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
@@ -298,15 +282,14 @@ And this is a game over.
   </div>
 </div>
 
-The case is mishaped by the heat and I am not able to put the keyboard back in the case anymore! This is how I learned the hard way that PLA material is actually quite sensitive to the heat. I underestimate also how strong the Sun is in Chiang Mai. It is such a let down.
+The case is mishaped by the heat and I am not able to put the keyboard back in the case anymore! This is how I learned the hard way that PLA material is actually quite sensitive to the heat. I underestimate also how strong the Sun is in Chiang Mai. I was disappointed.
 
-I manage to fix it a bit by using a hair dryer, so that I can barely put back the keyboard in. The case is however will never go back into its original shape. This annoys me for a week before I decide to make a new one.
+I manage to fix it a bit by using a hair dryer, so that I can barely put back the keyboard in. The case is however will never go back into its original shape.
 
-This time I contact another shop in BKK and try to make sure the printing quality is better because I don't want to do the finishing again. They guarantee that no extra work is needed from the printing and it would be ready to use of the the box. I choose the normal version instead of the tented version this is print.
+This annoys me for a week before I decide to make a new one. This time I contact another shop in Bangkok: [ModCables101](https://www.facebook.com/ModCables101/), and try to make sure the printing quality is better because I don't want to do the finishing again.
+They guarantee that no extra work is needed from the printing, and it would be ready to use of the the box. I choose the normal version instead of the tented version in is print.
 
-And the result is very good. The quality is much much better than another shop. The material is now ABS plastic instead of the PLA. The cost is also much at about 400THB/ $12. All switches go in the plate slots easily.
-
-Lesson learned: I will never put a PLA thingy under direct sunlight again.
+And the result is very good. The quality is much much better than another shop. The material is now ABS plastic instead of the PLA. The cost is also much cheaper at about 400THB/$12. All switches go in the plate slots easily.
 
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
@@ -341,7 +324,7 @@ Layer 0: Traditional QWERTY layout.
   width={800}
 />
 
-Layer 1 (lower): Coding symbol, arrows, RBG controls (honestly I just don't know where to put these)
+Layer 1 (lower): quick access to coding symbol without using `shift` key, arrows, and RBG controls.
 
 <Picture
   src={import('./images/layer-lower.png')}
@@ -351,7 +334,7 @@ Layer 1 (lower): Coding symbol, arrows, RBG controls (honestly I just don't know
   width={800}
 />
 
-Layer 2 (raised): Numpads, media controls
+Layer 2 (raised): Numpads, media controls, and keys to adjust my laptop's screen brightness.
 
 <Picture
   src={import('./images/layer-raise.png')}
@@ -361,33 +344,118 @@ Layer 2 (raised): Numpads, media controls
   width={800}
 />
 
-I'm not 100% happy with the keymaps yet, especially the coding symbols and numpads that are too different from a normal keyboard layout. I still have a lot to learn to make the most of limited keys.
+I'm not 100% happy with the keymaps yet, but least I don't miss anything in coding or English typing.
+Typing in Thai is still kind of problem because some characters are still missing.
+It's not a big problem for now.
 
-## Review
+## Review / Experiences
+
+### Typing
 
 Coming from a normal keyboard to a split keyboard does take me some time to get used to.
 
-My typing is a bit weird and I didn't know it until using a split keyboard. I tend to use my right index finger to press `B` and `T` which are on the left side of the keyboard. I use both thumbs to press the spacebar, depends on what I was typing. And I rarely use my right pinky finger.
+My typing has been a bit weird and I didn't know it until using a split keyboard.
+I tend to use my right index finger to press `B` and `T` which are on the left side of the keyboard.
+I use both thumbs to press the spacebar, depends on what I was typing.
+And I rarely use my pinky fingers, espcially the right one.
 
-Switching to a split keyboard kind of forces me to fix these issues and use fingers properly in their columns. My first day was terrible. I struggled a lot and I was very slow in typing.
+Switching to a split keyboard kind of forces me to fix these issues
+and use fingers properly in their columns.
+My first day was terrible because I tried to fix my issues all at once.
+I struggled a lot and I was very slow in typing.
 
-My frustration lasts a few days before it gets better. I get used to typing with the correct fingers, and allowed myself ignore the weak right pinky finger. I was more relaxed and more comfortable. Still make a lot of mistakes but I can type faster and I am back at my normal speed for English typing or coding.
+My frustration lasts a few days before it gets better.
+I get used to typing with the correct fingers, and allowed myself ignore the weak pinky fingers.
+I am more relaxed and more comfortable now. Still make a lot of mistakes but I can type faster and I am back at my normal speed for English typing or coding.
 
-The keyboard itself works fine and has no big issues. The sound is more bright /plasticky than my previous keyboard, which is somewhat expected. Typing feeling is also not the best I have compared to a gasket mounted keyboard with 10 layers of foam and mods.
+Once I get comfortable with it, I think a split keyboard is more fun to use.
 
-Ergonomics: I normally don't have wrist pain or back pain from using traditional keyboard so I didn't get much benefits of the ergonomics. I like the flexibility that I can move and position each side of the keyboard more freely. And it takes less space on my desk.
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('./images/corne-left.jpg')}
+      alt="Left part of the Corne Keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('./images/corne-right.jpg')}
+      alt="Right part of the Corne Keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
 
-Portability: the Corne keyboard is much smaller and lighter compared to other keyboards I have. I can't say It is easier to carry around because now I have to carry 2 small keyboards and 2 cables. I'd give this a neutral.
 
-Overall it is not a better keyboard. It is just different, and definitely is more fun to use.
+### The Keyboard
+
+**Feeling and Sound**: The keyboard itself works fine and has no big issues.
+The sound is more bright/plasticky than my previous keyboard.
+Feeling when typing is also not the best I have compared to a gasket mounted keyboard with 10 layers of foam and mods.
+These are not the main selling point of a split keyboard anyways. I can live with that.
+
+**Ergonomics**: I normally don't have wrist pain or back pain from using traditional keyboard,
+so I don't know if I get much benefits of the ergonomics.
+I feel that there is less travel for each finger. In long term this might help.
+
+I like the flexibility that I can move and position each side of the keyboard more freely.
+It takes less space on my desk which is also a plus for me.
+
+**Portability**: the Corne keyboard is much smaller and lighter compared to other keyboards I have.
+I can't say it is more portable or is easier to carry around because now I have to carry 2 small keyboards and 2 cables. I'd give this a neutral.
+
+Overall it is not a better keyboard - it is just different, and definitely is more fun to use.
 
 ### Issues / Lessons Learned
 
 - Some switches popped out from the hotswap socket sometimes when I put it in my backpack, which is a typical issue for a keyboard with hotswap sockets.
 - There are now 2 cables I always have to carry instead of 1: TRRS and USB cables, which is cumbersome. A wireless build would get rid of this issue.
 - The OLED display module is kinda useless for me. It looks cool but there's no other benefits yet. And I learned later that it is optional.
-- I didn't socket the controller and the OLED modules. It will be more difficult to remove or to replace the controller.
-- I should have ask for quotes for multiple 3D printing service before deciding to choose one.
+  - Same goes to the LEDs lights. They are also optional.
+- Getting each part separately rather than buying a set seems to be a cheaper option. From [Rafael's shopping list](https://github.com/rafaeldelboni/buildlogs/blob/main/crkbd-v3.md#part-list-original) it seems everything can be purchased from AliExpress.
+- I didn't socket the controller and the OLED modules as mentioned earlier.
+- I should have asked for quotes for multiple 3D printing service before deciding to choose one.
+- Never put a PLA thingy under direct sunlight again. 🌞
+
+<div class="">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('./images/stacked-modules.jpg')}
+      alt="Stacked modules: PCB / controller / OLED"
+      widths={[400,800,1600]}
+      aspectRatio={1}
+      width={800}
+    />
+    <Picture
+      src={import('./images/oled-display-module.jpg')}
+      alt="The OLED display module"
+      widths={[400,800,1600]}
+      aspectRatio={1}
+      width={800}
+    />
+  </div>
+</div>
+<div class="">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('./images/pcb-back.jpg')}
+      alt="The back of the Corne PCB"
+      widths={[400,800,1600]}
+      aspectRatio={1}
+      width={800}
+    />
+    <Picture
+      src={import('./images/back-case.jpg')}
+      alt="The back side of the 3D printed case"
+      widths={[400,800,1600]}
+      aspectRatio={1}
+      width={800}
+    />
+  </div>
+</div>
 
 ## Summary
 

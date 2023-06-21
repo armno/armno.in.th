@@ -35,7 +35,7 @@ module.exports = {
             },
             li: {
               marginTop: '0',
-              marginBottom: '0'
+              marginBottom: '0.5rem'
             },
             'ul ul, ul ol, ol ul, ol ol': {
               marginTop: 0,
