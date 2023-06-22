@@ -1,14 +1,21 @@
 ---
-title: 'Corne Mechanical Keyboard Build Logs'
+title: 'Corne - Mechanical Split Keyboard'
 pubDate: '2023-06-16T15:26:42.937Z'
-thumbnail: ./images/corne-keyboard-post-thumbnail.jpg
+thumbnail: /images/corne-keyboard/post-thumbnail.jpg
+description: Build logs and notes from building my first mechnical split keyboard - Corne
+tags:
+- Mechanical Keyboards
+- DIY
+- Side Projects
+categories:
+- Life
 ---
 
-import { Picture } from '@astrojs/image/components';
+import { Picture, Image } from '@astrojs/image/components';
 
-I entered the rabbit hole of mechanical keyboards since 2017. Since the last couple years, I settle with 65% form factor which I find a balance between how it looks and the ease of use. My previous keyboards were a Gingko65, a Portico, and a few 60% ones.
+I entered the rabbit hole of mechanical keyboards in 2017. For the last couple of years, I settle with the 65% form factor and I find a balance between how it looks and the ease of use. My previous keyboards were a Gingko65, a Portico, and a few 60% ones.
 
-<div class="full-bleed">
+<div class="">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
     <Picture
       src="/images/uses/ginkgo65-keyboard.jpg"
@@ -27,26 +34,30 @@ I entered the rabbit hole of mechanical keyboards since 2017. Since the last cou
   </div>
 </div>
 
-But a person cannot have enough keyboards. I always want to try another layout like Alice, or even to build a hand-wired mechanical keyboard, which I never get started.
-I did some research about handwiring and found a video by Joe Scotto interesting: [**How to build a handwired keyboard**](https://www.youtube.com/watch?v=hjml-K-pV4E), but I feel that's still a lot of work to do.
+Recently I stumbled upon a video [**How to build a handwired keyboard**](https://www.youtube.com/watch?v=hjml-K-pV4E) by Joe Scotto. It leads me to check out his YouTube channel.
+Then I found a few videos about **the Corne Keyboard**. It is a split keyboard. I knew nothing about a split keyboards but it looks interesting and decided to give it a try,
+purely out of curiosity.
 
-Then I check out his channel and found a few videos about the **Corne Keyboard**. It is a split keyboard. I knew nothing about split keyboards but it looks interesting so I decide to give it try and see how it goes.
-
-<Picture
-  src={import('./images/top-shot.jpg')}
-  alt="the Corne split keyboard, from the top"
-  widths={[400,800,1600]}
-  aspectRatio={1600/900}
-  width={800}
-/>
+<figure>
+  <Image
+    src="https://i.ytimg.com/vi/wTMcH7u-vu0/maxresdefault.jpg"
+    alt="Corne wireless keyboard by Josean Martinez"
+    widths={[300,600,1200]}
+    aspectRatio={1200/675}
+    width={1200}
+  />
+  <figcaption class="px-4">
+    Photo credit: Josean Martinez's build https://www.youtube.com/watch?v=wTMcH7u-vu0
+  </figcaption>
+</figure>
 
 [**The Corne Keyboard**](https://github.com/foostan/crkbd) aka. "crkbd" is an opensource, vertically staggered, split keyboard designed by foostan.
-It has a few different variations that support both traditional MX or low profile switches, and can be built with either 5 or 6 columns.
-I chose the MX version because I already MX switches and keycaps around. The Github repo also has very details documentation for every variation.
+It has a few different variations that support both traditional MX or low-profile switches and can be built with either 5 or 6 columns.
+I chose the MX version because I already MX switches and keycaps around. The GitHub repo also has very details documentation for every variation.
 
 ## Getting parts
 
-The parts list on build guide looks intimidating to me. I have no idea what TRRS or WS2812B mean. So I play safe by getting a set from [Beekeeb](https://shop.beekeeb.com/) shop on [Etsy](https://www.etsy.com/shop/beekeeb) that includes everything I need in one package. The set I get is the [Crkbd v3 (Corne Keyboard) MX Hotswap DIY Mechanical Ergonomic Hotswap Split Keyboard PCB](https://www.etsy.com/listing/972779149/crkbd-v3-corne-keyboard-mx-hotswap-diy). Kit option is “PCB + Parts”. It costs me HKD 982.40 / ~฿4,300 / ~$125. They ship super fast.
+The parts list on build guide looks intimidating to me. I have no idea what TRRS or WS2812B mean. So I play safe by getting a set from [Beekeeb](https://shop.beekeeb.com/) shop on [Etsy](https://www.etsy.com/shop/beekeeb) that includes everything I need in one package. The set I get is the [Crkbd v3 (Corne Keyboard) MX Hotswap DIY Mechanical Ergonomic Hotswap Split Keyboard PCB](https://www.etsy.com/listing/972779149/crkbd-v3-corne-keyboard-mx-hotswap-diy). Kit option is “PCB + Parts”. It costs me HKD 982.40 / ~฿4,300 / ~$125.
 
 While waiting for the parts to deliver, I check out different case designs and choose the [one desinged by VOID](https://www.printables.com/model/347524-corne-keyboard-case). I send the Printable link to a local 3D printing service and get the tented, 6 columns version of the case with PLA material. The case and plates costs me ~900 THB / $26. The outcome is OK though it also has some issues. More on that shortly.
 
@@ -87,26 +98,32 @@ I start with soldering **SMD** (Surface Mounting Device) diodes (_SOD-123_), whi
 
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
-      src={import('./images/small-diode.jpg')}
-      alt="The size of a diode compared to the tip of the tweezer and the PCB"
-      widths={[400,800,1600]}
-      aspectRatio={3/2}
-      width={800}
-    />
-    <Picture
-      src={import('./images/soldered-diodes.jpg')}
-      alt="Soldered diodes. Many bad soldering there."
-      widths={[400,800,1600]}
-      aspectRatio={3/2}
-      width={800}
-    />
+    <figure class="mt-0">
+      <Picture
+        src={import('./images/small-diode.jpg')}
+        alt="The size of a diode compared to the tip of the tweezer and the PCB"
+        widths={[400,800,1600]}
+        aspectRatio={3/2}
+        width={800}
+      />
+      <figcaption class="px-4 mt-0">The size of a diode compared to the tip of a tweezer.</figcaption>
+    </figure>
+    <figure class="mt-0">
+      <Picture
+        src={import('./images/soldered-diodes.jpg')}
+        alt="Soldered diodes. Many bad soldering there."
+        widths={[400,800,1600]}
+        aspectRatio={3/2}
+        width={800}
+      />
+      <figcaption class="px-4 mt-0">There are imperfect soldering marks everywhere.</figcaption>
+    </figure>
   </div>
 </div>
 
-The diodes have polarity - meaning I have to put it in the correct orientation. Since the parts are very small and the print on the diode is not very visible, I make some mistakes by putting a few diodes to the wrong direction. In this case, I have to desolder and put them back again correctly. I believe I lost few of them during the build too.
+The diodes have polarity - meaning I have to put them in the correct orientation. Since the parts are pretty small and the print on the diode is not very visible, I make some mistakes by putting a few diodes in the wrong direction. In this case, I have to desolder and put them back again correctly. I believe I lost a few of them during the build too.
 
-Until I almost finish soldering diodes for the first side, I found [this video on YouTube](https://www.youtube.com/watch?v=MjiJgniYZmY) and realize soldering paste is a thing. I order some soldering paste online just to try it out.
+When I almost finish soldering diodes for the first side, I found the video [Soldering Surface Mount Components | Soldering Basics](https://www.youtube.com/watch?v=MjiJgniYZmY) and realize **Soldering Paste** is a thing. I order some soldering paste online to try it out.
 
 And Soldering Paste is a game changer for me.
 
@@ -123,7 +140,7 @@ It makes it a lot easier to solder the small SMD parts. It helps to hold the par
 
 The next parts are the Gateron hotswap socket. This is easier because the parts and contact points are larger. Here I also use the soldering paste to connect the sockets to the PCB.
 
-After that it is soldering the LEDs. There are 12 underglow LEDs (_WS2812B_) and 42 per-key LEDs (_SK6812MINI-E_). Both types have polarity so I also have to be careful putting them in the correct orientation. The per-key LEDs are a bit more challenging because they are smaller and contact points of each legs are very close . The soldering paste helps a lot here.
+After that, it is soldering the LEDs. There are 12 underglow LEDs (_WS2812B_) and 42 per-key LEDs (_SK6812MINI-E_). Both types have polarity so I also have to be careful putting them in the correct orientation. The per-key LEDs are a bit more challenging because they are smaller and the contact points of each leg are very close. The soldering paste helps a lot here.
 
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
@@ -144,7 +161,7 @@ After that it is soldering the LEDs. There are 12 underglow LEDs (_WS2812B_) and
   </div>
 </div>
 
-Once I the right hand side of the keyboard, do the same for the left hand side. There are just so much of soldering to build this keyboard.
+Once I have the right-hand side of the keyboard, do the same for the left-hand side. There is just so much soldering to build this keyboard.
 
 ## Installing TRRS Jack, Reset switches, and The Controllers
 
@@ -195,13 +212,13 @@ I learn later on that what I miss was [socketing](https://github.com/foostan/crk
 
 ## Testing
 
-After all the soldering work is done, it's time to test the keyboard!
+After all the soldering work, it's time to test the keyboard!
 
-I was nervous because many hours were spent already to put every parts in, and I have no idea if the keyboard was going to work, until reaching this step - the moment of truth.
+I was nervous because up until this point, I had no idea if the keyboard was going to work.
 
-First, I plug each side of the keyboard to the computer via a USB cable to check of the controller and all the lights work. They do. Then I connect both sides with the TRRS cable, and then plug the USB cable to the computer. All LEDs seem to work fine.
+First, I plug each side of the keyboard into the computer via a USB cable to check the controller. All the lights work. They do. Then I connect both sides with the TRRS cable and then plug the USB cable into the computer. All LEDs seem to work fine.
 
-The next step is to check if all the keys work with the key tester in Via. I test each of them by putting a switch in and test, one at a time. All the keys are recognized in Via.
+The next step is to check if all the keys work with the key tester in Via. I test each of them by putting a switch in and testing, one at a time. All the keys are recognized in Via.
 
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
@@ -229,91 +246,38 @@ The next step is to check if all the keys work with the key tester in Via. I tes
   </div>
 </div>
 
-To be honest, I didn't expect it to work at the first attempt. But once I realize everything was functional, it is such a relieve. All my time (and money) are not wasted. At least I should have a working split keyboard.
+To be honest, I didn't expect it to work on the first attempt. But once I realize everything was functional, it is such a relief. All my time (and money) are not wasted. At least I should have a working split keyboard.
 
 I put the switches and keycaps in. And I have to say I'm very happy with the result.
 
-- Switches: C3 Tangerine 67g (lubed & filmed), plus 1 Banana Split and 1 Alpaca switches just for fun.
-- Keycaps: MT3 2048 Extended / GMK WoB Katakana
+- Switches: C3 Tangerine 67g (lubed & filmed), plus 1 Banana Split and 1 Alpaca switch just for fun.
+- Keycaps: MT3 Extended 2048 / GMK WoB Katakana
 
-<Picture
-  src={import('./images/corne-keyboard-mt3-biip-extended.jpg')}
-  alt="the Corne Keyboard with MT3 biip Extended 2048 keycaps"
-  widths={[400,800,1600]}
-  aspectRatio={3/2}
-  width={800}
-/>
+<figure class="mt-0">
+  <Picture
+    src={import('./images/corne-keyboard-mt3-biip-extended.jpg')}
+    alt="the Corne Keyboard with MT3 biip Extended 2048 keycaps"
+    widths={[400,800,1600]}
+    aspectRatio={3/2}
+    width={800}
+  />
+  <figcaption class="px-4 mt-0">with MT3 Extended 2048 keycaps</figcaption>
+</figure>
 
-<Picture
-  src={import('./images/front-shot.jpg')}
-  alt="the Corne Keyboard with GMK White on Black Katakana Keycaps"
-  widths={[400,800,1600]}
-  aspectRatio={3/2}
-  width={800}
-/>
-
-## The 3D Printed Case
-
-As mentioned earlier, the 3D printed case and plates have some issues. The surface and edges look a bit rough. Then I know they are _really_ rough when I'm not able put the switches in - the plate slots are a tad too small for the switches because the printing is not precise enough. 🤯
-
-I have to file down 4 sides of each slot so it can accommodate the switch and hold it in place. It took me forever to do all of them (42 slots) and I still am not happy with the results. I am able to put all switches in eventually, but it is not easy.
-
-After using the keyboard for a week, I want to make the case looks nicer.
-I use sandpaper to sand the surface and to remove some sharp edges of the case,
-paint it with a black color spray, leave it dry *under the direct sunlight* for 10 minutes.
-
-And this is a game over. ☀️ 🫠
-
-<div class="full-bleed">
-  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
-      src={import('./images/case-v1-closeup.jpg')}
-      alt="first printed case - tented version. Designed by VOID."
-      widths={[400,800,1600]}
-      aspectRatio={3/2}
-      width={800}
-    />
-    <Picture
-      src={import('./images/case-v1-under-sunlight.jpg')}
-      alt="Putting the 3D printed case under the direct sunlight"
-      widths={[400,800,1600]}
-      aspectRatio={3/2}
-      width={800}
-    />
-  </div>
-</div>
-
-The case is mishaped by the heat and I am not able to put the keyboard back in the case anymore! This is how I learned the hard way that PLA material is actually quite sensitive to the heat. I underestimate also how strong the Sun is in Chiang Mai. I was disappointed.
-
-I manage to fix it a bit by using a hair dryer, so that I can barely put back the keyboard in. The case is however will never go back into its original shape.
-
-This annoys me for a week before I decide to make a new one. This time I contact another shop in Bangkok: [ModCables101](https://www.facebook.com/ModCables101/), and try to make sure the printing quality is better because I don't want to do the finishing again.
-They guarantee that no extra work is needed from the printing, and it would be ready to use of the the box. I choose the normal version instead of the tented version in is print.
-
-And the result is very good. The quality is much much better than another shop. The material is now ABS plastic instead of the PLA. The cost is also much cheaper at about 400THB/$12. All switches go in the plate slots easily.
-
-<div class="full-bleed">
-  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
-      src={import('./images/case-v2.jpg')}
-      alt="the new 3D printed case from another shop"
-      widths={[400,800,1600]}
-      aspectRatio={3/2}
-      width={800}
-    />
-    <Picture
-      src={import('./images/plate-v2.jpg')}
-      alt="Plate printed with the new case. Switches can go in easily."
-      widths={[400,800,1600]}
-      aspectRatio={3/2}
-      width={800}
-    />
-  </div>
-</div>
+<figure class="mt-0">
+  <Picture
+    src={import('./images/front-shot.jpg')}
+    alt="the Corne Keyboard with GMK White on Black Katakana Keycaps"
+    widths={[400,800,1600]}
+    aspectRatio={3/2}
+    width={800}
+  />
+  <figcaption class="px-4 mt-0">with GMK WoB Katakana keycaps</figcaption>
+</figure>
 
 ## Keymaps
 
-The keyboard uses QMK firmware so it is customizable with [Via](https://usevia.app/). However, the number of keys are much less than my previous 65% keyboard. It took me some time to come up with keymaps that work for me. As the time of writing it is still not perfect and I still keep tweaking the layouts from time to time. What I have so far are
+The keyboard uses QMK firmware, so it is customizable with [Via](https://usevia.app/). However, the number of keys are much less than my previous 65% keyboard. It took me some time to come up with keymaps that work for me. As the time of writing, it is still not perfect, and I still keep tweaking the layouts from time to time. What I have so far are
 
 Layer 0: Traditional QWERTY layout.
 
@@ -345,9 +309,11 @@ Layer 2 (raised): Numpads, media controls, and keys to adjust my laptop's screen
   width={800}
 />
 
-I'm not 100% happy with the keymaps yet, but least I don't miss anything in coding or English typing.
-Typing in Thai is still kind of problem because some characters are still missing.
-It's not a big problem for now.
+I'm not 100% happy with the keymaps yet, but at least I don't miss anything in coding or English typing.
+Typing in Thai is still tricky because some characters are still missing.
+It's not a big problem for now. I can fix it later.
+
+---
 
 ## Review / Experiences
 
@@ -356,9 +322,9 @@ It's not a big problem for now.
 Coming from a normal keyboard to a split keyboard does take me some time to get used to.
 
 My typing has been a bit weird and I didn't know it until using a split keyboard.
-I tend to use my right index finger to press `B` and `T` which are on the left side of the keyboard.
-I use both thumbs to press the spacebar, depends on what I was typing.
-And I rarely use my pinky fingers, espcially the right one.
+I tend to use my right index finger to press <kbd>B</kbd> and <kbd>T</kbd> which are on the left side of the keyboard.
+I use both thumbs to press the <kbd>spacebar</kbd>, depending on what I was typing.
+And I rarely use my pinky fingers, especially the right one.
 
 Switching to a split keyboard kind of forces me to fix these issues
 and use fingers properly in their columns.
@@ -366,8 +332,8 @@ My first day was terrible because I tried to fix my issues all at once.
 I struggled a lot and I was very slow in typing.
 
 My frustration lasts a few days before it gets better.
-I get used to typing with the correct fingers, and allowed myself ignore the weak pinky fingers.
-I am more relaxed and more comfortable now. Still make a lot of mistakes but I can type faster and I am back at my normal speed for English typing or coding.
+I get used to typing with the correct fingers and allowed myself to ignore the weak pinky fingers.
+I'm more relaxed and more comfortable now. Still make a lot of mistakes but I can type faster and I'm back at my normal speed for English typing or coding.
 
 Once I get comfortable with it, I think a split keyboard is more fun to use.
 
@@ -395,12 +361,12 @@ Once I get comfortable with it, I think a split keyboard is more fun to use.
 
 **Feeling and Sound**: The keyboard itself works fine and has no big issues.
 The sound is more bright/plasticky than my previous keyboard.
-Feeling when typing is also not the best I have compared to a gasket mounted keyboard with 10 layers of foam and mods.
+Feeling when typing is also not the best I have compared to a gasket-mounted keyboard with 10 layers of foam and mods.
 These are not the main selling point of a split keyboard anyways. I can live with that.
 
-**Ergonomics**: I normally don't have wrist pain or back pain from using traditional keyboard,
-so I don't know if I get much benefits of the ergonomics.
-I feel that there is less travel for each finger. In long term this might help.
+**Ergonomics**: I normally don't have wrist pain or back pain from using a traditional keyboard,
+so I don't know if I get many benefits of the ergonomics of the Corne.
+I feel that there is less travel for each finger. In the long term this might help.
 
 I like the flexibility that I can move and position each side of the keyboard more freely.
 It takes less space on my desk which is also a plus for me.
@@ -408,17 +374,81 @@ It takes less space on my desk which is also a plus for me.
 **Portability**: the Corne keyboard is much smaller and lighter compared to other keyboards I have.
 I can't say it is more portable or is easier to carry around because now I have to carry 2 small keyboards and 2 cables. I'd give this a neutral.
 
-Overall it is not a better keyboard - it is just different, and definitely is more fun to use.
+Overall it is not a better keyboard - it is just different, and is more fun to use.
 
-### Issues / Lessons Learned
+---
+
+### The 3D Printed Case
+
+As mentioned earlier, the 3D-printed case and plates have some issues. The surface and edges look a bit rough. Then I know they are _really_ rough when I'm not able to put the switches in - the plate slots are a tad too small for the switches because the printing is not precise enough. 🤯
+
+I have to file down 4 sides of each slot so it can accommodate the switch and hold it in place. It took me forever to do all of them (42 slots) and I still am not happy with the results. I can put all switches in eventually, but it is not easy.
+
+After using the keyboard for a week, I want to make the case looks nicer.
+I use sandpaper to sand the surface and to remove some sharp edges of the case,
+paint it with a black color spray, and leave it dry *under direct sunlight* for 10 minutes.
+
+And this is a game over. ☀️ 🫠
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('./images/case-v1-closeup.jpg')}
+      alt="first printed case - tented version. Designed by VOID."
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('./images/case-v1-under-sunlight.jpg')}
+      alt="Putting the 3D printed case under the direct sunlight"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
+
+The case is slightly bent by the heat and I'm not able to put the keyboard back in the case anymore! This is how I learned the hard way that PLA material is quite sensitive to heat. I underestimate also how strong the Sun is in Chiang Mai. I was disappointed.
+
+I manage to fix it a bit by using a hair dryer so that I can barely put back the keyboard in. The case however will never go back into its original shape.
+
+This bothers me for a week before I decide to make a new one. This time I contact another shop in Bangkok: [ModCables101](https://www.facebook.com/ModCables101/), and try to make sure the printing quality is better because I don't want to do the finishing again.
+They guarantee that no extra work is needed from the printing, and it would be ready to use of the the box. I choose the normal version instead of the tented version in is print.
+
+And the result is very good. The quality is much, much better than another shop. The material is now ABS plastic instead of the PLA. The cost is also much cheaper at about 400THB/$12. All switches go in the plate slots easily.
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <figure class="mt-0">
+      <Picture
+        src={import('./images/case-v2.jpg')}
+        alt="the new 3D printed case from another shop"
+        widths={[400,800,1600]}
+        aspectRatio={3/2}
+        width={800}
+      />
+    <figcaption class="px-4 mt-0">The 2nd 3D-printed case and plate</figcaption>
+  </figure>
+    <Picture
+      src={import('./images/plate-v2.jpg')}
+      alt="Plate printed with the new case. Switches can go in easily."
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
+
+### Lessons Learned
 
 - Some switches popped out from the hotswap socket sometimes when I put it in my backpack, which is a typical issue for a keyboard with hotswap sockets.
 - There are now 2 cables I always have to carry instead of 1: TRRS and USB cables, which is cumbersome. A wireless build would get rid of this issue.
-- The OLED display module is kinda useless for me. It looks cool but there's no other benefits yet. And I learned later that it is optional.
+- The OLED display module is kind of useless for me. It looks cool but there's no other benefits yet. And I learned later that it is optional.
   - Same goes to the LEDs lights. They are also optional.
 - Getting each part separately rather than buying a set seems to be a cheaper option. From [Rafael's shopping list](https://github.com/rafaeldelboni/buildlogs/blob/main/crkbd-v3.md#part-list-original) it seems everything can be purchased from AliExpress.
 - I didn't socket the controller and the OLED modules as mentioned earlier.
-- I should have asked for quotes for multiple 3D printing service before deciding to choose one.
+- I should have asked for quotes for multiple 3D printing services before deciding to choose one.
 - Never put a PLA thingy under direct sunlight again. 🌞
 
 <div class="">
@@ -462,9 +492,17 @@ Overall it is not a better keyboard - it is just different, and definitely is mo
 
 Overall I'm very happy with my Corne keyboard. It is a fun project and I learn a lot about building mechanical keyboards from it. Using a split keyboard gives me a new experience and joy.
 
-I have already a few ideas for the next steps. It will be in a new post then.
+I already have a few ideas for the next steps. It will be in the future new posts then.
 
 Happy Building
+
+<Picture
+  src={import('./images/top-shot.jpg')}
+  alt="the Corne split keyboard, from the top"
+  widths={[400,800,1600]}
+  aspectRatio={1600/900}
+  width={800}
+/>
 
 <Picture
   src={import('./images/over.jpg')}
