@@ -39,6 +39,10 @@
 
     content: "(missing image: " attr(alt) ")";
   }
+
+  kbd {
+    @apply border border-slate-400 rounded-[3px] px-0.5 text-sm;
+  }
 }
 
 @layer components {
@@ -59,10 +63,6 @@
 
   .full-bleed {
     grid-column: 1 / -1;
-  }
-
-  .prose :where(ul,ol,p):not(:where([class~="not-prose"] *)) {
-    margin-top: 0;
   }
 
   .prose blockquote p {
