@@ -65,8 +65,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        headings: ['IBM Plex Sans Thai', ...defaultTheme.fontFamily.sans],
-        sans: ['Sarabun', ...defaultTheme.fontFamily.sans]
+        headings: ['Frank Ruhl Libre', ...defaultTheme.fontFamily.sans],
+        sans: ['Sarabun', ...defaultTheme.fontFamily.sans],
+        serif: ['Frank Ruhl Libre', ...defaultTheme.fontFamily.serif],
       },
     }
   },
