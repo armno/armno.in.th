@@ -14,10 +14,10 @@ const { pathname } = Astro.url;
   </a>
 
   <nav>
-    <a href="/" class={ `no-underline inline-block mx-4 ${pathname==='/' ? 'font-bold' : 'text-gray-400' }` }>About</a>
-    <a href="/blog/" class={ `no-underline inline-block mx-4 ${pathname.includes('/blog/') ? 'font-bold'
-      : 'text-gray-400' }` }>Blog</a>
-    <a href="/uses/" class={ `no-underline inline-block mx-4 ${pathname.includes('/uses') ? 'font-bold'
-      : 'text-gray-400' }` }>Uses</a>
+    <a href="/" class={ `inline-block mx-4 ${pathname==='/' ? 'font-bold underline' : 'no-underline' }` }>About</a>
+    <a href="/blog/" class={ `inline-block mx-4 ${pathname.includes('/blog/') ? 'font-bold underline'
+      : 'no-underline' }` }>Blog</a>
+    <a href="/uses/" class={ `inline-block mx-4 ${pathname.includes('/uses') ? 'font-bold underline'
+      : 'no-underline' }` }>Uses</a>
   </nav>
 </header>
