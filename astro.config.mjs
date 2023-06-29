@@ -11,7 +11,7 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://armno.in.th/',
+  site: 'https://armno.in.th',
   integrations: [sitemap(), mdx(), tailwind(), image({
     serviceEntryPoint: '@astrojs/image/sharp'
   })]

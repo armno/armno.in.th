@@ -24,7 +24,7 @@ const defaultDescription = `I'm Armno - a Thai frontend developer at buzzwoo. Ba
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description ? description : defaultDescription}>
 {thumbnail &&
-<meta property="og:image" content={Astro.site.href + thumbnail}>
+<meta property="og:image" content={Astro.site?.origin + thumbnail}>
 }
 
 <meta property="og:url" content={canonicalURL}>
