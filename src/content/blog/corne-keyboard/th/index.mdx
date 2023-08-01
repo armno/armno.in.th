@@ -1,0 +1,493 @@
+---
+title: 'บันทึกการทำ Corne Keyboard'
+pubDate: '2023-06-26T15:26:42.937Z'
+language: th
+thumbnail: /images/corne-keyboard/post-thumbnail.jpg
+description: บันทึกการทำ Corne (crkbd) keyboard ซึ่งเป็น mechanical split keyboard ตัวแรกของผมครับ
+slug: corne-keyboard--th
+tags:
+- Mechanical Keyboards
+- DIY
+- Side Projects
+categories:
+- Life
+---
+
+import { Picture, Image } from '@astrojs/image/components';
+
+Corne เป็น mechanical split keyboard ตัวแรกที่ผมได้ลองทำและลองใช้งานครับ
+โพสต์นี้อยากจะเล่าถึงที่มาที่ไป และประสบการณ์ที่ได้จากการทำ และลองใช้งานคีย์บอร์ดตัวนี้ในชีวิตประจำวันครับ
+
+> โพสต์นี้ถือว่าเป็นภาคเสริมของโพสต์ [Building Corne - a Mechanical Split Keyboard](https://armno.in.th/blog/corne-keyboard/) ซึ่งเป็นบันทึกเวอร์ชั่นภาษาอังกฤษของคีย์บอร์ดตัวนี้
+เนื้อหาอาจจะไม่เหมือนกันซะทีเดียว โพสต์นี้อยากเพิ่มเติมในสิ่งที่ไม่ได้เล่าในโพสต์แรกครับผม
+
+ส่วนตัวผมเองตั้งแต่เริ่มทำ mechanical keyboard มาก็พยายามยึดกับขนาดที่ 60% หรือ 65% มาตลอด
+เป็น size ที่พอดีสำหรับผม ดูไม่เทอะทะเกินจำเป็น และใช้งานได้จริง
+
+<div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+  <figure>
+    <Picture
+      class="mt-0 mb-2"
+      src="/images/uses/ginkgo65-keyboard.jpg"
+      alt="my Ginkgo65 mechanical keyboard at work"
+      widths={[300,600,1200]}
+      aspectRatio={1200/675}
+      width={1200}
+    />
+    <figcaption class="mt-0">Gingko65</figcaption>
+  </figure>
+  <figure>
+    <Picture
+      class="mt-0 mb-2"
+      src={import('../images/portico.jpg')}
+      alt="My Portico Keyboard with MT3 Susuwatari Keycaps"
+      widths={[300,600,1200]}
+      aspectRatio={1200/675}
+      width={1200}
+    />
+    <figcaption class="mt-0">Portico</figcaption>
+  </figure>
+</div>
+
+keyboard ที่ใช้งานตัวล่าสุดคือ Ginkgo65 / Portico แล้วก็ Tofu 60% ทั่วไป
+ทุกตัวที่ผมทำ จะมีเป้าหมายเพื่อใช้งานเป็น keyboard ตัวหลัก (daily driver)
+และใช้งานจริงจังเสมอจนกว่าจะเปลี่ยนตัวใหม่ครับ
+
+งานหลักในแต่ละวันของผมคือ เขียน code / เขียน document / chat กับเพื่อนร่วมงานตอนทำงานครับ
+
+## ทำไมต้อง split keyboard
+
+[Split keyboard](https://github.com/diimdeep/awesome-split-keyboards) ตามที่ผมเข้าใจ คือคีย์บอร์ดที่แยกข้างซ้ายกับข้างขวาแยกกันชัดเจนครับ
+จุดประสงค์ก็คือ ทำให้สามารถจัดวางคีย์บอร์ดฝั่งซ้ายและขวาในลักษณะต่างๆ ตามใจชอบ
+และให้เข้ากับสรีระของเราได้มากขึ้นครับ มือซ้าย-ขวาจะห่างกันเท่าไหร่
+หรือจะเอียงเท่าไหร่ก็แล้วแต่เราจะจัดวางครับ
+
+<figure>
+  <Image
+    src="https://i.ytimg.com/vi/wTMcH7u-vu0/maxresdefault.jpg"
+    alt="Corne wireless keyboard by Josean Martinez"
+    widths={[300,600,1200]}
+    aspectRatio={1200/675}
+    width={1200}
+  />
+  <figcaption class="px-4">
+    Photo credit: Josean Martinez's build https://www.youtube.com/watch?v=wTMcH7u-vu0
+  </figcaption>
+</figure>
+
+ก่อนหน้านี้ไม่ค่อยอินกับ split keyboard เท่าไหร่ รู้สึกว่ารูปร่างมันประหลาด
+น่าจะใช้งานยาก คิดว่าคงไม่เหมาะกับตัวเอง ไม่คิดว่าผมจะใช้ split keyboard ได้เลยด้วยซ้ำ
+
+แต่แล้วอะไรสักอย่างก็พาไปเจอกับ video [**How to build a handwired keyboard**](https://www.youtube.com/watch?v=hjml-K-pV4E) ของคุณ Joe Scotto
+ซึ่งผมก็กดเข้าไปดู video อื่นๆ ในช่อง YouTube ของเขา และทำให้ได้รู้จัก split keyboard ที่ชื่อว่า Corne ครับ
+
+ผมสะดุดตากับความมินิมอล และในอีกมุมหนึ่งก็สงสัยว่ามันจะทำยากไหม เลยอยากลองทำดูครับ (จะใช้งานได้หรือไม่ได้ เดี๋ยวค่อยว่ากัน แต่อยากลองทำ)
+
+อีกอย่างที่สำคัญ ดูแล้วมันน่าจะเป็น mechanical keyboard ตัวแรก ที่ผมไม่ต้องปวดหัวกับ stabilizer ด้วยครับ
+
+### หาของ
+
+ดู part list ของ Corne แล้วมึน นอกจากเยอะแล้วยังไม่รู้ด้วยว่าอะไรเป็นอะไร ผมก็เลย play safe ด้วยการสั่งเป็นชุดมาจาก Etsy ชุดนี้ครับ [Crkbd v3 (Corne Keyboard) MX Hotswap DIY Mechanical Ergonomic Hotswap Split Keyboard PCB](https://www.etsy.com/listing/972779149/crkbd-v3-corne-keyboard-mx-hotswap-diy) config ที่เลือกเป็น PCB + Parts กับตัว controller ที่เป็น USB type C รวมราคาประมาณ 4300 บาท
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('../images/parts-box.jpg')}
+      alt="Corne keyboard parts delivered in a small box"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('../images/corne-pcb.jpg')}
+      alt="Corne PCBs"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
+
+ไม่ได้เลือก case กับ plate เพราะคิดว่าถ้าหาเองหรือทำเองน่าจะถูกกว่า ไปเจอเคส 3D Print จากใน[คลิปนี้](https://www.youtube.com/watch?v=hXohJwatIpA) ซี่งเขาก็[แจกไฟล์ให้ฟรีด้วยที่ printables.com](https://www.printables.com/model/347524-corne-keyboard-case) ผมก็ส่งไปให้ร้าน 3D print ใกล้บ้านทำออกมา ราคารวมทั้ง case และ plate อยู่ที่ประมาณ 900 บาทครับ
+
+งานภายนอกก็ดูโอเคดี แต่ปัญหามันไปเจอตอนประกอบครับ เพราะว่า plate ที่ได้มานั้นมัน**ใส่สวิตช์ไม่ลงแทบเลย** ขนาดช่องมันเล็กกว่าตัวสวิตช์อยู่นิดเดียว คิดว่าอาจเป็นเพราะคุณภาพงานพิมพ์ 3 มิติไม่ละเอียดพอ ผมแก้ด้วยการใช้ตะไบฝนด้านขอบในของแต่ละช่อง จนกว่ามันจะใส่สวิตช์ลงไปได้ ใช้เวลาและพลังเยอะอยู่เหมือนกันครับขั้นตอนนี้
+
+<Picture
+  src={import('../images/case-v1.jpg')}
+  alt="The 3D printed case for the Corne keyboard. Designed by VOID"
+  widths={[400,800,1600]}
+  aspectRatio={3/2}
+  width={800}
+/>
+
+## ลงมือทำ
+
+พอได้ของมาครบแล้วก็ลงมือประกอบตาม guide ของคุณ [**Rafael Delboni**](https://www.youtube.com/watch?v=O49hrYDCL3o) ที่มีทั้งเวอร์ชั่น video กับเวอร์ชั่น text ด้วย
+ผมตาม guide ของเขาเพราะว่าดูแล้วเข้าใจและเห็นภาพมากกว่า official guide ครับ
+
+และเนื่องจากตัวคีย์บอร์ดมีสองชิ้นแยกกัน ผมเลยตั้งใจว่าจะทำให้เสร็จข้างขวาก่อน แล้วค่อยไปทำแบบเดิมอีกทีกับข้างซ้ายครับ
+
+### SMD components
+
+เริ่มที่ตัว SMD diode ก่อนเลย ก็คือเจ้าตัวอุปกรณ์เล็กจิ๋วตัวนี้ที่ต้องบัดกรีแบบแปะลงไปบนแผงวงจร ซึ่งเป็นครั้งแรกของผมเหมือนกันครับที่ต้องบัดกรีอุปกรณ์ SMD (Surface-mounted Device) แบบนี้ครับ
+
+นอกจากตัว diode ที่มีขนาดเล็กแล้ว ยังต้องวางให้ถูกทิศทางด้วย บนตัว diode จะมีลูกศรบอกครับ
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <figure class="mt-0">
+      <Picture
+        src={import('../images/small-diode.jpg')}
+        alt="The size of a diode compared to the tip of the tweezer and the PCB"
+        widths={[400,800,1600]}
+        aspectRatio={3/2}
+        width={800}
+      />
+      <figcaption class="px-4 mt-0">ขนาดเล็กจิ๋วของตัว Diode SOD-123</figcaption>
+    </figure>
+    <figure class="mt-0">
+      <Picture
+        src={import('../images/soldered-diodes.jpg')}
+        alt="Soldered diodes. Many bad soldering there."
+        widths={[400,800,1600]}
+        aspectRatio={3/2}
+        width={800}
+      />
+      <figcaption class="px-4 mt-0">ทำอยู่นานกว่าจะเสร็จหนึ่งข้าง พร้อมรอยบัดกรีแปลกๆ</figcaption>
+    </figure>
+  </div>
+</div>
+
+ต้องใช้ diode หนี่งตัวต่อสวิตช์หนี่งตัว ก็ต้องบัดกรีทั้งหมด 42 ตัว ค่อนข้างทุลักทุเลครับเพราะผมใช้หัวแร้งกับลวดตะกั่วบัดกรีธรรมดา ทำเสร็จครึ่งนึงคือ 21 ตัวแรกต้องพักเหนื่อยก่อน
+
+ระหว่างพักก็ไปหาดูเทคนิคการบัดกรีชิ้นส่วนเล็กๆ ใน Youtube ก็เจอ video [**Soldering Surface Mount Components | Soldering Basics**](https://www.youtube.com/watch?v=MjiJgniYZmY)
+ถึงได้ค้นพบว่า โลกนี้มีสิ่งที่เรียกว่า ตะกั่วเหลว หรือ Soldering Paste อยู่ด้วย ผมไม่เคยเห็นมาก่อนแต่ดูแล้วน่าจะใช้งานได้สะดวกดี เลยสั่งมาลอง
+
+<Picture
+  class="mx-auto"
+  src={import('../images/relife-soldering-paste.jpg')}
+  alt="Relife soldering paste 183c"
+  widths={[400,800,1600]}
+  aspectRatio={1}
+  width={400}
+/>
+
+ก็พบว่า มันสะดวกขึ้นเยอะมากๆ ผมรู้สึกขอบคุณ video ต้นทางจริงๆ ที่ทำให้ได้รู้จักสิ่งนี้ ถือว่าได้เปิดโลกเลย 55
+
+ตัวตะกั่วเหลวมันจะข้นๆ หนืดๆ พอวางชิ้นส่วนเล็กจิ๋วลงไปมันก็จะช่วยยึดไว้ไม่ให้ขยับง่าย เอาหัวแร้งจิ้มลงไปก็ติดเลย ทำงานเสร็จไวขึ้นมาก และทำให้รอยบัดกรีสวยกว่าด้วย เป็นอุปกรณ์เปิดโลกของผมเลย
+
+> จริงๆ ใช้ตะกั่วเหลวคู่กับปืนเป่าลมร้อน (heat gun) น่าจะง่ายกว่า สามารถบัดกรีพร้อมกันหลายๆ ตัวได้ แต่ผมลองแล้วไม่ค่อยถนัดครับ ถนัดเอาปลายหัวแร้งค่อยๆ จิ้มเอามากกว่า
+
+ต่อจาก diode ก็เป็น hotstwap socket ของสวิตช์, ไฟ underglow LED, แล้วก็ไฟ LED ฃองสวิตช์แต่ละตัว วิธีทำก็เหมือนๆ กันเพราะเป็นชื้นส่วนประเภท SMD เหมือนกันหมด พวกที่เป็นไฟ LED นี่ต้องวางให้ถูกทิศทางด้วย (ใน build guide มีเขียนบอกไว้ละเอียด) ส่วนตัว hotswap socket ไม่ยากเท่าไหร่เพราะชิ้นใหญ่กว่าเพื่อนครับ
+
+1 ปุ่มกดต้องบัดกรี 3 อย่างคือ diode, hotswap socket, และไฟ LED ทั้งคีย์บอร์ดมี 42 ปุ่ม ก็คูณ 3 เข้าไป
+โดยรวมๆ แล้วก็บัดกรีกันตาแตกครับ เยอะกว่าที่เคยทำมากๆ
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('../images/soldered-gateron-hotswap-sockets.jpg')}
+      alt="Gateron Hotswap sockets are soldered in place"
+      widths={[400,800,1600]}
+      aspectRatio={16/9}
+      width={800}
+    />
+    <Picture
+      src={import('../images/soldered-leds.jpg')}
+      alt="all LEDs are soldered to the PCB"
+      widths={[400,800,1600]}
+      aspectRatio={16/9}
+      width={800}
+    />
+  </div>
+</div>
+
+### Microcontroller & OLED modules
+
+ขั้นตอนต่อไปก็เป็นการบัดกรีชิ้นส่วนบริเวณ controller ผมเริ่มจากตัว TRRS jack กับ reset switch ก่อน เป็นการบัดกรีแบบ through-hole ธรรมดาแบบที่เคยทำมากับ keyboard ตัวก่อนๆ ครับ
+
+จากนั้นก็ติด microcontroller เข้ากับ PCB ขั้นตอนนี้ผมก็งงๆ เพราะในชุดอุปกรณ์ที่ผมมี มันไม่เหมือนของคุณ Rafael เลยซะทีเดียว ก็เลยทำตามที่เข้าใจ คือบัดกรี microcontroller กับ socket pin _ลงไปบนบอร์ด PCB เลย_ จอ OLED ก็ทำเหมือนกัน
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('../images/pro-micro-pins.jpg')}
+      alt="Soldered pins for pro-micro"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('../images/sea-micro.jpg')}
+      alt="the controller used for this keyboard is the Sea-Micro controller"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('../images/soldered-pro-micro.jpg')}
+      alt=""
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('../images/oled-module-installed.jpg')}
+      alt=""
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
+
+### ทดสอบ
+
+ขั้นตอนนี้ตื่นเต้นที่สุดละครับ เพราะที่ทำมาทั้งหมดนี่ยังไม่รู้เลยว่ามันจะเวิร์กรึเปล่า
+พอเสียบสายคีย์บอร์ดเข้ากับคอม ก็เห็นไฟ LED ติดทุกดวงก่อนเป็นอย่างแรก
+เอาล่ะ อย่างน้อยไฟก็ไม่พัง
+
+จากนั้นก็ทดสอบแต่ละปุ่มด้วย key tester ใน VIA ผมใช้สวิตช์ใหม่เสียบลงไปทีละช่อง
+ทดสอบทีละปุ่มจนครบ พบว่าทุกปุ่มใช้งานได้ ไม่มีปุ่มไหนดับเลย (ทั้งที่จริงๆ ทำใจรอไว้แล้วว่ามันต้องดับสักปุ่มแน่)
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('../images/per-key-led.jpg')}
+      alt="Per-key LEDs of the Corne Keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('../images/underglow-led.jpg')}
+      alt="Underglow LEDs of the Corne Keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('../images/rgb.jpg')}
+      alt="RGB LEDs of the Corne Keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
+
+### รวมร่าง
+
+หลังจากทดสอบว่าทุกอย่างเวิร์กแล้ว ก็ถึงเวลาประกอบตัวคีย์บอร์ดเข้ากับ plate กับ case พร้อมใส่สวิตช์กับ keycaps ซึ่งผมก็ย้ายมาจากคีย์บอร์ดตัวก่อนหน้า สวิตช์เป็น C3 Tangerine 67g ส่วน keycaps ตอนแรกลองใส่ MT3 Extended 2048 ดูก่อน พบว่าสูงไป พิมพ์ยาก เลยเปลี่ยนใส่ GMK WoB Katakana แทนครับ
+
+<figure class="mt-0">
+  <Picture
+    src={import('../images/corne-keyboard-mt3-biip-extended.jpg')}
+    alt="the Corne Keyboard with MT3 biip Extended 2048 keycaps"
+    widths={[400,800,1600]}
+    aspectRatio={3/2}
+    width={800}
+  />
+  <figcaption class="px-4 mt-0">with MT3 Extended 2048 keycaps</figcaption>
+</figure>
+
+<figure class="mt-0">
+  <Picture
+    src={import('../images/front-shot.jpg')}
+    alt="the Corne Keyboard with GMK White on Black Katakana Keycaps"
+    widths={[400,800,1600]}
+    aspectRatio={3/2}
+    width={800}
+  />
+  <figcaption class="px-4 mt-0">with GMK WoB Katakana keycaps</figcaption>
+</figure>
+
+## ใช้งานจริง
+
+### การพิมพ์
+
+เนื่องจากผมไม่ได้พิมพ์แบบสัมผัสถูกต้อง 100% ใช้นิ้วและมือมั่วๆ ไปหมด พอลองใช้งานจริงก็ต้องปรับตัวบ้าง
+แต่มันก็ไม่ได้ยากจนถึงกับพิมพ์ไม่ได้ขนาดนั้นครับ
+
+สิ่งที่เห็นได้ชัดเจนตั้งแต่แรกคือการใช้นิ้วที่ไม่ถูกต้องในการกดบางปุ่ม เช่น ผมใช้นิ้วชี้ข้างขวากดปุ่ม B, ใช้นิ้วนางแทนนิ้วก้อยเป็นส่วนมาก, ส่วนปุ่ม spacebar พบว่าผมใช้นิ้วหัวแม่มือทั้งสองข้างในการกด ขึ้นอยู่กับสิ่งที่กำลังพิมพ์อยู่ เป็นแบบนี้มาตั้งนานโดยที่ไม่รู้ตัวเหมือนกัน
+
+พอมาใช้ split keyboard ทำให้เห็นปัญหาพวกนี้ชัดเจน ผมเลยพยายามแก้มันพร้อมๆ กันทั้งหมดเลยตั้งแต่แรก ทั้งการวางมือและใช้นิ้วให้ถูกต้องตาม column, พยายามใช้นิ้วก้อยให้มากขึ้น พบว่าวันแรกนั้นลำบากและฝืนมากครับ พิมพ์แทบไม่ได้เลย มันเหมือนต้องมาฝึกใช้คีย์บอร์ดใหม่ตั้งแต่แรก
+
+คิดว่าลำบากเกินไป และทำงานได้ช้า ในวันที่ 2 ผมเลยลองกลับไปพิมพ์มั่วๆ แบบเดิมอีก พบว่าชีวิตสบายขึ้นเยอะเลย เรื่องที่ต้องแก้ก็คือแยกการกดปุ่มมือซ้าย-ขวา ไม่ข้ามฝั่ง ส่วนที่เหลือก็ปล่อยไปตามความเคยชิน ไม่ได้ใช้นิ้วแบบถูกและตรงตาม column 100% แบบนี้ใช้งานได้ง่ายและสนุกกว่าสำหรับผมครับ
+
+ใช้เวลาประมาณ 1-2 สัปดาห์ในการปรับตัว จนกลับมาพิมพ์ได้ในความเร็วเท่าเดิมสำหรับการพิมพ์ภาษาอังกฤษ (~50WPM) ส่วนภาษาไทยยังคงช้าอยู่ แต่ก็ใช้พิมพ์คุยงาน เขียนบล็อกได้ครับ
+
+นอกจากการที่มันแยกร่าง ซ้าย-ขวา แล้ว ความแตกต่างอีกอย่างหนึ่งจาก keyboard ทั่วไปคือการที่ปุ่มมันไม่ได้เยื้องกันในแนวตั้ง แต่จะเยื้องกันในแนวนอนแทน ซึ่งข้อดีของมันคือ column สำหรับนิ้วที่สั้นๆ อย่างนิ้วก้อย มันถูกเลื่อนลงมาให้ต่ำลง ทำให้ไม่ต้องยืดนิ้วมากเพื่อไปกดแป้นพิมพ์ และทำให้พิมพ์ง่ายขึ้นครับ พอปรับตัวได้แล้วผมชอบแบบของ split keyboard มากกว่าครับ
+
+### ตัว keyboard
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('../images/corne-left.jpg')}
+      alt="Left part of the Corne Keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('../images/corne-right.jpg')}
+      alt="Right part of the Corne Keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
+
+เรื่อง feeling การพิมพ์ของสวิตช์นั้นไม่ต่างจากเดิม แต่ตัว case กับ plate ก็ให้ feeling แข็งๆ และกลวงๆ หน่อย ถึงแม้เป็นพลาสติกแต่เสียงก็ไม่ได้แย่มาก ส่วนตัวผมแล้วไม่ได้คาดหวังเรื่องเสียงและสัมผัสเท่าไหร่จาก keyboard ตัวนี้ครับ
+
+การพกพานั้นดูเหมือนจะง่าย แต่ก็ไม่ได้ง่ายซะทีเดียว เพราะต้องพก keyboard 2 ชิ้น กับสายอีก 2 เส้น บางครั้งก็รู้สีกพะรุงพะรัง ส่วนเรื่องอื่นที่เจอก็เหมือน keyboard hotswap ทั่วไปที่สวิตช์ชอบหลุดเวลายัดใส่กระเป๋า แต่ตอนพิมพ์ไม่หลุดครับ
+
+### Keymaps
+
+ต้องปรับตัวเยอะอยู่เหมือนกันครับ มาจาก 60/65% ปัญหาแรกก็คือแถวบนสุดหายหมดเลย ต่อมาก็เป็นปุ่มที่อยู่บริเวณขวาบนของคีย์บอร์ดทั่วไป ที่ก็หายไปด้วยเหมือนกัน การตั้ง keymap ของผมเลยมีทั้งการใช้ layer กับการเรียงตำแหน่งปุ่มใหม่ด้วยครับ ซึ่งทุกวันนี้ก็ยังไม่ลงตัว 100% แต่ก็ถือว่าใช้งานได้ไม่ติดขัดครับ
+
+- Default layer (Layer 0) เป็น layout QWERTY ธรรมดา ผมเอาปุ่ม space ไว้ที่ thumb key ข้างซ้าย ส่วน enter ไว้ที่ thumb key ข้างขวาครับ
+- Layer 1 สำหรับเครื่องหมายต่างๆ ที่ใช้กับการเขียนโค้ด พร้อมกับ arrow keys - กดปุ่ม caps lock / mo(1) ค้างไว้จะเป็น layer 1
+- Layer 2 สำหรับใช้งาน numpad และ media keys ต่างๆ - กดปุ่ม mo(2) ค้างไว้จะเป็น layer 2
+- Layer 3 สำหรับดึงแถวบนสุดลงมา สำหรับการพิมพ์ภาษาไทยโดยเฉพาะ layer เซ็ตให้ใช้งาน mod-tap กับปุ่ม tab ของ layer 0 คือถ้ากดครั้งเดียวให้เป็น tab, กดค้างไว้ให้เปลี่ยนเป็น layer 3 ครับ
+
+พอใช้งาน split keyboard จริงจังก็พบว่า การพิมพ์ทั่วไปนั้น “หนักขวา” เป็นส่วนมาก ทั้งอักษรพิเศษต่างๆ ที่ใช้เขียนโค้ด หรือจะเป็นการพิมพ์ภาษาไทยที่อักษรที่ใช้บ่อยๆ อยู่ทางฝั่งขวามือมากกว่า จะได้ใช้งานนิ้วก้อยข้างซ้าย เพื่อเปิด layer 1 กับ layer 3 บ่อยมากครับ
+
+
+### ทำสี case + ทำ case ใหม่
+
+หลังจากที่ใช้งานไปได้ประมาณ 1 สัปดาห์ ผมอยากให้งานของตัว case เนียนขึ้นอีกหน่อย ก็เลยเอาเคสมาขัดด้วยกระดาษทรายและพ่นสีดำทับอีกรอบ แล้วนำไปวางตากแดดไว้ไม่ถึง 10 นาทีเพื่อให้สีแห้งไว...
+
+ตรงนี้แหละครับที่หายนะบังเกิด เพราะว่าตัวเคสนั้นโดนความร้อนจากแสงแดดทำให้บิดและผิดรูป ผมยัดตัว PCB กลับเข้าไปไม่ได้เลย ต้องแก้ด้วยการเอาไดร์เป่าผมเป่า แล้วใช้มือดัดกลับคืน สุดท้ายก็แก้แค่พอใช้ได้ แต่มันก็ไม่เหมือนเดิมแล้ว
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('../images/case-v1-closeup.jpg')}
+      alt="first printed case - tented version. Designed by VOID."
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+    <Picture
+      src={import('../images/case-v1-under-sunlight.jpg')}
+      alt="Putting the 3D printed case under the direct sunlight"
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
+
+ผมเลยสั่งทำเคสใหม่อีกครั้ง คราวนี้ใช้บริการร้าน [ModCables101](https://www.facebook.com/ModCables101/) งานดีกว่าร้านแรกมาก ไม่ต้องมาทำอะไรต่อเลย ราคาก็ถูกกว่าตั้งเยอะด้วย หลังจากนี้พอแล้ว ไม่ขัดผิวไม่ทำสีอะไรต่อล่ะครับ
+
+<div class="full-bleed">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <figure class="mt-0">
+      <Picture
+        src={import('../images/case-v2.jpg')}
+        alt="the new 3D printed case from another shop"
+        widths={[400,800,1600]}
+        aspectRatio={3/2}
+        width={800}
+      />
+    <figcaption class="px-4 mt-0">The 2nd 3D-printed case and plate</figcaption>
+  </figure>
+    <Picture
+      src={import('../images/plate-v2.jpg')}
+      alt="Plate printed with the new case. Switches can go in easily."
+      widths={[400,800,1600]}
+      aspectRatio={3/2}
+      width={800}
+    />
+  </div>
+</div>
+
+## สรุป
+
+การลองทำ Corne split keyboard ครั้งนี้สนุกดีครับ ได้ลองผิดลองถูก และได้เรียนรู้อะไรใหม่ๆ เกี่ยวกับการทำ mechanical keyboard อีกเยอะเลย
+
+<div class="">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('../images/stacked-modules.jpg')}
+      alt="Stacked modules: PCB / controller / OLED"
+      widths={[400,800,1600]}
+      aspectRatio={1}
+      width={800}
+    />
+    <Picture
+      src={import('../images/oled-display-module.jpg')}
+      alt="The OLED display module"
+      widths={[400,800,1600]}
+      aspectRatio={1}
+      width={800}
+    />
+  </div>
+</div>
+<div class="">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('../images/pcb-back.jpg')}
+      alt="The back of the Corne PCB"
+      widths={[400,800,1600]}
+      aspectRatio={1}
+      width={800}
+    />
+    <Picture
+      src={import('../images/back-case.jpg')}
+      alt="The back side of the 3D printed case"
+      widths={[400,800,1600]}
+      aspectRatio={1}
+      width={800}
+    />
+  </div>
+</div>
+<div class="">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('../images/top-shot.jpg')}
+      alt="the Corne split keyboard, from the top"
+      widths={[400,800,1600]}
+      aspectRatio={1600/900}
+      width={800}
+    />
+  </div>
+</div>
+<div class="">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+    <Picture
+      src={import('../images/over.jpg')}
+      alt="the Corne split keyboard"
+      widths={[400,800,1600]}
+      aspectRatio={16/9}
+      width={800}
+    />
+  </div>
+</div>
+
+### สุดท้าย…
+
+อยากจะจบแบบ feel good เหมือนกัน แต่หลังจากที่ใช้งานไปได้ประมาณ 1 เดือน เจ้า Corne split keyboard ตัวแรกของผมมันก็พังครับ
+ใช้งานอยู่ดีๆ มันก็พังกลางอากาศเลย จะใช้งานได้เฉพาะข้างที่เสียบสาย USB ต่อกับคอมเท่านั้น บนจอก็มีกราฟิกประหลาดๆ ขึ้นบางครั้ง
+
+<Picture
+  src={import('../images/weird-graphic-oled-screen.jpg')}
+  alt="Weird graphics shown the OLED screen. Something is not right."
+  widths={[400,800]}
+  aspectRatio={1}
+  width={400}
+/>
+
+ผมหาสาเหตุและลองซ่อมอยู่สักพัก ลอง reset / flash firmware ใหม่หลายรอบ แต่ก็ไม่เวิร์กครับ คิดว่าอาจจะพังที่สายหรือตัวแจ็ค TRRS ทำให้ keyboard สองข้างคุยกันไม่รู้เรื่อง
+แต่ผมมีสายนี้แค่เส้นเดียว เลยไม่ได้ใช้สายเส้นอื่นทดสอบว่าเดาถูกไหม
+
+ไหนๆ ก็พังแล้ว ผมก็เลยจะถือโอกาสนี้ อัพเกรดมันเป็นให้ wireless split keyboard ซะเลย จะได้ไม่ต้องมีสายให้รุงรัง
+
+ไว้มาอัพเดทในตอนต่อไปครับ
