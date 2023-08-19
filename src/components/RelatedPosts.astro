@@ -35,7 +35,7 @@ const relatedPosts = sampleSize(allRelatedPosts, 3);
       <h4 class="text-sm text-slate-600 uppercase tracking-widest font-bold mb-4">
         Related posts
       </h4>
-      <ul class="grid lg:grid-cols-3 gap-x-8">
+      <ul class="grid gap-y-8 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
         {relatedPosts.map((post) => (
           <PostItem
             url={post.slug}
