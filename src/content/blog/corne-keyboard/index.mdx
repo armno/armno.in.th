@@ -14,6 +14,7 @@ categories:
 ---
 
 import { Image } from 'astro:assets';
+import Picture from '@components/Picture.astro';
 
 When it comes to using mechanical keyboards, my preference are the 60%/65% ones where I find a balance between how they look and the ease of use.
 My previous keyboards were a Gingko65, a Portico, and [a](https://armno.in.th/blog/building-mechanical-keyboard/) [few](https://armno.in.th/blog/mechanical-keyboard-build-2/) [of](https://armno.in.th/blog/60-percent-mechanical-keyboard-with-arrows/) custom 60% ones.
@@ -26,8 +27,7 @@ I think I have enough keyboards ... _at this size_ at least.
       class="mt-0 mb-2"
       src="/images/uses/ginkgo65-keyboard.jpg"
       alt="my Ginkgo65 mechanical keyboard at work"
-      widths={[300,600,1200]}
-      width={1200}
+      width={1600} height={900}
     />
     <figcaption class="mt-0">Gingko65</figcaption>
   </figure>
@@ -36,8 +36,7 @@ I think I have enough keyboards ... _at this size_ at least.
       class="mt-0 mb-2"
       src={import('./images/portico.jpg')}
       alt="My Portico Keyboard with MT3 Susuwatari Keycaps"
-      widths={[300,600,1200]}
-      width={1200}
+      width={1600} height={900}
     />
     <figcaption class="mt-0">Portico</figcaption>
   </figure>
@@ -51,8 +50,8 @@ Mainly because I'm curious, and partly because there are no stabilizers involved
   <Image
     src="https://i.ytimg.com/vi/wTMcH7u-vu0/maxresdefault.jpg"
     alt="Corne wireless keyboard by Josean Martinez"
-    widths={[300,600,1200]}
-    width={1200}
+
+    width={1200} height={675}
   />
   <figcaption class="px-4">
     Photo credit: Josean Martinez's build https://www.youtube.com/watch?v=wTMcH7u-vu0
@@ -76,19 +75,19 @@ While waiting for the parts to deliver, I check out different case designs and c
     <Picture
       src={import('./images/parts-box.jpg')}
       alt="Corne keyboard parts delivered in a small box"
-      widths={[400,800,1600]}
+
       width={800}
     />
     <Picture
       src={import('./images/corne-pcb.jpg')}
       alt="Corne PCBs"
-      widths={[400,800,1600]}
+
       width={800}
     />
     <Picture
       src={import('./images/case-v1.jpg')}
       alt="The 3D printed case for the Corne keyboard. Designed by VOID"
-      widths={[400,800,1600]}
+
       width={800}
     />
   </div>
@@ -109,7 +108,7 @@ I start with soldering **SMD** (Surface Mounting Device) diodes (_SOD-123_), whi
       <Picture
         src={import('./images/small-diode.jpg')}
         alt="The size of a diode compared to the tip of the tweezer and the PCB"
-        widths={[400,800,1600]}
+
         width={800}
       />
       <figcaption class="px-4 mt-0">The size of a diode compared to the tip of a tweezer.</figcaption>
@@ -118,7 +117,7 @@ I start with soldering **SMD** (Surface Mounting Device) diodes (_SOD-123_), whi
       <Picture
         src={import('./images/soldered-diodes.jpg')}
         alt="Soldered diodes. Many bad soldering there."
-        widths={[400,800,1600]}
+
 
         width={800}
       />
@@ -137,7 +136,7 @@ And Soldering Paste is a game changer for me.
   class="mx-auto"
   src={import('./images/relife-soldering-paste.jpg')}
   alt="Relife soldering paste 183c"
-  widths={[400,800,1600]}
+
 
   width={400}
 />
@@ -153,14 +152,14 @@ After that, it is soldering the LEDs. There are 12 underglow LEDs (_WS2812B_) an
     <Picture
       src={import('./images/soldered-gateron-hotswap-sockets.jpg')}
       alt="Gateron Hotswap sockets are soldered in place"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
     <Picture
       src={import('./images/soldered-leds.jpg')}
       alt="all LEDs are soldered to the PCB"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
@@ -184,14 +183,14 @@ I learn later on that what I miss was [socketing](https://github.com/foostan/crk
     <Picture
       src={import('./images/pro-micro-pins.jpg')}
       alt="Soldered pins for pro-micro"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
     <Picture
       src={import('./images/sea-micro.jpg')}
       alt="the controller used for this keyboard is the Sea-Micro controller"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
@@ -202,14 +201,14 @@ I learn later on that what I miss was [socketing](https://github.com/foostan/crk
     <Picture
       src={import('./images/soldered-pro-micro.jpg')}
       alt=""
-      widths={[400,800,1600]}
+
 
       width={800}
     />
     <Picture
       src={import('./images/oled-module-installed.jpg')}
       alt=""
-      widths={[400,800,1600]}
+
 
       width={800}
     />
@@ -231,21 +230,21 @@ The next step is to check if all the keys work with the key tester in Via. I tes
     <Picture
       src={import('./images/per-key-led.jpg')}
       alt="Per-key LEDs of the Corne Keyboard"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
     <Picture
       src={import('./images/underglow-led.jpg')}
       alt="Underglow LEDs of the Corne Keyboard"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
     <Picture
       src={import('./images/rgb.jpg')}
       alt="RGB LEDs of the Corne Keyboard"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
@@ -263,7 +262,7 @@ I put the switches and keycaps from my previous keyboards in. And I have to say 
   <Picture
     src={import('./images/corne-keyboard-mt3-biip-extended.jpg')}
     alt="the Corne Keyboard with MT3 biip Extended 2048 keycaps"
-    widths={[400,800,1600]}
+
 
     width={800}
   />
@@ -274,7 +273,7 @@ I put the switches and keycaps from my previous keyboards in. And I have to say 
   <Picture
     src={import('./images/front-shot.jpg')}
     alt="the Corne Keyboard with GMK White on Black Katakana Keycaps"
-    widths={[400,800,1600]}
+
 
     width={800}
   />
@@ -294,7 +293,7 @@ Layer 0: Traditional QWERTY layout.
 <Picture
   src={import('./images/layer0.png')}
   alt="Layer 0 of my Corne Keyboard."
-  widths={[400,800,1600]}
+
   width={800}
 />
 
@@ -303,7 +302,7 @@ Layer 1 (lower): quick access to coding symbol without using `shift` key, arrows
 <Picture
   src={import('./images/layer-lower.png')}
   alt="Layer 2 of my Corne Keyboard."
-  widths={[400,800,1600]}
+
   width={800}
 />
 
@@ -312,7 +311,7 @@ Layer 2 (raised): Numpads, media controls, and keys to adjust my laptop's screen
 <Picture
   src={import('./images/layer-raise.png')}
   alt="Layer 1 of my Corne Keyboard."
-  widths={[400,800,1600]}
+
   width={800}
 />
 
@@ -349,14 +348,14 @@ Once I get comfortable with it, I think a split keyboard is more fun to use.
     <Picture
       src={import('./images/corne-left.jpg')}
       alt="Left part of the Corne Keyboard"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
     <Picture
       src={import('./images/corne-right.jpg')}
       alt="Right part of the Corne Keyboard"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
@@ -402,14 +401,14 @@ And this is a game over. ☀️ 🫠
     <Picture
       src={import('./images/case-v1-closeup.jpg')}
       alt="first printed case - tented version. Designed by VOID."
-      widths={[400,800,1600]}
+
 
       width={800}
     />
     <Picture
       src={import('./images/case-v1-under-sunlight.jpg')}
       alt="Putting the 3D printed case under the direct sunlight"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
@@ -431,7 +430,7 @@ And the result is very good. The quality is much, much better than another shop.
       <Picture
         src={import('./images/case-v2.jpg')}
         alt="the new 3D printed case from another shop"
-        widths={[400,800,1600]}
+
 
         width={800}
       />
@@ -440,7 +439,7 @@ And the result is very good. The quality is much, much better than another shop.
     <Picture
       src={import('./images/plate-v2.jpg')}
       alt="Plate printed with the new case. Switches can go in easily."
-      widths={[400,800,1600]}
+
 
       width={800}
     />
@@ -456,8 +455,6 @@ And the result is very good. The quality is much, much better than another shop.
   <Picture
     src={import('./images/weird-graphic-oled-screen.jpg')}
     alt="Weird graphics shown the OLED screen. Something is not right."
-    widths={[400,800]}
-
     width={400}
   />
 - Getting each part separately rather than buying a set seems to be a cheaper option. From [Rafael's shopping list](https://github.com/rafaeldelboni/buildlogs/blob/main/crkbd-v3.md#part-list-original) it seems everything can be purchased from AliExpress.
@@ -470,14 +467,14 @@ And the result is very good. The quality is much, much better than another shop.
     <Picture
       src={import('./images/stacked-modules.jpg')}
       alt="Stacked modules: PCB / controller / OLED"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
     <Picture
       src={import('./images/oled-display-module.jpg')}
       alt="The OLED display module"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
@@ -488,14 +485,14 @@ And the result is very good. The quality is much, much better than another shop.
     <Picture
       src={import('./images/pcb-back.jpg')}
       alt="The back of the Corne PCB"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
     <Picture
       src={import('./images/back-case.jpg')}
       alt="The back side of the 3D printed case"
-      widths={[400,800,1600]}
+
 
       width={800}
     />
@@ -513,14 +510,14 @@ Happy Building
 <Picture
   src={import('./images/top-shot.jpg')}
   alt="the Corne split keyboard, from the top"
-  widths={[400,800,1600]}
+
   width={800}
 />
 
 <Picture
   src={import('./images/over.jpg')}
   alt="the Corne split keyboard"
-  widths={[400,800,1600]}
+
 
   width={800}
 />
