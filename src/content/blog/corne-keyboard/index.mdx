@@ -23,16 +23,17 @@ I think I have enough keyboards ... _at this size_ at least.
 
 <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
   <figure>
-    <Picture
+    <Image
       class="mt-0 mb-2"
       src="/images/uses/ginkgo65-keyboard.jpg"
       alt="my Ginkgo65 mechanical keyboard at work"
-      width={1600} height={900}
+      width={1200}
+      height={675}
     />
     <figcaption class="mt-0">Gingko65</figcaption>
   </figure>
   <figure>
-    <Picture
+    <Image
       class="mt-0 mb-2"
       src={import('./images/portico.jpg')}
       alt="My Portico Keyboard with MT3 Susuwatari Keycaps"
@@ -72,19 +73,19 @@ While waiting for the parts to deliver, I check out different case designs and c
 
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
+    <Image
       src={import('./images/parts-box.jpg')}
       alt="Corne keyboard parts delivered in a small box"
 
       width={800}
     />
-    <Picture
+    <Image
       src={import('./images/corne-pcb.jpg')}
       alt="Corne PCBs"
 
       width={800}
     />
-    <Picture
+    <Image
       src={import('./images/case-v1.jpg')}
       alt="The 3D printed case for the Corne keyboard. Designed by VOID"
 
@@ -105,7 +106,7 @@ I start with soldering **SMD** (Surface Mounting Device) diodes (_SOD-123_), whi
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
     <figure class="mt-0">
-      <Picture
+      <Image
         src={import('./images/small-diode.jpg')}
         alt="The size of a diode compared to the tip of the tweezer and the PCB"
 
@@ -114,7 +115,7 @@ I start with soldering **SMD** (Surface Mounting Device) diodes (_SOD-123_), whi
       <figcaption class="px-4 mt-0">The size of a diode compared to the tip of a tweezer.</figcaption>
     </figure>
     <figure class="mt-0">
-      <Picture
+      <Image
         src={import('./images/soldered-diodes.jpg')}
         alt="Soldered diodes. Many bad soldering there."
 
@@ -132,7 +133,7 @@ When I almost finish soldering diodes for the first side, I found the video [Sol
 
 And Soldering Paste is a game changer for me.
 
-<Picture
+<Image
   class="mx-auto"
   src={import('./images/relife-soldering-paste.jpg')}
   alt="Relife soldering paste 183c"
@@ -149,14 +150,14 @@ After that, it is soldering the LEDs. There are 12 underglow LEDs (_WS2812B_) an
 
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
+    <Image
       src={import('./images/soldered-gateron-hotswap-sockets.jpg')}
       alt="Gateron Hotswap sockets are soldered in place"
 
 
       width={800}
     />
-    <Picture
+    <Image
       src={import('./images/soldered-leds.jpg')}
       alt="all LEDs are soldered to the PCB"
 
@@ -180,14 +181,14 @@ I learn later on that what I miss was [socketing](https://github.com/foostan/crk
 
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
+    <Image
       src={import('./images/pro-micro-pins.jpg')}
       alt="Soldered pins for pro-micro"
 
 
       width={800}
     />
-    <Picture
+    <Image
       src={import('./images/sea-micro.jpg')}
       alt="the controller used for this keyboard is the Sea-Micro controller"
 
@@ -198,14 +199,14 @@ I learn later on that what I miss was [socketing](https://github.com/foostan/crk
 </div>
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
+    <Image
       src={import('./images/soldered-pro-micro.jpg')}
       alt=""
 
 
       width={800}
     />
-    <Picture
+    <Image
       src={import('./images/oled-module-installed.jpg')}
       alt=""
 
@@ -227,21 +228,21 @@ The next step is to check if all the keys work with the key tester in Via. I tes
 
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
+    <Image
       src={import('./images/per-key-led.jpg')}
       alt="Per-key LEDs of the Corne Keyboard"
 
 
       width={800}
     />
-    <Picture
+    <Image
       src={import('./images/underglow-led.jpg')}
       alt="Underglow LEDs of the Corne Keyboard"
 
 
       width={800}
     />
-    <Picture
+    <Image
       src={import('./images/rgb.jpg')}
       alt="RGB LEDs of the Corne Keyboard"
 
@@ -259,7 +260,7 @@ I put the switches and keycaps from my previous keyboards in. And I have to say 
 - Keycaps: MT3 Extended 2048 / GMK WoB Katakana
 
 <figure class="mt-0">
-  <Picture
+  <Image
     src={import('./images/corne-keyboard-mt3-biip-extended.jpg')}
     alt="the Corne Keyboard with MT3 biip Extended 2048 keycaps"
 
@@ -270,7 +271,7 @@ I put the switches and keycaps from my previous keyboards in. And I have to say 
 </figure>
 
 <figure class="mt-0">
-  <Picture
+  <Image
     src={import('./images/front-shot.jpg')}
     alt="the Corne Keyboard with GMK White on Black Katakana Keycaps"
 
@@ -290,7 +291,7 @@ What I have so far are:
 
 Layer 0: Traditional QWERTY layout.
 
-<Picture
+<Image
   src={import('./images/layer0.png')}
   alt="Layer 0 of my Corne Keyboard."
 
@@ -299,7 +300,7 @@ Layer 0: Traditional QWERTY layout.
 
 Layer 1 (lower): quick access to coding symbol without using `shift` key, arrows, and RBG controls.
 
-<Picture
+<Image
   src={import('./images/layer-lower.png')}
   alt="Layer 2 of my Corne Keyboard."
 
@@ -308,7 +309,7 @@ Layer 1 (lower): quick access to coding symbol without using `shift` key, arrows
 
 Layer 2 (raised): Numpads, media controls, and keys to adjust my laptop's screen brightness.
 
-<Picture
+<Image
   src={import('./images/layer-raise.png')}
   alt="Layer 1 of my Corne Keyboard."
 
@@ -345,14 +346,14 @@ Once I get comfortable with it, I think a split keyboard is more fun to use.
 
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
+    <Image
       src={import('./images/corne-left.jpg')}
       alt="Left part of the Corne Keyboard"
 
 
       width={800}
     />
-    <Picture
+    <Image
       src={import('./images/corne-right.jpg')}
       alt="Right part of the Corne Keyboard"
 
@@ -398,14 +399,14 @@ And this is a game over. ☀️ 🫠
 
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
+    <Image
       src={import('./images/case-v1-closeup.jpg')}
       alt="first printed case - tented version. Designed by VOID."
 
 
       width={800}
     />
-    <Picture
+    <Image
       src={import('./images/case-v1-under-sunlight.jpg')}
       alt="Putting the 3D printed case under the direct sunlight"
 
@@ -427,7 +428,7 @@ And the result is very good. The quality is much, much better than another shop.
 <div class="full-bleed">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
     <figure class="mt-0">
-      <Picture
+      <Image
         src={import('./images/case-v2.jpg')}
         alt="the new 3D printed case from another shop"
 
@@ -436,7 +437,7 @@ And the result is very good. The quality is much, much better than another shop.
       />
     <figcaption class="px-4 mt-0">The 2nd 3D-printed case and plate</figcaption>
   </figure>
-    <Picture
+    <Image
       src={import('./images/plate-v2.jpg')}
       alt="Plate printed with the new case. Switches can go in easily."
 
@@ -452,7 +453,7 @@ And the result is very good. The quality is much, much better than another shop.
 - There are now 2 cables I always have to carry instead of 1: TRRS and USB cables, which is cumbersome. A wireless build would get rid of this issue.
 - The OLED module and LEDs lights are optional.
 - ~The OLED display module is kind of useless for me~ I take it back. It is helpful when there's problem. I recently has an issue that the keyboard stops working. The OLED screen shows weird graphic so I know something's not right.
-  <Picture
+  <Image
     src={import('./images/weird-graphic-oled-screen.jpg')}
     alt="Weird graphics shown the OLED screen. Something is not right."
     width={400}
@@ -464,14 +465,14 @@ And the result is very good. The quality is much, much better than another shop.
 
 <div class="">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
+    <Image
       src={import('./images/stacked-modules.jpg')}
       alt="Stacked modules: PCB / controller / OLED"
 
 
       width={800}
     />
-    <Picture
+    <Image
       src={import('./images/oled-display-module.jpg')}
       alt="The OLED display module"
 
@@ -482,14 +483,14 @@ And the result is very good. The quality is much, much better than another shop.
 </div>
 <div class="">
   <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
+    <Image
       src={import('./images/pcb-back.jpg')}
       alt="The back of the Corne PCB"
 
 
       width={800}
     />
-    <Picture
+    <Image
       src={import('./images/back-case.jpg')}
       alt="The back side of the 3D printed case"
 
@@ -507,14 +508,14 @@ I already have a few ideas for the next steps. It will be in the future new post
 
 Happy Building
 
-<Picture
+<Image
   src={import('./images/top-shot.jpg')}
   alt="the Corne split keyboard, from the top"
 
   width={800}
 />
 
-<Picture
+<Image
   src={import('./images/over.jpg')}
   alt="the Corne split keyboard"
 
