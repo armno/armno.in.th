@@ -10,7 +10,7 @@ export interface Props {
   extraClass?: string;
 }
 
-const { src, caption, alt, width, height, full, extraClass } = Astro.props as Props;
+const { src, caption, alt = '', width, height, full, extraClass } = Astro.props as Props;
 ---
 
 <figure class={`${full ? 'full-bleed' : '' }`}>

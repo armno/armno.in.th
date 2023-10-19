@@ -52,7 +52,7 @@ asset ที่รองรับคือ รูปภาพ วิดีโอ
 ส่วน tag `<img>` ก็ต้องเปลี่ยนจาก `src` attribute เป็น `data-src`
 
 ```html
-<img class="lazy" data-src="/path/to/image" alt="">
+<img class="lazy" data-src="/path/to/image" alt="alt">
 ```
 
 เมื่อรูปนี้เข้ามาอยู่ใน viewport LazyLoad จะทำการเปลี่ยน attribute `data-src` ให้เป็น `src`
@@ -68,9 +68,9 @@ asset ที่รองรับคือ รูปภาพ วิดีโอ
 วิธีแก้ก็คือต้องใส่ fallback ใน tag `<noscript>` ด้วย tag `<img>` ธรรมดาแบบนี้
 
 ```html
-<img class="lazy" data-src="/path/to/image" alt="">
+<img class="lazy" data-src="/path/to/image" alt="alt">
 <noscript>
-  <img src="/path/to/image" alt="">
+  <img src="/path/to/image" alt="alt">
 </noscript>
 ```
 
