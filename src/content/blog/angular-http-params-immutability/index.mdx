@@ -41,6 +41,7 @@ The URL didn't contain any parameters.
   src="/images/angular-http-params-immutability/url-without-params.png"
   alt="parameters set to HttpParams are not working"
   width="542"
+  height="148"
 />
 
 But when I chained `.set()` with `new HttpParams()`, it works.
@@ -58,6 +59,7 @@ console.log({ fullURL });
   src="/images/angular-http-params-immutability/url-with-params.png"
   alt="parameters set to HttpParams correctly"
   width="709"
+  height="140"
 />
 
 -----
@@ -69,6 +71,7 @@ My gotcha moment was then I found out that `HttpParams` class in Angular **is im
   alt="API documentation page for HttpParams"
   caption="HttpParams class page on Angular Docs"
   width="687"
+  height="671"
 />
 
 This means `params.set()` method doesn't modify an existing `params` object &mdash;
