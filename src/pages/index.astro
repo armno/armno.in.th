@@ -4,7 +4,6 @@ import '@fontsource/sarabun/700.css';
 import '@fontsource/frank-ruhl-libre/400.css';
 import '@fontsource/frank-ruhl-libre/700.css';
 
-import { Picture } from '@astrojs/image/components';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import BaseHead from '@components/BaseHead.astro';
@@ -25,9 +24,8 @@ const description = 'I am a frontend developer at buzzwoo, focusing on building 
 		<Header />
 		<main class="lg:grid lg:grid-cols-3 lg:gap-8 lg:mx-auto max-w-5xl font-serif leading-normal">
       <div class="mt-12 lg:pt-16">
-        <Picture src="/images/ana.jpg" alt="Armno Prommarak's photo" class="m-auto"
+        <img src="/images/ana.jpg" alt="Armno Prommarak's photo" class="m-auto"
           loading="eager"
-          widths={[300,600]} aspectRatio={1}
           width={300} height={300} />
       </div>
 

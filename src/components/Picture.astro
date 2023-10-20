@@ -1,19 +1,20 @@
 ---
+import { Image } from 'astro:assets';
 export interface Props {
   src: string;
   alt: string;
   caption?: string;
-  width?: string;
-  height?: string;
+  width: number;
+  height: number;
   full?: boolean;
   extraClass?: string;
 }
 
-const { src, caption, alt, width, height, full, extraClass } = Astro.props as Props;
+const { src, caption, alt = '', width, height, full, extraClass } = Astro.props as Props;
 ---
 
 <figure class={`${full ? 'full-bleed' : '' }`}>
-  <img {src} {alt} {width} {height} loading="lazy" class={`${extraClass ? extraClass : ''} mt-0 mx-auto`} />
+  <Image {src} {alt} {width} {height} loading="lazy" class={`${extraClass ? extraClass : ''} mt-0 mx-auto`} />
   {caption &&
   <figcaption class="px-4">
     {caption}

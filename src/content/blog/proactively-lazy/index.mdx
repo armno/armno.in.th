@@ -24,7 +24,7 @@ import Picture from '../../../components/Picture.astro';
 
 อยากจัดระเบียบให้มันเหมือนๆ กัน เป็นงานที่ดองไว้นานแล้วแต่ไม่ได้ทำ
 
-<Picture src="/images/proactively-lazy/original-structure.png" alt="original structure" width="780" />
+<Picture src="/images/proactively-lazy/original-structure.png" alt="original structure" width="780" height="477" />
 
 ## ภารกิจ
 
@@ -53,7 +53,7 @@ _(ผมเคยเรียนเขียน shell script ในวิชา 
 5. ก็จะเหลือ post slug ตรงกลาง สร้างโฟลเดอร์ใหม่จากชื่อนี้
 6. ย้ายไฟล์ `.markdown` ไปเป็น `index.md` ในโฟลเดอร์ที่สร้างใหม่
 
-<Picture src="/images/proactively-lazy/pattern.png" alt="pattern" width="532" />
+<Picture src="/images/proactively-lazy/pattern.png" alt="pattern" width="532" height="381" />
 
 ### 1. สร้างไฟล์ script
 
@@ -102,7 +102,7 @@ done
 - เวลาสร้าง variable ไม่ต้องใช้ `$` แต่เวลาเรียกใช้ ต้องมี `$` ข้างหน้า
 - เว้นวรรคตรงเครื่องหมาย `=` ไม่ได้ ต้องเขียนติดกัน (เว้นวรรคถือว่าเป็น argument ของ command)
 
-<Picture src="/images/proactively-lazy/for.png" alt="bash for loop" width="800" />
+<Picture src="/images/proactively-lazy/for.png" alt="bash for loop" width="800" height="500" />
 
 ### 3. ตัดวันที่ชื่อออกจากชื่อไฟล์
 
@@ -125,7 +125,7 @@ done
 - `${file:11}` ตัดตัวอักษร 11 ตัวแรก แล้ว return **ส่วนที่เหลือ**
 - แต่ถ้าเป็น `${file::11}` (มี `:` สองอัน) คือตัดเอาเฉพาะ 11 ตัวแรก
 
-<Picture src="/images/proactively-lazy/cut-date.png" alt="remove dates from file name" width="800" />
+<Picture src="/images/proactively-lazy/cut-date.png" alt="remove dates from file name" width="800" height="500" />
 
 ### 4. ตัด `.markdown` ออกจากชื่อไฟล์
 
@@ -147,7 +147,7 @@ done
 
 - `%.` ตัดตัวอักษรตั้งแต่ `.` เป็นต้นไป แล้ว return **ส่วนที่เหลือ**
 
-<Picture src="/images/proactively-lazy/remove-ext.png" alt="remove .markdown extension" width="800" />
+<Picture src="/images/proactively-lazy/remove-ext.png" alt="remove .markdown extension" width="800" height="500" />
 
 
 ### 5. เก็บส่วนที่เหลือไว้ สร้างโฟลเดอร์ใหม่
@@ -193,7 +193,7 @@ $ ./rename.sh
 
 content ทุกโพสต์ก็ถูกจัดระเบียบให้เหมือนกันแล้ว
 
-<Picture src="/images/proactively-lazy/formatted.png" alt="formatted structure" width="427" />
+<Picture src="/images/proactively-lazy/formatted.png" alt="formatted structure" width="427" height="279" />
 
 > ผมเชื่อว่าคนที่เก่ง unix command line / shell script
 สามารถทำให้ code 10 บรรทัดของผม อยู่ใน 1 บรรทัด (one-liner) ได้อย่างไม่ยากนัก

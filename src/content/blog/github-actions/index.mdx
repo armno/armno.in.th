@@ -40,6 +40,7 @@ Go to [repo page](https://github.com/armno/blog) on GitHub, select **Actions** m
   src="/images/github-actions/actions-tab.png"
   alt="Actions page on GitHub repo"
   width="868"
+  height="354"
 />
 
 It brings us to the workflow editor page.
@@ -49,6 +50,7 @@ Here we will have to create a yml file to define tasks for the automation we nee
   src="/images/github-actions/workflow-editor.png"
   alt="Workflow editor page"
   width="717"
+  height="472"
 />
 
 To create a new workflow using the Image Action, we can either:
@@ -60,6 +62,7 @@ To create a new workflow using the Image Action, we can either:
   src="/images/github-actions/search-image-actions.png"
   alt="Search for Image Actions"
   width="365"
+  height="472"
 />
 
 We can add some extra options and quality settings of each file type under `with:` section of the step.
@@ -100,6 +103,7 @@ On the Actions page, now there should be a new workflow created.
   src="/images/github-actions/empty-action.png"
   alt="Workflow is create on the Actions page"
   width="1174"
+  height="681"
 />
 
 Next I create [a test pull request](https://github.com/armno/blog/pull/169) to add 2 new images in my `/uses` page.
@@ -109,6 +113,7 @@ There is a new check created.
   src="/images/github-actions/running-actions-in-pr.png"
   alt="A new pull request is created"
   width="944"
+  height="705"
 />
 
 We can go to the details page to see it runs.
@@ -117,6 +122,7 @@ We can go to the details page to see it runs.
   src="/images/github-actions/action-details.png"
   alt="Action details"
   width="1440"
+  height="800"
 />
 
 On the first run, the workflow scans and optimizes all images in the repo so it takes a while.
@@ -130,6 +136,7 @@ I can compare original images and optimized images side-by-side.
   src="/images/github-actions/optimized-images-preview.jpg"
   alt="Comparing original and optimized images"
   width="1000"
+  height="625"
 />
 
 Back to the pull request view, the Actions adds a new commit and push back to the branch.
@@ -138,6 +145,7 @@ Back to the pull request view, the Actions adds a new commit and push back to th
   src="/images/github-actions/new-commit-added-by-action.png"
   alt="new commit created by github actions"
   width="459"
+  height="270"
 />
 
 It also creates a new comment with optimization results into the pull request.
@@ -146,6 +154,7 @@ It also creates a new comment with optimization results into the pull request.
   src="/images/github-actions/optimize-results.png"
   alt="Results of image optimization is added into the pull request"
   width="935"
+  height="300"
 />
 
 Some images are already optimized, so they are skipped.
@@ -154,6 +163,7 @@ Some images are already optimized, so they are skipped.
   src="/images/github-actions/already-optimized-images.png"
   alt="Some images are already optimized"
   width="894"
+  height="314"
 />
 
 ### Comparing results with TinyPNG
@@ -165,6 +175,7 @@ It can still do a better job than the Image Actions in terms of producing smalle
   src="/images/github-actions/vs-tinypng.png"
   alt="Comparing results with images optimized by tinypng.com"
   width="866"
+  height="387"
   caption="Comparing results - Top: Image Actions. Bottom: tinypng.com"
 />
 
