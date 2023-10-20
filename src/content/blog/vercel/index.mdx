@@ -34,7 +34,8 @@ In this case, the number and page background color.
 <Picture
   src="/images/vercel/app-screenshot.png"
   alt="screenshot of cmair.space"
-  width="350"
+  width="431"
+  height="877"
   caption="cmair.space screenshot on a classic iPhone 6 frame"
   align-caption="left"
 />
@@ -48,7 +49,8 @@ and forward the request to the actual API on aqicn.org.
 <Picture
   src="/images/vercel/app-flow.svg"
   alt="data-flow"
-  width="700"
+  width="404"
+  height="40"
 />
 
 I wanted to keep everything in the same place so
@@ -86,6 +88,7 @@ so I give Vercel a try this time.
   src="/images/vercel/vercel-homepage.png"
   alt="vercel homepage"
   width="1050"
+  height="572"
   caption="Vercel.com home page"
 />
 
@@ -109,6 +112,7 @@ When signing up on Vercel with my GitHub account, it installs 'Now' app on Githu
   src="/images/vercel/now-app.png"
   alt="Now GitHub app"
   width="742"
+  height="562"
 />
 
 I create a new project in Vercel and link with the project's repo.
@@ -117,12 +121,14 @@ I create a new project in Vercel and link with the project's repo.
   src="/images/vercel/import-github-repo.png"
   alt="importing a project from github"
   width="658"
+  height="562"
 />
 
 <Picture
   src="/images/vercel/select-repo.png"
   alt="select a github repo"
   width="560"
+  height="473"
 />
 
 Vercel tries to guess what framework I'm using.
@@ -133,6 +139,7 @@ There is no build command.
   src="/images/vercel/project-settings.png"
   alt="set project framework and build command"
   width="498"
+  height="604"
 />
 
 Now the frontend part is deployed. At this point, it is not working because there is no API backend for it yet.
@@ -160,6 +167,7 @@ I create a new environment variable for my API key called `TOKEN`.
   src="/images/vercel/env-variable.png"
   alt="Environment variable in project settings"
   width="768"
+  height="325"
 />
 
 Then I can use this environment variable with `process.env.TOKEN` in my Serverless Function code.
@@ -175,6 +183,7 @@ Vercel creates a build and deploys to the Preview environment.
   src="/images/vercel/pr-integration.png"
   alt="Vercel integration on GitHub's pull request"
   width="774"
+  height="284"
 />
 
 When I push more commits to the PR, Vercel creates a new preview URL for each push.
@@ -184,6 +193,7 @@ I can click **View deployment** buttons to view the previews.
   src="/images/vercel/more-commits.png"
   alt="Vercel creates a new URL for previews"
   width="701"
+  height="536"
 />
 
 Now my API endpoint is up on Serverless Functions.
@@ -202,6 +212,7 @@ There is a page to see the logs from the serverless function in Vercel dashboard
   src="/images/vercel/serverless-function-logs.png"
   alt="Serverless Functions info on Vercel Dashboard"
   width="1037"
+  height="777"
 />
 
 ### Update Custom Domain
@@ -216,6 +227,7 @@ I update DNS settings of my domain `cmair.space` to point to [Vercel's DNS serve
   src="/images/vercel/custom-dns.png"
   alt="Set custom DNS to Vercel's DNS server"
   width="784"
+  height="217"
 />
 
 Then in Vercel Dashboard: I go to **Project Settings** » **Domain** and add a custom domain.
@@ -226,6 +238,7 @@ and also show the status once they are successfully updated.
   src="/images/vercel/custom-domain.png"
   alt="Set custom domain in Vercel"
   width="1074"
+  height="358"
 />
 
 And now my app is successfully migrated to Vercel 🎉🎉.
@@ -245,6 +258,7 @@ Then I found they also have [**Vercel CLI**](https://vercel.com/download) to hel
   src="/images/vercel/cli-page.png"
   alt="Vercel CLI home page"
   width="739"
+  height="314"
 />
 
 I install it globally. The commands available are `vercel` or `vc` in short.
@@ -267,6 +281,7 @@ Click on the link and I'm logged in.
   src="/images/vercel/vc-login.png"
   alt="Vercel CLI Login"
   width="768"
+  height="160"
 />
 
 Once I'm logged in, I run `$ vc` to link the local project to a project on Vercel.
@@ -275,6 +290,7 @@ Once I'm logged in, I run `$ vc` to link the local project to a project on Verce
   src="/images/vercel/vc-link.png"
   alt="link the local project to the project on vercel"
   width="720"
+  height="160"
 />
 
 Before being able to run the dev server, I need to have the `TOKEN` environment variable available locally.
@@ -299,6 +315,7 @@ And I have both frontend app and serverless functions run locally. Making local 
   src="/images/vercel/vc-dev.png"
   alt="running local dev server"
   width="942"
+  height="455"
 />
 
 Note: Netlify also has something similar called [Netlify Dev](https://www.netlify.com/products/dev/).
@@ -341,5 +358,6 @@ Now I don't need to have my own server anymore. Hammergeil!
   src="/images/vercel/destroy-droplet.png"
   alt="destroying DigitalOcean droplet"
   width="457"
+  height="367"
 />
 
