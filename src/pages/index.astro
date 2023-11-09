@@ -1,65 +1,91 @@
 ---
-import '@fontsource/sarabun/400.css';
-import '@fontsource/sarabun/700.css';
-import '@fontsource/frank-ruhl-libre/400.css';
-import '@fontsource/frank-ruhl-libre/700.css';
+import "@fontsource/sarabun/400.css";
+import "@fontsource/sarabun/700.css";
+import "@fontsource/frank-ruhl-libre/400.css";
+import "@fontsource/frank-ruhl-libre/700.css";
 
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
-import BaseHead from '@components/BaseHead.astro';
-import GlobalStyle from '@components/GlobalStyle.astro';
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import BaseHead from "@components/BaseHead.astro";
+import GlobalStyle from "@components/GlobalStyle.astro";
 
-const title = 'Armno P.';
-const language = 'en';
-const thumbnail = '/images/anb.jpg';
-const description = 'I am a frontend developer at buzzwoo, focusing on building user interfaces with HTML, CSS, and JavaScript';
+const title = "Armno Prommarak";
+const language = "en";
+const thumbnail = "/images/anb.jpg";
+const description =
+  "I am a frontend developer at buzzwoo, focusing on building user interfaces with HTML, CSS, and JavaScript";
 ---
 
-<html lang={language ? language : 'th'}>
-	<head>
-		<BaseHead title={title} description={description} thumbnail={thumbnail} />
+<html lang={language ? language : "th"}>
+  <head>
+    <BaseHead title={title} description={description} thumbnail={thumbnail} />
     <GlobalStyle />
-	</head>
-	<body class="antialiased">
-		<Header />
-		<main class="lg:grid lg:grid-cols-3 lg:gap-8 lg:mx-auto max-w-5xl font-serif leading-normal">
+  </head>
+  <body class="antialiased">
+    <Header />
+    <main
+      class="mb-20 lg:grid lg:grid-cols-3 lg:gap-8 lg:mx-auto max-w-5xl font-serif leading-normal"
+    >
       <div class="mt-12 lg:pt-16">
         <img src="/images/ana.jpg" alt="Armno Prommarak's photo" class="m-auto"
           loading="eager"
-          width={300} height={300} />
+          width={200} height={200} />
       </div>
 
-      <div class="px-6 mt-12 lg:pt-12 lg:col-span-2 mx-auto prose prose-slate leading-relaxed">
+      <div
+        class="px-6 mt-12 lg:pt-12 lg:col-span-2 mx-auto prose prose-slate leading-relaxed"
+      >
         <!-- <div class="font-semibold tracking-wider text-sm">Hi there,</div> -->
-        <h1 class="text-2xl lg:text-3xl font-serif">I build web user interfaces to deliver great user experiences for the web.</h1>
+        <h1 class="text-4xl lg:text-3xl font-serif">
+          I build web user interfaces to deliver great user experiences for
+          the web.
+        </h1>
 
         <p>
-          My name is <strong>Armno Prommarak</strong>.
-          I&rsquo;m a frontend teamlead at <a href="https://buzzwoo.de" target="_blank">buzzwoo</a>. My main focus is supporting my colleagues to get better on JavaScript frameworks and frontend performance.
+          Hey, my name is <strong>Armno Prommarak</strong>. I am a frontend
+          developer and a team lead at <a
+            href="https://buzzwoo.de"
+            target="_blank">Buzzwoo Asia</a
+          > &ndash; a digital agency in Chiang Mai, Thailand.
+        </p>
         <p>
-          Besides work, I'm a big nerd. I enjoy reading books, taking photos, <a href="https://armno.in.th/2017/08/20/building-custom-mechanical-keyboard/">building mechanical keyboards</a>, cycling with my <a href="https://www.strava.com/athletes/3637623">road bike</a>, and tinkering stuffs. And by the way, I love serif fonts.</p>
-
-          Check out my <a href="/blog">blog</a> to see what I&rsquo;ve learned recently.
-          I also write about life in my <a href="https://armno.wordpress.com">personal blog</a>.
+          My main focus is about JavaScript frameworks and frontend performance.
+        </p>
+        <p>
+          Besides work, I'm a big nerd. I enjoy reading books, taking photos, <a
+            href="https://armno.in.th/2017/08/20/building-custom-mechanical-keyboard/"
+            >building mechanical keyboards</a
+          >, cycling with my <a href="https://www.strava.com/athletes/3637623"
+            >road bike</a
+          >, and tinkering stuffs. And by the way, I love serif fonts.
+        </p>
+        <p>
+          Check out my <a href="/blog">blog</a> to see what I&rsquo;ve learned
+          recently. I also write about life in my <a
+            href="https://armno.wordpress.com">personal blog</a
+          >.
         </p>
 
         <h3>Get in touch</h3>
         <p>
-          You can find me on <a href="https://github.com/armno">GitHub</a>. Otherwise, you can also contact me via email at <a href="mailto:monkeyarmno@gmail.com">monkeyarmno at gmail.com</a>*.
+          You can find me on <a href="https://github.com/armno">GitHub</a>.
+          Otherwise, you can also contact me via email at <a
+            href="mailto:monkeyarmno@gmail.com">monkeyarmno at gmail.com</a
+          >*.
         </p>
         <p>
           Nice to meet you!
-          <br>
-          &ndash; Armno
+          <br />
+           &ndash; Armno
         </p>
 
         <p class="mt-12 leading-4 text-slate-500">
-          <small>*I might or might not reply to your email. Emails from recruiters or online marketers are usually ignored.</small>
+          <small
+            >*I might or might not reply to your email. Emails from recruiters
+            or online marketers are usually ignored.</small
+          >
         </p>
-
       </div>
     </main>
-
-    <Footer />
   </body>
 </html>
