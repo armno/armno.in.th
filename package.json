@@ -9,13 +9,13 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^1.1.2",
+    "@astrojs/mdx": "^1.1.5",
     "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.2",
     "@tailwindcss/typography": "^0.5.10",
     "@types/lodash-es": "^4.17.9",
-    "astro": "^3.5.2",
+    "astro": "^3.5.4",
     "autoprefixer": "^10.4.16",
     "date-fns": "^2.30.0",
     "lodash-es": "^4.17.21",
