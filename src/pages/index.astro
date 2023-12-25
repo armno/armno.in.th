@@ -23,69 +23,108 @@ const description =
   </head>
   <body class="antialiased">
     <Header />
-    <main
-      class="mb-20 lg:grid lg:grid-cols-3 lg:gap-8 lg:mx-auto max-w-5xl font-serif leading-normal"
-    >
-      <div class="mt-12 lg:pt-16">
-        <img src="/images/ana.jpg" alt="Armno Prommarak's photo" class="m-auto"
-          loading="eager"
-          width={200} height={200} />
-      </div>
+    <main class="mx-auto max-w-2xl mb-12">
+      <div class="px-6 md:pt-12 md:col-span-2 mx-auto prose prose-slate">
+        <div class="mt-10 mb-20 text-center md:text-left">
+          <img
+            src="/images/ana.jpg"
+            alt="Armno Prommarak's photo"
+            class="rounded-full mx-auto md:m-0 md:mr-auto"
+            loading="eager"
+            width={60}
+            height={60}
+          />
+          <div class="text-sm mb-8 mt-6">
+            <strong class="text-xl font-bold">Armno Prommarak 🇹🇭</strong>
+            <div class="text-sm md:text-base leading-tight">
+              Frontend Developer & Team Lead at <a
+                href="https://buzzwoo.de"
+                target="_blank">Buzzwoo</a> 🇩🇪.
+            </div>
+            <!-- <div class="text-xs mt-4 text-gray-700 tracking-wider">Chiang Mai, Thailand</div> -->
+          </div>
+        </div>
 
-      <div
-        class="px-6 mt-12 lg:pt-12 lg:col-span-2 mx-auto prose prose-slate leading-relaxed"
-      >
-        <!-- <div class="font-semibold tracking-wider text-sm">Hi there,</div> -->
-        <h1 class="text-4xl lg:text-3xl font-serif">
-          I build web user interfaces to deliver great user experiences for
-          the web.
-        </h1>
+        <div class="text-base mb-16">
+          <h4 class="mt-20">Work</h4>
+          <p>
+            I've been a frontend developer at Buzzwoo for 10+ years (and counting!). My main resposibility is building user interfaces of websites and
+            web applications for our clients.
+          </p>
+          <p>
+            JavaScript frameworks and frontend
+            performance are areas I enjoy working on the most. I'm comforatable working with
+            Angular, React, and Vue. I'm also a big fan of <a href="https://astro.build" target="_blank">Astro</a>.
+          </p>
+          <p>
+            Before my time at Buzzwoo, I was a backend developer for about 3 years.
+            I worked quite a lot with PHP and WordPress back then.
+          </p>
 
-        <p>
-          Hey, my name is <strong>Armno Prommarak</strong>. I am a frontend
-          developer and a team lead at <a
-            href="https://buzzwoo.de"
-            target="_blank">Buzzwoo Asia</a
-          > &ndash; a digital agency in Chiang Mai, Thailand.
-        </p>
-        <p>
-          My main focus is about JavaScript frameworks and frontend performance.
-        </p>
-        <p>
-          Besides work, I'm a big nerd. I enjoy reading books, taking photos, <a
-            href="https://armno.in.th/2017/08/20/building-custom-mechanical-keyboard/"
-            >building mechanical keyboards</a
-          >, cycling with my <a href="https://www.strava.com/athletes/3637623"
-            >road bike</a
-          >, and tinkering stuffs. And by the way, I love serif fonts.
-        </p>
-        <p>
-          Check out my <a href="/blog">blog</a> to see what I&rsquo;ve learned
-          recently. I also write about life in my <a
-            href="https://armno.wordpress.com">personal blog</a
-          >.
-        </p>
+          <h4 class="mt-20">Writing</h4>
+          <p>
+            I started this website as a blog in 2007. Writing blogs has
+            been a big part of my life since then. I regularly write blog posts
+            about what I have learned or what motivates me, both technical and
+            non-technical posts. Here are some of my favorites.
+          </p>
 
-        <h3>Get in touch</h3>
-        <p>
-          You can find me on <a href="https://github.com/armno">GitHub</a>.
-          Otherwise, you can also contact me via email at <a
-            href="mailto:monkeyarmno@gmail.com">monkeyarmno at gmail.com</a
-          >*.
-        </p>
-        <p>
-          Nice to meet you!
-          <br />
-           &ndash; Armno
-        </p>
+          <ul class="text-sm">
+            <li>
+              <a href="https://armno.in.th/blog/vscode-setup-2023">My VSCode Setup</a>
+              <small>(2023)</small>
+            </li>
+            <li>
+              <a href="https://armno.in.th/blog/angular-http-params-immutability">Creating a URL with HttpParams in Angular</a>
+              <small>(2020)</small>
+            </li>
+            <li>
+              <a href="https://armno.in.th/blog/how-web-browsers-work/">Web browser ทำงานอย่างไร</a>
+                <small class="ml-1">(2016)</small>
+            </li>
+            <li>
+              <a href="https://armno.in.th/blog/loadcss-async">Case study: เปลี่ยนวิธีโหลด CSS เพื่อให้เว็บ render ไวขึ้น</a>
+              <small>(2015)</small>
+            </li>
+            <li>
+              <a href="https://armno.in.th/blog/git-stash-patched-commit/">วิธีใช้ Git Stash</a>
+              <small>(2014)</small>
+            </li>
+          </ul>
+          <p>Check out <a href="/blog">the blog</a> for all articles.</p>
 
-        <p class="mt-12 leading-4 text-slate-500">
-          <small
-            >*I might or might not reply to your email. Emails from recruiters
-            or online marketers are usually ignored.</small
-          >
-        </p>
+          <h4 class="mt-20">Life</h4>
+          <p>
+            I'm a husband and a father of 2 kids. Most of my time besides work are spent with my
+            family.
+            </p>
+            <p>In my free time, I enjoy
+            reading books, taking photos, <a href="https://armno.in.th/blog/building-mechanical-keyboard/">building</a>
+            <a href="https://armno.in.th/blog/lubricate-mechanical-keyboard-switches">mechanical</a>
+            <a href="https://armno.in.th/blog/corne-keyboard">keyboards</a>, and
+            fixing broken stuffs. On some Sundays, I would
+            go out for a ride on my <a
+              href="https://www.strava.com/athletes/3637623">road bike</a
+            >.
+          </p>
+        </div>
+        <h4>Get in touch</h4>
+        <ul class="text-sm">
+          <li>
+            Email:
+            <a href="mailto:monkeyarmno@gmail.com">monkeyarmno at gmail.com</a> &mdash; is probably the easiest way to contact me.
+          </li>
+          <li>
+            GitHub:
+            <a href="https://github.com/armno">armno</a> &mdash; all of my public code are on GitHub.
+          </li>
+          <li>
+            X (Twitter):
+            <a href="https://x.com/armno">@armno</a> &mdash; although I'm not active there anymore, it's still a way to ping me.
+          </li>
+        </ul>
       </div>
     </main>
+    <Footer></Footer>
   </body>
 </html>
