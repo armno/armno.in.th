@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
-import PostItem from "@components/PostItem.astro";
 import { format } from "date-fns";
 
 export async function getStaticPaths({ paginate }) {
@@ -10,21 +9,28 @@ export async function getStaticPaths({ paginate }) {
     return new Date(b.data.pubDate) - new Date(a.data.pubDate);
   });
 
-  // const postsByYear = sortedPosts.reduce((acc, post) => {
-  //   const year = new Date(post.data.pubDate).getFullYear();
-  //   if (!acc[year]) {
-  //     acc[year] = [];
-  //   }
-  //   acc[year].push(post);
-  //   return acc;
-  // }, {});
+  const postsByYear = sortedPosts.reduce((acc, post) => {
+    const year = new Date(post.data.pubDate).getFullYear();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(post);
+    return acc;
+  }, {});
 
-  return paginate(sortedPosts, { pageSize: 1000});
+  const postsByYearArray = Object.keys(postsByYear).reverse().map((year) => {
+    return {
+      year,
+      posts: postsByYear[year],
+    };
+  });
+
+  return paginate(postsByYearArray, { pageSize: 1000});
 }
 
 const { page } = Astro.props;
 const content = {
-  title: "blog",
+  title: "Blog",
   description: "Blog",
   thumbnail: "",
   language: "en",
@@ -34,21 +40,24 @@ const content = {
 <PageLayout frontmatter={content}>
   <h1 class="font-bold">Blog</h1>
 
-  <ol class="list-none px-6 md:p-0">
-    {
-      page.data.map((post, index) => (
+    <ol class="list-none p-0">
+      {page.data.map(year => (
         <li>
-          {post.data.pubDate && (
-            <time
-              class="font-mono text-xs text-slate-600"
-              datetime={post.data.pubDate.toString()}
-            >
-              {format(new Date(post.data.pubDate), "dd.MM.yyyy")}
-            </time>
-          )}
-          <a href={'/blog/' + post.slug}>{post.data.title}</a>
+          <h2 class="font-bold">{year.year}</h2>
+          <ol class="list-none p-0">
+            {year.posts.map(post => (
+              <li class="p-0">
+                <time
+                  class="font-mono text-xs text-slate-600"
+                  datetime={post.data.pubDate.toString()}
+                >
+                  {format(new Date(post.data.pubDate), "dd.MM.yyyy")}
+                </time>
+                <a href={'/blog/' + post.slug}>{post.data.title}</a>
+              </li>
+            ))}
+          </ol>
         </li>
       ))
-    }
-  </ol>
+    </ol>
 </PageLayout>
