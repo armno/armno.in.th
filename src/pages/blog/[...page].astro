@@ -1,57 +1,54 @@
 ---
-import { getCollection } from 'astro:content';
-import PageLayout from '@layouts/PageLayout.astro';
-import PostItem from '@components/PostItem.astro';
-import WarningMessage from '@components/WarningMessage.astro';
-import Pagination from '@components/Pagination.astro';
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import PostItem from "@components/PostItem.astro";
+import { format } from "date-fns";
 
 export async function getStaticPaths({ paginate }) {
-  const allPosts = await getCollection('blog');
+  const allPosts = await getCollection("blog");
   const sortedPosts = allPosts.sort((a, b) => {
     return new Date(b.data.pubDate) - new Date(a.data.pubDate);
   });
+
+  // const postsByYear = sortedPosts.reduce((acc, post) => {
+  //   const year = new Date(post.data.pubDate).getFullYear();
+  //   if (!acc[year]) {
+  //     acc[year] = [];
+  //   }
+  //   acc[year].push(post);
+  //   return acc;
+  // }, {});
+
   return paginate(sortedPosts, { pageSize: 1000});
 }
 
 const { page } = Astro.props;
 const content = {
-  title: 'blog',
-  description: 'Blog',
-  thumbnail: '',
-  language: 'en'
-}
+  title: "blog",
+  description: "Blog",
+  thumbnail: "",
+  language: "en",
+};
 ---
 
 <PageLayout frontmatter={content}>
-  <!-- <WarningMessage>
-    <p class="mt-0">
-      Blog listing page is still a work-in-progress.
-    </p>
-  </WarningMessage> -->
+  <h1 class="font-bold">Blog</h1>
 
-
-  <div class="flex items-baseline mb-8 container mx-auto px-6 md:px-0 mt-6">
-    <h1 class="text-5xl font-bold mb-0">Blog</h1>
-    <span class="text-2xl text-slate-300 mx-4">/</span>
-    <span class="text-2xl text-slate-300">Page {page.currentPage} of {page.lastPage} </span>
-  </div>
-
-  <ol
-    class="list-none px-6 md:p-0 not-prose "
-  >
+  <ol class="list-none px-6 md:p-0">
     {
       page.data.map((post, index) => (
-        <li class="mb-6">
-          <PostItem
-            title={post.data.title}
-            url={'/blog/' + post.slug}
-            // thumbnail={post.data.thumbnail}
-            pubDate={post.data.pubDate}
-          />
+        <li>
+          {post.data.pubDate && (
+            <time
+              class="font-mono text-xs text-slate-600"
+              datetime={post.data.pubDate.toString()}
+            >
+              {format(new Date(post.data.pubDate), "dd.MM.yyyy")}
+            </time>
+          )}
+          <a href={'/blog/' + post.slug}>{post.data.title}</a>
         </li>
       ))
     }
   </ol>
-
-  <Pagination next={page.url.next} prev={page.url.prev} currentPage={page.currentPage} lastPage={page.lastPage} />
 </PageLayout>
