@@ -66,8 +66,8 @@ module.exports = {
       },
       fontFamily: {
         headings: ['Frank Ruhl Libre', ...defaultTheme.fontFamily.sans],
-        sans: ['Sarabun', ...defaultTheme.fontFamily.sans],
-        serif: ['Frank Ruhl Libre', ...defaultTheme.fontFamily.serif],
+        // sans: ['Sarabun', ...defaultTheme.fontFamily.sans],
+        // serif: ['Frank Ruhl Libre', ...defaultTheme.fontFamily.serif],
       },
     }
   },
