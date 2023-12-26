@@ -1,0 +1,21 @@
+---
+title: Testing Keystatic
+pubDate: '2024-01-01T00:00:00.000Z'
+description: alright let's see
+published: true
+---
+will Keystatic work for me?
+
+so, okay.
+
+- ~~the post must be a~~        ~~`slug.mdoc`~~        ~~file, not~~        ~~`slug/index.mdoc`~~        ~~file.~~ not true. it can be in its own folder with proper config below.
+- `image` in keystatic config must be updated with to keep the images in the same folder with the post mdoc file.
+
+```js
+images: {
+  directory: 'src/content/blog',
+  publicPath: '../../../content/blog/',
+},
+```
+
+![](../../../content/blog/testing-keystatic/dummy-image.png)

@@ -22,7 +22,10 @@ export default config({
           formatting: true,
           dividers: true,
           links: true,
-          images: true,
+          images: {
+            directory: 'src/content/blog',
+            publicPath: '../../../content/blog/',
+          },
         }),
       },
     }),
