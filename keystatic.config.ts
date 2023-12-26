@@ -16,7 +16,11 @@ export default config({
         pubDate: fields.text({ label: 'Published Date' }),
         description: fields.text({ label: 'Description' }),
         published: fields.checkbox({ label: 'Published' }),
-        thumbnail: fields.image({ label: 'Thumbnail' }),
+        thumbnail: fields.image({
+          label: 'Thumbnail',
+          directory: 'public/images',
+          publicPath: '/public/images',
+        }),
         content: fields.document({
           label: 'Content',
           formatting: true,
