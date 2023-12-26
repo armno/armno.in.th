@@ -2,11 +2,17 @@
 import { config, fields, collection } from '@keystatic/core';
 
 export default config({
+  ui: {
+    brand: {
+      name: 'Armno.in.th'
+    }
+  },
   storage: {
     kind: 'local',
   },
   collections: {
     posts: collection({
+      entryLayout: 'content',
       label: 'Posts',
       slugField: 'title',
       path: 'src/content/blog/*/',
