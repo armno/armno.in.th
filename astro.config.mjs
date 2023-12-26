@@ -14,6 +14,6 @@ import netlify from "@astrojs/netlify/functions";
 export default defineConfig({
   site: "https://armno.in.th",
   output: "hybrid",
-  integrations: [sitemap(), mdx(), tailwind(), react(), markdoc(), keystatic()],
+  integrations: [sitemap(), mdx(), tailwind(), react(), markdoc(), process.env.NODE_ENV === 'production' ? null : keystatic()],
   adapter: netlify()
 });
