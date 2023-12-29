@@ -19,5 +19,11 @@ export default defineMarkdocConfig({
         extraClass: { type: String, required: false },
       },
     },
+    warningMessage: {
+      render: component('./src/components/WarningMessage.astro'),
+      attributes: {
+        title: { type: String, required: false },
+      }
+    },
   },
 });
