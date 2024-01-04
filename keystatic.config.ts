@@ -25,14 +25,8 @@ export default config({
           label: 'Language',
           defaultValue: 'en',
           options: [
-            {
-              label: 'English',
-              value: 'en',
-            },
-            {
-              label: 'Thai',
-              value: 'th',
-            }
+            { label: 'English', value: 'en', },
+            { label: 'Thai', value: 'th', }
           ]
         }),
         tags: fields.array(

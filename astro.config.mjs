@@ -11,16 +11,24 @@ import keystatic from '@keystatic/astro';
 import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
-export default defineConfig({
+const config = {
   site: "https://armno.in.th",
-  output: "hybrid",
   integrations: [
     sitemap(),
     mdx(),
     tailwind(),
     react(),
     markdoc(),
-    process.env.NODE_ENV === 'production' ? null : keystatic()
   ],
-  adapter: netlify()
-});
+};
+
+if (process.env.NODE_ENV !== 'production') {
+  config.output = 'hybrid';
+  config.adapter = netlify();
+  config.integrations = [
+    ...config.integrations,
+    keystatic()
+  ]
+}
+
+export default defineConfig(config);

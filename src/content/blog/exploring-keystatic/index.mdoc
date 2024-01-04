@@ -1,0 +1,170 @@
+---
+title: Exploring Keystatic
+pubDate: '2024-01-01T00:00:00.000Z'
+description: Keystatic is a Git-based CMS that makes editing content in Astro easier.
+language: en
+tags:
+  - Keystatic
+  - Blog
+  - CMS
+---
+## Background
+
+This website is built with Astro using MDX and Markdown for blog and pages content.
+
+I really enjoy working on Astro - coding it. However, the writing content part has been not so great. I love the simplicity of Markdown, but since I added MDX support, I keep adding HTML and custom Astro components to my content while writing my thoughts out.
+
+At some point, I feel distracted because I was more focused on the coding part more than the writing part. This is probably why I write a lot less in the recent years. There has been some frictions there.
+
+This is by no means to shade Astro. I think it's my issue with JAMStack in general since moving from WordPress in 2013.
+
+I wanted to get back into "write more and worry less" mode again.
+
+Just write.
+
+## Keystatic
+
+I discovered Keystatic by chance from reading [Astro's blog about Thinkmill](https://astro.build/case-studies/thinkmill/). Keystatic reminds me of the [Netlify CMS](https://v1.netlifycms.org/) back in the days (now [Decap CMS](https://decapcms.org/)), but looks a bit better this time.
+
+I saw **Simon Vrachliotis** ([@simonswiss](https://twitter.com/simonswiss)) is producing video tutorials there for Keystatic. Then I know it's going to be great.
+
+## Adding Keystatic to my existing Astro project
+
+Keystatic only supports YAML, JSON, and Markdoc as content. Sadly all my blog posts are in MDX. I tried to convert an existing article from a `.mdx` to a `.mdoc` file - it wasn't an easy process and I think it wouldn't be worth it to convert all of them from MDX to mdoc files just to make them work in Keystatic.
+
+So I decided to use Keystatic *only* for the new content. Meaning the new content will be in Markdoc, created and managed in Keystatic. Old content remains in MDX and I can still update them in VSCode whenever it is needed.
+
+I followed the guides from both [Keystatic's](https://keystatic.com/docs/installation-astro) and [Astro's](https://docs.astro.build/en/guides/cms/keystatic/#_top) docs. Keystatic works great Astro's content collection and adding Keystatic to the project was pretty straightforward. I didn't get errors during install.
+
+The start command is `npm run dev`. This serves both Astro dev server and Keystatic dev server.
+
+I still needed to adjust some configs to keep my current content structure working.
+
+- All posts are in `src/content/blog/` directory. Each post is in its own directory. The content file is then at `src/content/blog/<post-name>/index.mdx|mdoc`.
+- All images and assets used in a post stay in the same directory. E.g. in `src/content/blog/<post-name>/` instead of in the `public` directory. It is just my personal preference that I like to keep each blog post self-contained and portable.
+
+### Basic configurations
+
+The important part are:
+
+- The `path` config that sets to `src/content/blog/*/` (ends with a forward slash `/`) to tell Keystatic to look for content files inside subdirectories.
+- `entryLayout: content` changes the layout to focus on the content rather than the fields. I like this a lot. It does feel a bit like WordPress but that's for a good reason.
+- `slugField` defines which field in the Schema to automatically generate the slug from.
+- `format.contentField` is to tell Keystatic to look for the content in the same file with the frontmatter medatada which would be usually in the `index.mdoc` of each post.
+
+```typescript
+posts: collection({
+  entryLayout: 'content',
+  label: 'Posts',
+  slugField: 'title',
+  path: 'src/content/blog/*/',
+  format: {
+    contentField: 'content'
+  },
+```
+
+![](../../../content/blog/exploring-keystatic/default-focused.jpeg)
+
+![](../../../content/blog/exploring-keystatic/content-focused.jpeg)
+
+### Schema
+
+Defining Keystatic's Schema is pretty much the same with defining [Astro's Content Collection Schema](https://docs.astro.build/en/guides/content-collections/#defining-a-collection-schema), but with different tools in a different config file. This schema config defines what the metadata in each post are, as well as defining how the editor UI would look like in Keystatic.
+
+```typescript
+
+  schema: {
+    title: fields.slug({ name: { label: 'Title' } }),
+    pubDate: fields.text({ label: 'Publish Date' }),
+    description: fields.text({ label: 'Description' }),
+    language: fields.select({
+      label: 'Language',
+      defaultValue: 'en',
+      options: [
+        { label: 'English', value: 'en', },
+        { label: 'Thai', value: 'th', }
+      ]
+    }),
+    tags: fields.array(
+      fields.text({ label: 'Tag' }),
+      {
+        label: 'Tags',
+        itemLabel: props => props.value
+      }
+    ),
+    thumbnail: fields.image({
+      label: 'Thumbnail',
+      directory: 'public/images',
+      publicPath: '/public/images',
+    }),
+    content: fields.document({
+      label: 'Content',
+      formatting: true,
+      dividers: true,
+      links: true,
+      images: {
+        directory: 'src/content/blog',
+        publicPath: '../../../content/blog/',
+      },
+    }),
+  },
+}),
+```
+
+- To keep images in the post content in the same directory, the `content.images` paths config has to be adjusted like so. This would make the images show up correctly in both Keystatic page editor and when previewing the page in the browser.
+
+### Building
+
+---
+
+so, okay.
+
+- the post must be a`slug.mdoc`file, not`slug/index.mdoc`file - not true. it can be in its own folder with proper config below.
+- `image` in keystatic config must be updated with to keep the images in the same folder with the post mdoc file.
+
+```js
+images: {
+  directory: 'src/content/blog',
+  publicPath: '../../../content/blog/',
+},
+```
+
+![](../../../content/blog/exploring-keystatic/dummy-image.png)
+
+- Post thumbnail: can be uploaded in Keystatic, but now got a problem to use it with Astro's `<Image>` component. The `src` contains just a file name. It also lives inside the `src/content/` folder, meaning it must be imported in JS to use with `src` prop of the Image component.
+  - There we go! this can be done in the `field.image` config.
+
+```java
+thumbnail: fields.image({
+  label: 'Thumbnail',
+  directory: 'public/images',
+  publicPath: '/public/images',
+}),
+```
+
+- When the thumbnail is selected, it creates `thumbnail: /public/images/testing-keystatic/thumbnail.png` in the frontmatter of the post. 🤝
+
+---
+
+- Now i'm trying to convert the `/uses` page to mdoc
+- mdoc can be used with only content collections in astro.
+  - e.g. Astro [does not support](https://docs.astro.build/en/core-concepts/astro-pages/#supported-page-files) mdoc in pages. :(
+- The uses page is a page and not a content collection
+- Either I move the uses page to be a content collection, or just leave the page alone and maintain it outside of Keystatic.
+  - I choose the 2nd option: do nothing with it.
+
+---
+
+- language and tags field are added easily
+- I actually don't need a published or draft field.
+- The date and datetime fields are still kind of buggy. It doesn't return a valid date that is compatible with Astro [https://github.com/Thinkmill/keystatic/issues/821](https://github.com/Thinkmill/keystatic/issues/821)
+- Custom Markdoc Tag: I created `{% picture %}` tag in mdoc config. It renders well in the page, but not in Keystatic.
+  - Wishlist: Keystatic should just render a custom tag as plain text, and allows me to edit the page.
+  - Funnily, this code below renders a picture component inside of a code block.
+
+```markdown
+{% picture
+  src="/images/uses/laptop.jpg"
+  alt="2015, 15-inch macbook pro"
+  height=900 width=1600 /%}
+```
