@@ -25,10 +25,7 @@ const config = {
 if (process.env.NODE_ENV !== 'production') {
   config.output = 'hybrid';
   config.adapter = netlify();
-  config.integrations = [
-    ...config.integrations,
-    keystatic()
-  ]
+  config.integrations.push(keystatic());
 }
 
 export default defineConfig(config);

@@ -1,5 +1,5 @@
 // keystatic.config.ts
-import { config, fields, collection } from '@keystatic/core';
+import { config, fields, collection, component } from '@keystatic/core';
 
 export default config({
   ui: {
@@ -50,6 +50,17 @@ export default config({
             directory: 'src/content/blog',
             publicPath: '../../../content/blog/',
           },
+          componentBlocks: {
+            'warningMessage': component({
+              label: 'Warning Message',
+              schema: {
+                title: fields.text({
+                  label: 'Title'
+                }),
+              },
+              preview: () => null
+            })
+          }
         }),
       },
     }),
