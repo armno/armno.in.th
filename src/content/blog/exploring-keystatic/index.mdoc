@@ -124,6 +124,8 @@ schema: {
 },
 ```
 
+Each field's config is pretty straightforward, with a small tweak.
+
 To keep images in the post content in the same directory, the `content.images` paths config has to be adjusted like so. This would make the images show up correctly in both Keystatic page editor and when previewing the page in the browser.
 
 When I add an image in the content from editor's UI, Keystatic will copy the image to `src/content/blog/<post-name>/<image-name>` and set the image path in Markdoc file to be `../../../content/blog/<post-name>/<image-name>.` At build time, the correct image paths will be handled by Astro.
