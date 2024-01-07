@@ -6,7 +6,7 @@ import { format } from "date-fns";
 export async function getStaticPaths({ paginate }) {
   const allPosts = await getCollection("blog");
   const sortedPosts = allPosts.sort((a, b) => {
-    return new Date(b.data.pubDate) - new Date(a.data.pubDate);
+    return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
   });
 
   const postsByYear = sortedPosts.reduce((acc, post) => {

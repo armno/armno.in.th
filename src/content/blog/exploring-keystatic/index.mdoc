@@ -1,0 +1,403 @@
+---
+title: Exploring Keystatic
+pubDate: '2024-01-01T00:00:00.000Z'
+description: Keystatic is a CMS to manage Markdown content. In this blog post, I noted down how I integrate Keystatic to my Astro blog.
+language: en
+tags:
+  - Keystatic
+  - Blog
+  - CMS
+thumbnail: /images/exploring-keystatic/thumbnail.jpeg
+---
+[**Keystatic**](https://keystatic.com/) is a CMS to manage Markdown content, and it is my new favorite thing. This blog post covers my experiences integrating Keystatic into my content editing workflow for this Astro blog.
+
+A.k.a. it's an **"Astro-focused Keystatic Setup"** guide for my future self.
+
+## Background
+
+This website is built with [Astro](https://astro.build) using [MDX](https://mdxjs.com/) and [Markdown](https://daringfireball.net/projects/markdown/) for blog and pages content. Coding the website and writing content in Markdown are done in VSCode.
+
+I love the simplicity of Markdown, but since I added MDX support, I keep adding HTML and custom Astro components to my content while writing my thoughts out.
+
+At some point, I feel distracted because I was more focused on the coding part than the writing part. This is probably why I write a lot less in the recent years. There has been some friction there.
+
+I always want to get back into "write more and worry less" mode again.
+
+*Just write.*
+
+---
+
+## Keystatic
+
+I discovered Keystatic by chance from reading [Astro's blog about Thinkmill](https://astro.build/case-studies/thinkmill/). Keystatic is a Git-based CMS to manage Markdown, JSON, and YAML content. Its concepts remind me of the [Netlify CMS](https://v1.netlifycms.org/) back in the days (now [Decap CMS](https://decapcms.org/)), but looks a bit better this time.
+
+I never heard of Keystatic or Thinkmill before, but when I saw **Simon Vrachliotis** ([@simonswiss](https://twitter.com/simonswiss)) is producing video tutorials there, then I know it's going to be pretty good. Or at least it will be fun to learn from him.
+
+![Screenshot Keystatic's Homepage](../../../content/blog/exploring-keystatic/keystatic-homepage.jpeg "Screenshot Keystatic's Homepage")
+
+### Adding Keystatic to my existing Astro project
+
+Keystatic only supports YAML, JSON, and Markdoc as content, but not MDX. I tried to convert an existing article from a `.mdx` to a `.mdoc` file - it wasn't an easy process and I think it wouldn't be worth it to convert all of them from MDX to Markdoc files, just to make them work in Keystatic.
+
+So I shifted the direction to use Keystatic *only* for my new content. Meaning the new content will be in Markdoc format, created and managed in Keystatic. Old content remains in MDX and I can still update them in VSCode whenever it is needed. And more importantly, old and new content can co-exist in the same setup. I try to change the Astro part as less as possible.
+
+I follow the guides from both [Keystatic's](https://keystatic.com/docs/installation-astro) and [Astro's](https://docs.astro.build/en/guides/cms/keystatic/#_top) docs. Keystatic works great Astro's content collection and adding Keystatic to the project was pretty straightforward. I didn't get errors during install.
+
+The start command is `npm run dev`. This serves both Astro dev server and Keystatic dev server.
+
+I still needed to adjust some configs to keep my current content structure working.
+
+- All posts are in `src/content/blog/` directory. Each post is in its own directory. The content file is then at `src/content/blog/<post-name>/index.mdx|mdoc`.
+- All images and assets used in a post stay in the same directory e.g. in `src/content/blog/<post-name>/` instead of in the `public` directory. It is just my personal preference that I like to keep each blog post self-contained and portable, and images in `src/` directory would be optimized by Astro too.
+
+### Basic configurations
+
+Starting by defining a new `posts` collection.
+
+```typescript
+posts: collection({
+  entryLayout: 'content',
+  label: 'Posts',
+  slugField: 'title',
+  path: 'src/content/blog/*/',
+  format: {
+    contentField: 'content'
+  },
+```
+
+The important part are:
+
+- The `path` config that sets to `src/content/blog/*/` (ends with a forward slash `/`) to tell Keystatic to look for content files inside subdirectories.
+- `entryLayout: content` changes the layout to focus on the content rather than the fields. I like this a lot. It does feel a bit like WordPress but that's for a good reason.
+- `slugField` defines which field in the Schema to automatically generate the slug from.
+- `format.contentField` is to tell Keystatic to look for the content in the same file with the frontmatter medatada which would be usually in the `index.mdoc` of each post.
+
+![](../../../content/blog/exploring-keystatic/default-focused.jpeg)
+
+![](../../../content/blog/exploring-keystatic/content-focused.jpeg)
+
+### Schema
+
+Defining Keystatic's Schema is pretty much the same idea with defining [Astro's Content Collection Schema](https://docs.astro.build/en/guides/content-collections/#defining-a-collection-schema), but with different tools in a different config file.
+
+This schema config defines what the metadata in each post are, as well as defining how the editor UI would look like in Keystatic.
+
+```typescript
+schema: {
+  title: fields.slug({ name: { label: 'Title' } }),
+  pubDate: fields.text({ label: 'Publish Date' }),
+  description: fields.text({ label: 'Description' }),
+  language: fields.select({
+    label: 'Language',
+    defaultValue: 'en',
+    options: [
+      { label: 'English', value: 'en', },
+      { label: 'Thai', value: 'th', }
+    ]
+  }),
+  tags: fields.array(
+    fields.text({ label: 'Tag' }),
+    {
+      label: 'Tags',
+      itemLabel: props => props.value
+    }
+  ),
+  thumbnail: fields.image({
+    label: 'Thumbnail',
+    directory: 'public/images',
+    publicPath: '/public/images',
+  }),
+  content: fields.document({
+    label: 'Content',
+    formatting: true,
+    dividers: true,
+    links: true,
+    images: {
+      directory: 'src/content/blog',
+      publicPath: '../../../content/blog/',
+    },
+  }),
+},
+```
+
+To keep images in the post content in the same directory, the `content.images` paths config has to be adjusted like so. This would make the images show up correctly in both Keystatic page editor and when previewing the page in the browser.
+
+When I add an image in the content from editor's UI, Keystatic will copy the image to `src/content/blog/<post-name>/<image-name>` and set the image path in Markdoc file to be `../../../content/blog/<post-name>/<image-name>.` At build time, the correct image paths will be handled by Astro.
+
+### Post thumbnail image
+
+Unlike images in the content, thumbnail image of a post is a separate field in the schema. At the time of writing this, I'm not able to keep the post thumbnail image in the same directory with other images yet.
+
+I think I would need to define the thumbnail image as a [proper image field in Content Collection config](https://docs.astro.build/en/guides/images/#images-in-content-collections) in Astro. For now, only the thumbnail image of the post is stored in `/public/images/<post-name>/` directory, but it is something I definitely would fix in the future.
+
+### Published Date field
+
+I struggled a bit to configure the `pubDate` field to be a proper date field. All my blog posts store published date information in ISO-8601 format. I have also defined the field in Content Collection's config to be a date field.
+
+```typescript
+// src/content/config.ts
+const blogCollection = defineCollection({
+  schema:z.object({
+    pubDate: z.union([z.string().datetime(), z.date()]),
+```
+
+And in Keystatic's schema config, I also initially defined as a `datetime` field.
+
+```typescript
+// keystatic.config.ts
+collections: {
+  posts: collection({
+    schema: {
+      pubDate: fields.datetime({ label: 'Publish Date' }),
+```
+
+It throws an error when I try to load with ISO-8601 date object (unquoted) in the frontmatter that the date is not a string.
+
+![](../../../content/blog/exploring-keystatic/datetime-validation-error.jpg)
+
+I try to wrap the date with quotes to make it a string. The error is gone, but Keystatic is still not able to populate the value correctly in the datetime field.
+
+![](../../../content/blog/exploring-keystatic/date-string-not-populdated.jpg)
+
+Keystatic has both [`Date`](https://keystatic.com/docs/fields/date) and [`Datetime`](https://keystatic.com/docs/fields/datetime) field types, but neither of them store the value as ISO-8601 format or the actual Date object. The `Datetime` type outputs the format like `2024-01-04T12:10` which would work in the page editor.
+
+![](../../../content/blog/exploring-keystatic/updated-datetime.jpg)
+
+But then Astro would complain during the build time that the value is not a valid date object defined in the collection schema.
+
+![](../../../content/blog/exploring-keystatic/astro-build-error.jpg)
+
+I think this is due to the limitation of [`<input type="datetime-local">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) itself that it doesn't work with ISO-8601 format, and not about Keystatic. There is an issue already on GitHub [https://github.com/Thinkmill/keystatic/issues/821.](https://github.com/Thinkmill/keystatic/issues/821)
+
+To get away with this issue, I changed the field to be a text field in `keystatic.config.ts` file. Not ideal to edit the datetime value, but I can live with that.
+
+![](../../../content/blog/exploring-keystatic/datetime-as-textfield.jpg)
+
+### Enable syntax highlighting for code blocks
+
+No extra dependencies needed, but I have to add `shiki()` Markdoc extension in the `markdoc.config.mjs` file to enable syntax highlighting for code blocks created in Keystatic editor.
+
+```javascript
+import shiki from '@astrojs/markdoc/shiki';
+
+export default defineMarkdocConfig({
+  ...
+  extends: [
+    shiki()
+  ]
+});
+```
+
+---
+
+## Custom Astro Components in Keystatic
+
+Here is the fun part - I have a few of custom Astro components used in my blog posts. I want to see if I can use them in Keystatic, or if it's possible at all.
+
+Since I will be using Markdoc from now on, I have 2 challenges:
+
+1. Adding custom Astro components in Markdoc content using [custom tag](https://markdoc.dev/docs/tags) instead of importing the components in the content file like in MDX.
+1. Displaying or editing the components in Keystatic.
+
+### 1. Creating a custom Markdoc tag to render an Astro component
+
+Astro has an official [Markdoc integration](https://docs.astro.build/en/guides/integrations-guide/markdoc/#_top). Adding it to my current Astro project is pretty simple:
+
+```
+npx astro add markdoc
+```
+
+I have a `<WarningMessage>` Astro component that displays a yellow block of text in the content. It has only 1 optional prop `title` and uses `<slot>` to display the content in the paragraph.
+
+![](../../../content/blog/exploring-keystatic/warning-message.png)
+
+```jsx
+// src/components/WarningMessage.astro
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+<div class="bg-yellow-100 pt-6 pb-2 px-8 my-6">
+  {title && (
+    <div class="font-bold">{title}</div>
+  )}
+  <slot />
+</div>
+```
+
+To create a custom Markdoc tag, I create a `markdoc.config.mjs` in the project and define a custom `warningMessage` tag there. The `render` property points to the path of the component.
+
+```java
+// markdoc.config.mjs
+import { defineMarkdocConfig, component } from '@astrojs/markdoc/config';
+
+export default defineMarkdocConfig({
+  tags: {
+    warningMessage: {
+      render: component('./src/components/WarningMessage.astro'),
+      attributes: {
+        title: { type: String, required: false },
+      }
+    },
+  },
+});
+```
+
+Then I can use in my Markdoc content file with `{% warningMessage %}` tag. It renders properly on the page.
+
+![](../../../content/blog/exploring-keystatic/mdoc-custom-tag.jpg)
+
+By default, Keystatic is not able to understand the custom tag and displays an error message when loading the page in Keystatic.
+
+![](../../../content/blog/exploring-keystatic/unknown-tag.jpg)
+
+I also have to register this component in Keystatic's config file.
+
+### 2. Creating a component block in Keystatic
+
+To make Keystatic aware of the new `{% warningMessage %}` tag, I add `componentBlocks` config to the `document` field type of the content field.
+
+```typescript
+content: fields.document({
+  componentBlocks: {
+    'warningMessage': component({
+      label: 'Warning Message',
+      schema: {
+        title: fields.text({
+          label: 'Title'
+        }),
+      },
+      preview: () => null
+    })
+  }
+}),
+```
+
+A new option to add the custom block will show up in the content field.
+
+![](../../../content/blog/exploring-keystatic/custom-block.jpg)
+
+![](../../../content/blog/exploring-keystatic/custom-block-edit.jpg)
+
+However, I'm not able to figure out yet how to make the child content (that would be the `<slot>` of the component) show up in Keystatic.
+
+In this example, I could only edit the `title` prop here. Keystatic outputs like this in Markdoc:
+
+![](../../../content/blog/exploring-keystatic/custom-tag.jpg)
+
+What I want is the ability to add some content between opening and closing tags like:
+
+![](../../../content/blog/exploring-keystatic/custom-tag-with-child-content.jpg)
+
+I think the way to solve this is to use [the `child` type](https://keystatic.com/docs/fields/child). Seems to work with a Next.js setup. I couldn't figure out how to make it work with my Astro setup yet.
+
+Funny thing aside: I'm using screenshots of the code above instead of actual code blocks in Keystatic because it would render as actual components instead of the code blocks on the page.
+
+![](../../../content/blog/exploring-keystatic/rendered-tag.jpg)
+
+---
+
+## Building & Deploying
+
+So far I have Keystatic setup locally. It runs alongside Astro. And I have a working content editing workflow.
+
+As I'm the only author of my blog, I will be using only the [Local Mode](https://keystatic.com/docs/local-mode) of Keystatic. I only need it to run locally and not on the live website. There are some small challenges and tweaks need to achieve that.
+
+Keystatic requires `hybrid` mode in Astro to run. And `hybrid` mode requires an server-side [Adapter](https://docs.astro.build/en/guides/server-side-rendering/#add-an-adapter) to run, or to build at least 🤯. I have to install one even though I'm not going to use it.
+
+I'm hosting my website on Netlify so the [Netlify Adapter](https://docs.astro.build/en/guides/integrations-guide/netlify/) seems to be a safe choice.
+
+```
+npx astro add netlify
+```
+
+When it comes to build configuration, my goal is to exclude Keystatic entirely for production builds. Keystatic's docs has a [recipe](https://keystatic.com/docs/recipes/astro-disable-admin-ui-in-production) to disable `/keystatic` path from production build, but it seems to be outdated.
+
+A simpler solution from [a GitHub Discussion thread](https://github.com/Thinkmill/keystatic/discussions/486#discussioncomment-7910826) is to exclude `keystatic()` integration entirely for the production build.
+
+```java
+export default defineConfig({
+  integrations: [
+    process.env.NODE_ENV === 'production' ? null : keystatic()
+  ]
+});
+```
+
+The downside is that I'm still not able to run `astro preview` command locally after a build, because the Netlify Adapter doesn't support `preview` command. I usually use `astro preview` command to double check the whole website after a production build, and I find it is pretty useful.
+
+So to make it work locally, I also make the production build excludes both `output` and `adapter` config. My Astro config file then looks like:
+
+```typescript
+const config = {
+  site: "https://armno.in.th",
+  integrations: [
+    sitemap(),
+    mdx(),
+    tailwind(),
+    react(),
+    markdoc(),
+  ],
+};
+
+if (process.env.NODE_ENV !== 'production') {
+  config.output = 'hybrid';
+  config.adapter = netlify();
+  config.integrations = [
+    ...config.integrations,
+    keystatic()
+  ]
+}
+
+export default defineConfig(config);
+```
+
+With all this set up, I have now Keystatic as a CMS for my Astro blog content. 🎉 🚀
+
+My goal is definitely trying to write more. And I hope Keystatic will help me achieve that.
+
+---
+
+## Summary
+
+This post becomes a lot longer than I expected! But on the other hand, it has been a lot of fun. I have learned a lot about Keystatic and content management for static websites in general.
+
+Keystatic is still in its early days (if I'm not mistaken, since its [first launch](https://www.thinkmill.com.au/blog/meet-keystatic) in April 2023). [Things are still experimental](https://github.com/Thinkmill/keystatic?tab=readme-ov-file#status), and sometimes, are broken. It might be too early to judge if this is going to be a big thing.
+
+But what excites me about Keystatic is that it's *looks pretty* simple, and also is *very* capable at the same time. Just by trying it out, it's quite clear to me that this thing is well made, and there might be a lot more to come. Kudos to the team behind 👍.
+
+If you have a static site (especially built with Next.js or Astro) and still looking for a tool to help you with writing and managing your content, Keystatic might be the thing for you. Like it or not, it's definitely worthing trying out.
+
+Happy ~~coding~~ writing ✌️
+
+### Resources
+
+- [Keystatic Docs](https://keystatic.com/docs/introduction)
+- [@simonswiss YouTube Channel](https://www.youtube.com/@simonswiss/search?query=keystatic)
+- [Astro & Keystatic Integration](https://docs.astro.build/en/guides/cms/keystatic/#_top) on Astro Docs
+
+---
+
+### Bonus 1: Other things I like in Keystatic
+
+- **Local draft / Unsaved badge:** Keystatic constantly stores unsaved changes in the browser's storage, and is able to restore from the unsaved changes even it's not written to the file yet.
+- **Documentation**: not super extensive but covers most of the features in Keystatic.
+- GitHub [issues ](https://github.com/Thinkmill/keystatic/issues)and [discussions](https://github.com/Thinkmill/keystatic/discussions): where I could find answers to many of problems I found.
+- **Slash command**: I don't use it a lot but it looks nice and neat.
+- **Images handling**: Keystatic removes an image from the directory when the image is removed from the content.
+- **Language selector in code blocks**: and get the better readability and syntax highlighting.
+- **Customization:** Most of the Admin UI are customizable from the config file.
+
+### Bonus 2: Wishlist
+
+Here's my personal wishlist for Keystatic.
+
+- A caption field for an image. Or a `<figure>` with caption field type.
+- Adding custom text style e.g. `p.lead` from Tailwind.
+- Valid JS Date for `date` / `datetime` field types.
+- Focus/Fullscreen writing mode.
+- Ability to move a block or a paragraph up or down the content editor (like in WordPress).
+- Schema: ability to extend from Astro's Content Collection schema so no need to define same schema twice.
+- More tutorials on Astro side 🚀.
