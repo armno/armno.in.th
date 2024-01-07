@@ -105,7 +105,7 @@ schema: {
   thumbnail: fields.image({
     label: 'Thumbnail',
     directory: 'public/images',
-    publicPath: '/public/images',
+    publicPath: '/images',
   }),
   content: fields.document({
     label: 'Content',
@@ -167,7 +167,7 @@ But then Astro would complain during the build time that the value is not a vali
 
 ![](../../../content/blog/exploring-keystatic/astro-build-error.jpg)
 
-I think this is due to the limitation of [`<input type="datetime-local">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) itself that it doesn't work with ISO-8601 format, and not about Keystatic. There is an issue already on GitHub [https://github.com/Thinkmill/keystatic/issues/821.](https://github.com/Thinkmill/keystatic/issues/821)
+I think this is due to the limitation of [`<input type="datetime-local">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) itself that it doesn't work with ISO-8601 format, and not about Keystatic. There is an issue already on GitHub [keystatic#821.](https://github.com/Thinkmill/keystatic/issues/821)
 
 To get away with this issue, I changed the field to be a text field in `keystatic.config.ts` file. Not ideal to edit the datetime value, but I can live with that.
 
