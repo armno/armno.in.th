@@ -33,7 +33,7 @@ I discovered Keystatic by chance from reading [Astro's blog about Thinkmill](htt
 
 I never heard of Keystatic or Thinkmill before, but when I saw **Simon Vrachliotis** ([@simonswiss](https://twitter.com/simonswiss)) is producing video tutorials there, then I know it's going to be pretty good. Or at least it will be fun to learn from him.
 
-![](../../../content/blog/exploring-keystatic/keystatic-homepage.jpeg)
+![Screenshot Keystatic's Homepage](../../../content/blog/exploring-keystatic/keystatic-homepage.jpeg "Screenshot Keystatic's Homepage")
 
 ### Adding Keystatic to my existing Astro project
 
@@ -83,43 +83,41 @@ Defining Keystatic's Schema is pretty much the same idea with defining [Astro's 
 This schema config defines what the metadata in each post are, as well as defining how the editor UI would look like in Keystatic.
 
 ```typescript
-
-  schema: {
-    title: fields.slug({ name: { label: 'Title' } }),
-    pubDate: fields.text({ label: 'Publish Date' }),
-    description: fields.text({ label: 'Description' }),
-    language: fields.select({
-      label: 'Language',
-      defaultValue: 'en',
-      options: [
-        { label: 'English', value: 'en', },
-        { label: 'Thai', value: 'th', }
-      ]
-    }),
-    tags: fields.array(
-      fields.text({ label: 'Tag' }),
-      {
-        label: 'Tags',
-        itemLabel: props => props.value
-      }
-    ),
-    thumbnail: fields.image({
-      label: 'Thumbnail',
-      directory: 'public/images',
-      publicPath: '/public/images',
-    }),
-    content: fields.document({
-      label: 'Content',
-      formatting: true,
-      dividers: true,
-      links: true,
-      images: {
-        directory: 'src/content/blog',
-        publicPath: '../../../content/blog/',
-      },
-    }),
-  },
-}),
+schema: {
+  title: fields.slug({ name: { label: 'Title' } }),
+  pubDate: fields.text({ label: 'Publish Date' }),
+  description: fields.text({ label: 'Description' }),
+  language: fields.select({
+    label: 'Language',
+    defaultValue: 'en',
+    options: [
+      { label: 'English', value: 'en', },
+      { label: 'Thai', value: 'th', }
+    ]
+  }),
+  tags: fields.array(
+    fields.text({ label: 'Tag' }),
+    {
+      label: 'Tags',
+      itemLabel: props => props.value
+    }
+  ),
+  thumbnail: fields.image({
+    label: 'Thumbnail',
+    directory: 'public/images',
+    publicPath: '/public/images',
+  }),
+  content: fields.document({
+    label: 'Content',
+    formatting: true,
+    dividers: true,
+    links: true,
+    images: {
+      directory: 'src/content/blog',
+      publicPath: '../../../content/blog/',
+    },
+  }),
+},
 ```
 
 To keep images in the post content in the same directory, the `content.images` paths config has to be adjusted like so. This would make the images show up correctly in both Keystatic page editor and when previewing the page in the browser.
@@ -147,10 +145,10 @@ And in Keystatic's schema config, I also initially defined as a `datetime` field
 
 ```typescript
 // keystatic.config.ts
-  collections: {
-    posts: collection({
-      schema: {
-        pubDate: fields.datetime({ label: 'Publish Date' }),
+collections: {
+  posts: collection({
+    schema: {
+      pubDate: fields.datetime({ label: 'Publish Date' }),
 ```
 
 It throws an error when I try to load with ISO-8601 date object (unquoted) in the frontmatter that the date is not a string.
@@ -174,6 +172,21 @@ I think this is due to the limitation of [`<input type="datetime-local">`](https
 To get away with this issue, I changed the field to be a text field in `keystatic.config.ts` file. Not ideal to edit the datetime value, but I can live with that.
 
 ![](../../../content/blog/exploring-keystatic/datetime-as-textfield.jpg)
+
+### Enable syntax highlighting for code blocks
+
+No extra dependencies needed, but I have to add `shiki()` Markdoc extension in the `markdoc.config.mjs` file to enable syntax highlighting for code blocks created in Keystatic editor.
+
+```javascript
+import shiki from '@astrojs/markdoc/shiki';
+
+export default defineMarkdocConfig({
+  ...
+  extends: [
+    shiki()
+  ]
+});
+```
 
 ---
 
@@ -381,10 +394,10 @@ Happy ~~coding~~ writing ✌️
 
 Here's my personal wishlist for Keystatic.
 
-- A caption field for an image.
+- A caption field for an image. Or a `<figure>` with caption field type.
+- Adding custom text style e.g. `p.lead` from Tailwind.
 - Valid JS Date for `date` / `datetime` field types.
 - Focus/Fullscreen writing mode.
 - Ability to move a block or a paragraph up or down the content editor (like in WordPress).
 - Schema: ability to extend from Astro's Content Collection schema so no need to define same schema twice.
 - More tutorials on Astro side 🚀.
-- Custom text style e.g. `p.lead` from Tailwind.
