@@ -39,7 +39,7 @@ export default config({
         thumbnail: fields.image({
           label: 'Thumbnail',
           directory: 'public/images',
-          publicPath: '/public/images',
+          publicPath: '/images',
         }),
         content: fields.document({
           label: 'Content',
