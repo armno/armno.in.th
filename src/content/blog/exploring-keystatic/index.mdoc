@@ -9,37 +9,39 @@ tags:
   - CMS
 thumbnail: /public/images/exploring-keystatic/thumbnail.jpeg
 ---
-Keystatic is a CMS to manage Markdown content, and it is my new favorite thing. This blog post covers my experiences integrating Keystatic into my content editing workflow for this Astro blog, a.k.a. my *"Astro-focused Keystatic Setup"* kind of guide.
+[**Keystatic**](https://keystatic.com/) is a CMS to manage Markdown content, and it is my new favorite thing. This blog post covers my experiences integrating Keystatic into my content editing workflow for this Astro blog.
+
+A.k.a. it's an **"Astro-focused Keystatic Setup"** guide for my future self.
 
 ## Background
 
-This website is built with [Astro](https://astro.build) using [MDX](https://mdxjs.com/) and [Markdown](https://daringfireball.net/projects/markdown/) for blog and pages content.
-
-I really enjoy working on Astro - coding it. However, the writing content part has been not so great. This is by no means to shade Astro. I think it's my issue with JAMStack in general since moving from WordPress in 2013.
+This website is built with [Astro](https://astro.build) using [MDX](https://mdxjs.com/) and [Markdown](https://daringfireball.net/projects/markdown/) for blog and pages content. Coding the website and writing content in Markdown are done in VSCode.
 
 I love the simplicity of Markdown, but since I added MDX support, I keep adding HTML and custom Astro components to my content while writing my thoughts out.
 
-At some point, I feel distracted because I was more focused on the coding part than the writing part. This is probably why I write a lot less in the recent years. There has been some frictions there.
+At some point, I feel distracted because I was more focused on the coding part than the writing part. This is probably why I write a lot less in the recent years. There has been some friction there.
 
-I wanted to get back into "write more and worry less" mode again.
+I always want to get back into "write more and worry less" mode again.
 
-Just write.
+*Just write.*
 
 ---
 
 ## Keystatic
 
-I discovered Keystatic by chance from reading [Astro's blog about Thinkmill](https://astro.build/case-studies/thinkmill/). Keystatic is a Git-based CMS to manage Markdown, JSON, and YAML content. It reminds me of the [Netlify CMS](https://v1.netlifycms.org/) back in the days (now [Decap CMS](https://decapcms.org/)), but looks a bit better this time.
+I discovered Keystatic by chance from reading [Astro's blog about Thinkmill](https://astro.build/case-studies/thinkmill/). Keystatic is a Git-based CMS to manage Markdown, JSON, and YAML content. Its concepts remind me of the [Netlify CMS](https://v1.netlifycms.org/) back in the days (now [Decap CMS](https://decapcms.org/)), but looks a bit better this time.
 
-I never heard of Keystatic or Thinkmill before. But when I saw **Simon Vrachliotis** ([@simonswiss](https://twitter.com/simonswiss)) is producing video tutorials there for Keystatic, then I know it's going to be pretty good. Or at least it will be fun to learn from him.
+I never heard of Keystatic or Thinkmill before, but when I saw **Simon Vrachliotis** ([@simonswiss](https://twitter.com/simonswiss)) is producing video tutorials there, then I know it's going to be pretty good. Or at least it will be fun to learn from him.
+
+![](../../../content/blog/exploring-keystatic/keystatic-homepage.jpeg)
 
 ### Adding Keystatic to my existing Astro project
 
-Keystatic only supports YAML, JSON, and Markdoc as content. Sadly all my blog posts are in MDX. I tried to convert an existing article from a `.mdx` to a `.mdoc` file - it wasn't an easy process and I think it wouldn't be worth it to convert all of them from MDX to Markdoc files, just to make them work in Keystatic.
+Keystatic only supports YAML, JSON, and Markdoc as content, but not MDX. I tried to convert an existing article from a `.mdx` to a `.mdoc` file - it wasn't an easy process and I think it wouldn't be worth it to convert all of them from MDX to Markdoc files, just to make them work in Keystatic.
 
 So I shifted the direction to use Keystatic *only* for my new content. Meaning the new content will be in Markdoc format, created and managed in Keystatic. Old content remains in MDX and I can still update them in VSCode whenever it is needed. And more importantly, old and new content can co-exist in the same setup. I try to change the Astro part as less as possible.
 
-I followed the guides from both [Keystatic's](https://keystatic.com/docs/installation-astro) and [Astro's](https://docs.astro.build/en/guides/cms/keystatic/#_top) docs. Keystatic works great Astro's content collection and adding Keystatic to the project was pretty straightforward. I didn't get errors during install.
+I follow the guides from both [Keystatic's](https://keystatic.com/docs/installation-astro) and [Astro's](https://docs.astro.build/en/guides/cms/keystatic/#_top) docs. Keystatic works great Astro's content collection and adding Keystatic to the project was pretty straightforward. I didn't get errors during install.
 
 The start command is `npm run dev`. This serves both Astro dev server and Keystatic dev server.
 
@@ -341,28 +343,48 @@ export default defineConfig(config);
 
 With all this set up, I have now Keystatic as a CMS for my Astro blog content. 🎉 🚀
 
+My goal is definitely trying to write more. And I hope Keystatic will help me achieve that.
+
+---
+
 ## Summary
 
-It's been a lot of fun!
+This post becomes a lot longer than I expected! But on the other hand, it has been a lot of fun. I have learned a lot about Keystatic and content management for static websites in general.
 
-### Other things I like in Keystatic
+Keystatic is still in its early days (if I'm not mistaken, since its [first launch](https://www.thinkmill.com.au/blog/meet-keystatic) in April 2023). [Things are still experimental](https://github.com/Thinkmill/keystatic?tab=readme-ov-file#status), and sometimes, are broken. It might be too early to judge if this is going to be a big thing.
 
-- **Local draft / Unsaved badge:** Keystatic constantly stores unsaved changes in the browser's storage, and is able to restore from the unsaved changes even it's now written to the Markdoc file yet.
+But what excites me about Keystatic is that it's *looks pretty* simple, and also is *very* capable at the same time. Just by trying it out, it's quite clear to me that this thing is well made, and there might be a lot more to come. Kudos to the team behind 👍.
+
+If you have a static site (especially built with Next.js or Astro) and still looking for a tool to help you with writing and managing your content, Keystatic might be the thing for you. Like it or not, it's definitely worthing trying out.
+
+Happy ~~coding~~ writing ✌️
+
+### Resources
+
+- [Keystatic Docs](https://keystatic.com/docs/introduction)
+- [@simonswiss YouTube Channel](https://www.youtube.com/@simonswiss/search?query=keystatic)
+- [Astro & Keystatic Integration](https://docs.astro.build/en/guides/cms/keystatic/#_top) on Astro Docs
+
+---
+
+### Bonus 1: Other things I like in Keystatic
+
+- **Local draft / Unsaved badge:** Keystatic constantly stores unsaved changes in the browser's storage, and is able to restore from the unsaved changes even it's not written to the file yet.
 - **Documentation**: not super extensive but covers most of the features in Keystatic.
-- GitHub [issues ](https://github.com/Thinkmill/keystatic/issues)and [discussions](https://github.com/Thinkmill/keystatic/discussions): where I could find answers to most of problems I found.
+- GitHub [issues ](https://github.com/Thinkmill/keystatic/issues)and [discussions](https://github.com/Thinkmill/keystatic/discussions): where I could find answers to many of problems I found.
 - **Slash command**: I don't use it a lot but it looks nice and neat.
 - **Images handling**: Keystatic removes an image from the directory when the image is removed from the content.
 - **Language selector in code blocks**: and get the better readability and syntax highlighting.
 - **Customization:** Most of the Admin UI are customizable from the config file.
 
-### Wishlist
+### Bonus 2: Wishlist
 
-Here's my personal wishlist of Keystatic.
+Here's my personal wishlist for Keystatic.
 
-- Ability to move a block or a paragraph up or down the content editor (like in WordPress).
 - A caption field for an image.
 - Valid JS Date for `date` / `datetime` field types.
 - Focus/Fullscreen writing mode.
+- Ability to move a block or a paragraph up or down the content editor (like in WordPress).
 - Schema: ability to extend from Astro's Content Collection schema so no need to define same schema twice.
 - More tutorials on Astro side 🚀.
 - Custom text style e.g. `p.lead` from Tailwind.
