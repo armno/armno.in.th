@@ -1,7 +1,8 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors')
+import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
-module.exports = {
+export default {
   theme: {
     extend: {
       typography: {
@@ -78,4 +79,5 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography')
   ]
-}
+} satisfies Config
+
