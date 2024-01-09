@@ -38,7 +38,7 @@ const relatedPosts = sampleSize(allRelatedPosts, 3);
       <ul class="grid gap-y-8 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
         {relatedPosts.map((post) => (
           <PostItem
-            url={post.slug}
+            url={`/blog/${post.slug}`}
             pubDate={post.data.pubDate}
             title={post.data.title}
             thumbnail={post.data.thumbnail}
