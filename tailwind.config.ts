@@ -65,11 +65,6 @@ export default {
           }
         }
       },
-      fontFamily: {
-        headings: ['Frank Ruhl Libre', ...defaultTheme.fontFamily.sans],
-        // sans: ['Sarabun', ...defaultTheme.fontFamily.sans],
-        // serif: ['Frank Ruhl Libre', ...defaultTheme.fontFamily.serif],
-      },
     }
   },
   content: [
