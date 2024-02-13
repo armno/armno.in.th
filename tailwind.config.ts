@@ -69,7 +69,7 @@ export default {
   },
   content: [
     './public/**/*.html',
-    './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue,md}'
+    './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue,md,mdx,mdoc}'
   ],
   plugins: [
     require('@tailwindcss/typography')
