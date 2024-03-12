@@ -2,11 +2,14 @@
 import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import { format } from "date-fns";
+import SearchBox from "@components/SearchBox.astro";
 
 export async function getStaticPaths({ paginate }) {
   const allPosts = await getCollection("blog");
   const sortedPosts = allPosts.sort((a, b) => {
-    return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
+    return (
+      new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+    );
   });
 
   const postsByYear = sortedPosts.reduce((acc, post) => {
@@ -18,14 +21,16 @@ export async function getStaticPaths({ paginate }) {
     return acc;
   }, {});
 
-  const postsByYearArray = Object.keys(postsByYear).reverse().map((year) => {
-    return {
-      year,
-      posts: postsByYear[year],
-    };
-  });
+  const postsByYearArray = Object.keys(postsByYear)
+    .reverse()
+    .map((year) => {
+      return {
+        year,
+        posts: postsByYear[year],
+      };
+    });
 
-  return paginate(postsByYearArray, { pageSize: 1000});
+  return paginate(postsByYearArray, { pageSize: 1000 });
 }
 
 const { page } = Astro.props;
@@ -39,13 +44,15 @@ const content = {
 
 <PageLayout frontmatter={content}>
   <h1 class="font-bold">Blog</h1>
+  <SearchBox />
 
-    <ol class="list-none p-0">
-      {page.data.map(year => (
+  <ol class="list-none p-0">
+    {
+      page.data.map((year) => (
         <li>
           <h2 class="font-bold">{year.year}</h2>
           <ol class="list-none p-0">
-            {year.posts.map(post => (
+            {year.posts.map((post) => (
               <li class="p-0">
                 <time
                   class="font-mono text-xs text-slate-600"
@@ -53,11 +60,12 @@ const content = {
                 >
                   {format(new Date(post.data.pubDate), "dd.MM.yyyy")}
                 </time>
-                <a href={'/blog/' + post.slug}>{post.data.title}</a>
+                <a href={"/blog/" + post.slug}>{post.data.title}</a>
               </li>
             ))}
           </ol>
         </li>
       ))
-    </ol>
+    }
+  </ol>
 </PageLayout>
