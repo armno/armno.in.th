@@ -16,9 +16,11 @@ const classes = 'mt-20 mx-auto pb-24 prose prose-slate main leading-6';
 <html lang={language ? language : 'th'}>
 	<head>
 		<BaseHead {title} {description} {thumbnail} />
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+    <script src="/pagefind/pagefind-ui.js" is:inline></script>
     <GlobalStyle />
 	</head>
-	<body class="antialiased">
+	<body class="antialiased" data-pagefind-body={isPost} data-pagefind-ignore={!isPost}>
 		<Header />
     {isPost &&
 		<article class={classes}>
