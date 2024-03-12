@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
     "start": "astro dev",
-    "build": "astro build && pagefind --site dist && cp -r dist/pagefind public/",
+    "build": "astro build && pagefind --force-language en --site dist && cp -r dist/pagefind public/",
     "preview": "astro preview"
   },
   "devDependencies": {
