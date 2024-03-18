@@ -39,6 +39,10 @@ I never heard of Keystatic or Thinkmill before, but when I saw **Simon Vrachliot
 
 ### Adding Keystatic to my existing Astro project
 
+{% warningMessage %}
+At the time of writing this article, MDX was not supported in Keystatic. Now they added the support for MDX field. Check out the [documentation page](https://keystatic.com/docs/fields/mdx) for more details.
+{% /warningMessage %}
+
 My very first thought is of course to make *everything* work, which is not the case when adopting some new tech stack ...
 
 Keystatic only supports YAML, JSON, and Markdoc as content, but not MDX. I tried to convert an existing article from a `.mdx` to a `.mdoc` file - it wasn't an easy process and I think it wouldn't be worth it to convert all of them from MDX to Markdoc files, just to make them work in Keystatic.
