@@ -86,10 +86,17 @@ export default config({
         }),
         thumbnail: fields.image({
           label: 'Thumbnail',
-          directory: 'public/images',
-          publicPath: '/images',
+          directory: 'public/images/uses/content',
+          publicPath: '/images/uses/content',
         }),
         content: fields.mdx({
+          label: 'Content',
+          options:{
+            image: {
+              directory: 'src/pages/uses/content/',
+              publicPath: '../../pages/uses/content/',
+            }
+          }
         }),
       }
     })
