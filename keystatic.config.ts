@@ -1,5 +1,5 @@
 // keystatic.config.ts
-import { config, fields, collection, component } from '@keystatic/core';
+import { config, fields, collection, component, singleton } from '@keystatic/core';
 
 export default config({
   ui: {
@@ -65,4 +65,33 @@ export default config({
       },
     }),
   },
+  singletons: {
+    uses: singleton({
+      entryLayout: 'content',
+      label: 'Uses',
+      path: 'src/pages/uses/',
+      format: { contentField: 'content' },
+      schema: {
+        title: fields.text({ label: 'Title' }),
+        description: fields.text({ label: 'Description' }),
+        pubDate: fields.text({ label: 'Publish Date' }),
+        layout: fields.text({ label: 'Layout' }),
+        language: fields.select({
+          label: 'Language',
+          defaultValue: 'en',
+          options: [
+            { label: 'English', value: 'en', },
+            { label: 'Thai', value: 'th', }
+          ]
+        }),
+        thumbnail: fields.image({
+          label: 'Thumbnail',
+          directory: 'public/images',
+          publicPath: '/images',
+        }),
+        content: fields.mdx({
+        }),
+      }
+    })
+  }
 });
