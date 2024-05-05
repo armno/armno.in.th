@@ -1,171 +1,122 @@
 ---
-language: "en"
-title: "Tools I use"
-description: "A collection of hardware/software/tools I use on a daily basis."
-thumbnail: /images/uses/laptop.jpg
-pubDate: 2022-06-08T07:51:22+07:00
+title: Tools I use
+description: A collection of hardware/software/tools I use on a daily basis.
+pubDate: '2022-06-08T07:51:22+07:00'
 layout: ../../layouts/PageLayout.astro
+language: en
+thumbnail: /images/uses/content/thumbnail.jpg
 ---
-
-import Picture from "@components/Picture.astro";
-
 # Tools I use
 
-Inspired by [uses.tech](https://uses.tech) where developers share their
-hardware/software/tools they use regularly. Here are my tools, updated for 2023.
+Inspired by [uses.tech](https://uses.tech) where developers share their hardware/software/tools they use regularly. Here are my tools.
 
 ## Software
 
 ### Programming
 
-- Terminal: [iTerm2](https://www.iterm2.com/version3.html) with
-  - [zsh](https://www.zsh.org/) and [oh-my-zsh](https://ohmyz.sh/) with my slightly modified version of the [cloud](https://github.com/armno/dotfiles/blob/master/cloud-armno.zsh-theme) theme
-  - [base16-shell](https://github.com/chriskempson/base16-shell) and [base16-iterm2](https://github.com/martinlindhe/base16-iterm2)
-  - [zoxide](https://github.com/ajeetdsouza/zoxide) - the replacement for `cd` command.
-  - [dotfiles ](https://github.com/armno/dotfiles)
-- [Vim](https://www.vim.org/) for a quick editing from the terminal. Here is my [`.vimrc`](https://github.com/armno/dotfiles/blob/master/.vimrc).
-- Git: I use command line Git with [delta](https://github.com/dandavison/delta) to render better diffs and logs
-- [JetBrains Mono fonts](https://www.jetbrains.com/lp/mono/) in both code editors and terminal.
-- Terminal colors: I have both dark and light themes set up and use depending on the light conditions. I create `dark` and `light` aliases to switch between base16 themes.
-  - dark: `base16_material-darker`
-  - light: `base16_google-light`
+* Terminal: I use [iTerm2](https://www.iterm2.com/version3.html) with
 
-<div class="full-bleed">
-  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
-      src="/images/uses/dark.png"
-      alt="dark terminal screenshot"
-      height={512}
-      width={1957}
-    />
-    <Picture
-      src="/images/uses/light.png"
-      alt="light terminal screenshot"
-      height={512}
-      width={1957}
-    />
+  * [zsh](https://www.zsh.org/) and with [Starship](https://starship.rs/) prompt
 
-  </div>
-</div>
+  * [base16-shell](https://github.com/chriskempson/base16-shell) for terminal colors
 
-- [VSCode](https://code.visualstudio.com/) and themes
-  - dark: [`Monokai Pro`](https://monokai.pro/)
-  - light: [`GitHub Light Default`](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
+  * [zoxide](https://github.com/ajeetdsouza/zoxide) as a replacement for `cd` command
+
+  * [eza](https://github.com/eza-community/eza) as a replacement for `ls` command
+
+  * [bat](https://github.com/sharkdp/bat) as a replacement for `cat` command
+
+  * [fnm](https://github.com/Schniz/fnm) for node version management
+
+  * and here are my [dotfiles](https://github.com/armno/dotfiles) repo.
+
+![terminal screenshot](../../pages/uses/content/terminal.jpg)
+
+* Main editor: [VSCode](https://code.visualstudio.com/) (with Vim emulation)
+
+  * [Monokai Pro](https://monokai.pro/) (filter Octagon) as a default dark theme, [GitHub Light Theme](https://github.com/yunlingz/vscode-theme-github-light) when I switch to light mode.
+
+  * Here is a full post on how I set up my VSCode: [My VSCode setup for 2023](https://armno.in.th/blog/vscode-setup-2023/).
+
+* [Vim](https://www.vim.org/) for a quick file editing from the terminal.&#x20;
+
+  * I use [vim-plug](https://github.com/junegunn/vim-plug) as a plugin manager for Vim. Here is my [`.vimrc`](https://github.com/armno/dotfiles/blob/master/.vimrc) file.&#x20;
+
+* Git: I use command line Git with [delta](https://github.com/dandavison/delta) to render diffs and logs
+
+* [JetBrains Mono fonts](https://www.jetbrains.com/lp/mono/) in both code editors and terminal.
+
+![](../../pages/uses/content/vscode.jpg)
 
 ### Others
 
-- [Homebrew](https://brew.sh/) package manager
-- [Google Chrome Canary](https://www.google.com/chrome/canary) as the development browser
-- [Raycast](https://www.raycast.com/) for shortcuts, windows management
-- [BetterTouchTool](https://folivora.ai/) for shortcuts, keyboard remappings
-- [Pixelmator Pro](https://www.pixelmator.com/pro/) for image editing
-- [Skitch](https://evernote.com/products/skitch) for quick image editing
-- Google Photos to backup all of my photos
+* [Homebrew](https://brew.sh/) package manager
+
+* [Arc](https://arc.net/) as the default browser, and [Chrome Canary](https://www.google.com/chrome/canary/) as the browser for development.
+
+* [Raycast](https://www.raycast.com/) as a Spotlight replacement, and shortcuts, windows management, etc.&#x20;
+
+* [BetterTouchTool](https://folivora.ai/) for shortcuts, automation
+
+* [Pixelmator Pro](https://www.pixelmator.com/pro/) for image/photo editing
+
+* [Cleanshot X](https://cleanshot.com/) to capture and annotate screenshots, screen recordings etc.
+
+* [1Password](https://1password.com/) for password management
+
+* [Google Photos](https://www.google.com/photos/about/) to backup all of my photos
+
+![](../../pages/uses/content/dock.jpg)
+
+### Alumni
+
+Things I used in the past that are worth mentioning.
+
+* [oh-my-zsh](https://ohmyz.sh/) and [oh-my-posh](https://ohmyposh.dev/) zsh frameworks.
+
+* [z](https://github.com/rupa/z) - since I know how to `z`, I never use `cd` again.
+
+* [kitty](https://sw.kovidgoyal.net/kitty/) is a GPU-accelerated terminal app and it's much faster than iTerm. The only thing that stops me from using it is that it doesn't render as beautiful text as in iTerm, probably because of the lack of supporting [sub-pixel antialiasing](https://github.com/kovidgoyal/kitty/issues/214).
+
+* [Cursor](https://cursor.sh/) is basically VSCode with AI features which I really liked. But paying 20$ a month for a code editor is still a no for me.
+
+* [Alfred](https://www.alfredapp.com/) - I used Alfred for many years until I found Raycast. Thanks Alfred!
+
+* [Kap](https://getkap.co/) is a screen recording app. Very minimal and easy to use.
 
 ---
 
 ## Hardware
 
-Computers: I use
+* Computers: [13-inch Macbook Air M2](https://support.apple.com/en-us/111867) at work. At home I have a [2013 13-inch MakBook Pro](https://support.apple.com/kb/sp691?locale=th_TH), but it's rarely used nowadays.\
+  ![](../../pages/uses/content/macbook-air-m2.jpg)
 
-- [**2015, 15-inch MacBook Pro**](https://support.apple.com/kb/SP719?locale=en_US) (2.2GHz Core i7, 16GB RAM) at work
-- [**2013, 13-inch MacBook Pro**](https://support.apple.com/kb/sp691?locale=th_TH) (2.4GHz Core i5, 8GB RAM) at home
+* Monitor: a [Samsung 28" UR55 UHD 4K Monitor](https://www.samsung.com/th/business/monitors/ur55/lu28r550uqexxt/) mounted with an [NB-F80 Monitor arm](https://www.google.com/search?q=nb-f80+monitor+arm).\
+  ![](../../pages/uses/content/monitor.jpg)
 
-<Picture
-  src="/images/uses/laptop.jpg"
-  alt="2015, 15-inch MacBook Pro"
-height="900"
-width={1600}
-/>
+* Keyboard: Corne wireless split keyboard. I wrote about it here: [Building a Wireless Corne Keyboard](https://armno.in.th/blog/building-a-wireless-corne-keyboard/).\
+  ![](../../pages/uses/content/corne-keyboard.jpg)
 
-Monitor: a [Samsung 28" UR55 UHD 4K Monitor](https://www.samsung.com/th/business/monitors/ur55/lu28r550uqexxt/) mounted with an [NB-F80 Monitor arm](https://www.google.com/search?q=nb-f80+monitor+arm).
+* Mouse: [Logitech MX Anywhere 3S](https://www.logitech.com/en-us/products/mice/mx-anywhere-3s.910-006926.html?sp=1\&searchclick=logi)
 
-<Picture
-  src="/images/uses/desk-monitor.jpg"
-  alt="Samsung UR55 4k monitor"
-height={900}
-width={1600}
-/>
+* Headphones: I have ~~a few~~ too many of them for my various use cases
 
-Keyboards: [Ginkgo65](https://ginkgo65.com/) 65% mechanical keyboard at work and a [custom Tofu 60% mechanical keyboard](https://armno.in.th/2019/05/01/custom-mechanical-keyboard-build-2/) at home.
+  * [Sony WH-1000XM4](https://www.sony.co.th/en/electronics/headband-headphones/wh-1000xm4) for working in a noisy environment
 
-<div class="full-bleed">
-  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
-      src="/images/uses/ginkgo65-keyboard.jpg"
-      alt="my Ginkgo65 mechanical keyboard at work"
-      caption="Build details: Ginkgo65 Black x Copper / Polycarbonate plate / Durock V2 stabs / C3 Tangerine 67g + Krytox 205g0 / MT3 Extended 2048 Katakana"
-      height={675}
-      width={1200}
-    />
-    <Picture
-      src="/images/uses/tofu-susuwatari.jpg"
-      alt="my custom 60% mechanical keyboard"
-      caption="Build details: Tofu alu case / DZ60 PCB / Aluminum plate / Everglide stabs / Gateron milky brown / MT3 Susuwatari"
-      height={675}
-      width={1200}
-    />
-  </div>
-</div>
+  * [Audio-Technica M50x](https://armno.in.th/2015/08/04/audio-technica-ath-m50x/) with [Audirect Beam 2se DAC/Amp](https://www.google.com/search?q=Audirect+Beam+2se+DAC) for music listening
 
-Mouse: [Logitech M331 Silent](https://duckduckgo.com/?q=logitech+m331+silent&t=ffab&ia=web)
+  * [JBL Quantum 100](https://th.jbl.com/gaming/QUANTUM100.html) for video calls and meetings. This one has a really good mic!
 
-Headphones: I have ~a few~ too many of them for my various use cases
-
-- [Sony WH-1000XM4](https://www.sony.co.th/en/electronics/headband-headphones/wh-1000xm4) for office work
-- [Audio-Technica M50x](https://armno.in.th/2015/08/04/audio-technica-ath-m50x/) with [Audirect Beam 2se DAC/Amp](https://www.google.com/search?q=Audirect+Beam+2se+DAC) for music listening
-- [JBL Quantum 100](https://th.jbl.com/gaming/QUANTUM100.html) for calls and remote meetings. (This one has a really good mic!)
-- [Soundpeats Air3](https://us.soundpeats.com/products/air3) for commuting and workouts
-
-<div class="full-bleed">
-  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
-      src="/images/uses/sony-xm4.jpg"
-      alt="Sony WH-1000XM4 headphones"
-      height={1125}
-      width={2000}
-    />
-    <Picture
-      src="/images/uses/headphones.jpg"
-      alt="Audio Technica M50x"
-      height={785}
-      width={1400}
-    />
-    <Picture
-      src="/images/uses/jbl-quantum-100.jpg"
-      alt="JBL Quantum 100 headphones"
-      height={1125}
-      width={2000}
-    />
-
-  </div>
-</div>
-
-Note taking: Any normal notebook and a black pen.
-
-![muji pens](/images/uses/pens.jpg)
+  * [Soundpeats Air3](https://us.soundpeats.com/products/air3) for commuting and workouts\
+    ![](../../pages/uses/content/sony-xm4.jpg)\
+    ![](../../pages/uses/content/headphones.jpg)
 
 ### Other
 
 Not something I use everyday, but still worth mentioning.
 
-- Digital camera: Fujifilm XE-1 digital camera with TTArtisan 50mm f/1.2 manual focus lense
-- Bike: [2022 Nich Faith 2](https://www.nichcycling.com/pages/faith2) road bike which I use for commuting to work and sometimes for recreational cycling.
+* Digital camera: Fujifilm XT-20 digital camera with TTArtisan 50mm f/1.2 manual focus lense\
+  ![](../../pages/uses/content/fuji.jpg)
 
-<div class="full-bleed">
-  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-    <Picture
-      src="/images/uses/fuji-xe1.jpg"
-      alt="Fujifilm XE-1"
-      height={998}
-      width={1500}
-    />
-    <Picture
-      src="/images/uses/nich-faith-2-custom-small.jpg"
-      alt="Nich Faith 2 Custom"
-      height={2350}
-      width={1940}
-    />
-
-  </div>
-</div>
+* Bike: [2022 Nich Faith 2](https://www.nichcycling.com/pages/faith2) road bike which I use for commuting to work and sometimes for a weekend long ride.\
+  ![](../../pages/uses/content/nich-f2.jpg)
