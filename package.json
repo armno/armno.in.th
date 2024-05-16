@@ -10,9 +10,9 @@
   },
   "devDependencies": {
     "@astrojs/markdoc": "^0.11.0",
-    "@astrojs/mdx": "^2.3.1",
-    "@astrojs/react": "^3.3.2",
-    "@astrojs/rss": "^4.0.5",
+    "@astrojs/mdx": "^3.0.0",
+    "@astrojs/react": "^3.3.4",
+    "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.4",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource/frank-ruhl-libre": "^5.0.21",
@@ -23,7 +23,7 @@
     "@types/lodash-es": "^4.17.12",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.7.1",
+    "astro": "^4.8.4",
     "autoprefixer": "^10.4.19",
     "date-fns": "^3.6.0",
     "lodash-es": "^4.17.21",
@@ -35,8 +35,8 @@
     "tailwindcss": "^3.4.3"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/netlify": "^5.2.0",
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/netlify": "^5.2.1",
     "typescript": "^5.4.5"
   }
 }
