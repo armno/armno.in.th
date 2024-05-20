@@ -1,0 +1,58 @@
+---
+title: Change VSCode Sidebar Font
+pubDate: '2024-05-06T00:00:00.000Z'
+description: >-
+  Changing the sidebar font in VSCode can be done only via extensions. I'm using
+  APC to do that.
+language: en
+tags:
+  - Coding
+  - VSCode
+  - Productivity
+  - Tools
+thumbnail: /images/change-vs-code-sidebar-font/thumbnail.png
+---
+I learned from the [Syntax.fm](https://syntax.fm/) podcast episode 760 on ["Pro VSCode Setups"](https://syntax.fm/show/760/pro-vscode-setups) that it is possible to change the font of VSCode's sidebar using an extension called [APC](https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension).
+
+I always wanted to use `monospace font` for the sidebar. It would make the File Explorer and Find in Files panels a bit easier to read when there is a lot of text.
+
+Normally VSCode doesn't allow the users to change the font of the UI. Many people have requested in the [issue#519](https://github.com/microsoft/vscode/issues/519), but as the time of writing this article, it's still not possible to change the font in the sidebar of VSCode. Customizing VSCode's UI seems to be possible only through extensions.
+
+Once APC extension is installed, I updated my VSCode's `settings.json` with
+
+```json
+  "apc.parts.font.family": {
+    "sidebar": "JetBrains Mono",
+  },
+```
+
+The sidebar now uses the JetBrains Mono font. Here is the comparison between the default sans-serif font and the monospace font.
+
+File Explorer panel:
+
+![comparing default and monospace font in vscode file explorer](../../../content/blog/change-vs-code-sidebar-font/compare.jpg)
+
+Find in Files panel:
+
+![comparing fonts in the Find in Files panel](../../../content/blog/change-vs-code-sidebar-font/find-in-files.jpg)
+
+Here is the full list of all the sections that are supported by APC. I am personally fine with just the `sidebar` and the `titlebar` options.
+
+```json
+  "apc.parts.font.family": {
+    "sidebar": "Jetbrains Mono",
+    "titlebar": "Jetbrains Mono",
+    "activityBar": "Jetbrains Mono",
+    "panel": "Jetbrains Mono",
+    "tabs": "Jetbrains Mono",
+    "statusbar": "Jetbrains Mono",
+    "settings-body": "Jetbrains Mono",
+    "extension-editor": "Jetbrains Mono",
+  },
+```
+
+APC supports a lot more customizations not just the fonts. Check the [GitHub repo](https://github.com/drcika/apc-extension?tab=readme-ov-file#supported-configuration-options) to see the everything that's available.
+
+P.S. Changing the sidebar font to monospace reminds me of [Zed](https://zed.dev/), which they changed from using monospace font to system sans-serif font recently 😄
+
+![recent changes in Zed editor](../../../content/blog/change-vs-code-sidebar-font/zed.jpg)
