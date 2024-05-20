@@ -11,7 +11,7 @@ import GlobalStyle from '@components/GlobalStyle.astro';
 const { frontmatter, isPost } = Astro.props;
 const { title, description, thumbnail, language } = frontmatter;
 
-const classes = 'mt-20 mx-auto pb-24 prose prose-slate main leading-6';
+const classes = 'mt-20 mx-auto pb-24 prose prose-slate prose-base main leading-6';
 ---
 <html lang={language ? language : 'th'}>
 	<head>
