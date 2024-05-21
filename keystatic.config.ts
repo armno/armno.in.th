@@ -1,5 +1,6 @@
 // keystatic.config.ts
 import { config, fields, collection, component, singleton } from '@keystatic/core';
+import { wrapper } from '@keystatic/core/content-components'
 
 export default config({
   ui: {
@@ -41,27 +42,25 @@ export default config({
           directory: 'public/images',
           publicPath: '/images',
         }),
-        content: fields.document({
+        content: fields.markdoc({
           label: 'Content',
-          formatting: true,
-          dividers: true,
-          links: true,
-          images: {
-            directory: 'src/content/blog',
-            publicPath: '../../../content/blog/',
+          options: {
+            image: {
+              directory: 'src/content/blog/',
+              publicPath: '../../../content/blog/',
+            }
           },
-          componentBlocks: {
-            'warningMessage': component({
+          components: {
+            warningMessage: wrapper({
               label: 'Warning Message',
               schema: {
                 title: fields.text({
                   label: 'Title'
                 }),
               },
-              preview: () => null
             })
           }
-        }),
+        })
       },
     }),
   },
