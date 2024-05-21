@@ -31,7 +31,7 @@ const { url, title, thumbnail, pubDate, description, isLatest, isRelatedPost } =
     }
   </a>
   {pubDate &&
-  <time class="text-xs text-slate-600" datetime={pubDate.toString()}>
+  <time class="text-xs text-slate-600 dark:text-slate-300" datetime={pubDate.toString()}>
     {format(new Date(pubDate), 'd MMM yyyy')}
   </time>
   }
