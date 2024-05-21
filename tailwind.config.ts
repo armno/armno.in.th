@@ -22,6 +22,7 @@ export default {
             },
             blockquote: {
               backgroundColor: colors.slate[100],
+              fontWeight: 'normal',
               padding: '0.1rem 2rem'
             },
             hr: {
@@ -69,6 +70,9 @@ export default {
             },
             hr: {
               backgroundColor: colors.slate[100]
+            },
+            blockquote: {
+              backgroundColor: colors.slate[800],
             },
           }
         },
