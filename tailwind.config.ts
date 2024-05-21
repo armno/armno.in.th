@@ -1,6 +1,5 @@
 import type { Config } from 'tailwindcss'
 import colors from 'tailwindcss/colors'
-import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
   theme: {
@@ -62,7 +61,17 @@ export default {
               marginBottom: '4rem'
             },
           }
-        }
+        },
+        invert: {
+          css: {
+            code: {
+              backgroundColor: 'transparent'
+            },
+            hr: {
+              backgroundColor: colors.slate[100]
+            },
+          }
+        },
       },
     }
   },
@@ -72,6 +81,7 @@ export default {
   ],
   plugins: [
     require('@tailwindcss/typography')
-  ]
+  ],
+  darkMode: 'selector'
 } satisfies Config
 

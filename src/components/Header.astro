@@ -7,13 +7,13 @@ const { pathname } = Astro.url;
   <a href="/" class="inline-block w-12 h-12 md:w-16 md:h-16">
     <svg class="w-12 h-12 md:w-16 md:h-16" width="50" height="50" viewBox="0 0 50 50" fill="none"
       xmlns="http://www.w3.org/2000/svg">
-      <rect width="50" height="50" fill="white" />
+      <rect width="50" height="50" />
       <path d="M36.1111 34.8006L25 15.5556L13.8889 34.8006H15.6885L21.9948 23.8777L28.3011 34.8006H36.1111Z"
-        fill="black" />
+        class="fill-black dark:fill-slate-200" />
     </svg>
   </a>
 
-  <nav class="text-sm flex gap-8">
+  <nav class="text-sm flex gap-8 dark:text-slate-200">
     <a href="/" class={ `inline-block ${pathname==='/' ? 'font-bold underline' : 'no-underline' }` }>About</a>
     <a href="/blog/" class={ `inline-block ${pathname.includes('/blog/') ? 'font-bold underline'
       : 'no-underline' }` }>Blog</a>
