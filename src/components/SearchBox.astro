@@ -5,6 +5,18 @@
       element: "#search",
       showSubResults: false,
       showImages: false,
+      translations: {
+        placeholder: 'Search (⌘ K)',
+      }
     });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if ((event.metaKey || event.ctrlKey) && event.key === "k") {
+      const input = document.querySelector<HTMLInputElement>('#search input[type="text"]');
+      if (input) {
+        input.focus();
+      }
+    }
   });
 </script>
