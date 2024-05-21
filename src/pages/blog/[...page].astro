@@ -55,7 +55,7 @@ const content = {
             {year.posts.map((post) => (
               <li class="p-0 flex gap-3 lg:items-baseline">
                 <time
-                  class="font-mono text-xs text-slate-600 leading-6 lg:leading-loose"
+                  class="font-mono text-xs text-slate-600 dark:text-slate-400 leading-6 lg:leading-loose"
                   datetime={post.data.pubDate.toString()}
                 >
                   {format(new Date(post.data.pubDate), "dd.MM.yyyy")}
