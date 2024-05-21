@@ -11,7 +11,7 @@ const canonicalURL = Astro.url;
 ---
 
 <PageLayout frontmatter={frontmatter} isPost={true}>
-  <div slot="post-header" class="lg:col-span-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:mb-20">
+  <div slot="post-header" class="lg:col-span-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:mb-20 lg:-ml-32 lg:-mr-32">
     {thumbnail &&
     <div class="order-2 lg:order-1 lg:col-start-1 lg:col-end-2 mb-10 lg:mb-0">
       <a href={thumbnail}>
