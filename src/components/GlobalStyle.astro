@@ -1,66 +1,72 @@
 <style is:global>
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 
-@layer base {
+  @layer base {
+    :root {
+      --pagefind-ui-scale: 1;
+    }
 
-  :root {
-    --pagefind-ui-scale: 1;
+    .dark {
+      --pagefind-ui-primary: #e5e7eb;
+      --pagefind-ui-text: #e5e7eb;
+      --pagefind-ui-background: #3f3f46;
+      --pagefind-ui-border: #152028;
+      --pagefind-ui-tag: #152028;
+    }
+
+    html {
+      font-size: 112.5%;
+    }
+
+    a {
+      @apply underline underline-offset-2 hover:text-green-600;
+    }
+
+    a figcaption {
+      @apply no-underline;
+    }
+
+    a[href*="files.armno.in.th"] {
+      @apply no-underline;
+    }
+
+    img[src*="files.armno.in.th"],
+    img[src*="armno.in.th/wp-content/uploads"] {
+      @apply border border-dashed border-slate-300 h-36 text-transparent relative;
+    }
+
+    img[src*="files.armno.in.th"]::after,
+    img[src*="armno.in.th/wp-content/uploads"]::after {
+      @apply absolute text-slate-300 w-full h-full  flex justify-center items-center text-sm top-0 left-0 right-0 bottom-0;
+
+      content: "(missing image: " attr(alt) ")";
+    }
+
+    kbd {
+      @apply border border-slate-400 rounded-[3px] px-0.5 text-sm;
+    }
+
+    blockquote:has(cite) {
+      @apply !pb-4;
+    }
+
+    .dark img {
+      @apply opacity-80 transition-opacity;
+    }
+
+    .dark img:hover {
+      @apply opacity-100;
+    }
   }
 
-  .dark {
-  --pagefind-ui-primary: #e5e7eb;
-  --pagefind-ui-text: #e5e7eb;
-  --pagefind-ui-background: #3f3f46;
-  --pagefind-ui-border: #152028;
-  --pagefind-ui-tag: #152028;
-}
+  @layer components {
+    .footnotes {
+      @apply text-sm;
+    }
 
-  html {
-    font-size: 112.5%;
-  }
-
-  a {
-    @apply underline underline-offset-2 hover:text-green-600;
-  }
-
-  a figcaption {
-    @apply no-underline;
-  }
-
-  a[href*="files.armno.in.th"] {
-    @apply no-underline;
-  }
-
-  img[src*="files.armno.in.th"],
-  img[src*="armno.in.th/wp-content/uploads"] {
-    @apply border border-dashed border-slate-300 h-36 text-transparent relative;
-  }
-
-  img[src*="files.armno.in.th"]::after,
-  img[src*="armno.in.th/wp-content/uploads"]::after {
-    @apply absolute text-slate-300 w-full h-full  flex justify-center items-center text-sm top-0 left-0 right-0 bottom-0;
-
-    content: "(missing image: " attr(alt) ")";
-  }
-
-  kbd {
-    @apply border border-slate-400 rounded-[3px] px-0.5 text-sm;
-  }
-
-  blockquote:has(cite) {
-    @apply !pb-4;
-  }
-}
-
-@layer components {
-
-  .footnotes {
-    @apply text-sm;
-  }
-
-  /* .main {
+    /* .main {
     display: grid;
     grid-template-columns: minmax(1.5rem, 1fr) min(65ch, calc(100% - 3rem)) minmax(1.5rem, 1fr);
     @apply max-w-5xl;
@@ -73,15 +79,14 @@
   .full-bleed {
     grid-column: 1 / -1;
   } */
-  .full-bleed {
-    display: flex;
-    /* width: 100vw; */
-    overflow: hidden;
-  }
+    .full-bleed {
+      display: flex;
+      /* width: 100vw; */
+      overflow: hidden;
+    }
 
-  .prose blockquote p {
-    margin-top: 1.25em;
+    .prose blockquote p {
+      margin-top: 1.25em;
+    }
   }
-}
-
 </style>

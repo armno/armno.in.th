@@ -6,19 +6,17 @@
 </button>
 
 <script is:inline>
-  // Extract theme constants
   const LIGHT_THEME = 'light';
   const DARK_THEME = 'dark';
 
-  // Extract theme-related DOM elements
   const iconMoon = document.querySelector("#icon-moon");
   const iconSun = document.querySelector("#icon-sun");
   const themeToggler = document.getElementById("theme-toggler");
 
   // Function to get the initial theme
   const getInitialTheme = () => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
+    if (typeof sessionStorage !== "undefined" && sessionStorage.getItem("theme")) {
+      return sessionStorage.getItem("theme");
     }
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       return DARK_THEME;
@@ -32,7 +30,7 @@
     document.documentElement.classList.toggle("dark", !isLightTheme);
     iconMoon.style.display = isLightTheme ? "block" : "none";
     iconSun.style.display = isLightTheme ? "none" : "block";
-    localStorage.setItem("theme", theme);
+    sessionStorage.setItem("theme", theme);
   };
 
   // Function to handle theme toggle click
