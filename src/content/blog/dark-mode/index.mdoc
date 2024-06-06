@@ -1,10 +1,19 @@
 ---
 title: Dark Mode
 pubDate: '2024-05-22T15:26:42.937Z'
+description: >-
+  I recently added the dark mode support to this blog. Here's what I have done
+  and have learned from it.
 language: en
-tags: []
+tags:
+  - Web Development
+  - CSS
+  - Astro
+  - Tailwind
+  - Dark Mode
+thumbnail: /images/dark-mode/thumbnail.png
 ---
-I recently added the dark mode support to this blog.
+I recently added the dark mode support to this blog. Here's what I have done and have learned from it.
 
 ## Dark mode 101
 
@@ -74,15 +83,13 @@ Classes in the `dark:` variant would apply automatically when the user has dark 
 
 For my blog, I plan to add a control so the user can toggle between light and dark theme manually. The default theme should derive from the user's preferred scheme.
 
-First, in tailwind config file, I add
+First, in Tailwind config file, I add
 
 ```
 darkMode: 'selector'
 ```
 
-To tell Tailwind that I would add the dark mode class myself to one of the root elements. The child elements decide whether or not it should use dark mode styles, based on the parent's class.
-
-This means if the `<html>` or `<body>` tag has the class `.dark` applied, the child elements would use the styles from the `dark:` variant instead of the default ones.
+to tell Tailwind that I would add the dark mode class myself to one of the root elements. This means if the `<html>` or `<body>` tag has the class `.dark` applied, the child elements would use the styles from the `dark:` variant instead of the default ones.
 
 I start by manually adding the `.dark` class to `<html>` element, and add `:dark` variant to elements where they need.
 
@@ -93,11 +100,11 @@ I start by manually adding the `.dark` class to `<html>` element, and add `:dark
 
 I don't have actual design for the dark mode so I just play around with built-in colors from Tailwind, until I get somewhat OK look and feel of it.
 
-![](../../../content/blog/dark-mode/dark-styles.png)
+![](../../../content/blog/dark-mode/homepage-dark.png)
 
 I'm also using Typography plugin from Tailwind for this blog. I can add `.dark:prose-invert` variant to my `.prose` element that gives a pretty good overall styles in dark mode for most of the text elements.
 
-I try not to go full black or full white because it would create too much contrast. I learned from [CSS-Tricks](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/#design) that it's a good idea to also reduce brightness and contrast of images in dark mode.
+I learned from [CSS-Tricks](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/#design) that it's a good idea to reduce brightness and contrast of images in dark mode. It can be done using `brightness` and `contrast` [CSS filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter), or in my case I just reduce the opacity to be at 80%.
 
 ```css
 .dark img {
@@ -113,28 +120,38 @@ I try not to go full black or full white because it would create too much contra
 
 I create a `<ThemeToggler>` Astro component that contains a button to toggle between light and dark theme.
 
-I take a sun icon and a moon icon from [Lucide](https://lucide.dev/icons/) and inline the SVG code in a button and give each SVG an ID. When it is clicked, it switches the displaying icon between the sun and the moon icon.
+![](../../../content/blog/dark-mode/toggle-button.gif)
+
+I take a sun icon and a moon icon from [Lucide](https://lucide.dev/icons/) and inline the SVG code in a button and give each SVG a class. When it is clicked, it switches the displaying icon between the sun and the moon icon.
 
 ```html
+<style is:global>
+  .icon-moon,
+  .dark .icon-sun { 
+    display: block;
+  }
+  
+  .icon-sun,
+  .dark .icon-moon
+  { 
+    display: none;
+  }
+</style>
 <button id="theme-toggler" ...>
-  <svg id="icon-sun" ...></svg>
-  <svg id="icon-moon" class="hidden" ...></svg>
+  <svg class="icon-sun" ...></svg>
+  <svg class="icon-moon" class="hidden" ...></svg>
 </button>
 ```
 
-For the logic of the button to toggle the theme, I use the code from [Astro's tutorial](https://docs.astro.build/en/tutorial/6-islands/2/), then use Copilot to slightly modify it.
+For the logic of the button to toggle the theme, I use the code from [Astro's tutorial](https://docs.astro.build/en/tutorial/6-islands/2/), then slightly modify it.
 
 ```html
 <script is:inline>
-  const iconMoon = document.querySelector("#icon-moon");
-  const iconSun = document.querySelector("#icon-sun");
   const themeToggler = document.getElementById("theme-toggler");
 
   const setTheme = (theme) => {
     const isLightTheme = theme === 'light';
     document.documentElement.classList.toggle("dark", !isLightTheme);
-    iconMoon.style.display = isLightTheme ? "block" : "none";
-    iconSun.style.display = isLightTheme ? "none" : "block";
     localStorage.setItem('theme', theme);
   };
 
@@ -183,9 +200,9 @@ The initial theme should reflect the saved settings, or otherwise should reflect
 </head>
 ```
 
-### Giscus
+### Giscus in Dark Mode
 
-I'm using [Giscus](https://giscus.app/) for this blog and it has theming support via `data-theme` attribute. To set the Giscus theme based on the current theme that has been set, I updated the Giscus code snippet to use `document.createElement()` instead of the normal `<script>` tag.
+I'm using [Giscus](https://giscus.app/) for the comments section. It has theming support via `data-theme` attribute. To set the Giscus theme based on the current theme that has been set, I updated the Giscus code snippet to use `document.createElement()` instead of the normal `<script>` tag.
 
 ```html
 <div class="mt-12" id="comments"></div>
@@ -215,6 +232,24 @@ I'm using [Giscus](https://giscus.app/) for this blog and it has theming support
 
 ```
 
+### PageFind in Dark Mode
+
+Another library I use that needs some adjustments for the dark mode is [PageFind](https://pagefind.app/) - the search tool that I implemented on the blog listing page. The documentation page has a guide to [customize the styles for dark mode](https://pagefind.app/docs/ui-usage/#customising-the-styles), which can be done by setting some CSS variables.
+
+```css
+.dark {
+  --pagefind-ui-primary: #e5e7eb;
+  --pagefind-ui-text: #e5e7eb;
+  --pagefind-ui-background: #3f3f46;
+  --pagefind-ui-border: #152028;
+  --pagefind-ui-tag: #152028;
+}
+```
+
+![](../../../content/blog/dark-mode/pagefind.png)
+
 ## Summary
 
-I'm happy with the results, and on top of that I learned a few new things about implementing dark mode.
+My dark theme is still not perfect, but at least now I have it. Overall it was a fun little tweak. I have learned a few new things from implementing dark mode to this blog.
+
+I will continue tweaking it from time to time as there are still some areas to improve. I also want to look into [`color-scheme`](https://web.dev/articles/color-scheme)[ CSS property](https://web.dev/articles/color-scheme) and if I can use it here.
