@@ -66,7 +66,8 @@ export default {
         invert: {
           css: {
             code: {
-              backgroundColor: 'transparent'
+              backgroundColor: 'transparent',
+              color: colors.lime[300],
             },
             hr: {
               backgroundColor: colors.slate[100]

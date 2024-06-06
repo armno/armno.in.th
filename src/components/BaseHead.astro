@@ -43,3 +43,18 @@ const defaultDescription = `I'm Armno - a Thai frontend developer at buzzwoo. Ba
 <meta name="twitter:url" content={canonicalURL}>
 <meta name="twitter:title" content={title}>
 <meta name="twitter:description" content={description ? description : defaultDescription}>
+
+<script is:inline>
+  const getInitialTheme = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return 'dark';
+    }
+    return 'light';
+  };
+
+  const initialTheme = getInitialTheme();
+  document.firstElementChild.classList.add(initialTheme);
+</script>
