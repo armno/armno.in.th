@@ -1,4 +1,6 @@
-<button id="theme-toggler" class="text-gray-900 hover:text-gray-600 transition-colors dark:text-slate-200 dark:hover:text-slate-500
+<button id="theme-toggler"
+  title="Toggle light and dark mode"
+  class="text-gray-900 hover:text-gray-600 transition-colors dark:text-slate-200 dark:hover:text-slate-500
  ml-6">
   <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon" ><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
 
@@ -6,43 +8,29 @@
 </button>
 
 <script is:inline>
-  const LIGHT_THEME = 'light';
-  const DARK_THEME = 'dark';
-
   const iconMoon = document.querySelector("#icon-moon");
   const iconSun = document.querySelector("#icon-sun");
   const themeToggler = document.getElementById("theme-toggler");
 
-  // Function to get the initial theme
-  const getInitialTheme = () => {
-    if (typeof sessionStorage !== "undefined" && sessionStorage.getItem("theme")) {
-      return sessionStorage.getItem("theme");
-    }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return DARK_THEME;
-    }
-    return LIGHT_THEME;
-  };
-
-  // Function to set the theme
   const setTheme = (theme) => {
-    const isLightTheme = theme === LIGHT_THEME;
+    const isLightTheme = theme === 'light';
     document.documentElement.classList.toggle("dark", !isLightTheme);
     iconMoon.style.display = isLightTheme ? "block" : "none";
     iconSun.style.display = isLightTheme ? "none" : "block";
-    sessionStorage.setItem("theme", theme);
+    localStorage.setItem('theme', theme);
   };
 
   // Function to handle theme toggle click
   const handleToggleClick = () => {
-    const isDark = document.documentElement.classList.contains("dark");
-    setTheme(isDark ? LIGHT_THEME : DARK_THEME);
+    const isDark = document.documentElement.classList.contains('dark');
+    setTheme(isDark ? 'light' : 'dark');
   };
 
-  // Initialize theme
-  const initialTheme = getInitialTheme();
-  setTheme(initialTheme);
-
-  // Set up event listener
   themeToggler.addEventListener("click", handleToggleClick);
+
+  window.matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', ({ matches: isDark }) => {
+      const theme = isDark ? 'dark' : 'light'
+      setTheme(theme);
+    });
 </script>

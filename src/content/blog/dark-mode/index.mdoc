@@ -1,0 +1,220 @@
+---
+title: Dark Mode
+pubDate: '2024-05-22T15:26:42.937Z'
+language: en
+tags: []
+---
+I recently added the dark mode support to this blog.
+
+## Dark mode 101
+
+Dark mode styles can be added to a website by using the media query `@media (prefers-color-scheme: dark) {}`  and add CSS rules that only would apply when dark mode is activated.
+
+```css
+body {
+  background-color: white;
+  color: black;
+}
+
+button {
+  border: 0;
+  background-color: lavender;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+
+  button {
+    background-color: slateblue;
+  }
+}
+```
+
+A common pattern is to use CSS variables instead of writing the same selector twice.
+
+```css
+:root {
+  --text-color: #000;
+  --background-color: #fff;
+  --button-background-color: lavender;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #fff;
+    --background-color: #000;
+    --button-background-color: slateblue;
+  }
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+button {
+  background-color: var(--button-background-color);
+}
+```
+
+## Adding dark mode styles with Tailwind
+
+TailwindCSS has dark mode support built in with the `dark:` variant. For example, this works out of the box:
+
+```html
+<div class="bg-white dark:bg-black">
+  <h1 class="text-black dark:text-white">Hello world!</h1>
+</div>
+```
+
+Classes in the `dark:` variant would apply automatically when the user has dark mode activated.
+
+For my blog, I plan to add a control so the user can toggle between light and dark theme manually. The default theme should derive from the user's preferred scheme.
+
+First, in tailwind config file, I add
+
+```
+darkMode: 'selector'
+```
+
+To tell Tailwind that I would add the dark mode class myself to one of the root elements. The child elements decide whether or not it should use dark mode styles, based on the parent's class.
+
+This means if the `<html>` or `<body>` tag has the class `.dark` applied, the child elements would use the styles from the `dark:` variant instead of the default ones.
+
+I start by manually adding the `.dark` class to `<html>` element, and add `:dark` variant to elements where they need.
+
+```html
+<body class="... dark:bg-zinc-900">
+  <nav class="... dark:text-slate-200">
+```
+
+I don't have actual design for the dark mode so I just play around with built-in colors from Tailwind, until I get somewhat OK look and feel of it.
+
+![](../../../content/blog/dark-mode/dark-styles.png)
+
+I'm also using Typography plugin from Tailwind for this blog. I can add `.dark:prose-invert` variant to my `.prose` element that gives a pretty good overall styles in dark mode for most of the text elements.
+
+I try not to go full black or full white because it would create too much contrast. I learned from [CSS-Tricks](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/#design) that it's a good idea to also reduce brightness and contrast of images in dark mode.
+
+```css
+.dark img {
+  @apply opacity-80 transition-opacity;
+}
+
+.dark img:hover {
+  @apply opacity-100;
+}
+```
+
+## Switching Between Light and Dark Modes
+
+I create a `<ThemeToggler>` Astro component that contains a button to toggle between light and dark theme.
+
+I take a sun icon and a moon icon from [Lucide](https://lucide.dev/icons/) and inline the SVG code in a button and give each SVG an ID. When it is clicked, it switches the displaying icon between the sun and the moon icon.
+
+```html
+<button id="theme-toggler" ...>
+  <svg id="icon-sun" ...></svg>
+  <svg id="icon-moon" class="hidden" ...></svg>
+</button>
+```
+
+For the logic of the button to toggle the theme, I use the code from [Astro's tutorial](https://docs.astro.build/en/tutorial/6-islands/2/), then use Copilot to slightly modify it.
+
+```html
+<script is:inline>
+  const iconMoon = document.querySelector("#icon-moon");
+  const iconSun = document.querySelector("#icon-sun");
+  const themeToggler = document.getElementById("theme-toggler");
+
+  const setTheme = (theme) => {
+    const isLightTheme = theme === 'light';
+    document.documentElement.classList.toggle("dark", !isLightTheme);
+    iconMoon.style.display = isLightTheme ? "block" : "none";
+    iconSun.style.display = isLightTheme ? "none" : "block";
+    localStorage.setItem('theme', theme);
+  };
+
+  // Function to handle theme toggle click
+  const handleToggleClick = () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    setTheme(isDark ? 'light' : 'dark');
+  };
+
+  themeToggler.addEventListener("click", handleToggleClick);
+</script>
+```
+
+I also borrow the code from web.dev on [Building a theme switch component](https://web.dev/articles/building/a-theme-switch-component#synchronizing_with_the_system) to synchronize the theme with the system setting when it changes.
+
+```javascript
+window.matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', ({ matches: isDark }) => {
+    const theme = isDark ? 'dark' : 'light'
+    setTheme(theme);
+  });
+```
+
+### Setting the Initial Theme
+
+The initial theme should reflect the saved settings, or otherwise should reflect the system settings. And to prevent flashing of the content, the code should run as early as possible. So I put in the `<head>` tag. This is another technique I borrow from the [web.dev](https://web.dev/articles/building/a-theme-switch-component#the_page_load_experience) article.
+
+```html
+<head>
+...
+<script is:inline>
+  const getInitialTheme = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return 'dark';
+    }
+    return 'light';
+  };
+
+  const initialTheme = getInitialTheme();
+  document.firstElementChild.classList.add(initialTheme);
+</script>
+...
+</head>
+```
+
+### Giscus
+
+I'm using [Giscus](https://giscus.app/) for this blog and it has theming support via `data-theme` attribute. To set the Giscus theme based on the current theme that has been set, I updated the Giscus code snippet to use `document.createElement()` instead of the normal `<script>` tag.
+
+```html
+<div class="mt-12" id="comments"></div>
+<script is:inline>
+  const isDark = document.documentElement.classList.contains('dark');
+  const theme = isDark ? 'dark_dimmed' : 'preferred_color_scheme';
+
+  const scriptTag = document.createElement('script');
+  scriptTag.src = "https://giscus.app/client.js";
+  scriptTag.setAttribute('data-repo', 'armno/armno.in.th');
+  scriptTag.setAttribute('data-repo-id', 'zmk');
+  scriptTag.setAttribute('data-category', 'Blog Post Comments');
+  scriptTag.setAttribute('data-category-id', 'qmk');
+  scriptTag.setAttribute('data-mapping', 'pathname');
+  scriptTag.setAttribute('data-strict', '0');
+  scriptTag.setAttribute('data-reactions-enabled', '1');
+  scriptTag.setAttribute('data-emit-metadata', '0');
+  scriptTag.setAttribute('data-input-position', 'top');
+  scriptTag.setAttribute('data-theme', theme);
+  scriptTag.setAttribute('data-lang', 'en');
+  scriptTag.setAttribute('data-loading', 'lazy');
+  scriptTag.setAttribute('crossorigin', 'anonymous');
+  scriptTag.async = true;
+
+  document.querySelector('#comments').appendChild(scriptTag);
+</script>
+
+```
+
+## Summary
+
+I'm happy with the results, and on top of that I learned a few new things about implementing dark mode.

@@ -1,18 +1,24 @@
-<div class="mt-12">
-<script src="https://giscus.app/client.js"
-        data-repo="armno/armno.in.th"
-        data-repo-id="R_kgDOG83p9g"
-        data-category="Blog Post Comments"
-        data-category-id="DIC_kwDOG83p9s4Cd4yW"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
+<div class="mt-12" id="comments"></div>
+<script is:inline>
+  const isDark = document.documentElement.classList.contains('dark');
+  const theme = isDark ? 'dark_dimmed' : 'preferred_color_scheme';
+
+  const scriptTag = document.createElement('script');
+  scriptTag.src = "https://giscus.app/client.js";
+  scriptTag.setAttribute('data-repo', 'armno/armno.in.th');
+  scriptTag.setAttribute('data-repo-id', 'R_kgDOG83p9g');
+  scriptTag.setAttribute('data-category', 'Blog Post Comments');
+  scriptTag.setAttribute('data-category-id', 'DIC_kwDOG83p9s4Cd4yW');
+  scriptTag.setAttribute('data-mapping', 'pathname');
+  scriptTag.setAttribute('data-strict', '0');
+  scriptTag.setAttribute('data-reactions-enabled', '1');
+  scriptTag.setAttribute('data-emit-metadata', '0');
+  scriptTag.setAttribute('data-input-position', 'top');
+  scriptTag.setAttribute('data-theme', theme);
+  scriptTag.setAttribute('data-lang', 'en');
+  scriptTag.setAttribute('data-loading', 'lazy');
+  scriptTag.setAttribute('crossorigin', 'anonymous');
+  scriptTag.async = true;
+
+  document.querySelector('#comments').appendChild(scriptTag);
 </script>
-</div>
