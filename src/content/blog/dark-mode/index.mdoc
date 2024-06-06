@@ -69,7 +69,9 @@ button {
 }
 ```
 
-## Adding dark mode styles with Tailwind
+## Adding Dark Mode Styles with Tailwind
+
+I plan to add a control so the user can toggle between light and dark theme manually. The default theme should derive from the user's preferred color scheme.
 
 TailwindCSS has dark mode support built in with the `dark:` variant. For example, this works out of the box:
 
@@ -81,8 +83,6 @@ TailwindCSS has dark mode support built in with the `dark:` variant. For example
 
 Classes in the `dark:` variant would apply automatically when the user has dark mode activated.
 
-For my blog, I plan to add a control so the user can toggle between light and dark theme manually. The default theme should derive from the user's preferred scheme.
-
 First, in Tailwind config file, I add
 
 ```
@@ -91,18 +91,18 @@ darkMode: 'selector'
 
 to tell Tailwind that I would add the dark mode class myself to one of the root elements. This means if the `<html>` or `<body>` tag has the class `.dark` applied, the child elements would use the styles from the `dark:` variant instead of the default ones.
 
-I start by manually adding the `.dark` class to `<html>` element, and add `:dark` variant to elements where they need.
+I start by manually adding the `.dark` class to `<html>` element, go through pages I have, and add `:dark` variant to elements where they need.
 
 ```html
 <body class="... dark:bg-zinc-900">
   <nav class="... dark:text-slate-200">
 ```
 
-I don't have actual design for the dark mode so I just play around with built-in colors from Tailwind, until I get somewhat OK look and feel of it.
+I don't have actual design for the dark mode so I just play around with built-in colors from Tailwind until I get a somewhat OK look and feel of it.
 
 ![](../../../content/blog/dark-mode/homepage-dark.png)
 
-I'm also using Typography plugin from Tailwind for this blog. I can add `.dark:prose-invert` variant to my `.prose` element that gives a pretty good overall styles in dark mode for most of the text elements.
+I'm also using [Typography plugin](https://github.com/tailwindlabs/tailwindcss-typography) from Tailwind for this blog. I can add `.dark:prose-invert` variant to my `.prose` element that gives a pretty good overall styles in dark mode for most of the text elements.
 
 I learned from [CSS-Tricks](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/#design) that it's a good idea to reduce brightness and contrast of images in dark mode. It can be done using `brightness` and `contrast` [CSS filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter), or in my case I just reduce the opacity to be at 80%.
 
@@ -122,7 +122,7 @@ I create a `<ThemeToggler>` Astro component that contains a button to toggle bet
 
 ![](../../../content/blog/dark-mode/toggle-button.gif)
 
-I take a sun icon and a moon icon from [Lucide](https://lucide.dev/icons/) and inline the SVG code in a button and give each SVG a class. When it is clicked, it switches the displaying icon between the sun and the moon icon.
+I take a sun icon and a moon icon from [Lucide](https://lucide.dev/icons/), inline the SVG code in a button, and give each SVG a class for styling. When the button is clicked, it switches the displaying icon between the sun and the moon icon.
 
 ```html
 <style is:global>
@@ -252,4 +252,6 @@ Another library I use that needs some adjustments for the dark mode is [PageFind
 
 My dark theme is still not perfect, but at least now I have it. Overall it was a fun little tweak. I have learned a few new things from implementing dark mode to this blog.
 
-I will continue tweaking it from time to time as there are still some areas to improve. I also want to look into [`color-scheme`](https://web.dev/articles/color-scheme)[ CSS property](https://web.dev/articles/color-scheme) and if I can use it here.
+I will continue tweaking it from time to time as there are still some areas to improve. I want to look into [`color-scheme`](https://web.dev/articles/color-scheme)[ CSS property](https://web.dev/articles/color-scheme) and see if I can use it here. Also it would be great if dark mode can be set properly even without JavaScript. That will be in a follow-up post then.
+
+✌️
