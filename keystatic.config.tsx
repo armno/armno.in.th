@@ -1,6 +1,7 @@
 // keystatic.config.ts
 import { config, fields, collection, component, singleton } from '@keystatic/core';
 import { block, wrapper } from '@keystatic/core/content-components'
+import VideoPlayer from '@components/VideoPlayer';
 
 export default config({
   ui: {
@@ -62,13 +63,8 @@ export default config({
             video: block({
               ContentView: (props) => {
                 console.log(props.value)
-                return <video
-                  style={{ maxWidth: '100%' }}
-                  src={`/videos/${props.value.slug}/${props.value.src?.filename}`}
-                  controls={props.value.controls}
-                  autoPlay={props.value.autoplay}
-                  muted={props.value.autoplay}
-                />
+                const { slug, src, ...others } = props.value;
+                return <VideoPlayer src={`/videos/${slug}/${src?.filename}`} {...others} />
               },
               label: 'Video',
               schema: {
@@ -88,9 +84,9 @@ export default config({
                   description: 'Show video controls',
                   defaultValue: false
                 }),
-                autoplay: fields.checkbox({
-                  label: 'Autoplay & Mute',
-                  description: 'Enable autoplay and mute',
+                autoPlay: fields.checkbox({
+                  label: 'Autoplay',
+                  description: 'Enable autoplay (will mute the video)',
                   defaultValue: false
                 })
               },
