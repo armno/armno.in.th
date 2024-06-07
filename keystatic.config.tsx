@@ -1,6 +1,6 @@
 // keystatic.config.ts
 import { config, fields, collection, component, singleton } from '@keystatic/core';
-import { wrapper } from '@keystatic/core/content-components'
+import { block, wrapper } from '@keystatic/core/content-components'
 
 export default config({
   ui: {
@@ -57,6 +57,42 @@ export default config({
                 title: fields.text({
                   label: 'Title'
                 }),
+              },
+            }),
+            video: block({
+              ContentView: (props) => {
+                console.log(props.value)
+                return <video
+                  style={{ maxWidth: '100%' }}
+                  src={`/videos/${props.value.slug}/${props.value.src?.filename}`}
+                  controls={props.value.controls}
+                  autoPlay={props.value.autoplay}
+                  muted={props.value.autoplay}
+                />
+              },
+              label: 'Video',
+              schema: {
+                slug: fields.relationship({
+                  label: 'Post',
+                  description: 'Select a blog post to attach this video to',
+                  collection: 'posts',
+                }),
+                src: fields.file({
+                  label: 'Video file',
+                  description: 'Select a video file',
+                  directory: 'public/videos/',
+                  publicPath: '/videos/',
+                }),
+                controls: fields.checkbox({
+                  label: 'Controls',
+                  description: 'Show video controls',
+                  defaultValue: false
+                }),
+                autoplay: fields.checkbox({
+                  label: 'Autoplay & Mute',
+                  description: 'Enable autoplay and mute',
+                  defaultValue: false
+                })
               },
             })
           }

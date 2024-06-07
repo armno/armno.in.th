@@ -26,6 +26,27 @@ export default defineMarkdocConfig({
         title: { type: String, required: false },
       }
     },
+    video: {
+      render: component('./src/components/Video.astro'),
+      attributes: {
+        slug: {
+          type: String,
+          required: true
+        },
+        src: {
+          type: String,
+          required: true
+        },
+        controls: {
+          type: Boolean,
+          required: false
+        },
+        autoplay: {
+          type: Boolean,
+          required: false
+        },
+      }
+    },
   },
   extends: [
     shiki()

@@ -1,0 +1,12 @@
+---
+interface Props {
+  slug: string;
+  src: string;
+  autoplay?: boolean;
+  controls?: boolean;
+}
+
+const { src, slug, autoplay, controls } = Astro.props as Props;
+---
+
+<video {...Astro.props}></video>
