@@ -61,12 +61,11 @@ export default config({
               },
             }),
             video: block({
+              label: 'Video',
               ContentView: (props) => {
-                console.log(props.value)
                 const { slug, src, ...others } = props.value;
                 return <VideoPlayer src={`/videos/${slug}/${src?.filename}`} {...others} />
               },
-              label: 'Video',
               schema: {
                 slug: fields.relationship({
                   label: 'Post',
