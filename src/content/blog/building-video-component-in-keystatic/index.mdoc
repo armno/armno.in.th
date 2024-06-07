@@ -8,10 +8,12 @@ tags: []
 1. define schemas
 1. make `ContentView` work
 1. register a custom markdoc tag in markdoc config file
-1. convert video from astro to react component
+1. convert video from astro to react component (support tsx)
+1. max-width hack
 
 {% video
    slug="building-video-component-in-keystatic"
-   src="/videos/building-video-component-in-keystatic/ks-video.mp4"
+   src="/videos/building-video-component-in-keystatic/big_buck_bunny_720p_1mb.mp4"
    controls=true
-   autoPlay=false /%}
+   autoPlay=false
+   loop=false /%}

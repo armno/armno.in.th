@@ -27,7 +27,7 @@ export default defineMarkdocConfig({
       }
     },
     video: {
-      render: component('./src/components/VideoPlayer.jsx'),
+      render: component('./src/components/VideoPlayer.tsx'),
       attributes: {
         slug: {
           type: String,
@@ -42,6 +42,10 @@ export default defineMarkdocConfig({
           required: false
         },
         autoPlay: {
+          type: Boolean,
+          required: false
+        },
+        loop: {
           type: Boolean,
           required: false
         },

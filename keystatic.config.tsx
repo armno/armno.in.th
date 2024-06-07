@@ -64,7 +64,7 @@ export default config({
               label: 'Video',
               ContentView: (props) => {
                 const { slug, src, ...others } = props.value;
-                return <VideoPlayer src={`/videos/${slug}/${src?.filename}`} {...others} />
+                return <VideoPlayer style={{maxWidth: '100%'}} src={`/videos/${slug}/${src?.filename}`} {...others} />
               },
               schema: {
                 slug: fields.relationship({
@@ -86,6 +86,11 @@ export default config({
                 autoPlay: fields.checkbox({
                   label: 'Autoplay',
                   description: 'Enable autoplay (will mute the video)',
+                  defaultValue: false
+                }),
+                loop: fields.checkbox({
+                  label: 'Loop',
+                  description: 'Enable looping',
                   defaultValue: false
                 })
               },
