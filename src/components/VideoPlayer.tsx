@@ -1,6 +1,13 @@
-export default function VideoPlayer(props) {
+type VideoPlayerProps = {
+  src: string;
+  controls?: boolean;
+  autoPlay?: boolean;
+  loop?: boolean;
+}
+
+export default function VideoPlayer(props: VideoPlayerProps) {
   return (
-    <video {...props} className="max-w-full">
+    <video {...props} style={{ maxWidth: '100%'}}>
     </video>
   );
 }

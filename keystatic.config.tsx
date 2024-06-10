@@ -2,6 +2,7 @@
 import { config, fields, collection, component, singleton } from '@keystatic/core';
 import { block, wrapper } from '@keystatic/core/content-components'
 import VideoPlayer from '@components/VideoPlayer';
+import { Clapperboard, FileWarning } from 'lucide-react';
 
 export default config({
   ui: {
@@ -54,6 +55,8 @@ export default config({
           components: {
             warningMessage: wrapper({
               label: 'Warning Message',
+              description: 'Display a warning message',
+              icon: <FileWarning />,
               schema: {
                 title: fields.text({
                   label: 'Title'
@@ -62,16 +65,21 @@ export default config({
             }),
             video: block({
               label: 'Video',
+              description: 'Upload a video',
+              icon: <Clapperboard />,
               ContentView: (props) => {
-                const { slug, src, ...others } = props.value;
-                return <VideoPlayer style={{maxWidth: '100%'}} src={`/videos/${slug}/${src?.filename}`} {...others} />
+                const { src, ...otherProps} = props.value;
+                if (!src) {
+                  return <></>;
+                }
+
+                const blob = new Blob([src.data], { type: 'video/mp4' });
+                const url = URL.createObjectURL(blob);
+                return (
+                  <VideoPlayer src={url} {...otherProps} />
+                )
               },
               schema: {
-                slug: fields.relationship({
-                  label: 'Post',
-                  description: 'Select a blog post to attach this video to',
-                  collection: 'posts',
-                }),
                 src: fields.file({
                   label: 'Video file',
                   description: 'Select a video file',

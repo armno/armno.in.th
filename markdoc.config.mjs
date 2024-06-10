@@ -29,10 +29,6 @@ export default defineMarkdocConfig({
     video: {
       render: component('./src/components/VideoPlayer.tsx'),
       attributes: {
-        slug: {
-          type: String,
-          required: true
-        },
         src: {
           type: String,
           required: true

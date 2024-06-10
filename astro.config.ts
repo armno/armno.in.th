@@ -11,7 +11,9 @@ import netlify from "@astrojs/netlify";
 
 const config: AstroUserConfig = {
   site: "https://armno.in.th",
-  integrations: [sitemap(), mdx(), tailwind(), react(), markdoc()]
+  integrations: [sitemap(), mdx(), tailwind(), react(), markdoc({
+    allowHTML: true
+  })]
 };
 if (process.env.NODE_ENV !== 'production') {
   config.output = 'hybrid';
