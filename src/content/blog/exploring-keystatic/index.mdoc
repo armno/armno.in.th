@@ -1,6 +1,6 @@
 ---
 title: Exploring Keystatic
-pubDate: '2024-01-01T00:00:00.000Z'
+pubDate: 2024-01-01T00:00:00.000Z
 description: >-
   Keystatic is a CMS to manage Markdown content. In this blog post, I noted down
   how I integrate Keystatic to my Astro blog.
@@ -142,6 +142,10 @@ I think I would need to define the thumbnail image as a [proper image field in C
 
 ### Published Date field
 
+{% warningMessage title="Update: June 2024" %}
+The issue with Datetime below seems to be fixed. The field outputs the correct date object that would work with Astro. See the [PR#963](https://github.com/Thinkmill/keystatic/pull/963) on GitHub.
+{% /warningMessage %}
+
 I have a field `pubDate` in my frontmatter that holds the information of the published date of the article.
 
 I struggled a bit to configure the `pubDate` field to be a proper date field. All my blog posts store published date information in ISO-8601 format. I have also defined the field in Content Collection's config to be a date field.
@@ -210,6 +214,10 @@ Since I will be using Markdoc from now on, I have 2 challenges:
 
 1. Adding custom Astro components in Markdoc content using [custom tag](https://markdoc.dev/docs/tags) instead of importing the components in the content file like in MDX.
 1. Displaying or editing the components in Keystatic.
+
+{% warningMessage title="Updated: June 2024" %}
+Creating custom component can be done with the new [Content Components API](https://keystatic.com/docs/content-components). Check out my blog post [Adding Videos to Keystatic Content with Astro](https://armno.in.th/blog/adding-videos-to-keystatic-content-with-astro/) for more details.
+{% /warningMessage %}
 
 ### 1. Creating a custom Markdoc tag to render an Astro component
 
@@ -304,7 +312,7 @@ What I want is the ability to add some content between opening and closing tags 
 
 ![](../../../content/blog/exploring-keystatic/custom-tag-with-child-content.jpg)
 
-I think the way to solve this is to use [the ](https://keystatic.com/docs/fields/child)[`child`](https://keystatic.com/docs/fields/child)[ type](https://keystatic.com/docs/fields/child). Seems to work with a Next.js setup. I couldn't figure out how to make it work with my Astro setup yet.
+I think the way to solve this is to use [the `child` type](https://keystatic.com/docs/fields/child). Seems to work with a Next.js setup. I couldn't figure out how to make it work with my Astro setup yet.
 
 Funny thing aside: I'm using screenshots of the code above instead of actual code blocks in Keystatic because it would render as actual components instead of the code blocks on the page.
 
@@ -408,7 +416,7 @@ Here's my personal wishlist for Keystatic.
 
 - A caption field for an image. Or a `<figure>` with caption field type.
 - Adding custom text style e.g. `p.lead` from Tailwind.
-- Valid JS Date for `date` / `datetime` field types.
+- ~~Valid JS Date for `date` / `datetime` field types.~~ Fixed in [\#963](https://github.com/Thinkmill/keystatic/pull/963).
 - Focus/Fullscreen writing mode.
 - Ability to move a block or a paragraph up or down the content editor (like in WordPress).
 - Schema: ability to extend from Astro's Content Collection schema so no need to define same schema twice.

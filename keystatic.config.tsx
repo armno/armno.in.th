@@ -22,7 +22,12 @@ export default config({
       format: { contentField: 'content' },
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
-        pubDate: fields.text({ label: 'Publish Date' }),
+        pubDate: fields.datetime({
+          label: 'Publish Date (UTC)',
+          defaultValue: {
+            kind: 'now'
+          }
+      }),
         description: fields.text({ label: 'Description' }),
         language: fields.select({
           label: 'Language',
