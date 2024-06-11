@@ -26,6 +26,27 @@ export default defineMarkdocConfig({
         title: { type: String, required: false },
       }
     },
+    video: {
+      render: component('./src/components/VideoPlayer.tsx'),
+      attributes: {
+        src: {
+          type: String,
+          required: true
+        },
+        controls: {
+          type: Boolean,
+          required: false
+        },
+        autoPlay: {
+          type: Boolean,
+          required: false
+        },
+        loop: {
+          type: Boolean,
+          required: false
+        },
+      }
+    },
   },
   extends: [
     shiki()

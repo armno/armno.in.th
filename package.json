@@ -21,7 +21,7 @@
     "@keystatic/core": "^0.5.16",
     "@tailwindcss/typography": "^0.5.13",
     "@types/lodash-es": "^4.17.12",
-    "@types/react": "^18.3.2",
+    "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.10.0",
     "autoprefixer": "^10.4.19",
@@ -37,6 +37,7 @@
   "dependencies": {
     "@astrojs/check": "^0.7.0",
     "@astrojs/netlify": "^5.2.1",
+    "lucide-react": "^0.390.0",
     "typescript": "^5.4.5"
   }
 }
