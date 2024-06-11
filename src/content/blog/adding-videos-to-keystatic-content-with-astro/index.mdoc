@@ -1,5 +1,5 @@
 ---
-title: Add Videos to Keystatic Content
+title: Adding Videos to Keystatic Content with Astro
 pubDate: '2024-06-10T16:56:42.937Z'
 description: >-
   My notes on building a custom component in Keystatic using Content Components
@@ -11,7 +11,7 @@ tags:
   - Astro
   - JavaScript
   - Blogging
-thumbnail: /images/add-videos-to-keystatic-content/thumbnail.png
+thumbnail: /images/adding-videos-to-keystatic-content-with-astro/thumbnail.png
 ---
 Since I started [using Keystatic and Markdoc](https://armno.in.th/blog/exploring-keystatic/), one thing I miss is the ability to add a video to the content. It's useful to embed a short screen recording in mp4 video instead of using an animated GIF image.
 
@@ -37,7 +37,7 @@ export default defineConfig({
 
 The video renders correctly on the page, but it displays as plain text in Keystatic.
 
-![](../../../content/blog/add-videos-to-keystatic-content/video-in-markdoc.jpg)
+![](../../../content/blog/adding-videos-to-keystatic-content-with-astro/video-in-markdoc.jpg)
 
 It would be nicer if it also displays as a video in Keystatic instead of raw HTML code. This gives a better editing experience and can prevent mistakes that can happen when managing raw HTML code in the page editor.
 
@@ -56,7 +56,7 @@ In this post, I'll go through steps and what I have learned from implementing a 
 Here is the preview of the final results.
 
 {% video
-   src="/videos/add-videos-to-keystatic-content/final-result.mp4"
+   src="/videos/adding-videos-to-keystatic-content-with-astro/final-result.mp4"
    controls=true
    autoPlay=true
    loop=true /%}
@@ -181,7 +181,7 @@ let props = Astro.props as Props;
 As a result, I have a block with options like this video below in Keystatic. And it renders the `<video>` tag correctly on the actual page.
 
 {% video
-   src="/videos/add-videos-to-keystatic-content/first-video-component.mp4"
+   src="/videos/adding-videos-to-keystatic-content-with-astro/first-video-component.mp4"
    controls=true
    autoPlay=true
    loop=true /%}
@@ -189,7 +189,7 @@ As a result, I have a block with options like this video below in Keystatic. And
 {% warningMessage %}
 I think the File field could have some more love there: currently, it doesn't show much information of the selected file. At least displaying the selected file name would be nice.
 
-![](../../../content/blog/add-videos-to-keystatic-content/video-file-selected.png)
+![](../../../content/blog/adding-videos-to-keystatic-content-with-astro/video-file-selected.png)
 {% /warningMessage %}
 
 Now I'm able to add a video to my blog post. The next step is to make it a little nicer by displaying something more useful than an empty box in Keystatic using the `ContentView` option.
@@ -315,17 +315,17 @@ When using the File field, the information is passed via `props` to ContentView 
 
 but not the actual path to the file itself that is stored in `/public/videos/<post-slug>/<file-name>.mp4` as configured earlier.
 
-![](../../../content/blog/add-videos-to-keystatic-content/src-in-props.png)
+![](../../../content/blog/adding-videos-to-keystatic-content-with-astro/src-in-props.png)
 
 even though that full path is already in the source in `.mdoc` file.
 
-![](../../../content/blog/add-videos-to-keystatic-content/video-in-mdoc.png)
+![](../../../content/blog/adding-videos-to-keystatic-content-with-astro/video-in-mdoc.png)
 
 I think Keystaic handles this internally. If we look at the Network tab, Keystatic does that also for image files. It makes a `fetch` request to get the Blob of the given file from an internal endpoint, make a data URL out of the Blob, and then put in the `<img>` tag's `src` attribute.
 
-![](../../../content/blog/add-videos-to-keystatic-content/file-endpoint-2.png)
+![](../../../content/blog/adding-videos-to-keystatic-content-with-astro/file-endpoint-2.png)
 
-![](../../../content/blog/add-videos-to-keystatic-content/image-in-keystatic.jpg)
+![](../../../content/blog/adding-videos-to-keystatic-content-with-astro/image-in-keystatic.jpg)
 
 So I can do the same for my video component by
 
@@ -355,13 +355,13 @@ ContentView: (props) => {
 
 And now I can use the same `<VideoPlayer>` component both in the actual content and in Keystatic 🎉.
 
-![](../../../content/blog/add-videos-to-keystatic-content/video-src.png)
+![](../../../content/blog/adding-videos-to-keystatic-content-with-astro/video-src.png)
 
 ### Fine-tuning
 
 The Content Components support a custom icon and a description to make it nicely aligned with the built-in components in the menu and the slash command.
 
-![](../../../content/blog/add-videos-to-keystatic-content/custom-icons.png)
+![](../../../content/blog/adding-videos-to-keystatic-content-with-astro/custom-icons.png)
 
 The `icon` option can be any React component. I use the icon from [Lucide](https://lucide.dev/).
 
