@@ -18,12 +18,12 @@
     "@fontsource/frank-ruhl-libre": "^5.0.21",
     "@fontsource/sarabun": "^5.0.20",
     "@keystatic/astro": "^5.0.0",
-    "@keystatic/core": "^0.5.16",
+    "@keystatic/core": "^0.5.19",
     "@tailwindcss/typography": "^0.5.13",
     "@types/lodash-es": "^4.17.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.10.0",
+    "astro": "^4.10.1",
     "autoprefixer": "^10.4.19",
     "date-fns": "^3.6.0",
     "lodash-es": "^4.17.21",
@@ -32,12 +32,12 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sharp": "^0.33.4",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.4"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
-    "@astrojs/netlify": "^5.2.1",
-    "lucide-react": "^0.390.0",
+    "@astrojs/netlify": "^5.3.0",
+    "lucide-react": "^0.394.0",
     "typescript": "^5.4.5"
   }
 }
