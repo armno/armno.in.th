@@ -10,7 +10,7 @@ export default {
             color: colors.slate[900],
             code: {
               backgroundColor: colors.slate[200],
-              padding: '0 4px',
+              padding: '3px 4px',
               borderRadius: '3px',
               fontWeight: 'normal',
             },
