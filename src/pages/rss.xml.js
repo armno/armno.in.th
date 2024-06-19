@@ -8,7 +8,9 @@ export async function GET(context) {
     title: `Armno's blog`,
     description: 'Notes from my thoughts and learnings.',
     site: context.site,
-    items: allPosts.map((post) => ({
+    items: allPosts
+    .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))
+    .map((post) => ({
       title: post.data.title,
       pubDate: post.data.pubDate,
       description: post.data.description,
