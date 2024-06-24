@@ -18,7 +18,7 @@
     "@fontsource/frank-ruhl-libre": "^5.0.21",
     "@fontsource/sarabun": "^5.0.20",
     "@keystatic/astro": "^5.0.0",
-    "@keystatic/core": "^0.5.22",
+    "@keystatic/core": "^0.5.23",
     "@tailwindcss/typography": "^0.5.13",
     "@types/lodash-es": "^4.17.12",
     "@types/react": "^18.3.3",
@@ -37,7 +37,7 @@
   "dependencies": {
     "@astrojs/check": "^0.7.0",
     "@astrojs/netlify": "^5.3.2",
-    "lucide-react": "^0.395.0",
+    "lucide-react": "^0.396.0",
     "typescript": "^5.5.2"
   }
 }
