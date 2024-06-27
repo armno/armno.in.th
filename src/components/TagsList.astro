@@ -8,11 +8,11 @@ const { tags } = Astro.props as Props;
 
 {
   tags && tags.length > 0 && (
-    <div class="flex gap-2 items-center text-sm my-12">
+    <div class="flex gap-2 items-start text-sm my-12">
       <h4 class="p-0 m-0">Tags:</h4>
-      <ul class="list-none flex gap-2 p-0 m-0 items-center">
+      <ul class="list-none flex flex-wrap gap-2 p-0 m-0 items-start">
         {tags.map((tag) => (
-          <li class="px-0">
+          <li class="px-0 m-0">
             <a href={`/tags/${tag.toLowerCase()}`} class="font-normal">#{tag}</a>
           </li>
         ))}
