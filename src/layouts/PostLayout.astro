@@ -1,6 +1,7 @@
 ---
 import RelatedPosts from '@components/RelatedPosts.astro';
 import Comments from '@components/Comments.astro';
+import TagsList from '@components/TagsList.astro';
 import PageLayout from './PageLayout.astro';
 import { format } from 'date-fns';
 import { Image } from 'astro:assets';
@@ -34,7 +35,9 @@ const canonicalURL = Astro.url;
       </div>
     </div>
   </div>
+
   <slot />
+  <TagsList tags={tags} />
   <Comments />
   <RelatedPosts tags={tags} currentPathname={canonicalURL.pathname} />
 </PageLayout>
