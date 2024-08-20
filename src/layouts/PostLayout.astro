@@ -22,13 +22,13 @@ const canonicalURL = Astro.url;
     </div>
     }
     <div class="order-1 lg:order-2 lg:col-start-2 lg:col-end-3 lg:flex lg:flex-col lg:justify-center lg:gap-3">
-      <h1 class="text-3xl lg:text-4xl leading-tight mb-0 max-w-[80%]">{title}</h1>
-      <div class="flex gap-5 mt-4">
+      <h1 class="text-3xl lg:text-5xl leading-tight lg:leading-snug mb-0 max-w-[80%]">{title}</h1>
+      <div class="flex gap-5 mt-4 items-start">
         <div>
           <img src="/images/and.jpg" width="40" height="40" alt="Armno's avatar"
-          class="rounded-full flex-shrink-0 m-0">
+          class="rounded-full flex-shrink-0 !m-0">
         </div>
-        <div class="text-sm leading-5">
+        <div class="text-sm leading-5 lg:text-lg">
           <div>Published on <strong>{format(new Date(pubDate), 'MMMM do, yyyy')}</strong></div>
           <div>By <strong>Armno P.</strong></div>
         </div>
