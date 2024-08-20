@@ -15,8 +15,6 @@
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
-    "@fontsource/frank-ruhl-libre": "^5.0.22",
-    "@fontsource/sarabun": "^5.0.21",
     "@keystatic/astro": "^5.0.0",
     "@keystatic/core": "^0.5.32",
     "@tailwindcss/typography": "^0.5.14",
@@ -37,6 +35,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "@astrojs/netlify": "^5.5.1",
+    "@fontsource/ibm-plex-sans-thai-looped": "^5.0.21",
     "lucide-react": "^0.428.0",
     "typescript": "^5.5.4"
   }

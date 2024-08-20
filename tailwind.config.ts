@@ -3,6 +3,9 @@ import colors from 'tailwindcss/colors'
 
 export default {
   theme: {
+    fontFamily: {
+      sans: ['IBM Plex Sans Thai Looped', 'sans-serif']
+    },
     extend: {
       typography: {
         DEFAULT: {
