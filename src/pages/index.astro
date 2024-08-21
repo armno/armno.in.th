@@ -1,151 +1,136 @@
 ---
-import '@fontsource/ibm-plex-sans-thai-looped/400.css'
-import '@fontsource/ibm-plex-sans-thai-looped/700.css'
-
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import BaseHead from "@components/BaseHead.astro";
-import GlobalStyle from "@components/GlobalStyle.astro";
+import PageLayout from '@layouts/PageLayout.astro';
 
 const title = "Armno Prommarak";
 const language = "en";
 const thumbnail = "/images/anb.jpg";
 const description =
   "I am a frontend developer at buzzwoo, focusing on building user interfaces with HTML, CSS, and JavaScript";
+const frontmatter = { title, language, thumbnail, description };
 ---
 
-<html lang={language ? language : "th"}>
-  <head>
-    <BaseHead title={title} description={description} thumbnail={thumbnail} />
-    <GlobalStyle />
-  </head>
-  <body class="antialiased dark:bg-zinc-900 transition-colors">
-    <Header />
-    <main class="mx-auto max-w-2xl mb-12 lg:max-w-3xl xl:max-w-4xl">
-      <div class="px-6 md:px-2 md:mt-12 md:col-span-2 lg:pt-20 prose prose-slate sm:prose-base lg:prose-lg dark:prose-invert dark:text-slate-200">
-        <div class="mt-10 mb-20 text-center md:text-left">
-          <img
-            src="/images/ana.jpg"
-            alt="Armno Prommarak's photo"
-            class="rounded-full mx-auto md:m-0 md:mr-auto lg:w-20 lg:h-20 hover:scale-110 hover:rotate-3 transition-transform"
-            loading="eager"
-            width={60}
-            height={60}
-          />
-          <div class="mb-8 mt-6">
-            <strong class="text-xl font-bold lg:text-2xl xl:text-3xl">Armno Prommarak 🇹🇭</strong>
-            <div class="text-sm md:text-base lg:text-lg xl:text-xl leading-tight">
-              Frontend Developer & Team Lead at <a
-                href="https://buzzwoo.de"
-                target="_blank">Buzzwoo</a> 🇩🇪.
-            </div>
-
-            <div class="flex gap-3 mt-3 lg:gap-6 lg:mt-6 items-center justify-center md:justify-start">
-              <a href="https://github.com/armno">
-                <svg height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="lg:w-7 lg:h-7">
-                  <title>GitHub Logo</title>
-                  <path d="m94 7399c5.523 0 10 4.59 10 10.253 0 4.529-2.862 8.371-6.833 9.728-.507.101-.687-.219-.687-.492 0-.338.012-1.442.012-2.814 0-.956-.32-1.58-.679-1.898 2.227-.254 4.567-1.121 4.567-5.059 0-1.12-.388-2.034-1.03-2.752.104-.259.447-1.302-.098-2.714 0 0-.838-.275-2.747 1.051-.799-.227-1.655-.341-2.505-.345-.85.004-1.705.118-2.503.345-1.911-1.326-2.751-1.051-2.751-1.051-.543 1.412-.2 2.455-.097 2.714-.639.718-1.03 1.632-1.03 2.752 0 3.928 2.335 4.808 4.556 5.067-.286.256-.545.708-.635 1.371-.57.262-2.018.715-2.91-.852 0 0-.529-.985-1.533-1.057 0 0-.975-.013-.068.623 0 0 .655.315 1.11 1.5 0 0 .587 1.83 3.369 1.21.005.857.014 1.665.014 1.909 0 .271-.184.588-.683.493-3.974-1.355-6.839-5.199-6.839-9.729 0-5.663 4.478-10.253 10-10.253" fill-rule="evenodd" transform="translate(-84 -7399)" class="fill:black dark:fill-slate-200"/>
-                </svg>
-              </a>
-              <a href="https://twitter.com/armno">
-                <svg width="18" height="18" viewBox="0 0 1200 1227" fill="#000000" xmlns="http://www.w3.org/2000/svg" class="lg:w-7 lg:h-7">
-                  <title>X Logo</title>
-                  <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" class="fill:black dark:fill-slate-200"/>
-                </svg>
-              </a>
-            </div>
-          </div>
+<PageLayout frontmatter={frontmatter} isPost={false}>
+  <div class="px-6 md:px-2 md:mt-12 md:col-span-2 lg:pt-20 prose prose-slate sm:prose-base lg:prose-lg dark:prose-invert dark:text-slate-200">
+    <div class="mt-10 mb-20 text-center md:text-left">
+      <img
+        src="/images/ana.jpg"
+        alt="Armno Prommarak's photo"
+        class="rounded-full mx-auto md:m-0 md:mr-auto lg:w-20 lg:h-20 hover:scale-110 hover:rotate-3 transition-transform"
+        loading="eager"
+        width={60}
+        height={60}
+      />
+      <div class="mb-8 mt-6">
+        <strong class="text-xl font-bold lg:text-2xl xl:text-3xl">Armno Prommarak 🇹🇭</strong>
+        <div class="text-sm md:text-base lg:text-lg xl:text-xl leading-tight">
+          Frontend Developer & Team Lead at <a
+            href="https://buzzwoo.de"
+            target="_blank">Buzzwoo</a> 🇩🇪.
         </div>
 
-        <div class="sm:text-base lg:text-lg xl:text-xl lg:leading-normal xl:leading-relaxed">
-
-          <h4 class="mt-32 lg:mt-36">About me</h4>
-          <p>Hello. I'm Armno. I have been building user interfaces for websites and web applications at Buzzwoo for the past 11 years.
-            I primarily work with JavaScript frameworks like
-            Angular, React, and Vue. I'm also a big fan of <a href="https://astro.build" target="_blank">Astro</a>,
-            which is a framework I use to build this website.
-          </p>
-          <p class="lg:leading-snug">
-            <small>
-            Before my time at Buzzwoo, I was a backend/fullstack-<em>ish</em> developer.
-            I worked quite a lot with PHP and WordPress, before moving my focus to the frontend.
-            </small>
-          </p>
-
-          <h4 class="mt-32 lg:mt-36">Writing</h4>
-          <p>
-            I started this website as a blog in 2007. Writing blogs has
-            been a big part of my life since then. I regularly write blog posts
-            about what I have just learned, or what motivates me, both technical and
-            non-technical posts, in Thai and in English.
-          </p>
-          <p>Here are some of my favorites in the technical areas:</p>
-
-          <ul class="text-sm lg:text-base xl:text-lg">
-            <li>
-              <a href="https://armno.in.th/blog/exploring-keystatic/">Exploring Keystatic</a>
-              <small>(2024)</small>
-            </li>
-            <li>
-              <a href="https://armno.in.th/blog/corne-keyboard">Building the Corne Keyboard</a>
-              <small>(2023)</small>
-            </li>
-            <li>
-              <a href="https://armno.in.th/blog/angular-http-params-immutability">Creating a URL with HttpParams in Angular</a>
-              <small>(2020)</small>
-            </li>
-            <li>
-              <a href="https://armno.in.th/blog/how-web-browsers-work/">Web browser ทำงานอย่างไร</a>
-                <small class="ml-1">(2016)</small>
-            </li>
-            <li>
-              <a href="https://armno.in.th/blog/loadcss-async">Case study: เปลี่ยนวิธีโหลด CSS เพื่อให้เว็บ render ไวขึ้น</a>
-              <small>(2015)</small>
-            </li>
-            <li>
-              <a href="https://armno.in.th/blog/git-stash-patched-commit/">วิธีใช้ Git Stash</a>
-              <small>(2014)</small>
-            </li>
-          </ul>
-          <p>Check out <a href="/blog/">the blog</a> for all articles.</p>
-
-          <h4 class="mt-32 lg:mt-36">Life</h4>
-          <p>
-            I'm a husband and a father of 2 kids. Most of my time besides work are spent with my
-            family in <a href="https://maps.app.goo.gl/U6Wv4qVwBAVh9sxz8" target="_blank">Chiang Mai, Thailand</a>.
-            </p>
-            <p>In my free time, I enjoy
-            reading books, <a href="https://armno.in.th/blog/building-mechanical-keyboard/">building</a>
-            <a href="https://armno.in.th/blog/lubricate-mechanical-keyboard-switches">mechanical</a>
-            <a href="https://armno.in.th/blog/corne-keyboard">keyboards</a>, photography, and
-            fixing broken stuffs.
-            On some Sundays, I
-            go out for a ride on my <a
-              href="https://www.strava.com/athletes/3637623">road bike</a
-            >.
-          </p>
+        <div class="flex gap-3 mt-3 lg:gap-6 lg:mt-6 items-center justify-center md:justify-start">
+          <a href="https://github.com/armno">
+            <svg height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="lg:w-7 lg:h-7">
+              <title>GitHub Logo</title>
+              <path d="m94 7399c5.523 0 10 4.59 10 10.253 0 4.529-2.862 8.371-6.833 9.728-.507.101-.687-.219-.687-.492 0-.338.012-1.442.012-2.814 0-.956-.32-1.58-.679-1.898 2.227-.254 4.567-1.121 4.567-5.059 0-1.12-.388-2.034-1.03-2.752.104-.259.447-1.302-.098-2.714 0 0-.838-.275-2.747 1.051-.799-.227-1.655-.341-2.505-.345-.85.004-1.705.118-2.503.345-1.911-1.326-2.751-1.051-2.751-1.051-.543 1.412-.2 2.455-.097 2.714-.639.718-1.03 1.632-1.03 2.752 0 3.928 2.335 4.808 4.556 5.067-.286.256-.545.708-.635 1.371-.57.262-2.018.715-2.91-.852 0 0-.529-.985-1.533-1.057 0 0-.975-.013-.068.623 0 0 .655.315 1.11 1.5 0 0 .587 1.83 3.369 1.21.005.857.014 1.665.014 1.909 0 .271-.184.588-.683.493-3.974-1.355-6.839-5.199-6.839-9.729 0-5.663 4.478-10.253 10-10.253" fill-rule="evenodd" transform="translate(-84 -7399)" class="fill:black dark:fill-slate-200"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com/armno">
+            <svg width="18" height="18" viewBox="0 0 1200 1227" fill="#000000" xmlns="http://www.w3.org/2000/svg" class="lg:w-7 lg:h-7">
+              <title>X Logo</title>
+              <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" class="fill:black dark:fill-slate-200"/>
+            </svg>
+          </a>
         </div>
-
-        <h4 class="mt-32 lg:mt-36">Get in touch</h4>
-        <ul class="text-sm lg:text-base xl:text:lg">
-          <li>
-            Email:
-            <a href="mailto:monkeyarmno@gmail.com">monkeyarmno at gmail.com</a>
-            <br><small>Sorry for the weird email address ¯\_(ツ)_/¯. It's the best I could come up in 2007.</small>
-          </li>
-          <li>
-            GitHub:
-            <a href="https://github.com/armno">armno</a>
-            <br><small>In case you don&rsquo;t want to email me, you can create an <a href="https://github.com/armno/armno/issues">Issue</a> here, then I&rsquo;ll get the email.</small>
-          </li>
-          <li>
-            X (Twitter):
-            <a href="https://x.com/armno">@armno</a>
-            <br><small>I'm very not active anymore, but I still keep posting my new blog posts there.</small>
-          </li>
-        </ul>
       </div>
-    </main>
-    <Footer></Footer>
-  </body>
-</html>
+    </div>
+
+    <div class="sm:text-base lg:text-lg xl:text-xl lg:leading-normal xl:leading-relaxed">
+
+      <h4 class="mt-32 lg:mt-36">About me</h4>
+      <p>Hello. I'm Armno. I have been building user interfaces for websites and web applications at Buzzwoo for the past 11 years.
+        I primarily work with JavaScript frameworks like
+        Angular, React, and Vue. I'm also a big fan of <a href="https://astro.build" target="_blank">Astro</a>,
+        which is a framework I use to build this website.
+      </p>
+      <p class="lg:leading-snug">
+        <small>
+        Before my time at Buzzwoo, I was a backend/fullstack-<em>ish</em> developer.
+        I worked quite a lot with PHP and WordPress, before moving my focus to the frontend.
+        </small>
+      </p>
+
+      <h4 class="mt-32 lg:mt-36">Writing</h4>
+      <p>
+        I started this website as a blog in 2007. Writing blogs has
+        been a big part of my life since then. I regularly write blog posts
+        about what I have just learned, or what motivates me, both technical and
+        non-technical posts, in Thai and in English.
+      </p>
+      <p>Here are some of my favorites in the technical areas:</p>
+
+      <ul class="text-sm lg:text-base xl:text-lg">
+        <li>
+          <a href="https://armno.in.th/blog/exploring-keystatic/">Exploring Keystatic</a>
+          <small>(2024)</small>
+        </li>
+        <li>
+          <a href="https://armno.in.th/blog/corne-keyboard">Building the Corne Keyboard</a>
+          <small>(2023)</small>
+        </li>
+        <li>
+          <a href="https://armno.in.th/blog/angular-http-params-immutability">Creating a URL with HttpParams in Angular</a>
+          <small>(2020)</small>
+        </li>
+        <li>
+          <a href="https://armno.in.th/blog/how-web-browsers-work/">Web browser ทำงานอย่างไร</a>
+            <small class="ml-1">(2016)</small>
+        </li>
+        <li>
+          <a href="https://armno.in.th/blog/loadcss-async">Case study: เปลี่ยนวิธีโหลด CSS เพื่อให้เว็บ render ไวขึ้น</a>
+          <small>(2015)</small>
+        </li>
+        <li>
+          <a href="https://armno.in.th/blog/git-stash-patched-commit/">วิธีใช้ Git Stash</a>
+          <small>(2014)</small>
+        </li>
+      </ul>
+      <p>Check out <a href="/blog/">the blog</a> for all articles.</p>
+
+      <h4 class="mt-32 lg:mt-36">Life</h4>
+      <p>
+        I'm a husband and a father of 2 kids. Most of my time besides work are spent with my
+        family in <a href="https://maps.app.goo.gl/U6Wv4qVwBAVh9sxz8" target="_blank">Chiang Mai, Thailand</a>.
+        </p>
+        <p>In my free time, I enjoy
+        reading books, <a href="https://armno.in.th/blog/building-mechanical-keyboard/">building</a>
+        <a href="https://armno.in.th/blog/lubricate-mechanical-keyboard-switches">mechanical</a>
+        <a href="https://armno.in.th/blog/corne-keyboard">keyboards</a>, photography, and
+        fixing broken stuffs.
+        On some Sundays, I
+        go out for a ride on my <a
+          href="https://www.strava.com/athletes/3637623">road bike</a
+        >.
+      </p>
+    </div>
+
+    <h4 class="mt-32 lg:mt-36">Get in touch</h4>
+    <ul class="text-sm lg:text-base xl:text:lg">
+      <li>
+        Email:
+        <a href="mailto:monkeyarmno@gmail.com">monkeyarmno at gmail.com</a>
+        <br><small>Sorry for the weird email address ¯\_(ツ)_/¯. It's the best I could come up in 2007.</small>
+      </li>
+      <li>
+        GitHub:
+        <a href="https://github.com/armno">armno</a>
+        <br><small>In case you don&rsquo;t want to email me, you can create an <a href="https://github.com/armno/armno/issues">Issue</a> here, then I&rsquo;ll get the email.</small>
+      </li>
+      <li>
+        X (Twitter):
+        <a href="https://x.com/armno">@armno</a>
+        <br><small>I'm very not active anymore, but I still keep posting my new blog posts there.</small>
+      </li>
+    </ul>
+  </div>
+</PageLayout>
