@@ -7,6 +7,9 @@ export default {
       sans: ['IBM Plex Sans Thai Looped', 'sans-serif']
     },
     extend: {
+      content: {
+        external: 'url(/images/icons/external.svg)',
+      },
       typography: {
         DEFAULT: {
           css: {

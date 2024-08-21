@@ -62,6 +62,10 @@
   }
 
   @layer components {
+    .main a[href^="http"][target="_blank"]{
+      @apply after:content-external after:ml-0.5;
+    }
+
     .footnotes {
       @apply text-sm;
     }
