@@ -35,7 +35,9 @@
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "@astrojs/netlify": "^5.5.1",
+    "@fontsource-variable/source-serif-4": "^5.0.20",
     "@fontsource/ibm-plex-sans-thai-looped": "^5.0.21",
+    "@fontsource/source-serif-4": "^5.0.19",
     "lucide-react": "^0.428.0",
     "typescript": "^5.5.4"
   }
