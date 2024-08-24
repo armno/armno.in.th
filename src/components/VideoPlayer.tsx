@@ -7,7 +7,7 @@ type VideoPlayerProps = {
 
 export default function VideoPlayer(props: VideoPlayerProps) {
   return (
-    <video {...props} style={{ maxWidth: '100%'}}>
+    <video {...props} style={{ maxWidth: '100%'}} muted={props.autoPlay}>
     </video>
   );
 }

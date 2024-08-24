@@ -1,0 +1,166 @@
+---
+title: Things I like about Raycast
+pubDate: 2024-08-21T16:12:00.000Z
+description: 'My take on Raycast as a frontend developer: how I use it and how I like it.'
+language: en
+tags:
+  - productivity
+  - tools
+  - MacOS
+thumbnail: /images/things-i-like-about-raycast/thumbnail.jpg
+---
+[Raycast](https://www.raycast.com/) is my favorite Mac app so far.
+
+In this post, I'll highlight how I use Raycast daily as a web developer, and how it helps to improve my productivity.
+
+Before diving in, here's a bit about me:
+
+- I'm a frontend developer. I mostly code JavaScript/CSS/HTML.
+- I like to use keyboard shortcuts more than using the mouse/trackpad.
+- I'm using [a split keyboard](https://armno.in.th/blog/building-a-wireless-corne-keyboard/) primarily, but sometimes the built-in MacBook Air keyboard.
+- I was a long time user of [Alfred app](https://www.alfredapp.com/) before switching to Raycast.
+
+## What is Raycast
+
+![](../../../content/blog/things-i-like-about-raycast/raycast.jpg)
+
+At a first glance, Raycast looks like an application launcher e.g. the Spotlight or Alfred replacement. But actually it is way more than that.
+
+Raycast can be:
+
+- an application launcher
+- a clipboard management tool
+- a window management tool
+- a smart calculator / unit converter
+- a snippet management tool
+- a quick shell script runner
+- a personal AI assistant
+- and a lot more
+
+To me, Raycast is like a Swiss Army Knife kind of application. It can do so many thing in just one window.
+
+What I like about Raycast UI are:
+
+- It's very fast to open and to search for things.
+- It's very keyboard-friendly, whether it's navigating around or to accessing the sub-menus.
+- It's also possible to assign custom shortcuts to any commands/extensions
+- The search is fuzzy: meaning it doesn't have to match exactly with the keyword. (Although the ranking algorithm is confusing sometimes)
+- The suggestions section and search results are adaptive, and show more recently used apps/commands up top.
+- There are hundreds (if not thousands) of extensions available in the [Store](https://www.raycast.com/store).
+
+## How I use Raycast
+
+I set the hotkey to `control + backspace` to open Raycast. The typical workflow is: open Raycast > type something > hit `enter`. Usually it opens the app or runs the selected command. Otherwise, it copies the output to the clipboard.
+
+{% video
+   src="/videos/things-i-like-about-raycast/open.mp4"
+   controls=true
+   autoPlay=true
+   loop=false /%}
+
+Another example is to open sub-commands using a keyboard shortcut.
+
+{% video
+   src="/videos/things-i-like-about-raycast/submenus-o.mp4"
+   controls=true
+   autoPlay=true
+   loop=false /%}
+
+### Calculator and converters
+
+Works with time/unit/currency/colors, and understands some human language. For example, I can
+
+- `{city} time` to get the local time in that city.
+- `1/4 miles to km`
+- `12 min to ms`
+- or type in a color hex code like `#ffddaa` and use the subcommand to convert it to another color format.
+
+{% video
+   src="/videos/things-i-like-about-raycast/_converters.mp4"
+   controls=true
+   autoPlay=true
+   loop=false /%}
+
+### Clipboard history
+
+Raycast has a built-in clipboard history feature (200 records for free users, unlimited for Pro users). I set the hotkey to `cmd+shift+v` to open the clipboard history window.
+
+What I really like is that it remembers not only text, but also screenshots and files I copied. It is searchable, even from some text in the screenshots. I copy code and screenshots *a lot* during the day. This feature is very helpful.
+
+In this demo, I open clipboard history list, scroll through things I copied, filter by type, or search for a screenshot by some text inside.
+
+{% video
+   src="/videos/things-i-like-about-raycast/_clipboard-history.mp4"
+   controls=true
+   autoPlay=true
+   loop=false /%}
+
+### Utilities
+
+**Script command:** to run a shell script. There's one I use everyday to open Chrome Canary with CORS disabled (it's required by the project I usually work on). I create a script command in Raycast named `canary`
+
+![](../../../content/blog/things-i-like-about-raycast/script-command.png)
+
+```bash
+#!/bin/bash
+
+# Required parameters:
+# @raycast.schemaVersion 1
+# @raycast.title Canary
+# @raycast.mode compact
+
+# Optional parameters:
+# @raycast.icon 🌏
+
+open -n -a /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary  --args --user-data-dir="/Users/armno/chrome" --disable-web-security
+```
+
+**Snippets:** I use snippets to store text emojis and use with other apps like Slack or Teams. It works without having to open Raycast.
+
+![](../../../content/blog/things-i-like-about-raycast/snippet.png)
+
+**Emoji picker:** I map the default shortcut of the emoji picker `control+cmd+space` to open the emoji picker in Raycast. It's much easier to use than the default UI from MacOS in my opinion.
+
+![](../../../content/blog/things-i-like-about-raycast/emoji.jpg)
+
+**Color picker:** to pick and organize colors, or to generate color palette from a prompt (required subscription).
+
+{% video
+   src="/videos/things-i-like-about-raycast/_color-picker.mp4"
+   controls=true
+   autoPlay=true
+   loop=false /%}
+
+### Raycast AI
+
+Raycast AI features are available to [Pro](https://www.raycast.com/pro) members. With that, we can use AI features like AI chat or AI commands for automation right from Raycast.
+
+The cool thing in Raycast AI is that there are different AI models to choose from like the ChatGPT, Claude or Llama variants. Some advanced models require add-on subscription.
+
+The AI Commands feature is pretty cool. There are some AI commands built-in. They build [Prompts](https://ray.so/prompts/) and [Presets](https://ray.so/presets/code) explorer online tools so that we can browse and install commands or presets right to Raycast.
+
+I tried Raycast Pro for a month without the advanced AI add-ons. While I like the features provided, I found myself not using them as much as I expected. Many of Raycast AI features are available already in the Copilot Chat in VSCode. So I didn't feel I was getting much extra values from Raycast's paid features.
+
+But if I don't have access to Copilot Chat, I would definitely go for the Pro to have those AI features.
+
+## Summary
+
+Honestly, I feel like I'm only using basic functionalities from Raycast, and there's just so many more to learn. I see what people build and publish to the [Store](https://www.raycast.com/store), I think the possibilities is of things Raycast can do is almost endless.
+
+I'm also excited to see how Raycast team makes it better. I'm a big fan of Raycast now and curious to find some new ways to use it in my day-to-day.
+
+---
+
+### Aside: Learn from the Pros: Raycast & Karabiner Elements
+
+I like [Raycast's YouTube channel](https://www.youtube.com/@raycastapp) where I learned many new things in Raycast from other people. The content is very informative and very well produced.
+
+My favorite video so far is [**Max Stoiber Owns His Workflow with Raycast**](https://www.youtube.com/watch?v=m5MDv9qwhU8) where he uses Raycast together with [Karabiner Elements](https://karabiner-elements.pqrs.org/) to create advanced keyboard shortcut system.
+
+![Max Stoiber Owns His Workflow with Raycast video thumbnail](../../../content/blog/things-i-like-about-raycast/mxstbr.jpg)[https://www.youtube.com/watch?v=m5MDv9qwhU8](https://www.youtube.com/watch?v=m5MDv9qwhU8)
+
+I've heard many good things about Karabiner Elements and always wanted to learn how to use it. Max's system makes it very easy to understand and configure Karabiner Elements from the code.
+
+I cloned his repo and adjusted a few things. I was blown away already by how simple and power his system is. Just by having the faster apps switching shortcut (instead of pressing `cmd+tab` 10 times) is already worth it.
+
+Give it a try. Seriously. You'll appreciate your keyboard more.

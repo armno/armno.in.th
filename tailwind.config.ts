@@ -1,10 +1,11 @@
 import type { Config } from 'tailwindcss'
 import colors from 'tailwindcss/colors'
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
   theme: {
     fontFamily: {
-      sans: ['IBM Plex Sans Thai Looped', 'sans-serif']
+      sans: ['"Source Serif 4"', 'IBM Plex Sans Thai Looped', ...defaultTheme.fontFamily.sans]
     },
     extend: {
       content: {
