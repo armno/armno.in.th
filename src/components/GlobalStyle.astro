@@ -63,7 +63,7 @@
   }
 
   @layer components {
-    .main a[href^="http"][target="_blank"]{
+    .main a[href^="http"][target="_blank"]:not(.no-icon){
       @apply after:content-external after:ml-0.5;
     }
 
