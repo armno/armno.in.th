@@ -16,29 +16,29 @@
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
     "@keystatic/astro": "^5.0.0",
-    "@keystatic/core": "^0.5.32",
-    "@tailwindcss/typography": "^0.5.14",
+    "@keystatic/core": "^0.5.35",
+    "@tailwindcss/typography": "^0.5.15",
     "@types/lodash-es": "^4.17.12",
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.15.4",
     "autoprefixer": "^10.4.20",
     "date-fns": "^3.6.0",
     "lodash-es": "^4.17.21",
-    "pagefind": "^1.1.0",
-    "postcss": "^8.4.41",
+    "pagefind": "^1.1.1",
+    "postcss": "^8.4.45",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sharp": "^0.33.5",
-    "tailwindcss": "^3.4.10"
+    "tailwindcss": "^3.4.11"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "@astrojs/netlify": "^5.5.2",
-    "@fontsource-variable/source-serif-4": "^5.0.20",
-    "@fontsource/ibm-plex-sans-thai-looped": "^5.0.21",
-    "@fontsource/source-serif-4": "^5.0.19",
-    "lucide-react": "^0.428.0",
-    "typescript": "^5.5.4"
+    "@fontsource-variable/source-serif-4": "^5.1.0",
+    "@fontsource/ibm-plex-sans-thai-looped": "^5.1.0",
+    "@fontsource/source-serif-4": "^5.1.0",
+    "lucide-react": "^0.441.0",
+    "typescript": "^5.6.2"
   }
 }
