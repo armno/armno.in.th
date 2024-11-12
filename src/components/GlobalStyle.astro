@@ -71,23 +71,8 @@
       @apply text-sm;
     }
 
-    /* .main {
-    display: grid;
-    grid-template-columns: minmax(1.5rem, 1fr) min(65ch, calc(100% - 3rem)) minmax(1.5rem, 1fr);
-    @apply max-w-5xl;
-  }
-
-  .main > * {
-    grid-column: 2;
-  }
-
-  .full-bleed {
-    grid-column: 1 / -1;
-  } */
     .full-bleed {
-      display: flex;
-      /* width: 100vw; */
-      overflow: hidden;
+      @apply col-[1/-1] lg:w-screen lg:mx-[calc(50%-50vw)];
     }
 
     .prose blockquote p {
