@@ -1,0 +1,84 @@
+---
+title: Styles
+description: A collection of styles for the website.
+pubDate: '2024-11-22T07:51:22+07:00'
+layout: ../../layouts/PageLayout.astro
+language: en
+---
+
+import WarningMessage from '../../components/WarningMessage.astro';
+
+# Styles
+
+Collection of styles for this website.
+
+---
+
+## Typography
+
+- Primary EN font: Source Serif 4
+- Primary TH font: IBM Plex Sans Thai Looped
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+
+<a href="https://en.wikipedia.org/wiki/Typography" target="_blank">Typography</a> plays a crucial role in web design, serving as both a functional and aesthetic element. Well-chosen fonts and proper text formatting enhance readability and user experience. When designing websites, it's important to maintain consistent typography across different sections while ensuring adequate contrast between text and background colors.
+
+Line height, letter spacing, and paragraph margins all contribute to creating a pleasant reading experience. Additionally, responsive typography that adapts to different screen sizes has become essential in our mobile-first world.
+
+[จักรยาน](https://th.wikipedia.org/wiki/จักรยาน)เป็นพาหนะที่เป็นมิตรกับสิ่งแวดล้อมและมีประโยชน์ต่อ[สุขภาพ](https://www.who.int/thailand)อย่างมาก การปั่นจักรยานช่วยเสริมสร้างกล้ามเนื้อและ[ระบบหัวใจและหลอดเลือด](https://www.heart.org/) อีกทั้งยังเป็นกิจกรรมที่สนุกสนานที่สามารถทำได้ทั้งคนเดียวหรือกับครอบครัวและเพื่อนฝูง การปั่นจักรยานยังช่วยลดการปล่อยก๊าซคาร์บอนไดออกไซด์และลดปัญหาการจราจรติดขัดในเมืองใหญ่อีกด้วย
+
+ในประเทศไทย วัฒนธรรมการปั่นจักรยานได้รับความนิยมเพิ่มขึ้นอย่างต่อเนื่องในช่วงหลายปีที่ผ่านมา หลายเมืองได้พัฒนาเส้นทางจักรยานและสิ่งอำนวยความสะดวกสำหรับนักปั่น ทำให้ผู้คนหันมาใช้จักรยานในการเดินทางระยะสั้นและการออกกำลังกายมากขึ้น นอกจากนี้ยังมีชมรมจักรยานและกิจกรรมปั่นจักรยานเพื่อการกุศลที่จัดขึ้นอย่างสม่ำเสมอ ช่วยสร้างความสัมพันธ์ที่ดีในชุมชน
+
+## Lists
+
+### Unordered List
+- First item
+- Second item
+  - Nested item one
+  - Nested item two
+- Third item
+
+### Ordered List
+1. First step
+2. Second step
+   1. Sub-step one
+   2. Sub-step two
+3. Third step
+
+## Blockquotes
+
+> This is a blockquote. It can be used to highlight important information or quotes from other sources.
+>
+> Multiple paragraphs can be included in a blockquote by adding a blank line with a '>' character.
+
+## Code
+
+Inline code can be written like `console.log('Hello, World!')`.
+
+Code blocks can be written with triple backticks:
+
+```typescript
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
+}
+```
+
+---
+
+## Custom Components
+
+`<WarningMessage>`
+
+<WarningMessage title="Warning">
+  This is a warning message.
+</WarningMessage>
