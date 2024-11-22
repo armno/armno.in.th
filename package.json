@@ -11,26 +11,26 @@
   "devDependencies": {
     "@astrojs/markdoc": "^0.11.5",
     "@astrojs/mdx": "^3.1.9",
-    "@astrojs/react": "^3.6.2",
+    "@astrojs/react": "^3.6.3",
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.2",
     "@keystatic/astro": "^5.0.3",
-    "@keystatic/core": "^0.5.39",
+    "@keystatic/core": "^0.5.41",
     "@tailwindcss/typography": "^0.5.15",
     "@types/lodash-es": "^4.17.12",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "astro": "^4.16.10",
+    "astro": "^4.16.14",
     "autoprefixer": "^10.4.20",
     "date-fns": "^4.1.0",
     "lodash-es": "^4.17.21",
-    "pagefind": "^1.1.1",
-    "postcss": "^8.4.47",
+    "pagefind": "^1.2.0",
+    "postcss": "^8.4.49",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sharp": "^0.33.5",
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.15"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -38,7 +38,7 @@
     "@fontsource-variable/source-serif-4": "^5.1.0",
     "@fontsource/ibm-plex-sans-thai-looped": "^5.1.0",
     "@fontsource/source-serif-4": "^5.1.0",
-    "lucide-react": "^0.454.0",
+    "lucide-react": "^0.460.0",
     "typescript": "^5.6.3"
   }
 }
