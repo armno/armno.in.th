@@ -1,0 +1,47 @@
+---
+title: Debugging Layout Shift
+pubDate: 2024-11-26T22:28:00.000Z
+language: en
+tags: []
+---
+I recently spotted this weird behavior on my blog: the content was blinking, or shifting for a split second on page load.
+
+{% video
+   src="/videos/debugging-layout-shift/layout-shift-issue.mp4"
+   controls=true
+   autoPlay=true
+   loop=true /%}
+
+After that, everything looks fine. Sometimes it happens too fast so it was barely noticeable.
+
+But I see it already. And I can't unsee it now. I have to fix it because it bugs me every time when I see it happens.
+
+## Inspecting the problem
+
+The bug was pretty difficult to see. Luckily it happens on the first load so maybe if I slow things down, I might see things more clearly.
+
+I started by ~~borrowing [Dr. Strange's Time Stone](https://marvelcinematicuniverse.fandom.com/wiki/Time_Stone#Used_by_Doctor_Strange)~~ using Chrome DevTools' feature to disable network cache, and throttle the connection speed to 'Slow 4G'.
+
+![](../../../content/blog/debugging-layout-shift/x8dkPYE44@2x.png)
+
+It worked. I could see what was happening: initially, the content are was wider, the it got narrower. Something was moving there.
+
+{% video
+   src="/videos/debugging-layout-shift/layout-shift-slow.mp4"
+   controls=true
+   autoPlay=true
+   loop=true /%}
+
+My guess was that something might cause the CLS: Cumulative Layout Shift. So I jumped to the Lighthouse tap in DevTools and ran an audit (with network throttling still enabled).
+
+Lighthouse showed that there were small CLS.
+
+![](../../../content/blog/debugging-layout-shift/cls.png)
+
+And even it was still green (and supposed to be fine), Lightouse was able to spot the source of the CLS, and the events that caused it, which is from the web fonts loaded.
+
+![](../../../content/blog/debugging-layout-shift/cls-trace.png)
+
+So when the custom fonts are loaded, it caused the layout shift.
+
+Interesting...
