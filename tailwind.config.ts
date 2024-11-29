@@ -19,7 +19,6 @@ export default {
                 color: colors.green[600],
               }
             },
-            maxWidth: '800px',
             color: colors.slate[900],
             code: {
               backgroundColor: colors.slate[200],

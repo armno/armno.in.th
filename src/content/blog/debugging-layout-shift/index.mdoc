@@ -4,7 +4,7 @@ pubDate: 2024-11-26T22:28:00.000Z
 language: en
 tags: []
 ---
-I recently spotted this weird behavior on my blog: the content was blinking, or shifting for a split second on page load.
+I recently spot this weird behavior on my blog: there is a blink for a split second on page load.
 
 {% video
    src="/videos/debugging-layout-shift/layout-shift-issue.mp4"
@@ -12,19 +12,19 @@ I recently spotted this weird behavior on my blog: the content was blinking, or 
    autoPlay=true
    loop=true /%}
 
-After that, everything looks fine. Sometimes it happens too fast so it was barely noticeable.
+After the page loads, everything looks fine. This sometimes happens too fast so it is barely noticeable.
 
-But I see it already. And I can't unsee it now. I have to fix it because it bugs me every time when I see it happens.
+The issue seems tiny, but I can't *unsee* it now. I have to fix it, because it bugs me every time when I see it happens.
 
 ## Inspecting the problem
 
-The bug was pretty difficult to see. Luckily it happens on the first load so maybe if I slow things down, I might see things more clearly.
+The bug is pretty difficult to see. Luckily it happens on the first load so maybe if I slow things down, I might see things more clearly.
 
-I started by ~~borrowing [Dr. Strange's Time Stone](https://marvelcinematicuniverse.fandom.com/wiki/Time_Stone#Used_by_Doctor_Strange)~~ using Chrome DevTools' feature to disable network cache, and throttle the connection speed to 'Slow 4G'.
+I start by ~~borrowing [Dr. Strange's Time Stone](https://marvelcinematicuniverse.fandom.com/wiki/Time_Stone#Used_by_Doctor_Strange)~~ using Chrome DevTools' feature to disable network cache, and throttle the connection speed to 'Slow 4G'.
 
 ![](../../../content/blog/debugging-layout-shift/x8dkPYE44@2x.png)
 
-It worked. I could see what was happening: initially, the content are was wider, the it got narrower. Something was moving there.
+It works. I can see what is happening: initially, the content are was wider, the it got narrower. Something is moving there.
 
 {% video
    src="/videos/debugging-layout-shift/layout-shift-slow.mp4"
@@ -32,16 +32,89 @@ It worked. I could see what was happening: initially, the content are was wider,
    autoPlay=true
    loop=true /%}
 
-My guess was that something might cause the CLS: Cumulative Layout Shift. So I jumped to the Lighthouse tap in DevTools and ran an audit (with network throttling still enabled).
+My guess is that something might cause the CLS: Cumulative Layout Shift. So I jump to the Lighthouse tab in DevTools and run an audit (with network throttling still enabled).
 
-Lighthouse showed that there were small CLS.
+Lighthouse shows that there is a small CLS.
 
 ![](../../../content/blog/debugging-layout-shift/cls.png)
 
-And even it was still green (and supposed to be fine), Lightouse was able to spot the source of the CLS, and the events that caused it, which is from the web fonts loaded.
+Lighthouse tells me that the source of the CLS is from the web fonts load events.
 
 ![](../../../content/blog/debugging-layout-shift/cls-trace.png)
 
-So when the custom fonts are loaded, it caused the layout shift.
+So when the custom fonts are loaded, it causes the layout shift.
 
-Interesting...
+> I'm using [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) as the primary font, with system's `sans-serif` as the fallback font. I'm using also `font-display: swap` so it displays the content using the fallback font while downloading Source Serif 4 from the network. Once it's downloaded, then it swaps the font on the screen.
+
+To verify if fonts are the real cause of the layout shift, I use the network blocking feature to prevent the font files to load on the page, run another audit, and see if the issue is gone. And yes it is indeed gone. No more layout shifts.
+
+Another thing I notice now is that: only the main content shifts. The header element stays the same.
+
+Digging a bit deeper I found the main content is a `.prose` element from the Tailwind typography plugin. This class sets the `max-width` of the element to be `65ch`.
+
+{% warningMessage %}
+The optimal line length for body text is around [50-75 characters](https://baymard.com/blog/line-length-readability). Tailwind uses `65ch` which is roughly about 65 characters. According to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/length#ch), `1ch` is measured from the width of the character `0` of the current font.
+{% /warningMessage %}
+
+And because the "current font" changes from system sans-serif to Source Serif 4, the actual width of `1ch` and changes too. So `65ch` doesn't necessarily mean it will always be fixed at XYZ pixels. If the font changes, the width might change, and the layout might shift.
+
+Gotcha.
+
+**Lesson learned:** when using `font-display: swap` , I have to be careful with the fallback font stacks. Choosing the fallback font poorly can lead to negative side effects like this.
+
+## Solving the layout shift from using custom font
+
+I did some further research and found the article [Fixing Layout Shifts Caused by Web Fonts](https://www.debugbear.com/blog/web-font-layout-shift) by [Umar Hansa](https://x.com/umaar) explaining the similar issue I have.
+
+In my case, here are a few solutions to fix layout shift:
+
+1. use a fixed width unit for the container like `px` or `rem` instead of `ch`.
+1. use `ch` unit, but choose a better fallback font.
+1. use `ch` unit, with some other CSS properties for `@font-face` rules to tweak how the font should display.
+
+### 1. Set a fixed width unit for the container
+
+This can be done easily in Tailwind's config file `tailwind.config.ts`
+
+```diff
+export default {
+  theme: {
+    extend: {
+      typography: {
+        DEFAULT: {
++         maxWidth: '800px',
+        }
+      }
+    }
+  }
+}
+```
+
+### 2. Set better fallback font
+
+First I should at least set the fallback font to serif instead of sans-serif I imported from Tailwind.
+
+```diff
+export default {
+  theme: {
+    fontFamily: {
+      sans: [
+       'Source Serif 4', 
+       'IBM Plex Sans Thai Looped', 
+-      ...defaultTheme.fontFamily.sans,
++      ...defaultTheme.fontFamily.serif,
+      ]
+    },
+```
+
+On macOS, the fallback font is Georgia. The differences is still quite a lot at ~100px though. Here is the comparison between the 2 fonts.
+
+Technically, I can use Times instead of Georgia as a fallback. Times seems to be narrower than Georgia, but personally I don't like how Times looks.
+
+{% video
+   src="/videos/debugging-layout-shift/compare-serif-fonts.mp4"
+   controls=true
+   autoPlay=true
+   loop=false /%}
+
+It can be optimized further by add some new CSS properties to `@font-face` rules to control how the fallback font should display.
