@@ -5,7 +5,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 export default {
   theme: {
     fontFamily: {
-      sans: ['"Source Serif 4"', 'IBM Plex Sans Thai Looped', ...defaultTheme.fontFamily.serif]
+      sans: ['"Source Serif 4"', 'IBM Plex Sans Thai Looped', '"My Georgia"']
     },
     extend: {
       content: {

@@ -20,7 +20,7 @@ The issue seems tiny, but I can't *unsee* it now. I have to fix it, because it b
 
 The bug is pretty difficult to see. Luckily it happens on the first load so maybe if I slow things down, I might see things more clearly.
 
-I start by ~~borrowing [Dr. Strange's Time Stone](https://marvelcinematicuniverse.fandom.com/wiki/Time_Stone#Used_by_Doctor_Strange)~~ using Chrome DevTools' feature to disable network cache, and throttle the connection speed to 'Slow 4G'.
+I ~~borrow [Dr. Strange's Time Stone](https://marvelcinematicuniverse.fandom.com/wiki/Time_Stone#Used_by_Doctor_Strange)~~ use Chrome DevTools' feature to disable network cache, and throttle the connection speed to 'Slow 4G'.
 
 ![](../../../content/blog/debugging-layout-shift/x8dkPYE44@2x.png)
 
@@ -32,9 +32,9 @@ It works. I can see what is happening: initially, the content are was wider, the
    autoPlay=true
    loop=true /%}
 
-My guess is that something might cause the CLS: Cumulative Layout Shift. So I jump to the Lighthouse tab in DevTools and run an audit (with network throttling still enabled).
+My guess is that something might cause the [CLS: Cumulative Layout Shift](https://web.dev/articles/cls). So I jump to the Lighthouse tab in DevTools and run an audit (with network throttling still enabled).
 
-Lighthouse shows that there is a small CLS.
+Lighthouse shows that there is a small amount of CLS.
 
 ![](../../../content/blog/debugging-layout-shift/cls.png)
 
@@ -47,6 +47,8 @@ So when the custom fonts are loaded, it causes the layout shift.
 > I'm using [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) as the primary font, with system's `sans-serif` as the fallback font. I'm using also `font-display: swap` so it displays the content using the fallback font while downloading Source Serif 4 from the network. Once it's downloaded, then it swaps the font on the screen.
 
 To verify if fonts are the real cause of the layout shift, I use the network blocking feature to prevent the font files to load on the page, run another audit, and see if the issue is gone. And yes it is indeed gone. No more layout shifts.
+
+![](../../../content/blog/debugging-layout-shift/fonts-blocking.png)
 
 Another thing I notice now is that: only the main content shifts. The header element stays the same.
 
@@ -109,12 +111,16 @@ export default {
 
 On macOS, the fallback font is Georgia. The differences is still quite a lot at ~100px though. Here is the comparison between the 2 fonts.
 
-Technically, I can use Times instead of Georgia as a fallback. Times seems to be narrower than Georgia, but personally I don't like how Times looks.
-
 {% video
    src="/videos/debugging-layout-shift/compare-serif-fonts.mp4"
    controls=true
    autoPlay=true
    loop=false /%}
 
-It can be optimized further by add some new CSS properties to `@font-face` rules to control how the fallback font should display.
+I can also use Times instead of Georgia as a fallback. Times seems to be narrower than Georgia, but personally I don't like how Times looks so I wouldn't use it.
+
+Then this can be optimized further by using some new CSS properties to `@font-face`
+
+### 3. Adjust the fallback font's display with `@font-face` descriptors
+
+There are a few CSS properties for that can be added to `@font-face` rules to control how the font should display.
