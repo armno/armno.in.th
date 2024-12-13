@@ -5,7 +5,12 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 export default {
   theme: {
     fontFamily: {
-      sans: ['"Source Serif 4"', 'IBM Plex Sans Thai Looped', ...defaultTheme.fontFamily.serif]
+      sans: [
+        '"Source Serif 4"',
+        'IBM Plex Sans Thai Looped',
+        '"Adjusted Georgia Fallback"',
+        ...defaultTheme.fontFamily.serif,
+      ]
     },
     extend: {
       content: {
@@ -14,12 +19,12 @@ export default {
       typography: {
         DEFAULT: {
           css: {
+            maxWidth: '700px',
             a: {
               '&:hover': {
                 color: colors.green[600],
               }
             },
-            maxWidth: '800px',
             color: colors.slate[900],
             code: {
               backgroundColor: colors.slate[200],
