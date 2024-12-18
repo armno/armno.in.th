@@ -20,13 +20,15 @@ I recently spot this weird behavior on my blog: there is a blink for a split sec
 
 After the page loads, everything looks fine. This sometimes happens too fast so it is barely noticeable.
 
-The issue seems tiny, but I can't *unsee* it now. I have to fix it, because it bugs me every time when I see it happens.
+Another thing I notice now is that: the shift happens only on the main content container. The header element stays the same.
+
+The issue seems tiny, but I still want to fix it because I can't *unsee* it now. Maybe I learn a thing or two from the process as well.
 
 ## Inspecting the problem
 
-The bug is pretty difficult to see. Luckily it happens on every first load so it is easy to reproduce. If I slow things down, I might see things more clearly.
+The bug is pretty difficult to see. Luckily it happens on every first load, so it is easy to reproduce. If I slow things down, I might see things more clearly.
 
-I ~~borrow [Dr. Strange's Time Stone](https://marvelcinematicuniverse.fandom.com/wiki/Time_Stone#Used_by_Doctor_Strange)~~ use Chrome DevTools' feature to disable network cache, and throttle the connection speed to 'Slow 4G'.
+I use Chrome DevTools' [Network Throttling](https://developer.chrome.com/docs/devtools/network/reference#throttling) feature to disable network cache, and throttle the connection speed to 'Slow 4G'.
 
 ![](../../../content/blog/debugging-layout-shift/x8dkPYE44@2x.png)
 
@@ -44,21 +46,23 @@ Lighthouse shows that there is a small amount of CLS.
 
 ![](../../../content/blog/debugging-layout-shift/cls.png)
 
-Lighthouse tells me that the source of the CLS is from the web fonts load events.
+Lighthouse also tells me that the source of the CLS is from the web fonts load events.
+
+{% warningMessage %}
+I'm using 2 custom fonts and the system's sans-serif as a fallback in my fonts stack. I'm also using `font-display: swap` property. More details on the fonts stack later.
+{% /warningMessage %}
 
 ![](../../../content/blog/debugging-layout-shift/cls-trace.png)
 
 So when the custom fonts are loaded, it causes the layout shift.
 
-> I'm using [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) as the primary font, with system's `sans-serif` as the fallback font. I'm using also `font-display: swap` so it displays the content using the fallback font while downloading Source Serif 4 from the network. Once it's downloaded, then it swaps the font on the screen.
+To verify if fonts loading is the real cause of the layout shift, I use the network blocking feature to prevent the font files to load on the page, run another audit, and see if the issue is gone.
 
-To verify if fonts are the real cause of the layout shift, I use the network blocking feature to prevent the font files to load on the page, run another audit, and see if the issue is gone. And yes it is indeed gone. No more layout shifts.
+And yes it is indeed gone. No more layout shifts.
 
 ![](../../../content/blog/debugging-layout-shift/fonts-blocking.png)
 
-Another thing I notice now is that: only the main content shifts. The header element stays the same.
-
-Digging a bit deeper I found the main content is a `.prose` element from the Tailwind typography plugin. This class sets the `max-width` of the element to be `65ch`.
+Digging a bit deeper I found the main content is a `.prose` element from the [Tailwind typography plugin](https://github.com/tailwindlabs/tailwindcss-typography). This class sets the `max-width` of the element to be `65ch`.
 
 {% warningMessage %}
 The optimal line length for body text is around [50-75 characters](https://baymard.com/blog/line-length-readability). Tailwind uses `65ch` which is roughly about 65 characters. According to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/length#ch), `1ch` is measured from the width of the character `0` of the current font.
@@ -76,7 +80,7 @@ Gotcha.
 
 I did some further research and found the article [Fixing Layout Shifts Caused by Web Fonts](https://www.debugbear.com/blog/web-font-layout-shift) by [Umar Hansa](https://x.com/umaar) explaining the similar issue I have.
 
-In my case, here are a few solutions to fix layout shift:
+In my case, there are a few solutions to fix layout shift:
 
 1. use a fixed width unit for the container like `px` or `rem` instead of `ch`.
 1. use `ch` unit, but choose a better fallback font.
@@ -102,7 +106,7 @@ export default {
 }
 ```
 
-This will set the `max-width` for `.prose` elements to be `700px` instead of `65ch`
+This will set the `max-width` for `.prose` elements to be `700px` instead of `65ch`. The text or line breaks might still shift when font changes, but the content container will not move.
 
 ### 2. Set better fallback font
 
@@ -112,7 +116,7 @@ First I should at least set the fallback font to serif instead of sans-serif I i
 export default {
   theme: {
     fontFamily: {
-      sans: [
+      serif: [
        'Source Serif 4', 
        'IBM Plex Sans Thai Looped', 
 -      ...defaultTheme.fontFamily.sans,
@@ -129,7 +133,7 @@ On macOS, the fallback font is Georgia. The differences is still quite a lot at 
    autoPlay=true
    loop=false /%}
 
-I can also use Times instead of Georgia as a fallback. Times seems to be narrower than Georgia and would reduce the margins, but personally I don't like how Times looks so I wouldn't use it.
+I can also use Times instead of Georgia as a fallback. Times font is visually narrower than Georgia and would reduce the margins. But personally I don't like how Times looks so I wouldn't use it.
 
 However, with *both* techniques combined, it gives an OK result. There is almost no visual layout shift, and CLS value from Lighthouse is much lower.
 
@@ -175,7 +179,7 @@ I add the new `@font-face` rule to the page, and update Tailwind config to use t
 export default {
   theme: {
     fontFamily: {
-      sans: [
+      serif: [
        'Source Serif 4', 
        'IBM Plex Sans Thai Looped', 
 -      ...defaultTheme.fontFamily.serif,
@@ -195,12 +199,12 @@ I end up with `size-adjust: 87%` which gives the visual width of 65ch of the con
 
 There is another problem I face: I'm actually using 2 custom fonts for this website. This is the order of the fonts stack:
 
-1. [Source Serif 4](https://fontsource.org/fonts/source-serif-4) - for most of the characters
+1. [Source Serif 4](https://fontsource.org/fonts/source-serif-4) - for most of the characters. This font doesn't have Thai characters in it, so there comes the second custom font...
 1. [IBM Plex Sans Thai Looped](https://fontsource.org/fonts/ibm-plex-sans-thai-looped) - for Thai characters. It is imported as an [individual subset](https://fontsource.org/docs/getting-started/subsets) from Fontsource.
 1. the Adjusted Georgia Fallback from above
-1. default serif fonts stack from Tailwind
+1. the default serif fonts stack from Tailwind
 
-When putting IBM Plex Sans Thai Looped in, it causes another layout shift in between. From this video below, when reload the page, the layout goes from big > small > big again.
+When putting IBM Plex Sans Thai Looped in, it causes *another* layout shift in between. From this video below, when reload the page, the layout goes from big > small > big again.
 
 {% video
    src="/videos/debugging-layout-shift/_3-fonts.mp4"
@@ -208,10 +212,12 @@ When putting IBM Plex Sans Thai Looped in, it causes another layout shift in bet
    autoPlay=true
    loop=false /%}
 
-My guess is that the shrink in between is caused by the second font in the fonts stack e.g. from `65ch` of the IBM Plex Sans Thai Looped font. That means that the Adjusted Georgia Fallback custom font only fixes the layout shift for Source Serif 4.
+My guess is that the shrink in between is caused by the second font in the fonts stack e.g. from `65ch` of the IBM Plex Sans Thai Looped font.
 
-So if I want to minimize layout shift through all fonts in the stack, I would need to adjust the Georgia (or another font) to look closer to all other fonts.
+That means that the Adjusted Georgia Fallback custom font only fixes the layout shift for Source Serif 4. And if I want to minimize layout shift through all fonts in the stack, I would need to adjust the Georgia (or another font) to look closer to all other custom fonts I use.
 
-For me, it's easier to give up the `65ch` max width and just go with the fixed value instead, which solves the layout shift issue regardless of the fonts I use.
+Otherwise, I could use 1 custom font instead of 2, which I'm not interested in right now. I have spent too much time already picking fonts that look OK for both my English and Thai content, and prefer to keep it this way.
 
-It's a good learning anyway. I have learned a few new things.
+For me, it's easier to give up the `65ch` max width and just go with the fixed width of the container element instead, which solves the *horizontal* layout shift issue regardless of the fonts I use.
+
+It's a good learning so far anyway. ✌️
