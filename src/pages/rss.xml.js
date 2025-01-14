@@ -9,13 +9,13 @@ export async function GET(context) {
     description: 'Notes from my thoughts and learnings.',
     site: context.site,
     items: allPosts
-    .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))
-    .map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.pubDate,
-      description: post.data.description,
-      link: `/blog/${post.slug}/`,
-    })),
-    stylesheet: '/rss/pretty-feed-v3.xsl'
+      .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))
+      .map((post) => ({
+        title: post.data.title,
+        pubDate: post.data.pubDate,
+        description: post.data.description,
+        link: `/blog/${post.id}/`,
+      })),
+      stylesheet: '/rss/pretty-feed-v3.xsl'
   });
 }
