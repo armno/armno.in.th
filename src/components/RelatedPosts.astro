@@ -12,7 +12,7 @@ const allPosts = await getCollection('blog');
 const { tags, currentPathname } = Astro.props;
 
 const allRelatedPosts = allPosts
-  .filter(post => !currentPathname.includes(post.slug))
+  .filter(post => !currentPathname.includes(post.id))
   // sort posts by most recent first
   .sort(
     (a, b) =>
@@ -38,7 +38,7 @@ const relatedPosts = sampleSize(allRelatedPosts, 3);
       <ul class="grid gap-y-8 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
         {relatedPosts.map((post) => (
           <PostItem
-            url={`/blog/${post.slug}`}
+            url={`/blog/${post.id}`}
             pubDate={post.data.pubDate}
             title={post.data.title}
             thumbnail={post.data.thumbnail}

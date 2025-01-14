@@ -51,7 +51,7 @@ const { posts } = Astro.props;
           >
             {format(new Date(post.data.pubDate), "dd.MM.yyyy")}
           </time>
-          <a href={"/blog/" + post.slug}>{post.data.title}</a>
+          <a href={"/blog/" + post.id}>{post.data.title}</a>
         </li>
       ))
     }
