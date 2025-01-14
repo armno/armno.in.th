@@ -16,7 +16,7 @@ const config: AstroUserConfig = {
   })]
 };
 if (process.env.NODE_ENV !== 'production') {
-  config.output = 'hybrid';
+  config.output = 'static';
   config.adapter = netlify();
   config.integrations?.push(keystatic());
 }
