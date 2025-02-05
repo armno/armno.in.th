@@ -1,7 +1,10 @@
 <style is:global>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+  @import "tailwindcss";
+  @plugin "@tailwindcss/typography";
+
+  @theme {
+    --font-serif: "Source Serif 4", "IBM Plex Sans Thai Looped", "Adjusted Georgia Fallback", serif;
+  }
 
   @layer base {
 
@@ -60,7 +63,7 @@
 
   @layer components {
     .main a[href^="http"][target="_blank"]:not(.no-icon){
-      @apply after:content-external after:ml-0.5;
+      /* @apply after:content-external after:ml-0.5; */
     }
 
     .footnotes {
