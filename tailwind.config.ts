@@ -81,28 +81,6 @@ export default {
             },
           }
         },
-        invert: {
-          css: {
-            a: {
-              color: colors.yellow[300],
-              textDecoration: 'none',
-              '&:hover': {
-                color: colors.yellow[500],
-                textDecoration: 'underline',
-              }
-            },
-            code: {
-              backgroundColor: 'transparent',
-              color: colors.lime[300],
-            },
-            hr: {
-              backgroundColor: colors.slate[100]
-            },
-            blockquote: {
-              backgroundColor: colors.slate[800],
-            },
-          }
-        },
       },
     }
   },

@@ -4,12 +4,6 @@
 
   @custom-variant dark (&:where(.dark, .dark *));
 
-  @theme {
-    --font-serif: "Source Serif 4", "IBM Plex Sans Thai Looped", "Adjusted Georgia Fallback", serif;
-  }
-
-  @layer base {
-
     :root {
       --pagefind-ui-scale: 1;
     }
@@ -21,6 +15,12 @@
       --pagefind-ui-border: #152028;
       --pagefind-ui-tag: #152028;
     }
+
+  @theme {
+    --font-serif: "Source Serif 4", "IBM Plex Sans Thai Looped", "Adjusted Georgia Fallback", serif;
+  }
+
+  @layer base {
 
     html {
       font-size: 112.5%;
@@ -84,5 +84,6 @@
   @utility prose {
     --tw-prose-invert-links: var(--color-yellow-200);
     --spacing: 0.3rem;
+    --tw-prose-invert-code: var(--color-lime-300);
   }
 </style>
