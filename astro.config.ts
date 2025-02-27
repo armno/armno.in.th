@@ -3,7 +3,7 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from '@keystatic/astro';
@@ -12,9 +12,12 @@ import type { AstroUserConfig } from "astro";
 
 const config: AstroUserConfig = {
   site: "https://armno.in.th",
-  integrations: [sitemap(), mdx(), tailwind(), react(), markdoc({
+  integrations: [sitemap(), mdx(), react(), markdoc({
     allowHTML: true
-  })]
+  })],
+  vite: {
+    plugins: [tailwindcss()],
+  }
 };
 if (process.env.NODE_ENV !== 'production') {
   config.output = 'static';

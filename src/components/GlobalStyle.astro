@@ -1,9 +1,8 @@
 <style is:global>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+  @import "tailwindcss";
+  @plugin "@tailwindcss/typography";
 
-  @layer base {
+  @custom-variant dark (&:where(.dark, .dark *));
 
     :root {
       --pagefind-ui-scale: 1;
@@ -16,6 +15,12 @@
       --pagefind-ui-border: #152028;
       --pagefind-ui-tag: #152028;
     }
+
+  @theme {
+    --font-serif: "Source Serif 4", "IBM Plex Sans Thai Looped", "Adjusted Georgia Fallback", serif;
+  }
+
+  @layer base {
 
     html {
       font-size: 112.5%;
@@ -60,7 +65,7 @@
 
   @layer components {
     .main a[href^="http"][target="_blank"]:not(.no-icon){
-      @apply after:content-external after:ml-0.5;
+      /* @apply after:content-external after:ml-0.5; */
     }
 
     .footnotes {
@@ -74,5 +79,11 @@
     .prose blockquote p {
       margin-top: 1.25em;
     }
+  }
+
+  @utility prose {
+    --tw-prose-invert-links: var(--color-yellow-200);
+    --spacing: 0.3rem;
+    --tw-prose-invert-code: var(--color-lime-300);
   }
 </style>

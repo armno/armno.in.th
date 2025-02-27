@@ -53,7 +53,7 @@ const content = {
           <h2 class="font-bold">{year.year}</h2>
           <ol class="list-none p-0">
             {year.posts.map((post) => (
-              <li class="p-0 flex gap-3 lg:items-baseline">
+              <li class="p-0 !m-0 flex gap-3 lg:items-baseline">
                 <time
                   class="font-mono text-xs xl:text-base text-slate-600 dark:text-slate-400 leading-6 lg:leading-loose"
                   datetime={post.data.pubDate.toString()}
