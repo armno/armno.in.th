@@ -15,6 +15,7 @@ export default config({
   },
   collections: {
     posts: collection({
+      columns: ['title', 'pubDate', 'language'],
       entryLayout: 'content',
       label: 'Posts',
       slugField: 'title',

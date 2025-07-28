@@ -15,7 +15,7 @@
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.1",
     "@keystatic/astro": "^5.0.6",
-    "@keystatic/core": "^0.5.47",
+    "@keystatic/core": "^0.5.48",
     "@tailwindcss/typography": "^0.5.16",
     "@types/lodash-es": "^4.17.12",
     "@types/react": "^19.1.4",
