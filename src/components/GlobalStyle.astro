@@ -1,6 +1,7 @@
 <style is:global>
   @import "tailwindcss";
   @plugin "@tailwindcss/typography";
+  @config "../../tailwind.style.mjs";
 
   @custom-variant dark (&:where(.dark, .dark *));
 
@@ -21,10 +22,6 @@
   }
 
   @layer base {
-
-    html {
-      font-size: 112.5%;
-    }
 
     a figcaption {
       @apply no-underline;

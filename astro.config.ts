@@ -16,7 +16,7 @@ const config: AstroUserConfig = {
     allowHTML: true
   })],
   vite: {
-    plugins: [tailwindcss()],
+    // plugins: [tailwindcss()],
   }
 };
 if (process.env.NODE_ENV !== 'production') {
