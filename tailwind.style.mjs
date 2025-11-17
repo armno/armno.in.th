@@ -13,9 +13,6 @@ export default {
             },
             color: colors.slate[900],
             code: {
-              backgroundColor: colors.slate[200],
-              padding: '2px 4px',
-              borderRadius: '3px',
               fontWeight: 'normal',
             },
             'code::before': {
