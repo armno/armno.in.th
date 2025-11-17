@@ -1,9 +1,52 @@
 <style is:global>
   @import "tailwindcss";
   @plugin "@tailwindcss/typography";
-  @config "../../tailwind.style.mjs";
 
   @custom-variant dark (&:where(.dark, .dark *));
+
+  @theme {
+    --font-serif: "Source Serif 4", "IBM Plex Sans Thai Looped", "Adjusted Georgia Fallback", serif;
+
+    /* Typography customization */
+    --tw-prose-body: var(--color-slate-900);
+    --tw-prose-headings: var(--color-slate-900);
+    --tw-prose-lead: var(--color-slate-600);
+    --tw-prose-links: var(--color-slate-900);
+    --tw-prose-bold: var(--color-slate-900);
+    --tw-prose-counters: var(--color-slate-500);
+    --tw-prose-bullets: var(--color-slate-300);
+    --tw-prose-hr: var(--color-slate-200);
+    --tw-prose-quotes: var(--color-slate-900);
+    --tw-prose-quote-borders: var(--color-slate-300);
+    --tw-prose-captions: var(--color-slate-500);
+    --tw-prose-code: var(--color-slate-900);
+    --tw-prose-pre-code: var(--color-slate-200);
+    --tw-prose-pre-bg: var(--color-slate-900);
+    --tw-prose-th-borders: var(--color-slate-300);
+    --tw-prose-td-borders: var(--color-slate-200);
+
+    /* Custom typography overrides */
+    --tw-prose-max-width: 700px;
+  }
+
+  @variant dark {
+    --tw-prose-body: var(--color-slate-200);
+    --tw-prose-headings: var(--color-slate-200);
+    --tw-prose-lead: var(--color-slate-400);
+    --tw-prose-links: var(--color-slate-200);
+    --tw-prose-bold: var(--color-slate-200);
+    --tw-prose-counters: var(--color-slate-400);
+    --tw-prose-bullets: var(--color-slate-600);
+    --tw-prose-hr: var(--color-slate-700);
+    --tw-prose-quotes: var(--color-slate-200);
+    --tw-prose-quote-borders: var(--color-slate-600);
+    --tw-prose-captions: var(--color-slate-400);
+    --tw-prose-code: var(--color-slate-200);
+    --tw-prose-pre-code: var(--color-slate-800);
+    --tw-prose-pre-bg: var(--color-slate-800);
+    --tw-prose-th-borders: var(--color-slate-600);
+    --tw-prose-td-borders: var(--color-slate-700);
+  }
 
     :root {
       --pagefind-ui-scale: 1;
@@ -16,10 +59,6 @@
       --pagefind-ui-border: #152028;
       --pagefind-ui-tag: #152028;
     }
-
-  @theme {
-    --font-serif: "Source Serif 4", "IBM Plex Sans Thai Looped", "Adjusted Georgia Fallback", serif;
-  }
 
   @layer base {
 
@@ -75,6 +114,62 @@
 
     .prose blockquote p {
       margin-top: 1.25em;
+    }
+
+    /* Custom typography styles migrated from tailwind.style.mjs */
+    .prose a:hover {
+      @apply text-green-600;
+    }
+
+    .prose code {
+      @apply bg-slate-200 px-1 py-0.5 rounded text-sm font-normal;
+    }
+
+    .dark .prose code {
+      @apply bg-slate-700;
+    }
+
+    .prose pre {
+      @apply bg-slate-100 p-4 rounded font-normal;
+    }
+
+    .dark .prose pre {
+      @apply bg-slate-800;
+    }
+
+    .prose pre code {
+      @apply bg-transparent p-0 font-normal;
+    }
+
+    .prose blockquote {
+      @apply bg-slate-100 font-normal py-0 px-8;
+    }
+
+    .dark .prose blockquote {
+      @apply bg-slate-800;
+    }
+
+    .prose hr {
+      @apply w-2/5 border-0 h-1.5 my-16 bg-slate-800;
+    }
+
+    .prose li {
+      @apply mt-0 mb-2;
+    }
+
+    .prose p {
+      @apply mt-3 mb-3;
+    }
+
+    .prose img {
+      @apply mb-3;
+    }
+
+    .prose ul ul,
+    .prose ul ol,
+    .prose ol ul,
+    .prose ol ol {
+      @apply mt-0 mb-0;
     }
   }
 
