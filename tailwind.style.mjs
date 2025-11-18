@@ -7,9 +7,13 @@ export default {
           css: {
             maxWidth: '700px',
             a: {
+              textUnderlineOffset: '0.2em',
               '&:hover': {
                 color: colors.green[600],
-              }
+              },
+              '.dark &:hover': {
+                color: colors.orange[400],
+              },
             },
             color: colors.slate[900],
             code: {
