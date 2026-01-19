@@ -34,7 +34,6 @@
   "dependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/netlify": "^6.6.4",
-    "@astrojs/tailwind": "^6.0.2",
     "@fontsource-variable/source-serif-4": "^5.2.9",
     "@fontsource/ibm-plex-sans-thai-looped": "^5.2.8",
     "@fontsource/source-serif-4": "^5.2.9",
