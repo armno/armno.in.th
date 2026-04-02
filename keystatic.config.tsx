@@ -1,5 +1,5 @@
 // keystatic.config.ts
-import { config, fields, collection, component, singleton } from '@keystatic/core';
+import { config, fields, collection, singleton } from '@keystatic/core';
 import { block, wrapper } from '@keystatic/core/content-components'
 import VideoPlayer from '@components/VideoPlayer';
 import { Clapperboard, FileWarning } from 'lucide-react';
@@ -79,7 +79,8 @@ export default config({
                   return <></>;
                 }
 
-                const blob = new Blob([src.data], { type: 'video/mp4' });
+                const arrayBuffer = src.data.buffer.slice(src.data.byteOffset, src.data.byteOffset + src.data.byteLength) as ArrayBuffer;
+                const blob = new Blob([arrayBuffer], { type: 'video/mp4' });
                 const url = URL.createObjectURL(blob);
                 return (
                   <VideoPlayer src={url} {...otherProps} />
