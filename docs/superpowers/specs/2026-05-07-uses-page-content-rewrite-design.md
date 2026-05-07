@@ -48,18 +48,20 @@ Tail (regular prose, no UseSection wrappers):
 
 ## Hero copy pattern
 
-Each hero `<UseSection>` follows the same shape:
+Each hero `<UseSection>` follows the same shape, with each piece in this order:
 
-- **H3 heading** = the specific tool name, not a generic category. "Corne keyboard" beats "Keyboard". "Ghostty" beats "Terminal" (or use both: "Ghostty (terminal)").
-- **Body** = 1–3 sentences. Lead with *why* you use it — what makes it stick — over *what* it is. Personality > spec list.
-- **Sub-callouts** = optional, 2–4 inline links for closely-related tools (e.g., the terminal hero can mention Starship + zoxide inline). NOT a 7-bullet shopping list.
+- **H3 heading** = the specific tool name, not a generic category. "Corne keyboard" beats "Keyboard". "Ghostty" beats "Terminal".
+- **"Why I'm using this" body** = a labeled personal-opinion paragraph. Lead with the bold inline label `**Why I'm using this:**` followed by 1–3 sentences explaining what made you pick it, what keeps it, what you like. This is the personality layer, repeated as a uniform beat across every hero — the page reads like 8 short personal essays, not 8 spec sheets.
+- **Sub-callouts** = optional, 2–4 inline links for closely-related tools (e.g., the terminal hero can mention Starship + zoxide inline as part of the Why paragraph). NOT a 7-bullet shopping list.
 - **No long bullet lists inside heroes.** They kill the breathing rhythm of the 60vh-tall section. Bulky lists move to the tail.
+
+Label syntax: bold lead-in (`**Why I'm using this:**`) inline at the start of the paragraph, NOT an H4 heading. Bold lead-in keeps the visual hierarchy clean — H3 stays as the only headline, the bold label reads as a structural beat without competing for attention.
 
 Example shape (illustrative, not final copy):
 
 > ### Ghostty
 >
-> My terminal for the past year. Switched from iTerm2 because it renders text crisply and feels noticeably snappier. I run [zsh](…) with [Starship](…) and [zoxide](…). Full setup in my [dotfiles](…).
+> **Why I'm using this:** My terminal for the past year. Switched from iTerm2 because it renders text crisply and feels noticeably snappier. I run [zsh](…) with [Starship](…) and [zoxide](…). Full setup in my [dotfiles](…).
 
 vs. the old shape:
 
@@ -72,7 +74,7 @@ vs. the old shape:
 >   * fnm for node version management
 >   * and here are my dotfiles
 
-The new shape is shorter, more personal, and visually anchors the 60vh slot.
+The new shape is shorter, more personal, more uniform across heroes, and visually anchors the 60vh slot.
 
 ## Tail section: "The rest of the toolbox"
 
