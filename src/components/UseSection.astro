@@ -1,0 +1,28 @@
+---
+import { usesImages, type UseImage } from './usesImages';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+const image: UseImage | undefined = usesImages.find((i) => i.id === id);
+---
+<section
+  id={id}
+  data-uses-section
+  data-image-id={image ? id : undefined}
+  class="scroll-mt-24 lg:min-h-[60vh] lg:flex lg:flex-col lg:justify-center"
+>
+  <slot />
+  {image && (
+    <img
+      src={image.src}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+      class="lg:hidden mt-4 mb-6 rounded-md w-full h-auto"
+      loading="lazy"
+    />
+  )}
+</section>

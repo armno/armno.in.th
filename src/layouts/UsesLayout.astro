@@ -1,0 +1,172 @@
+---
+import '@fontsource/source-serif-4/400.css';
+import '@fontsource/source-serif-4/700.css';
+import '@fontsource/ibm-plex-sans-thai-looped/thai-400.css';
+import '@fontsource/ibm-plex-sans-thai-looped/thai-700.css';
+
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import BaseHead from '@components/BaseHead.astro';
+import GlobalStyle from '@components/GlobalStyle.astro';
+import { usesImages } from '@components/usesImages';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    thumbnail: string;
+    language: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+const { title, description, thumbnail, language } = frontmatter;
+---
+<html lang={language ? language : 'th'}>
+  <head>
+    <BaseHead {title} {description} {thumbnail} />
+    <GlobalStyle />
+    <style is:global>
+      [data-uses-stack] figure {
+        transition:
+          transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 600ms cubic-bezier(0.22, 1, 0.36, 1);
+        opacity: 0;
+        transform: translateY(60px) scale(0.86);
+        pointer-events: none;
+      }
+      [data-uses-stack] figure[data-stack="0"] {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        z-index: 10;
+      }
+      [data-uses-stack] figure[data-stack="1"] {
+        opacity: 0.7;
+        transform: translateY(-36px) scale(0.92);
+        z-index: 9;
+      }
+      [data-uses-stack] figure[data-stack="2"] {
+        opacity: 0.4;
+        transform: translateY(-68px) scale(0.84);
+        z-index: 8;
+      }
+      [data-uses-stack] figure[data-stack="3"] {
+        opacity: 0.2;
+        transform: translateY(-96px) scale(0.76);
+        z-index: 7;
+      }
+      [data-uses-stack] [data-uses-placeholder] {
+        transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+    </style>
+  </head>
+  <body class="font-serif antialiased dark:bg-zinc-900 transition-colors">
+    <Header />
+
+    <main class="mt-20 mx-auto pb-24 px-6 max-w-6xl">
+      <header class="mb-12 lg:mb-20">
+        <h1 class="font-bold tracking-tight text-4xl lg:text-5xl dark:text-slate-200">{title}</h1>
+        {description && (
+          <p class="mt-3 text-slate-600 dark:text-slate-400 text-base lg:text-lg">{description}</p>
+        )}
+      </header>
+
+      <div class="grid gap-10 lg:gap-16 lg:grid-cols-2">
+        <aside class="hidden lg:block">
+          <div class="sticky top-24 aspect-[4/3] w-full" data-uses-stack>
+            <div
+              class="absolute inset-0 rounded-md border border-slate-200 bg-slate-100 dark:border-zinc-700 dark:bg-zinc-800 shadow-[0_12px_40px_-12px_rgba(15,23,42,0.45)] dark:shadow-black/50"
+              data-uses-placeholder
+            ></div>
+            {usesImages.map((img, idx) => (
+              <figure
+                class="absolute inset-0 m-0"
+                data-image-id={img.id}
+                data-image-index={idx}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  width={img.width}
+                  height={img.height}
+                  class="w-full h-full object-cover rounded-md shadow-[0_12px_40px_-12px_rgba(15,23,42,0.45)] dark:shadow-black/50"
+                  loading="lazy"
+                />
+              </figure>
+            ))}
+          </div>
+        </aside>
+
+        <div class="prose lg:prose-lg dark:prose-invert dark:text-slate-200 main leading-6">
+          <slot />
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+
+    <script is:inline>
+      (function () {
+        const stack = document.querySelector('[data-uses-stack]');
+        if (!stack) return;
+        const figures = [];
+        stack.querySelectorAll('[data-image-id][data-image-index]').forEach((el) => {
+          figures.push({ id: el.dataset.imageId, idx: parseInt(el.dataset.imageIndex, 10), el });
+        });
+        figures.sort((a, b) => a.idx - b.idx);
+        const byId = new Map(figures.map((f) => [f.id, f]));
+        const placeholder = stack.querySelector('[data-uses-placeholder]');
+
+        let activeId = null;
+        const setActive = (id) => {
+          if (id === activeId) return;
+          activeId = id;
+          if (id === null) {
+            for (const f of figures) f.el.removeAttribute('data-stack');
+            if (placeholder) placeholder.style.opacity = '1';
+            return;
+          }
+          const activeIdx = byId.get(id).idx;
+          for (const f of figures) {
+            const dist = activeIdx - f.idx;
+            if (dist < 0) {
+              // upcoming — not yet in stack, falls back to default hidden state
+              f.el.removeAttribute('data-stack');
+            } else {
+              f.el.setAttribute('data-stack', String(Math.min(dist, 3)));
+            }
+          }
+          if (placeholder) placeholder.style.opacity = '0';
+        };
+
+        const tracked = [...document.querySelectorAll('[data-uses-section][data-image-id]')];
+        let scheduled = false;
+        const update = () => {
+          scheduled = false;
+          const trigger = window.innerHeight * 0.5;
+          let next = null;
+          for (const el of tracked) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= trigger && rect.bottom > trigger) {
+              next = el.dataset.imageId;
+              break;
+            }
+          }
+          if (next === null && tracked.length > 0) {
+            const first = tracked[0].getBoundingClientRect();
+            if (first.top > trigger) next = tracked[0].dataset.imageId;
+          }
+          setActive(next);
+        };
+        const onScroll = () => {
+          if (scheduled) return;
+          scheduled = true;
+          requestAnimationFrame(update);
+        };
+        addEventListener('scroll', onScroll, { passive: true });
+        addEventListener('resize', onScroll, { passive: true });
+        update();
+      })();
+    </script>
+  </body>
+</html>

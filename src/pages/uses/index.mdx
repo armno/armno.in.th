@@ -2,83 +2,106 @@
 title: Tools I use
 description: A collection of hardware/software/tools I use on a daily basis.
 pubDate: '2022-06-08T07:51:22+07:00'
-layout: ../../layouts/PageLayout.astro
+layout: ../../layouts/UsesLayout.astro
 language: en
 thumbnail: /images/uses/content/thumbnail.jpg
 ---
-# Tools I use
+import UseSection from '@components/UseSection.astro';
 
 Inspired by [uses.tech](https://uses.tech) where developers share their hardware, software and tools they use regularly. Here are my tools.
 
 ## Software
 
-### Programming
+<UseSection id="terminal">
+### Terminal
 
-* Terminal: I use [Ghostty](https://ghostty.org/) with
-  * [zsh](https://www.zsh.org/) and with [Starship](https://starship.rs/) prompt
-  * [base16-shell](https://github.com/chriskempson/base16-shell) for terminal colors
-  * [zoxide](https://github.com/ajeetdsouza/zoxide) as a replacement for `cd` command
-  * [eza](https://github.com/eza-community/eza) as a replacement for `ls` command
-  * [bat](https://github.com/sharkdp/bat) as a replacement for `cat` command
-  * [fnm](https://github.com/Schniz/fnm) for node version management
-  * and here are my [dotfiles](https://github.com/armno/dotfiles) repo.
+I use [Ghostty](https://ghostty.org/) with:
 
-![terminal screenshot](../../pages/uses/content/_terminal.jpg)
+* [zsh](https://www.zsh.org/) and [Starship](https://starship.rs/) prompt
+* [base16-shell](https://github.com/chriskempson/base16-shell) for terminal colors
+* [zoxide](https://github.com/ajeetdsouza/zoxide) as a replacement for `cd` command
+* [eza](https://github.com/eza-community/eza) as a replacement for `ls` command
+* [bat](https://github.com/sharkdp/bat) as a replacement for `cat` command
+* [fnm](https://github.com/Schniz/fnm) for node version management
+* and here are my [dotfiles](https://github.com/armno/dotfiles) repo
+</UseSection>
 
-* Code editor: [Cursor](https://www.cursor.com/)
-  * Theme: the official [GitHub](https://github.com/primer/github-vscode-theme) themes. I use both dark and light themes, depending on the surrounding light.
-  * I wrote a blog post on how I set up my VSCode: [My VSCode setup for 2023](https://armno.in.th/blog/vscode-setup-2023/), which apply to Cursor as well.
-* [Vim](https://www.vim.org/) for a quick file editing from the terminal.&#x20;
-  * I use [vim-plug](https://github.com/junegunn/vim-plug) as a plugin manager for Vim. Here is my [`.vimrc`](https://github.com/armno/dotfiles/blob/master/.vimrc) file.&#x20;
-* Git: I use command line Git with [delta](https://github.com/dandavison/delta) to render diffs and logs
-* [JetBrains Mono fonts](https://www.jetbrains.com/lp/mono/) in both code editors and terminal.
+<UseSection id="code-editor">
+### Code editor
 
-![](../../pages/uses/content/_vscode.jpg)
+* [Cursor](https://www.cursor.com/) with the official [GitHub](https://github.com/primer/github-vscode-theme) themes (both dark and light, depending on the surrounding light)
+* I wrote a blog post about my setup: [My VSCode setup for 2023](https://armno.in.th/blog/vscode-setup-2023/) — most of it applies to Cursor too
+* [Vim](https://www.vim.org/) for quick file editing from the terminal, with [vim-plug](https://github.com/junegunn/vim-plug) as the plugin manager. Here is my [`.vimrc`](https://github.com/armno/dotfiles/blob/master/.vimrc).
+* Git: command line with [delta](https://github.com/dandavison/delta) to render diffs and logs
+* [JetBrains Mono](https://www.jetbrains.com/lp/mono/) fonts in both code editors and terminal
+</UseSection>
 
 ### Others
 
 * [Homebrew](https://brew.sh/) package manager
-* [Arc](https://arc.net/) as the default browser, and [Chrome Canary](https://www.google.com/chrome/canary/) as the browser for development.
-* [Raycast](https://www.raycast.com/) as a Spotlight replacement, calculators, shortcuts, etc.
-* [Karabiner Elements](https://karabiner-elements.pqrs.org/) for keyboard shortcut customizations.
-* [Rectangle](https://rectangleapp.com/) for windows management.
-* [Ice](https://github.com/jordanbaird/Ice) to show/hide icons on the menu bar.
+* [Arc](https://arc.net/) as the default browser, and [Chrome Canary](https://www.google.com/chrome/canary/) for development
+* [Raycast](https://www.raycast.com/) as a Spotlight replacement, calculator, shortcuts launcher, etc.
+* [Karabiner Elements](https://karabiner-elements.pqrs.org/) for keyboard shortcut customizations
+* [Rectangle](https://rectangleapp.com/) for window management
+* [Ice](https://github.com/jordanbaird/Ice) to show/hide icons on the menu bar
 * [Pixelmator Pro](https://www.pixelmator.com/pro/) for image/photo editing
-* [Cleanshot X](https://cleanshot.com/) to capture and annotate screenshots, screen recordings etc.
+* [Cleanshot X](https://cleanshot.com/) to capture and annotate screenshots and screen recordings
 * [1Password](https://1password.com/) for password management
-* [Google Photos](https://www.google.com/photos/about/) to backup all of my photos
+* [Google Photos](https://www.google.com/photos/about/) to back up all of my photos
 
 ### Alumni
 
 Things I used in the past that are worth mentioning.
 
-* [iTerm2](https://iterm2.com/) my main terminal app for 10+ years
-* [oh-my-zsh](https://ohmyz.sh/) and [oh-my-posh](https://ohmyposh.dev/) zsh frameworks.
-* [z](https://github.com/rupa/z) - replaced by zoxide
-* [kitty](https://sw.kovidgoyal.net/kitty/) is a GPU-accelerated terminal app and it's much faster than iTerm. The only thing that stops me from using it is that it doesn't render as beautiful text as in iTerm, probably because of the lack of supporting [sub-pixel antialiasing](https://github.com/kovidgoyal/kitty/issues/214).
-* [Alfred](https://www.alfredapp.com/) - I used Alfred for many years until I found Raycast. Thanks Alfred!
-* [BetterTouchTool](https://folivora.ai/) for shortcuts, automation.
+* [iTerm2](https://iterm2.com/) — my main terminal app for 10+ years
+* [oh-my-zsh](https://ohmyz.sh/) and [oh-my-posh](https://ohmyposh.dev/) — zsh frameworks
+* [z](https://github.com/rupa/z) — replaced by zoxide
+* [kitty](https://sw.kovidgoyal.net/kitty/) — GPU-accelerated, much faster than iTerm. The only thing that stopped me was that it doesn't render text as beautifully, probably because of the lack of [sub-pixel antialiasing](https://github.com/kovidgoyal/kitty/issues/214).
+* [Alfred](https://www.alfredapp.com/) — used it for many years until I found Raycast. Thanks Alfred!
+* [BetterTouchTool](https://folivora.ai/) for shortcuts and automation
 
 ---
 
 ## Hardware
 
-* Computer: [13-inch Macbook Air M2](https://support.apple.com/en-us/111867)\
-  ![](../../pages/uses/content/_macbook-air-m2.jpg)
-* Monitor: a [Samsung 28" UR55 UHD 4K Monitor](https://www.samsung.com/th/business/monitors/ur55/lu28r550uqexxt/) mounted with an [NB-F80 Monitor arm](https://www.google.com/search?q=nb-f80+monitor+arm).\
-  ![](../../pages/uses/content/_monitor.jpg)
-* Keyboard: Corne wireless split keyboard. I wrote about it here: [Building a Wireless Corne Keyboard](https://armno.in.th/blog/building-a-wireless-corne-keyboard/) and [Low Profile Wireless Corne Keyboard](https://armno.in.th/blog/low-profile-wireless-corne-keyboard/).\
-  ![](../../pages/uses/content/_corne-low-profile-mbk-keycaps.jpg)
-* Mouse: [Ugreen Bluetooth mouse](https://shopee.co.th/ugreen.th/18553818774). Nothing special with this one but it checks all my needs for a mouse: having Bluetooth and being a silent mouse.
-* Headphones: I have ~~a few~~ too many of them for my various use cases
-  * [Sony WH-1000XM4](https://www.sony.co.th/en/electronics/headband-headphones/wh-1000xm4) for working in a noisy environment
-  * [Audio-Technica M50x](https://armno.in.th/2015/08/04/audio-technica-ath-m50x/) with [Audirect Beam 2se DAC/Amp](https://www.google.com/search?q=Audirect+Beam+2se+DAC) for music listening
-  * [Airpods 4 ANC](https://www.apple.com/airpods-4/) for meetings and workouts\
-    ![](../../pages/uses/content/_sony-xm4.jpg)\
-    ![](../../pages/uses/content/_headphones.jpg)
+<UseSection id="macbook">
+### Computer
 
-### Other
+[13-inch Macbook Air M2](https://support.apple.com/en-us/111867) — base model.
+</UseSection>
 
-* Digital camera: Fujifilm XT-20 digital camera with a Fujifilm XC 35mm f/2.0 lens.
-* Bike: 2016 Lapierre Xelius SL.\
-  ![](../../pages/uses/content/_lapierre-xelius-sl-2016.jpg)
+<UseSection id="monitor">
+### Monitor
+
+A [Samsung 28" UR55 UHD 4K Monitor](https://www.samsung.com/th/business/monitors/ur55/lu28r550uqexxt/) mounted on an [NB-F80 monitor arm](https://www.google.com/search?q=nb-f80+monitor+arm).
+</UseSection>
+
+<UseSection id="keyboard">
+### Keyboard
+
+Corne wireless split keyboard. I wrote about the build here: [Building a Wireless Corne Keyboard](https://armno.in.th/blog/building-a-wireless-corne-keyboard/) and [Low Profile Wireless Corne Keyboard](https://armno.in.th/blog/low-profile-wireless-corne-keyboard/).
+</UseSection>
+
+### Mouse
+
+[Ugreen Bluetooth mouse](https://shopee.co.th/ugreen.th/18553818774). Nothing special — it just checks all my needs: Bluetooth and silent.
+
+<UseSection id="headphones">
+### Headphones
+
+I have ~~a few~~ too many of them for various use cases:
+
+* [Sony WH-1000XM4](https://www.sony.co.th/en/electronics/headband-headphones/wh-1000xm4) for working in noisy environments
+* [Audio-Technica M50x](https://armno.in.th/2015/08/04/audio-technica-ath-m50x/) with [Audirect Beam 2se DAC/Amp](https://www.google.com/search?q=Audirect+Beam+2se+DAC) for music listening
+* [AirPods 4 ANC](https://www.apple.com/airpods-4/) for meetings and workouts
+</UseSection>
+
+### Camera
+
+Fujifilm X-T20 with a Fujifilm XC 35mm f/2.0 lens.
+
+<UseSection id="bike">
+### Bike
+
+2016 Lapierre Xelius SL.
+</UseSection>
