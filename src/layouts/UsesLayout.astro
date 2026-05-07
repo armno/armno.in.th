@@ -156,6 +156,10 @@ const { title, description, thumbnail, language } = frontmatter;
             const first = tracked[0].getBoundingClientRect();
             if (first.top > trigger) next = tracked[0].dataset.imageId;
           }
+          if (next === null && tracked.length > 0) {
+            const last = tracked[tracked.length - 1].getBoundingClientRect();
+            if (last.bottom <= trigger) next = tracked[tracked.length - 1].dataset.imageId;
+          }
           setActive(next);
         };
         const onScroll = () => {
