@@ -27,6 +27,16 @@ const { title, description, thumbnail, language } = frontmatter;
     <BaseHead {title} {description} {thumbnail} />
     <GlobalStyle />
     <style is:global>
+      @media (min-width: 1024px) {
+        html:has([data-uses-stack]) {
+          scroll-snap-type: y proximity;
+        }
+        [data-uses-section] {
+          scroll-snap-align: center;
+          scroll-snap-stop: always;
+        }
+      }
+
       [data-uses-stack] figure {
         transition:
           transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
