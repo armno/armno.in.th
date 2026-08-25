@@ -1,7 +1,7 @@
 ---
 title: Tools I use
-description: A collection of hardware/software/tools I use on a daily basis.
-pubDate: '2022-06-08T07:51:22+07:00'
+description: A collection of hardware/software/thingamajig I use on a daily basis. Inspired by the <a href="https://uses.tech">uses.tech</a> community.
+pubDate: '2026-08-25T00:00:00+07:00'
 layout: ../../layouts/UsesLayout.astro
 language: en
 thumbnail: /images/uses/content/thumbnail.jpg
@@ -9,125 +9,141 @@ thumbnail: /images/uses/content/thumbnail.jpg
 import UseSection from '@components/UseSection.astro';
 
 <UseSection id="terminal">
-### Terminal: Ghostty & herdr
+### Terminal: Ghostty & Herdr
 
-I need my terminal app to be fast, reliable, and display text beautifully. Ghostty checkes all the boxes.
+I need my terminal app to be 1) fast, 2) reliable, and 3) beautiful at rendering text. [Ghostty](https://ghostty.org/) checks all the boxes.
 
-Inside of Ghostty, I use herdr, which is like tmux with agentic coding upgrades. I usually have only 1 terminal window running herdr.
-Everything else lives inside herdr: spaces, tabs, agents list.
+Inside Ghostty, I use [Herdr](https://herdr.dev/), which is like tmux with modern upgrades. I usually have only 1 terminal window running Herdr.
+Everything else lives inside it: spaces, tabs, the agents list.
+
+In both the terminal and the editor, I use [JetBrains Mono](https://www.jetbrains.com/lp/mono/).
+
 </UseSection>
 
 <UseSection id="ai-coding-agent">
 ### Coding Agent: Claude Code
 
-The AI Coding Agent we use at work as a team. I usually use the latest models available.
-I don't have a lot of plugins and skills installed. Only ones that are needed for work.
+[Claude Code](https://claude.com/product/claude-code) is what we use as a team at work. I usually use the latest and smartest models available.
+I don't have a lot of plugins and skills installed. Only the ones I actually need.
 
-I also like to check out OpenCode from time to time. I like to see how it gets developed and how it improves.
+I also like to check out [OpenCode](https://opencode.ai/) from time to time. I like watching how it evolves.
 </UseSection>
 
 
 <UseSection id="diff-tools">
-### Diff tools: Hunk
+### Diff tool: Hunk
 
-Reviewing changes made by the AI Coding Agent is important. I use hunk to see the diffs with syntax highlighting, responsive layouts, and ability to put code review comments in the diff so that my coding agent can pick up and fix the issues.
-I still keep the default `git diff` command available when reviewing small changes.
+Reviewing changes made by the AI Coding Agent is important. I mainly use [Hunk](https://www.hunk.dev/) to view the Git diffs. Hunk comes with:
+
+- beautiful syntax highlighting
+- responsive layouts - display horizontal or vertical diffs automatically based on available space
+- the ability to leave code review comments in the diff, so my coding agent can pick them up and fix the issues.
+
+I still reach for plain `git diff` for small changes.
 </UseSection>
 
 <UseSection id="code-editor">
 ### Editor: VSCode & Zed
 
-I rarely code by hand these days, but I still need a code editor to read the code. Currenly, it's VSCode with my basic setup.
+I still need a code editor to read and make small changes to the code. Currently, my main editor is [VSCode](https://code.visualstudio.com/).
 
-I sometimes switch to Cursor or Zed. Cursor used to be my main editor for a while before we move things over to Claude Code.
-And Zed is just too good to ignore.
+Sometimes I switch to [Zed](https://zed.dev/). Zed is very fast out of the box and keeps getting better. It's just too good to ignore.
+
+I still keep my [Vim setup](https://github.com/armno/dotfiles/blob/main/.vimrc) for quick file editing in the terminal.
 </UseSection>
 
 <UseSection id="shell-prompt">
-### Shell: Zsh and Starship
+### Shell: Zsh & Starship
 
-I use zsh (which is now the default shell in MacOS) with Starship is a prompt.
+I use [Zsh](https://www.zsh.org/) (which is now the default shell in macOS) with [Starship](https://starship.rs/) as the prompt.
+Some of my favorite CLI tools are:
 
-Paired with JetBrains Mono fonts for both in the terminal and in the code editor.
+- [zoxide](https://github.com/ajeetdsouza/zoxide) for fast directory switching (replaces `cd`).
+- [fzf](https://github.com/junegunn/fzf) - a command-line fuzzy finder. Many other tools I use are built on top of it.
+- [fnm](https://github.com/Schniz/fnm) - fast node (version) manager. If you're still using nvm, try this. You're welcome.
+- [eza](https://github.com/eza-community/eza) replaces `ls`.
+- [bat](https://github.com/sharkdp/bat) is an upgraded version of the `cat` command.
+
+I keep my [dotfiles repo](https://github.com/armno/dotfiles) maintained.
 </UseSection>
 
 <UseSection id="browser">
 ### Browser: Helium & Chrome
 
-Helium is my browser-browser, while Chrome is my dev-browser, which is also used by Claude via its Chrome MCP.
+[Helium](https://helium.computer/) is my browser-browser, while [Chrome](https://www.google.com/chrome/) is my dev-browser.
 
-Helium is like a barebone version of Chromium, without all Google stuffs. It's fast, minimal, and privacy-focused.
+Helium is like a barebones version of Chromium, without all Google stuff. It's fast, minimal, and privacy-focused. It breaks sometimes though.
+
+I use Chrome strictly as a development browser. I let Claude use Chrome via [its MCP](https://claude.com/claude-in-chrome) so it can go nuts with it.
 </UseSection>
 
-<UseSection id="images">
-### Images: Cleanshot X, Pixelmator Pro, and imageoptim
+<UseSection id="graphics">
+### Graphics: CleanShot X & Pixelmator Pro
 
-I use Cleanshot X many times a day to capture screenshots and annotate them. Then I usually use Imageoptim to reduce the file size.
+[CleanShot X](https://cleanshot.com/) is one of my favorite Mac apps ever. I use it for:
+  - screenshot capturing & annotation
+  - screen recordings
+  - OCR sometimes
 
-For more serious photo editing, I use Pixelmator Pro.
+For more serious photo editing, which I do once in a while, I use [Pixelmator Pro](https://en.wikipedia.org/wiki/Pixelmator) - the old version, from before Apple acquired them.
 </UseSection>
 
 <UseSection id="productivity-tools">
-### Raycasts, Karabiner Elements
+### Productivity: Raycast & Karabiner-Elements
 
-I use Raycasts as Spotlight replacement (I wrote about Raycasts in "Things I like about Raycasts") with a few extensions.
-I heavily use clipboard history and Bitwarden extensions.
+I use [Raycast](https://www.raycast.com/) as a Spotlight replacement (I wrote about Raycast in ["Things I like about Raycast"](https://armno.in.th/blog/things-i-like-about-raycast/)) with a few extensions.
+I heavily use the clipboard history and Bitwarden extensions.
 
-Karabiner Elements allow me to do things quickly with keyboard shortcuts.
-I copied the system from Maximilian Stoiber and adjust to my own preferences.
+[Karabiner-Elements](https://karabiner-elements.pqrs.org/) allows me to do things quickly with keyboard shortcuts.
+It's painful to set up. So I copied the [system from Maximilian Stoiber](https://github.com/mxstbr/karabiner) and adjusted it. Works on both my Corne keyboard and the built-in MacBook keyboard.
 
 </UseSection>
 
 <UseSection id="macbook">
-### Computer: Macbook Air M2
+### Computer: MacBook Air M2
 
-It's a work equipment from the company. It's been working well until today.
+It's my work machine from the company. It's a regular M2, upgraded to 16GB of RAM and a 512GB SSD.
+
+When I feel like using an external keyboard, I connect it to my Corne split keyboard (build log here: [Low Profile Wireless Corne Keyboard](https://armno.in.th/blog/low-profile-wireless-corne-keyboard/)).
+
+For a mouse, I use a Ugreen Bluetooth mouse. Nothing special with it except that it is silent, which is all I need from a mouse.
 </UseSection>
 
 <UseSection id="monitor">
-### Monitor: Samsung 28” UR55 UHD 4K & NB-F80 Monitor Arm
+### Monitor: Samsung 28” UR55 UHD 4K & Monitor Arm
 
-I think I picked this monitor just because of its IPS panel. 28 inches is a perfect size for me. Not too big or too small.
-I mount it with a monitor arm to gain some space on the desk.
-
-</UseSection>
-
-<UseSection id="keyboard">
-### Keyboard: Corne
-
-It's a wireless, low-profile Corne keyboard I built a while ago. See the build log here.
-
-I'm not using it regularly. Normally I'm just fine with the Macbook's built-in keyboard.
+I picked [Samsung UR55](https://www.samsung.com/ie/business/monitors/high-resolution/monitor-ur55-lu28r550uquxen/) because of its IPS panel (and it was on sale). 28 inches is a perfect size for me. Not too big or too small.
+I mount it with an NB-F80 monitor arm to gain some space on the desk.
 </UseSection>
 
 <UseSection id="headphones">
-### Headphones
+### Headphones: Sony XM4 & AirPods 4
 
-- Airpods 4 ANC
-- Sony WH-1000XM4
-- Audio-Technica M50x
+My main headphones are the [Sony WH-1000XM4](https://www.sony.co.th/en/electronics/support/wireless-headphones-bluetooth-headphones/wh-1000xm4/specifications) and the [AirPods 4 ANC](https://www.apple.com/airpods-4/). The XM4s are for music listening. The AirPods are for everything else.
+
+Both have great active noise-cancelling, which I cannot live without these days.
 </UseSection>
 
-<UseSection id="camera">
-### Camera: Fujifilm XT-20
+<UseSection id="utilities">
+### Other stuff
 
+Not really related to my work, but things I use frequently that are worth mentioning here.
+
+- Camera: [Fujifilm X-T20](https://www.fujifilm-x.com/th-th/products/cameras/x-t20/). I have a few lenses around it. My favorite lenses are the TTArtisan 50 f/1.2 and the Fujifilm XC 35mm f/2.
+- Bike: 2016 Lapierre Xelius SL. I do road cycling sometimes. It's my main sport hobby at the moment. I also use the bike for commuting to work if time and space allow.
+- Car: 2024 XPENG G6 (EV). My daily driver (or I'm actually the car's daily driver?). I've been using this car since 2025 and totally love it.
 </UseSection>
 
-<UseSection id="bike">
-### Bike: Lapierre Xelius SL
-
-</UseSection>
-
-## The rest of the toolbox
-
-### Utilities & services
-
-{/* TODO: flat bullet list of utilities you actively use, one short rationale per item */}
-
-* TODO
+<UseSection id="alumni">
 
 ### Alumni
 
-{/* TODO: flat bullet list of past tools, one-line rationale each (what replaced them or why you moved on) */}
+Things I enjoyed using in the past, but are no longer in my current setup.
 
-* TODO
+- [iTerm2](https://iterm2.com/) - my go-to terminal app for many years. Replaced by Ghostty.
+- [Kitty](https://github.com/kovidgoyal/kitty) - another GPU-accelerated terminal app. Fast, but its text rendering never looked as good to me.
+- [Arc](https://arc.net/) - replaced by Helium.
+- [Cursor](https://cursor.com/) - replaced by Claude Code + VSCode.
+- [1Password](https://1password.com/) - replaced by Bitwarden.
+- [delta](https://github.com/dandavison/delta) - replaced by Hunk.
+</UseSection>
