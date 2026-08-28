@@ -30,6 +30,7 @@ const plainDescription = description?.replace(/<[^>]+>/g, '');
     <GlobalStyle />
     <style is:global>
       [data-uses-stack] figure {
+        transform-origin: top center;
         transition:
           transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
           opacity 600ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -41,24 +42,36 @@ const plainDescription = description?.replace(/<[^>]+>/g, '');
         opacity: 1;
         transform: translateY(0) scale(1);
         z-index: 10;
+        pointer-events: auto;
       }
       [data-uses-stack] figure[data-stack="1"] {
-        opacity: 0.7;
-        transform: translateY(-36px) scale(0.92);
+        opacity: 0.25;
+        transform: translateY(-14px) scale(0.92);
         z-index: 9;
       }
       [data-uses-stack] figure[data-stack="2"] {
-        opacity: 0.4;
-        transform: translateY(-68px) scale(0.84);
+        opacity: 0.12;
+        transform: translateY(-26px) scale(0.84);
         z-index: 8;
       }
       [data-uses-stack] figure[data-stack="3"] {
-        opacity: 0.2;
-        transform: translateY(-96px) scale(0.76);
+        opacity: 0.06;
+        transform: translateY(-36px) scale(0.76);
         z-index: 7;
       }
       [data-uses-stack] [data-uses-placeholder] {
         transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      [data-lightbox-dialog][open],
+      [data-lightbox-dialog][open]::backdrop {
+        opacity: 1;
+        transition: opacity 250ms ease-out;
+      }
+      @starting-style {
+        [data-lightbox-dialog][open],
+        [data-lightbox-dialog][open]::backdrop {
+          opacity: 0;
+        }
       }
     </style>
   </head>
@@ -69,20 +82,21 @@ const plainDescription = description?.replace(/<[^>]+>/g, '');
       <header class="mb-12 lg:mb-20">
         <h1 class="font-bold tracking-tight text-4xl lg:text-5xl dark:text-slate-200">{title}</h1>
         {description && (
-          <p class="mt-3 text-slate-600 dark:text-slate-400 text-base lg:text-lg prose dark:prose-invert" set:html={description} />
+          <p class="mt-3 text-base lg:text-lg prose dark:prose-invert dark:text-slate-200" set:html={description} />
         )}
       </header>
 
       <div class="grid gap-10 lg:gap-16 lg:grid-cols-2">
-        <aside class="hidden lg:block">
-          <div class="sticky top-24 aspect-[4/3] w-full" data-uses-stack>
+        <aside class="hidden lg:block [container-type:inline-size]">
+          <div class="sticky top-[calc(50vh-37.5cqw)]">
+          <div class="relative w-full" data-uses-stack>
             <div
-              class="absolute inset-0 rounded-md border border-slate-200 bg-slate-100 dark:border-zinc-700 dark:bg-zinc-800 shadow-[0_12px_40px_-12px_rgba(15,23,42,0.45)] dark:shadow-black/50"
+              class="aspect-[4/3] rounded-md border border-slate-200 bg-slate-100 dark:border-zinc-700 dark:bg-zinc-800 shadow-[0_12px_40px_-12px_rgba(15,23,42,0.45)] dark:shadow-black/50"
               data-uses-placeholder
             ></div>
             {usesImages.map((img, idx) => (
               <figure
-                class="absolute inset-0 m-0"
+                class="absolute inset-x-0 top-0 m-0"
                 data-image-id={img.id}
                 data-image-index={idx}
               >
@@ -91,11 +105,13 @@ const plainDescription = description?.replace(/<[^>]+>/g, '');
                   alt={img.alt}
                   width={img.width}
                   height={img.height}
-                  class="w-full h-full object-cover rounded-md shadow-[0_12px_40px_-12px_rgba(15,23,42,0.45)] dark:shadow-black/50"
+                  class="w-full h-auto rounded-md shadow-[0_12px_40px_-12px_rgba(15,23,42,0.45)] dark:shadow-black/50 cursor-zoom-in"
                   loading="lazy"
+                  data-lightbox
                 />
               </figure>
             ))}
+          </div>
           </div>
         </aside>
 
@@ -106,6 +122,30 @@ const plainDescription = description?.replace(/<[^>]+>/g, '');
     </main>
 
     <Footer />
+
+    <dialog
+      data-lightbox-dialog
+      class="px-0 py-12 bg-transparent max-w-none max-h-none w-screen h-screen outline-none backdrop:bg-black/85 cursor-zoom-out"
+    >
+      <img src="" alt="" class="w-full h-full object-contain" />
+    </dialog>
+
+    <script is:inline>
+      (function () {
+        const dialog = document.querySelector('[data-lightbox-dialog]');
+        if (!dialog) return;
+        const full = dialog.querySelector('img');
+        document.addEventListener('click', (e) => {
+          const img = e.target.closest('img[data-lightbox]');
+          if (!img) return;
+          full.src = img.src;
+          full.alt = img.alt;
+          dialog.showModal();
+        });
+        dialog.addEventListener('click', () => dialog.close());
+        dialog.addEventListener('close', () => { full.src = ''; });
+      })();
+    </script>
 
     <script is:inline>
       (function () {
@@ -145,22 +185,10 @@ const plainDescription = description?.replace(/<[^>]+>/g, '');
         let scheduled = false;
         const update = () => {
           scheduled = false;
-          const trigger = window.innerHeight * 0.5;
-          let next = null;
+          const trigger = stack.getBoundingClientRect().top + 8;
+          let next = tracked.length > 0 ? tracked[0].dataset.imageId : null;
           for (const el of tracked) {
-            const rect = el.getBoundingClientRect();
-            if (rect.top <= trigger && rect.bottom > trigger) {
-              next = el.dataset.imageId;
-              break;
-            }
-          }
-          if (next === null && tracked.length > 0) {
-            const first = tracked[0].getBoundingClientRect();
-            if (first.top > trigger) next = tracked[0].dataset.imageId;
-          }
-          if (next === null && tracked.length > 0) {
-            const last = tracked[tracked.length - 1].getBoundingClientRect();
-            if (last.bottom <= trigger) next = tracked[tracked.length - 1].dataset.imageId;
+            if (el.getBoundingClientRect().top <= trigger) next = el.dataset.imageId;
           }
           setActive(next);
         };

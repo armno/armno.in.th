@@ -12,7 +12,7 @@ const image: UseImage | undefined = usesImages.find((i) => i.id === id);
   id={id}
   data-uses-section
   data-image-id={image ? id : undefined}
-  class="scroll-mt-24 lg:min-h-[60vh] lg:pt-8"
+  class="scroll-mt-24 lg:pt-8 lg:mb-32"
 >
   <slot />
   {image && (
@@ -21,7 +21,7 @@ const image: UseImage | undefined = usesImages.find((i) => i.id === id);
       alt={image.alt}
       width={image.width}
       height={image.height}
-      class="lg:hidden mt-4 mb-6 rounded-md w-full h-auto"
+      class="lg:hidden mt-4 mb-12 rounded-md w-full h-auto"
       loading="lazy"
     />
   )}
