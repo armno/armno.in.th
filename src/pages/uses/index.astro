@@ -1,0 +1,11 @@
+---
+import type { ComponentProps } from 'astro/types';
+import UsesLayout from '@layouts/UsesLayout.astro';
+import UseSection from '@components/UseSection.astro';
+import Content, { frontmatter } from './_content.mdx';
+
+type Frontmatter = ComponentProps<typeof UsesLayout>['frontmatter'];
+---
+<UsesLayout frontmatter={frontmatter as Frontmatter}>
+  <Content components={{ UseSection }} />
+</UsesLayout>

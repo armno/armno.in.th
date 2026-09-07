@@ -2,13 +2,11 @@
 title: Tools I use
 description: A collection of hardware/software/thingamajig I use on a daily basis. Inspired by the <a href="https://uses.tech">uses.tech</a> community.
 pubDate: '2026-08-25T00:00:00+07:00'
-layout: ../../layouts/UsesLayout.astro
 language: en
 thumbnail: /images/uses/content/thumbnail.jpg
 ---
-import UseSection from '@components/UseSection.astro';
 
-<UseSection id="terminal">
+<UseSection id="terminal" image="../../pages/uses/content/2026-terminal.png" imageAlt="Ghostty terminal">
 ### Terminal: Ghostty & Herdr
 
 I need my terminal app to be 1) fast, 2) reliable, and 3) beautiful at rendering text. [Ghostty](https://ghostty.org/) checks all the boxes.
@@ -20,7 +18,7 @@ In both the terminal and the editor, I use [JetBrains Mono](https://www.jetbrain
 
 </UseSection>
 
-<UseSection id="ai-coding-agent">
+<UseSection id="ai-coding-agent" image="../../pages/uses/content/2026-claude-code.png" imageAlt="Claude Code">
 ### Coding Agent: Claude Code
 
 [Claude Code](https://claude.com/product/claude-code) is what we use as a team at work. I usually use the latest and smartest models available.
@@ -30,7 +28,7 @@ I also like to check out [OpenCode](https://opencode.ai/) from time to time. I l
 </UseSection>
 
 
-<UseSection id="diff-tools">
+<UseSection id="diff-tools" image="../../pages/uses/content/2026-hunk.png" imageAlt="Hunk diff tool">
 ### Diff tool: Hunk
 
 Reviewing changes made by the AI Coding Agent is important. I mainly use [Hunk](https://www.hunk.dev/) to view the Git diffs. Hunk comes with:
@@ -42,7 +40,7 @@ Reviewing changes made by the AI Coding Agent is important. I mainly use [Hunk](
 I still reach for plain `git diff` for small changes.
 </UseSection>
 
-<UseSection id="code-editor">
+<UseSection id="code-editor" image="../../pages/uses/content/2026-zed.png" imageAlt="Zed code editor">
 ### Editor: VSCode & Zed
 
 I still need a code editor to read and make small changes to the code. Currently, my main editor is [VSCode](https://code.visualstudio.com/).
@@ -52,7 +50,7 @@ Sometimes I switch to [Zed](https://zed.dev/). Zed is very fast out of the box a
 I still keep my [Vim setup](https://github.com/armno/dotfiles/blob/main/.vimrc) for quick file editing in the terminal.
 </UseSection>
 
-<UseSection id="shell-prompt">
+<UseSection id="shell-prompt" image="../../pages/uses/content/2026-shell.png" imageAlt="Zsh with Starship prompt">
 ### Shell: Zsh & Starship
 
 I use [Zsh](https://www.zsh.org/) with [Starship](https://starship.rs/) as the prompt.
@@ -67,7 +65,7 @@ Some of my favorite CLI tools are:
 I keep my [dotfiles repo](https://github.com/armno/dotfiles) maintained.
 </UseSection>
 
-<UseSection id="browser">
+<UseSection id="browser" image="../../pages/uses/content/2026-helium-chrome.png" imageAlt="Helium and Chrome browsers">
 ### Browser: Helium & Chrome
 
 [Helium](https://helium.computer/) is my browser-browser, while [Chrome](https://www.google.com/chrome/) is my dev-browser.
@@ -77,7 +75,7 @@ Helium is like a barebones version of Chromium, without all Google stuff. It's f
 I use Chrome strictly as a development browser. I let Claude use Chrome via [its MCP](https://claude.com/claude-in-chrome) so it can go nuts with it.
 </UseSection>
 
-<UseSection id="graphics">
+<UseSection id="graphics" image="../../pages/uses/content/2026-image-apps.png" imageAlt="CleanShot X and Pixelmator Pro">
 ### Graphics: CleanShot X & Pixelmator Pro
 
 [CleanShot X](https://cleanshot.com/) is one of my favorite Mac apps ever. I use it for:
@@ -88,7 +86,7 @@ I use Chrome strictly as a development browser. I let Claude use Chrome via [its
 For more serious photo editing, which I do once in a while, I use [Pixelmator Pro](https://en.wikipedia.org/wiki/Pixelmator) - the old version, from before Apple acquired them.
 </UseSection>
 
-<UseSection id="productivity-tools">
+<UseSection id="productivity-tools" image="../../pages/uses/content/2026-raycast.jpg" imageAlt="Raycast">
 ### Productivity: Raycast & Karabiner-Elements
 
 I use [Raycast](https://www.raycast.com/) as a Spotlight replacement (I wrote about Raycast in ["Things I like about Raycast"](https://armno.in.th/blog/things-i-like-about-raycast/)) with a few extensions.
@@ -99,7 +97,7 @@ It's painful to set up. So I copied the [system from Maximilian Stoiber](https:/
 
 </UseSection>
 
-<UseSection id="macbook">
+<UseSection id="macbook" image="../../pages/uses/content/_macbook-air-m2.jpg" imageAlt="13-inch Macbook Air M2">
 ### Computer: MacBook Air M2
 
 It's my work machine from the company. It's a regular M2, upgraded to 16GB of RAM and a 512GB SSD.
@@ -109,14 +107,14 @@ When I feel like using an external keyboard, I connect it to my Corne split keyb
 For a mouse, I use a Ugreen Bluetooth mouse. Nothing special with it except that it is silent, which is all I need from a mouse.
 </UseSection>
 
-<UseSection id="monitor">
+<UseSection id="monitor" image="../../pages/uses/content/_monitor.jpg" imageAlt="Samsung 28-inch UR55 monitor">
 ### Monitor: Samsung 28” UR55 UHD 4K & Monitor Arm
 
 I picked [Samsung UR55](https://www.samsung.com/ie/business/monitors/high-resolution/monitor-ur55-lu28r550uquxen/) because of its IPS panel (and it was on sale). 28 inches is a perfect size for me. Not too big or too small.
 I mount it with an NB-F80 monitor arm to gain some space on the desk.
 </UseSection>
 
-<UseSection id="headphones">
+<UseSection id="headphones" image="../../pages/uses/content/2026-sony-xm4.jpg" imageAlt="Sony WH-1000XM4 headphones">
 ### Headphones: Sony XM4 & AirPods 4
 
 My main headphones are the [Sony WH-1000XM4](https://www.sony.co.th/en/electronics/support/wireless-headphones-bluetooth-headphones/wh-1000xm4/specifications) and the [AirPods 4 ANC](https://www.apple.com/airpods-4/). The XM4s are for music listening. The AirPods are for everything else.
@@ -124,7 +122,7 @@ My main headphones are the [Sony WH-1000XM4](https://www.sony.co.th/en/electroni
 Both have great active noise-cancelling, which I cannot live without these days.
 </UseSection>
 
-<UseSection id="utilities">
+<UseSection id="utilities" image="../../pages/uses/content/xt20.jpg" imageAlt="Fujifilm X-T20">
 ### Other stuff
 
 Not really related to my work, but things I use frequently that are worth mentioning here.

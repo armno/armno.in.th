@@ -8,7 +8,6 @@ import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import BaseHead from '@components/BaseHead.astro';
 import GlobalStyle from '@components/GlobalStyle.astro';
-import { usesImages } from '@components/usesImages';
 
 interface Props {
   frontmatter: {
@@ -94,23 +93,6 @@ const plainDescription = description?.replace(/<[^>]+>/g, '');
               class="aspect-[4/3] rounded-md border border-slate-200 bg-slate-100 dark:border-zinc-700 dark:bg-zinc-800 shadow-[0_12px_40px_-12px_rgba(15,23,42,0.45)] dark:shadow-black/50"
               data-uses-placeholder
             ></div>
-            {usesImages.map((img, idx) => (
-              <figure
-                class="absolute inset-x-0 top-0 m-0"
-                data-image-id={img.id}
-                data-image-index={idx}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  width={img.width}
-                  height={img.height}
-                  class="w-full h-auto rounded-md shadow-[0_12px_40px_-12px_rgba(15,23,42,0.45)] dark:shadow-black/50 cursor-zoom-in"
-                  loading="lazy"
-                  data-lightbox
-                />
-              </figure>
-            ))}
           </div>
           </div>
         </aside>
@@ -151,6 +133,19 @@ const plainDescription = description?.replace(/<[^>]+>/g, '');
       (function () {
         const stack = document.querySelector('[data-uses-stack]');
         if (!stack) return;
+        // Build the desktop stack from the images each section renders for mobile
+        document.querySelectorAll('[data-uses-section][data-image-id] img[data-uses-image]').forEach((source, idx) => {
+          const figure = document.createElement('figure');
+          figure.className = 'absolute inset-x-0 top-0 m-0';
+          figure.dataset.imageId = source.closest('[data-uses-section]').dataset.imageId;
+          figure.dataset.imageIndex = String(idx);
+          const img = source.cloneNode();
+          img.className = 'w-full h-auto rounded-md shadow-[0_12px_40px_-12px_rgba(15,23,42,0.45)] dark:shadow-black/50 cursor-zoom-in';
+          img.removeAttribute('data-uses-image');
+          img.setAttribute('data-lightbox', '');
+          figure.appendChild(img);
+          stack.appendChild(figure);
+        });
         const figures = [];
         stack.querySelectorAll('[data-image-id][data-image-index]').forEach((el) => {
           figures.push({ id: el.dataset.imageId, idx: parseInt(el.dataset.imageIndex, 10), el });

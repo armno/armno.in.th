@@ -21,3 +21,6 @@ yarn-error.log*
 public/pagefind
 
 *.local.*
+
+# impeccable critique snapshots
+.impeccable/

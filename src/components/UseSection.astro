@@ -1,28 +1,37 @@
 ---
-import { usesImages, type UseImage } from './usesImages';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
   id: string;
+  image?: string;
+  imageAlt?: string;
 }
 
-const { id } = Astro.props;
-const image: UseImage | undefined = usesImages.find((i) => i.id === id);
+const { id, image, imageAlt = '' } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '../pages/uses/content/*.{png,jpg,jpeg,webp}',
+  { eager: true },
+);
+const fileName = image?.split('/').pop();
+const imageData = fileName ? images[`../pages/uses/content/${fileName}`]?.default : undefined;
 ---
 <section
   id={id}
   data-uses-section
-  data-image-id={image ? id : undefined}
+  data-image-id={imageData ? id : undefined}
   class="scroll-mt-24 lg:pt-8 lg:mb-32"
 >
   <slot />
-  {image && (
+  {imageData && (
     <img
-      src={image.src}
-      alt={image.alt}
-      width={image.width}
-      height={image.height}
+      src={imageData.src}
+      alt={imageAlt}
+      width={imageData.width}
+      height={imageData.height}
       class="lg:hidden mt-4 mb-12 rounded-md w-full h-auto"
       loading="lazy"
+      data-uses-image
     />
   )}
 </section>

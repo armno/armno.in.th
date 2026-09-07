@@ -2,7 +2,7 @@
 import { config, fields, collection, singleton } from '@keystatic/core';
 import { block, wrapper } from '@keystatic/core/content-components'
 import VideoPlayer from '@components/VideoPlayer';
-import { Clapperboard, FileWarning } from 'lucide-react';
+import { Clapperboard, FileWarning, LayoutList } from 'lucide-react';
 
 export default config({
   ui: {
@@ -119,13 +119,12 @@ export default config({
     uses: singleton({
       entryLayout: 'content',
       label: 'Uses',
-      path: 'src/pages/uses/',
+      path: 'src/pages/uses/_content',
       format: { contentField: 'content' },
       schema: {
         title: fields.text({ label: 'Title' }),
         description: fields.text({ label: 'Description' }),
         pubDate: fields.text({ label: 'Publish Date' }),
-        layout: fields.text({ label: 'Layout' }),
         language: fields.select({
           label: 'Language',
           defaultValue: 'en',
@@ -146,7 +145,23 @@ export default config({
               directory: 'src/pages/uses/content/',
               publicPath: '../../pages/uses/content/',
             }
-          }
+          },
+          components: {
+            UseSection: wrapper({
+              label: 'Use Section',
+              description: 'A section of the Uses page. The id links it to an image in usesImages.ts',
+              icon: <LayoutList />,
+              schema: {
+                id: fields.text({ label: 'ID' }),
+                image: fields.image({
+                  label: 'Image',
+                  directory: 'src/pages/uses/content',
+                  publicPath: '../../pages/uses/content/',
+                }),
+                imageAlt: fields.text({ label: 'Image alt text' }),
+              },
+            }),
+          },
         }),
       }
     })

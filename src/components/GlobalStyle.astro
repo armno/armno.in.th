@@ -6,15 +6,38 @@
   @custom-variant dark (&:where(.dark, .dark *));
 
     :root {
-      --pagefind-ui-scale: 1;
+      --pagefind-ui-scale: 0.8;
+      --pagefind-ui-font: inherit;
+      --pagefind-ui-border-width: 1px;
+      --pagefind-ui-border-radius: 3px;
+      --pagefind-ui-primary: #0f172a;
+      --pagefind-ui-text: #0f172a;
+      --pagefind-ui-border: #cbd5e1;
     }
 
     .dark {
       --pagefind-ui-primary: #e5e7eb;
       --pagefind-ui-text: #e5e7eb;
-      --pagefind-ui-background: #3f3f46;
-      --pagefind-ui-border: #152028;
+      --pagefind-ui-background: transparent;
+      --pagefind-ui-border: #52525b;
       --pagefind-ui-tag: #152028;
+    }
+
+    #search .pagefind-ui__search-input {
+      font-weight: 400;
+    }
+
+    #search .pagefind-ui__search-input::placeholder {
+      opacity: 0.5;
+    }
+
+    #search .pagefind-ui__search-input:focus-visible {
+      outline: 1px solid var(--pagefind-ui-text);
+      outline-offset: -1px;
+    }
+
+    #search .pagefind-ui__search-clear {
+      background-color: transparent;
     }
 
   @theme {
