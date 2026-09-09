@@ -22,7 +22,7 @@ export async function getStaticPaths({ paginate }) {
 
     let yearGroup = postsByYear.at(-1);
     if (!yearGroup || yearGroup.year !== year) {
-      yearGroup = { year, months: [] };
+      yearGroup = { year, months: [], postCount: 0 };
       postsByYear.push(yearGroup);
     }
 
@@ -33,12 +33,14 @@ export async function getStaticPaths({ paginate }) {
     }
 
     monthGroup.posts.push(post);
+    yearGroup.postCount++;
   }
 
   return paginate(postsByYear, { pageSize: 1000 });
 }
 
 const { page } = Astro.props;
+const newestYear = page.data[0]?.year;
 const content = {
   title: "Blog",
   description: "Blog",
@@ -48,40 +50,123 @@ const content = {
 ---
 
 <PageLayout frontmatter={content} isPost={false} hasSearch={true}>
-  <h1 class="font-bold">Blog</h1>
+  <h1 id="blog-top" tabindex="-1" class="font-bold">Blog</h1>
   <SearchBox />
+
+  <nav class="mt-12 border-y border-slate-200 py-6 dark:border-zinc-700" aria-label="Browse the blog archive by year">
+    <h2 class="!mb-5 !mt-0 text-xl font-bold">Browse by year</h2>
+    <ol class="!m-0 grid list-none grid-cols-3 gap-x-6 gap-y-5 !p-0 sm:grid-cols-6">
+      {page.data.map((year) => (
+        <li class="!m-0 !p-0">
+          <a class="archive-year-link group block no-underline" href={`#year-${year.year}`}>
+            <span class="block text-lg font-semibold leading-none group-hover:underline">{year.year}</span>
+            <span class="mt-1 block text-xs leading-none text-slate-500 dark:text-slate-400">
+              {year.postCount} {year.postCount === 1 ? "post" : "posts"}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </nav>
 
   {
     page.data.map((year) => (
-      <section class="mt-20 first-of-type:mt-12">
-        <h2 class="font-bold !mt-0 !mb-0">{year.year}</h2>
-        {year.months.map((month) => (
-          <>
-            <h3 class="!mt-10 first-of-type:!mt-5 !mb-3 !text-xs font-semibold uppercase tracking-[0.15em] text-slate-500 dark:text-slate-400">
-              {month.label}
-            </h3>
-            <ul class="list-none !p-0 !m-0 flex flex-col gap-3">
-              {month.posts.map((post) => (
-                <li class="!p-0 !m-0 flex gap-4 items-baseline leading-normal">
-                  <time
-                    class="text-base tabular-nums shrink-0 text-slate-500 dark:text-slate-400"
-                    datetime={format(new Date(post.data.pubDate), "yyyy-MM-dd")}
-                  >
-                    {format(new Date(post.data.pubDate), "dd")}
-                  </time>
-                  <a
-                    href={"/blog/" + post.id}
-                    lang={post.data.language ?? "th"}
-                    class="text-xl leading-normal font-semibold text-pretty no-underline hover:underline dark:text-slate-100 hover:text-green-600 dark:hover:text-orange-400"
-                  >
-                    {post.data.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </>
-        ))}
+      <section id={`year-${year.year}`} class="mt-16 scroll-mt-8 first-of-type:mt-12">
+        <details open={year.year === newestYear} class="group">
+          <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+            <div class="flex items-baseline justify-between gap-4 border-b border-slate-200 pb-2 dark:border-zinc-700">
+              <h2 class="!m-0 flex items-baseline gap-3 font-bold">
+                {year.year}
+                <span class="text-sm font-normal text-slate-500 dark:text-slate-400">
+                  {year.postCount} {year.postCount === 1 ? "post" : "posts"}
+                </span>
+              </h2>
+              <span class="text-sm text-slate-500 group-open:hidden dark:text-slate-400">Show archive</span>
+              <span class="hidden text-sm text-slate-500 group-open:inline dark:text-slate-400">Hide archive</span>
+            </div>
+          </summary>
+          <div class="pt-1">
+            {year.months.map((month) => (
+              <>
+                <h3 class="!mt-10 first-of-type:!mt-5 !mb-3 !text-xs font-semibold uppercase tracking-[0.15em] text-slate-500 dark:text-slate-400">
+                  {month.label}
+                </h3>
+                <ul class="list-none !p-0 !m-0 flex flex-col gap-3">
+                  {month.posts.map((post) => (
+                    <li class="!p-0 !m-0 flex gap-4 items-baseline leading-normal">
+                      <time
+                        class="text-base tabular-nums shrink-0 text-slate-500 dark:text-slate-400"
+                        datetime={format(new Date(post.data.pubDate), "yyyy-MM-dd")}
+                      >
+                        {format(new Date(post.data.pubDate), "dd")}
+                      </time>
+                      <a
+                        href={"/blog/" + post.id}
+                        lang={post.data.language ?? "th"}
+                        class="text-xl leading-[1.25] font-semibold text-pretty no-underline hover:underline dark:text-slate-100 hover:text-green-600 dark:hover:text-orange-400"
+                      >
+                        {post.data.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ))}
+          </div>
+        </details>
       </section>
     ))
   }
+
+  <button
+    id="scroll-to-top"
+    type="button"
+    aria-label="Scroll to top"
+    aria-hidden="true"
+    tabindex="-1"
+    class="invisible fixed bottom-5 right-5 z-20 grid size-11 translate-y-3 place-items-center rounded-full border border-slate-300 bg-white text-slate-800 opacity-0 shadow-[0_4px_16px_rgba(15,23,42,0.16)] transition-[opacity,transform,visibility] duration-200 ease-out hover:border-slate-500 hover:text-green-700 active:translate-y-0 motion-reduce:transition-none dark:border-zinc-600 dark:bg-zinc-900 dark:text-slate-100 dark:hover:border-zinc-400 dark:hover:text-orange-300 sm:bottom-6 sm:right-6"
+  >
+    <svg aria-hidden="true" viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M6.5 10.5 12 5l5.5 5.5"></path>
+    </svg>
+  </button>
 </PageLayout>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>(".archive-year-link").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      const archive = document.querySelector(link.hash);
+      const details = archive?.querySelector("details");
+      if (!archive || !details) return;
+
+      details.open = true;
+      archive.scrollIntoView({ block: "start" });
+      window.history.replaceState({}, "", link.hash);
+    });
+  });
+
+  const scrollButton = document.querySelector<HTMLButtonElement>("#scroll-to-top");
+  const topHeading = document.querySelector<HTMLElement>("#blog-top");
+
+  if (scrollButton) {
+    const updateScrollButton = () => {
+      const shouldShow = window.scrollY > Math.min(window.innerHeight, 640);
+
+      scrollButton.classList.toggle("invisible", !shouldShow);
+      scrollButton.classList.toggle("translate-y-3", !shouldShow);
+      scrollButton.classList.toggle("opacity-0", !shouldShow);
+      scrollButton.setAttribute("aria-hidden", String(!shouldShow));
+      scrollButton.tabIndex = shouldShow ? 0 : -1;
+    };
+
+    scrollButton.addEventListener("click", () => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+      topHeading?.focus({ preventScroll: true });
+    });
+
+    window.addEventListener("scroll", updateScrollButton, { passive: true });
+    updateScrollButton();
+  }
+</script>

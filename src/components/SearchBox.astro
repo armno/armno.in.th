@@ -1,7 +1,10 @@
-<div id="search"></div>
+<div id="search" aria-describedby="search-help"></div>
+<p id="search-help" class="mt-3 text-sm text-slate-600 dark:text-slate-300">
+  Search every post by title and content. Press <kbd>⌘K</kbd> or <kbd>Ctrl K</kbd> to jump here.
+</p>
 <script>
-  window.addEventListener("DOMContentLoaded", (event) => {
-    new PagefindUI({
+  window.addEventListener("DOMContentLoaded", () => {
+    const pagefind = new PagefindUI({
       element: "#search",
       showSubResults: false,
       showImages: false,
@@ -9,6 +12,36 @@
         placeholder: 'Search (⌘K)',
       }
     });
+
+    const input = document.querySelector<HTMLInputElement>('#search input[type="text"]');
+    input?.setAttribute("aria-label", "Search all blog posts");
+    input?.setAttribute("aria-describedby", "search-help");
+    const updateSearchParam = () => {
+      if (!input) return;
+
+      const url = new URL(window.location.href);
+
+      if (input.value) {
+        url.searchParams.set("search", input.value);
+      } else {
+        url.searchParams.delete("search");
+      }
+
+      window.history.replaceState({}, "", url);
+    };
+
+    input?.addEventListener("input", updateSearchParam);
+    input?.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") updateSearchParam();
+    });
+
+    document.querySelector("#search .pagefind-ui__search-clear")
+      ?.addEventListener("click", updateSearchParam);
+
+    const searchTerm = new URLSearchParams(window.location.search).get("search");
+    if (searchTerm) {
+      pagefind.triggerSearch(searchTerm);
+    }
   });
 
   document.addEventListener("keydown", (event) => {
