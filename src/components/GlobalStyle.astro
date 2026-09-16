@@ -5,6 +5,12 @@
 
   @custom-variant dark (&:where(.dark, .dark *));
 
+  @layer base {
+    button:not(:disabled, [aria-disabled="true"]) {
+      cursor: pointer;
+    }
+  }
+
     :root {
       --pagefind-ui-scale: 0.8;
       --pagefind-ui-font: inherit;
@@ -40,8 +46,49 @@
       background-color: transparent;
     }
 
+    /* Keep the invisible (suppressed) clear button out of the tab order. */
+    #search .pagefind-ui__search-clear.pagefind-ui__suppressed {
+      display: none;
+    }
+
+  :root {
+    --bg: #fff;
+    --surface: #fff;
+    --ink: #0f172a;
+    --ink2: #334155;
+    --line: #e2e8f0;
+    --border: #cbd5e1;
+    --muted: #475569;
+    --faint: #64748b;
+    --accent: #0369a1;
+  }
+
+  .dark {
+    --bg: #18181b;
+    --surface: #18181b;
+    --ink: #e5e7eb;
+    --ink2: #cbd2d0;
+    --line: #343d38;
+    --border: #52525b;
+    --muted: #a8b1aa;
+    --faint: #858e88;
+    --accent: #fef08a;
+  }
+
   @theme {
     --font-serif: "Source Serif 4", "IBM Plex Sans Thai Looped", "Adjusted Georgia Fallback", serif;
+  }
+
+  @theme inline {
+    --color-bg: var(--bg);
+    --color-surface: var(--surface);
+    --color-ink: var(--ink);
+    --color-ink2: var(--ink2);
+    --color-line: var(--line);
+    --color-border: var(--border);
+    --color-muted: var(--muted);
+    --color-faint: var(--faint);
+    --color-accent: var(--accent);
   }
 
   @layer base {

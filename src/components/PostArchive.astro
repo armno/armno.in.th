@@ -1,0 +1,364 @@
+---
+import { groupByYearMonth, type BlogPost } from "@shared/posts";
+
+interface Props {
+  posts: BlogPost[];
+  title: string;
+  backHref?: string;
+}
+
+const { posts, title, backHref } = Astro.props;
+const hasSidebar = Astro.slots.has("sidebar");
+
+const plural = (count: number) => (count === 1 ? "post" : "posts");
+
+const postsByYear = groupByYearMonth(posts);
+const maxYearCount = Math.max(...postsByYear.map((yearGroup) => yearGroup.count));
+
+// Posts spanning a single year have nothing to filter, so the rails are left out.
+const hasYearRail = postsByYear.length > 1;
+const yearRange = hasYearRail
+  ? `${postsByYear.at(-1)?.year} – ${postsByYear[0]?.year}`
+  : `${postsByYear[0]?.year}`;
+const summary = `${posts.length} ${plural(posts.length)} · ${yearRange}`;
+
+const backLinkClass =
+  "mb-3 inline-block text-sm text-muted no-underline transition-[color,background-color,border-color] duration-150 hover:text-ink";
+---
+
+<div
+  class:list={[
+    "isolate mx-auto grid max-w-[1600px] grid-cols-[minmax(0,1fr)] px-5 pb-24 min-[820px]:px-[clamp(20px,4vw,56px)]",
+    hasYearRail && "min-[820px]:grid-cols-[180px_minmax(0,1fr)]",
+    hasSidebar && "min-[1100px]:grid-cols-[180px_minmax(0,1fr)_260px]",
+  ]}
+  data-listing
+>
+  <a
+    href="#posts"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-[104px] focus:left-5 focus:z-20 focus:rounded-[3px] focus:bg-ink focus:px-3 focus:py-2 focus:text-sm focus:text-bg"
+  >
+    Skip to posts
+  </a>
+  <!-- Mobile: title, search, year pills -->
+  <div class="pt-5 min-[820px]:hidden">
+    {backHref && <a href={backHref} class={backLinkClass}>← All posts</a>}
+    <div class="mb-5 flex items-baseline gap-3.5">
+      <h1 class="text-[44px] font-bold leading-none tracking-[-0.02em]">{title}</h1>
+      <span class="text-sm text-muted" data-summary>{summary}</span>
+    </div>
+    <div class="mb-5" data-search-mobile></div>
+    {hasYearRail && (
+      <div class="relative -mx-5 flex gap-2 overflow-x-auto px-5 pt-1 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" data-rail>
+        <button
+          type="button"
+          class="min-h-9 shrink-0 rounded-full border border-border bg-surface px-3 py-1.5 text-sm text-ink2 transition-[color,background-color,border-color,transform] duration-150 motion-safe:active:scale-[0.97] hover:border-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-bg"
+          data-year=""
+          aria-pressed="true"
+        >
+          All years
+        </button>
+        {postsByYear.map((yearGroup) => (
+          <button
+            type="button"
+            class="inline-flex min-h-9 shrink-0 items-baseline gap-1.5 rounded-full border border-border bg-surface px-3 py-1.5 text-sm tabular-nums text-ink2 transition-[color,background-color,border-color,transform] duration-150 motion-safe:active:scale-[0.97] hover:border-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-bg"
+            data-year={yearGroup.year}
+            aria-pressed="false"
+          >
+            {yearGroup.year} <span class="text-[11px] text-muted group-aria-pressed:text-bg/70">{yearGroup.count}</span>
+          </button>
+        ))}
+      </div>
+    )}
+  </div>
+
+  <!-- Desktop: years -->
+  {hasYearRail && (
+    <aside
+      class="sticky top-[96px] hidden max-h-[calc(100vh-96px)] self-start overflow-auto pt-12 pr-8 min-[820px]:col-start-1 min-[820px]:row-start-1 min-[820px]:block"
+      aria-label="Years"
+      data-years
+      data-rail="vertical"
+    >
+      <button
+        type="button"
+        class="block pb-3 text-left text-xs uppercase tracking-[0.12em] text-muted transition-[color,background-color,border-color] duration-150 hover:text-ink aria-pressed:text-ink"
+        data-year=""
+        aria-pressed="true"
+      >
+        All years
+      </button>
+      {postsByYear.map((yearGroup) => (
+        <button
+          type="button"
+          class="group grid w-full grid-cols-[44px_minmax(0,1fr)] items-center gap-2.5 py-[5px] text-left text-[15px] tabular-nums text-muted transition-[color,background-color,border-color] duration-150 hover:text-ink aria-pressed:font-bold aria-pressed:text-ink"
+          data-year={yearGroup.year}
+          aria-pressed="false"
+          title={`${yearGroup.count} ${plural(yearGroup.count)}`}
+        >
+          <span>{yearGroup.year}</span>
+          <span
+            class="year-bar h-1.5 origin-left rounded-[1px] bg-ink opacity-85 transition-[opacity,transform] duration-[250ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-safe:group-hover:scale-x-[1.06]"
+            style={`width: ${Math.max(6, Math.round((yearGroup.count / maxYearCount) * 100))}%`}
+          ></span>
+        </button>
+      ))}
+    </aside>
+  )}
+
+  <!-- Posts -->
+  <div
+    id="posts"
+    tabindex="-1"
+    class:list={[
+      "min-w-0 pt-2 outline-none min-[820px]:row-start-1 min-[820px]:px-[clamp(24px,3vw,48px)] min-[820px]:pt-12",
+      hasYearRail && "min-[820px]:col-start-2",
+    ]}
+  >
+    <div class="mb-12 hidden min-[820px]:block">
+      {backHref && <a href={backHref} class={backLinkClass}>← All posts</a>}
+      <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+        <h1 class="text-[clamp(48px,6vw,72px)] font-bold leading-none tracking-[-0.02em]">{title}</h1>
+        <span class="text-base text-muted" data-summary>{summary}</span>
+      </div>
+    </div>
+
+    <slot name="above-list" />
+
+    {postsByYear.map((yearGroup) => (
+      <section class="mb-14" data-year-section>
+        <div class="flex items-baseline gap-3.5 border-b border-line pb-2.5">
+          <h2 class="text-[28px] font-bold">{yearGroup.year}</h2>
+          <span class="text-[15px] text-muted">{yearGroup.count} {plural(yearGroup.count)}</span>
+        </div>
+        {yearGroup.months.map((monthGroup) => (
+          <div class="pt-7 pb-1.5" data-month>
+            <h3 class="mb-1.5 text-xs uppercase tracking-[0.14em] text-muted">{monthGroup.label}</h3>
+            {monthGroup.posts.map((post) => (
+              <div
+                class="relative grid grid-cols-[28px_minmax(0,1fr)] items-baseline gap-3 border-b border-dotted border-border py-3.5 min-[820px]:grid-cols-[36px_minmax(0,1fr)_auto] min-[820px]:gap-5"
+                data-post
+                data-year={yearGroup.year}
+              >
+                <time class="text-[15px] tabular-nums text-faint" datetime={post.date}>{post.day}</time>
+                <span class="flex min-w-0 flex-col gap-1.5">
+                  <a
+                    href={"/blog/" + post.id}
+                    lang={post.language}
+                    class="text-[19px] font-semibold leading-[1.3] text-pretty no-underline transition-[color,background-color,border-color] duration-150 after:absolute after:inset-0 hover:text-accent min-[820px]:text-[clamp(20px,1.8vw,24px)]"
+                  >
+                    {post.title}
+                  </a>
+                  <span class="flex flex-wrap gap-x-3 gap-y-1 font-mono text-[12px] text-faint">
+                    <span class="text-muted min-[820px]:hidden">{post.minutes} min</span>
+                    {post.tags.map((tag) => (
+                      <a
+                        href={`/tags/${encodeURIComponent(tag)}`}
+                        class="relative z-10 no-underline transition-[color,background-color,border-color] duration-150 hover:text-ink hover:underline hover:underline-offset-[3px]"
+                      >
+                        #{tag}
+                      </a>
+                    ))}
+                  </span>
+                </span>
+                <span class="hidden whitespace-nowrap text-sm tabular-nums text-muted min-[820px]:block">
+                  {post.minutes} min
+                </span>
+              </div>
+            ))}
+          </div>
+        ))}
+      </section>
+    ))}
+
+    <p class="text-lg italic text-muted" data-empty hidden>No posts match.</p>
+  </div>
+
+  <!-- Desktop: sidebar -->
+  {hasSidebar && (
+    <aside
+      class="sticky top-[96px] hidden max-h-[calc(100vh-96px)] self-start overflow-auto pt-12 pl-8 min-[1100px]:col-start-3 min-[1100px]:row-start-1 min-[1100px]:block"
+      aria-label="Tags"
+    >
+      <slot name="sidebar" />
+    </aside>
+  )}
+</div>
+
+<button
+  type="button"
+  title="Scroll to top"
+  aria-label="Scroll to top"
+  class="pointer-events-none fixed right-5 bottom-5 grid h-11 w-11 place-items-center rounded-[3px] bg-ink opacity-0 shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition-[opacity,background-color,transform,box-shadow] duration-[250ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-ink2 hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)] motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-[820px]:right-8 min-[820px]:bottom-8"
+  data-scroll-top
+>
+  <span class="block h-[9px] w-[9px] translate-y-[3px] rotate-45 border-t-2 border-l-2 border-bg"></span>
+</button>
+
+<style is:global>
+  [data-year-active] button[data-year]:not([aria-pressed="true"]) .year-bar {
+    opacity: 0.25;
+  }
+
+  [data-year-active] button[data-year]:not([aria-pressed="true"]):hover .year-bar {
+    opacity: 0.6;
+  }
+
+  [data-listing] :is(button, a):focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  [aria-expanded="true"] .chevron {
+    rotate: 225deg;
+    translate: 0 2px;
+  }
+
+  /* Horizontal rails fade at the right edge while more options are off-screen. */
+  [data-rail][data-more] {
+    mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent);
+  }
+
+  /* Pagefind results drop down from the sticky header instead of pushing it taller. */
+  @media (min-width: 820px) {
+    #search {
+      position: relative;
+    }
+
+    #search .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      max-height: 70vh;
+      overflow: auto;
+      padding: 0 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+    }
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>("[data-listing]")!;
+  const desktop = window.matchMedia("(min-width: 820px)");
+
+  // Search box lives in the header on desktop and under the title on mobile.
+  const search = document.getElementById("search")!;
+  const headerSlot = search.parentElement!;
+  const mobileSlot = root.querySelector<HTMLElement>("[data-search-mobile]")!;
+  const placeSearch = () => (desktop.matches ? headerSlot : mobileSlot).appendChild(search);
+  desktop.addEventListener("change", placeSearch);
+  placeSearch();
+
+  // The year rails are left out when every post shares one year.
+  const yearsAside = root.querySelector<HTMLElement>("[data-years]");
+  if (yearsAside) {
+    const posts = [...root.querySelectorAll<HTMLElement>("[data-post]")];
+    const monthGroups = [...root.querySelectorAll<HTMLElement>("[data-month]")];
+    const yearSections = [...root.querySelectorAll<HTMLElement>("[data-year-section]")];
+    const yearButtons = [...root.querySelectorAll<HTMLButtonElement>("button[data-year]")];
+    const summaries = [...root.querySelectorAll<HTMLElement>("[data-summary]")];
+    const emptyState = root.querySelector<HTMLElement>("[data-empty]")!;
+    const totalSummary = summaries[0].textContent;
+    const rails = [...root.querySelectorAll<HTMLElement>("[data-rail]")];
+
+    const plural = (count: number) => (count === 1 ? "post" : "posts");
+
+    let year: string | null = new URLSearchParams(location.search).get("year");
+
+    // Pagefind hides its results drawer when the input empties.
+    function dismissSearch() {
+      const input = document.querySelector<HTMLInputElement>("#search input");
+      if (!input || !input.value) return;
+      input.value = "";
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+    }
+
+    function updateRailFade(rail: HTMLElement) {
+      rail.toggleAttribute("data-more", rail.scrollLeft + rail.clientWidth < rail.scrollWidth - 1);
+    }
+
+    function applyFilters() {
+      let visibleTotal = 0;
+
+      for (const post of posts) {
+        const matches = !year || post.dataset.year === year;
+        post.hidden = !matches;
+        if (matches) visibleTotal++;
+      }
+
+      for (const monthGroup of monthGroups) {
+        monthGroup.hidden = !monthGroup.querySelector("[data-post]:not([hidden])");
+      }
+
+      for (const section of yearSections) {
+        section.hidden = !section.querySelector("[data-post]:not([hidden])");
+      }
+
+      for (const summary of summaries) {
+        summary.textContent = year ? `${visibleTotal} ${plural(visibleTotal)}` : totalSummary;
+      }
+      emptyState.hidden = visibleTotal > 0;
+
+      yearsAside!.toggleAttribute("data-year-active", year !== null);
+      for (const button of yearButtons) {
+        button.setAttribute("aria-pressed", String((button.dataset.year || null) === year));
+      }
+
+      // One tab stop per rail: the pressed option (or the first) is focusable, arrows move within.
+      for (const rail of rails) {
+        const buttons = [...rail.querySelectorAll<HTMLButtonElement>("button")];
+        const active = buttons.find((button) => button.getAttribute("aria-pressed") === "true") ?? buttons[0];
+        for (const button of buttons) button.tabIndex = button === active ? 0 : -1;
+        if (rail.scrollWidth > rail.clientWidth) {
+          rail.scrollTo({ left: active.offsetLeft - (rail.clientWidth - active.offsetWidth) / 2 });
+          updateRailFade(rail);
+        }
+      }
+
+      history.replaceState(null, "", year ? `?year=${year}` : location.pathname);
+    }
+
+    for (const rail of rails) {
+      rail.addEventListener("scroll", () => updateRailFade(rail), { passive: true });
+      const vertical = rail.dataset.rail === "vertical";
+      const [next, previous] = vertical ? ["ArrowDown", "ArrowUp"] : ["ArrowRight", "ArrowLeft"];
+      rail.addEventListener("keydown", (event) => {
+        const buttons = [...rail.querySelectorAll<HTMLButtonElement>("button")];
+        const current = buttons.indexOf(document.activeElement as HTMLButtonElement);
+        if (current === -1) return;
+        let target: number;
+        if (event.key === next) target = (current + 1) % buttons.length;
+        else if (event.key === previous) target = (current - 1 + buttons.length) % buttons.length;
+        else if (event.key === "Home") target = 0;
+        else if (event.key === "End") target = buttons.length - 1;
+        else return;
+        event.preventDefault();
+        buttons[target].focus();
+      });
+    }
+
+    for (const button of yearButtons) {
+      button.addEventListener("click", () => {
+        const value = button.dataset.year || null;
+        year = value === year ? null : value;
+        dismissSearch();
+        applyFilters();
+      });
+    }
+
+    applyFilters();
+  }
+
+  const scrollTopButton = document.querySelector<HTMLButtonElement>("[data-scroll-top]")!;
+  const updateScrollTop = () => {
+    const shown = window.scrollY > 400;
+    scrollTopButton.classList.toggle("opacity-0", !shown);
+    scrollTopButton.classList.toggle("pointer-events-none", !shown);
+  };
+  window.addEventListener("scroll", updateScrollTop, { passive: true });
+  updateScrollTop();
+  scrollTopButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+</script>

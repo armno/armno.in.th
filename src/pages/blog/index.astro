@@ -1,0 +1,76 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import PostArchive from "@components/PostArchive.astro";
+import SearchBox from "@components/SearchBox.astro";
+import { getSortedPosts, tagCounts } from "@shared/posts";
+
+// Tags with fewer posts than this stay on the post rows but are left out of
+// the filter sidebar (there are ~400 unique tags).
+const MINIMUM_TAG_COUNT = 5;
+const SIDEBAR_TAG_LIMIT = 20;
+
+const sortedPosts = await getSortedPosts();
+const sidebarTags = Object.entries(tagCounts(sortedPosts))
+  .filter(([, count]) => count >= MINIMUM_TAG_COUNT)
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .slice(0, SIDEBAR_TAG_LIMIT);
+
+const content = {
+  title: "Blog",
+  description: "Blog",
+  thumbnail: "",
+  language: "en",
+};
+
+const tagPillClass =
+  "inline-flex gap-[5px] whitespace-nowrap rounded-full border border-border bg-surface text-sm text-ink2 no-underline transition-[color,background-color,border-color,transform] duration-150 motion-safe:active:scale-[0.97] hover:border-ink";
+---
+
+<PageLayout frontmatter={content} isPost={false} hasSearch={true} wide={true}>
+  <SearchBox slot="search" />
+
+  <PostArchive posts={sortedPosts} title="Blog">
+    <div slot="above-list" class="min-[1100px]:hidden">
+      <button
+        type="button"
+        class="flex items-center gap-2 py-2.5 text-xs uppercase tracking-[0.12em] text-muted transition-[color,background-color,border-color] duration-150 hover:text-ink"
+        data-tags-toggle
+        aria-expanded="false"
+      >
+        <span class="chevron block h-1.5 w-1.5 -translate-y-px rotate-45 border-b-[1.5px] border-r-[1.5px] border-current transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]"></span>
+        Browse by tag
+      </button>
+      <div class="flex flex-wrap gap-2 pt-1 pb-2" data-tags-panel hidden>
+        {sidebarTags.map(([tag, count]) => (
+          <a href={`/tags/${encodeURIComponent(tag)}`} class={`${tagPillClass} min-h-9 items-center px-3 py-1.5`}>
+            {tag} <span class="text-muted">{count}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <Fragment slot="sidebar">
+      <h2 class="mb-4 text-xs font-normal uppercase tracking-[0.12em] text-muted">Tags</h2>
+      <div class="flex flex-wrap gap-2">
+        {sidebarTags.map(([tag, count]) => (
+          <a href={`/tags/${encodeURIComponent(tag)}`} class={`${tagPillClass} px-2.5 py-1`}>
+            {tag} <span class="text-muted">{count}</span>
+          </a>
+        ))}
+      </div>
+      <h2 class="mt-10 mb-3 text-xs font-normal uppercase tracking-[0.12em] text-muted">RSS</h2>
+      <a href="/rss.xml" class="text-[15px] text-ink2 underline underline-offset-4 transition-[color,background-color,border-color] duration-150 hover:text-accent">Subscribe to the feed</a>
+    </Fragment>
+  </PostArchive>
+</PageLayout>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>("[data-tags-toggle]")!;
+  const panel = document.querySelector<HTMLElement>("[data-tags-panel]")!;
+
+  toggle.addEventListener("click", () => {
+    const open = panel.hasAttribute("hidden");
+    panel.hidden = !open;
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+</script>

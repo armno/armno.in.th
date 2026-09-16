@@ -1,14 +1,15 @@
 ---
 import ThemeToggler from "./ThemeToggler.astro";
+
 const { pathname } = Astro.url;
+const hasSearch = Astro.slots.has("search");
+const activeClass = "font-bold underline underline-offset-[5px]";
 ---
 
-<header
-  class="mx-auto px-6 md:px-0 grid grid-flow-col grid-cols-[1fr] items-center max-w-[700px]"
->
-  <a href="/" class="inline-block w-12 h-12 md:w-16 md:h-16">
+<header class="sticky top-0 z-10 flex items-center justify-between gap-6 bg-surface px-5 py-3.5 min-[820px]:px-[clamp(20px,4vw,56px)] min-[820px]:py-4">
+  <a href="/" class="inline-block shrink-0 w-12 h-12 md:w-16 md:h-16">
     <svg
-      class="w-12 h-12 md:w-16 md:h-16 hover:scale-125 hover:rotate-3 transition-transform"
+      class="w-12 h-12 md:w-16 md:h-16 motion-safe:hover:scale-125 motion-safe:hover:rotate-3 transition-transform"
       width="50"
       height="50"
       viewBox="0 0 50 50"
@@ -23,24 +24,32 @@ const { pathname } = Astro.url;
     </svg>
   </a>
 
-  <nav class="text-sm md:text-base lg:text-lg flex gap-8 lg:gap-12 dark:text-slate-200">
-    <a
-      href="/"
-      class={`inline-block ${pathname === "/" ? "font-bold underline" : "no-underline"}`}
-      >About</a
-    >
-    <a
-      href="/blog/"
-      class={`inline-block ${
-        pathname.includes("/blog/") ? "font-bold underline" : "no-underline"
-      }`}>Blog</a
-    >
-    <a
-      href="/uses/"
-      class={`inline-block ${
-        pathname.includes("/uses") ? "font-bold underline" : "no-underline"
-      }`}>Uses</a
-    >
-  </nav>
-  <ThemeToggler />
+  {hasSearch && (
+    <div class="hidden min-[820px]:block flex-[0_1_460px] min-w-0">
+      <slot name="search" />
+    </div>
+  )}
+
+  <div class="flex items-center shrink-0">
+    <nav class="flex dark:text-slate-200 text-[17px] gap-[18px] min-[820px]:text-xl min-[820px]:gap-[clamp(20px,3vw,40px)]">
+      <a
+        href="/"
+        class={`inline-block ${pathname === "/" ? activeClass : "no-underline"}`}
+        >About</a
+      >
+      <a
+        href="/blog/"
+        class={`inline-block ${
+          pathname.includes("/blog/") ? activeClass : "no-underline"
+        }`}>Blog</a
+      >
+      <a
+        href="/uses/"
+        class={`inline-block ${
+          pathname.includes("/uses") ? activeClass : "no-underline"
+        }`}>Uses</a
+      >
+    </nav>
+    <ThemeToggler />
+  </div>
 </header>
