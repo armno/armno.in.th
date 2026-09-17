@@ -318,7 +318,11 @@ const backLinkClass =
         }
       }
 
-      history.replaceState(null, "", year ? `?year=${year}` : location.pathname);
+      // Rewrite only the year param so search terms, campaign tags and the hash survive.
+      const url = new URL(location.href);
+      if (year) url.searchParams.set("year", year);
+      else url.searchParams.delete("year");
+      history.replaceState(null, "", url);
     }
 
     for (const rail of rails) {
