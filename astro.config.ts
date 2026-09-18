@@ -21,7 +21,10 @@ const config: AstroUserConfig = {
 };
 if (process.env.NODE_ENV !== 'production') {
   config.output = 'static';
-  config.adapter = netlify();
+  config.adapter = netlify({
+    imageCDN: false,
+    devFeatures: { images: false },
+  });
   config.integrations?.push(keystatic());
 }
 
