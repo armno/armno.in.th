@@ -50,5 +50,60 @@ const mainClass = wide
       <slot />
     </TagName>
     <Footer />
+
+    {isPost && (
+      <>
+        <style is:global>
+          [data-lightbox-dialog][open],
+          [data-lightbox-dialog][open]::backdrop {
+            opacity: 1;
+            transition: opacity 250ms ease-out;
+          }
+          @starting-style {
+            [data-lightbox-dialog][open],
+            [data-lightbox-dialog][open]::backdrop {
+              opacity: 0;
+            }
+          }
+        </style>
+        <dialog
+          data-lightbox-dialog
+          aria-label="Image preview"
+          class="px-0 py-12 bg-transparent max-w-none max-h-none w-screen h-screen outline-none backdrop:bg-black/85 cursor-zoom-out"
+        >
+          <img src="/favicon.ico" alt="" class="w-full h-full object-contain" />
+        </dialog>
+
+        <script is:inline>
+          (function () {
+            const content = document.querySelector('[data-post-content]');
+            const dialog = document.querySelector('[data-lightbox-dialog]');
+            if (!content || !dialog) return;
+
+            const full = dialog.querySelector('img');
+            content.querySelectorAll('img').forEach((img) => {
+              img.setAttribute('data-lightbox', '');
+              img.classList.add('cursor-zoom-in');
+            });
+
+            document.addEventListener('click', (e) => {
+              if (!(e.target instanceof Element)) return;
+              const img = e.target.closest('img[data-lightbox]');
+              if (!img) return;
+              e.preventDefault();
+              full.src = img.currentSrc || img.src;
+              full.alt = img.alt;
+              dialog.showModal();
+            });
+
+            dialog.addEventListener('click', () => dialog.close());
+            dialog.addEventListener('close', () => {
+              full.src = '/favicon.ico';
+              full.alt = '';
+            });
+          })();
+        </script>
+      </>
+    )}
 	</body>
 </html>

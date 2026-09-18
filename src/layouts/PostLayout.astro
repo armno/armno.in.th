@@ -36,7 +36,9 @@ const canonicalURL = Astro.url;
     </div>
   </div>
 
-  <slot />
+  <div data-post-content>
+    <slot />
+  </div>
   <TagsList tags={tags} />
   <Comments />
   <RelatedPosts tags={tags} currentPathname={canonicalURL.pathname} />
