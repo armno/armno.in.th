@@ -31,6 +31,12 @@ const relatedPosts = allPosts
   });
 
 const [featured, ...secondaryPosts] = relatedPosts.slice(0, 4);
+
+// Thumbnails live in public/ so Astro can't resize them. In production, ask Netlify Image CDN for a smaller copy.
+function resizedThumbnail(thumbnail: string, width: number) {
+  if (!import.meta.env.PROD) return thumbnail;
+  return `/.netlify/images?url=${encodeURIComponent(thumbnail)}&w=${width}`;
+}
 ---
 
 {
@@ -49,7 +55,7 @@ const [featured, ...secondaryPosts] = relatedPosts.slice(0, 4);
                 {featured.post.data.thumbnail ? (
                   <Image
                     class="h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-out motion-safe:group-hover:scale-[1.02]"
-                    src={featured.post.data.thumbnail}
+                    src={resizedThumbnail(featured.post.data.thumbnail, 900)}
                     alt={featured.post.data.title}
                     width={900}
                     height={560}
@@ -90,7 +96,7 @@ const [featured, ...secondaryPosts] = relatedPosts.slice(0, 4);
                       {post.data.thumbnail ? (
                         <Image
                           class="h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-out motion-safe:group-hover:scale-[1.03]"
-                          src={post.data.thumbnail}
+                          src={resizedThumbnail(post.data.thumbnail, 240)}
                           alt={post.data.title}
                           width={240}
                           height={180}
