@@ -35,10 +35,6 @@ const mainClass = wide
 <html lang={language ? language : 'th'}>
 	<head>
 		<BaseHead {title} {description} {thumbnail} />
-    {hasSearch &&
-    <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
-    <script src="/pagefind/pagefind-ui.js" is:inline></script>
-    }
     <GlobalStyle />
 	</head>
 	<body class={`font-serif antialiased transition-colors ${bodyClass}`} data-pagefind-body={isPost || undefined} data-pagefind-ignore={isPost ? 'index' : 'all'}>
