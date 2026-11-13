@@ -32,10 +32,10 @@ const relatedPosts = allPosts
 
 const [featured, ...secondaryPosts] = relatedPosts.slice(0, 4);
 
-// Thumbnails live in public/ so Astro can't resize them. In production, ask Netlify Image CDN for a smaller copy.
+// Thumbnails live in public/ so Astro can't resize them. In production, ask Cloudflare Image Transformations for a smaller copy.
 function resizedThumbnail(thumbnail: string, width: number) {
   if (!import.meta.env.PROD) return thumbnail;
-  return `/.netlify/images?url=${encodeURIComponent(thumbnail)}&w=${width}`;
+  return `/cdn-cgi/image/width=${width},format=auto${thumbnail}`;
 }
 ---
 

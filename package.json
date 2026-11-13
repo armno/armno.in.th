@@ -17,7 +17,7 @@
     "@astrojs/check": "^0.9.10",
     "@astrojs/markdoc": "^2.0.8",
     "@astrojs/mdx": "^8.0.3",
-    "@astrojs/netlify": "^8.2.4",
+    "@astrojs/node": "^11.1.12",
     "@astrojs/react": "^7.0.1",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
@@ -36,7 +36,8 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "tailwindcss": "^4.2.4",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "wrangler": "^4.161.0"
   },
   "dependencies": {
     "@fontsource-variable/source-serif-4": "^5.2.9",

@@ -7,7 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from '@keystatic/astro';
-import netlify from "@astrojs/netlify";
+import node from "@astrojs/node";
 import type { AstroUserConfig } from "astro";
 
 const config: AstroUserConfig = {
@@ -21,10 +21,7 @@ const config: AstroUserConfig = {
 };
 if (process.env.NODE_ENV !== 'production') {
   config.output = 'static';
-  config.adapter = netlify({
-    imageCDN: false,
-    devFeatures: { images: false },
-  });
+  config.adapter = node({ mode: 'standalone' });
   config.integrations?.push(keystatic());
 }
 

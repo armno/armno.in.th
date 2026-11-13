@@ -1,0 +1,8 @@
+{
+  "name": "armnointh",
+  "compatibility_date": "2026-11-13",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

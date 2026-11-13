@@ -1,0 +1,15 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+
+const frontmatter = {
+  title: "Page not found",
+  description: "Page not found",
+  thumbnail: "",
+  language: "en",
+};
+---
+
+<PageLayout frontmatter={frontmatter} isPost={false}>
+  <h1>Page not found</h1>
+  <p>This page doesn't exist or has moved. Try the <a href="/blog/">blog</a> or the <a href="/">home page</a>.</p>
+</PageLayout>
